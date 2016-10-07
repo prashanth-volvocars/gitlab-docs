@@ -24,11 +24,11 @@ a:hover {
 }
 
 #main {
-  position: absolute;
-  top: 40px;
-  left: 280px;
+  margin: 20px;
+  position: relative;
 
-  width: 500px;
+  width: auto;
+  max-width: 1000px;
 }
 
 #main h1 {

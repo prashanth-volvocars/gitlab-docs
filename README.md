@@ -108,3 +108,13 @@ This is almost definitely out of the question due to how bloated the repository 
 
 - Use artifacts to store previous versions of the site so they don't have to be regenerated constantly.
 - Nanoc is supposedly quite fast.
+
+### Versioning
+
+### Differentiating between CE and EE features
+
+One potential problem with having separate docs for CE vs. EE is the inability to easily track differences between the two. Their documentation won't necessarily be kept in-sync and pages that differ between CE and EE may cause conflicts when merging the CE repository into EE.
+
+One potential solution to this problem is to include the EE docs inside the CE repository and then label pages as either Universal or EE-only (using frontmatter). The same could be done for specific sections on the page. This has the potential downside of complicating the documentation-writing process for contributors, but arguably the complexity of the CE/EE repositories already exists, so we're not really adding complexity so much as switching its form.
+
+The Atom Flight Manual has [the ability to switch between platforms for given pages](http://flight-manual.atom.io/using-atom/sections/atom-selections/), this code could be repurposed for including/excluding features based on whether the documentation is CE or EE ([Source](https://raw.githubusercontent.com/atom/flight-manual.atom.io/4c8f8d14e13b84584fe206e914ea06c6dc2b7a96/content/using-atom/sections/atom-selections.md)).

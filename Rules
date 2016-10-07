@@ -13,9 +13,15 @@ compile '/**/*.md' do
   layout '/default.*'
 end
 
-compile '/content/stylesheet.scss' do
+compile '/**/*.scss' do
   filter :sass, syntax: :scss
   write item.identifier.without_ext + '.css'
+end
+
+compile '/index.*' do
+  filter :erb
+  layout '/default.*'
+  write '/index.html'
 end
 
 route '/**/*.scss' do
