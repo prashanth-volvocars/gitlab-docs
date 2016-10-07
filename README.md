@@ -34,29 +34,29 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 
 ## Requirements/Goals
 
-- Feature parity with the existing [docs.gitlab.com](https://docs.gitlab.com/)
-- Use GitLab CI / GitLab Pages for compilation, deployment, and hosting of the Documentation site.
-- Sections for Community Edition, Enterprise Edition, GitLab CI, and Omnibus.
-- Pull documentation from the repositories mentioned above.
-- Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
-- Automatically generated API documentation.
-- Search the documentation, can probably use existing Documentation search functionality.
-- Link to "Edit on GitLab.com" for every page to encourage contribution.
-- Auto-generated documentation structure based on YML frontmatter.
-- Responsive design.
+- [ ] Feature parity with the existing [docs.gitlab.com](https://docs.gitlab.com/)
+- [x] Use GitLab CI / GitLab Pages for compilation, deployment, and hosting of the Documentation site.
+- [x] Sections for Community Edition, Enterprise Edition, GitLab CI, and Omnibus.
+- [ ] Pull documentation from the repositories mentioned above.
+- [ ] Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
+- [ ] Automatically generated API documentation.
+- [ ] Search the documentation, can probably use existing Documentation search functionality.
+- [ ] Link to "Edit on GitLab.com" for every page to encourage contribution.
+- [ ] Responsive design.
 
 ### Nice-to-haves
 
-- Some way to embed/package the site inside the Rails app so the documentation can be included with the application itself. This would be nice for users behind firewalls, etc. This _should not_ be handled by Rails itself, as that causes all kinds of problems. It should just be a set of static pages.
-- Some way to export the documentation as PDF/ePub for use offline.
-- Future-proofing for internationalization.
-- Tests for working internal links and such. (Nanoc includes this by default!)
-- Automated screenshots! (Not really directly related, but I still want it.)
-- A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as all open source tools.
-- Auto-generated Table of Contents for every page.
-- Anchor links for every page section.
-- Syntax highlighting with Rouge.
-- Version dropdown that links to the current page for that version (if it exists).
+- [ ] Some way to embed/package the site inside the Rails app so the documentation can be included with the application itself. This would be nice for users behind firewalls, etc. This _should not_ be handled by Rails itself, as that causes all kinds of problems. It should just be a set of static pages.
+- [ ] Some way to export the documentation as PDF/ePub for use offline.
+- [ ] Future-proofing for internationalization.
+- [ ] Tests for working internal links and such. (Nanoc includes this by default!)
+- [ ] Automated screenshots! (Not really directly related, but I still want it.)
+- [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as all open source tools.
+- [ ] Auto-generated Table of Contents for every page.
+- [ ] Anchor links for every page section.
+- [x] Syntax highlighting with Rouge.
+- [ ] Auto-generated documentation structure based on YML frontmatter.
+- [ ] Version dropdown that links to the current page for that version (if it exists).
 
 ## Implementation details
 
@@ -108,8 +108,6 @@ This is almost definitely out of the question due to how bloated the repository 
 
 - Use artifacts to store previous versions of the site so they don't have to be regenerated constantly.
 - Nanoc is supposedly quite fast.
-
-### Versioning
 
 ### Differentiating between CE and EE features
 
