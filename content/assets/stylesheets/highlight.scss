@@ -1,10 +1,6 @@
 /* https://github.com/aahan/pygments-github-style */
 
-$black-transparent: rgba(0, 0, 0, 0.3);
-$table-border-gray: #f0f0f0;
-
 .highlighter-rouge {
-
   pre {
     padding: 10px 15px;
     border-radius: 5px;
@@ -13,18 +9,13 @@ $table-border-gray: #f0f0f0;
     margin: 20px 0;
   }
 
-  .diff-line-num, .diff-line-num a {
-    color: $black-transparent;
-  }
-
   // Code itself
-  pre.code, .diff-line-num {
-    border-color: $table-border-gray;
+  pre.code {
+    border-color: #f0f0f0;
   }
 
-  &, pre.code, .line_holder .line_content {
+  &, pre.code {
     background-color: #fff;
-    color: #333;
   }
 
   .hll { background-color: #f8f8f8 }
