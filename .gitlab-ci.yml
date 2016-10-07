@@ -8,6 +8,6 @@ pages:
   - nanoc
   artifacts:
     paths:
-    - output
+    - public
   only:
   - master
