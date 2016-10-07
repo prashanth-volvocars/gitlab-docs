@@ -4,12 +4,12 @@ This site is generated using [Nanoc](http://nanoc.ws).
 
 ## Development
 
-To set this up:
+To set up the site locally:
 
 - `bundle install`
 - `bundle exec nanoc live`
 
-Changes will be reloaded automatically using [Guard Nanoc](https://github.com/guard/guard-nanoc).
+This will host the site at `localhost:3000`. Changes will be reloaded automatically using [Guard Nanoc](https://github.com/guard/guard-nanoc).
 
 ## Examples and Resources
 
