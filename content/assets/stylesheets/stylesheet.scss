@@ -1,6 +1,4 @@
 *, *::before, *::after {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -12,6 +10,8 @@ code, code span {
 
 body {
   background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -48,19 +48,24 @@ a {
   }
 
   ul, ol {
-    margin: 20px;
+    margin: 20px 0;
   }
 
   li {
     font-size: 15px;
     line-height: 20px;
+
+    > ul, > ol {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }
 
 .header {
   position: relative;
   width: 100%;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-bottom: 1px solid #ccc;
   text-align: left;
 
@@ -77,6 +82,7 @@ a {
     float: right;
     list-style-type: none;
     display: inline-block;
+    margin: 10px 0;
   }
 
   li {

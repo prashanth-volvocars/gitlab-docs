@@ -5,8 +5,8 @@ title: GitLab Documentation
 <h2>Community Edition</h2>
 
 <ul>
-  <% @items.find_all("/ce/**/*.md").each do |item| %>
-    <li><%= link_to item[:title], item %></li>
+  <% @items.find_all("/ce/*/README.md").each do |item| %>
+    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
   <% end %>
 </ul>
 
