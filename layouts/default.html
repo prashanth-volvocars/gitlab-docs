@@ -14,7 +14,9 @@
     <div class="header">
       <h2><%= link_to "GitLab Documentation", "/" %></h2>
       <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="<%= @items['/ce/README.*'].path %>">Community Edition</a></li>
+        <li><a href="<%= @items['/ee/README.*'].path %>">Enterprise Edition</a></li>
+        <li><a href="<%= @items['/omnibus/README.*'].path %>">Omnibus</a></li>
       </ul>
     </div>
     <div class="main">

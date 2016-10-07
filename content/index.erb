@@ -9,3 +9,19 @@ title: GitLab Documentation
     <li><%= link_to item[:title], item %></li>
   <% end %>
 </ul>
+
+<h2>Enterprise Edition</h2>
+
+<ul>
+  <% @items.find_all("/ee/**/*.md").each do |item| %>
+    <li><%= link_to item[:title], item %></li>
+  <% end %>
+</ul>
+
+<h2>Omnibus</h2>
+
+<ul>
+  <% @items.find_all("/omnibus/**/*.md").each do |item| %>
+    <li><%= link_to item[:title], item %></li>
+  <% end %>
+</ul>
