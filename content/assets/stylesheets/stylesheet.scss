@@ -6,6 +6,11 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+code, code span {
+  font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+  font-size: 14px;
+}
+
 body {
   background: #fff;
 }
@@ -24,7 +29,8 @@ a:hover {
 }
 
 #main {
-  margin: 20px;
+  margin: auto;
+  padding: 20px;
   position: relative;
 
   width: auto;

@@ -7,7 +7,8 @@ end
 compile '/**/*.md' do
   filter :kramdown,
     input: 'GFM',
-    syntax_highlighter: 'rouge'
+    syntax_highlighter: 'rouge',
+    hard_wrap: false
 
   layout '/default.*'
 end
