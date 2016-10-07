@@ -11,6 +11,8 @@ compile '/**/*.md' do
     hard_wrap: false
 
   layout '/default.*'
+
+  filter :md_to_html_ext
 end
 
 compile '/**/*.scss' do
