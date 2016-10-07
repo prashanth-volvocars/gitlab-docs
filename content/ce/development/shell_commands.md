@@ -1,3 +1,7 @@
+---
+title: Guidelines for shell commands in the GitLab codebase
+---
+
 # Guidelines for shell commands in the GitLab codebase
 
 This document contains guidelines for working with processes and files in the GitLab codebase.

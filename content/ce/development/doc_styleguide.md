@@ -1,3 +1,7 @@
+---
+title: Documentation styleguide
+---
+
 # Documentation styleguide
 
 This styleguide recommends best practices to improve documentation and to keep

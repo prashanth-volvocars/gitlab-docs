@@ -1,3 +1,7 @@
+---
+title: UI Guide for building GitLab
+---
+
 # UI Guide for building GitLab
 
 ## GitLab UI development kit

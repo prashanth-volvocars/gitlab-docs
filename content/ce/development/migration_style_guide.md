@@ -1,3 +1,7 @@
+---
+title: Migration Style Guide
+---
+
 # Migration Style Guide
 
 When writing migrations for GitLab, you have to take into account that

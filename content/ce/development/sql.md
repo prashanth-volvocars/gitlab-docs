@@ -1,3 +1,7 @@
+---
+title: SQL Query Guidelines
+---
+
 # SQL Query Guidelines
 
 This document describes various guidelines to follow when writing SQL queries,

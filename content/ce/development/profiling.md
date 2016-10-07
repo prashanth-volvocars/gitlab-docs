@@ -1,3 +1,7 @@
+---
+title: Profiling
+---
+
 # Profiling
 
 To make it easier to track down performance problems GitLab comes with a set of

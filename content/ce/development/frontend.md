@@ -1,3 +1,7 @@
+---
+title: Frontend Development Guidelines
+---
+
 # Frontend Development Guidelines
 
 This document describes various guidelines to ensure consistency and quality

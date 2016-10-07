@@ -1,3 +1,7 @@
+---
+title: SCSS styleguide
+---
+
 # SCSS styleguide
 
 This style guide recommends best practices for SCSS to make styles easy to read,

@@ -1,3 +1,7 @@
+---
+title: Shared files
+---
+
 # Shared files
 
 Historically, GitLab has been storing shared files in many different

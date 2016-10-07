@@ -1,3 +1,7 @@
+---
+title: Instrumenting Ruby Code
+---
+
 # Instrumenting Ruby Code
 
 GitLab Performance Monitoring allows instrumenting of both methods and custom

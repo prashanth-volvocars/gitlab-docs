@@ -1,3 +1,7 @@
+---
+title: Newlines styleguide
+---
+
 # Newlines styleguide
 
 This style guide recommends best practices for newlines in Ruby code.

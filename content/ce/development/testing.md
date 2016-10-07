@@ -1,3 +1,7 @@
+---
+title: Testing Standards and Style Guidelines
+---
+
 # Testing Standards and Style Guidelines
 
 This guide outlines standards and best practices for automated testing of GitLab

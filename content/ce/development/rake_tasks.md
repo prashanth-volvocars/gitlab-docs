@@ -1,3 +1,7 @@
+---
+title: Rake tasks for developers
+---
+
 # Rake tasks for developers
 
 ## Setup db with developer seeds

@@ -1,3 +1,7 @@
+---
+title: Sidekiq debugging
+---
+
 # Sidekiq debugging
 
 ## Log arguments to Sidekiq jobs

@@ -1,3 +1,7 @@
+---
+title: Merge Request Performance Guidelines
+---
+
 # Merge Request Performance Guidelines
 
 To ensure a merge request does not negatively impact performance of GitLab

@@ -1,3 +1,7 @@
+---
+title: What you should know about omnibus packages
+---
+
 # What you should know about omnibus packages
 
 Most users install GitLab using our omnibus packages. As a developer it can be

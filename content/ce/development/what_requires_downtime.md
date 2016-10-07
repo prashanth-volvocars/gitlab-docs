@@ -1,3 +1,7 @@
+---
+title: What requires downtime?
+---
+
 # What requires downtime?
 
 When working with a database certain operations can be performed without taking

@@ -1,3 +1,7 @@
+---
+title: Gotchas
+---
+
 # Gotchas
 
 The purpose of this guide is to document potential "gotchas" that contributors

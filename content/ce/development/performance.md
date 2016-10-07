@@ -1,3 +1,7 @@
+---
+title: Performance Guidelines
+---
+
 # Performance Guidelines
 
 This document describes various guidelines to follow to ensure good and
