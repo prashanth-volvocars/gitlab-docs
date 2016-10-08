@@ -14,7 +14,7 @@ title: GitLab Documentation
 
 <ul>
   <% @items.find_all("/ee/**/*.md").each do |item| %>
-    <li><%= link_to item[:title], item %></li>
+    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
   <% end %>
 </ul>
 
@@ -22,6 +22,6 @@ title: GitLab Documentation
 
 <ul>
   <% @items.find_all("/omnibus/**/*.md").each do |item| %>
-    <li><%= link_to item[:title], item %></li>
+    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
   <% end %>
 </ul>
