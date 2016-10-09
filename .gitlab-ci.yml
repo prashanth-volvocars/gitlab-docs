@@ -2,6 +2,11 @@
 # Full project: https://gitlab.com/pages/nanoc
 image: ruby:2.3
 
+cache:
+  key: "ruby-231"
+  paths:
+  - vendor/ruby
+
 pages:
   script:
   - bundle install

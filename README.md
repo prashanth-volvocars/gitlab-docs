@@ -21,6 +21,7 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 - [GitHub Developer Site](https://github.com/github-archive/developer.github.com)
 - [Spree Guides](https://github.com/spree/spree/tree/master/guides)
 - [Atom Flight Manual](https://github.com/atom/flight-manual.atom.io)
+- [Prometheus Docs](https://github.com/prometheus/docs)
 
 ### Good Documentation
 
@@ -37,10 +38,10 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 - [ ] Feature parity with the existing [docs.gitlab.com](https://docs.gitlab.com/)
 - [x] Use GitLab CI / GitLab Pages for compilation, deployment, and hosting of the Documentation site.
 - [x] Sections for Community Edition, Enterprise Edition, GitLab CI, and Omnibus.
-- [ ] Pull documentation from the repositories mentioned above.
+- [x] Pull documentation from the repositories mentioned above.
 - [ ] Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
 - [ ] Automatically generated API documentation.
-- [ ] Search the documentation, can probably use existing Documentation search functionality.
+- [ ] Search the documentation (Can either re-use existing Documentation search functionality or implement search using Algolia or something else? Ideally simple and open source, but it doesn't really matter too much.)
 - [ ] Link to "Edit on GitLab.com" for every page to encourage contribution.
 - [ ] Responsive design.
 
