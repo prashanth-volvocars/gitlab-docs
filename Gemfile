@@ -6,7 +6,7 @@ gem 'adsf'
 gem 'sass'
 gem 'kramdown'
 gem 'rouge', '~> 1.11'
-gem 'rake'
+gem 'rake', '~> 11.3'
 
 group :nanoc do
   gem 'guard-nanoc'
