@@ -5,7 +5,7 @@ image: ruby:2.3
 pages:
   script:
   - bundle install
-  - RAKE_FORCE_DELETE=true rake pull_repos
+  - rake pull_repos
   - nanoc
   artifacts:
     paths:

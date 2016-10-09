@@ -1,46 +1,45 @@
-require 'optparse'
-
-# Runs by default in "safe-mode" where confirmation is requested before
-# removing directories. Run `RAKE_FORCE_DELETE=true rake pull_repos` to
-# force directory deletion without any confirmation.
+# By default won't delete any directories, requires all relevant directories
+# be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to force directory
+# deletion without any confirmation.
 desc 'Pulls down the CE, EE, and Omnibus git repos and merges the content of their doc directories into the nanoc site'
 task :pull_repos do
-  force = ENV['RAKE_FORCE_DELETE']
+  force_delete = ENV['RAKE_FORCE_DELETE']
 
   ce = {
     repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git',
     temp_dir: 'tmp/ce/',
-    dest_dir: 'content/ce/'
+    dest_dir: 'content/ce'
   }
 
   ee = {
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git',
     temp_dir: 'tmp/ee/',
-    dest_dir: 'content/ee/'
+    dest_dir: 'content/ee'
   }
 
   omnibus = {
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git',
     temp_dir: 'tmp/omnibus/',
-    dest_dir: 'content/omnibus/'
+    dest_dir: 'content/omnibus'
   }
 
   products = [ce, ee, omnibus]
-
   dirs = []
   products.each do |product|
     dirs.push(product[:temp_dir])
     dirs.push(product[:dest_dir])
   end
 
-  unless force
+  if force_delete
     puts "WARNING: Are you sure you want to remove #{dirs.join(', ')}? [y/n]"
     exit unless STDIN.gets.index(/y/i) == 0
-  end
 
-  dirs.each do |dir|
-    puts "\n=> Deleting #{dir} if it exists\n"
-    `rm -rf #{dir}`
+    dirs.each do |dir|
+      puts "\n=> Deleting #{dir} if it exists\n"
+      `rm -rf #{dir}`
+    end
+  else
+    puts "NOTE: The following directories must be empty otherwise this task will fail: #{dirs.join(', ')}"
   end
   
   products.each do |product|
