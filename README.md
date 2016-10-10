@@ -40,7 +40,6 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 - [x] Sections for Community Edition, Enterprise Edition, GitLab CI, and Omnibus.
 - [x] Pull documentation from the repositories mentioned above.
 - [ ] Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
-- [ ] Automatically generated API documentation.
 - [ ] Search the documentation (Can either re-use existing Documentation search functionality or implement search using Algolia or something else? Ideally simple and open source, but it doesn't really matter too much.)
 - [ ] Link to "Edit on GitLab.com" for every page to encourage contribution.
 - [ ] Responsive design.
@@ -58,6 +57,7 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 - [x] Syntax highlighting with Rouge.
 - [ ] Auto-generated documentation structure based on YML frontmatter.
 - [ ] Version dropdown that links to the current page for that version (if it exists).
+- [ ] Automatically generated API documentation.
 
 ## Implementation details
 
