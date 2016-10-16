@@ -11,6 +11,8 @@ To set up the site locally:
 
 This will host the site at `localhost:3000`. Changes will be reloaded automatically using [Guard Nanoc](https://github.com/guard/guard-nanoc).
 
+To pull down the documentation content, run `rake pull_repos`. If you want to force-delete the `tmp/` and `content/` folders so the task will run without manual intervention, run `RAKE_FORCE_DELETE=true rake pull_repos`.
+
 ## Examples and Resources
 
 ### Open Source Nanoc Sites
@@ -32,6 +34,7 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 - [Heroku](https://devcenter.heroku.com/)
 - [Slack](https://get.slack.help/hc/en-us)
 - [Slack API](https://api.slack.com/)
+- [Kong](https://getkong.org/docs/)
 
 ## Requirements/Goals
 

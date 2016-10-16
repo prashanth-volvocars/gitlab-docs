@@ -22,7 +22,7 @@ end
 
 compile '/index.*' do
   filter :erb
-  layout '/default.*'
+  layout '/home.*'
   write '/index.html'
 end
 

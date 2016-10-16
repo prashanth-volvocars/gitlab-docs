@@ -2,26 +2,32 @@
 title: GitLab Documentation
 ---
 
-<h2>Community Edition</h2>
-
-<ul>
-  <% @items.find_all("/ce/*/README.md").each do |item| %>
-    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
-  <% end %>
-</ul>
-
-<h2>Enterprise Edition</h2>
-
-<ul>
-  <% @items.find_all("/ee/**/*.md").each do |item| %>
-    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
-  <% end %>
-</ul>
-
-<h2>Omnibus</h2>
-
-<ul>
-  <% @items.find_all("/omnibus/**/*.md").each do |item| %>
-    <li><%= link_to item.attributes.include?(:title) ? item[:title] : item.identifier.without_ext, item %></li>
-  <% end %>
+<ul class="topics">
+  <li class="topic-ce">
+    <a href="<%= @items['/ce/README.*'].path %>">
+      <div class="wrapper">
+        <div class="circle">CE</div>
+        <h2>GitLab Community Edition</h2>
+        <p>Browse user and administraction documentation and guides for GitLab Community Edition.</p>
+      </div>
+    </a>
+  </li>
+  <li class="topic-ee">
+    <a href="<%= @items['/ee/README.*'].path %>">
+      <div class="wrapper">
+        <div class="circle">EE</div>
+        <h2>GitLab Enterprise Edition<br>and GitLab.com</h2>
+        <p>Browse user and administraction documentation and guides for GitLab Enterprise Edition and GitLab.com.</p>
+      </div>
+    </a>
+  </li>
+  <li class="topic-omnibus">
+    <a href="<%= @items['/omnibus/README.*'].path %>">
+      <div class="wrapper">
+        <div class="circle">OM</div>
+        <h2>Omnibus GitLab</h2>
+        <p>Browse installation, configuration, maintenance and troubleshooting documentation for Omnibus GitLab.</p>
+      </div>
+    </a>
+  </li>
 </ul>

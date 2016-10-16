@@ -1,6 +1,6 @@
 # By default won't delete any directories, requires all relevant directories
-# be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to force directory
-# deletion without any confirmation.
+# be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
+# deleted.
 desc 'Pulls down the CE, EE, and Omnibus git repos and merges the content of their doc directories into the nanoc site'
 task :pull_repos do
   force_delete = ENV['RAKE_FORCE_DELETE']
@@ -39,7 +39,11 @@ task :pull_repos do
       `rm -rf #{dir}`
     end
   else
-    puts "NOTE: The following directories must be empty otherwise this task will fail: #{dirs.join(', ')}"
+    puts "NOTE: The following directories must be empty otherwise this task" +
+      "will fail:\n#{dirs.join(', ')}"
+    puts "If you want to force-delete the `tmp/` and `content/` folders so \n" +
+      "the task will run without manual intervention, run \n" +
+      "`RAKE_FORCE_DELETE=true rake pull_repos`."
   end
   
   products.each do |product|

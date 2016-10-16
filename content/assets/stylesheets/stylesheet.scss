@@ -14,6 +14,7 @@ body {
   background: #fff;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 a {
@@ -127,5 +128,147 @@ hr {
     display: inline-block;
     line-height: 20px;
     margin: 0 10px;
+  }
+}
+
+body.landing {
+  background-color: #f9f9f9;
+
+  .landing-header {
+    padding: 75px 35px 200px 35px;
+    background-color: #34373c;
+    text-align: center;
+    color: #fff;
+
+    input {
+      margin-top: 50px;
+      border-radius: 0;
+      font-size: 20px;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-top: 20px;
+   
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .st-ui-search-input, .st-default-search-input {
+    width: 300px !important;
+    height: 35px !important;
+    padding: 15px 15px 15px 40px !important;
+  }
+
+  .st-ui-search-input, .st-default-search-input, span.st-ui-search-icon {
+    background-size: 16px 16px !important;
+    background-position: 15px 25px !important;
+  }
+}
+
+.topics {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  top: -100px;
+  max-width: 1100px;
+  margin: auto;
+  -webkit-padding-start: 0;
+
+  li {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 2px;
+    margin: 15px;
+    flex: 1;
+    min-width: 300px;
+
+    @media all and (max-width: $mobile-width) {
+      width: 100%;
+      min-width: auto;
+      flex: initial;
+      margin: 20px;
+    }
+
+    a p, a:visited p {
+      color: #553a3a;
+      vertical-align: bottom;
+    }
+
+    .wrapper {
+      padding: 0 35px 40px;
+
+      @media all and (max-width: $mobile-width) {
+        padding: 0 15px 15px;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 21px;
+    }
+
+    a, a:visited {
+      text-decoration: none;
+
+      h2 {
+        height: 70px;
+        margin-bottom: 25px;
+        
+        @media all and (max-width: $mobile-width) {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 2.35;
+  color: #fff;
+  position: relative;
+  margin: auto;
+  top: -28px;
+}
+
+.topic-ce {
+  .circle {
+    background-color: rgb(1, 136, 101);
+  }
+
+  h2 {
+    color: rgb(1, 120, 85);
+  }
+}
+
+.topic-ee {
+  .circle {
+    background-color: rgb(25, 112, 169);
+  }
+
+  h2 {
+    color: rgb(9, 96, 153);
+  }
+}
+
+.topic-omnibus {
+  .circle {
+    background-color: rgb(107, 79, 187);
+  }
+
+  h2 {
+    color: rgb(107, 79, 187);
   }
 }
