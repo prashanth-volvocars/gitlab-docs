@@ -12,7 +12,7 @@ pages:
   environment:
     name: production
   script:
-  - bundle install
+  - bundle install --path vendor
   - rake pull_repos
   - nanoc
   artifacts:
