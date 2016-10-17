@@ -81,7 +81,7 @@ checks:
     # If an external link matches this pattern, the validity check will be skipped.
     # E.g.:
     #   exclude: ['^http://example.com$']
-    exclude: []
+    exclude: ['http:\/\/127\.0\.0\.1:3000.*', 'http:\/\/www\.amazon\.com\/.*', 'http:\/\/www\.amazon\.co\.uk\/.*', 'http:\/\/192\.168\.59\.103']
 
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.
