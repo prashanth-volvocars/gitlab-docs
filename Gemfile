@@ -10,4 +10,7 @@ gem 'rake', '~> 11.3'
 
 group :nanoc do
   gem 'guard-nanoc'
+
+  # nanoc checks
+  gem 'nokogiri', '~> 1.6.8'
 end

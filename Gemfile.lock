@@ -33,11 +33,14 @@ GEM
       ruby_dep (~> 1.2)
     lumberjack (1.0.10)
     method_source (0.8.2)
+    mini_portile2 (2.1.0)
     nanoc (4.3.4)
       cri (~> 2.3)
       hamster (~> 3.0)
       ref (~> 2.0)
     nenv (0.3.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -66,6 +69,7 @@ DEPENDENCIES
   guard-nanoc
   kramdown
   nanoc (~> 4.0)
+  nokogiri (~> 1.6.8)
   rake (~> 11.3)
   rouge (~> 1.11)
   sass
