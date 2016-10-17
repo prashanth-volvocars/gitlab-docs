@@ -12,5 +12,8 @@ group :nanoc do
   gem 'guard-nanoc'
 
   # nanoc checks
-  gem 'nokogiri', '1.6.8'
+  gem 'nokogiri', '~> 1.6.8'
+
+  # Needed to generate Sitemap
+  gem 'builder'
 end
