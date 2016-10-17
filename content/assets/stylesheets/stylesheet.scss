@@ -2,12 +2,6 @@ $mobile-width: 800px;
 
 *, *::before, *::after {
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-code, code span {
-  font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
-  font-size: 14px;
 }
 
 body {
@@ -15,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -51,6 +46,17 @@ blockquote {
 hr {
   border: 0;
   border-top: 1px solid #e5e5e5;
+}
+
+code, code span {
+  font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  code {
+    font-size: inherit;
+  }
 }
 
 .main {
@@ -98,25 +104,34 @@ hr {
 
 .header {
   position: relative;
+  height: 50px;
   width: 100%;
-  padding: 5px 20px;
+  padding: 0 25px;
   border-bottom: 1px solid #ccc;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
 
-  h2 {
-    text-transform: uppercase;
-    font-size: 13px;
+  img {
+    position: absolute;
+    height: 50px;
+  }
+
+  p {
+    font-size: 20px;
     color: #333;
-    letter-spacing: 1px;
-    line-height: 20px;
     display: inline-block;
+    padding: 10px 0;
+    padding-left: 55px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
   }
 
   ul {
-    float: right;
+    text-align: right;
     list-style-type: none;
     display: inline-block;
-    margin: 10px 0;
+    margin: 12px 0;
 
     @media all and (max-width: $mobile-width) {
       display: none;
@@ -131,6 +146,10 @@ hr {
   }
 }
 
+
+
+
+
 body.landing {
   background-color: #f9f9f9;
 
@@ -144,6 +163,10 @@ body.landing {
       margin-top: 50px;
       border-radius: 0;
       font-size: 20px;
+    }
+
+    img {
+      width: 280px;
     }
   }
 
@@ -212,6 +235,7 @@ body.landing {
     h2 {
       text-align: center;
       font-size: 21px;
+      font-weight: 400;
     }
 
     a, a:visited {
