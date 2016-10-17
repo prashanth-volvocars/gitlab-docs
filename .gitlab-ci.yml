@@ -8,6 +8,9 @@ cache:
   - vendor/ruby
 
 pages:
+  stage: deploy
+  environment:
+    name: production
   script:
   - bundle install
   - rake pull_repos
