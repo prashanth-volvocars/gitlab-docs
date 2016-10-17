@@ -39,7 +39,7 @@ task :pull_repos do
       `rm -rf #{dir}`
     end
   else
-    puts "NOTE: The following directories must be empty otherwise this task" +
+    puts "NOTE: The following directories must be empty otherwise this task " +
       "will fail:\n#{dirs.join(', ')}"
     puts "If you want to force-delete the `tmp/` and `content/` folders so \n" +
       "the task will run without manual intervention, run \n" +
