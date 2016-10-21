@@ -16,7 +16,11 @@ module Nanoc::Filters
 
       # Replace `EDIT_ON_GITLAB_LINK` with the actual URL.
       content.gsub(/href="(EDIT_ON_GITLAB_LINK)"/) do |result|
-        result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}")
+        if product == "omnibus"
+          result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{content_filename}")
+        else
+          result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}")
+        end
         result
       end
     end
