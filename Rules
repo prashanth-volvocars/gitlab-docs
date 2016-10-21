@@ -13,6 +13,7 @@ compile '/**/*.md' do
   layout '/default.*'
 
   filter :md_to_html_ext
+  filter :edit_on_gitlab_link
 end
 
 compile '/**/*.scss' do

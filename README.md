@@ -44,7 +44,7 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 - [x] Pull documentation from the repositories mentioned above.
 - [ ] Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
 - [ ] Search the documentation (Can either re-use existing Documentation search functionality or implement search using Algolia or something else? Ideally simple and open source, but it doesn't really matter too much.)
-- [ ] Link to "Edit on GitLab.com" for every page to encourage contribution.
+- [x] Link to "Edit on GitLab.com" for every page to encourage contribution.
 - [ ] Responsive design.
 
 ### Nice-to-haves
