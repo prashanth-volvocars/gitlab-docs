@@ -14,11 +14,14 @@ module Nanoc::Filters
       # This should be the path from the doc/ directory for a given file.
       content_filename = content_filename_array.join("/")
 
-      # Replace `EDIT_ON_GITLAB_LINK` with the actual URL.
+      # Replace `EDIT_ON_GITLAB_LINK` with the actual URL pointing to
+      # the source file.
       content.gsub(/href="(EDIT_ON_GITLAB_LINK)"/) do |result|
         if product == "omnibus"
+          # omnibus-gitlab repo
           result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{content_filename}")
         else
+          # gitlab-ce and gitlab-ee repos
           result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}")
         end
         result
