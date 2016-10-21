@@ -9,12 +9,24 @@ task :pull_repos do
     repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git',
     temp_dir: 'tmp/ce/',
     dest_dir: 'content/ce'
+    versions: {
+      8.9: 'v8.9.0',
+      8.11: 'v8.10.0',
+      8.11: 'v8.11.0',
+      8.12: 'v8.12.0'
+    }
   }
 
   ee = {
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git',
     temp_dir: 'tmp/ee/',
-    dest_dir: 'content/ee'
+    dest_dir: 'content/ee',
+    versions: {
+      8.9: 'v8.9.0',
+      8.11: 'v8.10.0',
+      8.11: 'v8.11.0',
+      8.12: 'v8.12.0'
+    }
   }
 
   omnibus = {
