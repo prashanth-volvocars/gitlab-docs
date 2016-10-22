@@ -54,7 +54,8 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 - [ ] Future-proofing for internationalization.
 - [ ] Tests for working internal links and such. (Nanoc includes this by default!)
 - [ ] Automated screenshots! (Not really directly related, but I still want it.)
-- [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as all open source tools.
+- [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as (almost all?) open source tools.
+- [ ] Breadcrumbs for navigating between pages.
 - [ ] Auto-generated Table of Contents for every page.
 - [ ] Anchor links for every page section.
 - [x] Syntax highlighting with Rouge.
@@ -100,7 +101,7 @@ Have the build process for the Docs site pull artifacts down from each repositor
 - Artifacts would need to be hosted long-term by CI.
 - Can't generate artifacts exclusively for tags, would be generated for every commit.
 
-**Pull in repositories dynamically**:
+**Pull in repositories dynamically** (this is what we went with):
 
 Pull down the repositories during the build process and splice the docs directories together in the right places for use with the nanoc site.
 
