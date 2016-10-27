@@ -1,27 +1,25 @@
 module Nanoc::Helpers
   module ChildParentBetter
-    def parent_path_array(item)
+    # Returns an array of ancestor pages for the given page.
+    def ancestor_path_array(item)
       parent_array = Array.new
       current_item = item
-      until (parent_path(current_item).nil?) do
-        if (parent_array.length == 0)
-          parent = parent_path(item)
-          parent_array.push(parent) if parent
-        else
-          parent = parent_path(parent_array.last)
-          current_item = parent_array.last
-          parent_array.push(parent) if parent
-        end
+      # Until the current item has no parent, keep running.
+      until (get_nearest_parent(current_item.identifier.to_s).nil?) do
+        # Set the current item to the last item in the array
+        # unless this is the first item.
+        current_item = parent_array.last unless parent_array.empty?
+        # Get the nearest parent of the current item.
+        parent = get_nearest_parent(current_item.identifier.to_s)
+        # Push the parent of the current item into the array.
+        parent_array.push(parent) if parent
       end
+
       parent_array
     end
 
-    def parent_path(item)
-      parent = get_nearest_parent(item.identifier.to_s)
-      parent
-    end
-
-    # Recursion!
+    # A recursive function which returns the nearest parent item for the
+    # given path.
     def get_nearest_parent(item_identifier)
       if (item_identifier.nil? || (item_identifier.to_s.end_with?('README.md') && item_identifier.to_s.split('/').length == 3))
         return

@@ -26,9 +26,9 @@
     </div>
     <div class="main class">
       <ul class="breadcrumbs">
-        <% parent_array = parent_path_array(@item) unless parent_path_array(@item).empty? %>
-        <% if parent_array %>
-          <% parent_array.reverse_each do |item| %>
+        <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
+        <% if ancestor_array %>
+          <% ancestor_array.reverse_each do |item| %>
             <li class="breadcrumb"><%= link_to "Breadcrumb", item %></li>
           <% end %>
         <% end %>
