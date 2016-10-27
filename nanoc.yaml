@@ -91,3 +91,7 @@ checks:
     # E.g.:
     #   exclude_files: ['blog/page']
     exclude_files: []
+
+# Whether or not breadcrumbs are enabled.
+# Disabled for now.
+breadcrumbs: false
