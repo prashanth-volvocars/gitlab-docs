@@ -1,5 +1,21 @@
 #!/usr/bin/env ruby
 
+preprocess do
+  @items.each do |item|
+    if item.identifier.to_s.end_with?(".md") && !item.binary?
+      begin
+        title = item.raw_content.match(/^[#] .*$/s).to_s
+        title.gsub!('# ', '')
+        item[:title] = title
+      # Encoding errors happen on some files for some reason, so we
+      # rescue them.
+      rescue Encoding::CompatibilityError
+        puts "Encoding error"
+      end
+    end
+  end
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
