@@ -14,14 +14,16 @@ body {
 
 a {
   text-decoration: none;
+  color: #3084bb;
 
   &:link,
   &:visited {
-    color: #f30;
+    color: #3084bb;
   }
 
   &:hover {
-    color: #f90;
+    color: #20597e;
+    text-decoration: underline;
   }
 }
 
