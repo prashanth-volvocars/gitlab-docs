@@ -1,17 +1,16 @@
 /* https://github.com/aahan/pygments-github-style */
 
-.highlighter-rouge {
-  pre {
-    padding: 10px 15px;
-    border-radius: 5px;
-    border: 1px solid #e5e5e5;
-    overflow-x: auto;
-    margin: 20px 0;
-  }
+pre.highlight {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  overflow-x: auto;
+  margin: 20px 0;
 
   // Code itself
-  pre.code {
-    border-color: #f0f0f0;
+  code {
+    border-color: transparent;
+    color: inherit;
     background-color: transparent;
   }
 

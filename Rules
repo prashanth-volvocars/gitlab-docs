@@ -21,10 +21,18 @@ compile '/**/*.html' do
 end
 
 compile '/**/*.md' do
-  filter :kramdown,
-    input: 'GFM',
-    syntax_highlighter: 'rouge',
-    hard_wrap: false
+  filter :redcarpet,
+    renderer: HTML,
+    options: {
+      fenced_code_blocks:  true,
+      footnotes:           true,
+      lax_spacing:         true,
+      no_intra_emphasis:   true,
+      space_after_headers: true,
+      strikethrough:       true,
+      superscript:         true,
+      tables:              true
+    }
 
   layout '/default.*'
 
