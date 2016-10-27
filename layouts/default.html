@@ -25,12 +25,15 @@
       </ul>
     </div>
     <div class="main class">
-      <div>
-        <% parent_path_item = parent_path(@item) unless parent_path(@item).nil? %>
-        <% unless parent_path_item.nil? %>
-          <%= link_to "Go back", parent_path_item %>
+      <ul class="breadcrumbs">
+        <% parent_array = parent_path_array(@item) unless parent_path_array(@item).empty? %>
+        <% if parent_array %>
+          <% parent_array.reverse_each do |item| %>
+            <li class="breadcrumb"><%= link_to "Breadcrumb", item %></li>
+          <% end %>
         <% end %>
-      </div>
+        <li class="breadcrumb">Current page</li>
+      </ul>
       <%= yield %>
       <hr>
       <footer>

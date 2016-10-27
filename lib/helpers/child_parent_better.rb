@@ -1,5 +1,21 @@
 module Nanoc::Helpers
   module ChildParentBetter
+    def parent_path_array(item)
+      parent_array = Array.new
+      current_item = item
+      until (parent_path(current_item).nil?) do
+        if (parent_array.length == 0)
+          parent = parent_path(item)
+          parent_array.push(parent) if parent
+        else
+          parent = parent_path(parent_array.last)
+          current_item = parent_array.last
+          parent_array.push(parent) if parent
+        end
+      end
+      parent_array
+    end
+
     def parent_path(item)
       parent = get_nearest_parent(item.identifier.to_s)
       parent
@@ -11,7 +27,7 @@ module Nanoc::Helpers
         return
       elsif item_identifier.to_s.end_with?('README.md')
         parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
-        get_nearest_parent(parent_dir)
+        return get_nearest_parent(parent_dir)
       else
         parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
         parent = @items[parent_dir + '/README.*']

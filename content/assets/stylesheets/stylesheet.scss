@@ -28,11 +28,16 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-x: scroll;
 
   td, th {
     text-align: left;
     padding: 5px 10px;
     border-bottom: 1px solid #e5e5e5;
+  }
+
+  @media all and (max-width: $mobile-width) {
+    display: block;
   }
 }
 
@@ -122,6 +127,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
   display: flex;
   justify-content: space-between;
+  white-space: nowrap;
+  overflow-x: hidden;
 
   img {
     position: absolute;
@@ -166,6 +173,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.breadcrumbs {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  padding: 0;
+
+  .breadcrumb {
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow-x: hidden;
+
+    &:not(:last-child)::after {
+      content: '/';
+    }
+
+    &:after {
+      padding: 0 4px;
+    }
+  }
+}
 
 
 
