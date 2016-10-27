@@ -94,4 +94,4 @@ checks:
 
 # Whether or not breadcrumbs are enabled.
 # Disabled for now.
-breadcrumbs: false
+breadcrumbs: true
