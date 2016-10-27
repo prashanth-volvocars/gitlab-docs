@@ -57,5 +57,6 @@ end
 
 # Leave the favicon alone.
 passthrough '/favicon.ico'
+passthrough '/.well-known/**/*'
 
 layout '/**/*', :erb

@@ -64,6 +64,7 @@ data_sources:
     # “full”, meaning that identifiers include file extensions. This can also
     # be “legacy”, primarily used by older Nanoc sites.
     identifier_type: full
+    extra_files: ['.well-known/**/*']
 
 # Configuration for the “check” command, which run unit tests on the site.
 checks:
