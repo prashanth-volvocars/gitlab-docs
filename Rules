@@ -6,7 +6,7 @@ preprocess do
       begin
         title = item.raw_content.match(/^[#] .*$/s).to_s
         title.gsub!('# ', '')
-        item[:title] = title
+        item[:title] = title unless title.empty?
       # Encoding errors happen on some files for some reason, so we
       # rescue them.
       rescue Encoding::CompatibilityError
