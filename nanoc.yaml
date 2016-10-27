@@ -24,7 +24,7 @@ index_filenames: [ 'index.html' ]
 # before and after the last site compilation.
 enable_output_diff: false
 
-base_url: https://docs.gitlab.com
+base_url: https://docs-dev.gitlab.com
 
 prune:
   # Whether to automatically remove files not managed by Nanoc from the output
