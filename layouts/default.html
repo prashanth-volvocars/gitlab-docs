@@ -25,6 +25,12 @@
       </ul>
     </div>
     <div class="main class">
+      <div>
+        <% parent_path_item = parent_path(@item) unless parent_path(@item).nil? %>
+        <% unless parent_path_item.nil? %>
+          <%= link_to "Go up", parent_path_item %>
+        <% end %>
+      </div>
       <%= yield %>
       <hr>
       <footer>
