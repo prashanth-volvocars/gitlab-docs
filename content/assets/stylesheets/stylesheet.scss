@@ -143,6 +143,8 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 55px;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 
   ul {
