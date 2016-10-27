@@ -1,29 +1,25 @@
 module Nanoc::Helpers
   module ChildParentBetter
     def parent_path(item)
-      if item.identifier.to_s.end_with?('README.md')
-        path_without_last_component = item.identifier.to_s.sub(/[^\/]+$/, '').chop
-        path_without_last_component = path_without_last_component.to_s.sub(/[^\/]+$/, '').chop
-        parent = @items[path_without_last_component + '/README.*']
-      else
-        path_without_last_component = item.identifier.to_s.sub(/[^\/]+$/, '').chop
-        parent = @items[path_without_last_component + '/README.*']
-      end
-
-      if parent.nil?
-        path_without_last_component = path_without_last_component.sub(/[^\/]+$/, '').chop
-        parent = @items[path_without_last_component + '/README.*']
-      end
-      # puts "#{item.identifier.to_s}, #{parent.identifier.to_s if parent}"
+      parent = get_nearest_parent(item.identifier.to_s)
       parent
     end
 
-    def children_of(item)
-      if item.identifier.legacy?
-        item.children
+    # Recursion!
+    def get_nearest_parent(item_identifier)
+      if (item_identifier.nil? || (item_identifier.to_s.end_with?('README.md') && item_identifier.to_s.split('/').length == 3))
+        return
+      elsif item_identifier.to_s.end_with?('README.md')
+        parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
+        get_nearest_parent(parent_dir)
       else
-        pattern = item.identifier.without_ext + '/*'
-        @items.find_all(pattern)
+        parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
+        parent = @items[parent_dir + '/README.*']
+        if parent.nil?
+          get_nearest_parent(parent_dir)
+        else
+          return parent
+        end
       end
     end
   end
