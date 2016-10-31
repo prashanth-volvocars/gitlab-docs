@@ -42,7 +42,9 @@ compile '/**/*.md' do
 end
 
 compile '/**/*.scss' do
-  filter :sass, syntax: :scss
+  filter :sass,
+    syntax: :scss,
+    style: :compressed
   write item.identifier.without_ext + '.css'
 end
 

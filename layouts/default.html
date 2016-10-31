@@ -1,16 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title><%= @item.attributes.include?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %></title>
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  </head>
+  <%= render '/head.*' %>
   <body>
     <div class="header">
       <a href="/">
