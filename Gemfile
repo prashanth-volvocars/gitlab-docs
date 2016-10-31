@@ -17,3 +17,7 @@ group :nanoc do
   # Needed to generate Sitemap
   gem 'builder'
 end
+
+group :test do
+  gem 'scss_lint', require: false
+end

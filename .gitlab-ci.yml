@@ -7,22 +7,33 @@ cache:
   paths:
   - vendor/ruby
 
+stages:
+  - test
+  - deploy
+
+before_script:
+  - bundle install --jobs 4 --path vendor
+
 verify_compile:
+  stage: test
   script:
-    - bundle install --path vendor
     - rake pull_repos
     - nanoc
   except:
     - master
+
+scss_lint:
+  stage: test
+  script:
+    - bundle exec scss-lint
 
 pages:
   stage: deploy
   environment:
     name: production
   script:
-  - bundle install --path vendor
-  - rake pull_repos
-  - nanoc
+    - rake pull_repos
+    - nanoc
   artifacts:
     paths:
     - public

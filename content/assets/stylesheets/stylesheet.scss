@@ -9,7 +9,14 @@ $sans-font-family: "Source Sans Pro", sans-serif;
 $link-color: #3084bb;
 $link-color-hover: #20597e;
 
+// Inline code colors
+$code-color: #c7254e;
+$code-background-color: #f9f2f4;
+
 // Home page colors
+$landing-background: #f9f9f9;
+$landing-header-background: #34373c;
+$topic-border: rgb(215, 215, 215);
 $topic-ce-circle-color: rgb(1, 136, 101);
 $topic-ce-header-color: rgb(1, 120, 85);
 $topic-ee-circle-color: rgb(25, 112, 169);
@@ -19,16 +26,20 @@ $topic-omnibus-header-color: rgb(107, 79, 187);
 
 // Other colors
 $border-color: #e5e5e5;
+$border-color-light: #f0f0f0;
 $table-border-color: $border-color;
 $hr-border-color: $border-color;
 $blockquote-border-color: $border-color;
+$search-border: rgba(0, 0, 0, .25);
+$white: #fff;
+$black: #333;
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
-  background: #fff;
+  background: $white;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -79,8 +90,8 @@ code, code span {
 }
 
 p code, li code, table code {
-  color: #c7254e;
-  background-color: #f9f2f4;
+  color: $code-color;
+  background-color: $code-background-color;
   padding: 2px 4px;
 }
 
@@ -128,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    border: 1px solid #f0f0f0;
+    border: 1px solid $border-color-light;
     padding: 5px;
     margin: 5px;
   }
@@ -143,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 50px;
   width: 100%;
   padding: 0 25px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $border-color;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -157,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 
   p {
     font-size: 20px;
-    color: #333;
+    color: $black;
     display: inline-block;
     padding: 10px 0;
     padding-left: 55px;
@@ -191,9 +202,9 @@ h1, h2, h3, h4, h5, h6 {
   // as the styles load.
   input {
     box-sizing: content-box;
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid $search-border;
     border-radius: 2px;
-    background-color: #fff;
+    background-color: $white;
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
     margin: -5px;
@@ -215,26 +226,25 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: hidden;
 
     &:not(:last-child)::after {
-      content: '/';
+      content: "/";
     }
 
-    &:after {
+    &::after {
       padding: 0 4px 0 6px;
     }
   }
 }
 
-
 // Home page //
 
-body.landing {
-  background-color: #f9f9f9;
+.landing {
+  background-color: $landing-background;
 
   .landing-header {
-    padding: 75px 35px 200px 35px;
-    background-color: #34373c;
+    padding: 75px 35px 200px;
+    background-color: $landing-header-background;
     text-align: center;
-    color: #fff;
+    color: $white;
 
     input {
       margin-top: 50px;
@@ -253,7 +263,7 @@ body.landing {
     margin-top: 20px;
    
     a {
-      color: #fff;
+      color: $white;
       text-decoration: none;
     }
   }
@@ -263,14 +273,14 @@ body.landing {
     height: 35px;
     padding: 15px 15px 15px 40px;
     width: auto;
-    border: 1px solid rgba(0,0,0,0.25);
+    border: 1px solid $search-border;
 
     @media all and (min-width: $mobile-width) {
       min-width: 300px;
     }
   }
 
-  .st-ui-search-input, .st-default-search-input, span.st-ui-search-icon {
+  .st-ui-search-input, .st-default-search-input, .st-ui-search-icon {
     background-size: 16px 16px;
     background-position: 15px 25px;
   }
@@ -288,8 +298,8 @@ body.landing {
 
   li {
     display: inline-block;
-    background-color: #fff;
-    border: 1px solid rgb(215, 215, 215);
+    background-color: $white;
+    border: 1px solid $topic-border;
     border-radius: 2px;
     margin: 15px;
     flex: 1;
@@ -303,7 +313,7 @@ body.landing {
     }
 
     a p, a:visited p {
-      color: #553a3a;
+      color: $black;
       vertical-align: bottom;
     }
 
@@ -344,7 +354,7 @@ body.landing {
   font-size: 24px;
   font-weight: 900;
   line-height: 2.35;
-  color: #fff;
+  color: $white;
   position: relative;
   margin: auto;
   top: -28px;

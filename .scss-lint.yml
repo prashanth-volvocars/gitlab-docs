@@ -1,0 +1,40 @@
+scss_files: "./content/assets/stylesheets/**"
+
+exclude:
+  - "./content/assets/stylesheets/highlight.scss"
+
+linters:
+  BorderZero:
+    severity: error
+  ColorKeyword:
+    severity: error
+  DuplicateProperty:
+    severity: error
+  EmptyLineBetweenBlocks:
+    enabled: false
+  EmptyRule:
+    severity: error
+  Indentation:
+    severity: error
+  ImportantRule:
+    severity: error
+  MergeableSelector:
+    severity: error
+  NestingDepth:
+    max_depth: 4
+  PropertySortOrder:
+    enabled: false
+  SingleLinePerSelector:
+    enabled: false
+  SelectorDepth:
+    max_depth: 4
+  StringQuotes:
+    style: double_quotes
+  TrailingSemicolon:
+    severity: error
+  TrailingWhitespace:
+    enabled: false
+  UrlFormat:
+    enabled: false
+  QualifyingElement:
+    severity: error
