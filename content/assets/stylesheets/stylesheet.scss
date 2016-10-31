@@ -168,12 +168,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   input {
-    border: 1px solid #e5e5e5;
+    box-sizing: content-box;
+    border: 1px solid rgba(0,0,0,0.25);
     border-radius: 2px;
     background-color: #fff;
     -webkit-appearance: none;
-    padding: 6px;
-    width: 200px;
+    padding: 7px 11px 7px 28px;
+    margin: -5px;
+    font-size: 14px;
+    width: 190px;
   }
 }
 
@@ -233,9 +236,15 @@ body.landing {
   }
 
   .st-ui-search-input, .st-default-search-input {
-    width: 300px !important;
+    box-sizing: content-box;
     height: 35px !important;
     padding: 15px 15px 15px 40px !important;
+    width: auto;
+    border: 1px solid rgba(0,0,0,0.25);
+
+    @media all and (min-width: $mobile-width) {
+      min-width: 300px;
+    }
   }
 
   .st-ui-search-input, .st-default-search-input, span.st-ui-search-icon {
