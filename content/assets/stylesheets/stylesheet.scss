@@ -1,4 +1,27 @@
+// Breakpoints
 $mobile-width: 800px;
+
+// Fonts
+$mono-font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace;
+$sans-font-family: "Source Sans Pro", sans-serif;
+
+// Link colors
+$link-color: #3084bb;
+$link-color-hover: #20597e;
+
+// Home page colors
+$topic-ce-circle-color: rgb(1, 136, 101);
+$topic-ce-header-color: rgb(1, 120, 85);
+$topic-ee-circle-color: rgb(25, 112, 169);
+$topic-ee-header-color: rgb(9, 96, 153);
+$topic-omnibus-circle-color: rgb(107, 79, 187);
+$topic-omnibus-header-color: rgb(107, 79, 187);
+
+// Other colors
+$border-color: #e5e5e5;
+$table-border-color: $border-color;
+$hr-border-color: $border-color;
+$blockquote-border-color: $border-color;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,20 +32,15 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $sans-font-family;
 }
 
-a {
+a, a:visited {
   text-decoration: none;
-  color: #3084bb;
-
-  &:link,
-  &:visited {
-    color: #3084bb;
-  }
+  color: $link-color;
 
   &:hover {
-    color: #20597e;
+    color: $link-color-hover;
     text-decoration: underline;
   }
 }
@@ -35,7 +53,7 @@ table {
   td, th {
     text-align: left;
     padding: 5px 10px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $table-border-color;
   }
 
   @media all and (max-width: $mobile-width) {
@@ -44,7 +62,7 @@ table {
 }
 
 blockquote {
-  border-left: 2px solid #e5e5e5;
+  border-left: 2px solid $blockquote-border-color;
   margin: 0;
   padding: 0 0 0 15px;
   font-style: italic;
@@ -52,11 +70,11 @@ blockquote {
 
 hr {
   border: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $hr-border-color;
 }
 
 code, code span {
-  font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+  font-family: $mono-font-family;
   font-size: 14px;
 }
 
@@ -167,6 +185,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 10px;
   }
 
+  // Match the Swiftype styles as closely as possible
+  // with some minor modifications.
+  // This prevents the search input from jumping around
+  // as the styles load.
   input {
     box-sizing: content-box;
     border: 1px solid rgba(0,0,0,0.25);
@@ -180,10 +202,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Styles for breadcrumbs navigation
 .breadcrumbs {
   font-size: 14px;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 0;
 
   .breadcrumb {
@@ -202,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
+// Home page //
 
 body.landing {
   background-color: #f9f9f9;
@@ -237,8 +260,8 @@ body.landing {
 
   .st-ui-search-input, .st-default-search-input {
     box-sizing: content-box;
-    height: 35px !important;
-    padding: 15px 15px 15px 40px !important;
+    height: 35px;
+    padding: 15px 15px 15px 40px;
     width: auto;
     border: 1px solid rgba(0,0,0,0.25);
 
@@ -248,8 +271,8 @@ body.landing {
   }
 
   .st-ui-search-input, .st-default-search-input, span.st-ui-search-icon {
-    background-size: 16px 16px !important;
-    background-position: 15px 25px !important;
+    background-size: 16px 16px;
+    background-position: 15px 25px;
   }
 }
 
@@ -329,30 +352,31 @@ body.landing {
 
 .topic-ce {
   .circle {
-    background-color: rgb(1, 136, 101);
+    background-color: $topic-ce-circle-color;
   }
 
   h2 {
-    color: rgb(1, 120, 85);
+    color: $topic-ce-header-color;
   }
 }
 
+
 .topic-ee {
   .circle {
-    background-color: rgb(25, 112, 169);
+    background-color: $topic-ee-circle-color;
   }
 
   h2 {
-    color: rgb(9, 96, 153);
+    color: $topic-ee-header-color;
   }
 }
 
 .topic-omnibus {
   .circle {
-    background-color: rgb(107, 79, 187);
+    background-color: $topic-omnibus-circle-color;
   }
 
   h2 {
-    color: rgb(107, 79, 187);
+    color: $topic-omnibus-header-color;
   }
 }
