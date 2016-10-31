@@ -11,7 +11,7 @@ stages:
   - test
   - deploy
 
-before-script:
+before_script:
   - bundle install --jobs 4 --path vendor
 
 verify_compile:
