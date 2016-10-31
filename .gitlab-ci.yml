@@ -7,6 +7,14 @@ cache:
   paths:
   - vendor/ruby
 
+verify_compile:
+  script:
+    - bundle install --path vendor
+    - rake pull_repos
+    - nanoc
+  except:
+    - master
+
 pages:
   stage: deploy
   environment:
