@@ -25,11 +25,15 @@ verify_compile:
     expire_in: 1h
   except:
     - master
+  tags:
+    - docker
 
 scss_lint:
   stage: test
   script:
     - bundle exec scss-lint
+  tags:
+    - docker
 
 review:
   stage: deploy
@@ -73,3 +77,5 @@ pages:
     - public
   only:
   - master
+  tags:
+    - docker
