@@ -22,7 +22,7 @@ verify_compile:
   artifacts:
     paths:
       - public
-    expire_in: 1h
+    expire_in: 1w
   except:
     - master
   tags:
