@@ -38,14 +38,14 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 
 ## Requirements/Goals
 
-- [ ] Feature parity with the existing [docs.gitlab.com](https://docs.gitlab.com/)
+- [x] Feature parity with the existing [docs.gitlab.com](https://docs.gitlab.com/)
 - [x] Use GitLab CI / GitLab Pages for compilation, deployment, and hosting of the Documentation site.
 - [x] Sections for Community Edition, Enterprise Edition, GitLab CI, and Omnibus.
 - [x] Pull documentation from the repositories mentioned above.
 - [ ] Versioned documentation (e.g. switch between documentation for 9.0, 9.1, 9.2, 9.3, "latest", etc.)
-- [ ] Search the documentation (Can either re-use existing Documentation search functionality or implement search using Algolia or something else? Ideally simple and open source, but it doesn't really matter too much.)
+- [x] Search the documentation (Can either re-use existing Documentation search functionality or implement search using Algolia or something else? Ideally simple and open source, but it doesn't really matter too much.)
 - [x] Link to "Edit on GitLab.com" for every page to encourage contribution.
-- [ ] Responsive design.
+- [x] Responsive design.
 
 ### Nice-to-haves
 
@@ -53,9 +53,8 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 - [ ] Some way to export the documentation as PDF/ePub for use offline.
 - [ ] Future-proofing for internationalization.
 - [ ] Tests for working internal links and such. (Nanoc includes this by default!)
-- [ ] Automated screenshots! (Not really directly related, but I still want it.)
 - [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as (almost all?) open source tools.
-- [ ] Breadcrumbs for navigating between pages.
+- [x] Breadcrumbs for navigating between pages.
 - [ ] Auto-generated Table of Contents for every page.
 - [ ] Anchor links for every page section.
 - [x] Syntax highlighting with Rouge.

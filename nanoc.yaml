@@ -93,5 +93,5 @@ checks:
     exclude_files: []
 
 # Whether or not breadcrumbs are enabled.
-# Disabled for now.
+# Breadcrumbs are enabled.
 breadcrumbs: true
