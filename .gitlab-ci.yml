@@ -19,13 +19,51 @@ verify_compile:
   script:
     - rake pull_repos
     - nanoc
+  artifacts:
+    paths:
+      - public
+    expire_in: 1w
   except:
     - master
+  tags:
+    - docker
 
 scss_lint:
   stage: test
   script:
     - bundle exec scss-lint
+  tags:
+    - docker
+
+review:
+  stage: deploy
+  before_script: []
+  script:
+    - rsync -av --delete public /srv/nginx/pages/$CI_BUILD_REF_NAME
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: http://$CI_BUILD_REF_NAME.$APPS_DOMAIN
+    on_stop: review_stop
+  only:
+    - branches
+  except:
+    - master
+  tags:
+    - nginx
+    - review-apps
+
+review_stop:
+  stage: deploy
+  before_script: []
+  script:
+    - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_NAME
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  tags:
+    - nginx
+    - review-apps
 
 pages:
   stage: deploy
@@ -39,3 +77,5 @@ pages:
     - public
   only:
   - master
+  tags:
+    - docker
