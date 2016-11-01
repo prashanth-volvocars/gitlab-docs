@@ -55,6 +55,8 @@ review:
 review_stop:
   stage: deploy
   before_script: []
+  artifacts: {}
+  cache: {}
   script:
     - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_NAME
   when: manual
