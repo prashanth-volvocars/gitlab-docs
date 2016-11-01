@@ -37,6 +37,7 @@ scss_lint:
 
 review:
   stage: deploy
+  before_script: []
   variables:
     APPS_DOMAIN: "178.62.207.141.xip.io"
   script:
@@ -55,6 +56,7 @@ review:
 
 review_stop:
   stage: deploy
+  before_script: []
   script:
     - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_NAME
   when: manual
