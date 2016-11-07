@@ -3,6 +3,10 @@ scss_files: "./content/assets/stylesheets/**"
 exclude:
   - "./content/assets/stylesheets/highlight.scss"
 
+# Remove the first three lines so the frontmatter doesn't
+# cause SCSS Lint to throw errors.
+preprocess_command: "sed '1,3d'"
+
 linters:
   BorderZero:
     severity: error
