@@ -9,28 +9,32 @@ task :pull_repos do
     name: 'ce',
     repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git',
     temp_dir: 'tmp/ce/',
-    dest_dir: 'content/ce'
+    dest_dir: 'content/ce',
+    doc_dir:  'doc'
   }
 
   ee = {
     name: 'ee',
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git',
     temp_dir: 'tmp/ee/',
-    dest_dir: 'content/ee'
+    dest_dir: 'content/ee',
+    doc_dir:  'doc'
   }
 
   omnibus = {
     name: 'omnibus',
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git',
     temp_dir: 'tmp/omnibus/',
-    dest_dir: 'content/omnibus'
+    dest_dir: 'content/omnibus',
+    doc_dir:  'doc'
   }
 
   runner = {
     name: 'runner',
     repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git',
     temp_dir: 'tmp/runner/',
-    dest_dir: 'content/runner'
+    dest_dir: 'content/runner',
+    doc_dir:  'docs'
   }
 
   products = [ce, ee, omnibus, runner]
@@ -60,14 +64,7 @@ task :pull_repos do
     puts "\n=> Cloning #{product[:repo]} into #{product[:temp_dir]}\n"
     `git clone #{product[:repo]} #{product[:temp_dir]} --depth 1`
 
-    # The Runner's docs are stored in docs/ whereas all the other projects
-    # store them in doc/.
-    doc_dir = if product[:name] == 'runner'
-                then 'docs'
-                else 'doc'
-              end
-
-    puts "\n=> Moving #{product[:temp_dir]}#{doc_dir}/ into #{product[:dest_dir]}\n"
-    `mv #{product[:temp_dir]}#{doc_dir}/ #{product[:dest_dir]}`
+    puts "\n=> Moving #{product[:temp_dir]}#{product[:doc_dir]}/ into #{product[:dest_dir]}\n"
+    `mv #{product[:temp_dir]}#{product[:doc_dir]}/ #{product[:dest_dir]}`
   end
 end

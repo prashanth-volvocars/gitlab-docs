@@ -22,7 +22,7 @@ module Nanoc::Filters
           result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{content_filename}")
         elsif product == "runner"
           # omnibus-gitlab repo
-          result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-ci-multi-#{product}/blob/master/doc/#{content_filename}")
+          result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-ci-multi-#{product}/blob/master/docs/#{content_filename}")
         else
           # gitlab-ce and gitlab-ee repos
           result.gsub!(/EDIT_ON_GITLAB_LINK/, "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}")
