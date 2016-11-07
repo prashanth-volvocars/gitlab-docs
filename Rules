@@ -33,6 +33,9 @@ compile '/**/*.md' do
       strikethrough:       true,
       superscript:         true,
       tables:              true
+    },
+    renderer_options: {
+      with_toc_data: true
     }
 
   layout '/default.*'
