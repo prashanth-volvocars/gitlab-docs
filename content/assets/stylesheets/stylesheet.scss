@@ -146,6 +146,9 @@ h1, h2, h3, h4, h5, h6 {
 
   footer {
     padding: 10px 5px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
   }
 }
 
