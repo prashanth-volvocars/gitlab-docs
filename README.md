@@ -1,3 +1,5 @@
+[![build status](https://gitlab.com/gitlab-com/gitlab-docs/badges/master/build.svg)](https://gitlab.com/gitlab-com/gitlab-docs/commits/master)
+
 # GitLab Documentation
 
 This site is generated using [Nanoc](http://nanoc.ws).
@@ -120,3 +122,44 @@ One potential problem with having separate docs for CE vs. EE is the inability t
 One potential solution to this problem is to include the EE docs inside the CE repository and then label pages as either Universal or EE-only (using frontmatter). The same could be done for specific sections on the page. This has the potential downside of complicating the documentation-writing process for contributors, but arguably the complexity of the CE/EE repositories already exists, so we're not really adding complexity so much as switching its form.
 
 The Atom Flight Manual has [the ability to switch between platforms for given pages](http://flight-manual.atom.io/using-atom/sections/atom-selections/), this code could be repurposed for including/excluding features based on whether the documentation is CE or EE ([Source](https://raw.githubusercontent.com/atom/flight-manual.atom.io/4c8f8d14e13b84584fe206e914ea06c6dc2b7a96/content/using-atom/sections/atom-selections.md)).
+
+## Deployment process
+
+We use [GitLab Pages][pages] to build and host this website. You can see
+`.gitlab-ci.yml` for more information.
+
+A [job] is used to trigger a new build whenever tests run and pass on master
+branch of CE, EE, Omnibus.
+
+To add a new trigger for another project:
+
+1. Go to https://gitlab.com/gitlab-com/gitlab-docs/triggers (you need Master
+   access) and copy the trigger value.
+1. Go to the project you will be triggering from and add a secret variable
+   named `DOCS_TRIGGER_TOKEN` with the value of the trigger you copied from the
+   previous step.
+1. Add the following job to the project's `.gitlab-ci.yml`, where you should
+   replace the `PROJECT` variable's value with the name of the project the
+   trigger is running from, for example `ce`, `ee`, `omnibus`, `runner`, etc.:
+
+    ```yaml
+    # Trigger docs build
+    # https://gitlab.com/gitlab-com/gitlab-docs/blob/master/README.md#deployment-process
+    trigger_docs:
+      variables:
+        GIT_STRATEGY: none
+      before_script: []
+      cache: {}
+      artifacts: {}
+      script:
+        - "curl -X POST -F token=${DOCS_TRIGGER_TOKEN} -F ref=master -F variables[PROJECT]=ce https://gitlab.com/api/v3/projects/38069/trigger/builds"
+      only:
+        - master
+    ```
+
+      >**Note:**
+      Every project might have different stages, make sure to add it to one that
+      makes sense, for example after all builds successfully pass.
+
+[job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
+[pages]: https://pages.gitlab.io
