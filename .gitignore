@@ -8,6 +8,7 @@ public/
 content/ce/*
 content/ee/*
 content/omnibus/*
+content/runner/*
 
 # Temporary file directory
 tmp/

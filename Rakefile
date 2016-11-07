@@ -1,29 +1,39 @@
 # By default won't delete any directories, requires all relevant directories
 # be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
 # deleted.
-desc 'Pulls down the CE, EE, and Omnibus git repos and merges the content of their doc directories into the nanoc site'
+desc 'Pulls down the CE, EE, Omnibus and Runner git repos and merges the content of their doc directories into the nanoc site'
 task :pull_repos do
   force_delete = ENV['RAKE_FORCE_DELETE']
 
   ce = {
+    name: 'ce',
     repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git',
     temp_dir: 'tmp/ce/',
     dest_dir: 'content/ce'
   }
 
   ee = {
+    name: 'ee',
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git',
     temp_dir: 'tmp/ee/',
     dest_dir: 'content/ee'
   }
 
   omnibus = {
+    name: 'omnibus',
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git',
     temp_dir: 'tmp/omnibus/',
     dest_dir: 'content/omnibus'
   }
 
-  products = [ce, ee, omnibus]
+  runner = {
+    name: 'runner',
+    repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git',
+    temp_dir: 'tmp/runner/',
+    dest_dir: 'content/runner'
+  }
+
+  products = [ce, ee, omnibus, runner]
   dirs = []
   products.each do |product|
     dirs.push(product[:temp_dir])
@@ -45,12 +55,19 @@ task :pull_repos do
       "the task will run without manual intervention, run \n" +
       "`RAKE_FORCE_DELETE=true rake pull_repos`."
   end
-  
+
   products.each do |product|
     puts "\n=> Cloning #{product[:repo]} into #{product[:temp_dir]}\n"
     `git clone #{product[:repo]} #{product[:temp_dir]} --depth 1`
-    
-    puts "\n=> Moving #{product[:temp_dir]}doc/ into #{product[:dest_dir]}\n"
-    `mv #{product[:temp_dir]}doc/ #{product[:dest_dir]}`
+
+    # The Runner's docs are stored in docs/ whereas all the other projects
+    # store them in doc/.
+    doc_dir = if product[:name] == 'runner'
+                then 'docs'
+                else 'doc'
+              end
+
+    puts "\n=> Moving #{product[:temp_dir]}#{doc_dir}/ into #{product[:dest_dir]}\n"
+    `mv #{product[:temp_dir]}#{doc_dir}/ #{product[:dest_dir]}`
   end
 end

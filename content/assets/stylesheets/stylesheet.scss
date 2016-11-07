@@ -30,6 +30,8 @@ $topic-ee-circle-color: rgb(25, 112, 169);
 $topic-ee-header-color: rgb(9, 96, 153);
 $topic-omnibus-circle-color: rgb(107, 79, 187);
 $topic-omnibus-header-color: rgb(107, 79, 187);
+$topic-runner-circle-color: rgb(1, 136, 101);
+$topic-runner-header-color: rgb(1, 120, 85);
 
 // Other colors
 $border-color: #e5e5e5;
@@ -272,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 36px;
     font-weight: 300;
     margin-top: 20px;
-   
+
     a {
       color: $white;
       text-decoration: none;
@@ -348,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
       h2 {
         height: 70px;
         margin-bottom: 25px;
-        
+
         @media all and (max-width: $mobile-width) {
           height: auto;
         }
@@ -399,5 +401,15 @@ h1, h2, h3, h4, h5, h6 {
 
   h2 {
     color: $topic-omnibus-header-color;
+  }
+}
+
+.topic-runner {
+  .circle {
+    background-color: $topic-runner-circle-color;
+  }
+
+  h2 {
+    color: $topic-runner-header-color;
   }
 }
