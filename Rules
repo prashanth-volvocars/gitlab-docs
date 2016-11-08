@@ -4,6 +4,14 @@ preprocess do
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
       begin
+        # If the page is a redirect, make it a redirect.
+        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
+          # Capture the intended page so the redirect page can redirect to it.
+          item[:redirect] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
+          # Correct the URL.
+          item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
+        end
+
         title = item.raw_content.match(/^[#] .*$/s).to_s
         title.gsub!('# ', '')
         item[:title] = title unless title.empty?
@@ -21,34 +29,38 @@ compile '/**/*.html' do
 end
 
 compile '/**/*.md' do
-  # Use Redcarpet with Rouge.
-  filter :redcarpet,
-    renderer: HTML,
-    options: {
-      fenced_code_blocks:  true,
-      footnotes:           true,
-      lax_spacing:         true,
-      no_intra_emphasis:   true,
-      space_after_headers: true,
-      strikethrough:       true,
-      superscript:         true,
-      tables:              true
-    },
-    renderer_options: {
-      with_toc_data: true
-    }
+  if item[:redirect].nil?
+    # Use Redcarpet with Rouge.
+    filter :redcarpet,
+      renderer: HTML,
+      options: {
+        fenced_code_blocks:  true,
+        footnotes:           true,
+        lax_spacing:         true,
+        no_intra_emphasis:   true,
+        space_after_headers: true,
+        strikethrough:       true,
+        superscript:         true,
+        tables:              true
+      },
+      renderer_options: {
+        with_toc_data: true
+      }
 
-  layout '/default.*'
+    layout '/default.*'
 
-  filter :md_to_html_ext
-  filter :edit_on_gitlab_link
+    filter :md_to_html_ext
+    filter :edit_on_gitlab_link
+  else
+    layout '/redirect.*'
+  end
 end
 
 compile '/**/*.scss' do
   filter :sass,
     syntax: :scss,
     style: :compressed
-  write item.identifier.without_ext + '.css'
+  write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.css'
 end
 
 compile '/index.*' do
@@ -67,10 +79,6 @@ compile '/robots.*' do
   write '/robots.txt'
 end
 
-route '/**/*.scss' do
-  item.identifier.without_ext + '.css'
-end
-
 route '/**/*.{html,md}' do
   if item.identifier =~ '/index.*'
     '/index.html'
@@ -85,9 +93,9 @@ compile '/**/*' do
   end
 end
 
+layout '/**/*', :erb
+
 # Leave the favicon alone.
 passthrough '/favicon.ico'
 # Let's Encrypt challenge.
 passthrough '/.well-known/**/*'
-
-layout '/**/*', :erb
