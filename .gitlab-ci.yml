@@ -75,7 +75,7 @@ pages:
   stage: deploy
   environment:
     name: production
-    url: http://docs.gitlab.com
+    url: https://docs.gitlab.com
   script:
     - rake pull_repos
     - nanoc
