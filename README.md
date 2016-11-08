@@ -152,9 +152,9 @@ To add a new trigger for another project:
       cache: {}
       artifacts: {}
       script:
-        - "curl -X POST -F token=${DOCS_TRIGGER_TOKEN} -F ref=master -F variables[PROJECT]=ce https://gitlab.com/api/v3/projects/38069/trigger/builds"
+        - "curl -X POST -F token=${DOCS_TRIGGER_TOKEN} -F ref=master -F variables[PROJECT]=ce https://gitlab.com/api/v3/projects/1794617/trigger/builds"
       only:
-        - master
+        - master@gitlab-org/gitlab-ce
     ```
 
       >**Note:**
