@@ -5,13 +5,13 @@ preprocess do
     if item.identifier.to_s.end_with?(".md") && !item.binary?
       begin
         # If the page is a redirect, make it a redirect.
-        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/mu
+        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
           # Capture the intended page so the redirect page can redirect to it.
           item[:redirect] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
           # Correct the URL.
           item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
         end
-        
+
         title = item.raw_content.match(/^[#] .*$/).to_s
         title.gsub!('# ', '')
         item[:title] = title unless title.empty?
@@ -47,7 +47,8 @@ compile '/**/*.md' do
         space_after_headers: true,
         strikethrough:       true,
         superscript:         true,
-        tables:              true
+        tables:              true,
+        autolink:            true
       },
       renderer_options: {
         with_toc_data: true
