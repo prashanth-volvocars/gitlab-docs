@@ -94,3 +94,6 @@ checks:
 # Whether or not breadcrumbs are enabled.
 # Breadcrumbs are enabled.
 breadcrumbs: true
+
+# Debug problems with the generation process by setting this config variable.
+debug: false

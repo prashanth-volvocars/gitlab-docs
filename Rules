@@ -24,6 +24,12 @@ preprocess do
   end
 end
 
+compile '/404.*' do
+  filter :erb
+  layout '/404.*'
+  write '/404.html'
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
