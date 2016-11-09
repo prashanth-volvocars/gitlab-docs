@@ -97,5 +97,3 @@ layout '/**/*', :erb
 
 # Leave the favicon alone.
 passthrough '/favicon.ico'
-# Let's Encrypt challenge.
-passthrough '/.well-known/**/*'
