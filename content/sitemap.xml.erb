@@ -1,4 +1,6 @@
 ---
 is_hidden: true
 ---
-<%= xml_sitemap %>
+<%= xml_sitemap(
+  items: items.select { |item| !item[:is_hidden] && item.path.end_with?('.html') }
+) %>
