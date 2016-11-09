@@ -11,8 +11,8 @@ preprocess do
           # Correct the URL.
           item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
         end
-
-        title = item.raw_content.match(/^[#] .*$/su).to_s
+        
+        title = item.raw_content.match(/^[#] .*$/).to_s
         title.gsub!('# ', '')
         item[:title] = title unless title.empty?
       # Encoding errors happen on some files for some reason, so we
