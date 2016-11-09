@@ -1,9 +1,12 @@
 ---
-version: 1
+version: 2
 ---
 
 // Breakpoints
 $mobile-width: 800px;
+
+// Border radius
+$border-radius: 3px;
 
 // Fonts
 $mono-font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "Andale Mono", "Lucida Console", monospace;
@@ -210,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
   input {
     box-sizing: content-box;
     border: 1px solid $search-border;
-    border-radius: 2px;
+    border-radius: $border-radius;
     background-color: $white;
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
@@ -255,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 
     input {
       margin-top: 50px;
-      border-radius: 0;
+      border-radius: $border-radius;
       font-size: 20px;
       line-height: inherit;
     }
@@ -308,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     background-color: $white;
     border: 1px solid $topic-border;
-    border-radius: 2px;
+    border-radius: $border-radius;
     margin: 15px;
     flex: 1;
     min-width: 300px;
