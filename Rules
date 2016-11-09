@@ -18,7 +18,7 @@ preprocess do
       # Encoding errors happen on some files for some reason, so we
       # rescue them.
       rescue Encoding::CompatibilityError
-        puts "Encoding error"
+        puts "(warning) Encoding error: #{item.identifier}"
       end
     end
   end
