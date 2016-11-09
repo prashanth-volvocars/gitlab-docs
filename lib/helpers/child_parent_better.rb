@@ -28,18 +28,21 @@ module Nanoc::Helpers
         puts item_identifier
       end
 
-      if (item_identifier.nil? || (item_identifier.to_s.end_with?('README.md') && item_identifier.to_s.split('/').length == 3))
+      if (item_identifier.nil? || (item_identifier.to_s.end_with?('README.md', 'index.md') && item_identifier.to_s.split('/').length == 3))
         return
-      elsif item_identifier.to_s.end_with?('README.md')
+      elsif item_identifier.to_s.end_with?('README.md', 'index.md')
         parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
         return get_nearest_parent(parent_dir)
       else
         parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
         parent = @items[parent_dir + '/README.*']
-        if parent.nil?
+        alt_parent = @items[parent_dir + '/index.*']
+        if (parent.nil? && alt_parent.nil?)
           get_nearest_parent(parent_dir)
-        else
+        elsif alt_parent.nil?
           return parent
+        else
+          return alt_parent
         end
       end
     end
