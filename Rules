@@ -3,23 +3,17 @@
 preprocess do
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
-      begin
-        # If the page is a redirect, make it a redirect.
-        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
-          # Capture the intended page so the redirect page can redirect to it.
-          item[:redirect] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
-          # Correct the URL.
-          item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
-        end
-
-        title = item.raw_content.match(/^[#] .*$/).to_s
-        title.gsub!('# ', '')
-        item[:title] = title unless title.empty?
-      # Encoding errors happen on some files for some reason, so we
-      # rescue them.
-      rescue Encoding::CompatibilityError
-        puts "(warning) Encoding error: #{item.identifier}"
+      # If the page is a redirect, make it a redirect.
+      if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
+        # Capture the intended page so the redirect page can redirect to it.
+        item[:redirect] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
+        # Correct the URL.
+        item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
       end
+
+      title = item.raw_content.match(/^[#] .*$/).to_s
+      title.gsub!('# ', '')
+      item[:title] = title unless title.empty?
     end
   end
 end
