@@ -95,7 +95,7 @@ hr {
 
 code, code span {
   font-family: $mono-font-family;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 p code, li code, table code {
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 
   p {
     margin: 20px 0;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
   }
 
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   li {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
 
     > ul, > ol {
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   li {
-    font-size: 14px;
+    font-size: 16px;
     display: inline-block;
     line-height: 20px;
     margin: 0 10px;
@@ -220,14 +220,14 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
     margin: -5px;
-    font-size: 14px;
+    font-size: 16px;
     width: 190px;
   }
 }
 
 // Styles for breadcrumbs navigation
 .breadcrumbs {
-  font-size: 14px;
+  font-size: 16px;
   white-space: nowrap;
   overflow-x: auto;
   padding: 0;
