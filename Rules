@@ -30,6 +30,8 @@ end
 
 compile '/**/*.md' do
   if item[:redirect].nil?
+    include_toc = item.identifier.to_s.end_with?("README.md") ? false : true
+
     # Use Redcarpet with Rouge.
     filter :redcarpet,
       renderer: HTML,
@@ -42,11 +44,12 @@ compile '/**/*.md' do
         strikethrough:       true,
         superscript:         true,
         tables:              true,
-        autolink:            true
+        autolink:            true,
       },
       renderer_options: {
         with_toc_data: true
-      }
+      },
+      with_toc: include_toc
 
     layout '/default.*'
 
