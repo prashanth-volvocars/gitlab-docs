@@ -40,7 +40,8 @@ $border-color: #e5e5e5;
 $border-color-light: #f0f0f0;
 $table-border-color: $border-color;
 $hr-border-color: $border-color;
-$blockquote-border-color: $border-color;
+$blockquote-border-color: rgb(243, 182, 114);
+$blockquote-background-color: rgba(255, 203, 0, .1);
 $search-border: rgba(0, 0, 0, .25);
 $white: #fff;
 $black: #333;
@@ -84,10 +85,10 @@ table {
 }
 
 blockquote {
-  border-width: 0px;
-  border-left: 3px solid rgb(243, 182, 114);
-  background-color: rgba(255, 203, 0, 0.1);
-  margin: 0px 0px 20px;
+  border-width: 0;
+  border-left: 3px solid $blockquote-border-color;
+  background-color: $blockquote-background-color;
+  margin: 0 0 20px;
   padding: 10px 20px;
 }
 
