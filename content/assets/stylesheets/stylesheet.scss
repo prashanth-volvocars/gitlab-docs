@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 // Breakpoints
@@ -243,6 +243,25 @@ h1, h2, h3, h4, h5, h6 {
 
     &::after {
       padding: 0 4px 0 6px;
+    }
+  }
+}
+
+// ToC styles
+.breadcrumbs + ul {
+  border-left: 1px solid $border-color;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+
+  li {
+    padding: 5px 0;
+    list-style-type: none;
+
+    ul {
+      -webkit-padding-start: 0;
+      padding-top: 5px;
+      padding-left: 20px;
     }
   }
 }
