@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 // Breakpoints
@@ -34,6 +34,8 @@ $topic-runner-circle-color: rgb(203, 88, 15);
 $topic-runner-header-color: rgb(203, 88, 15);
 
 // Other colors
+$toc-bg-color: rgb(244, 247, 248);
+$toc-border-color: rgb(116, 159, 226);
 $border-color: #e5e5e5;
 $border-color-light: #f0f0f0;
 $table-border-color: $border-color;
@@ -243,6 +245,26 @@ h1, h2, h3, h4, h5, h6 {
 
     &::after {
       padding: 0 4px 0 6px;
+    }
+  }
+
+  // ToC styles
+  + ul {
+    border-left: 1px dashed $toc-border-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background: $toc-bg-color;
+
+    li {
+      padding: 5px 0;
+      list-style-type: none;
+
+      ul {
+        -webkit-padding-start: 0;
+        padding-top: 5px;
+        padding-left: 20px;
+      }
     }
   }
 }
