@@ -54,10 +54,10 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 - [ ] Some way to embed/package the site inside the Rails app so the documentation can be included with the application itself. This would be nice for users behind firewalls, etc. This _should not_ be handled by Rails itself, as that causes all kinds of problems. It should just be a set of static pages.
 - [ ] Some way to export the documentation as PDF/ePub for use offline.
 - [ ] Future-proofing for internationalization.
-- [ ] Tests for working internal links and such. (Nanoc includes this by default!)
+- [x] Tests for working internal links and such. (Nanoc includes this by default!)
 - [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as (almost all?) open source tools.
 - [x] Breadcrumbs for navigating between pages.
-- [ ] Auto-generated Table of Contents for every page.
+- [x] Auto-generated Table of Contents for every page.
 - [ ] Anchor links for every page section.
 - [x] Syntax highlighting with Rouge.
 - [ ] Auto-generated documentation structure based on YML frontmatter.
