@@ -52,7 +52,6 @@ review:
     GIT_STRATEGY: none
   before_script: []
   cache: {}
-  dependencies: []
   script:
     - rsync -av --delete public /srv/nginx/pages/$CI_BUILD_REF_NAME
   environment:
