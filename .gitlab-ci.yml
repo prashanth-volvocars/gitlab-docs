@@ -12,6 +12,7 @@ stages:
   - deploy
 
 before_script:
+  - ruby -v
   - bundle install --jobs 4 --path vendor
 
 verify_compile:
