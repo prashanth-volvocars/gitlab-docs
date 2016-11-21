@@ -101,7 +101,7 @@ pages:
   artifacts:
     paths:
     - public
-    expire_in: 1w
+    expire_in: 1h
   only:
     - master@gitlab-com/gitlab-docs
   tags:
