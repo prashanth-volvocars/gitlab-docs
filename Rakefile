@@ -1,8 +1,8 @@
-# By default won't delete any directories, requires all relevant directories
-# be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
-# deleted.
 desc 'Pulls down the CE, EE, Omnibus and Runner git repos and merges the content of their doc directories into the nanoc site'
 task :pull_repos do
+  # By default won't delete any directories, requires all relevant directories
+  # be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
+  # deleted.
   force_delete = ENV['RAKE_FORCE_DELETE']
 
   ce = {
@@ -50,7 +50,7 @@ task :pull_repos do
 
     dirs.each do |dir|
       puts "\n=> Deleting #{dir} if it exists\n"
-      `rm -rf #{dir}`
+      FileUtils.rm_r("#{dir}") if File.exist?("#{dir}")
     end
   else
     puts "NOTE: The following directories must be empty otherwise this task " +
@@ -60,11 +60,23 @@ task :pull_repos do
       "`RAKE_FORCE_DELETE=true rake pull_repos`."
   end
 
-  products.each do |product|
-    puts "\n=> Cloning #{product[:repo]} into #{product[:temp_dir]}\n"
-    `git clone #{product[:repo]} #{product[:temp_dir]} --depth 1`
+  dirs.each do |dir|
+    unless "#{dir}".start_with?("tmp")
+  
+      puts "\n=> Making an empty #{dir}"
+      FileUtils.mkdir("#{dir}") unless File.exist?("#{dir}")
+    end
+  end
 
-    puts "\n=> Moving #{product[:temp_dir]}#{product[:doc_dir]}/ into #{product[:dest_dir]}\n"
-    `mv #{product[:temp_dir]}#{product[:doc_dir]}/ #{product[:dest_dir]}`
+  products.each do |product|
+    temp_dir = File.join(product[:temp_dir])
+    puts "\n=> Cloning #{product[:repo]} into #{temp_dir}\n"
+
+    `git clone #{product[:repo]} #{temp_dir} --depth 1 --branch master`
+    
+    temp_doc_dir = File.join(product[:temp_dir], product[:doc_dir], '.')
+    destination_dir = File.join(product[:dest_dir])
+    puts "\n=> Copying #{temp_doc_dir} into #{destination_dir}\n"
+    FileUtils.cp_r(temp_doc_dir, destination_dir)
   end
 end
