@@ -59,6 +59,7 @@ compile '/**/*.md' do
 end
 
 compile '/**/*.scss' do
+  filter :erb
   filter :sass,
     syntax: :scss,
     style: :compressed

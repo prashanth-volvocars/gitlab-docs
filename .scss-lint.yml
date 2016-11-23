@@ -4,8 +4,8 @@ exclude:
   - "./content/assets/stylesheets/highlight.scss"
 
 # Remove the first three lines so the frontmatter doesn't
-# cause SCSS Lint to throw errors.
-preprocess_command: "sed '1,3d'"
+# cause SCSS Lint to throw errors. Also remove ERB code.
+preprocess_command: "sed -E '1,3d;s/<%= .* %>//g'"
 
 linters:
   BorderZero:
