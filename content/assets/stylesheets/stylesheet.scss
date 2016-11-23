@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid $topic-border;
     border-radius: $border-radius;
     margin: 15px;
-    flex: 1;
+    flex: 1 0 300px;
     min-width: 300px;
 
     @media all and (max-width: $mobile-width) {
