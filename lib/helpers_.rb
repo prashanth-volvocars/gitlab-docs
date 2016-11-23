@@ -11,16 +11,15 @@ require 'rouge/plugins/redcarpet'
 class HTML < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet
 
-  PUNCTUATION_REGEXP = /[^\p{Word}\- ]/u
 
   def header(text, header_level)
-    # https://gitlab.com/gitlab-org/gitlab-ce/blob/0676c5c7140ccf5b809eddab79b6fb78b7db0a66/lib/banzai/filter/table_of_contents_filter.rb#L29-32
-    anchor = text.downcase
-    anchor.gsub!(PUNCTUATION_REGEXP, '') # remove punctuation
-    anchor.tr!(' ', '-') # replace spaces with dash
+    # https://github.com/cookpad/garage/blob/c817733e382c734eedba743e9103cd8a124f24eb/lib/garage/docs/anchor_building.rb#L24
+    anchor = text.gsub(/\s+/, '-').gsub(/<\/?[^>]*>/, '').downcase
+    # https://github.com/rails/rails/blob/e491b2c06329afb3c989261a2865d2a93c8b84b8/activesupport/lib/active_support/inflector/transliterate.rb#L86
+    anchor.gsub!(/[^a-z0-9\-_]+/i, '-')
     anchor.squeeze!('-') # replace multiple dashes with one
 
-    "<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'>&para;</a></h#{header_level}>"
+    %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'>&para;</a></h#{header_level}>)
   end
 
   def image(link, title, alt_text)
