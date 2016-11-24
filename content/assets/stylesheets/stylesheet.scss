@@ -42,6 +42,7 @@ $table-border-color: $border-color;
 $hr-border-color: $border-color;
 $blockquote-border-color: rgb(140, 203, 242);
 $blockquote-background-color: rgb(221, 238, 255);
+$blockquote-pre-background-color: rgb(255, 255, 255);
 $search-border: rgba(0, 0, 0, .25);
 $white: #fff;
 $black: #333;
@@ -92,7 +93,7 @@ blockquote {
   padding: 10px 20px;
 
   pre {
-    background-color: rgb(255,255,255);
+    background-color: $blockquote-pre-background-color;
   }
 }
 
