@@ -19,7 +19,7 @@ class HTML < Redcarpet::Render::HTML
     anchor.gsub!(/[^a-z0-9\-_]+/i, '-')
     anchor.squeeze!('-') # replace multiple dashes with one
 
-    %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'>&para;</a></h#{header_level}>)
+    %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'></a></h#{header_level}>)
   end
 
   def image(link, title, alt_text)

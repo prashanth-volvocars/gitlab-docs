@@ -284,7 +284,12 @@ h1, h2, h3, h4, h5, h6 {
 
 // Permalinks on header elements.
 .anchor {
-  margin-left: 5px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  max-height: 25px;
+  vertical-align: middle;
+  background: url("<%= @items['/assets/images/icon_anchor.svg'].path %>") center center / contain no-repeat;
 
   &:hover {
     text-decoration: none;
