@@ -106,6 +106,11 @@ products:
     slug: 'ce'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git'
+    dirs:
+      temp_dir: 'tmp/ce/'
+      dest_dir: 'content/ce'
+      doc_dir:  'doc'
   ee:
     full_name: 'GitLab Enterprise Edition and GitLab.com'
     short_name: 'Enterprise Edition'
@@ -113,6 +118,11 @@ products:
     slug: 'ee'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for GitLab Enterprise Edition and GitLab.com.'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
+    dirs:
+      temp_dir: 'tmp/ee/'
+      dest_dir: 'content/ee'
+      doc_dir:  'doc'
   omnibus:
     full_name: 'Omnibus GitLab'
     short_name: 'Omnibus'
@@ -120,6 +130,11 @@ products:
     slug: 'omnibus'
     index_file: 'README.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.'
+    repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
+    dirs:
+      temp_dir: 'tmp/omnibus/'
+      dest_dir: 'content/omnibus'
+      doc_dir:  'doc'
   runner:
     full_name: 'GitLab Runner'
     short_name: 'Runner'
@@ -127,3 +142,8 @@ products:
     slug: 'runner'
     index_file: 'index.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git'
+    dirs:
+      temp_dir: 'tmp/runner/'
+      dest_dir: 'content/runner'
+      doc_dir:  'docs'
