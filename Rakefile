@@ -2,13 +2,15 @@ desc 'Pulls down the CE, EE, Omnibus and Runner git repos and merges the content
 task :pull_repos do
   require 'yaml'
 
-  config = YAML.load_file('./nanoc.yaml')
-
   # By default won't delete any directories, requires all relevant directories
   # be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
   # deleted.
   force_delete = ENV['RAKE_FORCE_DELETE']
 
+  # Parse the config file and create a hash.
+  config = YAML.load_file('./nanoc.yaml')
+
+  # Pull products data from the config.
   ce = config["products"]["ce"]
   ee = config["products"]["ee"]
   omnibus = config["products"]["omnibus"]
