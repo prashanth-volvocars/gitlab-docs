@@ -1,47 +1,27 @@
 desc 'Pulls down the CE, EE, Omnibus and Runner git repos and merges the content of their doc directories into the nanoc site'
 task :pull_repos do
+  require 'yaml'
+
+  config = YAML.load_file('./nanoc.yaml')
+
   # By default won't delete any directories, requires all relevant directories
   # be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
   # deleted.
   force_delete = ENV['RAKE_FORCE_DELETE']
 
-  ce = {
-    name: 'ce',
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git',
-    temp_dir: 'tmp/ce/',
-    dest_dir: 'content/ce',
-    doc_dir:  'doc'
-  }
+  ce = config["products"]["ce"]
 
-  ee = {
-    name: 'ee',
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git',
-    temp_dir: 'tmp/ee/',
-    dest_dir: 'content/ee',
-    doc_dir:  'doc'
-  }
+  ee = config["products"]["ee"]
 
-  omnibus = {
-    name: 'omnibus',
-    repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git',
-    temp_dir: 'tmp/omnibus/',
-    dest_dir: 'content/omnibus',
-    doc_dir:  'doc'
-  }
+  omnibus = config["products"]["omnibus"]
 
-  runner = {
-    name: 'runner',
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git',
-    temp_dir: 'tmp/runner/',
-    dest_dir: 'content/runner',
-    doc_dir:  'docs'
-  }
+  runner = config["products"]["runner"]
 
   products = [ce, ee, omnibus, runner]
   dirs = []
   products.each do |product|
-    dirs.push(product[:temp_dir])
-    dirs.push(product[:dest_dir])
+    dirs.push(product["temp_dir"])
+    dirs.push(product["dest_dir"])
   end
 
   if force_delete
@@ -69,13 +49,13 @@ task :pull_repos do
   end
 
   products.each do |product|
-    temp_dir = File.join(product[:temp_dir])
-    puts "\n=> Cloning #{product[:repo]} into #{temp_dir}\n"
+    temp_dir = File.join(product['temp_dir'])
+    puts "\n=> Cloning #{product['repo']} into #{temp_dir}\n"
 
-    `git clone #{product[:repo]} #{temp_dir} --depth 1 --branch master`
+    `git clone #{product['repo']} #{temp_dir} --depth 1 --branch master`
     
-    temp_doc_dir = File.join(product[:temp_dir], product[:doc_dir], '.')
-    destination_dir = File.join(product[:dest_dir])
+    temp_doc_dir = File.join(product['temp_dir'], product['doc_dir'], '.')
+    destination_dir = File.join(product['dest_dir'])
     puts "\n=> Copying #{temp_doc_dir} into #{destination_dir}\n"
     FileUtils.cp_r(temp_doc_dir, destination_dir)
   end
