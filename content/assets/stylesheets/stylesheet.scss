@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 // Breakpoints
@@ -111,6 +111,10 @@ p code, li code, table code {
   color: $code-color;
   background-color: $code-background-color;
   padding: 2px 4px;
+}
+
+a > code {
+  color: rgb(55, 119, 176);
 }
 
 // Make code in headers match the font size of the given header.
