@@ -10,18 +10,15 @@ task :pull_repos do
   force_delete = ENV['RAKE_FORCE_DELETE']
 
   ce = config["products"]["ce"]
-
   ee = config["products"]["ee"]
-
   omnibus = config["products"]["omnibus"]
-
   runner = config["products"]["runner"]
 
   products = [ce, ee, omnibus, runner]
   dirs = []
   products.each do |product|
-    dirs.push(product["temp_dir"])
-    dirs.push(product["dest_dir"])
+    dirs.push(product['dirs']['temp_dir'])
+    dirs.push(product['dirs']['dest_dir'])
   end
 
   if force_delete
@@ -49,13 +46,13 @@ task :pull_repos do
   end
 
   products.each do |product|
-    temp_dir = File.join(product['temp_dir'])
+    temp_dir = File.join(product['dirs']['temp_dir'])
     puts "\n=> Cloning #{product['repo']} into #{temp_dir}\n"
 
     `git clone #{product['repo']} #{temp_dir} --depth 1 --branch master`
     
-    temp_doc_dir = File.join(product['temp_dir'], product['doc_dir'], '.')
-    destination_dir = File.join(product['dest_dir'])
+    temp_doc_dir = File.join(product['dirs']['temp_dir'], product['dirs']['doc_dir'], '.')
+    destination_dir = File.join(product['dirs']['dest_dir'])
     puts "\n=> Copying #{temp_doc_dir} into #{destination_dir}\n"
     FileUtils.cp_r(temp_doc_dir, destination_dir)
   end
