@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 // Breakpoints
@@ -15,6 +15,7 @@ $sans-font-family: "Source Sans Pro", sans-serif;
 // Link colors
 $link-color: #3084bb;
 $link-color-hover: #20597e;
+$link-code-color: rgb(55, 119, 176);
 
 // Inline code colors
 $code-color: #c7254e;
@@ -111,6 +112,10 @@ p code, li code, table code {
   color: $code-color;
   background-color: $code-background-color;
   padding: 2px 4px;
+}
+
+a > code {
+  color: $link-code-color;
 }
 
 // Make code in headers match the font size of the given header.
