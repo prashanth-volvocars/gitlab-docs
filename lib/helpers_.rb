@@ -17,7 +17,8 @@ class HTML < Redcarpet::Render::HTML
     anchor = text.gsub(/\s+/, '-').gsub(/<\/?[^>]*>/, '').downcase
     # https://github.com/rails/rails/blob/e491b2c06329afb3c989261a2865d2a93c8b84b8/activesupport/lib/active_support/inflector/transliterate.rb#L86
     anchor.gsub!(/[^a-z0-9\-_]+/i, '-')
-    anchor.squeeze!('-') # replace multiple dashes with one
+    anchor.squeeze!('-')        # replace multiple dashes with one
+    anchor.gsub!(/^-|-$/, '')   # remove any first or last dashes
 
     %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'></a></h#{header_level}>)
   end
