@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 // Breakpoints
@@ -41,9 +41,9 @@ $border-color: #e5e5e5;
 $border-color-light: #f0f0f0;
 $table-border-color: $border-color;
 $hr-border-color: $border-color;
-$blockquote-border-color: rgb(140, 203, 242);
-$blockquote-background-color: rgb(221, 238, 255);
-$pre-background-color: #fff;
+$blockquote-border-color: rgb(0, 188, 242);
+$blockquote-background-color: rgb(239, 246, 251);
+$pre-background-color: rgba(238, 238, 238, .35);
 $search-border: rgba(0, 0, 0, .25);
 $white: #fff;
 $black: #333;
@@ -88,7 +88,7 @@ table {
 
 blockquote {
   border-width: 0;
-  border-left: 3px solid $blockquote-border-color;
+  border-left: 5px solid $blockquote-border-color;
   background-color: $blockquote-background-color;
   margin: 20px 0;
   padding: 10px 20px;
