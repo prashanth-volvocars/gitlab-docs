@@ -3,14 +3,17 @@
     <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>"/>
     <p>GitLab Documentation</p>
   </a>
-  <ul>
-    <li><input type="text" class="st-default-search-input" placeholder="Search"></li>
-    <% @config[:products].each do |name, product| %>
-      <li>
-        <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-          <%= product[:short_name] %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+  <div class="nav-container">
+    <a class="nav-toggle" id="docs-nav-toggle">Menu</a>
+    <ul class="nav">
+      <li class="search"><input type="text" class="st-default-search-input" placeholder="Search"></li>
+      <% @config[:products].each do |name, product| %>
+        <li class="nav-item">
+          <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+            <%= product[:short_name] %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
