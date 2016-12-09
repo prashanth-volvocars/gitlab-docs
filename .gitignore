@@ -5,10 +5,10 @@ output/
 public/
 
 # Make sure the content directories aren't added to the git repo.
-content/ce/*
-content/ee/*
-content/omnibus/*
-content/runner/*
+content/ce
+content/ee
+content/omnibus
+content/runner
 
 # Temporary file directory
 tmp/
