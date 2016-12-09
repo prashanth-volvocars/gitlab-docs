@@ -55,10 +55,10 @@ To pull down the documentation content, run `rake pull_repos`. If you want to fo
 - [ ] Some way to export the documentation as PDF/ePub for use offline.
 - [ ] Future-proofing for internationalization.
 - [x] Tests for working internal links and such. (Nanoc includes this by default!)
-- [ ] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as (almost all?) open source tools.
+- [x] A blog post explaining how we do all this using GitLab, GitLab CI, and GitLab Pages, as well as (almost all?) open source tools.
 - [x] Breadcrumbs for navigating between pages.
 - [x] Auto-generated Table of Contents for every page.
-- [ ] Anchor links for every page section.
+- [x] Anchor links for every page section.
 - [x] Syntax highlighting with Rouge.
 - [ ] Auto-generated documentation structure based on YML frontmatter.
 - [ ] Version dropdown that links to the current page for that version (if it exists).
