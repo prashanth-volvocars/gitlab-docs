@@ -1,12 +1,13 @@
 ---
-version: 4
+version: 5
 ---
 /* https://github.com/aahan/pygments-github-style */
 
 pre.highlight {
   padding: 10px 15px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 2px 2px 3px rgb(223, 223, 223);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
   overflow-x: auto;
   margin: 20px 0;
 
