@@ -49,9 +49,22 @@ task :pull_repos do
 
   products.each do |product|
     temp_dir = File.join(product['dirs']['temp_dir'])
-    puts "\n=> Cloning #{product['repo']} into #{temp_dir}\n"
 
-    `git clone #{product['repo']} #{temp_dir} --depth 1 --branch master`
+    if !File.exist?(temp_dir) || Dir.entries(temp_dir).length.zero?
+      puts "\n=> Cloning #{product['repo']} into #{temp_dir}\n"
+
+      `git clone #{product['repo']} #{temp_dir} --depth 1 --branch master`
+    elsif File.exist?(temp_dir) && !Dir.entries(temp_dir).length.zero?
+      puts "\n=> Pulling master of #{product['repo']}\n"
+
+      # Enter the temporary directory and return after block is completed.
+      FileUtils.cd(temp_dir) do
+        # Update repository from master.
+        `git pull origin master`
+      end
+    else
+      puts "This shouldn't happen"
+    end
     
     temp_doc_dir = File.join(product['dirs']['temp_dir'], product['dirs']['doc_dir'], '.')
     destination_dir = File.join(product['dirs']['dest_dir'])

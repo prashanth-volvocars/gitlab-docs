@@ -2,11 +2,6 @@
 # Full project: https://gitlab.com/pages/nanoc
 image: ruby:2.3
 
-cache:
-  key: "ruby-231"
-  paths:
-  - vendor/ruby
-
 stages:
   - test
   - deploy
@@ -24,6 +19,11 @@ verify_compile:
     paths:
       - public
     expire_in: 1w
+  cache:
+    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    paths:
+      - tmp/
+      - vendor/ruby
   except:
     - master
   tags:
@@ -43,6 +43,10 @@ scss_lint:
   stage: test
   script:
     - bundle exec scss-lint
+  cache:
+    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    paths:
+      - vendor/ruby
   tags:
     - docker
 
