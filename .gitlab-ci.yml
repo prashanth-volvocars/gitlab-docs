@@ -35,6 +35,10 @@ internal_links:
   script:
     - nanoc check internal_links
   allow_failure: true
+  cache:
+    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    paths:
+      - vendor/ruby
   tags:
     - docker
   dependencies:
