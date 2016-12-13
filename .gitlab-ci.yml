@@ -19,7 +19,7 @@ verify_compile:
   stage: test
   script:
     - rake pull_repos
-    - nanoc
+    - nanoc --verbose
   artifacts:
     paths:
       - public
