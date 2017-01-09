@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '~> 2.3.3'
 
-gem 'nanoc', '~> 4.3'
+gem 'nanoc', '~> 4.5'
 gem 'adsf'
 gem 'sass'
 gem 'redcarpet'
