@@ -197,7 +197,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
-  overflow: hidden;
 
   @media all and (max-width: $mobile-width) {
     height: auto;
@@ -376,7 +375,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .st-ui-search-input, .st-default-search-input {
+  .docsearch {
     box-sizing: content-box;
     height: 35px;
     padding: 15px 15px 15px 40px;
@@ -386,11 +385,6 @@ h1, h2, h3, h4, h5, h6 {
     @media all and (min-width: $mobile-width) {
       min-width: 300px;
     }
-  }
-
-  .st-ui-search-input, .st-default-search-input, .st-ui-search-icon {
-    background-size: 16px 16px;
-    background-position: 15px 25px;
   }
 }
 
