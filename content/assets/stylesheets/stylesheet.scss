@@ -197,7 +197,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
-  overflow: hidden;
 
   @media all and (max-width: $mobile-width) {
     height: auto;
@@ -257,10 +256,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 10px;
   }
 
-  // Match the Swiftype styles as closely as possible
-  // with some minor modifications.
-  // This prevents the search input from jumping around
-  // as the styles load.
   input {
     box-sizing: content-box;
     border: 1px solid $search-border;
@@ -271,6 +266,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: -5px;
     font-size: 14px;
     width: 190px;
+    background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 7px 8px;
   }
 
   .nav-toggle {
@@ -376,21 +375,20 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .st-ui-search-input, .st-default-search-input {
+  .docsearch {
     box-sizing: content-box;
     height: 35px;
     padding: 15px 15px 15px 40px;
     width: auto;
     border: 1px solid $search-border;
+    background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 23px;
 
     @media all and (min-width: $mobile-width) {
       min-width: 300px;
     }
-  }
-
-  .st-ui-search-input, .st-default-search-input, .st-ui-search-icon {
-    background-size: 16px 16px;
-    background-position: 15px 25px;
   }
 }
 
