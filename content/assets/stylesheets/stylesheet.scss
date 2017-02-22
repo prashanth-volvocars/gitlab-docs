@@ -309,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: hidden;
 
     &:not(:last-child)::after {
-      content: "/";
+      content: "›\00a0";
     }
 
     &::after {
@@ -323,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 10px;
     padding-left: 20px;
     background: $toc-bg-color;
+    max-width: 30em;
     border-bottom: 3px double $toc-border-bottom;
 
     li {
