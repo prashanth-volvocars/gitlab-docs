@@ -97,6 +97,10 @@ review_stop:
 
 pages:
   stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  before_script: []
+  cache: {}
   environment:
     name: production
     url: https://docs.gitlab.com
