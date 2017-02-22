@@ -101,8 +101,6 @@ pages:
     name: production
     url: https://docs.gitlab.com
   script:
-    - rake pull_repos
-    - nanoc
     # Symlink all README.html to index.html
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
   artifacts:
@@ -113,3 +111,5 @@ pages:
     - master@gitlab-com/gitlab-docs
   tags:
     - docker
+  dependencies:
+    - compile
