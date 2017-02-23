@@ -36,7 +36,7 @@ $topic-runner-header-color: rgb(203, 88, 15);
 
 // Other colors
 $toc-bg-color: rgba(244, 247, 248, .7);
-$toc-border-bottom: rgb(229, 229, 229);
+$toc-border: rgb(229, 229, 229);
 $border-color: #e5e5e5;
 $border-color-light: #f0f0f0;
 $table-border-color: $border-color;
@@ -321,7 +321,8 @@ h1, h2, h3, h4, h5, h6 {
   + ul {
     padding: 20px;
     background: $toc-bg-color;
-    border-bottom: 3px double $toc-border-bottom;
+    border-bottom: 2px solid $toc-border;
+    border-top: 2px solid $toc-border;
 
     li {
       padding: 4px 0;
