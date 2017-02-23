@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 
 // Breakpoints
@@ -35,8 +35,8 @@ $topic-runner-circle-color: rgb(203, 88, 15);
 $topic-runner-header-color: rgb(203, 88, 15);
 
 // Other colors
-$toc-bg-color: rgb(244, 247, 248);
-$toc-border-color: rgb(116, 159, 226);
+$toc-bg-color: rgba(244, 247, 248, .7);
+$toc-border: rgb(229, 229, 229);
 $border-color: #e5e5e5;
 $border-color-light: #f0f0f0;
 $table-border-color: $border-color;
@@ -45,7 +45,12 @@ $blockquote-border-color: rgb(0, 188, 242);
 $blockquote-background-color: rgb(239, 246, 251);
 $pre-background-color: rgba(238, 238, 238, .35);
 $body-color: rgb(82, 82, 82);
+$body-background-color: rgb(249, 249, 249);
+$main-background-color: rgb(255, 255, 255);
 $search-border: rgba(0, 0, 0, .25);
+$h-border-bottom: rgba(125, 134, 140, .2);
+$h1-border-bottom: rgb(241, 139, 33);
+$main-box-shadow: rgba(0, 0, 0, .1);
 $white: #fff;
 $black: #333;
 
@@ -54,7 +59,7 @@ $black: #333;
 }
 
 body {
-  background: $white;
+  background: $body-background-color;
   color: $body-color;
   margin: 0;
   padding: 0;
@@ -122,6 +127,8 @@ a > code {
 
 // Make code in headers match the font size of the given header.
 h1, h2, h3, h4, h5, h6 {
+  border-bottom: solid 1px $h-border-bottom;
+
   code {
     font-size: inherit;
   }
@@ -139,16 +146,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .main {
   margin: auto;
-  padding: 20px;
+  padding: 20px 40px;
   position: relative;
   width: auto;
-  max-width: 1000px;
+  max-width: 900px;
+  box-shadow: 0 3px 3px $main-box-shadow;
+  background: $main-background-color;
 
   h1 {
     font-size: 40px;
     font-weight: normal;
     line-height: 40px;
     letter-spacing: -1px;
+    border-bottom: solid 2px $h1-border-bottom;
+    padding-bottom: 10px;
   }
 
   p {
@@ -188,6 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
+  background: $main-background-color;
   position: relative;
   height: 50px;
   width: 100%;
@@ -297,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: hidden;
 
     &:not(:last-child)::after {
-      content: "/";
+      content: "›\00a0";
     }
 
     &::after {
@@ -307,21 +319,18 @@ h1, h2, h3, h4, h5, h6 {
 
   // ToC styles
   + ul {
-    border-left: 1px dashed $toc-border-color;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
+    padding: 20px;
     background: $toc-bg-color;
-    max-width: 30em;
+    border-bottom: 2px solid $toc-border;
+    border-top: 2px solid $toc-border;
 
     li {
-      padding: 5px 0;
-      list-style-type: none;
+      padding: 4px 0;
+      list-style-type: "›\00a0";
 
       ul {
         -webkit-padding-start: 0;
         padding-top: 5px;
-        padding-left: 20px;
       }
     }
   }
@@ -368,6 +377,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 36px;
     font-weight: 300;
     margin-top: 20px;
+    border-bottom: 0;
 
     a {
       color: $white;
