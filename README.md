@@ -2,16 +2,114 @@
 
 # GitLab Documentation
 
-This site is generated using [Nanoc](http://nanoc.ws).
+- The [GitLab Documentation](https://docs.gitlab.com) website is generated using [Nanoc](http://nanoc.ws).
+- [License](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/legal/individual_contributor_license_agreement.md)
+- [Writing Documentation](https://docs.gitlab.com/ce/development/writing_documentation.html)
+- [Style Guide](https://docs.gitlab.com/ce/development/doc_styleguide.html)
+- [Community Writers](https://about.gitlab.com/handbook/product/technical-writing/community-writers/)
 
 ## Development
 
-To set up the site locally:
+### Requirements
 
-- `bundle install`
+To preview `docs.gitlab.com` locally, you'll need:
+
+- Unix
+- Ruby 2.4.0
+- Bundler
+- Repositories
+  - GitLab CE
+  - GitLab EE
+  - GitLab Multi Runner
+  - GitLab Omnibus
+  - GitLab Docs
+
+> Note: On Windows, the process described here would be different, but as most of contributors use Unix, we'll go over this process for MacOs and Linux users only.
+
+### Installing dependencies
+
+#### Ruby 2.4.0
+
+If you don't have Ruby installed in your computer, [install Ruby 2.4.0](https://www.ruby-lang.org/en/documentation/installation/) directly.
+
+If you already have other Ruby versions installed, you can use a Ruby version manager to install Ruby 2.4.0 in your system.
+
+Check your Ruby version with `ruby --version`.
+
+To install multiple Ruby versions on MacOS or Linux, we recommend you use RMV:
+
+- Install [RVM](https://rvm.io/rvm/install)
+- Install Ruby 2.4.0 with `rvm install 2.4.0`
+
+#### Bundler
+
+[Bundler](https://bundler.io/) is an incredible dependency manager. Install it by running `gem install bundler`.
+
+#### Repositories
+
+**GitLab Team members:** clone the required repos to your machine. Navigate to the directory you'd like to have them, then clone with SSH:
+
+- GitLab CE: `git clone git@gitlab.com:gitlab-org/gitlab-ce.git`
+- GitLab EE: `git clone git@gitlab.com:gitlab-org/gitlab-ee.git`
+- GitLab Runner: `git clone git@gitlab.com:gitlab-org/gitlab-ci-multi-runner.git`
+- GitLab Omnibus: `git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git`
+- GitLab Docs: `git clone git@gitlab.com:gitlab-com/gitlab-docs.git`
+
+**GitLab Contributors:** fork each of these projects and clone them to your local computer:
+
+- GitLab CE: https://gitlab.com/gitlab-org/gitlab-ce/
+- GitLab EE: https://gitlab.com/gitlab-org/gitlab-ee/
+- GitLab Runner: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner
+- GitLab Omnibus: https://gitlab.com/gitlab-org/omnibus-gitlab
+- GitLab Docs: https://gitlab.com/gitlab-com/gitlab-docs
+
+### Bring Everything Together
+
+Now that we have everything required, we need to add symlinks, so GitLab Docs can talk to the remaining repos.
+
+#### Symlinks
+
+- In a terminal window, navigate to your local path to where you just cloned GitLab Docs
+- Output the path by running `pwd`:
+
+    ```
+    $ pwd
+    /Users/username/dir/gitlab-docs
+    ```
+
+- In a terminal window, navigate to your local path to where you just cloned GitLab CE
+- Output the path by running `pwd`:
+
+    ```
+    $ pwd
+    /Users/username/dir/gitlab-ce
+    ```
+
+- Copy the output and create a symlink between GitLab Docs (`content/`) and GitLab CE (`/doc/`), by running `ln -s /Users/username/dir/gitlab-ce/doc /Users/username/dir/gitlab-docs/content/ce`. Of course, adjust the paths according to the output of `pwd`.
+
+- Repeat the process to the other three repos:
+  - GitLab EE: `ln -s /Users/username/dir/gitlab-ee/doc /Users/username/dir/gitlab-docs/content/ee`
+  - Runner: `ln -s /Users/username/dir/gitlab-ci-multi-runner/docs /Users/username/dir/gitlab-docs/content/runner`
+  - Omnibus: `ln -s /Users/username/dir/omnibus-gitlab/doc /Users/username/dir/gitlab-docs/content/omnibus`
+- Open GitLab Docs in a terminal window and check if you have all the foour there (`ee`, `ce`, `runner`, `omnibus`): `ls content`
+
+If they're there, we're good to go!
+
+### Install Docs dependencies
+
+Now let's make Bundler deal with the dependencies defined in the `Gemfile`:
+
+- Open GitLab Docs in a terminal window
+- Switch to Ruby 2.4.0: `rmv 2.4.0`
+- Run `bundle install`
+
+### Preview the Docs Website
+
 - `bundle exec nanoc live`
 
 This will host the site at `localhost:3000`. Changes will be reloaded automatically using [Guard Nanoc](https://github.com/guard/guard-nanoc).
+
+### Extra Step
 
 To pull down the documentation content, run `rake pull_repos`. If you want to force-delete the `tmp/` and `content/` folders so the task will run without manual intervention, run `RAKE_FORCE_DELETE=true rake pull_repos`.
 
