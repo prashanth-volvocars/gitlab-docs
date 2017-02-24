@@ -337,10 +337,13 @@ h1, h2, h3, h4, h5, h6 {
 
     li {
       padding: 4px 0;
-      list-style-type: "›\00a0";
+      list-style: none;
+
+      &::before {
+        content: "›\00a0";
+      }
 
       ul {
-        -webkit-padding-start: 0;
         padding-top: 5px;
       }
     }
