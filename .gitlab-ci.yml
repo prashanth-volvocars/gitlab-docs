@@ -11,6 +11,12 @@ before_script:
   - ruby -v
   - bundle install --jobs 4 --path vendor
 
+variables:
+  BRANCH_CE: '8-17-stable'
+  BRANCH_EE: '8-17-stable-ee'
+  BRANCH_OMNIBUS: '8-17-stable'
+  BRANCH_RUNNER: '1-9-stable'
+
 compile:
   stage: build
   script:

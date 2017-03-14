@@ -41,7 +41,6 @@ task :pull_repos do
 
   dirs.each do |dir|
     unless "#{dir}".start_with?("tmp")
-  
       puts "\n=> Making an empty #{dir}"
       FileUtils.mkdir("#{dir}") unless File.exist?("#{dir}")
     end
@@ -50,22 +49,33 @@ task :pull_repos do
   products.each do |product|
     temp_dir = File.join(product['dirs']['temp_dir'])
 
-    if !File.exist?(temp_dir) || Dir.entries(temp_dir).length.zero?
-      puts "\n=> Cloning #{product['repo']} into #{temp_dir}\n"
+    case product['slug']
+    when 'ce'
+      branch = ENV['BRANCH_CE'] || 'master'
+    when 'ee'
+      branch = ENV['BRANCH_EE'] || 'master'
+    when 'omnibus'
+      branch = ENV['BRANCH_OMNIBUS'] || 'master'
+    when 'runner'
+      branch = ENV['BRANCH_RUNNER'] || 'master'
+    end
 
-      `git clone #{product['repo']} #{temp_dir} --depth 1 --branch master`
+    if !File.exist?(temp_dir) || Dir.entries(temp_dir).length.zero?
+      puts "\n=> Cloning #{product['repo']} #{branch} into #{temp_dir}\n"
+
+      `git clone #{product['repo']} #{temp_dir} --depth 1 --branch #{branch}`
     elsif File.exist?(temp_dir) && !Dir.entries(temp_dir).length.zero?
-      puts "\n=> Pulling master of #{product['repo']}\n"
+      puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
       # Enter the temporary directory and return after block is completed.
       FileUtils.cd(temp_dir) do
         # Update repository from master.
-        `git pull origin master`
+        `git pull origin #{branch}`
       end
     else
       puts "This shouldn't happen"
     end
-    
+
     temp_doc_dir = File.join(product['dirs']['temp_dir'], product['dirs']['doc_dir'], '.')
     destination_dir = File.join(product['dirs']['dest_dir'])
     puts "\n=> Copying #{temp_doc_dir} into #{destination_dir}\n"
