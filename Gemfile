@@ -6,13 +6,13 @@ gem 'adsf'
 gem 'sass'
 gem 'redcarpet'
 gem 'rouge', '~> 2.0'
-gem 'rake', '~> 11.3'
+gem 'rake', '~> 12.0'
 
 group :nanoc do
   gem 'guard-nanoc'
 
   # nanoc checks
-  gem 'nokogiri', '~> 1.6.8'
+  gem 'nokogiri', '~> 1.7.0'
 
   # Needed to generate Sitemap
   gem 'builder'
