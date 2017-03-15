@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 // Breakpoints
@@ -141,7 +141,6 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: solid 1px $h-border-bottom;
 
   code {
-    font-size: 20px;
     color: $code-color;
     background-color: $code-background-color;
   }
@@ -155,6 +154,30 @@ h1, h2, h3, h4, h5, h6 {
       opacity: 1;
     }
   }
+}
+
+h1 code {
+  font-size: 35px;
+}
+
+h2 code {
+  font-size: 23px;
+}
+
+h3 code {
+  font-size: 18px;
+}
+
+h4 code {
+  font-size: 15px;
+}
+
+h5 code {
+  font-size: 12px;
+}
+
+h6 code {
+  font-size: 10px;
 }
 
 .main {
