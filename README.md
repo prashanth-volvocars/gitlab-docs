@@ -15,6 +15,15 @@ This will host the site at `localhost:3000`. Changes will be reloaded automatica
 
 To pull down the documentation content, run `rake pull_repos`. If you want to force-delete the `tmp/` and `content/` folders so the task will run without manual intervention, run `RAKE_FORCE_DELETE=true rake pull_repos`.
 
+## Projects we pull from
+
+We pull from the following projects:
+
+- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
+- [GitLab Enterprise Edition](https://gitlab.com/gitlab-org/gitlab-ee)
+- [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
+- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)
+
 ## Examples and Resources
 
 ### Open Source Nanoc Sites
@@ -122,6 +131,38 @@ One potential problem with having separate docs for CE vs. EE is the inability t
 One potential solution to this problem is to include the EE docs inside the CE repository and then label pages as either Universal or EE-only (using frontmatter). The same could be done for specific sections on the page. This has the potential downside of complicating the documentation-writing process for contributors, but arguably the complexity of the CE/EE repositories already exists, so we're not really adding complexity so much as switching its form.
 
 The Atom Flight Manual has [the ability to switch between platforms for given pages](http://flight-manual.atom.io/using-atom/sections/atom-selections/), this code could be repurposed for including/excluding features based on whether the documentation is CE or EE ([Source](https://raw.githubusercontent.com/atom/flight-manual.atom.io/4c8f8d14e13b84584fe206e914ea06c6dc2b7a96/content/using-atom/sections/atom-selections.md)).
+
+## Review Apps for documentation merge requests
+
+If you are working on [one of the projects we pull from](#projects-we-pull-from)
+and updating the documentation, there is a way to preview it using Review Apps
+in the gitlab-docs project:
+
+1. Make sure you have Developer access to this project.
+1. Clone the docs site:
+
+    ```
+    git clone https://gitlab.com/gitlab-com/gitlab-docs.git
+    ```
+
+1. Create a branch.
+1. Edit `.gitlab-ci.yml` and change the branch variable of the project you
+   wish to preview. For example, if you work on documentation changes for
+   GitLab CE and the branch is named `1234-docs-for-foo`, change the respective
+   CI variable:
+
+     ```yaml
+     VARIABLES:
+       BRANCH_CE: '1234-docs-for-foo'
+     ```
+
+1. Commit your changes adding `WIP:` at the beginning of the commit in order to
+   avoid accidental merge, we'll use this only as a Review App.
+1. Push the changes and create an MR.
+1. Wait a few minutes and if the build finishes successfully, you'll be able to
+   see the link to the preview docs.
+1. Once the docs are eventually merged upstream, don't forget to close the
+   Review Apps MR and delete its branch.
 
 ## Deployment process
 
