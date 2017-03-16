@@ -161,6 +161,9 @@ in the gitlab-docs project:
 1. Push the changes and create an MR.
 1. Wait a few minutes and if the build finishes successfully, you'll be able to
    see the link to the preview docs.
+1. If new changes are pushed to the upstream docs, just retry the Review Apps
+   pipeline for the new changes to be deployed. The simplest way is to go to
+   the Review App MR, choose the **Pipelines** tab and hit the retry button.
 1. Once the docs are eventually merged upstream, don't forget to close the
    Review Apps MR and delete its branch.
 
