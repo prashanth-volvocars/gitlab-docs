@@ -163,8 +163,9 @@ in the gitlab-docs project:
    see the link to the preview docs in the [environments page] using the
    [environment URL button][env-url-button].
 
-If new changes are pushed to the upstream docs, just retry the Review Apps
-pipeline in the [pipelines page] for the new changes to be pulled and deployed.
+If new changes are pushed to the upstream docs, just create a new pipeline in
+the [new pipeline page]. Choose the branch you created for the Review App and
+hit **Create pipeline** for the new doc changes to be pulled and deployed.
 
 Once the docs are eventually merged upstream, don't forget to close the
 Review Apps MR (if you created one), delete the branch.
@@ -212,3 +213,4 @@ To add a new trigger for another project:
 [environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
 [pipelines page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines
+[new pipeline page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines/new
