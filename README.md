@@ -164,11 +164,10 @@ in the gitlab-docs project:
    [environment URL button][env-url-button].
 
 If new changes are pushed to the upstream docs, just retry the Review Apps
-pipeline for the new changes to be pulled and deployed. The simplest way is to
-go to the [environments page], and choose **Re-deploy** for your environment.
+pipeline in the [pipelines page] for the new changes to be pulled and deployed.
 
 Once the docs are eventually merged upstream, don't forget to close the
-Review Apps MR (if you created one), delete the branch and stop the environment.
+Review Apps MR (if you created one), delete the branch.
 
 ## Deployment process
 
@@ -212,3 +211,4 @@ To add a new trigger for another project:
 [pages]: https://pages.gitlab.io
 [environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
+[pipelines page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines
