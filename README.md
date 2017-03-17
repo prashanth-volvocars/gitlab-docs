@@ -138,11 +138,11 @@ If you are working on [one of the projects we pull from](#projects-we-pull-from)
 and updating the documentation, there is a way to preview it using Review Apps
 in the gitlab-docs project:
 
-1. Make sure you have Developer access to this project.
+1. Make sure you have Developer (push) access to this project.
 1. Clone the docs site:
 
     ```
-    git clone https://gitlab.com/gitlab-com/gitlab-docs.git
+    git clone git@gitlab.com:gitlab-com/gitlab-docs.git
     ```
 
 1. Create a branch.
@@ -156,16 +156,19 @@ in the gitlab-docs project:
        BRANCH_CE: '1234-docs-for-foo'
      ```
 
-1. Commit your changes adding `WIP:` at the beginning of the commit in order to
+1. Commit your changes and push the branch.
+1. Optionally create an MR marked as `WIP` in order to
    avoid accidental merge, we'll use this only as a Review App.
-1. Push the changes and create an MR.
 1. Wait a few minutes and if the build finishes successfully, you'll be able to
-   see the link to the preview docs.
-1. If new changes are pushed to the upstream docs, just retry the Review Apps
-   pipeline for the new changes to be deployed. The simplest way is to go to
-   the Review App MR, choose the **Pipelines** tab and hit the retry button.
-1. Once the docs are eventually merged upstream, don't forget to close the
-   Review Apps MR and delete its branch.
+   see the link to the preview docs in the [environments page] using the
+   [environment URL button][env-url-button].
+
+If new changes are pushed to the upstream docs, just retry the Review Apps
+pipeline for the new changes to be pulled and deployed. The simplest way is to
+go to the [environments page], and choose **Re-deploy** for your environment.
+
+Once the docs are eventually merged upstream, don't forget to close the
+Review Apps MR (if you created one), delete the branch and stop the environment.
 
 ## Deployment process
 
@@ -207,3 +210,5 @@ To add a new trigger for another project:
 
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
 [pages]: https://pages.gitlab.io
+[environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
+[env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
