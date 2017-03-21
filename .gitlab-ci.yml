@@ -12,10 +12,10 @@ before_script:
   - bundle install --jobs 4 --path vendor
 
 variables:
-  BRANCH_CE: '8-17-stable'
-  BRANCH_EE: '8-17-stable-ee'
-  BRANCH_OMNIBUS: '8-17-stable'
-  BRANCH_RUNNER: '1-9-stable'
+  BRANCH_CE: 'master'
+  BRANCH_EE: 'master'
+  BRANCH_OMNIBUS: 'master'
+  BRANCH_RUNNER: 'master'
 
 compile:
   stage: build
