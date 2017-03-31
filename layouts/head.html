@@ -2,8 +2,11 @@
   <meta charset="utf-8">
   <title><%= @item.attributes.include?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %></title>
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
+  <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
+  <link rel="stylesheet" href="<%= @items['/assets/stylesheets/font-awesome.min.*'].path %>">
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
+  <link rel="stylesheet" href="<%= @items['/assets/stylesheets/footer.*'].path %>">
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/docsearch.min.*'].path %>">
   <script async src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
