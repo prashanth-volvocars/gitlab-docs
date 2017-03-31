@@ -1,5 +1,5 @@
 ---
-version: 8
+version: 9
 ---
 
 // Breakpoints
@@ -237,7 +237,6 @@ h6 code {
 .header {
   background: $main-background-color;
   position: relative;
-  height: 50px;
   width: 100%;
   padding: 0 25px;
   border-bottom: 1px solid $border-color;
@@ -330,6 +329,19 @@ h6 code {
       right: 15px;
     }
   }
+
+  // Override bootstrap
+  .nav > li > a {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  // Override bootstrap
+  .nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+
 }
 
 // Styles for breadcrumbs navigation
@@ -343,6 +355,11 @@ h6 code {
     text-overflow: ellipsis;
     display: inline-block;
     overflow-x: hidden;
+    // Override bootstrap
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-radius: 0;
 
     &:not(:last-child)::after {
       content: "›\00a0";
