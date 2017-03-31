@@ -21,7 +21,7 @@ compile:
   stage: build
   script:
     - rake pull_repos
-    - nanoc --verbose
+    - nanoc compile -VV
   artifacts:
     paths:
       - public
