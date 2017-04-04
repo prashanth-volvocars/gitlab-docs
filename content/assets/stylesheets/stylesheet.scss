@@ -1,5 +1,5 @@
 ---
-version: 9
+version: 10
 ---
 
 // Breakpoints
@@ -108,6 +108,11 @@ blockquote {
 
   .highlight {
     background-color: $white;
+  }
+
+  //Override bootstrap
+  ol:last-child, p:last-child, ul:last-child {
+    margin: inherit;
   }
 
 }
