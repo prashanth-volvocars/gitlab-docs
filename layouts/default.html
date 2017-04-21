@@ -5,14 +5,14 @@
     <%= render '/header.*' %>
     <div class="main class">
       <% if @config[:breadcrumbs] %>
+        <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
         <ul class="breadcrumbs">
-          <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
-          <% if ancestor_array %>
+          <% if ancestor_array and ancestor_array.length > 0 %>
             <% ancestor_array.reverse_each do |item| %>
               <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
             <% end %>
+            <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
           <% end %>
-          <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
         </ul>
       <% end %>
       <%= yield %>
