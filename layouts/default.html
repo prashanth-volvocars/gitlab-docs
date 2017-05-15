@@ -3,24 +3,29 @@
   <%= render '/head.*' %>
   <body>
     <%= render '/header.*' %>
-    <div class="main class">
-      <% if @config[:breadcrumbs] %>
-        <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
-        <ul class="breadcrumbs">
-          <% if ancestor_array and ancestor_array.length > 0 %>
-            <% ancestor_array.reverse_each do |item| %>
-              <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
+    <div class=wrapper>
+      <div id="doc-nav" class="doc-nav">
+      </div>
+      <div class="main class">
+        <% if @config[:breadcrumbs] %>
+          <ul class="breadcrumbs">
+            <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
+            <% if ancestor_array %>
+              <% ancestor_array.reverse_each do |item| %>
+                <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
+              <% end %>
             <% end %>
             <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
-          <% end %>
-        </ul>
-      <% end %>
-      <%= yield %>
-      <hr>
-      <footer>
-        <%= edit_on_gitlab(@item) %>
-        <a href="https://gitlab.com/gitlab-com/gitlab-docs">View the source code of this site</a>
-      </footer>
+          </ul>
+        <% end %>
+        <%= yield %>
+        <hr>
+        <footer>
+          <%= edit_on_gitlab(@item) %>
+          <a href="https://gitlab.com/gitlab-com/gitlab-docs">View the source code of this site</a>
+        </footer>
+      </div>
+      <div class="clear"></div>
     </div>
   </body>
 
