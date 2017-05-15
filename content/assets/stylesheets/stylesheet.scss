@@ -1,5 +1,5 @@
 ---
-version: 10
+version: 11
 ---
 
 // Breakpoints
@@ -183,6 +183,10 @@ h5 code {
 
 h6 code {
   font-size: 10px;
+}
+
+.float-left {
+  float: left;
 }
 
 .main {
@@ -374,28 +378,69 @@ h6 code {
       padding: 0 4px 0 6px;
     }
   }
+}
 
-  // ToC styles
-  + ul {
-    padding: 20px;
-    background: $toc-bg-color;
-    border-bottom: 2px solid $toc-border;
-    border-top: 2px solid $toc-border;
+// ToC styles
+.breadcrumbs + ul, .doc-nav > ul {
+  padding: 20px;
+  background: $body-background-color;
 
-    li {
-      padding: 4px 0;
-      list-style: none;
+  li {
+    padding: 4px 0;
+    list-style: none;
 
-      &::before {
-        content: "›\00a0";
-      }
+    &::before {
+      content: "›\00a0";
+    }
 
-      ul {
-        padding-top: 5px;
-      }
+    ul {
+      padding-top: 5px;
     }
   }
 }
+
+.doc-nav {
+  float: left;
+  max-width: 350px;
+}
+
+.clear {
+  clear: both;
+}
+
+@media(max-width:1300px) {
+  .doc-nav {
+    float: none;
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    max-width: 900px;
+    box-shadow: 0 3px 3px $main-box-shadow;
+    background: $white;
+  }
+
+  .doc-nav > ul {
+    border-bottom: 2px solid $thead-border-color;
+    border-top: 2px solid $thead-border-color;
+    margin: 0;
+  }
+
+  .float-left {
+    float: none;
+  }
+}
+
+@media(min-width:1250px) {
+  .has-nav {
+    width: 1250px;
+    margin: 0 auto;
+  }
+}
+
+// if you want to center the nav and docs
+// body > .wrapper {
+// width: 1300px;
+// margin: 0 auto;
+// }
 
 // Permalinks on header elements.
 .anchor {
