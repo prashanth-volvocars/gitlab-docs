@@ -32,16 +32,5 @@ function toggleNavigation() {
     else {
       main[0].className += ' float-left';
     }
-
-
-    // fix the wrapper width and center
-    var wrapper = document.querySelectorAll('.wrapper');
-
-    if (wrapper[0] && wrapper[0].classList) {
-      wrapper[0].classList.add('has-nav');
-    }
-    else {
-      wrapper[0].className += ' has-nav';
-    }
   }
 })();
