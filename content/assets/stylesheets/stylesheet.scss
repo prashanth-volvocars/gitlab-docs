@@ -431,15 +431,19 @@ h6 code {
 
 @media(min-width:1250px) {
   .header {
-    position: fixed; top: 0; left: 0;
+    position: fixed; 
+    top: 0; 
+    left: 0;
     z-index: 1;
   }
 
   .doc-nav {
-     position: fixed; top: 0; left: 0;
-     padding-top: 55px;
-     overflow-y: scroll;
-     height: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    padding-top: 55px;
+    overflow-y: scroll;
+    height: 100%;
   }
 
   .main.class {
