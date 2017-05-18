@@ -50,6 +50,7 @@ $h1-border-bottom: rgb(241, 139, 33);
 $main-box-shadow: rgba(0, 0, 0, .1);
 $white: #fff;
 $black: #333;
+$light-gray: rgb(189, 190, 189);
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -287,6 +288,10 @@ h6 {
 
     li {
       margin-top: 20px;
+    }
+
+    .last-updated {
+      color: $light-gray;
     }
   }
 }

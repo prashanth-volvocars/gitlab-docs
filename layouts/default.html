@@ -18,6 +18,12 @@
             </ul>
           <% end %>
         <% end %>
+        <% if @item[:last_updated] %>
+          <p class="last-updated">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Last updated <%= @item[:last_updated] %>
+          </p>
+        <% end %>
         <%= yield %>
         <hr>
         <div class="edit-on">
