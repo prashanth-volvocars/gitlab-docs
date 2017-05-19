@@ -8,15 +8,15 @@
       </div>
       <div class="main class">
         <% if @config[:breadcrumbs] %>
-          <ul class="breadcrumbs">
-            <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
-            <% if ancestor_array %>
+          <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
+          <% if ancestor_array %>
+            <ul class="breadcrumbs">
               <% ancestor_array.reverse_each do |item| %>
                 <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
               <% end %>
-            <% end %>
-            <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
-          </ul>
+              <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
+            </ul>
+          <% end %>
         <% end %>
         <%= yield %>
         <hr>
@@ -27,9 +27,9 @@
       </div>
       <div class="clear"></div>
     </div>
-  </body>
 
-  <%= render '/footer.*' %>
-  <%= render '/docsearch.*' %>
-  <%= render '/analytics.*' %>
+    <%= render '/footer.*' %>
+    <%= render '/docsearch.*' %>
+    <%= render '/analytics.*' %>
+  </body>
 </html>

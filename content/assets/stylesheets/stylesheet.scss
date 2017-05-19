@@ -381,7 +381,7 @@ h6 code {
 }
 
 // ToC styles
-.breadcrumbs + ul, .doc-nav > ul {
+.breadcrumbs + ul, .doc-nav > ul, .quick-nav ul {
   padding: 20px;
   background: $body-background-color;
 
@@ -399,23 +399,25 @@ h6 code {
   }
 }
 
-.doc-nav {
-  float: left;
-  max-width: 350px;
+.doc-nav, .quick-nav {
+  h4 {
+    padding-bottom: 5px;
+    border-bottom: solid 1px $h1-border-bottom;
+  }
 }
 
 .clear {
   clear: both;
 }
 
-@media(max-width:1300px) {
+// not wide enough to show quick nav and toc
+@media(max-width:1099px) {
   .doc-nav {
-    float: none;
     margin: 0 auto;
     padding: 40px 40px 0;
-    max-width: 900px;
-    box-shadow: 0 3px 3px $main-box-shadow;
     background: $white;
+    width: inherit;
+    max-width: 900px;
   }
 
   .doc-nav > ul {
@@ -424,39 +426,101 @@ h6 code {
     margin: 0;
   }
 
-  .float-left {
+  .main.class {
     float: none;
+    width: inherit;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .quick-nav {
+    display: none;
   }
 }
 
-@media(min-width:1250px) {
+
+// wide enough to show toc but not quick nav
+@media(min-width:1100px) {
   .header {
-    position: fixed; 
-    top: 0; 
+    position: fixed;
+    top: 0;
     left: 0;
     z-index: 1;
   }
 
+  .main.class {
+    padding-top: 75px;
+  }
+
   .doc-nav {
-    position: fixed; 
-    top: 0; 
-    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
     padding-top: 55px;
     overflow-y: scroll;
     height: 100%;
   }
 
-  .main.class {
-    margin-left: 350px;
-    padding-top: 75px;
+  .doc-nav ul ul {
+    padding-left: 25px;
+  }
+
+  .doc-nav > ul .quick-nav ul {
+    margin: 0;
+  }
+
+  .doc-nav, .quick-nav {
+    width: 25%;
+  }
+}
+@media(min-width:1100px) and (max-width:1500px) {
+  .quick-nav {
+    display: none;
+  }
+
+  .doc-nav {
+    width: 30%;
+    max-width: 30%;
+  }
+
+  .main.class.has-toc {
+    width: 70%;
+    max-width: 70%;
+    float: left;
   }
 }
 
-// if you want to center the nav and docs
-// body > .wrapper {
-// width: 1300px;
-// margin: 0 auto;
-// }
+
+// wide enough to show quick nav and toc
+@media(min-width:1500px) {
+  .main.class.has-toc {
+    width: 50%;
+    margin-left: 25%;
+    max-width: 50%;
+  }
+
+  .quick-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 55px;
+    left: 0;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .quick-nav ul ul {
+    padding-bottom: 0;
+  }
+
+  .quick-nav h4 {
+    margin-top: 25px;
+  }
+
+  .quick-nav h4:first-child {
+    margin-top: 10px;
+  }
+
+}
 
 // Permalinks on header elements.
 .anchor {
@@ -478,13 +542,14 @@ h6 code {
   background-color: $landing-background;
 
   .landing-header {
-    padding: 75px 35px 200px;
+    padding: 55px 0 150px;
     background-color: $landing-header-background;
     text-align: center;
     color: $white;
+    margin-bottom: -50px;
 
     input {
-      margin-top: 50px;
+      margin-top: 40px;
       border-radius: $border-radius;
       font-size: 20px;
       line-height: inherit;
@@ -530,19 +595,19 @@ h6 code {
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  top: -100px;
-  max-width: 1100px;
+  top: -30px;
+  max-width: 1350px;
   margin: auto;
+  padding-right: 40px;
   -webkit-padding-start: 0;
 
   li {
     display: inline-block;
     background-color: $white;
     border: 1px solid $topic-border;
-    border-radius: $border-radius;
-    margin: 15px;
-    flex: 1 0 300px;
-    min-width: 300px;
+    margin: 10px 10px 50px;
+    flex: 1 0 270px;
+    min-width: 270px;
 
     @media all and (max-width: $mobile-width) {
       width: 100%;
@@ -557,7 +622,7 @@ h6 code {
     }
 
     .wrapper {
-      padding: 0 35px 40px;
+      padding: 0 30px 30px;
 
       @media all and (max-width: $mobile-width) {
         padding: 0 15px 15px;
@@ -575,7 +640,7 @@ h6 code {
 
       h2 {
         height: 70px;
-        margin-bottom: 25px;
+        margin: 10px 0 25px;
 
         @media all and (max-width: $mobile-width) {
           height: auto;
@@ -596,7 +661,7 @@ h6 code {
   color: $white;
   position: relative;
   margin: auto;
-  top: -28px;
+  top: -30px;
 }
 
 .topic-ce {
