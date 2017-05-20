@@ -9,14 +9,16 @@
       <div class="main class">
         <% if @config[:breadcrumbs] %>
           <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
-          <% if ancestor_array %>
-            <ul class="breadcrumbs">
-              <% ancestor_array.reverse_each do |item| %>
-                <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
+          <ul class="breadcrumbs">
+            <% if ancestor_array and ancestor_array.length > 2 %>
+              <% ancestor_array.reverse.each_with_index do |item, i| %>
+                <% if i > 0 %>
+                  <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
+                <% end %>
               <% end %>
               <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
-            </ul>
-          <% end %>
+            <% end %>
+          </ul>
         <% end %>
         <%= yield %>
         <hr>
