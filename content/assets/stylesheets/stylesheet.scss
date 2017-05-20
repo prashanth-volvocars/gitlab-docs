@@ -241,6 +241,14 @@ h6 code {
     flex-flow: row wrap;
     justify-content: space-between;
   }
+
+  .breadcrumbs {
+    margin: 0;
+
+    li {
+      margin-top: 20px;
+    }
+  }
 }
 
 .header {
@@ -449,7 +457,7 @@ h6 code {
   }
 
   .main.class {
-    padding-top: 75px;
+    padding-top: 53px;
   }
 
   .doc-nav {
@@ -473,7 +481,7 @@ h6 code {
     width: 25%;
   }
 }
-@media(min-width:1100px) and (max-width:1500px) {
+@media(min-width:1100px) and (max-width:1600px) {
   .quick-nav {
     display: none;
   }
@@ -492,7 +500,7 @@ h6 code {
 
 
 // wide enough to show quick nav and toc
-@media(min-width:1500px) {
+@media(min-width:1600px) {
   .main.class.has-toc {
     width: 50%;
     margin-left: 25%;
