@@ -113,12 +113,12 @@ products:
       doc_dir:  'doc'
     expose: false
   ee:
-    full_name: 'GitLab Enterprise Edition and GitLab.com'
-    short_name: 'Enterprise Edition'
+    full_name: 'GitLab self-hosted and GitLab.com'
+    short_name: 'GitLab'
     abbreviation: 'EE'
     slug: 'ee'
     index_file: 'README.*'
-    description: 'Browse user and administration documentation and guides for GitLab Enterprise Edition and GitLab.com.'
+    description: 'Browse user and administration documentation and guides for self-hosted GitLab instances and GitLab.com.'
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
     dirs:
       temp_dir: 'tmp/ee/'
