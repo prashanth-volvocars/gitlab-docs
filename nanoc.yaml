@@ -111,6 +111,7 @@ products:
       temp_dir: 'tmp/ce/'
       dest_dir: 'content/ce'
       doc_dir:  'doc'
+    expose: false
   ee:
     full_name: 'GitLab Enterprise Edition and GitLab.com'
     short_name: 'Enterprise Edition'
@@ -123,6 +124,7 @@ products:
       temp_dir: 'tmp/ee/'
       dest_dir: 'content/ee'
       doc_dir:  'doc'
+    expose: true
   omnibus:
     full_name: 'Omnibus GitLab'
     short_name: 'Omnibus'
@@ -135,6 +137,7 @@ products:
       temp_dir: 'tmp/omnibus/'
       dest_dir: 'content/omnibus'
       doc_dir:  'doc'
+    expose: true
   runner:
     full_name: 'GitLab Runner'
     short_name: 'Runner'
@@ -147,3 +150,4 @@ products:
       temp_dir: 'tmp/runner/'
       dest_dir: 'content/runner'
       doc_dir:  'docs'
+    expose: true
