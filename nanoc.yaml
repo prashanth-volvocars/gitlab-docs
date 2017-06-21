@@ -102,7 +102,6 @@ products:
   ce:
     full_name: 'GitLab Community Edition'
     short_name: 'Community Edition'
-    abbreviation: 'CE'
     slug: 'ce'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
@@ -115,7 +114,6 @@ products:
   ee:
     full_name: 'GitLab self-hosted and GitLab.com'
     short_name: 'GitLab'
-    abbreviation: 'EE'
     slug: 'ee'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for self-hosted GitLab instances and GitLab.com.'
@@ -128,7 +126,6 @@ products:
   omnibus:
     full_name: 'Omnibus GitLab'
     short_name: 'Omnibus'
-    abbreviation: 'OM'
     slug: 'omnibus'
     index_file: 'README.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.'
@@ -141,7 +138,6 @@ products:
   runner:
     full_name: 'GitLab Runner'
     short_name: 'Runner'
-    abbreviation: 'RU'
     slug: 'runner'
     index_file: 'index.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
