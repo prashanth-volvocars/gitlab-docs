@@ -116,7 +116,7 @@ products:
     short_name: 'GitLab'
     slug: 'ee'
     index_file: 'README.*'
-    description: 'Browse user and administration documentation and guides for self-hosted GitLab instances and GitLab.com.'
+    description: 'Browse user and administration documentation and guides for GitLab.'
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
     dirs:
       temp_dir: 'tmp/ee/'
