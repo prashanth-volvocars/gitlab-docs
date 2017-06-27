@@ -1,5 +1,5 @@
 ---
-version: 14
+version: 15
 ---
 
 // Breakpoints
@@ -102,6 +102,15 @@ table {
 
   thead {
     border-bottom: 2px solid $thead-border-color;
+  }
+
+  tbody {
+    tr > td {
+      max-width: 300px;
+    }
+    code {
+      word-wrap: break-word;
+    }
   }
 
   td, th {
