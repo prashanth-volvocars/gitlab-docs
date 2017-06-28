@@ -21,7 +21,7 @@ module Nanoc::Helpers
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}"
       end
 
-      result = "<a href='#{gitlab_url}'>Improve this documentation on GitLab.com</a>"
+      result = "<a href='#{gitlab_url}'>Edit this page</a>"
     end
   end
 end

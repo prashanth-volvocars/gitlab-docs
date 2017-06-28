@@ -75,26 +75,6 @@ a, a:visited {
   }
 }
 
-// external link
-[href^="http://"], [href^="https://"] {
-  &:not([href*="gitlab.com"]) {
-    &::after {
-      content: "\f08e";
-      font-family: FontAwesome;
-      font-size: x-small;
-      font-style: normal;
-      font-weight: normal;
-      padding-left: 5px;
-      line-height: 10px;
-    }
-  }
-}
-
-.footer a::after {
-  content: none;
-  display: none;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -219,6 +199,37 @@ h6 {
   max-width: 900px;
   box-shadow: 0 3px 3px $main-box-shadow;
   background: $main-background-color;
+
+  a {
+    text-decoration: none;
+  }
+
+  .edit-on {
+    a::before {
+      content: "\f044";
+      font-family: FontAwesome;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal;
+      padding-right: 5px;
+      line-height: 10px;
+    }
+  }
+
+  // external link
+  [href^="http://"], [href^="https://"] {
+    &:not([href*="gitlab.com"]) {
+      &::after {
+        content: "\f08e";
+        font-family: FontAwesome;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        padding-left: 5px;
+        line-height: 10px;
+      }
+    }
+  }
 
   h1 {
     font-size: 40px;
@@ -367,7 +378,7 @@ h6 {
   // Override bootstrap
   .nav > li > a {
     padding: 0 10px;
-    font-size: 16px;
+    text-decoration: none;
   }
 
   // Override bootstrap
