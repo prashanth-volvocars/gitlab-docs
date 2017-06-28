@@ -4,14 +4,15 @@ title: GitLab Documentation
 
 <ul class="topics">
   <% @config[:products].each do |name, product| %>
-    <li class="topic-<%= product[:slug] %>">
-      <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-        <div class="wrapper">
-          <div class="circle"><%= product[:abbreviation] %></div>
-          <h2><%= product[:full_name] %></h2>
-          <p><%= product[:description] %></p>
-        </div>
-      </a>
-    </li>
+    <% if product[:expose] == true %>
+      <li class="topic-<%= product[:slug] %>">
+        <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+          <div class="wrapper">
+            <h2><%= product[:full_name] %></h2>
+            <p><%= product[:description] %></p>
+          </div>
+        </a>
+      </li>
+    <% end %>
   <% end %>
 </ul>

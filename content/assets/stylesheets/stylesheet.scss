@@ -25,13 +25,9 @@ $code-background-color: #f9f2f4;
 $landing-background: #f9f9f9;
 $landing-header-background: #34373c;
 $topic-border: rgb(215, 215, 215);
-$topic-ce-circle-color: rgb(1, 136, 101);
 $topic-ce-header-color: rgb(1, 120, 85);
-$topic-ee-circle-color: rgb(25, 112, 169);
 $topic-ee-header-color: rgb(9, 96, 153);
-$topic-omnibus-circle-color: rgb(107, 79, 187);
 $topic-omnibus-header-color: rgb(107, 79, 187);
-$topic-runner-circle-color: rgb(203, 88, 15);
 $topic-runner-header-color: rgb(203, 88, 15);
 
 // Other colors
@@ -66,6 +62,7 @@ body {
   padding: 0;
   line-height: 1.6;
   font-family: $sans-font-family;
+  font-size: 16px;
 }
 
 a, a:visited {
@@ -76,22 +73,6 @@ a, a:visited {
     color: $link-color-hover;
     text-decoration: underline;
   }
-}
-
-[href^="http://"], [href^="https://"] {
-  &:not([href*="gitlab.com"]) {
-    &::after {
-      content: "(external link)";
-      font-size: x-small;
-      padding-left: 5px;
-      line-height: 10px;
-    }
-  }
-}
-
-.footer a::after {
-  content: none;
-  display: none;
 }
 
 table {
@@ -130,6 +111,7 @@ blockquote {
   background-color: $blockquote-background-color;
   margin: 20px 0;
   padding: 10px 20px;
+  font-size: 16px;
 
   .highlight {
     background-color: $white;
@@ -139,7 +121,6 @@ blockquote {
   ol:last-child, p:last-child, ul:last-child {
     margin: inherit;
   }
-
 }
 
 pre {
@@ -153,7 +134,6 @@ hr {
 
 code, code span {
   font-family: $mono-font-family;
-  font-size: 14px;
 }
 
 p code, li code, table code {
@@ -229,6 +209,37 @@ h6 {
   box-shadow: 0 3px 3px $main-box-shadow;
   background: $main-background-color;
 
+  a {
+    text-decoration: none;
+  }
+
+  .edit-on {
+    a::before {
+      content: "\f044";
+      font-family: FontAwesome;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal;
+      padding-right: 5px;
+      line-height: 10px;
+    }
+  }
+
+  // external link
+  [href^="http://"], [href^="https://"] {
+    &:not([href*="gitlab.com"]) {
+      &::after {
+        content: "\f08e";
+        font-family: FontAwesome;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        padding-left: 5px;
+        line-height: 10px;
+      }
+    }
+  }
+
   h1 {
     font-size: 40px;
     font-weight: normal;
@@ -240,7 +251,6 @@ h6 {
 
   p {
     margin: 20px 0;
-    font-size: 16px;
     line-height: 22px;
   }
 
@@ -249,7 +259,6 @@ h6 {
   }
 
   li {
-    font-size: 16px;
     line-height: 22px;
 
     > ul, > ol {
@@ -338,14 +347,12 @@ h6 {
 
       li {
         display: block;
-        font-size: 16px;
         padding: 10px 0;
       }
     }
   }
 
   li {
-    font-size: 14px;
     display: inline-block;
     line-height: 20px;
     margin: 0 10px;
@@ -359,7 +366,6 @@ h6 {
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
     margin: -5px;
-    font-size: 14px;
     width: 190px;
     background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
     background-repeat: no-repeat;
@@ -381,7 +387,7 @@ h6 {
   // Override bootstrap
   .nav > li > a {
     padding: 0 10px;
-    font-size: 16px;
+    text-decoration: none;
   }
 
   // Override bootstrap
@@ -394,7 +400,6 @@ h6 {
 
 // Styles for breadcrumbs navigation
 .breadcrumbs {
-  font-size: 16px;
   white-space: nowrap;
   overflow-x: auto;
   padding: 0;
@@ -704,39 +709,24 @@ h6 {
 }
 
 .topic-ce {
-  .circle {
-    background-color: $topic-ce-circle-color;
-  }
-
   h2 {
     color: $topic-ce-header-color;
   }
 }
 
 .topic-ee {
-  .circle {
-    background-color: $topic-ee-circle-color;
-  }
-
   h2 {
     color: $topic-ee-header-color;
   }
 }
 
 .topic-omnibus {
-  .circle {
-    background-color: $topic-omnibus-circle-color;
-  }
-
   h2 {
     color: $topic-omnibus-header-color;
   }
 }
 
 .topic-runner {
-  .circle {
-    background-color: $topic-runner-circle-color;
-  }
   h2 {
     color: $topic-runner-header-color;
   }

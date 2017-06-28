@@ -8,11 +8,13 @@
     <ul class="nav">
       <li class="search"><input type="text" class="docsearch" placeholder="Search"></li>
       <% @config[:products].each do |name, product| %>
-        <li class="nav-item">
-          <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-            <%= product[:short_name] %>
-          </a>
-        </li>
+        <% if product[:expose] == true %>
+          <li class="nav-item">
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+              <%= product[:short_name] %>
+            </a>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>

@@ -203,6 +203,10 @@ $linkedin-bg: #007bb5;
     }
   }
 
+  a::after {
+    content: none;
+  }
+
   ul {
     padding-left: 0;
     margin-bottom: 0;
