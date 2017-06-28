@@ -25,13 +25,9 @@ $code-background-color: #f9f2f4;
 $landing-background: #f9f9f9;
 $landing-header-background: #34373c;
 $topic-border: rgb(215, 215, 215);
-$topic-ce-circle-color: rgb(1, 136, 101);
 $topic-ce-header-color: rgb(1, 120, 85);
-$topic-ee-circle-color: rgb(25, 112, 169);
 $topic-ee-header-color: rgb(9, 96, 153);
-$topic-omnibus-circle-color: rgb(107, 79, 187);
 $topic-omnibus-header-color: rgb(107, 79, 187);
-$topic-runner-circle-color: rgb(203, 88, 15);
 $topic-runner-header-color: rgb(203, 88, 15);
 
 // Other colors
@@ -699,39 +695,24 @@ h6 {
 }
 
 .topic-ce {
-  .circle {
-    background-color: $topic-ce-circle-color;
-  }
-
   h2 {
     color: $topic-ce-header-color;
   }
 }
 
 .topic-ee {
-  .circle {
-    background-color: $topic-ee-circle-color;
-  }
-
   h2 {
     color: $topic-ee-header-color;
   }
 }
 
 .topic-omnibus {
-  .circle {
-    background-color: $topic-omnibus-circle-color;
-  }
-
   h2 {
     color: $topic-omnibus-header-color;
   }
 }
 
 .topic-runner {
-  .circle {
-    background-color: $topic-runner-circle-color;
-  }
   h2 {
     color: $topic-runner-header-color;
   }
