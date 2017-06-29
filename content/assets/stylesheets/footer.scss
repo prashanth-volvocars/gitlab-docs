@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 $color-white: #fff;
@@ -21,6 +21,7 @@ $color-primary: #548;
 $color-primary-alt: #6b4fbb;
 $color-secondary: #e14329;
 $color-secondary-alt: #fba225;
+$color-subfooter-bg: rgb(85, 68, 136);
 
 $color-primary-medium: #503991;
 
@@ -275,4 +276,24 @@ $linkedin-bg: #007bb5;
 .row {
   margin-left: -15px;
   margin-right: -15px;
+}
+
+.source-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 15px;
+  background-color: $color-subfooter-bg;
+  z-index: 9;
+
+  a {
+    color: $color-secondary-alt;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
