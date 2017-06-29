@@ -11,6 +11,7 @@ function toggleNavigation() {
 // move document nav to sidebar
 (function() {
   var nav = document.querySelectorAll('.breadcrumbs +ul');
+  var main = document.querySelectorAll('.main.class');
 
   // if the document has a top level nav
   if(nav[0]) {
@@ -34,6 +35,18 @@ function toggleNavigation() {
           menu.insertBefore(title, menu.children[0]);
 
           sidebar.appendChild(menu);
+
+          var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
+
+          document.addEventListener('scroll', function() {
+            if (window.scrollY + sidebarHeight >= main[0].offsetHeight) {
+              sidebar.style.position = 'absolute';
+              sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
+            } else {
+              sidebar.style.position = '';
+              sidebar.style.top = '';
+            }
+          });
         }
 
         // remove what is left of the old navigation
@@ -45,8 +58,6 @@ function toggleNavigation() {
     }
 
     // main content has-toc
-    var main = document.querySelectorAll('.main.class');
-
     if (main[0] && main[0].classList) {
       main[0].classList.add('has-toc');
     }
