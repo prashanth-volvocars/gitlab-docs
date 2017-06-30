@@ -13,10 +13,8 @@ class HTML < Redcarpet::Render::HTML
 
 
   def header(text, header_level)
-    # https://gitlab.com/gitlab-com/gitlab-docs/issues/84#note_24957099
-    text = Nokogiri::HTML.parse(text).text
     # https://github.com/cookpad/garage/blob/c817733e382c734eedba743e9103cd8a124f24eb/lib/garage/docs/anchor_building.rb#L24
-    anchor = text.gsub(/\s+/, '-').downcase
+    anchor = text.gsub(/\s+/, '-').gsub(/<\/?[^>]*>/, '').downcase
     # https://github.com/rails/rails/blob/e491b2c06329afb3c989261a2865d2a93c8b84b8/activesupport/lib/active_support/inflector/transliterate.rb#L86
     anchor.gsub!(/[^a-z0-9\-_]+/i, '-')
     anchor.squeeze!('-')        # replace multiple dashes with one
