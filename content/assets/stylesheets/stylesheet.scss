@@ -731,3 +731,12 @@ h6 {
     color: $topic-runner-header-color;
   }
 }
+
+// https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
+*[id]::before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
+}
