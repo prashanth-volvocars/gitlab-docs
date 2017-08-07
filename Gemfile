@@ -4,7 +4,7 @@ gem 'nanoc', '~> 4.10'
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sass', '~> 3.6'
-gem 'redcarpet', '~> 3.4'
+gem 'kramdown'
 gem 'rouge', '~> 2.2'
 gem 'rake', '~> 12.3'
 
