@@ -732,6 +732,12 @@ h6 {
   }
 }
 
+.footnotes {
+  li::before {
+    display: none;
+  }
+}
+
 // https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
 *[id]::before {
   display: block;
