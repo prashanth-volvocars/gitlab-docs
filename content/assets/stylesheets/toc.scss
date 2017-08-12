@@ -1,0 +1,146 @@
+---
+version: 1
+---
+
+@import "variables";
+
+// ToC styles
+.breadcrumbs + ul, .doc-nav > ul, .quick-nav ul {
+  padding: 20px;
+  background: $body-background-color;
+
+  li {
+    padding: 4px 0;
+    list-style: none;
+
+    &::before {
+      content: "›\00a0";
+    }
+
+    ul {
+      padding-top: 5px;
+    }
+  }
+}
+
+.doc-nav, .quick-nav {
+  h4 {
+    padding-bottom: 5px;
+    border-bottom: solid 1px $h1-border-bottom;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+// not wide enough to show quick nav and toc
+@media(max-width:1099px) {
+  .doc-nav {
+    margin: 0 auto;
+    padding: 40px 40px 0;
+    background: $white;
+    width: inherit;
+    max-width: 900px;
+  }
+
+  .doc-nav > ul {
+    border-bottom: 2px solid $thead-border-color;
+    border-top: 2px solid $thead-border-color;
+    margin: 0;
+  }
+
+  .main.class {
+    float: none;
+    width: inherit;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  .quick-nav {
+    display: none;
+  }
+}
+
+
+// wide enough to show toc but not quick nav
+@media(min-width:1100px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .main.class {
+    padding-top: 53px;
+  }
+
+  .doc-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 55px;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .doc-nav ul ul {
+    padding-left: 25px;
+  }
+
+  .doc-nav > ul .quick-nav ul {
+    margin: 0;
+  }
+
+  .doc-nav, .quick-nav {
+    width: 25%;
+  }
+}
+@media(min-width:1100px) and (max-width:1600px) {
+  .quick-nav {
+    display: none;
+  }
+
+  .doc-nav {
+    width: 30%;
+    max-width: 30%;
+  }
+
+  .main.class.has-toc {
+    width: 70%;
+    max-width: 70%;
+    float: left;
+  }
+}
+
+
+// wide enough to show quick nav and toc
+@media(min-width:1601px) {
+  .main.class.has-toc {
+    width: 50%;
+    margin-left: 25%;
+    max-width: 50%;
+  }
+
+  .quick-nav {
+    position: fixed;
+    top: 0;
+    padding-top: 55px;
+    left: 0;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .quick-nav ul ul {
+    padding-bottom: 0;
+  }
+
+  .quick-nav h4 {
+    margin-top: 25px;
+  }
+
+  .quick-nav h4:first-child {
+    margin-top: 10px;
+  }
+}
