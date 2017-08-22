@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <%= render '/head.*' %>
+  <body>
+    <%= render '/header.*' %>
+    <div class=wrapper>
+      <div id="doc-nav" class="doc-nav">
+      </div>
+      <div class="main class">
+        <% if @config[:breadcrumbs] %>
+          <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
+          <% if ancestor_array %>
+            <ul class="breadcrumbs">
+              <% ancestor_array.reverse_each do |item| %>
+                <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
+              <% end %>
+              <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
+            </ul>
+          <% end %>
+        <% end %>
+        <div class="article-header">
+          Written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
+          on <%= @item[:date] %>.
+          <% if @item[:last_updated] %>
+          Last updated: <%= @item[:last_updated] %>.
+          <% end %>
+          Type: <%= @item[:article_type] %>.
+          Level: <%= @item[:level] %>.
+        </div>
+        <%= yield %>
+        <hr>
+        <div class="edit-on">
+          <%= edit_on_gitlab(@item) %>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <%= render '/footer.*' %>
+    <%= render '/docsearch.*' %>
+    <%= render '/analytics.*' %>
+  </body>
+</html>
