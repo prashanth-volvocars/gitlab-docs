@@ -50,7 +50,11 @@ compile '/**/*.md' do
       },
       with_toc: include_toc
 
-    layout '/default.*'
+      if item[:layout].nil?
+        layout '/default.*'
+      else
+        layout "/#{item[:layout]}.*"
+      end
 
     filter :md_to_html_ext
   else
