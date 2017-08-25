@@ -18,15 +18,20 @@
             </ul>
           <% end %>
         <% end %>
-        <div class="article-header">
+        <h1><%= @item[:title] %></h1>
+        <div class="article-metadata">
           Written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
-          on <%= @item[:date] %>.
+          on <%= @item[:date] %>
+          &#8226;
           <% if @item[:last_updated] %>
-          Last updated: <%= @item[:last_updated] %>.
+          Last updated: <%= @item[:last_updated] %>
+          &#8226;
           <% end %>
-          Type: <%= @item[:article_type] %>.
-          Level: <%= @item[:level] %>.
+          Type: <%= @item[:article_type] %>
+          &#8226;
+          Level: <%= @item[:level] %>
         </div>
+        </p>
         <%= yield %>
         <hr>
         <div class="edit-on">
