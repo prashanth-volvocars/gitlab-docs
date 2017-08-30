@@ -66,10 +66,10 @@ review:
   before_script: []
   cache: {}
   script:
-    - rsync -av --delete public /srv/nginx/pages/$CI_BUILD_REF_NAME
+    - rsync -av --delete public /srv/nginx/pages/$CI_BUILD_REF_SLUG
   environment:
-    name: review/$CI_BUILD_REF_NAME
-    url: http://$CI_BUILD_REF_NAME.$APPS_DOMAIN
+    name: review/$CI_BUILD_REF_SLUG
+    url: http://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
   only:
     - branches@gitlab-com/gitlab-docs
@@ -88,10 +88,10 @@ review_stop:
   cache: {}
   dependencies: []
   script:
-    - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_NAME
+    - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_SLUG
   when: manual
   environment:
-    name: review/$CI_BUILD_REF_NAME
+    name: review/$CI_BUILD_REF_SLUG
     action: stop
   only:
     - branches@gitlab-com/gitlab-docs
