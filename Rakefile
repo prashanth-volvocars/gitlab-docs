@@ -46,6 +46,11 @@ task :pull_repos do
     end
   end
 
+  puts "\n=> Setting up dummy user/email in Git"
+
+  `git config --global user.name "John Doe"`
+  `git config --global user.email johndoe@example.com`
+
   products.each do |product|
     temp_dir = File.join(product['dirs']['temp_dir'])
 
