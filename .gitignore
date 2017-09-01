@@ -9,6 +9,8 @@ content/ce
 content/ee
 content/omnibus
 content/runner
+content/doc
+content/docs
 
 # Temporary file directory
 tmp/
