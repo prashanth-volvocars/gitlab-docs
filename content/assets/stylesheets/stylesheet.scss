@@ -1,5 +1,5 @@
 ---
-version: 16
+version: 17
 ---
 
 @import "variables";
@@ -486,7 +486,6 @@ h6 {
 
     h2 {
       text-align: center;
-      font-size: 21px;
       font-weight: 400;
     }
 
@@ -494,7 +493,7 @@ h6 {
       text-decoration: none;
 
       h2 {
-        height: 70px;
+        height: 50px;
         margin: 10px 0 25px;
 
         @media all and (max-width: $mobile-width) {
@@ -502,26 +501,6 @@ h6 {
         }
       }
     }
-  }
-}
-
-.circle {
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 2.35;
-  color: $white;
-  position: relative;
-  margin: auto;
-  top: -30px;
-}
-
-.topic-ce {
-  h2 {
-    color: $topic-ce-header-color;
   }
 }
 
