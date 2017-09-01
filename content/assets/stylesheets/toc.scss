@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import "variables";
@@ -10,16 +10,12 @@ version: 1
   background: $body-background-color;
 
   li {
-    padding: 4px 0;
     list-style: none;
 
     &::before {
       content: "›\00a0";
     }
 
-    ul {
-      padding-top: 5px;
-    }
   }
 }
 
