@@ -20,3 +20,4 @@ crash.log
 
 .DS_Store
 .sass-cache/
+.bundle/
