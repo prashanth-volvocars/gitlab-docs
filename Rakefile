@@ -74,8 +74,10 @@ task :pull_repos do
 
       # Enter the temporary directory and return after block is completed.
       FileUtils.cd(temp_dir) do
-        # Update repository from master.
-        `git pull origin #{branch}`
+        # Update repository from master. Fetch and reset to avoid
+        # merge conflicts
+        `git fetch origin #{branch}`
+        `git reset --hard origin/#{branch}`
       end
     else
       puts "This shouldn't happen"
