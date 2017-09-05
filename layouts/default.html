@@ -23,9 +23,7 @@
         <div class="edit-on">
           <%= edit_on_gitlab(@item) %>
         </div>
-        <% if @item[:comments].nil? %>
-          <%= render '/discourse.*' %>
-        <% end %>
+        <%= render '/discourse.*' %>
       </div>
       <div class="clear"></div>
     </div>
