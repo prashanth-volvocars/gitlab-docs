@@ -77,7 +77,7 @@ task :pull_repos do
         # Update repository from master. Fetch and reset to avoid
         # merge conflicts
         `git fetch origin #{branch}`
-        `git reset --hard origin/#{branch}`
+        `git reset --hard #{branch}`
       end
     else
       puts "This shouldn't happen"
