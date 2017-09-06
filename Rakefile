@@ -75,9 +75,10 @@ task :pull_repos do
       # Enter the temporary directory and return after block is completed.
       FileUtils.cd(temp_dir) do
         # Update repository from master. Fetch and reset to avoid
-        # merge conflicts
-        `git fetch origin #{branch}`
-        `git reset --hard #{branch}`
+        # merge conflicts.
+        # Why: https://gitlab.com/gitlab-com/gitlab-docs/merge_requests/119
+        # How: https://stackoverflow.com/a/9589927/974710
+        `git fetch origin #{branch} && git reset --hard FETCH_HEAD && git clean -df`
       end
     else
       puts "This shouldn't happen"
