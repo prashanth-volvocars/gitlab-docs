@@ -15,7 +15,7 @@ body {
   padding: 0;
   line-height: 1.6;
   font-family: $sans-font-family;
-  font-size: 15px;
+  font-size: $body-font-size;
 }
 
 a, a:visited {
@@ -65,7 +65,7 @@ blockquote {
   background-color: $blockquote-background-color;
   margin: 20px 0;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: $body-font-size;
 
   .highlight {
     background-color: $white;
