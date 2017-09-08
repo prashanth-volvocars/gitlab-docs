@@ -243,7 +243,8 @@ h6 {
     }
 
     .last-updated {
-      color: $light-gray;
+      color: $color-light-gray;
+      font: italic 13px/20px Roboto,sans-serif;
     }
   }
 }
