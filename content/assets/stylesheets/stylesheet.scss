@@ -1,7 +1,6 @@
 ---
 version: 20
 ---
-
 @import "variables";
 
 *, *::before, *::after {
@@ -240,6 +239,11 @@ h6 {
 
     li {
       margin-top: 20px;
+    }
+
+    .last-updated {
+      color: $color-light-gray;
+      font-size: 13px;
     }
   }
 }
