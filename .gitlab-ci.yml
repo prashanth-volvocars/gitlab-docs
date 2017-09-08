@@ -1,9 +1,11 @@
 image: ruby:2.5
 
 stages:
+  - images
   - build
   - test
   - deploy
+  - docker-stable
 
 before_script:
   - ruby -v
@@ -25,7 +27,7 @@ variables:
       - public
     expire_in: 1w
   cache:
-    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
       - tmp/
       - vendor/ruby
@@ -55,7 +57,7 @@ internal_links:
     - nanoc check internal_links
   allow_failure: true
   cache:
-    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
   tags:
@@ -73,7 +75,7 @@ scss_lint:
   script:
     - bundle exec scss-lint
   cache:
-    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
+    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
   tags:
@@ -95,10 +97,10 @@ review:
   before_script: []
   cache: {}
   script:
-    - rsync -av --delete public /srv/nginx/pages/$CI_BUILD_REF_SLUG
+    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   environment:
-    name: review/$CI_BUILD_REF_SLUG
-    url: http://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    name: review/$CI_COMMIT_REF_SLUG
+    url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
   only:
     - branches@gitlab-com/gitlab-docs
@@ -118,10 +120,10 @@ review_stop:
   before_script: []
   cache: {}
   script:
-    - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_SLUG
+    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   when: manual
   environment:
-    name: review/$CI_BUILD_REF_SLUG
+    name: review/$CI_COMMIT_REF_SLUG
     action: stop
   only:
     - branches@gitlab-com/gitlab-docs
@@ -154,3 +156,65 @@ pages:
     - docker
   dependencies:
     - compile_master
+
+########################
+# Docker images builds #
+########################
+
+.docker_build: &docker_build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+image:bootstrap:
+  stage: images
+  <<: *docker_build
+  variables:
+    DOCKER_DRIVER: overlay2
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
+  script:
+    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.bootstrap .
+    - docker push $IMAGE_NAME
+  when: manual
+
+image:builder-onbuild:
+  stage: images
+  <<: *docker_build
+  variables:
+    DOCKER_DRIVER: overlay2
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
+    GIT_STRATEGY: none
+  script:
+    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.builder.onbuild .
+    - docker push $IMAGE_NAME
+  when: manual
+
+image:nginx-onbuild:
+  stage: images
+  <<: *docker_build
+  variables:
+    DOCKER_DRIVER: overlay2
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
+    GIT_STRATEGY: none
+  script:
+    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
+    - docker push $IMAGE_NAME
+  when: manual
+
+# To be run only on stable branches.
+image:docs-stable:
+  stage: docker-stable
+  <<: *docker_build
+  variables:
+    DOCKER_DRIVER: overlay2
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    GIT_STRATEGY: none
+  script:
+    - docker build -t $IMAGE_NAME .
+    - docker push $IMAGE_NAME
+  # Only single or double digits separated with a dot.
+  only:
+    - /^\d{1,2}\.\d{1,2}$/

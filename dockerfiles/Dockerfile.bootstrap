@@ -1,0 +1,35 @@
+#
+# This is the Nanoc boostrap Dockerfile which builds an image that contains
+# all Nanoc's runtime dependencies and gems.
+#
+
+FROM ruby:2.5-alpine
+
+# Install packages needed at build and run time
+RUN apk add --no-cache --virtual build-deps \
+  build-base \
+  ruby-dev \
+  libxslt-dev
+
+# Do not install rdoc to save some space
+RUN echo 'gem: --no-document' >> /etc/gemrc
+
+# Copy scripts used for static HTML post-processing
+COPY scripts /scripts/
+
+# Copy only Gemfile and Gemfile.lock
+COPY /Gemfile* /source/
+WORKDIR /source
+
+# Install gems
+RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+
+# Cleanup
+RUN apk del build-deps \
+    && rm -rf /usr/lib/ruby/gems/*/cache/*.gem \
+    && rm -rf /usr/src/Gemfile*
+
+# Install packages needed at build and run time
+RUN apk add --no-cache libxslt libcurl openssl git grep bash
+
+CMD echo "Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site."
