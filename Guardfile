@@ -19,5 +19,7 @@ guard 'nanoc' do
   watch('nanoc.yaml') # Change this to config.yaml if you use the old config file name
   watch('Rules')
   watch(%r{^(content|layouts|lib)/.*$})
-  notification :libnotify, display_message: false
+  if (RUBY_PLATFORM == "i686-linux")
+    notification :libnotify, display_message: false
+  end
 end

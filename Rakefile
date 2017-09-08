@@ -46,6 +46,11 @@ task :pull_repos do
     end
   end
 
+  puts "\n=> Setting up dummy user/email in Git"
+
+  `git config --global user.name "John Doe"`
+  `git config --global user.email johndoe@example.com`
+
   products.each do |product|
     temp_dir = File.join(product['dirs']['temp_dir'])
 
@@ -69,8 +74,11 @@ task :pull_repos do
 
       # Enter the temporary directory and return after block is completed.
       FileUtils.cd(temp_dir) do
-        # Update repository from master.
-        `git pull origin #{branch}`
+        # Update repository from master. Fetch and reset to avoid
+        # merge conflicts.
+        # Why: https://gitlab.com/gitlab-com/gitlab-docs/merge_requests/119
+        # How: https://stackoverflow.com/a/9589927/974710
+        `git fetch origin #{branch} && git reset --hard FETCH_HEAD && git clean -df`
       end
     else
       puts "This shouldn't happen"

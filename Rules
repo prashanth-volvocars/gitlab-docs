@@ -30,7 +30,11 @@ end
 
 compile '/**/*.md' do
   if item[:redirect].nil?
-    include_toc = item.identifier.to_s.split("/")[2].end_with?("README.md", "index.md") ? false : true
+
+    # If 'toc' is absent in a file's yaml frontmatter, show ToC.
+    # Set to 'toc: false' to disable it.
+    include_toc = item[:toc].nil? ? true : false
+
     # Use Redcarpet with Rouge.
     filter :redcarpet,
       renderer: HTML,
@@ -50,7 +54,11 @@ compile '/**/*.md' do
       },
       with_toc: include_toc
 
-    layout '/default.*'
+      if item[:layout].nil?
+        layout '/default.*'
+      else
+        layout "/#{item[:layout]}.*"
+      end
 
     filter :md_to_html_ext
   else

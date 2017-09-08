@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-ruby '~> 2.4.0'
 
-gem 'nanoc', '~> 4.7'
+gem 'nanoc', '~> 4.8'
 gem 'adsf'
 gem 'sass'
 gem 'redcarpet'
