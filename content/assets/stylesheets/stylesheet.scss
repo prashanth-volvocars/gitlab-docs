@@ -159,6 +159,8 @@ h6 {
   position: relative;
   width: auto;
   max-width: 900px;
+  box-shadow: 0 3px 3px $main-box-shadow;
+  background: $main-background-color;
 
   a {
     text-decoration: none;
