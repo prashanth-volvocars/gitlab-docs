@@ -6,8 +6,9 @@ version: 2
 
 // ToC styles
 .breadcrumbs + ul, .doc-nav > ul, .quick-nav ul {
-  padding: 20px;
   background: $body-background-color;
+  padding: 20px;
+  margin-top: 60px;
 
   li {
     list-style: none;
@@ -22,7 +23,10 @@ version: 2
 .doc-nav, .quick-nav {
   h4 {
     padding-bottom: 5px;
-    border-bottom: solid 1px $h1-border-bottom;
+  }
+
+  li > a {
+    font-size: 14px;
   }
 }
 
@@ -41,8 +45,6 @@ version: 2
   }
 
   .doc-nav > ul {
-    border-bottom: 2px solid $thead-border-color;
-    border-top: 2px solid $thead-border-color;
     margin: 0;
   }
 
@@ -57,7 +59,6 @@ version: 2
     display: none;
   }
 }
-
 
 // wide enough to show toc but not quick nav
 @media(min-width:1100px) {
@@ -93,6 +94,7 @@ version: 2
     width: 25%;
   }
 }
+
 @media(min-width:1100px) and (max-width:1600px) {
   .quick-nav {
     display: none;
@@ -109,7 +111,6 @@ version: 2
     float: left;
   }
 }
-
 
 // wide enough to show quick nav and toc
 @media(min-width:1601px) {
