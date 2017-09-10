@@ -29,7 +29,7 @@ function toggleNavigation() {
 
           // grab the h1's li anchor text
           var title = document.createElement('h4');
-          title.innerHTML = nav[0].children[0].children[0].innerHTML;
+          title.innerHTML = "On this page:";
 
           // add the text as a title
           menu.insertBefore(title, menu.children[0]);
