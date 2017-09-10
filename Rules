@@ -11,9 +11,11 @@ preprocess do
         item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
       end
 
-      title = item.raw_content.match(/^[#] .*$/).to_s
-      title.gsub!('# ', '')
-      item[:title] = title unless title.empty?
+      unless item[:title]
+        title = item.raw_content.match(/^[#] .*$/).to_s
+        title.gsub!('# ', '')
+        item[:title] = title unless title.empty?
+      end
     end
   end
 end
