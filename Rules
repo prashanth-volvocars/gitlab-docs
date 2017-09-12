@@ -63,6 +63,7 @@ compile '/**/*.md' do
       end
 
     filter :md_to_html_ext
+    filter :admonition
   else
     layout '/redirect.*'
   end
