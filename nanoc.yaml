@@ -141,7 +141,7 @@ products:
     slug: 'runner'
     index_file: 'index.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
     dirs:
       temp_dir: 'tmp/runner/'
       dest_dir: 'content/runner'

@@ -51,7 +51,7 @@ To install multiple Ruby versions on MacOS or Linux, we recommend you use RMV:
 
 - GitLab CE: `git clone git@gitlab.com:gitlab-org/gitlab-ce.git`
 - GitLab EE: `git clone git@gitlab.com:gitlab-org/gitlab-ee.git`
-- GitLab Runner: `git clone git@gitlab.com:gitlab-org/gitlab-ci-multi-runner.git`
+- GitLab Runner: `git clone git@gitlab.com:gitlab-org/gitlab-runner.git`
 - GitLab Omnibus: `git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git`
 - GitLab Docs: `git clone git@gitlab.com:gitlab-com/gitlab-docs.git`
 
@@ -59,7 +59,7 @@ To install multiple Ruby versions on MacOS or Linux, we recommend you use RMV:
 
 - GitLab CE: https://gitlab.com/gitlab-org/gitlab-ce/
 - GitLab EE: https://gitlab.com/gitlab-org/gitlab-ee/
-- GitLab Runner: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner
+- GitLab Runner: https://gitlab.com/gitlab-org/gitlab-runner
 - GitLab Omnibus: https://gitlab.com/gitlab-org/omnibus-gitlab
 - GitLab Docs: https://gitlab.com/gitlab-com/gitlab-docs
 
@@ -89,7 +89,7 @@ Now that we have everything required, we need to add symlinks, so GitLab Docs ca
 
 - Repeat the process to the other three repos:
   - GitLab EE: `ln -s /Users/username/dir/gitlab-ee/doc /Users/username/dir/gitlab-docs/content/ee`
-  - Runner: `ln -s /Users/username/dir/gitlab-ci-multi-runner/docs /Users/username/dir/gitlab-docs/content/runner`
+  - Runner: `ln -s /Users/username/dir/gitlab-runner/docs /Users/username/dir/gitlab-docs/content/runner`
   - Omnibus: `ln -s /Users/username/dir/omnibus-gitlab/doc /Users/username/dir/gitlab-docs/content/omnibus`
 - Open GitLab Docs in a terminal window and check if you have all the foour there (`ee`, `ce`, `runner`, `omnibus`): `ls content`
 
@@ -120,7 +120,7 @@ We pull from the following projects:
 - [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
 - [GitLab Enterprise Edition](https://gitlab.com/gitlab-org/gitlab-ee)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
-- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)
+- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 
 ## Examples and Resources
 
