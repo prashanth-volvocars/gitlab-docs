@@ -15,7 +15,7 @@ module Nanoc::Helpers
         gitlab_url = "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{content_filename}"
       elsif product == "runner"
         # gitlab-runner repo
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-ci-multi-#{product}/blob/master/docs/#{content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/docs/#{content_filename}"
       else
         # gitlab-ce and gitlab-ee repos
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}"
