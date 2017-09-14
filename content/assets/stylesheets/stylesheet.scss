@@ -50,6 +50,7 @@ table {
     text-align: left;
     padding: 7px 10px;
     border: 1px solid $table-border-color;
+    font-size: $body-font-size;
   }
 
   @media all and (max-width: $mobile-width) {
