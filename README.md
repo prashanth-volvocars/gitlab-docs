@@ -3,10 +3,13 @@
 # GitLab Documentation
 
 - The [GitLab Documentation](https://docs.gitlab.com) website is generated using [Nanoc](http://nanoc.ws).
-- [License](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/legal/individual_contributor_license_agreement.md)
 - [Writing Documentation](https://docs.gitlab.com/ce/development/writing_documentation.html)
 - [Style Guide](https://docs.gitlab.com/ce/development/doc_styleguide.html)
 - [Community Writers](https://about.gitlab.com/handbook/product/technical-writing/community-writers/)
+
+## Contributing
+
+Read more in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 
