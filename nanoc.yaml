@@ -147,3 +147,16 @@ products:
       dest_dir: 'content/runner'
       doc_dir:  'docs'
     expose: true
+
+# Override the products used in prod so that it can be used with GDK
+# https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md
+environments:
+  gdk:
+    products:
+      docs:
+        full_name: 'GitLab Docs'
+        short_name: 'GitLab Docs'
+        slug: 'docs'
+        index_file: 'README.*'
+        description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
+        expose: true
