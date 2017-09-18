@@ -540,3 +540,8 @@ h6 {
   height: 75px;
   visibility: hidden;
 }
+
+// Override bootstrap's alert color
+.alert {
+  color: inherit;
+}
