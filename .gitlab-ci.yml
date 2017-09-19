@@ -47,12 +47,12 @@ internal_links:
     - docker
   dependencies:
     - compile
-  # Skip this job when it's invoked by a trigger. That will speed up the
-  # pipeline when a docs preview is triggered. We already check for internal
-  # links in every MR anyway.
+  # Skip this job when it's invoked by a cross project pipeline. That will speed
+  # up the pipeline when a docs preview is triggered. We already check for
+  # internal links in every MR anyway. For more info:
   # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
   except:
-    - triggers
+    - pipelines
 
 scss_lint:
   stage: test
@@ -64,12 +64,12 @@ scss_lint:
       - vendor/ruby
   tags:
     - docker
-  # Skip this job when it's invoked by a trigger. That will speed up the
-  # pipeline when a docs preview is triggered. The triggered pipeline is almost
-  # always a branch off master which should be green anyway.
+  # Skip this job when it's invoked by a cross project pipeline. That will speed
+  # up the pipeline when a docs preview is triggered. The triggered pipeline is
+  # always a branch off master which should be green anyway. For more info:
   # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
   except:
-    - triggers
+    - pipelines
 
 review:
   stage: deploy
