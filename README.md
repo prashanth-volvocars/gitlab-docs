@@ -103,7 +103,7 @@ If they're there, we're good to go!
 Now let's make Bundler deal with the dependencies defined in the `Gemfile`:
 
 - Open GitLab Docs in a terminal window
-- Switch to Ruby 2.4.0: `rmv 2.4.0`
+- Switch to Ruby 2.4.0: `rvm 2.4.0`
 - Run `bundle install`
 
 ### Preview the Docs Website
