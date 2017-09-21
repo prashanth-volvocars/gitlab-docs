@@ -13,9 +13,9 @@ class AdmonitionFilter < Nanoc::Filter
   }
 
   FONT_AWESOME_MAPPING = {
-    'note'    =>  'pencil',
-    'tip'     =>  'info-circle',
-    'warning' =>  'exclamation-triangle',
+    'note'    =>  'info-circle',
+    'tip'     =>  'pencil',
+    'caution' =>  'exclamation-triangle',
     'danger'  =>  'bolt',
   }
 
@@ -35,6 +35,7 @@ class AdmonitionFilter < Nanoc::Filter
   def generate(kind, content)
     %[<div class="admonition-wrapper #{kind}">] +
     %[<div class="admonition alert alert-#{BOOTSTRAP_MAPPING[kind]}">] +
+    %[<i class="fa fa-#{FONT_AWESOME_MAPPING[kind]} fa-fw" aria-hidden="true"></i>] +
     content +
     %[</div></div>]
   end
