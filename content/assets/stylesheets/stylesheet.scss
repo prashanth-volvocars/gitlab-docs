@@ -1,5 +1,5 @@
 ---
-version: 20
+version: 21
 ---
 @import "variables";
 
@@ -78,6 +78,12 @@ blockquote {
 
 pre {
   background-color: $pre-background-color;
+
+  code {
+    word-wrap: normal;
+    word-break: normal;
+    white-space: pre;
+  }
 }
 
 hr {
@@ -92,7 +98,6 @@ code, code span {
 p code, li code, table code {
   color: $code-color;
   background-color: $code-background-color;
-  padding: 2px 4px;
 }
 
 a > code {
