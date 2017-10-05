@@ -167,6 +167,10 @@ h6 {
   box-shadow: 0 3px 3px $main-box-shadow;
   background: $main-background-color;
 
+  @media (max-width: $mobile-width) {
+    padding: 20px 10px;
+  }
+
   a {
     text-decoration: none;
   }
