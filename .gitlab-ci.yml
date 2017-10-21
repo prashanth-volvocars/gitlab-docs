@@ -75,6 +75,8 @@ review:
   stage: deploy
   variables:
     GIT_STRATEGY: none
+  dependencies:
+    - compile
   before_script: []
   cache: {}
   script:
