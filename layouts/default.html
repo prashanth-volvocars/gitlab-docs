@@ -29,7 +29,9 @@
             <em>Last updated <%= @item[:last_updated] %></em>
           </p>
         <% end %>
-        <%= render '/discourse.*' %>
+        <div class="comments">
+          <%= render '/disqus.*' %>
+        </div>
       </div>
       <div class="clear"></div>
     </div>

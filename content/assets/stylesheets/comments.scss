@@ -1,0 +1,13 @@
+---
+version: 1
+---
+
+@import "variables";
+
+.comments {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top-style: solid;
+  border-top-color: $border-color;
+  border-top-width: 1px;
+}
