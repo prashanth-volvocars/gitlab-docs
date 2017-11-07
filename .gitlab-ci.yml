@@ -1,5 +1,3 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/nanoc
 image: ruby:2.4
 
 stages:
@@ -17,7 +15,7 @@ variables:
   BRANCH_OMNIBUS: 'master'
   BRANCH_RUNNER: 'master'
 
-compile:
+.build_base: &build_base
   stage: build
   script:
     - rake pull_repos
@@ -34,6 +32,23 @@ compile:
   tags:
     - docker
 
+# Compile on master branch
+compile_master:
+  <<: *build_base
+  variables:
+    NANOC_ENV: 'production'
+  only:
+    - master
+
+# Compile on all branches except master
+compile_branch:
+  <<: *build_base
+  only:
+    - branches@gitlab-com/gitlab-docs
+  except:
+    - master
+
+# Check for 404s in internal links
 internal_links:
   stage: test
   script:
@@ -45,8 +60,6 @@ internal_links:
       - vendor/ruby
   tags:
     - docker
-  dependencies:
-    - compile
   # Skip this job when it's invoked by a cross project pipeline. That will speed
   # up the pipeline when a docs preview is triggered. We already check for
   # internal links in every MR anyway. For more info:
@@ -54,6 +67,7 @@ internal_links:
   except:
     - pipelines
 
+# SCSS linting
 scss_lint:
   stage: test
   script:
@@ -71,12 +85,13 @@ scss_lint:
   except:
     - pipelines
 
+# Deploy the Review App
 review:
   stage: deploy
   variables:
     GIT_STRATEGY: none
   dependencies:
-    - compile
+    - compile_branch
   before_script: []
   cache: {}
   script:
@@ -93,14 +108,15 @@ review:
     - nginx
     - review-apps
 
+# Stop the Review App
 review_stop:
   stage: deploy
   variables:
     GIT_STRATEGY: none
-  before_script: []
-  artifacts: {}
-  cache: {}
   dependencies: []
+  artifacts: {}
+  before_script: []
+  cache: {}
   script:
     - rm -rf public /srv/nginx/pages/$CI_BUILD_REF_SLUG
   when: manual
@@ -115,6 +131,7 @@ review_stop:
     - nginx
     - review-apps
 
+# Deploy to Pages
 pages:
   stage: deploy
   variables:
@@ -136,4 +153,4 @@ pages:
   tags:
     - docker
   dependencies:
-    - compile
+    - compile_master
