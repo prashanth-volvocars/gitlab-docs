@@ -1,5 +1,5 @@
 ---
-version: 22
+version: 23
 ---
 
 @import "variables";
@@ -223,14 +223,6 @@ h6 {
 
   li {
     line-height: 22px;
-
-    p {
-      margin: 0;
-    }
-
-    pre {
-      margin: 10px;
-    }
 
     > ul, > ol {
       margin-top: 0;
