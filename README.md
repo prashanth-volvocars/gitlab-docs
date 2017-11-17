@@ -11,6 +11,10 @@
 
 Read more in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## License
+
+See [LICENSE](LICENSE).
+
 ## Development
 
 ### Requirements
