@@ -1,6 +1,7 @@
 <% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' %>
   <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
     <div class="comments">
+        <p><em>Leave a comment below if you have any feedback on the documentation. For support and other inquires, see <a href="https://about.gitlab.com/getting-help/" target="_blank">getting help</a>.</em></p>
       <div id="disqus_thread"></div>
       <script>
           var disqus_config = function () {
