@@ -56,14 +56,14 @@ compile '/**/*.md' do
       },
       with_toc: include_toc
 
-      if item[:layout].nil?
-        layout '/default.*'
-      else
-        layout "/#{item[:layout]}.*"
-      end
-
     filter :md_to_html_ext
     filter :admonition
+
+    if item[:layout].nil?
+      layout '/default.*'
+    else
+      layout "/#{item[:layout]}.*"
+    end
   else
     layout '/redirect.*'
   end
