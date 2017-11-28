@@ -18,7 +18,7 @@ variables:
 .build_base: &build_base
   stage: build
   script:
-    - rake pull_repos
+    - rake setup_git default
     - nanoc compile -VV
   artifacts:
     paths:
