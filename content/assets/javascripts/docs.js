@@ -26,6 +26,11 @@ function toggleNavigation() {
         // if there is a nested ul after the first anchor
         if(nav[0].children[0].children.length > 1) {
           var menu = nav[0].children[0].children[1];
+          var footnotes = menu.querySelector('.footnotes');
+
+          if (footnotes) {
+            footnotes.remove();
+          }
 
           // grab the h1's li anchor text
           var title = document.createElement('h4');
