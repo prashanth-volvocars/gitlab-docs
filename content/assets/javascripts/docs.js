@@ -44,6 +44,8 @@ function toggleNavigation() {
           var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
 
           document.addEventListener('scroll', function() {
+            if (window.innerWidth < 1099) return;
+
             if (window.scrollY + sidebarHeight >= main[0].offsetHeight) {
               sidebar.style.position = 'absolute';
               sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
@@ -51,7 +53,7 @@ function toggleNavigation() {
               sidebar.style.position = '';
               sidebar.style.top = '';
             }
-          });
+          }, { passive : true });
         }
 
         // remove what is left of the old navigation
