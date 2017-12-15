@@ -1,7 +1,7 @@
 <% if ENV['NANOC_ENV'] == 'production' %>
 <script type="text/javascript">
   // Redirect to https with javascript
-  var host = "<%= @config[:base_url] %>";
+  var host = "<%= @config[:domain] %>";
   if ((host == window.location.host) && (window.location.protocol != 'https:')) {
     window.location = window.location.toString().replace(/^http:/, "https:");
   }
