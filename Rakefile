@@ -56,6 +56,9 @@ task :pull_repos do
       # without accidentally deleting data
       `git stash -u` if git_workdir_dirty?
       `git checkout #{branch}`
+
+      # Reset so that if the repo is cached, the latest commit will be used
+      `git reset --hard origin/#{branch}`
     end
   end
 end
