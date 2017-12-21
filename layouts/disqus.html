@@ -7,6 +7,11 @@
           var disqus_config = function () {
               this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
               this.page.title = '<%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %>';
+            <% if @item[:redirect_from] %>
+              this.page.identifier = '<%= @item[:redirect_from] %>';
+            <% else %>
+              this.page.identifier = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
+            <% end %>
           };
 
           (function() { // DON'T EDIT BELOW THIS LINE
