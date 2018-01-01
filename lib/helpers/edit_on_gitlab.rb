@@ -12,13 +12,13 @@ module Nanoc::Helpers
 
       if product == "omnibus"
         # omnibus-gitlab repo
-        gitlab_url = "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/#{product}-gitlab/edit/master/doc/#{content_filename}"
       elsif product == "runner"
         # gitlab-runner repo
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/docs/#{content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/edit/master/docs/#{content_filename}"
       else
         # gitlab-ce and gitlab-ee repos
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/edit/master/doc/#{content_filename}"
       end
 
       result = "<a href='#{gitlab_url}'>Edit this page</a>"
