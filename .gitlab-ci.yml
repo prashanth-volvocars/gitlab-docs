@@ -44,7 +44,7 @@ compile_master:
 compile_branch:
   <<: *build_base
   only:
-    - branches@gitlab-com/gitlab-docs
+    - branches
   except:
     - master
 
