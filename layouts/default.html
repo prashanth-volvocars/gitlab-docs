@@ -21,7 +21,7 @@
         <%= yield %>
         <% if @item[:author] %>
             <div class="article-metadata">
-              Written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
+              Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
               on <%= @item[:date] %>
               &#8226;
               <% if @item[:last_updated] %>
