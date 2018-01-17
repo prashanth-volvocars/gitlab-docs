@@ -249,7 +249,8 @@ h6 {
 
   .breadcrumbs {
     margin: 0;
-    order: 1;
+    order: -3;
+    border-bottom: 1px solid $border-color;
 
     li {
       margin-top: 20px;
@@ -413,8 +414,13 @@ h6 {
 .article-metadata {
   color: $article-metadata;
   display: block;
-  order: 2;
+  order: -1;
+  font-style: italic;
 }
+.main h1 {
+  order: -2;
+}
+//
 
 // Override bootstrap's alert color
 .alert {
