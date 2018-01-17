@@ -1,0 +1,27 @@
+<% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' %>
+  <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
+    <div class="comments">
+        <p><em>Leave a comment below if you have any feedback on the documentation. For support and other enquiries, see <a href="https://about.gitlab.com/getting-help/" target="_blank">getting help</a>.</em></p>
+      <div id="disqus_thread"></div>
+      <script>
+          var disqus_config = function () {
+              this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
+              this.page.title = '<%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %>';
+            <% if @item[:redirect_from] %>
+              this.page.identifier = '<%= @item[:redirect_from] %>';
+            <% else %>
+              this.page.identifier = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
+            <% end %>
+          };
+
+          (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://gitlab-docs.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+  <% end %>
+<% end %>

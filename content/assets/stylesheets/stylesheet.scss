@@ -1,6 +1,7 @@
 ---
-version: 20
+version: 23
 ---
+
 @import "variables";
 
 *, *::before, *::after {
@@ -50,6 +51,7 @@ table {
     text-align: left;
     padding: 7px 10px;
     border: 1px solid $table-border-color;
+    font-size: $body-font-size;
   }
 
   @media all and (max-width: $mobile-width) {
@@ -77,6 +79,12 @@ blockquote {
 
 pre {
   background-color: $pre-background-color;
+
+  code {
+    word-wrap: normal;
+    word-break: normal;
+    white-space: pre;
+  }
 }
 
 hr {
@@ -91,7 +99,6 @@ code, code span {
 p code, li code, table code {
   color: $code-color;
   background-color: $code-background-color;
-  padding: 2px 4px;
 }
 
 a > code {
@@ -160,6 +167,10 @@ h6 {
   max-width: 900px;
   box-shadow: 0 3px 3px $main-box-shadow;
   background: $main-background-color;
+
+  @media (max-width: $mobile-width) {
+    padding: 20px 10px;
+  }
 
   a {
     text-decoration: none;
@@ -322,7 +333,7 @@ h6 {
     background-color: $white;
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
-    margin: -5px;
+    margin: -20;
     width: 190px;
     background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
     background-repeat: no-repeat;
@@ -532,7 +543,7 @@ h6 {
 }
 
 // https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
-*[id]::before {
+*[id]:not(sup)::before {
   display: block;
   content: " ";
   margin-top: -75px;
@@ -544,3 +555,38 @@ h6 {
   color: $article-metadata;
   display: block;
 }
+
+// Override bootstrap's alert color
+.alert {
+  color: inherit;
+}
+
+//
+// Algolia search for mobile
+// https://github.com/algolia/docsearch/issues/181#issuecomment-301730219
+//
+// Since some values are added by Javascript, we have to add the
+// !important option to override these values.
+// scss-lint:disable ImportantRule
+.algolia-autocomplete {
+  // On a max-width of 768px
+  @media (max-width: 768px) {
+    .ds-dropdown-menu {
+      max-width: calc(100vw - 32px) !important;
+      min-width: calc(100vw - 32px) !important;
+      width: calc(100vw - 32px) !important;
+      margin-left: 16px !important;
+    }
+    .algolia-docsearch-suggestion--content {
+      width: 100% !important;
+      padding-left: 0 !important;
+    }
+    .algolia-docsearch-suggestion--content::before {
+      display: none !important;
+    }
+    .algolia-docsearch-suggestion--subcategory-column {
+      display: none !important;
+    }
+  }
+}
+// scss-lint:enable ImportantRule

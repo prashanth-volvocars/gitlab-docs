@@ -3,10 +3,17 @@
 # GitLab Documentation
 
 - The [GitLab Documentation](https://docs.gitlab.com) website is generated using [Nanoc](http://nanoc.ws).
-- [License](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/legal/individual_contributor_license_agreement.md)
 - [Writing Documentation](https://docs.gitlab.com/ce/development/writing_documentation.html)
 - [Style Guide](https://docs.gitlab.com/ce/development/doc_styleguide.html)
 - [Community Writers](https://about.gitlab.com/handbook/product/technical-writing/community-writers/)
+
+## Contributing
+
+Read more in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+See [LICENSE](LICENSE).
 
 ## Development
 
@@ -51,7 +58,7 @@ To install multiple Ruby versions on MacOS or Linux, we recommend you use RMV:
 
 - GitLab CE: `git clone git@gitlab.com:gitlab-org/gitlab-ce.git`
 - GitLab EE: `git clone git@gitlab.com:gitlab-org/gitlab-ee.git`
-- GitLab Runner: `git clone git@gitlab.com:gitlab-org/gitlab-ci-multi-runner.git`
+- GitLab Runner: `git clone git@gitlab.com:gitlab-org/gitlab-runner.git`
 - GitLab Omnibus: `git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git`
 - GitLab Docs: `git clone git@gitlab.com:gitlab-com/gitlab-docs.git`
 
@@ -59,7 +66,7 @@ To install multiple Ruby versions on MacOS or Linux, we recommend you use RMV:
 
 - GitLab CE: https://gitlab.com/gitlab-org/gitlab-ce/
 - GitLab EE: https://gitlab.com/gitlab-org/gitlab-ee/
-- GitLab Runner: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner
+- GitLab Runner: https://gitlab.com/gitlab-org/gitlab-runner
 - GitLab Omnibus: https://gitlab.com/gitlab-org/omnibus-gitlab
 - GitLab Docs: https://gitlab.com/gitlab-com/gitlab-docs
 
@@ -89,7 +96,7 @@ Now that we have everything required, we need to add symlinks, so GitLab Docs ca
 
 - Repeat the process to the other three repos:
   - GitLab EE: `ln -s /Users/username/dir/gitlab-ee/doc /Users/username/dir/gitlab-docs/content/ee`
-  - Runner: `ln -s /Users/username/dir/gitlab-ci-multi-runner/docs /Users/username/dir/gitlab-docs/content/runner`
+  - Runner: `ln -s /Users/username/dir/gitlab-runner/docs /Users/username/dir/gitlab-docs/content/runner`
   - Omnibus: `ln -s /Users/username/dir/omnibus-gitlab/doc /Users/username/dir/gitlab-docs/content/omnibus`
 - Open GitLab Docs in a terminal window and check if you have all the foour there (`ee`, `ce`, `runner`, `omnibus`): `ls content`
 
@@ -100,7 +107,7 @@ If they're there, we're good to go!
 Now let's make Bundler deal with the dependencies defined in the `Gemfile`:
 
 - Open GitLab Docs in a terminal window
-- Switch to Ruby 2.4.0: `rmv 2.4.0`
+- Switch to Ruby 2.4.0: `rvm 2.4.0`
 - Run `bundle install`
 
 ### Preview the Docs Website
@@ -120,7 +127,7 @@ We pull from the following projects:
 - [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
 - [GitLab Enterprise Edition](https://gitlab.com/gitlab-org/gitlab-ee)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
-- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)
+- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 
 ## Examples and Resources
 
@@ -232,79 +239,16 @@ The Atom Flight Manual has [the ability to switch between platforms for given pa
 
 ## Review Apps for documentation merge requests
 
-If you are working on [one of the projects we pull from](#projects-we-pull-from)
-and updating the documentation, there is a way to preview it using Review Apps
-in the gitlab-docs project:
-
-1. Make sure you have Developer (push) access to this project.
-1. Clone the docs site:
-
-    ```
-    git clone git@gitlab.com:gitlab-com/gitlab-docs.git
-    ```
-
-1. Create a branch.
-1. Edit `.gitlab-ci.yml` and change the branch variable of the project you
-   wish to preview. For example, if you work on documentation changes for
-   GitLab CE and the branch is named `1234-docs-for-foo`, change the respective
-   CI variable:
-
-     ```yaml
-     VARIABLES:
-       BRANCH_CE: '1234-docs-for-foo'
-     ```
-
-1. Commit your changes and push the branch.
-1. Optionally create an MR marked as `WIP` in order to
-   avoid accidental merge, we'll use this only as a Review App.
-1. Wait a few minutes and if the build finishes successfully, you'll be able to
-   see the link to the preview docs in the [environments page] using the
-   [environment URL button][env-url-button].
-
-If new changes are pushed to the upstream docs, just create a new pipeline in
-the [new pipeline page]. Choose the branch you created for the Review App and
-hit **Create pipeline** for the new doc changes to be pulled and deployed.
-
-Once the docs are eventually merged upstream, don't forget to close the
-Review Apps MR (if you created one), delete the branch.
+If you are contributing to GitLab docs read how to create a Review App with each
+merge request: https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live.
 
 ## Deployment process
 
 We use [GitLab Pages][pages] to build and host this website. You can see
 `.gitlab-ci.yml` for more information.
 
-A [job] is used to trigger a new build whenever tests run and pass on master
-branch of CE, EE, Omnibus.
-
-To add a new trigger for another project:
-
-1. Go to https://gitlab.com/gitlab-com/gitlab-docs/triggers (you need Master
-   access) and copy the trigger value.
-1. Go to the project you will be triggering from and add a secret variable
-   named `DOCS_TRIGGER_TOKEN` with the value of the trigger you copied from the
-   previous step.
-1. Add the following job to the project's `.gitlab-ci.yml`, where you should
-   replace the `PROJECT` variable's value with the name of the project the
-   trigger is running from, for example `ce`, `ee`, `omnibus`, `runner`, etc.:
-
-    ```yaml
-    # Trigger docs build
-    # https://gitlab.com/gitlab-com/gitlab-docs/blob/master/README.md#deployment-process
-    trigger_docs:
-      variables:
-        GIT_STRATEGY: none
-      before_script: []
-      cache: {}
-      artifacts: {}
-      script:
-        - "curl -X POST -F token=${DOCS_TRIGGER_TOKEN} -F ref=master -F variables[PROJECT]=ce https://gitlab.com/api/v3/projects/1794617/trigger/builds"
-      only:
-        - master@gitlab-org/gitlab-ce
-    ```
-
-      >**Note:**
-      Every project might have different stages, make sure to add it to one that
-      makes sense, for example after all builds successfully pass.
+We also use [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
+to build the site once an hour.
 
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
 [pages]: https://pages.gitlab.io

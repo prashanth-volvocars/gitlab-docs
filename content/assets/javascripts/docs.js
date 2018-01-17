@@ -26,6 +26,11 @@ function toggleNavigation() {
         // if there is a nested ul after the first anchor
         if(nav[0].children[0].children.length > 1) {
           var menu = nav[0].children[0].children[1];
+          var footnotes = menu.querySelector('.footnotes');
+
+          if (footnotes) {
+            footnotes.remove();
+          }
 
           // grab the h1's li anchor text
           var title = document.createElement('h4');
@@ -39,6 +44,8 @@ function toggleNavigation() {
           var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
 
           document.addEventListener('scroll', function() {
+            if (window.innerWidth < 1099) return;
+
             if (window.scrollY + sidebarHeight >= main[0].offsetHeight) {
               sidebar.style.position = 'absolute';
               sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
@@ -46,7 +53,7 @@ function toggleNavigation() {
               sidebar.style.position = '';
               sidebar.style.top = '';
             }
-          });
+          }, { passive : true });
         }
 
         // remove what is left of the old navigation

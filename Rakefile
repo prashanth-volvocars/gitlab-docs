@@ -1,92 +1,64 @@
-desc 'Pulls down the CE, EE, Omnibus and Runner git repos and merges the content of their doc directories into the nanoc site'
-task :pull_repos do
-  require 'yaml'
+require './lib/task_helpers'
 
-  # By default won't delete any directories, requires all relevant directories
-  # be empty. Run `RAKE_FORCE_DELETE=true rake pull_repos` to have directories
-  # deleted.
-  force_delete = ENV['RAKE_FORCE_DELETE']
+task :default => [:setup_repos, :setup_content_dirs, :pull_repos]
 
-  # Parse the config file and create a hash.
-  config = YAML.load_file('./nanoc.yaml')
-
-  # Pull products data from the config.
-  ce = config["products"]["ce"]
-  ee = config["products"]["ee"]
-  omnibus = config["products"]["omnibus"]
-  runner = config["products"]["runner"]
-
-  products = [ce, ee, omnibus, runner]
-  dirs = []
-  products.each do |product|
-    dirs.push(product['dirs']['temp_dir'])
-    dirs.push(product['dirs']['dest_dir'])
-  end
-
-  if force_delete
-    puts "WARNING: Are you sure you want to remove #{dirs.join(', ')}? [y/n]"
-    exit unless STDIN.gets.index(/y/i) == 0
-
-    dirs.each do |dir|
-      puts "\n=> Deleting #{dir} if it exists\n"
-      FileUtils.rm_r("#{dir}") if File.exist?("#{dir}")
-    end
-  else
-    puts "NOTE: The following directories must be empty otherwise this task " +
-      "will fail:\n#{dirs.join(', ')}"
-    puts "If you want to force-delete the `tmp/` and `content/` folders so \n" +
-      "the task will run without manual intervention, run \n" +
-      "`RAKE_FORCE_DELETE=true rake pull_repos`."
-  end
-
-  dirs.each do |dir|
-    unless "#{dir}".start_with?("tmp")
-      puts "\n=> Making an empty #{dir}"
-      FileUtils.mkdir("#{dir}") unless File.exist?("#{dir}")
-    end
-  end
-
+task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
 
   `git config --global user.name "John Doe"`
   `git config --global user.email johndoe@example.com`
+end
 
-  products.each do |product|
-    temp_dir = File.join(product['dirs']['temp_dir'])
+desc 'Setup repositories for CE, EE, Omnibus and Runner in special way exposing only their doc directories'
+task :setup_repos do
+  products.each_value do |product|
+    next if File.exist?(product['dirs']['temp_dir'])
 
-    case product['slug']
-    when 'ce'
-      branch = ENV['BRANCH_CE'] || 'master'
-    when 'ee'
-      branch = ENV['BRANCH_EE'] || 'master'
-    when 'omnibus'
-      branch = ENV['BRANCH_OMNIBUS'] || 'master'
-    when 'runner'
-      branch = ENV['BRANCH_RUNNER'] || 'master'
+    puts "\n=> Setting up repository #{product['repo']} into #{product['dirs']['temp_dir']}\n"
+    `git init #{product['dirs']['temp_dir']}`
+
+    Dir.chdir(product['dirs']['temp_dir']) do
+      `git remote add origin #{product['repo']}`
+
+      # Configure repository for sparse-checkout
+      `git config core.sparsecheckout true`
+      File.open('.git/info/sparse-checkout', 'w') { |f| f.write("/#{product['dirs']['doc_dir']}/*") }
     end
+  end
+end
 
-    if !File.exist?(temp_dir) || Dir.entries(temp_dir).length.zero?
-      puts "\n=> Cloning #{product['repo']} #{branch} into #{temp_dir}\n"
+desc 'Setup content directories by symlinking to the repositories documentation folder'
+task :setup_content_dirs do
+  products.each_value do |product|
+    source = File.join('../', product['dirs']['temp_dir'], product['dirs']['doc_dir'])
+    target = product['dirs']['dest_dir']
 
-      `git clone #{product['repo']} #{temp_dir} --depth 1 --branch #{branch}`
-    elsif File.exist?(temp_dir) && !Dir.entries(temp_dir).length.zero?
-      puts "\n=> Pulling #{branch} of #{product['repo']}\n"
+    next if File.symlink?(target)
 
-      # Enter the temporary directory and return after block is completed.
-      FileUtils.cd(temp_dir) do
-        # Update repository from master. Fetch and reset to avoid
-        # merge conflicts.
-        # Why: https://gitlab.com/gitlab-com/gitlab-docs/merge_requests/119
-        # How: https://stackoverflow.com/a/9589927/974710
-        `git fetch origin #{branch} && git reset --hard FETCH_HEAD && git clean -df`
-      end
-    else
-      puts "This shouldn't happen"
+    puts "\n=> Setting up content directory for #{product['repo']}\n"
+
+    `ln -s #{source} #{target}`
+  end
+end
+
+desc 'Pulls down the CE, EE, Omnibus and Runner git repos fetching and keeping only the most recent commit'
+task :pull_repos do
+  products.each_value do |product|
+    branch = retrieve_branch(product['slug'])
+
+    puts "\n=> Pulling #{branch} of #{product['repo']}\n"
+
+    # Enter the temporary directory and return after block is completed.
+    Dir.chdir(product['dirs']['temp_dir']) do
+      `git fetch origin #{branch} --depth 1`
+
+      # Stash modified and untracked files so we have "clean" environment
+      # without accidentally deleting data
+      `git stash -u` if git_workdir_dirty?
+      `git checkout #{branch}`
+
+      # Reset so that if the repo is cached, the latest commit will be used
+      `git reset --hard origin/#{branch}`
     end
-
-    temp_doc_dir = File.join(product['dirs']['temp_dir'], product['dirs']['doc_dir'], '.')
-    destination_dir = File.join(product['dirs']['dest_dir'])
-    puts "\n=> Copying #{temp_doc_dir} into #{destination_dir}\n"
-    FileUtils.cp_r(temp_doc_dir, destination_dir)
   end
 end

@@ -23,12 +23,13 @@
         <div class="edit-on">
           <%= edit_on_gitlab(@item) %>
         </div>
-        <hr>
         <% if @item[:last_updated] %>
+          <hr>
           <p class="last-updated">
             <em>Last updated <%= @item[:last_updated] %></em>
           </p>
         <% end %>
+        <%= render '/disqus.*' %>
       </div>
       <div class="clear"></div>
     </div>
@@ -36,5 +37,6 @@
     <%= render '/footer.*' %>
     <%= render '/docsearch.*' %>
     <%= render '/analytics.*' %>
+    <%= render '/https_redirect.*' %>
   </body>
 </html>

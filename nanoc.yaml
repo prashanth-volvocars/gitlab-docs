@@ -24,6 +24,8 @@ index_filenames: [ 'index.html' ]
 # before and after the last site compilation.
 enable_output_diff: false
 
+domain: docs.gitlab.com
+
 base_url: https://docs.gitlab.com
 
 prune:
@@ -141,7 +143,7 @@ products:
     slug: 'runner'
     index_file: 'index.*'
     description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ci-multi-runner.git'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
     dirs:
       temp_dir: 'tmp/runner/'
       dest_dir: 'content/runner'
