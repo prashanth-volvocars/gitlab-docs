@@ -25,7 +25,7 @@ variables:
       - public
     expire_in: 1w
   cache:
-    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
     paths:
       - tmp/
       - vendor/ruby
@@ -55,7 +55,7 @@ internal_links:
     - nanoc check internal_links
   allow_failure: true
   cache:
-    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
     paths:
       - vendor/ruby
   tags:
@@ -73,7 +73,7 @@ scss_lint:
   script:
     - bundle exec scss-lint
   cache:
-    key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
+    key: "$CI_BUILD_NAME-$CI_BUILD_REF_NAME"
     paths:
       - vendor/ruby
   tags:
