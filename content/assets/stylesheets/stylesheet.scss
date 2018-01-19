@@ -182,7 +182,7 @@ h6 {
     border-top: 1px solid $hr-border-color;
     padding-top: 20px;
     margin-top: 15px;
-    text-align: center;
+    // text-align: center;
     a::before {
       content: "\f044";
       font-family: FontAwesome;
@@ -254,7 +254,6 @@ h6 {
   .breadcrumbs {
     margin: 0;
     order: -3;
-    border-bottom: 1px solid $border-color;
     font-style: italic;
 
     li {
