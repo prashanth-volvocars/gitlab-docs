@@ -110,11 +110,29 @@ Now let's make Bundler deal with the dependencies defined in the `Gemfile`:
 - Switch to Ruby 2.4.0: `rvm 2.4.0`
 - Run `bundle install`
 
-### Preview the Docs Website
+### Preview the Docs website
 
 - `bundle exec nanoc live`
 
 This will host the site at `localhost:3000`. Changes will be reloaded automatically using [Guard Nanoc](https://github.com/guard/guard-nanoc).
+
+#### Preview on mobile
+
+If you want to check how your changes look on mobile devices, you can preview the Docs site with
+your own devices, as long as they are connected to the same network as your computer.
+
+To do that, we need to change the IP address Nanoc is serving on from the default `http://127.0.0.1` to your computer's [private IPv4 address](https://www.howtogeek.com/236838/how-to-find-any-devices-ip-address-mac-address-and-other-network-connection-details/).
+
+Once you know what's your computer's private IPv4, use the flag `-o` with the command
+`nanoc live`. For example, let's say your current IPv4 address is `192.168.0.105`:
+
+```shell
+bundle exec nanoc live -o 192.168.0.105
+```
+
+Now, open your mobile's browser and type `http://192.168.0.105:3000`, and you should
+be able to navigate through the docs site. This process applies to preview the docs site
+on every device connected to your network.
 
 ### Extra Step
 
