@@ -183,10 +183,8 @@ h6 {
     border-top: 1px solid $hr-border-color;
     padding-top: 20px;
     margin-top: 15px;
-
     a {
       color: $h1-border-bottom;
- 
       &::before {
         content: "\f126";
         font-family: FontAwesome;
@@ -196,7 +194,6 @@ h6 {
         padding-right: 5px;
         line-height: 10px;
       }
-
       &:hover {
         color: $color-secondary-alt;
       }
