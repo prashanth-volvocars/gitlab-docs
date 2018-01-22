@@ -177,14 +177,22 @@ h6 {
   }
 
   .edit-on {
-    a::before {
-      content: "\f044";
-      font-family: FontAwesome;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: normal;
-      padding-right: 5px;
-      line-height: 10px;
+    text-align: center;
+
+    a {
+      color: $h1-border-bottom;
+      &::before {
+        content: "\f126";
+        font-family: FontAwesome;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        padding-right: 5px;
+        line-height: 10px;
+      }
+      &:hover {
+        color: $color-secondary-alt;
+      }
     }
   }
 
