@@ -3,12 +3,20 @@
 preprocess do
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
-      # If the page is a redirect, make it a redirect.
-      if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
-        # Capture the intended page so the redirect page can redirect to it.
-        item[:redirect] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
-        # Correct the URL.
-        item[:redirect] = item[:redirect].gsub!(/\.md/, '.html')
+      # If there isn't already a 'redirect_to' defined in the yaml frontmatter,
+      # use the text to assume the redirect URL.
+      unless item[:redirect_to]
+        if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
+          # Capture the intended page so the redirect page can redirect to it.
+          item[:redirect_to] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
+          # Correct the URL.
+          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+        end
+      else
+        # If the provided relative URL is in Markdown, correct it to HTML.
+        unless item[:redirect_to].to_s.match(/.html$/)
+          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+        end
       end
 
       unless item[:title]
@@ -31,7 +39,7 @@ compile '/**/*.html' do
 end
 
 compile '/**/*.md' do
-  if item[:redirect].nil?
+  if item[:redirect_to].nil?
 
     # If 'toc' is absent in a file's yaml frontmatter, show ToC.
     # Set to 'toc: false' to disable it.

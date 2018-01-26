@@ -3,12 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <link rel="canonical" href="<%= @item[:redirect] %>">
-    <meta http-equiv="refresh" content="0; url=<%= @item[:redirect] %>">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="<%= @item[:redirect_to] %>">
+    <meta http-equiv="refresh" content="0; url=<%= @item[:redirect_to] %>">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/footer.*'].path %>">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/docsearch.min.*'].path %>">
+    <script async src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   </head>
   <body>
-    <h1>Redirecting...</h1>
-    <a href="<%= @item[:redirect] %>">Click here if you are not redirected.</a>
-    <script>location='<%= @item[:redirect] %>'</script>
+    <%= render '/header.*' %>
+    <div class=wrapper>
+      <div id="doc-nav" class="doc-nav"></div>
+      <div class="main class">
+        <h2>Redirecting...</h2>
+          <a href="<%= @item[:redirect_to] %>">Click here if you are not redirected.</a>
+          <script>location='<%= @item[:redirect_to] %>'</script>
+      </div>
+    </div>
+    <%= render '/footer.*' %>
+    <%= render '/docsearch.*' %>
   </body>
 </html>
