@@ -4,7 +4,7 @@ title: GitLab Documentation
 
 <ul class="topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
   <% @config[:products].each do |name, product| %>
-    <% if product[:expose] == true && @items["/#{product[:slug]}/#{product[:index_file]}"] %>
+    <% if product[:expose] == true && Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
       <li class="topic-<%= product[:slug] %>">
         <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" itemprop="url">
           <div class="wrapper">
