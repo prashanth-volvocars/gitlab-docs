@@ -7,7 +7,7 @@ documentation website and is deployed to https://docs.gitlab.com. It uses the
 [Nanoc](http://nanoc.ws) static site generator.
 
 You will not find any GitLab docs content here. All documentation files are
-hosted in the respective repository of [each product](projects-we-pull-from).
+hosted in the respective repository of [each product](#projects-we-pull-from).
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
