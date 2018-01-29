@@ -7,7 +7,30 @@ documentation website and is deployed to https://docs.gitlab.com. It uses the
 [Nanoc](http://nanoc.ws) static site generator.
 
 You will not find any GitLab docs content here. All documentation files are
-hosted in the respective repository of each product (see the following section).
+hosted in the respective repository of [each product](projects-we-pull-from).
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Projects we pull from](#projects-we-pull-from)
+- [Contributing](#contributing)
+- [License](#license)
+- [Development under GDK](#development-under-gdk)
+- [Development using this repo](#development-using-this-repo)
+    - [Requirements](#requirements)
+        - [Ruby](#ruby)
+        - [Bundler](#bundler)
+        - [Clone the repositories](#clone-the-repositories)
+    - [Create the content symlinks](#create-the-content-symlinks)
+    - [Install Nanoc's dependencies](#install-nanoc-s-dependencies)
+    - [Preview the Docs website](#preview-the-docs-website)
+        - [Preview on mobile](#preview-on-mobile)
+- [Contributing to the docs website itself](#contributing-to-the-docs-website-itself)
+- [Review Apps for documentation merge requests](#review-apps-for-documentation-merge-requests)
+- [Deployment process](#deployment-process)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Projects we pull from
 
