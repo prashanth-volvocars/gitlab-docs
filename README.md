@@ -9,28 +9,39 @@ documentation website and is deployed to https://docs.gitlab.com. It uses the
 You will not find any GitLab docs content here. All documentation files are
 hosted in the respective repository of [each product](#projects-we-pull-from).
 
+The [deployment process](#deployment-process) happens automatically every hour.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Projects we pull from](#projects-we-pull-from)
-- [Contributing](#contributing)
+- [Contributing agreement](#contributing-agreement)
 - [License](#license)
+- [Projects we pull from](#projects-we-pull-from)
+- [Requirements](#requirements)
+    - [Ruby](#ruby)
+    - [Bundler](#bundler)
+- [Install Nanoc's dependencies](#install-nanoc-s-dependencies)
 - [Development under GDK](#development-under-gdk)
-- [Development using this repo](#development-using-this-repo)
-    - [Requirements](#requirements)
-        - [Ruby](#ruby)
-        - [Bundler](#bundler)
-        - [Clone the repositories](#clone-the-repositories)
+- [Development when contributing to GitLab documentation](#development-when-contributing-to-gitlab-documentation)
+    - [Clone the repositories](#clone-the-repositories)
     - [Create the content symlinks](#create-the-content-symlinks)
-    - [Install Nanoc's dependencies](#install-nanoc-s-dependencies)
-    - [Preview the Docs website](#preview-the-docs-website)
-        - [Preview on mobile](#preview-on-mobile)
+- [Preview the Docs website](#preview-the-docs-website)
+    - [Preview on mobile](#preview-on-mobile)
 - [Contributing to the docs website itself](#contributing-to-the-docs-website-itself)
 - [Review Apps for documentation merge requests](#review-apps-for-documentation-merge-requests)
 - [Deployment process](#deployment-process)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Contributing agreement
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for an overview of the Developer
+Certificate of Origin + License.
+
+## License
+
+See [LICENSE](LICENSE).
 
 ## Projects we pull from
 
@@ -41,38 +52,15 @@ There are currently 4 products that are pulled and generate the docs website:
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 
-**NOTE:**
+**Note:**
 Although GitLab Community Edition is generated, it is hidden from the website
 as it's a subset of the Enterprise Edition. We generate it for consistency,
 until the [GitLab codebase is unified](https://gitlab.com/gitlab-org/gitlab-ee/issues/2952).
 
-## Contributing
+## Requirements
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for an overview of the Developer
-Certificate of Origin + License.
-
-To contribute to the content of GitLab docs, see:
-
-- [Writing documentation](https://docs.gitlab.com/ce/development/writing_documentation.html)
-- [Style guide](https://docs.gitlab.com/ce/development/doc_styleguide.html)
-- [Community writers](https://about.gitlab.com/community-writers/)
-
-## License
-
-See [LICENSE](LICENSE).
-
-## Development under GDK
-
-See [how to preview the docs changes locally using GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md).
-
-## Development using this repo
-
-You can clone and use this repo to preview the website as seen on
-https://docs.gitlab.com.
-
-### Requirements
-
-Here's what you will need to have:
+In order to be able to preview any changes you make to GitLab's documentation,
+here's what you will need to have:
 
 - A Unix/Linux environment
 - Ruby 2.4+
@@ -82,14 +70,14 @@ Here's what you will need to have:
 On Windows, the process described here would be different, but as most of
 contributors use Unix, we'll go over this process for macOS and Linux users.
 
-#### Ruby
+### Ruby
 
 The recommended way is to use a Ruby version manager to install Ruby in your
 system.
 
-One way is to use RMV:
+One way is to use RVM:
 
-1. Install [RVM](https://rvm.io/rvm/install)
+1. [Install RVM](https://rvm.io/rvm/install)
 1. Install the latest Ruby:
 
     ```sh
@@ -104,7 +92,7 @@ One way is to use RMV:
 
 Check your Ruby version with `ruby --version`.
 
-#### Bundler
+### Bundler
 
 [Bundler](https://bundler.io/) is a Ruby dependency manager. Install it with:
 
@@ -112,7 +100,42 @@ Check your Ruby version with `ruby --version`.
 gem install bundler
 ```
 
-#### Clone the repositories
+## Install Nanoc's dependencies
+
+Now let's make Bundler deal with the dependencies defined in the
+[`Gemfile`](/Gemfile):
+
+1. Open a terminal and navigate to the GitLab Docs repo
+1. Switch to Ruby using RVM:
+
+    ```sh
+    rvm use 2.5.0
+    ```
+
+1. Run:
+
+    ```sh
+    bundle install
+    ```
+
+## Development under GDK
+
+See [how to preview the docs changes locally using the GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md).
+
+## Development when contributing to GitLab documentation
+
+This section is about contributing to one of GitLab's
+[projects' documentation](projects-we-pull-from), and preview your changes at
+the same time. To contribute how the docs website looks like, see
+[contributing to the docs site](contributing-to-the-docs-website-itself).
+
+Before diving into writing, here's a few links that will come in handy:
+
+- [Writing documentation](https://docs.gitlab.com/ee/development/writing_documentation.html)
+- [Style guide](https://docs.gitlab.com/ee/development/doc_styleguide.html)
+- [Community writers](https://about.gitlab.com/community-writers/)
+
+### Clone the repositories
 
 Since this process will clone a few repositories, it might be a good idea to
 create a separate directory to have them all together. For example, let's say
@@ -120,7 +143,7 @@ the directory will be under your user's home directory. Open a terminal and
 execute:
 
 ```sh
-mkdir ~/dev/gitlab
+mkdir -p ~/dev/gitlab
 ```
 
 Once you do that, navigate to the directory you'd like the repos to be cloned:
@@ -199,25 +222,7 @@ If they're there, we're good to go!
 directory path you are currently in and use that output to use with the symlinks
 commands above.
 
-### Install Nanoc's dependencies
-
-Now let's make Bundler deal with the dependencies defined in the
-[`Gemfile`](/Gemfile):
-
-1. Open a terminal and navigate to the GitLab Docs repo
-1. Switch to Ruby using RVM:
-
-    ```sh
-    rvm use 2.5.0
-    ```
-
-1. Run:
-
-    ```sh
-    bundle install
-    ```
-
-### Preview the Docs website
+## Preview the Docs website
 
 Run the following command to bring the embedded web server up:
 
@@ -238,7 +243,7 @@ bundle exec nanoc live -p 3004
 This will generate and the site and you will be able to view it in your browser
 at <http://localhost:3004>.
 
-#### Preview on mobile
+### Preview on mobile
 
 If you want to check how your changes look on mobile devices, you can preview
 the Docs site with your own devices, as long as they are connected to the same
@@ -269,8 +274,8 @@ to have something to preview:
 bundle exec rake pull_repos
 ```
 
-This will pull all the docs content under the `tmp/` directory and copy it in
-`content/`. You can then [preview the website](preview-the-docs-website).
+This will download all the docs content under the `tmp/` directory and copy it
+in `content/`. You can then [preview the website](preview-the-docs-website).
 
 If you want to force-delete the `tmp/` and `content/` folders so the task will
 run without manual intervention, run:
@@ -286,11 +291,13 @@ merge request: https://docs.gitlab.com/ee/development/writing_documentation.html
 
 ## Deployment process
 
-We use [GitLab Pages][pages] to build and host this website. You can see
+We use [GitLab Pages][pages] to build and host this website, see
 [`.gitlab-ci.yml`](/.gitlab-ci.yml) for more information.
 
 We also use [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
 to build the site once an hour.
+
+By default, we pull from the master branch of [all the projects](#projects-we-pull-from).
 
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
 [pages]: https://pages.gitlab.io
