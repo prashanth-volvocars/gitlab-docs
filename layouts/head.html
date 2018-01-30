@@ -21,40 +21,39 @@
 
   <!-- you don't need to keep this, but it's cool for stats! -->
   <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  <script type="application/json">
-    {
-      "@context":"http://schema.org",
-      "@type":"Organization",
-      "name":"GitLab",
-      "legalName":"GitLab Inc.",
-      "url":"http://about.gitlab.com",
-      "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
-      "foundingDate":"2011",
-      "founders":[
+  <script type="application/ld+json">
+  {
+    "@context":"http://schema.org",
+    "@type":"Organization",
+    "name":"GitLab",
+    "legalName":"GitLab Inc.",
+    "url":"http://about.gitlab.com",
+    "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
+    "foundingDate":"2011",
+    "founders":[
+      {
+        "@type":"Person",
+        "name":"Sid Sijbrandij"
+      },
+      {
+        "@type":"Person",
+        "name":"Dmitriy Zaporozhets"
+      }],
+      "address":
         {
-          "@type":"Person",
-          "name":"Sid Sijbrandij"
+          "@type":"PostalAddress",
+          "streetAddress":"1233 Howard St 2F",
+          "addressLocality":"San Francisco",
+          "addressRegion":"CA",
+          "postalCode":"94103",
+          "addressCountry":"USA"
         },
-        {
-          "@type":"Person",
-          "name":"Dmitriy Zaporozhets"
-        }],
-        "address":
-          {
-            "@type":"PostalAddress",
-            "streetAddress":"1233 Howard St 2F",
-            "addressLocality":"San Francisco",
-            "addressRegion":"CA",
-            "postalCode":"94103",
-            "addressCountry":"USA"
-          },
-        "sameAs":[
+      "sameAs":[
         "https://www.facebook.com/gitlab",
         "https://twitter.com/gitlab",
         "https://www.linkedin.com/company/gitlab-com",
         "https://plus.google.com/107491817347842790515/",
-        "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"
-        ],
-      }
+        "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"]
+  }
   </script>
 </head>
