@@ -105,8 +105,8 @@ debug: false
 
 products:
   ce:
-    full_name: 'GitLab Community Edition'
-    short_name: 'Community Edition'
+    full_name: 'GitLab CE'
+    short_name: 'GitLab CE'
     slug: 'ce'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
