@@ -1,7 +1,11 @@
 <head>
   <meta charset="utf-8">
   <title><%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %></title>
-  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
+  <% if @item[:description] %>
+    <meta name="description" content="<%= @item[:description] %>">
+  <% else %>
+    <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
+  <% end %>
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/font-awesome.min.*'].path %>">
   <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
