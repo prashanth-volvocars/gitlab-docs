@@ -164,8 +164,6 @@ h6 {
   padding: 20px 40px;
   position: relative;
   width: auto;
-  display: flex;
-  flex-direction: column;
   max-width: 900px;
   box-shadow: 0 3px 3px $main-box-shadow;
   background: $main-background-color;
@@ -259,7 +257,6 @@ h6 {
 
   .breadcrumbs {
     margin: 0;
-    order: -3;
     font-style: italic;
 
     li {
@@ -428,10 +425,12 @@ h6 {
   font-style: italic;
   margin-bottom: 15px;
 }
-.main h1 {
-  order: -2;
+
+.article-content {
+  > h1:first-of-type {
+    display: none;
+  }
 }
-//
 
 // Override bootstrap's alert color
 .alert {

@@ -18,7 +18,11 @@
             </ul>
           <% end %>
         <% end %>
-        <%= yield %>
+        <% if @item[:title] %>
+          <h1 class="article-title">
+            <%= @item[:title] %>
+          </h1>
+        <% end %>
         <% if @item[:author] %>
           <div class="article-metadata">
             Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
@@ -33,6 +37,9 @@
             Level: <%= @item[:level] %>
           </div>
         <% end %>
+        <div class="article-content js-article-content">
+          <%= yield %>
+        </div>
         <div class="edit-on">
           <%= edit_on_gitlab(@item) %>
         </div>

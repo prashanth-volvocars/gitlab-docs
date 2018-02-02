@@ -10,7 +10,7 @@ function toggleNavigation() {
 
 // move document nav to sidebar
 (function() {
-  var nav = document.querySelectorAll('.breadcrumbs +ul');
+  var nav = document.querySelectorAll('.js-article-content > ul:first-child');
   var main = document.querySelectorAll('.main.class');
 
   // if the document has a top level nav
