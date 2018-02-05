@@ -2,13 +2,13 @@
 title: GitLab Documentation
 ---
 
-<ul class="topics">
+<ul class="topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
   <% @config[:products].each do |name, product| %>
     <% if product[:expose] == true %>
       <li class="topic-<%= product[:slug] %>">
-        <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+        <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" itemprop="url">
           <div class="wrapper">
-            <h2><%= product[:full_name] %></h2>
+            <h2 itemprop="name"><%= product[:full_name] %></h2>
             <p><%= product[:description] %></p>
           </div>
         </a>
