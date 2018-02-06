@@ -4,7 +4,7 @@ title: GitLab Documentation
 
 <ul class="topics">
   <% @config[:products].each do |name, product| %>
-    <% if product[:expose] == true %>
+    <% if product[:expose] == true && @items["/#{product[:slug]}/#{product[:index_file]}"] %>
       <li class="topic-<%= product[:slug] %>">
         <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
           <div class="wrapper">

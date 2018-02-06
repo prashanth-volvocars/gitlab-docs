@@ -8,7 +8,7 @@
     <ul class="nav">
       <li class="search"><input type="text" class="docsearch" placeholder="Search"></li>
       <% @config[:products].each do |name, product| %>
-        <% if product[:expose] == true %>
+        <% if product[:expose] == true && @items["/#{product[:slug]}/#{product[:index_file]}"] %>
           <li class="nav-item">
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
               <%= product[:short_name] %>
