@@ -12,22 +12,22 @@ function toggleNavigation() {
 
 // move document nav to sidebar
 (function() {
-  var nav = document.querySelectorAll('.js-article-content > ul:first-child');
-  var main = document.querySelectorAll('.main.class');
+  var tocList = document.querySelector('.js-article-content > ul:first-child');
+  var main = document.querySelector('.js-main-wrapper');
 
   // if the document has a top level nav
-  if(nav[0]) {
+  if(tocList) {
 
     // append to the sidebar
     var sidebar = document.getElementById('doc-nav');
 
     if(sidebar) {
       // if there is one h1 in the documentation
-      if(nav[0].children.length == 1) {
+      if(tocList.children.length == 1) {
 
         // if there is a nested ul after the first anchor
-        if(nav[0].children[0].children.length > 1) {
-          var menu = nav[0].children[0].children[1];
+        if(tocList.children[0].children.length > 1) {
+          var menu = tocList.children[0].children[1];
           var footnotes = menu.querySelector('.footnotes');
 
           if (footnotes) {
@@ -50,12 +50,12 @@ function toggleNavigation() {
           document.addEventListener('scroll', function() {
             var isTouchingBottom = false;
             if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
-              isTouchingBottom  = window.scrollY + sidebarHeight >= main[0].offsetHeight;
+              isTouchingBottom  = window.scrollY + sidebarHeight >= main.offsetHeight;
             }
 
             sidebar.classList.toggle('doc-nav-bottom-touching', isTouchingBottom)
             if (isTouchingBottom) {
-              sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
+              sidebar.style.top = (main.offsetHeight - sidebarHeight) + 'px';
             } else {
               sidebar.style.top = '';
             }
@@ -63,19 +63,19 @@ function toggleNavigation() {
         }
 
         // remove what is left of the old navigation
-        nav[0].remove()
+        tocList.remove()
       }
       else {
-        nav[0].remove()
+        tocList.remove()
       }
     }
 
     // main content has-toc
-    if (main[0] && main[0].classList) {
-      main[0].classList.add('has-toc');
+    if (main && main.classList) {
+      main.classList.add('has-toc');
     }
     else {
-      main[0].className += ' has-toc';
+      main.className += ' has-toc';
     }
   }
 })();
