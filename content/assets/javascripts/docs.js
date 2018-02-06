@@ -1,3 +1,5 @@
+var NAV_INLINE_BREAKPOINT = 1100;
+
 var navtoggle = document.getElementById("docs-nav-toggle");
 if (navtoggle) {
   navtoggle.addEventListener("click", toggleNavigation);
@@ -43,14 +45,18 @@ function toggleNavigation() {
 
           var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
 
+          // When we scroll down to the bottom, we don't want the footer covering
+          // the TOC list (sticky behavior)
           document.addEventListener('scroll', function() {
-            if (window.innerWidth < 1099) return;
+            var isTouchingBottom = false;
+            if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
+              isTouchingBottom  = window.scrollY + sidebarHeight >= main[0].offsetHeight;
+            }
 
-            if (window.scrollY + sidebarHeight >= main[0].offsetHeight) {
-              sidebar.style.position = 'absolute';
+            sidebar.classList.toggle('doc-nav-bottom-touching', isTouchingBottom)
+            if (isTouchingBottom) {
               sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
             } else {
-              sidebar.style.position = '';
               sidebar.style.top = '';
             }
           }, { passive : true });

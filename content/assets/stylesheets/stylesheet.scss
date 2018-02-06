@@ -258,10 +258,6 @@ h6 {
   .breadcrumbs {
     font-style: italic;
 
-    li {
-      margin-top: 20px;
-    }
-
     .last-updated {
       color: $color-light-gray;
       font-size: 13px;
@@ -270,6 +266,7 @@ h6 {
 }
 
 .header {
+  z-index: 1;
   background: $main-background-color;
   position: relative;
   width: 100%;
