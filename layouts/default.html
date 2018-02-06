@@ -4,8 +4,6 @@
   <body>
     <%= render '/header.*' %>
     <div class=wrapper>
-      <div id="doc-nav" class="doc-nav">
-      </div>
       <div class="main class">
         <% if @config[:breadcrumbs] %>
           <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
@@ -18,6 +16,8 @@
             </ul>
           <% end %>
         <% end %>
+        <div id="doc-nav" class="doc-nav">
+        </div>
         <% if @item[:title] %>
           <h1 class="article-title">
             <%= @item[:title] %>
