@@ -13,6 +13,9 @@ text_extensions: [ 'adoc', 'asciidoc', 'atom', 'coffee', 'css', 'erb', 'haml', '
 # relative to the site directory.
 output_dir: public
 
+# The path where the content files reside.
+content_dir: content
+
 # A list of index filenames, i.e. names of files that will be served by a web
 # server when a directory is requested. Usually, index files are named
 # “index.html”, but depending on the web server, this may be something else,
@@ -102,8 +105,8 @@ debug: false
 
 products:
   ce:
-    full_name: 'GitLab Community Edition'
-    short_name: 'Community Edition'
+    full_name: 'GitLab CE'
+    short_name: 'GitLab CE'
     slug: 'ce'
     index_file: 'README.*'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
