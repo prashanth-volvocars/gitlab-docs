@@ -10,7 +10,7 @@ before_script:
   - bundle install --jobs 4 --path vendor
 
 variables:
-  BRANCH_CE: 'master'
+  BRANCH_CE: 'master' #
   BRANCH_EE: 'master'
   BRANCH_OMNIBUS: 'master'
   BRANCH_RUNNER: 'master'

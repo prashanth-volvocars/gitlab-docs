@@ -1,3 +1,5 @@
+var NAV_INLINE_BREAKPOINT = 1100;
+
 var navtoggle = document.getElementById("docs-nav-toggle");
 if (navtoggle) {
   navtoggle.addEventListener("click", toggleNavigation);
@@ -10,22 +12,22 @@ function toggleNavigation() {
 
 // move document nav to sidebar
 (function() {
-  var nav = document.querySelectorAll('.breadcrumbs +ul');
-  var main = document.querySelectorAll('.main.class');
+  var tocList = document.querySelector('.js-article-content > ul:first-child');
+  var main = document.querySelector('.js-main-wrapper');
 
   // if the document has a top level nav
-  if(nav[0]) {
+  if(tocList) {
 
     // append to the sidebar
     var sidebar = document.getElementById('doc-nav');
 
     if(sidebar) {
       // if there is one h1 in the documentation
-      if(nav[0].children.length == 1) {
+      if(tocList.children.length == 1) {
 
         // if there is a nested ul after the first anchor
-        if(nav[0].children[0].children.length > 1) {
-          var menu = nav[0].children[0].children[1];
+        if(tocList.children[0].children.length > 1) {
+          var menu = tocList.children[0].children[1];
           var footnotes = menu.querySelector('.footnotes');
 
           if (footnotes) {
@@ -43,33 +45,37 @@ function toggleNavigation() {
 
           var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
 
+          // When we scroll down to the bottom, we don't want the footer covering
+          // the TOC list (sticky behavior)
           document.addEventListener('scroll', function() {
-            if (window.innerWidth < 1099) return;
+            var isTouchingBottom = false;
+            if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
+              isTouchingBottom  = window.scrollY + sidebarHeight >= main.offsetHeight;
+            }
 
-            if (window.scrollY + sidebarHeight >= main[0].offsetHeight) {
-              sidebar.style.position = 'absolute';
-              sidebar.style.top = (main[0].offsetHeight - sidebarHeight) + 'px';
+            sidebar.classList.toggle('doc-nav-bottom-touching', isTouchingBottom)
+            if (isTouchingBottom) {
+              sidebar.style.top = (main.offsetHeight - sidebarHeight) + 'px';
             } else {
-              sidebar.style.position = '';
               sidebar.style.top = '';
             }
           }, { passive : true });
         }
 
         // remove what is left of the old navigation
-        nav[0].remove()
+        tocList.remove()
       }
       else {
-        nav[0].remove()
+        tocList.remove()
       }
     }
 
     // main content has-toc
-    if (main[0] && main[0].classList) {
-      main[0].classList.add('has-toc');
+    if (main && main.classList) {
+      main.classList.add('has-toc');
     }
     else {
-      main[0].className += ' has-toc';
+      main.className += ' has-toc';
     }
   }
 })();

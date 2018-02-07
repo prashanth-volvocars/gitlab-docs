@@ -3,10 +3,8 @@
   <%= render '/head.*' %>
   <body>
     <%= render '/header.*' %>
-    <div class=wrapper>
-      <div id="doc-nav" class="doc-nav">
-      </div>
-      <div class="main class">
+    <div class="wrapper">
+      <div class="main class js-main-wrapper">
         <% if @config[:breadcrumbs] %>
           <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
           <% if ancestor_array %>
@@ -18,8 +16,30 @@
             </ul>
           <% end %>
         <% end %>
-        <%= yield %>
-        <hr>
+        <div id="doc-nav" class="doc-nav">
+        </div>
+        <% if @item[:title] %>
+          <h1 class="article-title">
+            <%= @item[:title] %>
+          </h1>
+        <% end %>
+        <% if @item[:author] %>
+          <div class="article-metadata">
+            Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
+            on <%= @item[:date] %>
+            &#8226;
+            <% if @item[:last_updated] %>
+            Last updated: <%= @item[:last_updated] %>
+            &#8226;
+            <% end %>
+            Type: <%= @item[:article_type] %>
+            &#8226;
+            Level: <%= @item[:level] %>
+          </div>
+        <% end %>
+        <div class="article-content js-article-content">
+          <%= yield %>
+        </div>
         <div class="edit-on">
           <%= edit_on_gitlab(@item) %>
         </div>
