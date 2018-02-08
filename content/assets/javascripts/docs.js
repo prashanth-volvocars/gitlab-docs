@@ -43,21 +43,26 @@ function toggleNavigation() {
 
           sidebar.appendChild(menu);
 
-          var sidebarHeight = sidebar.querySelector('ul').getBoundingClientRect().height + 55;
+          var sidebarContent = sidebar.querySelector('ul');
+          var sidebarContentHeight = 0;
 
           // When we scroll down to the bottom, we don't want the footer covering
           // the TOC list (sticky behavior)
           document.addEventListener('scroll', function() {
-            var isTouchingBottom = false;
-            if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
-              isTouchingBottom  = window.scrollY + sidebarHeight >= main.offsetHeight;
+            // Wait a cycle for the dimensions to kick in
+            if(!sidebarContentHeight) {
+              sidebarContentHeight = sidebarContent.getBoundingClientRect().height + 55;
             }
 
-            sidebar.classList.toggle('doc-nav-bottom-touching', isTouchingBottom)
+            var isTouchingBottom = false;
+            if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
+              isTouchingBottom  = window.scrollY + sidebarContentHeight >= main.offsetHeight;
+            }
+
             if (isTouchingBottom) {
-              sidebar.style.top = (main.offsetHeight - sidebarHeight) + 'px';
+              sidebarContent.style.top = (main.offsetHeight - (window.scrollY + sidebarContentHeight)) + 'px';
             } else {
-              sidebar.style.top = '';
+              sidebarContent.style.top = '';
             }
           }, { passive : true });
         }

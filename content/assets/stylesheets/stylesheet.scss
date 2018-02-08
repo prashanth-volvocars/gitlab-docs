@@ -1,5 +1,5 @@
 ---
-version: 23
+version: 24
 ---
 
 @import "variables";
@@ -170,6 +170,12 @@ h6 {
 
   @media (max-width: $mobile-width) {
     padding: 20px 10px;
+  }
+
+  &:not(.has-toc) {
+    > .doc-nav {
+      display: none;
+    }
   }
 
   a {
