@@ -169,6 +169,10 @@ pages:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
+.except_stable: &except_stable
+  except:
+    - /^\d{1,2}\.\d{1,2}$/
+
 image:bootstrap:
   stage: images
   <<: *docker_build
@@ -179,41 +183,51 @@ image:bootstrap:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.bootstrap .
     - docker push $IMAGE_NAME
   when: manual
+  <<: *except_stable
 
 image:builder-onbuild:
   stage: images
   <<: *docker_build
   variables:
-    DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
-    GIT_STRATEGY: none
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.builder.onbuild .
     - docker push $IMAGE_NAME
   when: manual
+  <<: *except_stable
 
 image:nginx-onbuild:
   stage: images
   <<: *docker_build
   variables:
-    DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
-    GIT_STRATEGY: none
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
     - docker push $IMAGE_NAME
   when: manual
+  <<: *except_stable
 
-# To be run only on stable branches.
+# Run only on stable branches
 image:docs-stable:
   stage: docker-stable
   <<: *docker_build
   variables:
-    DOCKER_DRIVER: overlay2
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   script:
     - docker build -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
-  # Only single or double digits separated with a dot.
+  # Single or double digits, separated with a dot
   only:
     - /^\d{1,2}\.\d{1,2}$/
+
+# Run only on master
+image:docs-latest:
+  stage: docker-stable
+  <<: *docker_build
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+  script:
+    - docker build -t $IMAGE_NAME .
+    - docker push $IMAGE_NAME
+  only:
+    - master
