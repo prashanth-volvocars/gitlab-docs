@@ -1,0 +1,28 @@
+# Get Nanoc bootstrap
+FROM registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap
+
+# Make the variables of the archive Dockerfiles accessible to this build-stage
+ONBUILD ARG VER
+ONBUILD ARG BRANCH_EE
+ONBUILD ARG BRANCH_CE
+ONBUILD ARG BRANCH_OMNIBUS
+ONBUILD ARG BRANCH_RUNNER
+
+# Build the docs from this branch
+ONBUILD COPY . /source/
+ONBUILD RUN bundle exec rake setup_git default
+ONBUILD RUN bundle exec nanoc compile -VV
+
+# Move generated HTML to /site
+ONBUILD RUN mkdir /site
+ONBUILD RUN mv /source/public /site/${VER}
+
+# Remove tmp dir to save some space
+ONBUILD RUN rm -rf /source/tmp
+
+# Do some HTML post-processing on the archive
+ONBUILD RUN /scripts/normalize-links.sh /site ${VER}
+
+# Make an index.html and 404.html which will redirect / to /${VER}/
+ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html
+ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/404.html
