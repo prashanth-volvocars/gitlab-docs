@@ -21,11 +21,11 @@ if ! [ -d "$TARGET/$VER" ]; then
 fi
 
 # Fix relative links for archive
-find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ce/#/'"$VER"'/ce/#g'
-find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ee/#/'"$VER"'/ee/#g'
-find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/runner/#/'"$VER"'/runner/#g'
-find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnibus/#/'"$VER"'/omnibus/#g'
-find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#/'"$VER"'/assets/#g'
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ce/#="/'"$VER"'/ce/#g'
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ee/#="/'"$VER"'/ee/#g'
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/runner/#="/'"$VER"'/runner/#g'
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnibus/#="/'"$VER"'/omnibus/#g'
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
 
 # Symlink all README.html to index.html
