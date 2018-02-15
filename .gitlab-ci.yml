@@ -211,7 +211,6 @@ image:docs-stable:
   variables:
     DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-    GIT_STRATEGY: none
   script:
     - docker build -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
