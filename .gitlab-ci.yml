@@ -231,5 +231,3 @@ image:docs-latest:
     - docker push $IMAGE_NAME
   only:
     - master
-  except:
-    - branches
