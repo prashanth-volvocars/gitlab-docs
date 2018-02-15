@@ -186,7 +186,6 @@ image:builder-onbuild:
   variables:
     DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
-    GIT_STRATEGY: none
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.builder.onbuild .
     - docker push $IMAGE_NAME
@@ -198,7 +197,6 @@ image:nginx-onbuild:
   variables:
     DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
-    GIT_STRATEGY: none
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
     - docker push $IMAGE_NAME
