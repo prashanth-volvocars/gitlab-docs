@@ -25,10 +25,10 @@ RUN rm -rf /usr/share/nginx/html/*
 # Get all the archive static HTML and put it into place
 # Go oldest-to-newest to take advantage of the fact that we change older
 # archives less often than new ones.
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:9-0 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10-3 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10-4 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10-5 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:9.0 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.3 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.4 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.5 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive

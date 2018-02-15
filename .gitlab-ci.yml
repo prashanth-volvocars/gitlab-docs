@@ -212,7 +212,7 @@ image:docs-stable:
   stage: docker-stable
   <<: *docker_build
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   script:
     - docker build -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
