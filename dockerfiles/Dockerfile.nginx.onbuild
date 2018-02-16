@@ -1,14 +1,16 @@
-# Base image to use for building documentation archives
-# this image uses "ONBUILD" to perform all required steps in the archives
+# Base image to use for building documentation archives.
+# This image uses "ONBUILD" to perform all required steps in the archives
 # and relies upon its parent image having a layer called `builder`.
 
 FROM nginx:alpine
 
-# Make the version accessible to this build-stage, and copy it to an ENV so that it persists in the final image
+# Make the version accessible to this build-stage, and copy it to an ENV so
+# that it persists in the final image.
 ONBUILD ARG VER
 ONBUILD ENV VER=$VER
 
-# Clean out any existing HTML files, and copy the HTML from the builder stage to the default location for Nginx
+# Clean out any existing HTML files, and copy the HTML from the builder stage
+# to the default location for Nginx.
 ONBUILD RUN rm -rf /usr/share/nginx/html/*
 ONBUILD COPY --from=builder /site /usr/share/nginx/html
 
