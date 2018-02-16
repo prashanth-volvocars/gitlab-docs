@@ -4,18 +4,25 @@ stages:
   - images
   - build
   - test
-  - deploy
   - docker-stable
+  - deploy
+
+#
+# Pick the remote branch, by default master (see the Rakefile for more info)
+#
+variables:
+  BRANCH_CE: 'master'
+  BRANCH_EE: 'master'
+  BRANCH_OMNIBUS: 'master'
+  BRANCH_RUNNER: 'master'
 
 before_script:
   - ruby -v
   - bundle install --jobs 4 --path vendor
 
-variables:
-  BRANCH_CE: 'master' #
-  BRANCH_EE: 'master'
-  BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'master'
+###############################################
+#             Build the website               #
+###############################################
 
 .build_base: &build_base
   stage: build
@@ -34,23 +41,35 @@ variables:
   tags:
     - docker
 
-# Compile on master branch
-compile_master:
+#
+# Compile only on master and stable branches
+#
+compile_prod:
   <<: *build_base
   variables:
     NANOC_ENV: 'production'
   only:
     - master
+    - /^\d{1,2}\.\d{1,2}$/
 
+#
 # Compile on all branches except master
-compile_branch:
+#
+compile_dev:
   <<: *build_base
   only:
     - branches
   except:
     - master
+    - /^\d{1,2}\.\d{1,2}$/
 
+###############################################
+#              Test the website               #
+###############################################
+
+#
 # Check for 404s in internal links
+#
 internal_links:
   stage: test
   script:
@@ -69,7 +88,9 @@ internal_links:
   except:
     - pipelines
 
+#
 # SCSS linting
+#
 scss_lint:
   stage: test
   script:
@@ -87,13 +108,19 @@ scss_lint:
   except:
     - pipelines
 
-# Deploy the Review App
+###############################################
+#               Review Apps                   #
+###############################################
+
+#
+# Deploy the Review App on a dev server
+#
 review:
   stage: deploy
   variables:
     GIT_STRATEGY: none
   dependencies:
-    - compile_branch
+    - compile_dev
   before_script: []
   cache: {}
   script:
@@ -104,13 +131,17 @@ review:
     on_stop: review_stop
   only:
     - branches@gitlab-com/gitlab-docs
+  # Except master and stable branches
   except:
     - master
+    - /^\d{1,2}\.\d{1,2}$/
   tags:
     - nginx
     - review-apps
 
+#
 # Stop the Review App
+#
 review_stop:
   stage: deploy
   variables:
@@ -127,13 +158,21 @@ review_stop:
     action: stop
   only:
     - branches@gitlab-com/gitlab-docs
+  # Except master and stable branches
   except:
     - master
+    - /^\d{1,2}\.\d{1,2}$/
   tags:
     - nginx
     - review-apps
 
-# Deploy to Pages
+###############################################
+#          GitLab Pages (production)          #
+###############################################
+
+#
+# Deploy to production with GitLab Pages
+#
 pages:
   stage: deploy
   variables:
@@ -155,11 +194,11 @@ pages:
   tags:
     - docker
   dependencies:
-    - compile_master
+    - compile_prod
 
-########################
-# Docker images builds #
-########################
+###############################################
+#           Docker images builds              #
+###############################################
 
 .docker_build: &docker_build
   image: docker:latest
@@ -169,15 +208,20 @@ pages:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
+#
+# Except stable branches with versions like 10.4
+#
 .except_stable: &except_stable
   except:
     - /^\d{1,2}\.\d{1,2}$/
 
+#
+# Build the image containing all build dependencies
+#
 image:bootstrap:
   stage: images
   <<: *docker_build
   variables:
-    DOCKER_DRIVER: overlay2
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.bootstrap .
@@ -185,6 +229,9 @@ image:bootstrap:
   when: manual
   <<: *except_stable
 
+#
+# Build the image that takes the website and builds it
+#
 image:builder-onbuild:
   stage: images
   <<: *docker_build
@@ -196,6 +243,9 @@ image:builder-onbuild:
   when: manual
   <<: *except_stable
 
+#
+# Build the image that copies the final HTML files in a smaller image
+#
 image:nginx-onbuild:
   stage: images
   <<: *docker_build
@@ -205,26 +255,49 @@ image:nginx-onbuild:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
     - docker push $IMAGE_NAME
   when: manual
-  <<: *except_stable
+  only:
+    - web
 
-# Run only on stable branches
+#
+# Build the single archive image for stable versions
+#
 image:docs-stable:
   stage: docker-stable
   <<: *docker_build
   variables:
+    NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   script:
     - docker build -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
-  # Single or double digits, separated with a dot
+  # Only branches with versions like 10.4
   only:
     - /^\d{1,2}\.\d{1,2}$/
+  except:
+    - tags
 
-# Run only on master
+#
+# Build the multiple archives image
+#
+image:docs-archives:
+  stage: images
+  <<: *docker_build
+  variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
+  script:
+    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
+    - docker push $IMAGE_NAME
+  when: manual
+  <<: *except_stable
+
+#
+# Build master containing all archives
+#
 image:docs-latest:
   stage: docker-stable
   <<: *docker_build
   variables:
+    NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
   script:
     - docker build -t $IMAGE_NAME .
