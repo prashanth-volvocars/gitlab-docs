@@ -79,7 +79,7 @@ checks:
     # If an internal link matches this pattern, the validity check will be skipped.
     # E.g.:
     #   exclude: ['^/server_status']
-    exclude: []
+    exclude: ['^/\d{1,2}\.\d{1,2}/$']
 
   # Configuration for the “external_links” checker, which checks whether all
   # external links are valid.
