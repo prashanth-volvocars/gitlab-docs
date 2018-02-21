@@ -12,7 +12,7 @@ RUN rm -rf /source/tmp
 # BUILD OF MASTER DOCS IS NOW DONE!
 
 # Reset to alpine so we don't get any docs source or extra apps
-FROM nginx:alpine
+FROM nginx:1.12-alpine
 
 ENV TARGET=/usr/share/nginx/html
 
