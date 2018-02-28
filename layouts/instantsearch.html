@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <%= render '/head.*' %>
+    <!-- instantsearch -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
+    <!-- end of instantsearch -->
+  </head>
+  <body>
+    <%= render '/header_search_page.*' %>
+    <div class=wrapper>
+      <div id="doc-nav" class="doc-nav">
+      </div>
+      <div class="main class instantsearch-input">
+        <%= yield %>
+        <hr>
+      <div class="clear"></div>
+    </div>
+      <%= render '/footer_homepage.*' %>
+      <%= render '/analytics.*' %>
+      <%= render '/https_redirect.*' %>
+    <script type="text/javascript">
+      const search = instantsearch({
+        appId: 'BH4D9OD16A',
+        apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
+        indexName: 'gitlab',
+        algoliaOptions: {
+          // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
+          'filters': "tags:ee OR tags:omnibus OR tags:runner",
+          // Number of results shown in the search dropdown
+          'hitsPerPage': 10
+        },
+        urlSync: true
+      });
+
+      search.addWidget(
+        instantsearch.widgets.searchBox({
+          container: '#search-input'
+        })
+      );
+
+      search.addWidget(
+        instantsearch.widgets.hits({
+          container: '#hits',
+          hitsPerPage: 10,
+          templates: {
+            item: document.getElementById('hit-template').innerHTML,
+            empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
+          }
+        })
+      );
+
+      search.addWidget(
+        instantsearch.widgets.pagination({
+          container: '#pagination'
+        })
+      );
+
+      search.start();
+    </script>
+  </body>
+</html>
