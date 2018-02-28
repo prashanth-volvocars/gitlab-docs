@@ -5,7 +5,6 @@
 <% else %>
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
-
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/font-awesome.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
@@ -18,59 +17,55 @@
 <script async src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
 <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic' rel='stylesheet' type='text/css'>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-  <!-- you don't need to keep this, but it's cool for stats! -->
-  <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-
-  <!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
-  <link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
-
-  <script type="application/ld+json">
-  {
-    "@context":"http://schema.org",
-    "@type":"Organization",
-    "name":"GitLab",
-    "legalName":"GitLab Inc.",
-    "url":"https://about.gitlab.com",
-    "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
-    "foundingDate":"2011",
-    "founders":[
+<!-- you don't need to keep this, but it's cool for stats! -->
+<meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
+<!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
+<link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"Organization",
+  "name":"GitLab",
+  "legalName":"GitLab Inc.",
+  "url":"https://about.gitlab.com",
+  "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
+  "foundingDate":"2011",
+  "founders":[
+    {
+      "@type":"Person",
+      "name":"Sid Sijbrandij"
+    },
+    {
+      "@type":"Person",
+      "name":"Dmitriy Zaporozhets"
+    }],
+    "address":
       {
-        "@type":"Person",
-        "name":"Sid Sijbrandij"
+        "@type":"PostalAddress",
+        "streetAddress":"1233 Howard St 2F",
+        "addressLocality":"San Francisco",
+        "addressRegion":"CA",
+        "postalCode":"94103",
+        "addressCountry":"USA"
       },
-      {
-        "@type":"Person",
-        "name":"Dmitriy Zaporozhets"
-      }],
-      "address":
-        {
-          "@type":"PostalAddress",
-          "streetAddress":"1233 Howard St 2F",
-          "addressLocality":"San Francisco",
-          "addressRegion":"CA",
-          "postalCode":"94103",
-          "addressCountry":"USA"
-        },
-      "sameAs":[
-        "https://www.facebook.com/gitlab",
-        "https://twitter.com/gitlab",
-        "https://www.linkedin.com/company/gitlab-com",
-        "https://plus.google.com/107491817347842790515/",
-        "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"http://schema.org",
-    "@type": "WebSite", 
-    "name": "GitLab Documentation",
-    "url": "https://docs.gitlab.com",
-    "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://docs.gitlab.com/?s={search_term}",
-          "query-input": "required name=search_term"
-        }
-  }
-  </script>
-</head>
+    "sameAs":[
+      "https://www.facebook.com/gitlab",
+      "https://twitter.com/gitlab",
+      "https://www.linkedin.com/company/gitlab-com",
+      "https://plus.google.com/107491817347842790515/",
+      "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type": "WebSite", 
+  "name": "GitLab Documentation",
+  "url": "https://docs.gitlab.com",
+  "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://docs.gitlab.com/?s={search_term}",
+        "query-input": "required name=search_term"
+      }
+}
+</script>
