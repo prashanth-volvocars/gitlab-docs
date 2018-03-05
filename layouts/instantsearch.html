@@ -31,8 +31,9 @@
           // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
           'filters': "tags:ee OR tags:omnibus OR tags:runner",
           // Number of results shown in the search dropdown
-          'hitsPerPage': 10
+          'hitsPerPage': 10,
         },
+        loadingIndicator: true,
         urlSync: true
       });
 
@@ -43,19 +44,14 @@
       );
 
       search.addWidget(
-        instantsearch.widgets.hits({
+        instantsearch.widgets.infiniteHits({
           container: '#hits',
-          hitsPerPage: 10,
           templates: {
             item: document.getElementById('hit-template').innerHTML,
             empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
-          }
-        })
-      );
-
-      search.addWidget(
-        instantsearch.widgets.pagination({
-          container: '#pagination'
+          },
+          escapeHits: true,
+          showMoreLabel: "Load more results..."
         })
       );
 

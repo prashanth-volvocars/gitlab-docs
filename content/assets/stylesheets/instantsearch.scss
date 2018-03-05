@@ -92,11 +92,14 @@ h6 {
     font-weight: normal;
     margin-top: 0;
   }
+
   em {
     font-style: normal;
-    color: $color_5;
-    border-bottom: solid 1px $color_10;
+    background-color: $color_3;
+    //color: $color_5;
+    //border-bottom: solid 1px $color_10;
   }
+
   p {
     font-size: 13px;
   }
@@ -630,3 +633,29 @@ header img {
 .ais-show-more__active:before {
   content: "\f146";
 }
+
+.ais-infinite-hits--showmore {
+  display: block;
+  margin: auto;
+
+  button {
+    border-radius: 5px;
+    padding: 20px 10px;
+    cursor: pointer;
+    width: 100%;
+    background-color: $color_8;
+    border-color: $color_3;
+
+    &:hover {
+      background-color: $color_3;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+
+
+
