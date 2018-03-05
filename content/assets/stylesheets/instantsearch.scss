@@ -81,6 +81,10 @@ $color9: #383838;
     border: 0;
   }
 }
+
+#refinement-list {
+  margin-top: 20px;
+}
 //scss-lint:enable IdSelector
 
 .algolia-docsearch-suggestion--highlight {
@@ -113,4 +117,8 @@ $color9: #383838;
   display: block;
   text-align: right;
   font-style: italic;
+}
+
+.ais-refinement-list--item {
+  display: inline-block;
 }

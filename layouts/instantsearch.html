@@ -45,6 +45,16 @@
       );
 
       search.addWidget(
+          instantsearch.widgets.refinementList({
+            container: '#refinement-list',
+            attributeName: 'tags',
+            templates: {
+              header: 'Refine your search:'
+            }
+          })
+        );
+
+      search.addWidget(
         instantsearch.widgets.infiniteHits({
           container: '#hits',
           templates: {

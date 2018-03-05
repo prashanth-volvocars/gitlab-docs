@@ -9,6 +9,7 @@ layout: instantsearch
   </div>
 </header>
 <main>
+  <div id="refinement-list"></div>
   <div id="stats"></div>
   <div id="hits"></div>
   <div id="pagination"></div>
