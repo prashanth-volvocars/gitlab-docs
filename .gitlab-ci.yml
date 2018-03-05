@@ -53,8 +53,7 @@ compile_prod:
     - /^\d{1,2}\.\d{1,2}$/
 
 #
-# Compile on all branches except master, stable branches
-# and pipelines triggered using the API.
+# Compile on all branches except master
 #
 compile_dev:
   <<: *build_base
@@ -62,7 +61,6 @@ compile_dev:
     - branches
   except:
     - master
-    - api
     - /^\d{1,2}\.\d{1,2}$/
 
 ###############################################
@@ -83,15 +81,12 @@ internal_links:
       - vendor/ruby
   tags:
     - docker
-  # Skip this job when it's invoked by a cross project pipeline (pipelines),
-  # a trigger (triggers) and via the API (api). That will speed
+  # Skip this job when it's invoked by a cross project pipeline. That will speed
   # up the pipeline when a docs preview is triggered. We already check for
   # internal links in every MR anyway. For more info:
   # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
   except:
     - pipelines
-    - triggers
-    - api
 
 #
 # SCSS linting
@@ -106,15 +101,12 @@ scss_lint:
       - vendor/ruby
   tags:
     - docker
-  # Skip this job when it's invoked by a cross project pipeline (pipelines),
-  # a trigger (triggers) and via the API (api). That will speed
+  # Skip this job when it's invoked by a cross project pipeline. That will speed
   # up the pipeline when a docs preview is triggered. The triggered pipeline is
   # always a branch off master which should be green anyway. For more info:
   # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
   except:
     - pipelines
-    - triggers
-    - api
 
 ###############################################
 #               Review Apps                   #
@@ -139,11 +131,10 @@ review:
     on_stop: review_stop
   only:
     - branches@gitlab-com/gitlab-docs
-  # Except master, stable branches and pipelines triggered via API
+  # Except master and stable branches
   except:
     - master
     - /^\d{1,2}\.\d{1,2}$/
-    - api
   tags:
     - nginx
     - review-apps
@@ -167,11 +158,10 @@ review_stop:
     action: stop
   only:
     - branches@gitlab-com/gitlab-docs
-  # Except master, stable branches and pipelines triggered via API
+  # Except master and stable branches
   except:
     - master
     - /^\d{1,2}\.\d{1,2}$/
-    - api
   tags:
     - nginx
     - review-apps
