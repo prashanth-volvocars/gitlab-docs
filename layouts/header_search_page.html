@@ -1,0 +1,32 @@
+<div class="header">
+  <a href="/">
+    <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" width="50" />
+    <p>GitLab Documentation</p>
+  </a>
+  <div class="nav-container">
+    <a class="nav-toggle" id="docs-nav-toggle">Menu</a>
+    <ul class="nav">
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
