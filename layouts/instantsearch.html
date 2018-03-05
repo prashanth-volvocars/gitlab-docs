@@ -3,10 +3,11 @@
   <head>
     <%= render '/head.*' %>
     <!-- instantsearch -->
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch.min.css">
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
+    <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
     <!-- end of instantsearch -->
   </head>
   <body>
