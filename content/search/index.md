@@ -8,9 +8,9 @@ layout: instantsearch
      <!-- We use a specific placeholder in the input to guides users in their search. -->
   </div>
 </header>
-<main>
-  <div id="refinement-list"></div>
+<main class="search-results">
   <div id="stats"></div>
+  <div id="refinement-list"></div>
   <div id="hits"></div>
   <div id="pagination"></div>
 

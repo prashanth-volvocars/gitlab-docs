@@ -83,7 +83,7 @@ $color9: #383838;
 }
 
 #refinement-list {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 //scss-lint:enable IdSelector
 
@@ -117,8 +117,14 @@ $color9: #383838;
   display: block;
   text-align: right;
   font-style: italic;
+  font-size: 13px;
 }
 
 .ais-refinement-list--item {
   display: inline-block;
+  padding-right: 10px;
+}
+
+.ais-refinement-list--label {
+  text-transform: uppercase;
 }

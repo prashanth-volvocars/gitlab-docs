@@ -40,7 +40,8 @@
 
       search.addWidget(
         instantsearch.widgets.searchBox({
-          container: '#search-input'
+          container: '#search-input',
+          reset: true
         })
       );
 
@@ -70,7 +71,7 @@
         instantsearch.widgets.stats({
           container: '#stats',
           templates: {
-            body: '<div class="stats">You have {{nbHits}} results, fetched in {{processingTimeMS}}ms.</div>'
+            body: '<div class="stats">We found {{nbHits}} results, fetched in {{processingTimeMS}}ms.</div>'
           }
         })
       );
