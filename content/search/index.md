@@ -12,7 +12,6 @@ layout: instantsearch
   <div id="stats"></div>
   <div id="refinement-list"></div>
   <div id="hits"></div>
-  <div id="pagination"></div>
 
   <script type="text/html" id="hit-template">
     <a href="{{ url }}" class="hit">
