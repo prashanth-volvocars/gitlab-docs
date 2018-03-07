@@ -8,9 +8,10 @@ layout: instantsearch
      <!-- We use a specific placeholder in the input to guides users in their search. -->
   </div>
 </header>
-<main>
+<main class="search-results">
+  <div id="stats"></div>
+  <div id="refinement-list"></div>
   <div id="hits"></div>
-  <div id="pagination"></div>
 
   <script type="text/html" id="hit-template">
     <a href="{{ url }}" class="hit">

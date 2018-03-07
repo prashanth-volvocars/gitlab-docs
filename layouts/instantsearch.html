@@ -3,10 +3,11 @@
   <head>
     <%= render '/head.*' %>
     <!-- instantsearch -->
+    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch.min.css">
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
+    <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
     <!-- end of instantsearch -->
   </head>
   <body>
@@ -29,33 +30,49 @@
         indexName: 'gitlab',
         algoliaOptions: {
           // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
-          'filters': "tags:ee OR tags:omnibus OR tags:runner",
+          'filters': "tags:gitlab OR tags:omnibus OR tags:runner",
           // Number of results shown in the search dropdown
-          'hitsPerPage': 10
+          'hitsPerPage': 10,
         },
+        loadingIndicator: true,
         urlSync: true
       });
 
       search.addWidget(
         instantsearch.widgets.searchBox({
-          container: '#search-input'
+          container: '#search-input',
+          reset: true
         })
       );
 
       search.addWidget(
-        instantsearch.widgets.hits({
+          instantsearch.widgets.refinementList({
+            container: '#refinement-list',
+            attributeName: 'tags',
+            templates: {
+              header: 'Refine your search:'
+            }
+          })
+        );
+
+      search.addWidget(
+        instantsearch.widgets.infiniteHits({
           container: '#hits',
-          hitsPerPage: 10,
           templates: {
             item: document.getElementById('hit-template').innerHTML,
             empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
-          }
+          },
+          escapeHits: true,
+          showMoreLabel: "Load more results..."
         })
       );
 
       search.addWidget(
-        instantsearch.widgets.pagination({
-          container: '#pagination'
+        instantsearch.widgets.stats({
+          container: '#stats',
+          templates: {
+            body: '<div class="stats">We found {{nbHits}} results, fetched in {{processingTimeMS}}ms.</div>'
+          }
         })
       );
 
