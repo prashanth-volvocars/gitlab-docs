@@ -43,6 +43,7 @@ $color9: #383838;
   font-size: 13px;
   font-weight: 300;
   width: 100%; // was 81%
+  position: relative;
 
   &:hover {
     border-color: $color1;
@@ -67,6 +68,23 @@ $color9: #383838;
     color: $color7;
     margin: 1px 0 10px;
     font-size: 14px;
+  }
+
+  .hit-tag {
+    display: block;
+    position: absolute;
+    padding: 3px;
+    border: 1px solid $color0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    top: 0;
+    width: 90px;
+    height: 25px;
+    font-size: 11px;
+    text-align: center;
+    color: $color6;
   }
 }
 //scss-lint:enable ImportantRule
