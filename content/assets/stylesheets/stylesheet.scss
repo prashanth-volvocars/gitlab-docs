@@ -1,5 +1,5 @@
 ---
-version: 24
+version: 25
 ---
 
 @import "variables";
@@ -507,7 +507,6 @@ h6 {
 }
 // scss-lint:enable ImportantRule
 
-
 .topics {
   text-align: center;
   position: relative;
@@ -517,7 +516,6 @@ h6 {
   max-width: 1350px;
   margin: auto;
   padding-right: 40px;
-  -webkit-padding-start: 0;
 
   li {
     display: inline-block;
@@ -564,6 +562,43 @@ h6 {
         }
       }
     }
+  }
+}
+
+.topic {
+  border: 1px solid $white;
+
+  &:hover {
+    box-shadow: 5px 5px 10px $subtopic-color;
+    border: 1px solid $subtopic-border-color;
+    transition: all .2s ease-in-out;
+  }
+
+  h2 {
+    color: $link-color-hover;
+  }
+}
+
+.subtopic {
+  border: 1px solid $white;
+
+  &:hover {
+    box-shadow: 5px 5px 10px $subtopic-color;
+    border: 1px solid $subtopic-border-color;
+    transition: all .2s ease-in-out;
+
+    h2 {
+      color: $link-color-hover;
+    }
+  }
+
+  a {
+    color: $subtopic-color;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-transform: uppercase;
   }
 }
 
