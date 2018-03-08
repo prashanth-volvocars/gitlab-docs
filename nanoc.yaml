@@ -77,18 +77,25 @@ checks:
   internal_links:
     # A list of patterns, specified as regular expressions, to exclude from the check.
     # If an internal link matches this pattern, the validity check will be skipped.
-    # E.g.:
-    #   exclude: ['^/server_status']
-    exclude: ['^/\d{1,2}\.\d{1,2}/$']
+    exclude:
+      # Exclude major.minor versions that are used under /archives
+      - '^/\d{1,2}\.\d{1,2}/$'
+      # Exclude the extra links listed in the home page
+      - 'ee\/ci\/yaml\/'
+      - 'ee\/ssh\/'
+      - 'ee\/user\/project\/pages\/'
+      - 'ee\/api\/'
 
   # Configuration for the “external_links” checker, which checks whether all
   # external links are valid.
   external_links:
     # A list of patterns, specified as regular expressions, to exclude from the check.
     # If an external link matches this pattern, the validity check will be skipped.
-    # E.g.:
-    #   exclude: ['^http://example.com$']
-    exclude: ['http:\/\/127\.0\.0\.1:3000.*', 'http:\/\/www\.amazon\.com\/.*', 'http:\/\/www\.amazon\.co\.uk\/.*', 'http:\/\/192\.168\.59\.103']
+    exclude:
+      - 'http:\/\/127\.0\.0\.1:3000.*'
+      - 'http:\/\/www\.amazon\.com\/.*'
+      - 'http:\/\/www\.amazon\.co\.uk\/.*'
+      - 'http:\/\/192\.168\.59\.103'
 
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.
