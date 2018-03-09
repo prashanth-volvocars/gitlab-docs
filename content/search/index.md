@@ -19,6 +19,7 @@ layout: instantsearch
           <h3 class="hit-name">{{{_highlightResult.hierarchy.lvl1.value}}}</h3>
             <h4 class="hit-description">{{{_highlightResult.hierarchy.lvl2.value}}}</h4>
           <p class="hit-text">{{{_highlightResult.content.value}}}</p>
+          <div class="hit-tag">{{{_highlightResult.hierarchy.lvl0.value}}}</div>
         </div>
       </a>
   </script>
