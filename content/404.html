@@ -1,5 +1,49 @@
 ---
-title: 404 Not Found
+title: 404 not found I say you!
 ---
 
-<h1>404 Not Found</h1>
+<div class='four-oh-four'>
+  <center>
+    <h1>404</h1>
+      <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
+      <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
+    <br>
+    <h2>Oh noes! Something's not right!</h2>
+    <br>
+  </center>
+
+  <% unless ENV['NANOC_ENV'] == 'production' %>
+  <p>Is it a Review App you're looking for? If yes, then did you <a href="/ee/development/writing_documentation.html#previewing-the-changes-live">read the docs</a>? Follow these steps to debug:</p>
+  <ol>
+    <li>
+      <strong>Did you follow the URL from the merge request widget?</strong> If yes, then check if
+      the link is the same as the one in the job output. It can happen that if the
+      branch name slug is longer than 35 characters, it is automatically
+      truncated. That means that the merge request widget will not show the proper
+      URL due to a limitation of how <code>environment: url</code> works, but you can find the
+      real URL from the output of the <code>review-docs-deploy</code> job.</li>
+    <li>
+      <strong>Did you follow the URL from the job output?</strong> If yes, then it means that
+      either the site is not yet deployed or something went wrong with the remote
+      pipeline. Give it a few minutes and it should appear online, otherwise you
+      can check the status of the remote pipeline from the link in the job output.
+      If the pipeline failed or got stuck, drop a line in the <code>#docs</code> chat channel.</li>
+  </ol>
+  <% end %>
+
+  <center>
+    <h3>
+      <a href="javascript:history.back()" class="js-go-back go-back">Go back</a>
+    </h3>
+  <center>
+</div>
+
+<script>
+  (function () {
+    var goBack = document.querySelector('.js-go-back');
+
+    if (history.length > 1) {
+      goBack.style.display = 'inline';
+    }
+  })();
+</script>
