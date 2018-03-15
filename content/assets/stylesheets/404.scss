@@ -1,0 +1,14 @@
+---
+version: 1
+---
+
+// Override some main elements
+.four-oh-four {
+  img {
+    border: 0;
+  }
+
+  h2, h3 {
+    border-bottom: 0;
+  }
+}
