@@ -5,39 +5,7 @@
 <% else %>
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
-<% if false %>
-This is a comment!
-Implement canonical links https://gitlab.com/gitlab-com/gitlab-docs/issues/167
-We want to:
-- All index.html and README.html files stripped
-- Replace ce/ with ee/
-------------------
-if the link ends with README.md or index.md
-  if the link starts with ce
-    replace it with ee and strip README.md or index.md
-  if the link doesn't start with ce
-    strip README.md or index.md
-if the link doesn't end with README.md or index.md
-  if the link starts with ce
-    replace it with ee
-  if the link doesn't start with ce
-    use its initial path
-<% end %>
-<% if ENV['NANOC_ENV'] == 'production' %>
-  <% if (@item.identifier =~ /(index|README)\.md$/) == 0 %>
-    <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
-      <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />
-    <% else %>
-      <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.to_s.split('/')[0..-2].join('/') %>/" />
-    <% end %>
-  <% else %>
-    <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
-      <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.without_ext.to_s.split('/')[2..-1].join('/') + '.html' %>" />
-    <% else %>
-      <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>" />
-    <% end %>
-  <% end %>
-<% end %>
+<%= render '/canonical_urls.*' %>
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/font-awesome.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">

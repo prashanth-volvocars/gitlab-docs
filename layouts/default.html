@@ -1,64 +1,64 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <body>
-    <head>
-      <%= render '/head.*' %>
-    </head>
-    <%= render '/header.*' %>
-    <div class="wrapper">
-      <div class="main class js-main-wrapper">
-        <% if @config[:breadcrumbs] %>
-          <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
-          <% if ancestor_array %>
-            <ul class="breadcrumbs">
-              <% ancestor_array.reverse_each do |item| %>
-                <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
-              <% end %>
-              <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
-            </ul>
-          <% end %>
-        <% end %>
-        <div id="doc-nav" class="doc-nav">
-        </div>
-        <% if @item[:title] %>
-          <h1 class="article-title">
-            <%= @item[:title] %>
-          </h1>
-        <% end %>
-        <% if @item[:author] %>
-          <div class="article-metadata">
-            Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
-            on <%= @item[:date] %>
-            &#8226;
-            <% if @item[:last_updated] %>
-            Last updated: <%= @item[:last_updated] %>
-            &#8226;
+<head>
+<%= render '/head.*' %>
+</head>
+<body>
+  <%= render '/header.*' %>
+  <div class="wrapper">
+    <div class="main class js-main-wrapper">
+      <% if @config[:breadcrumbs] %>
+        <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
+        <% if ancestor_array %>
+          <ul class="breadcrumbs">
+            <% ancestor_array.reverse_each do |item| %>
+              <li class="breadcrumb"><%= link_to item.key?(:title) ? "#{item[:title]}" : "Breadcrumb", item %></li>
             <% end %>
-            Type: <%= @item[:article_type] %>
-            &#8226;
-            Level: <%= @item[:level] %>
-          </div>
+            <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
+          </ul>
         <% end %>
-        <div class="article-content js-article-content">
-          <%= yield %>
-        </div>
-        <div class="edit-on">
-          <%= edit_on_gitlab(@item) %>
-        </div>
-        <% if @item[:last_updated] %>
-          <hr>
-          <p class="last-updated">
-            <em>Last updated <%= @item[:last_updated] %></em>
-          </p>
-        <% end %>
-        <%= render '/disqus.*' %>
+      <% end %>
+      <div id="doc-nav" class="doc-nav">
       </div>
-      <div class="clear"></div>
+      <% if @item[:title] %>
+        <h1 class="article-title">
+          <%= @item[:title] %>
+        </h1>
+      <% end %>
+      <% if @item[:author] %>
+        <div class="article-metadata">
+          Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
+          on <%= @item[:date] %>
+          &#8226;
+          <% if @item[:last_updated] %>
+          Last updated: <%= @item[:last_updated] %>
+          &#8226;
+          <% end %>
+          Type: <%= @item[:article_type] %>
+          &#8226;
+          Level: <%= @item[:level] %>
+        </div>
+      <% end %>
+      <div class="article-content js-article-content">
+        <%= yield %>
+      </div>
+      <div class="edit-on">
+        <%= edit_on_gitlab(@item) %>
+      </div>
+      <% if @item[:last_updated] %>
+        <hr>
+        <p class="last-updated">
+          <em>Last updated <%= @item[:last_updated] %></em>
+        </p>
+      <% end %>
+      <%= render '/disqus.*' %>
     </div>
+    <div class="clear"></div>
+  </div>
 
-    <%= render '/footer.*' %>
-    <%= render '/docsearch.*' %>
-    <%= render '/analytics.*' %>
-    <%= render '/https_redirect.*' %>
-  </body>
+  <%= render '/footer.*' %>
+  <%= render '/docsearch.*' %>
+  <%= render '/analytics.*' %>
+  <%= render '/https_redirect.*' %>
+</body>
 </html>
