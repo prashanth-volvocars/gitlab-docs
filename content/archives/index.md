@@ -1,5 +1,5 @@
 ---
-layout: archives
+comments: false
 ---
 
 # Docs archives
