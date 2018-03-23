@@ -81,10 +81,12 @@ checks:
       # Exclude major.minor versions that are used under /archives
       - '^/\d{1,2}\.\d{1,2}/$'
       # Exclude the extra links listed in the home page
+      - 'ee\/api\/'
+      - 'ee\/ci\/'
       - 'ee\/ci\/yaml\/'
       - 'ee\/ssh\/'
+      - 'ee\/user\/gitlab_com\/'
       - 'ee\/user\/project\/pages\/'
-      - 'ee\/api\/'
 
   # Configuration for the “external_links” checker, which checks whether all
   # external links are valid.
