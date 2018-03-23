@@ -27,6 +27,8 @@ find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/runner/#="
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnibus/#="/'"$VER"'/omnibus/#g'
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
+sed -i 's#/sitemap.xml#/'"$VER"'/sitemap.xml/#g' ${TARGET}/robots.txt
+sed -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g' ${TARGET}/sitemap.xml
 
 # Symlink all README.html to index.html
 for i in `find ${TARGET}/${VER} -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
