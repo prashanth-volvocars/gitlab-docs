@@ -1,7 +1,8 @@
-# Dockerfiles used to build the docs site
+# How the versioned website is built
 
-This directory contains all needed Dockerfiles to build and deploy the website.
-It is heavily inspired by Docker's [publish tools](https://github.com/docker/docker.github.io/tree/publish-tools).
+This directory contains all needed Dockerfiles to build and deploy the
+versioned website. It is heavily inspired by Docker's
+[publish tools](https://github.com/docker/docker.github.io/tree/publish-tools).
 
 The following Dockerfiles are used.
 
@@ -59,6 +60,16 @@ branch:
     FROM registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild
     ```
 
+1. Test locally by building the image and running it:
+
+    ```
+    docker build -t docs:10.5 .
+    docker run -it --rm -p 4000:4000 docs:10.5
+    ```
+
+1. Visit http://localhost:4000/10.5/ and make sure everything works correctly
+1. Commit your changes and push (don't create a merge request)
+
 Once you push, the `image:docker-stable` job will create a new Docker image
 tagged with the branch name.
 
@@ -69,3 +80,15 @@ Edit the following files and add the new version:
 
 - `content/archives/index.md`
 - [`Dockerfile.archives`](Dockerfile.archives)
+
+## Porting new website changes to old versions
+
+The website will keep changing and being improved. In order to consolidate
+those changes to the stable branches, we'd need to merge master into them
+from time to time.
+
+```sh
+git branch 10.5
+git fetch origin master
+git merge origin/master
+```
