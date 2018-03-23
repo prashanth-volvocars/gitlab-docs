@@ -191,6 +191,11 @@ h2, h3, h4, h5, h6 {
   @media all and (min-width: $mobile-width) {
     .anchor {
       opacity: 0;
+      float: left;
+      margin-left: -30px;
+      vertical-align: bottom;
+      margin-top: 8px;
+      height: 22px;
     }
 
     &:hover .anchor {
