@@ -43,9 +43,12 @@
       <div class="article-content js-article-content">
         <%= yield %>
       </div>
+      <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+      <%# Show Edit button only in production and on master branch (hide archives) %>
       <div class="edit-on">
         <%= edit_on_gitlab(@item) %>
       </div>
+      <% end %>
       <% if @item[:last_updated] %>
         <hr>
         <p class="last-updated">
