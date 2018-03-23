@@ -3,6 +3,7 @@ FROM registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap
 
 # Make the variables of the archive Dockerfiles accessible to this build-stage
 ONBUILD ARG VER
+ONBUILD ARG NANOC_ENV
 ONBUILD ARG BRANCH_EE
 ONBUILD ARG BRANCH_CE
 ONBUILD ARG BRANCH_OMNIBUS
