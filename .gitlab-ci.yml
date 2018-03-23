@@ -268,7 +268,7 @@ image:docs-stable:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   script:
-    - docker build -t $IMAGE_NAME .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   only:
@@ -291,7 +291,7 @@ image:docs-archives:
   <<: *except_stable
 
 #
-# Build master containing all archives
+# Build master containing all archives and latest docs
 #
 image:docs-latest:
   stage: docker-stable
@@ -300,7 +300,7 @@ image:docs-latest:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
   script:
-    - docker build -t $IMAGE_NAME .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
     - docker push $IMAGE_NAME
   only:
     - master
