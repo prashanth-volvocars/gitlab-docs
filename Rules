@@ -64,7 +64,7 @@ compile '/**/*.md' do
 
     # Use Kramdown with Rouge.
     # https://kramdown.gettalong.org/options.html
-    filter :kramdown,
+    filter :gitlab_kramdown,
       input: 'GitlabKramdown',
       syntax_highlighter: 'rouge',
       hard_wrap: false,

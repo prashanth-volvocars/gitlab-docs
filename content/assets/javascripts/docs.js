@@ -1,18 +1,18 @@
 var NAV_INLINE_BREAKPOINT = 1100;
 
-var landingHeaderBar = document.getElementById('landing-header-bar')
-var headerLinks = document.getElementsByClassName('header-link')
+var landingHeaderBar = document.getElementById('landing-header-bar');
+var headerLinks = document.getElementsByClassName('header-link');
 
 if (landingHeaderBar) {
-  window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function () {
     if (window.scrollY >= 100) {
-      landingHeaderBar.classList.add('scrolling-header')
+      landingHeaderBar.classList.add('scrolling-header');
       for (var i = 0; i < headerLinks.length; i++) {
         headerLinks[i].classList.add('scrolling-header-links')
       }
     }
     else {
-      landingHeaderBar.classList.remove('scrolling-header')
+      landingHeaderBar.classList.remove('scrolling-header');
       for (var i = 0; i < headerLinks.length; i++) {
         headerLinks[i].classList.remove('scrolling-header-links')
       }
@@ -31,16 +31,16 @@ function toggleNavigation() {
 }
 
 // move document nav to sidebar
-(function() {
-  var timeofday = document.getElementById('timeofday')
-  var tocList = document.querySelector('.js-article-content > ul:first-child');
+(function () {
+  var timeofday = document.getElementById('timeofday');
+  var tocList = document.querySelector('.js-article-content > ul#markdown-toc');
   var main = document.querySelector('.js-main-wrapper');
 
   // Set timeofday var depending on the time //
 
   if (timeofday) {
-    var date = new Date()
-    var hour = date.getHours()
+    var date = new Date();
+    var hour = date.getHours();
 
     if (hour < 11) {
       timeofday.innerHTML = "morning"
@@ -56,62 +56,50 @@ function toggleNavigation() {
   }
 
   // if the document has a top level nav
-  if(tocList) {
+  if (tocList) {
 
     // append to the sidebar
     var sidebar = document.getElementById('doc-nav');
 
-    if(sidebar) {
-      // if there is one h1 in the documentation
-      if(tocList.children.length == 1) {
+    if (sidebar) {
+      // if there are items
+      if (tocList.children.length > 1) {
+        var menu = tocList;
 
-        // if there is a nested ul after the first anchor
-        if(tocList.children[0].children.length > 1) {
-          var menu = tocList.children[0].children[1];
-          var footnotes = menu.querySelector('.footnotes');
+        // grab the h1's li anchor text
+        var title = document.createElement('h4');
+        title.innerHTML = "On this page:";
 
-          if (footnotes) {
-            footnotes.remove();
+        // add the text as a title
+        menu.insertBefore(title, menu.children[0]);
+
+        sidebar.appendChild(menu);
+
+        var sidebarContent = sidebar.querySelector('ul');
+        var sidebarContentHeight = 0;
+
+        // remove whitespace between elements to prevent list spacing issues
+        sidebarContent.innerHTML = sidebarContent.innerHTML.replace(new RegExp( "\>[\s\r\n]+\<" , "g" ) , "><");
+
+        // When we scroll down to the bottom, we don't want the footer covering
+        // the TOC list (sticky behavior)
+        document.addEventListener('scroll', function () {
+          // Wait a cycle for the dimensions to kick in
+          if (!sidebarContentHeight) {
+            sidebarContentHeight = sidebarContent.getBoundingClientRect().height + 55;
           }
 
-          // grab the h1's li anchor text
-          var title = document.createElement('h4');
-          title.innerHTML = "On this page:";
+          var isTouchingBottom = false;
+          if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
+            isTouchingBottom = window.scrollY + sidebarContentHeight >= main.offsetHeight;
+          }
 
-          // add the text as a title
-          menu.insertBefore(title, menu.children[0]);
-
-          sidebar.appendChild(menu);
-
-          var sidebarContent = sidebar.querySelector('ul');
-          var sidebarContentHeight = 0;
-
-          // When we scroll down to the bottom, we don't want the footer covering
-          // the TOC list (sticky behavior)
-          document.addEventListener('scroll', function() {
-            // Wait a cycle for the dimensions to kick in
-            if(!sidebarContentHeight) {
-              sidebarContentHeight = sidebarContent.getBoundingClientRect().height + 55;
-            }
-
-            var isTouchingBottom = false;
-            if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
-              isTouchingBottom  = window.scrollY + sidebarContentHeight >= main.offsetHeight;
-            }
-
-            if (isTouchingBottom) {
-              sidebarContent.style.top = (main.offsetHeight - (window.scrollY + sidebarContentHeight)) + 'px';
-            } else {
-              sidebarContent.style.top = '';
-            }
-          }, { passive : true });
-        }
-
-        // remove what is left of the old navigation
-        tocList.remove()
-      }
-      else {
-        tocList.remove()
+          if (isTouchingBottom) {
+            sidebarContent.style.top = (main.offsetHeight - (window.scrollY + sidebarContentHeight)) + 'px';
+          } else {
+            sidebarContent.style.top = '';
+          }
+        }, {passive: true});
       }
     }
 
