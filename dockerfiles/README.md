@@ -68,4 +68,4 @@ With every new release on the 22nd, the archives Docker image should be updated.
 Edit the following files and add the new version:
 
 - `content/archives/index.md`
-- [`Dockerfile.archives`](/Dockerfile.archives)
+- [`Dockerfile.archives`](Dockerfile.archives)
