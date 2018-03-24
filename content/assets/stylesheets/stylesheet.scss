@@ -1,5 +1,5 @@
 ---
-version: 28
+version: 30
 ---
 
 @import "variables";
@@ -175,7 +175,7 @@ h6 {
   background: $main-background-color;
 
   @media (max-width: $mobile-width) {
-    padding: 6px 10px;
+    padding: 5px 10px;
   }
 
   &:not(.has-toc) {
@@ -288,9 +288,11 @@ h6 {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
+  padding-left: 40px;
 
   @media all and (max-width: $mobile-width) {
     height: auto;
+    padding-left: 5px;
   }
 
   img {
