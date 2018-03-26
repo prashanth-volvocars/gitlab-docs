@@ -14,7 +14,7 @@ class AdmonitionFilter < Nanoc::Filter
 
   FONT_AWESOME_MAPPING = {
     'note'    =>  'info-circle',
-    'tip'     =>  'pencil',
+    'tip'     =>  'pencil-alt',
     'caution' =>  'exclamation-triangle',
     'danger'  =>  'bolt',
   }
