@@ -1,5 +1,5 @@
 ---
-version: 30
+version: 31
 ---
 
 @import "variables";
@@ -112,8 +112,9 @@ a > code {
 }
 
 // Make code in headers match the font size of the given header.
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   border-bottom: solid 1px $h-border-bottom;
+  line-height: 1.4;
 
   code {
     color: $code-color;
@@ -131,34 +132,74 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// base fonts
+// p font size = $body-font-size: 15px;
+
 h1 {
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  border-bottom: solid 2px $h1-border-bottom;
+  padding-bottom: 10px;
+
+  @media (max-width: $mobile-width) {
+    font-size: 26px;
+  }
 }
 
 h2 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 28px;
+  font-weight: 400;
+
+  @media (max-width: $mobile-width) {
+    font-size: 24px;
+  }
 }
 
 h3 {
   font-size: 24px;
-  line-height: 40px;
+  font-weight: 400;
+
+  @media (max-width: $mobile-width) {
+    font-size: 22px;
+  }
 }
 
 h4 {
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 22px;
+  font-weight: 400;
+
+  @media (max-width: $mobile-width) {
+    font-size: 20px;
+  }
 }
 
 h5 {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 20px;
+  color: $color-light-gray;
+  font-weight: 500;
+  border-bottom: 0;
+
+  @media (max-width: $mobile-width) {
+    font-size: 18px;
+  }
 }
 
 h6 {
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 18px;
+  color: $color-light-gray;
+  font-weight: 500;
+  border-bottom: 0;
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+  }
+}
+
+li {
+  ul {
+    padding-left: 20px;
+  }
 }
 
 .float-left {
@@ -225,15 +266,6 @@ h6 {
     }
   }
 
-  h1 {
-    font-size: 40px;
-    font-weight: normal;
-    line-height: 40px;
-    letter-spacing: -1px;
-    border-bottom: solid 2px $h1-border-bottom;
-    padding-bottom: 10px;
-  }
-
   p {
     margin: 7px 0;
     line-height: 22px;
@@ -298,6 +330,11 @@ h6 {
   img {
     position: absolute;
     height: 50px;
+    margin-left: -8px;
+
+    @media all and (max-width: $mobile-width) {
+      margin-left: -2px;
+    }
   }
 
   p {
