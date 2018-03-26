@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import "variables";
@@ -145,6 +145,15 @@ $color10: rgb(117, 117, 117);
   margin-top: 5px;
 }
 //scss-lint:enable IdSelector
+
+//overrides padding for the searchbox
+.main.class {
+  padding-top: 90px;
+
+  @media (max-width: $mobile-width) {
+    padding-top: 20px;
+  }
+}
 
 .algolia-docsearch-suggestion--highlight {
   background-color: $color3;
