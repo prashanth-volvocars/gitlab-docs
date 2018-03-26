@@ -9,7 +9,7 @@ title: GitLab Documentation
           <li class="topic topic-<%= product[:slug] %>">
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
               <div class="wrapper">
-                <h2><%= product[:full_name] %></h2>
+                <h2><%= product[:short_name] %></h2>
                 <p><%= product[:description] %></p>
               </div>
             </a>
@@ -22,7 +22,7 @@ title: GitLab Documentation
           <li class="topic topic-<%= product[:slug] %>">
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
               <div class="wrapper">
-                <h2><%= product[:full_name] %></h2>
+                <h2><%= product[:short_name] %></h2>
                 <p><%= product[:description] %></p>
               </div>
             </a>
@@ -37,7 +37,7 @@ title: GitLab Documentation
     <li class="subtopic topic-ci">
       <a href="ee/ci/yaml/">
         <div class="wrapper">
-          <h2>GitLab CI/CD YAML</h2>
+          <h2>CI/CD YAML reference</h2>
           <p>Learn how to configure <code>.gitlab-ci.yml</code> for your project.
           </p>
         </div>
@@ -46,7 +46,7 @@ title: GitLab Documentation
     <li class="subtopic topic-api">
       <a href="ee/api/">
         <div class="wrapper">
-          <h2>GitLab API</h2>
+          <h2>API</h2>
           <p>Automate GitLab via a simple and powerful API.</p>
         </div>
       </a>
