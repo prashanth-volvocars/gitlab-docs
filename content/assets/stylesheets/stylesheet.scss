@@ -1,5 +1,5 @@
 ---
-version: 31
+version: 32
 ---
 
 @import "variables";
@@ -31,9 +31,10 @@ a, a:visited {
 table {
   width: 100%;
   border-collapse: collapse;
-  overflow-x: scroll;
+  overflow-x: auto;
   border: 1px solid $table-border-color;
   margin: 0 0 15px;
+  word-wrap: break-word;
 
   thead {
     background: $thead-background-color;
@@ -41,7 +42,8 @@ table {
 
   tbody {
     tr > td {
-      max-width: 300px;
+      max-width: 100%;
+      min-width: 100px;
     }
     code {
       word-wrap: break-word;
