@@ -1,12 +1,11 @@
 image: ruby:2.5
 
 stages:
-  - images
+  - build-images
   - build
   - test
   - deploy
-  - performance
-  - docker-stable
+  - post-deploy
 
 #
 # Pick the remote branch, by default master (see the Rakefile for more info)
@@ -28,6 +27,12 @@ before_script:
 .except_pipelines: &except_pipelines
   except:
     - pipelines
+#
+# Except stable branches (with names like '10.4', '11.2', etc.)
+#
+.except_stable: &except_stable
+  except:
+    - /^\d{1,2}\.\d{1,2}$/
 
 ###############################################
 #             Build the website               #
@@ -177,6 +182,7 @@ review_stop:
 # Deploy to production with GitLab Pages
 #
 pages:
+  image: registry.gitlab.com/gitlab-com/gitlab-docs:latest
   stage: deploy
   variables:
     GIT_STRATEGY: none
@@ -185,6 +191,8 @@ pages:
   environment:
     name: production
     url: https://docs.gitlab.com
+  dependencies:
+    - compile_prod    # Contains the public directory
   script:
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
     # Symlink all README.html to index.html
@@ -198,15 +206,13 @@ pages:
     - master@gitlab-com/gitlab-docs
   tags:
     - docker
-  dependencies:
-    - compile_prod
 
 ###############################################
 #           Performance testing               #
 ###############################################
 
 performance:
-  stage: performance
+  stage: post-deploy
   image: docker:git
   services:
     - docker:dind
@@ -231,7 +237,10 @@ performance:
 #           Docker images builds              #
 ###############################################
 
-.docker_build: &docker_build
+#
+# Reuse some common commands
+#
+.docker_prepare: &docker_prepare
   image: docker:latest
   services:
     - docker:dind
@@ -240,18 +249,12 @@ performance:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
 #
-# Except stable branches with versions like 10.4
-#
-.except_stable: &except_stable
-  except:
-    - /^\d{1,2}\.\d{1,2}$/
-
-#
-# Build the image containing all build dependencies
+# Helper Docker image containing all build dependencies
+# It must be rebuilt every time Gemfile.lock changes
 #
 image:bootstrap:
-  stage: images
-  <<: *docker_build
+  stage: build-images
+  <<: *docker_prepare
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
   script:
@@ -261,11 +264,11 @@ image:bootstrap:
   <<: *except_stable
 
 #
-# Build the image that takes the website and builds it
+# Helper Docker image that builds the gitlab-docs website
 #
 image:builder-onbuild:
-  stage: images
-  <<: *docker_build
+  stage: build-images
+  <<: *docker_prepare
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
   script:
@@ -275,31 +278,33 @@ image:builder-onbuild:
   <<: *except_stable
 
 #
-# Build the image that copies the final HTML files in a smaller image
+# Helper Docker image that copies the final HTML files in a smaller image
+# (no rubygems included)
 #
 image:nginx-onbuild:
-  stage: images
-  <<: *docker_build
+  stage: build-images
+  <<: *docker_prepare
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
     - docker push $IMAGE_NAME
   when: manual
-  only:
-    - web
+  <<: *except_stable
 
 #
-# Build the single archive image for stable versions
+# Final Docker image containing a single version
+# It is based on Dockerfile.single for each branch
 #
-image:docs-stable:
-  stage: docker-stable
-  <<: *docker_build
+image:docs-single:
+  stage: post-deploy
+  <<: *docker_prepare
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   only:
@@ -308,31 +313,34 @@ image:docs-stable:
     - tags
 
 #
-# Build the multiple archives image
+# Final Docker image containing all the archives
 #
 image:docs-archives:
-  stage: images
-  <<: *docker_build
+  stage: post-deploy
+  <<: *docker_prepare
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
     - docker push $IMAGE_NAME
-  when: manual
-  <<: *except_stable
+  # Run only on schedules since this will contain only the archives
+  only:
+    - schedules
 
 #
-# Build master containing all archives and latest docs
+# Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
-  stage: docker-stable
-  <<: *docker_build
+  stage: post-deploy
+  <<: *docker_prepare
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
+    - docker pull $IMAGE_NAME || true
+    - docker build --cache-from $IMAGE_NAME --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  only:
-    - master
   allow_failure: true
+  only:
+    - schedules
