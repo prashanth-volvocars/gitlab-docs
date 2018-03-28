@@ -5,6 +5,7 @@ stages:
   - build
   - test
   - deploy
+  - performance
   - docker-stable
 
 #
@@ -19,6 +20,14 @@ variables:
 before_script:
   - ruby -v
   - bundle install --jobs 4 --path vendor
+
+# Skip this job when it's invoked by a cross project pipeline. That will speed
+# up the pipeline when a docs preview is triggered. The triggered pipeline is
+# always a branch off master which should be green anyway. For more info:
+# https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
+.except_pipelines: &except_pipelines
+  except:
+    - pipelines
 
 ###############################################
 #             Build the website               #
@@ -81,12 +90,7 @@ internal_links:
       - vendor/ruby
   tags:
     - docker
-  # Skip this job when it's invoked by a cross project pipeline. That will speed
-  # up the pipeline when a docs preview is triggered. We already check for
-  # internal links in every MR anyway. For more info:
-  # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
-  except:
-    - pipelines
+  <<: *except_pipelines
 
 #
 # SCSS linting
@@ -101,12 +105,7 @@ scss_lint:
       - vendor/ruby
   tags:
     - docker
-  # Skip this job when it's invoked by a cross project pipeline. That will speed
-  # up the pipeline when a docs preview is triggered. The triggered pipeline is
-  # always a branch off master which should be green anyway. For more info:
-  # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
-  except:
-    - pipelines
+  <<: *except_pipelines
 
 ###############################################
 #               Review Apps                   #
@@ -124,11 +123,15 @@ review:
   before_script: []
   cache: {}
   script:
+    - echo $CI_ENVIRONMENT_URL > environment_url.txt
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
+  artifacts:
+    paths:
+    - environment_url.txt
   only:
     - branches@gitlab-com/gitlab-docs
   # Except master and stable branches
@@ -183,11 +186,13 @@ pages:
     name: production
     url: https://docs.gitlab.com
   script:
+    - echo $CI_ENVIRONMENT_URL > environment_url.txt
     # Symlink all README.html to index.html
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
   artifacts:
     paths:
     - public
+    - environment_url.txt
     expire_in: 1h
   only:
     - master@gitlab-com/gitlab-docs
@@ -195,6 +200,32 @@ pages:
     - docker
   dependencies:
     - compile_prod
+
+###############################################
+#           Performance testing               #
+###############################################
+
+performance:
+  stage: performance
+  image: docker:git
+  services:
+    - docker:dind
+  before_script: []
+  cache: {}
+  script:
+    - export CI_ENVIRONMENT_URL=$(cat environment_url.txt)
+    - mkdir gitlab-exporter
+    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
+    - mkdir sitespeed-results
+    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results "$CI_ENVIRONMENT_URL"
+    - mv sitespeed-results/data/performance.json performance.json
+  artifacts:
+    paths:
+      - performance.json
+      - sitespeed-results/
+  only:
+    - branches
+  <<: *except_pipelines
 
 ###############################################
 #           Docker images builds              #
