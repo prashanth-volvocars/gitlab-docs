@@ -238,6 +238,7 @@ performance:
     paths:
       - performance.json
       - sitespeed-results/
+    expire_in: 1w
   only:
     - branches
   <<: *except_pipelines
