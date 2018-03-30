@@ -210,7 +210,7 @@ pages:
     paths:
     - public
     - environment_url.txt
-    expire_in: 1h
+    expire_in: 1d
   only:
     - master@gitlab-com/gitlab-docs
   tags:
