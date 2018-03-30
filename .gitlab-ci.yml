@@ -263,12 +263,13 @@ performance:
 # It must be rebuilt every time Gemfile.lock changes
 #
 image:bootstrap:
-  stage: build-images
   <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
+    DOCKERFILE: dockerfiles/Dockerfile.bootstrap
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.bootstrap .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
   <<: *except_stable
@@ -277,12 +278,13 @@ image:bootstrap:
 # Helper Docker image that builds the gitlab-docs website
 #
 image:builder-onbuild:
-  stage: build-images
   <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
+    DOCKERFILE: dockerfiles/Dockerfile.builder.onbuild
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.builder.onbuild .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
   <<: *except_stable
@@ -292,12 +294,13 @@ image:builder-onbuild:
 # (no rubygems included)
 #
 image:nginx-onbuild:
-  stage: build-images
   <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
+    DOCKERFILE: dockerfiles/Dockerfile.nginx.onbuild
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
   <<: *except_stable
@@ -307,8 +310,11 @@ image:nginx-onbuild:
 # It is based on Dockerfile.single for each branch
 #
 image:docs-single:
-  stage: post-deploy
   <<: *docker_prepare
+  stage: post-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
@@ -326,8 +332,11 @@ image:docs-single:
 # Final Docker image containing all the archives
 #
 image:docs-archives:
-  stage: post-deploy
   <<: *docker_prepare
+  stage: post-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
   script:
@@ -341,15 +350,17 @@ image:docs-archives:
 # Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
-  stage: post-deploy
   <<: *docker_prepare
+  stage: post-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
   script:
-    - docker pull $IMAGE_NAME || true
-    - docker build --cache-from $IMAGE_NAME --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   allow_failure: true
   only:
