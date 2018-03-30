@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 @import "variables";
@@ -8,8 +8,8 @@ version: 4
 // original CSS customized and converted to SCSS with http://sebastianpontow.de/css2compass/
 
 //colors
-$color0: rgba(180, 162, 231, .2);
-$color1: rgba(180, 162, 231, .4);
+$color0: rgba(180, 162, 231, .1);
+$color1: rgba(180, 162, 231, .2);
 $color2: rgba(180, 162, 231, .1);
 $color3: rgba(79, 171, 225, .2);
 $color4: #eee;
@@ -19,6 +19,10 @@ $color7: #868686;
 $color8: #fff;
 $color9: #383838;
 $color10: rgb(117, 117, 117);
+$color11: transparent;
+// link-color: rgb(32, 139, 196);
+$color12: rgba(32, 139, 196, .2); //link color lighter
+
 
 //scss-lint:disable ImportantRule
 .ais-search-box {
@@ -36,29 +40,29 @@ $color10: rgb(117, 117, 117);
 
 .hit-content {
   display: block;
-  border: 1px solid;
-  border-color: $color0;
-  padding: 1px 20px;
-  padding-top: 10px;
-  margin: 5px;
-  margin-left: 0 !important;
-  border-radius: 5px;
+  border-top: 2px solid $color0;
+  padding: 30px 5px;
+  margin: 0;
   font-size: 13px;
   font-weight: 300;
   width: 100%; // was 81%
   position: relative;
   color: $color10;
+  transition: .3s ease;
+  word-wrap: break-word;
 
   &:hover {
-    border-color: $color1;
-    box-shadow: 1px 1px 3px $color2;
-  
-    .lvl0,
-    .lvl1,
-    .lvl2,
-    .hit-text {
-      color: $link-color-hover;
+    border-top: 2px solid $color12;
+    box-shadow: 0 10px 6px -6px $color12;
+
+    .hit-tag {
+      color: $link-color;
+      border-color: $color3;
     }
+  }
+
+  @media all and (max-width: $mobile-width) {
+    padding: 25px 5px;
   }
 
   .lvl0 {
@@ -98,8 +102,8 @@ $color10: rgb(117, 117, 117);
     padding: 3px;
     border: 1px solid $color0;
     border-top: 0;
-    border-right: 0;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     right: 0;
     top: 0;
     width: 70px;
@@ -119,7 +123,7 @@ $color10: rgb(117, 117, 117);
   @media all and (max-width: $mobile-width) {
     .hit-tag {
       width: 60px;
-      height: 20px;
+      height: 23px;
       font-size: 10px;
     }
 
@@ -162,14 +166,16 @@ $color10: rgb(117, 117, 117);
 .ais-infinite-hits--showmore {
   display: block;
   margin: auto;
+  margin-top: 10px;
 
   button {
-    border-radius: 5px;
     padding: 20px 10px;
     cursor: pointer;
     width: 100%;
     background-color: $color8;
     border-color: $color3;
+    border-right: 0;
+    border-left: 0;
 
     &:hover {
       background-color: $color3;
