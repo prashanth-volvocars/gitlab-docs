@@ -29,6 +29,7 @@ var clipboard = new ClipboardJS('.clip-btn', {
 clipboard.on('success', function(e) {
   setTooltip(e.trigger, 'Copied!');
   hideTooltip(e.trigger);
+  e.clearSelection();
 });
 
 clipboard.on('error', function(e) {
