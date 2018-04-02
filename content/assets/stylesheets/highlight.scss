@@ -8,16 +8,18 @@ pre.highlight {
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
   border-radius: 3px;
-  overflow-x: auto;
+  overflow-x: hidden;
   margin: 20px 0;
   background: #2b303b;
   color: #eff1f5;
 
   // Code itself
   code {
+    display: block;
     border-color: transparent;
     color: inherit;
     background-color: transparent;
+    overflow-x: scroll;
   }
 
   .hll { background-color: #4f5b66 }
