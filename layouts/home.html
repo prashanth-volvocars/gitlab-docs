@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/">
@@ -16,5 +16,14 @@
     <%= render '/docsearch.*' %>
     <%= render '/analytics.*' %>
     <%= render '/https_redirect.*' %>
+    <%= render '/schema-microdata.*' %>
+    <script type="application/ld+json"> //this homepage only
+      {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "url": "https://docs.gitlab.com/",
+        "name": "GitLab Documentation"
+      }
+    </script>
   </body>
 </html>
