@@ -1,5 +1,9 @@
 <meta charset="utf-8">
-<title><%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %></title>
+<% if @item.identifier.to_s.split('/').count == 2 %>
+  <title><%= @item[:title] %></title>
+<% else %>
+  <title><%= @item.key?(:title) ? "#{item[:title]} | GitLab" : "GitLab Documentation" %></title>
+<% end %>
 <% if @item[:description] %>
   <meta name="description" content="<%= @item[:description] %>">
 <% else %>
@@ -22,51 +26,3 @@
 <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 <!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->
 <link href='/opensearch.xml' rel='search' title='Search through GitLab Docs' type='application/opensearchdescription+xml'>
-<script type="application/ld+json">
-{
-  "@context":"http://schema.org",
-  "@type":"Organization",
-  "name":"GitLab",
-  "legalName":"GitLab Inc.",
-  "url":"https://about.gitlab.com",
-  "logo":"https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png",
-  "foundingDate":"2011",
-  "founders":[
-    {
-      "@type":"Person",
-      "name":"Sid Sijbrandij"
-    },
-    {
-      "@type":"Person",
-      "name":"Dmitriy Zaporozhets"
-    }],
-    "address":
-      {
-        "@type":"PostalAddress",
-        "streetAddress":"1233 Howard St 2F",
-        "addressLocality":"San Francisco",
-        "addressRegion":"CA",
-        "postalCode":"94103",
-        "addressCountry":"USA"
-      },
-    "sameAs":[
-      "https://www.facebook.com/gitlab",
-      "https://twitter.com/gitlab",
-      "https://www.linkedin.com/company/gitlab-com",
-      "https://plus.google.com/107491817347842790515/",
-      "https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"http://schema.org",
-  "@type": "WebSite", 
-  "name": "GitLab Documentation",
-  "url": "https://docs.gitlab.com",
-  "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://docs.gitlab.com/?s={search_term}",
-        "query-input": "required name=search_term"
-      }
-}
-</script>

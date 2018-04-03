@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
@@ -25,5 +25,6 @@
       <%= render '/footer.*' %>
       <%= render '/analytics.*' %>
       <%= render '/https_redirect.*' %>
+      <%= render '/schema-microdata.*' %>
   </body>
 </html>
