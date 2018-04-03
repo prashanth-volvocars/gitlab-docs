@@ -16,6 +16,9 @@ variables:
   BRANCH_OMNIBUS: 'master'
   BRANCH_RUNNER: 'master'
 
+#
+# Check Ruby version and install gems
+#
 before_script:
   - ruby -v
   - bundle install --jobs 4 --path vendor
@@ -33,6 +36,12 @@ before_script:
 .except_stable: &except_stable
   except:
     - /^\d{1,2}\.\d{1,2}$/
+
+#
+# Retry a job automatically if it fails (2 times)
+#
+.retry: &retry
+  retry: 2
 
 ###############################################
 #             Build the website               #
@@ -54,6 +63,7 @@ before_script:
       - vendor/ruby
   tags:
     - docker
+  <<: *retry
 
 #
 # Compile only on master and stable branches
@@ -96,6 +106,7 @@ internal_links:
   tags:
     - docker
   <<: *except_pipelines
+  <<: *retry
 
 #
 # SCSS linting
@@ -111,6 +122,7 @@ scss_lint:
   tags:
     - docker
   <<: *except_pipelines
+  <<: *retry
 
 ###############################################
 #               Review Apps                   #
@@ -146,6 +158,7 @@ review:
   tags:
     - nginx
     - review-apps
+  <<: *retry
 
 #
 # Stop the Review App
@@ -173,6 +186,7 @@ review_stop:
   tags:
     - nginx
     - review-apps
+  <<: *retry
 
 ###############################################
 #          GitLab Pages (production)          #
@@ -215,6 +229,7 @@ pages:
     - master@gitlab-com/gitlab-docs
   tags:
     - docker
+  <<: *retry
 
 ###############################################
 #           Performance testing               #
@@ -242,6 +257,7 @@ performance:
   only:
     - branches
   <<: *except_pipelines
+  <<: *retry
 
 ###############################################
 #           Docker images builds              #
@@ -257,6 +273,7 @@ performance:
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  <<: *retry
 
 #
 # Helper Docker image containing all build dependencies
