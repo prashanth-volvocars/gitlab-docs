@@ -4,7 +4,7 @@ version: 6
 /* https://github.com/idleberg/base16-pygments/blob/master/css/base16-ocean.dark.css */
 
 pre.highlight {
-  padding: 10px 15px;
+  padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
   border-radius: 3px;
@@ -15,11 +15,11 @@ pre.highlight {
 
   // Code itself
   code {
+    padding: 13px 33px 13px 15px; // 33px: the width of the .clip-btn
     display: block;
-    border-color: transparent;
     color: inherit;
-    background-color: transparent;
-    overflow-x: scroll;
+    overflow-x: auto;
+    background: transparent;
   }
 
   .hll { background-color: #4f5b66 }

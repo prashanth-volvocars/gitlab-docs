@@ -93,10 +93,11 @@ pre {
 
   .clip-btn {
     display: inline-block;
-    padding: 5px;
+    padding: 10px;
     padding-left: 10px;
-    right: 5px;
-    top: 5px;
+    padding-top: 13px;
+    right: 0;
+    top: 0;
     cursor: pointer;
     position: absolute;
     color: $white;
@@ -116,8 +117,6 @@ pre {
 
   &:hover {
     .clip-btn {
-      background-color: $pre-code-color;
-
       i {
         opacity: 1;
       }
