@@ -8,7 +8,9 @@
       <i class="fa fa-bars" aria-hidden="true"></i>
     </a>
     <ul class="nav">
+      <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
       <li class="search"><input type="text" class="docsearch" placeholder="Search"></li>
+      <% end %>
       <% if ENV['NANOC_ENV'] == 'production' %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
