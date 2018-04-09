@@ -34,6 +34,12 @@ compile '/404.*' do
   write '/404.html'
 end
 
+compile '/archives.*' do
+  filter :erb
+  layout '/archives.*'
+  write '/archives/index.html'
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
@@ -114,6 +120,9 @@ compile '/**/*' do
     write item.identifier.to_s
   end
 end
+
+# Leave yaml files out
+ignore '/_data/*.yaml'
 
 layout '/**/*', :erb
 

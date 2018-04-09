@@ -1,0 +1,41 @@
+---
+comments: false
+last_updated: 2018-09-04
+---
+
+<h1>Docs archives</h1>
+
+Browse the archives for different GitLab versions. To browse them locally,
+you'll need to have <a href='https://docs.docker.com/install/' target='_blank'>Docker installed</a>.
+
+<h2>Online archives</h2>
+
+The following archives are available online and can be browsed on
+<a href='/'>https://docs.gitlab.com</a>.
+
+<% @items['/_data/versions.yaml'][:online].each do |version| %>
+
+<h3><%= version %></h3>
+
+Visit the <a href='/<%= version %>/'>GitLab <%= version %> docs</a> or download
+them and browse locally:
+
+<div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 4000:4000 registry.gitlab.com/gitlab-com/gitlab-docs:<%= version %>
+</code></pre></div>
+
+<% end %>
+
+<h2>Offline archives</h2>
+
+The following archives are available offline.
+
+<% @items['/_data/versions.yaml'][:offline].each do |version| %>
+
+<h3><%= version %></h3>
+
+Download them and browse locally:
+
+<div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 4000:4000 registry.gitlab.com/gitlab-com/gitlab-docs:<%= version %>
+</code></pre></div>
+
+<% end %>
