@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<%= render '/head.*' %>
+</head>
+<body>
+  <%= render '/header.*' %>
+  <div class="wrapper">
+    <div class="main class js-main-wrapper">
+      <div class="js-article-content">
+        <%= yield %>
+      </div>
+      <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+      <%# Show Edit button only in production and on master branch (hide archives) %>
+      <div class="edit-on">
+        <%= edit_on_gitlab(@item) %>
+      </div>
+      <% end %>
+      <% if @item[:last_updated] %>
+        <hr>
+        <p class="last-updated">
+          <em>Last updated <%= @item[:last_updated] %></em>
+        </p>
+      <% end %>
+      <%= render '/disqus.*' %>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script type="application/javascript" src="/assets/javascripts/clipboardjs.js"></script>
+  <%= render '/footer.*' %>
+  <%= render '/docsearch.*' %>
+  <%= render '/analytics.*' %>
+  <%= render '/https_redirect.*' %>
+  <%= render '/schema-microdata.*' %>
+</body>
+</html>

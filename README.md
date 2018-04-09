@@ -29,6 +29,7 @@ The [deployment process](#deployment-process) happens automatically every hour.
 - [Preview the Docs website](#preview-the-docs-website)
     - [Preview on mobile](#preview-on-mobile)
 - [Contributing to the docs website itself](#contributing-to-the-docs-website-itself)
+- [Using YAML data files](#using-yaml-data-files)
 - [Review Apps for documentation merge requests](#review-apps-for-documentation-merge-requests)
 - [Deployment process](#deployment-process)
 
@@ -283,6 +284,38 @@ run without manual intervention, run:
 ```sh
 RAKE_FORCE_DELETE=true rake pull_repos
 ```
+
+## Using YAML data files
+
+The easiest way to achieve something similar to
+[Jekyll's data files](https://jekyllrb.com/docs/datafiles/) in Nanoc is by
+using the [`@items`](https://nanoc.ws/doc/reference/variables/#items-and-layouts)
+variable.
+
+The data file must be placed inside the `content/` directory and then it can
+be referenced in an ERB template.
+
+Suppose we have the `content/_data/versions.yaml` file with the content:
+
+```yaml
+versions:
+- 10.6
+- 10.5
+- 10.4
+```
+
+We can then loop over the `versions` array with something like:
+
+```erb
+<% @items['/_data/versions.yaml'][:versions].each do | version | %>
+
+<h3><%= version %></h3>
+
+<% end &>
+```
+
+Note that the data file must have the `yaml` extension (not `yml`) and that
+we reference the array with a symbol (`:versions`).
 
 ## Review Apps for documentation merge requests
 
