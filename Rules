@@ -62,14 +62,15 @@ compile '/**/*.md' do
     # GitLab price / tiers specific badges
     filter :badges
 
-    # Use Kramdown with Rouge.
-    # https://kramdown.gettalong.org/options.html
+    # Use GitlabKramdown with Rouge.
+    # https://gitlab.com/brodock/gitlab_kramdown
     filter :gitlab_kramdown,
       input: 'GitlabKramdown',
       syntax_highlighter: 'rouge',
       hard_wrap: false,
       auto_ids: true,
-      toc_levels: 2..5
+      toc_levels: 2..5,
+      with_toc: include_toc
 
     filter :colorize_syntax,
       default_colorizer: :rouge

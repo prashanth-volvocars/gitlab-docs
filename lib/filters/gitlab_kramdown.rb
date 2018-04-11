@@ -3,26 +3,29 @@
 module Nanoc::Filters
   # @api private
   class GitLabKramdown < Nanoc::Filter
+    requires 'kramdown'
+
     identifier :gitlab_kramdown
 
-    requires 'kramdown'
+    TOC_PATCH = <<~PATCH
+      * TOC
+      {:toc}
+
+    PATCH
 
     # Runs the content through [GitLab Kramdown](https://gitlab.com/brodock/gitlab_kramdown).
     # Parameters passed to this filter will be passed on to Kramdown.
     #
-    # @param [String] content The content to filter
+    # @param [String] raw_content The content to filter
     #
     # @return [String] The filtered content
-    def run(content, params = {})
+    def run(raw_content, params = {})
       params = params.dup
       warning_filters = params.delete(:warning_filters)
-      toc_patch = <<~PATCH
-      * TOC
-      {:toc}
+      with_toc = params.delete(:with_toc)
 
-      PATCH
-
-      document = ::Kramdown::Document.new(toc_patch+content, params)
+      content = with_toc ? TOC_PATCH+raw_content : raw_content
+      document = ::Kramdown::Document.new(content, params)
 
       if warning_filters
         r = Regexp.union(warning_filters)
