@@ -261,7 +261,9 @@ performance:
     expire_in: 1w
   only:
     - branches
-  <<: *except_pipelines
+  except:
+    - /^\d{1,2}\.\d{1,2}$/
+    - pipelines
   <<: *retry
   <<: *tags
 
