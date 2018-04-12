@@ -1,4 +1,18 @@
-# How the versioned website is built
+# How the website versions are built
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [How to build the images](#how-to-build-the-images)
+- [When a new version is released](#when-a-new-version-is-released)
+    - [1. Create an image for a single version](#1-create-an-image-for-a-single-version)
+    - [2. Update the `latest` and `archives` images](#2-update-the-latest-and-archives-images)
+    - [3. Rotate the versions](#3-rotate-the-versions)
+- [Update an old image with new upstream content](#update-an-old-image-with-new-upstream-content)
+- [Porting new website changes to old versions](#porting-new-website-changes-to-old-versions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 This directory contains all needed Dockerfiles to build and deploy the
 versioned website. It is heavily inspired by Docker's
@@ -31,10 +45,7 @@ For each image, there's a manual job under the `images` stage in
 When a new version is released, we need to create the single Docker image,
 and update the `latest` and `archives` images to include the new version.
 
-### Create an image for a single version
-
-Now that all required images are created, you can build the archive for each
-branch:
+### 1. Create an image for a single version
 
 1. Make sure you're on the root path of the repo
 1. Create the branch if it doesn't exist. Name the branch by using the major
@@ -50,7 +61,7 @@ branch:
     cp dockerfiles/Dockerfile.single Dockerfile.10.5
     ```
 
-1. Edit the Dockerfile and add the correct version:
+1. Edit the Dockerfile and add the correct version as well as the remote branches:
 
     ```
     # The branch of the docs repo from step 1
@@ -74,33 +85,55 @@ branch:
     ```
 
 1. Visit <http://localhost:4000/10.5/> and make sure everything works correctly
-1. Commit your changes and push (don't create a merge request)
+1. Commit your changes and push, but **don't create a merge request**
 
 Once you push, the `image:docker-singe` job will create a new Docker image
-tagged with the branch name.
+tagged with the branch name you created in the first step.
 
-Rerun the pipeline for the branch if there are upstream changes not included
-in the image.
+### 2. Update the `latest` and `archives` images
 
-## Updating the `latest` and `archives` images
-
-**Note:** Make sure the single image is built first.
+**Note:**
+Make sure the mentioned [single images](#create-an-image-for-a-single-version)
+are built first.
 
 With every new release on the 22nd, we need to update the `latest` and `archives`
 Docker images.
 
-For the `archives`, edit the following files and add the new version:
+There are 2 things to change:
 
-- `content/archives/index.md`
-- [`Dockerfile.archives`](Dockerfile.archives)
+1. [`Dockerfile.archives`](Dockerfile.archives)
+1. [`Dockerfile.master`](../Dockerfile.master)
 
-For the `latest`, edit the following file and add the new version:
+Once you push, you may need to [run the scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules)
+(press the play button), since both of those images are built on a schedule,
+once an hour.
 
-- [`Dockerfile.master`](../Dockerfile.master)
+Once done, the new `latest` image will be built and it will contain the new
+version.
 
-Once you push, the new `latest` image will be built and it will contain the new
-version. You may need to run the pipeline on master one more for the website
-to have all the versions. The `archives` runs on a schedule, usually once an hour.
+### 3. Rotate the versions
+
+**Note:**
+Make sure the `latest` image is already updated to reflect the new versions
+
+At any given time, there are 4 browsable online versions: one pulled from
+the upstream master branches and the three latest stable versions.
+
+Edit [`content/_data/versions.yaml`](../content/_data/versions.yaml) and rotate
+the versions to reflect the new changes:
+
+- `current`: the latest stable
+- `previous`: the 2 versions before stable that are available online
+- `offline`: all the previous versions not available online
+
+Create a merge request with the changes and check if the links in the `/archives`
+page work as expected. If not, the `latest` image is possibly not yet updated.
+
+## Update an old image with new upstream content
+
+If there are upstream changes not included in the single Docker image, just
+[rerun the pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipelines/new)
+for the branch in question.
 
 ## Porting new website changes to old versions
 
@@ -113,3 +146,6 @@ git branch 10.5
 git fetch origin master
 git merge origin/master
 ```
+
+Note that can have unintended effects as we're constantly changing the backend
+of the website. Use only when you know what you're doing.

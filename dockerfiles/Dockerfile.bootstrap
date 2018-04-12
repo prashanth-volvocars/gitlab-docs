@@ -24,11 +24,6 @@ WORKDIR /source
 # Install gems
 RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 
-# Cleanup
-RUN apk del build-deps \
-    && rm -rf /usr/lib/ruby/gems/*/cache/*.gem \
-    && rm -rf /usr/src/Gemfile*
-
 # Install packages needed at build and run time
 RUN apk add --no-cache libxslt libcurl openssl git grep bash
 
