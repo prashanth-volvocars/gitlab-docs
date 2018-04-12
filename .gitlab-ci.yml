@@ -4,6 +4,7 @@ stages:
   - build-images
   - build
   - test
+  - pre-deploy
   - deploy
   - post-deploy
 
@@ -334,7 +335,7 @@ image:nginx-onbuild:
 #
 image:docs-single:
   <<: *docker_prepare
-  stage: post-deploy
+  stage: pre-deploy
   artifacts: {}
   cache: {}
   dependencies: []
@@ -356,7 +357,7 @@ image:docs-single:
 #
 image:docs-archives:
   <<: *docker_prepare
-  stage: post-deploy
+  stage: pre-deploy
   artifacts: {}
   cache: {}
   dependencies: []
@@ -374,7 +375,7 @@ image:docs-archives:
 #
 image:docs-latest:
   <<: *docker_prepare
-  stage: post-deploy
+  stage: pre-deploy
   artifacts: {}
   cache: {}
   dependencies: []
