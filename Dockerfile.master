@@ -24,7 +24,10 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Get all the archive static HTML and put it into place
 # Go oldest-to-newest to take advantage of the fact that we change older
-# archives less often than new ones.
+# archives less often than new ones. Copy the versions found in
+# 'content/_data/versions.yaml' under current and previous.
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.4 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.5 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.6 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
