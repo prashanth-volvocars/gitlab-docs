@@ -2,7 +2,20 @@
 <% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
   <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
     <div class="comments">
-        <p><em>Leave a comment below if you have any feedback on the documentation. For support and other enquiries, see <a href="https://about.gitlab.com/getting-help/" target="_blank">getting help</a>.</em></p>
+      <div class="admonition-wrapper note">
+        <div class="admonition alert alert-info">
+          <p>
+          <em>
+            Was this helpful? Do you think that something is unclear?
+            Use the comments area below and leave your feedback.
+            <strong>
+              For support and other enquiries, see
+              <a href="https://about.gitlab.com/getting-help/" target="_blank">getting help</a>.
+            </strong>
+          </em>
+          </p>
+        </div>
+      </div>
       <div id="disqus_thread"></div>
       <script>
           var disqus_config = function () {
