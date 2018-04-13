@@ -7,5 +7,7 @@
 - [ ] Edit `content/_data/versions.yaml` and rotate the versions
 - [ ] Edit `Dockerfile.master` and rotate the versions
 - [ ] Edit `dockerfiles/Dockerfile.archive` and add the new version
-- [ ] \(Optional) Rerun the `10.7` pipeline if there are changes in the docs after the Docker image was created
+- [ ] \(Optional) Rerun the stable version pipeline if there are changes in the docs after the Docker image was created
 - [ ] Merge and manually run the [scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules).
+
+/label ~release
