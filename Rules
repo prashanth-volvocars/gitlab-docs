@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
+TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_PATTERN})/
+
 preprocess do
+  badges_filter = BadgesFilter.new
+
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
       # If there isn't already a 'redirect_to' defined in the yaml frontmatter,
@@ -19,11 +23,15 @@ preprocess do
         end
       end
 
-      unless item[:title]
-        title = item.raw_content.match(/^[#] .*$/).to_s
-        title.gsub!('# ', '')
-        item[:title] = title unless title.empty?
-      end
+      # We need to do some transformations for the title
+      # Let's extract and keep it first:
+      raw_title = item.raw_content.match(/^[#] .*$/).to_s
+
+      # If we don't have a title in frontmatter, reuse the one we just fetch
+      item[:title] ||= raw_title.gsub(TITLE_FILTER_REGEXP, '')
+
+      # Run badges filter with title fragment
+      item[:title_badge] = badges_filter.run(raw_title.match(BadgesFilter::BADGES_PATTERN).to_s)
     end
   end
 end
@@ -50,6 +58,9 @@ compile '/**/*.md' do
     # If 'toc' is absent in a file's yaml frontmatter, show ToC.
     # Set to 'toc: false' to disable it.
     include_toc = item[:toc].nil? ? true : false
+
+    # GitLab price / tiers specific badges
+    filter :badges
 
     # Use Redcarpet with Rouge.
     filter :redcarpet,

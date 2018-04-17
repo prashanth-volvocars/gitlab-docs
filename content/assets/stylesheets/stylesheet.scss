@@ -1,5 +1,5 @@
 ---
-version: 34
+version: 35
 ---
 
 @import "variables";
@@ -146,6 +146,7 @@ hr {
 h2, h3, h4, h5, h6 {
   border-bottom: solid 1px $h-border-bottom;
   line-height: 1.4;
+  padding-bottom: 5px;
 
   code {
     color: $code-color;
@@ -209,7 +210,6 @@ h5 {
   font-size: 20px;
   color: $color-light-gray;
   font-weight: 500;
-  border-bottom: 0;
 
   @media (max-width: $mobile-width) {
     font-size: 18px;
@@ -220,7 +220,6 @@ h6 {
   font-size: 18px;
   color: $color-light-gray;
   font-weight: 500;
-  border-bottom: 0;
 
   @media (max-width: $mobile-width) {
     font-size: 16px;
@@ -698,6 +697,154 @@ h1, h2, h3, h4, h5, h6 {
     height: 75px;
     visibility: hidden;
   }
+}
+
+//badges
+.badges-drop {
+  display: inline-block;
+  cursor: default;
+  padding-left: 5px;
+  transition: background-color .5s ease-in-out;
+
+  .badge-gitlab,
+  .badge-gitlab-com {
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      transition: width .3s;
+      opacity: .5;
+    }
+  }
+
+  .badge-gitlab {
+    &::after {
+      background: $badge-gitlab;
+    }
+  }
+
+  .badge-gitlab-com {
+    &::after {
+      background: $badge-gitlab-com;
+    }
+  }
+
+  &:hover {
+    .badge-gitlab,
+    .badge-gitlab-com {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+h1, h2, h3, h4 {
+  .badge-display {
+    font-size: 11px;
+  }
+}
+
+h5, h6 {
+  .badge-display {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+}
+
+p, li {
+  .badge-display {
+    font-size: 9px;
+    padding: 1px;
+  }
+}
+
+p {
+  .badges-drop {
+    margin-left: 3px;
+    margin-right: 0;
+  }
+}
+
+// scss-lint:disable MergeableSelector
+// skipping scss-lint rule: keeping all the badges styles together
+h1, h2, h3, h4, h5, h6 {
+  .badges-drop {
+    float: right;
+  }
+}
+
+h1 {
+  @media all and (max-width: $mobile-width) {
+    .badges-drop {
+      padding-top: 5px;
+    }
+  }
+}
+
+li {
+  .badges-drop {
+    margin-left: 0;
+    margin-right: 3px;
+  }
+}
+// scss-lint:enable MergeableSelector
+
+.badge-display {
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  color: $white;
+  margin-left: 2px;
+  border-radius: 2px;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.4;
+}
+
+.badge-gitlab {
+  color: $badge-gitlab;
+}
+
+.badge-gitlab-com {
+  color: $badge-gitlab-com;
+  padding-left: 5px;
+}
+
+.badge-small {
+  color: $badge-gitlab;
+  opacity: .6;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// scss-lint:disable ImportantRule
+.dotcom-false {
+  .badge-gitlab-com {
+    display: none !important;
+  }
+}
+// scss-lint:enable ImportantRule
+
+.doc-nav,
+.breadcrumb {
+  .badge-trigger {
+    display: none;
+  }
+}
+
+// https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
+*[id]:not(sup)::before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
 }
 
 //

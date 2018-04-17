@@ -23,7 +23,7 @@
       </div>
       <% if @item[:title] %>
         <h1 class="article-title">
-          <%= @item[:title] %>
+          <%= @item[:title] %><%= @item[:title_badge] %>
         </h1>
       <% end %>
       <% if @item[:author] %>
@@ -63,6 +63,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
   <script type="application/javascript" src="/assets/javascripts/clipboardjs.js"></script>
+  <script type="application/javascript" src="/assets/javascripts/badges.js"></script>
   <%= render '/footer.*' %>
   <%= render '/docsearch.*' %>
   <%= render '/analytics.*' %>
