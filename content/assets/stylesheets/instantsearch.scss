@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 @import "variables";
@@ -93,7 +93,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   }
 
   .hit-description {
-    margin: 1px 0 10px;
+    margin: 1px 0 5px;
   }
 
   .hit-tag {

@@ -9,7 +9,12 @@
     </a>
     <ul class="nav">
       <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-      <li class="search"><input type="text" class="docsearch" placeholder="Search"></li>
+      <li class="search">
+        <form id="search-form" action="/search/" method="get">
+          <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+          <input type="submit" style="visibility: hidden; position:absolute;" />
+        </form>
+      </li>
       <% end %>
       <% if ENV['NANOC_ENV'] == 'production' %>
         <% @config[:products].each do |name, product| %>

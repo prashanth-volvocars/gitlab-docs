@@ -1,16 +1,19 @@
 <!-- Algolia docsearch https://community.algolia.com/docsearch/ -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 <script type="text/javascript">
-docsearch({
-apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
-indexName: 'gitlab',
-inputSelector: '.docsearch',
-algoliaOptions: {
-  // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
-  'filters': "tags:gitlab OR tags:omnibus OR tags:runner",
-  // Number of results shown in the search dropdown
-  'hitsPerPage': 10
-},
-debug: false // Set debug to true if you want to inspect the dropdown
-  });
+var search = docsearch({
+  apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
+  indexName: 'gitlab',
+  inputSelector: '.docsearch',
+  algoliaOptions: {
+    // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
+    'filters': "tags:gitlab OR tags:omnibus OR tags:runner",
+    // Number of results shown in the search dropdown
+    'hitsPerPage': 10
+  },
+  debug: false, // Set debug to true if you want to inspect the dropdown
+  autocompleteOptions: {
+      'autoselect': false
+    }
+});
 </script>
