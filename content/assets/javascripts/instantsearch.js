@@ -15,7 +15,8 @@ const search = instantsearch({
 search.addWidget(
   instantsearch.widgets.searchBox({
     container: '#search-input',
-    reset: true
+    reset: true,
+    poweredBy: true
   })
 );
 
