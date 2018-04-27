@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 
 @import "variables";
@@ -28,6 +28,25 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 .ais-search-box {
   width: 100%;
   max-width: 100% !important; // was 300px
+}
+
+.search-input {
+  border-radius: 2px;
+}
+
+.ais-stats {
+  display: block;
+  float: left;
+  margin-top: -26px !important;
+
+  @media all and (max-width: $mobile-width) {
+    margin-top: -25px !important;
+  }
+} 
+
+ais-search-box--powered-by {
+  font-family: $sans-font-family;
+  font-size: $body-font-size;
 }
 
 .ais-search-box--magnifier,
@@ -146,7 +165,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 }
 
 #refinement-list {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 //scss-lint:enable IdSelector
 
@@ -190,8 +209,12 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 .stats {
   display: block;
   text-align: right;
-  font-style: italic;
-  font-size: 13px;
+  font-size: 11px;
+  color: $body-color;
+
+  @media all and (max-width: $mobile-width) {
+    font-size: 10px;
+  }
 }
 
 .ais-refinement-list--item {
