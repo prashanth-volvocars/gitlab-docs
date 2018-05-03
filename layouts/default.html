@@ -4,7 +4,7 @@
 <%= render '/head.*' %>
 <%= render '/canonical_urls.*' %>
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
   <%= render '/header.*' %>
   <div class="wrapper">
     <div class="main class js-main-wrapper">
@@ -22,7 +22,7 @@
       <div id="doc-nav" class="doc-nav">
       </div>
       <% if @item[:title] %>
-        <h1 class="article-title">
+        <h1 class="article-title" itemprop="name">
           <%= @item[:title] %><%= @item[:title_badge] %>
         </h1>
       <% end %>
@@ -40,7 +40,7 @@
           Level: <%= @item[:level] %>
         </div>
       <% end %>
-      <div class="article-content js-article-content">
+      <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
         <%= yield %>
       </div>
       <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
@@ -68,6 +68,5 @@
   <%= render '/docsearch.*' %>
   <%= render '/analytics.*' %>
   <%= render '/https_redirect.*' %>
-  <%= render '/schema-microdata.*' %>
 </body>
 </html>
