@@ -10,7 +10,6 @@ version: 35
 
 body {
   background: $body-background-color;
-  color: $body-color;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -144,9 +143,9 @@ hr {
 
 // Make code in headers match the font size of the given header.
 h2, h3, h4, h5, h6 {
-  border-bottom: solid 1px $h-border-bottom;
   line-height: 1.4;
   padding-bottom: 5px;
+  color: $header-color;
 
   code {
     color: $code-color;
@@ -170,8 +169,6 @@ h2, h3, h4, h5, h6 {
 h1 {
   font-size: 30px;
   font-weight: 500;
-  letter-spacing: -1px;
-  border-bottom: solid 2px $h1-border-bottom;
   padding-bottom: 10px;
 
   @media (max-width: $mobile-width) {
@@ -327,6 +324,7 @@ li {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+
   }
 
   .breadcrumbs {
@@ -341,42 +339,48 @@ li {
 
 .header {
   z-index: 1;
-  background: $main-background-color;
   position: relative;
   width: 100%;
-  padding: 0 25px;
-  border-bottom: 1px solid $border-color;
+  padding: 20px 60px;
   text-align: left;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   white-space: nowrap;
-  padding-left: 40px;
+  font-size: 1.1em;
+
+  a {
+    color: $color-white;
+    cursor: pointer;
+  }
+
+  a:hover {
+    opacity: .8;
+    color: $color-white;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .logo {
+    height: 40px;
+    margin-right: 6px;
+  }
+
+  .logo-container:hover {
+    color: white;
+  }
+
+  .nav-item {
+    padding: 12px 20px;
+    margin-right: 6px;
+    text-align: center;
+  }
 
   @media all and (max-width: $mobile-width) {
     height: auto;
     padding-left: 5px;
-  }
-
-  img {
-    position: absolute;
-    height: 50px;
-    margin-left: -8px;
-
-    @media all and (max-width: $mobile-width) {
-      margin-left: -2px;
-    }
-  }
-
-  p {
-    font-size: 20px;
-    color: $black;
-    display: inline-block;
-    padding: 10px 0;
-    padding-left: 55px;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
   }
 
   ul {
@@ -435,6 +439,7 @@ li {
 
   .nav-container {
     margin: auto 0;
+    display: flex;
   }
 
   .nav-toggle {
@@ -525,24 +530,33 @@ li {
 // Home page //
 
 .landing {
-  background-color: $landing-background;
 
   .landing-header {
-    padding: 55px 0 150px;
-    text-align: center;
+    padding: 140px 20px;
+    padding-bottom: 220px;
     color: $white;
-    margin-bottom: -50px;
+    background: $landing-background;
 
     input {
-      margin-top: 40px;
       border-radius: $border-radius;
-      font-size: 20px;
+      font-size: 18px;
       line-height: inherit;
     }
 
     img {
       width: 280px;
     }
+
+    h1 {
+      text-align: center;
+      letter-spacing: normal;
+
+      span {
+        margin-left: 8px;
+      }
+
+    }
+
   }
 
   h1 {
@@ -557,39 +571,51 @@ li {
     }
   }
 
+.input-container {
+  position: relative;
+  margin-top: 30px;
+
+  img {
+    position: absolute;
+    left: 12px;
+    top: calc(50% - 10px);
+    height: 20px;
+    width: 20px;
+    z-index: 1;
+    opacity: .8;
+  }
+
+}
+
   .docsearch {
     box-sizing: content-box;
-    height: 35px;
-    padding: 15px 15px 15px 40px;
-    width: auto;
-    border: 1px solid $search-border;
-    background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: 12px 23px;
+    position: relative;
+    padding: 12px;
+    padding-left: 40px;
+    border: none;
     color: $black;
 
     @media all and (min-width: $mobile-width) {
-      min-width: 300px;
+      min-width: 600px;
     }
   }
 }
 
 .topics {
-  text-align: center;
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  top: -30px;
-  max-width: 1350px;
+  top: -80px;
+  max-width: 1200px;
   margin: auto;
-  padding-right: 40px;
+  padding: 0 20px;
 
   li {
     display: inline-block;
     background-color: $white;
-    border-radius: 2px;
-    margin: 10px 10px 50px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    margin: 10px;
     flex: 1 0 270px;
     min-width: 270px;
 
@@ -606,7 +632,17 @@ li {
     }
 
     .wrapper {
-      padding: 0 30px 30px;
+      padding: 40px;
+
+      img {
+        height: 80px;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        border-bottom: solid 2px $h1-border-bottom;
+      }
 
       @media all and (max-width: $mobile-width) {
         padding: 0 15px 15px;
@@ -624,67 +660,13 @@ li {
       h2 {
         height: 50px;
         margin: 10px 0 25px;
+        margin-top: 0;
 
         @media all and (max-width: $mobile-width) {
           height: auto;
         }
       }
     }
-  }
-}
-
-.topic {
-  border: 1px solid $white;
-
-  &:hover {
-    box-shadow: 5px 5px 10px $subtopic-color;
-    border: 1px solid $subtopic-border-color;
-    transition: all .2s ease-in-out;
-  }
-
-  h2 {
-    color: $link-color-hover;
-  }
-}
-
-.subtopic {
-  border: 1px solid $white;
-
-  &:hover {
-    box-shadow: 5px 5px 10px $subtopic-color;
-    border: 1px solid $subtopic-border-color;
-    transition: all .2s ease-in-out;
-
-    h2 {
-      color: $link-color-hover;
-    }
-  }
-
-  a {
-    color: $subtopic-color;
-  }
-
-  h2 {
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-}
-
-.topic-ee {
-  h2 {
-    color: $topic-ee-header-color;
-  }
-}
-
-.topic-omnibus {
-  h2 {
-    color: $topic-omnibus-header-color;
-  }
-}
-
-.topic-runner {
-  h2 {
-    color: $topic-runner-header-color;
   }
 }
 
@@ -876,3 +858,73 @@ li {
   }
 }
 // scss-lint:enable ImportantRule
+
+.flex-container {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.row {
+  margin: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  max-width: 100%;
+}
+
+.topics-container {
+  margin-top: 60px;
+
+  .topic {
+    color: #222;
+    width: 100%;
+  }
+
+  .topic:hover {
+    opacity: .6;
+    color: black;
+  }
+
+  .topic:not(:first-child) {
+    margin-left: 40px;
+  }
+
+  h4 {
+    font-weight: 600;
+    color: #444;
+  }
+
+}
+
+.popular-topics {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 20px;
+  padding-top: 0;
+  padding-bottom: 160px;
+
+  h1 {
+    text-align: center;
+    color: $header-color;
+  }
+
+}
+
+.footer-link-title {
+  color: white;
+}

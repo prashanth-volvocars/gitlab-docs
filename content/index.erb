@@ -1,7 +1,7 @@
 ---
 title: GitLab Documentation
 ---
-<div class="row">
+<!-- <div class="row">
   <ul class="topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
     <% if ENV['NANOC_ENV'] == 'production' %>
       <% @config[:products].each do |name, product| %>
@@ -31,46 +31,56 @@ title: GitLab Documentation
       <% end %>
     <% end %>
   </ul>
-</div>
+</div> -->
 <div class="row">
   <ul class="topics">
-    <li class="subtopic topic-ci">
-      <a href="ee/ci/yaml/">
-        <div class="wrapper">
-          <h2>CI/CD YAML reference</h2>
-          <p>Learn how to configure <code>.gitlab-ci.yml</code> for your project.
-          </p>
+    <li>
+      <a href="">
+        <div class="wrapper flex-container flex-column">
+          <img src="/assets/images/docs-gitlab.svg" alt="gitlab line logo">
+          <h2 itemprop="name">GitLab</h2>
+          <p>Browse user and administration documentation and guides for GitLab Community Edition, Enterprise Edition, and GitLab.com.</p>
         </div>
       </a>
     </li>
-    <li class="subtopic topic-api">
-      <a href="ee/api/">
-        <div class="wrapper">
-          <h2>API</h2>
-          <p>Automate GitLab via a simple and powerful API.</p>
+    <li>
+      <a href="">
+        <div class="wrapper flex-container flex-column">
+          <img src="/assets/images/docs-omnibus.svg" alt="gitlab omnibus icon">
+          <h2 itemprop="name">Omnibus</h2>
+          <p>Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.</p>
         </div>
       </a>
     </li>
-    <li class="subtopic topic-ssh">
-      <a href="ee/ssh/">
-        <div class="wrapper">
-          <h2>SSH</h2>
-          <p>Learn how to create an SSH key pair and configure GitLab to
-             authenticate via SSH from your local computer.
-          </p>
-        </div>
-      </a>
-    </li>
-    <li class="subtopic topic-com-settings">
-      <a href="ee/user/gitlab_com/">
-        <div class="wrapper">
-          <h2>GitLab.com settings</h2>
-          <p>
-          Information about the settings that are used on GitLab.com, like SSH
-          keys fingerprints, shared Runners configuration, etc.
-          </p>
+    <li>
+      <a href="">
+        <div class="wrapper flex-container flex-column">
+          <img src="/assets/images/docs-runner.svg" alt="gitlab runner icon">
+          <h2 itemprop="name">Runner</h2>
+          <p>Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.</p>
         </div>
       </a>
     </li>
   </ul>
+</div>
+<div class="popular-topics">
+  <h1>Most popular topics</h1>
+  <div class="topics-container flex-container">
+    <a class="topic" href="">
+      <h4>CI/CD YAML reference</h4>
+      <p>Learn how to configure gitlab-ci.yml for your project.</p>
+    </a>
+    <a class="topic" href="">
+      <h4>API</h4>
+      <p>Automate GitLab via a simple and powerful API.</p>
+    </a>
+    <a class="topic" href="">
+      <h4>SSH</h4>
+      <p>Learn how to create an SSH key pair and configure GitLab to authenticate via SSH from your local computer.</p>
+    </a>
+    <a class="topic" href="">
+      <h4>GitLab.com Settings</h4>
+      <p>Information about the settings that are used on GitLab.com, like SSH keys fingerprints, shared Runners configuration, etc.</p>
+    </a>
+  </div>
 </div>
