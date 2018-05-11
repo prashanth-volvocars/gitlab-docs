@@ -560,7 +560,7 @@ li {
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 300;
     margin-top: 20px;
     border-bottom: 0;
@@ -597,7 +597,7 @@ li {
     color: $black;
 
     @media all and (min-width: $mobile-width) {
-      min-width: 600px;
+      min-width: 500px;
     }
   }
 }

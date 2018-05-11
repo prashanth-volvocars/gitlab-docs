@@ -12,8 +12,26 @@ function toggleNavigation() {
 
 // move document nav to sidebar
 (function() {
+  var timeofday = document.getElementById('timeofday')
   var tocList = document.querySelector('.js-article-content > ul:first-child');
   var main = document.querySelector('.js-main-wrapper');
+
+  // Set timeofday var depending on the time //
+
+  var date = new Date()
+  var hour = date.getHours()
+
+  if (hour < 11) {
+    timeofday.innerHTML = "morning"
+  }
+
+  if (hour >= 11 && hour < 16) {
+    timeofday.innerHTML = "afternoon"
+  }
+
+  if (hour >= 16) {
+    timeofday.innerHTML = "evening"
+  }
 
   // if the document has a top level nav
   if(tocList) {
