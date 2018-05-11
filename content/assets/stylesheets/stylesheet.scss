@@ -101,7 +101,7 @@ pre {
     position: absolute;
     color: $white;
     background-color: $pre-code-color;
-    border: none;
+    border: 0;
     outline: 0;
 
     i {
@@ -137,7 +137,7 @@ a > code {
 }
 
 hr {
-  border: none;
+  border: 0;
   border-top: 1px solid $hr-border-color;
 }
 
@@ -337,134 +337,33 @@ li {
   }
 }
 
-.header {
-  z-index: 1;
-  position: relative;
-  width: 100%;
-  padding: 20px 60px;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  white-space: nowrap;
-  font-size: 1.1em;
-
-  a {
-    color: $color-white;
-    cursor: pointer;
-  }
-
-  a:hover {
-    opacity: .8;
-    color: $color-white;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .logo {
-    height: 40px;
-    margin-right: 6px;
-  }
-
-  .logo-container:hover {
-    color: $color-white;
-  }
-
-  .nav-item {
-    padding: 12px 20px;
-    margin-right: 6px;
-    text-align: center;
-  }
+.scrolling-header {
+  background: $color-white;
+  border-bottom: 1px solid $color-gray-extra-light;
+  color: $black;
+  padding: 6px 60px !important;
 
   @media all and (max-width: $mobile-width) {
-    height: auto;
-    padding-left: 5px;
+    padding: 10px !important;
   }
 
-  ul {
-    text-align: right;
-    list-style-type: none;
-    display: inline-block;
+}
 
-    @media all and (max-width: $mobile-width) {
-      display: none;
-    }
-  }
+.header-link {
+  color: $color-white;
 
   @media all and (max-width: $mobile-width) {
-    &.active {
-      display: block;
-
-      ul {
-        display: block;
-        text-align: left;
-        padding: 0;
-        width: 100%;
-      }
-
-      li {
-        display: block;
-        padding: 10px 0;
-      }
-    }
+    font-size: .8em;
   }
 
-  li {
-    display: inline-block;
-    line-height: 20px;
-    margin: 0 10px;
-    vertical-align: middle;
-  }
+}
 
-  input {
-    box-sizing: content-box;
-    border: 1px solid $search-border;
-    border-radius: $border-radius;
-    background-color: $white;
-    -webkit-appearance: none;
-    padding: 7px 11px 7px 28px;
-    margin: -20;
-    width: 190px;
-    background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
-    background-repeat: no-repeat;
-    background-size: 16px;
-    background-position: 7px 8px;
+.scrolling-header-links {
+  color: $black !important;
+}
 
-    @media(max-width:1099px) {
-      width: 130px;
-    }
-  }
-
-  .nav-container {
-    margin: auto 0;
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: none;
-
-    @media all and (max-width: $mobile-width) {
-      display: inline-block;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
-  }
-
-  // Override bootstrap
-  .nav > li > a {
-    padding: 0 10px;
-    text-decoration: none;
-  }
-
-  // Override bootstrap
-  .nav > li > a:focus, .nav > li > a:hover {
-    text-decoration: none;
-    background-color: transparent;
-  }
-
+.scrolling-header-links:hover {
+  color: $black !important;
 }
 
 // Styles for breadcrumbs navigation
@@ -541,6 +440,7 @@ li {
       border-radius: $border-radius;
       font-size: 18px;
       line-height: inherit;
+      outline: 0;
     }
 
     img {
@@ -550,11 +450,19 @@ li {
     h1 {
       text-align: center;
       letter-spacing: normal;
+      white-space: nowrap;
 
       span {
         margin-left: 8px;
       }
 
+    }
+
+    @media all and (max-width: $mobile-width) {
+      h1 {
+        font-size: 22px;
+        transform: translateY(20px);
+      }
     }
 
   }
@@ -586,23 +494,173 @@ li {
       opacity: .8;
     }
 
-}
+    input:focus {
+      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+    }
+
+  }
 
   .docsearch {
     box-sizing: content-box;
     position: relative;
     padding: 12px;
     padding-left: 40px;
-    border: none;
+    border: 0;
     color: $black;
+    width: 500px;
+    min-width: 500px;
 
-    @media all and (min-width: $mobile-width) {
-      min-width: 500px;
+    @media all and (max-width: $mobile-width) {
+      min-width: 300px;
+      width: 300px;
     }
   }
+
+  .header {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    padding: 20px 60px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 1.1em;
+    transition: .2s cubic-bezier(0, 0, 0, 1);
+
+    a {
+      color: $color-white;
+      cursor: pointer;
+    }
+
+    a:hover {
+      opacity: .8;
+      color: $color-white;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 6px;
+    }
+
+    .logo-container {
+      margin-right: auto;
+    }
+
+    .logo-container:hover {
+      color: $color-white;
+    }
+
+    .nav-item {
+      padding: 12px 20px;
+      margin-right: 6px;
+      text-align: center;
+
+      @media all and (max-width: $mobile-width) {
+        font-size: .8em;
+        padding: 10px;
+        margin-right: 0;
+      }
+
+    }
+
+    @media all and (max-width: $mobile-width) {
+      height: auto;
+      padding: 10px;
+    }
+
+    ul {
+      text-align: right;
+      list-style-type: none;
+      display: inline-block;
+
+      @media all and (max-width: $mobile-width) {
+        display: none;
+      }
+    }
+
+    @media all and (max-width: $mobile-width) {
+      &.active {
+        display: block;
+
+        ul {
+          display: block;
+          text-align: left;
+          padding: 0;
+          width: 100%;
+        }
+
+        li {
+          display: block;
+          padding: 10px 0;
+        }
+      }
+    }
+
+    li {
+      display: inline-block;
+      line-height: 20px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    input {
+      box-sizing: content-box;
+      border: 1px solid $search-border;
+      border-radius: $border-radius;
+      background-color: $white;
+      -webkit-appearance: none;
+      padding: 7px 11px 7px 28px;
+      margin: -20;
+      width: 190px;
+      background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
+      background-repeat: no-repeat;
+      background-size: 16px;
+      background-position: 7px 8px;
+
+      @media(max-width:1099px) {
+        width: 130px;
+      }
+    }
+
+    .nav-container {
+      margin: auto 0;
+      display: flex;
+    }
+
+    .nav-toggle {
+      display: none;
+
+      @media all and (max-width: $mobile-width) {
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    // Override bootstrap
+    .nav > li > a {
+      padding: 0 10px;
+      text-decoration: none;
+    }
+
+    // Override bootstrap
+    .nav > li > a:focus, .nav > li > a:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+  }
+
 }
 
-.topics {
+.main-topics {
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -624,7 +682,8 @@ li {
       width: 100%;
       min-width: auto;
       flex: initial;
-      margin: 20px;
+      margin: 0;
+      margin-top: 20px;
     }
 
     a p, a:visited p {
@@ -636,17 +695,22 @@ li {
       padding: 40px;
 
       img {
-        height: 80px;
+        height: 76px;
         margin: auto;
         margin-bottom: 20px;
+        transition: .2s cubic-bezier(0, 0, 0, 1);
       }
 
       h2 {
         border-bottom: 1px solid $hr-border-color;
       }
 
+      .topic-info {
+        transition: .2s cubic-bezier(0, 0, 0, 1);
+      }
+
       @media all and (max-width: $mobile-width) {
-        padding: 0 15px 15px;
+        padding: 30px;
       }
     }
 
@@ -669,6 +733,16 @@ li {
       }
     }
   }
+
+  li:hover {
+    img {
+      transform: scale(1.05);
+    }
+    .topic-info {
+      transform: translateY(4px);
+    }
+  }
+
 }
 
 // https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
@@ -841,10 +915,9 @@ li {
   // On a max-width of 768px
   @media (max-width: 768px) {
     .ds-dropdown-menu {
-      max-width: calc(100vw - 32px) !important;
-      min-width: calc(100vw - 32px) !important;
-      width: calc(100vw - 32px) !important;
-      margin-left: 16px !important;
+      max-width: 100% !important;
+      min-width: 350px !important;
+      width: 370px !important;
     }
     .algolia-docsearch-suggestion--content {
       width: 100% !important;
@@ -893,6 +966,11 @@ li {
   .topic {
     color: $blog-color-text;
     width: 100%;
+
+    @media all and (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
+
   }
 
   .topic:hover {
@@ -902,11 +980,21 @@ li {
 
   .topic:not(:first-child) {
     margin-left: 40px;
+
+    @media all and (max-width: $mobile-width) {
+      margin-left: 0px;
+    }
+
   }
 
   h4 {
     font-weight: 600;
     color: $black;
+  }
+
+  @media all and (max-width: $mobile-width) {
+    flex-wrap: wrap;
+    margin-top: 40px;
   }
 
 }
@@ -915,13 +1003,18 @@ li {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 100px 20px;
+  padding: 100px 30px;
   padding-top: 0;
   padding-bottom: 160px;
 
   h1 {
     text-align: center;
     color: $header-color;
+  }
+
+  @media all and (max-width: $mobile-width) {
+    flex-wrap: wrap;
+    padding-bottom: 80px;
   }
 
 }

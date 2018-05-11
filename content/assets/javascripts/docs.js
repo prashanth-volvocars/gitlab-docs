@@ -1,5 +1,23 @@
 var NAV_INLINE_BREAKPOINT = 1100;
 
+var landingHeaderBar = document.getElementById('landing-header-bar')
+var headerLinks = document.getElementsByClassName('header-link')
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY >= 100) {
+    landingHeaderBar.classList.add('scrolling-header')
+    for (var i = 0; i < headerLinks.length; i++) {
+      headerLinks[i].classList.add('scrolling-header-links')
+    }
+  }
+  else {
+    landingHeaderBar.classList.remove('scrolling-header')
+    for (var i = 0; i < headerLinks.length; i++) {
+      headerLinks[i].classList.remove('scrolling-header-links')
+    }
+  }
+});
+
 var navtoggle = document.getElementById("docs-nav-toggle");
 if (navtoggle) {
   navtoggle.addEventListener("click", toggleNavigation);
