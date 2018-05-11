@@ -1,17 +1,42 @@
-<div class="landing-header-top" id="landing-header-bar">
-  <a class="header-link logo-container flex-container justify-center align-center" href="/">
-    <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
-    <p>GitLab <strong>Docs</strong></p>
+<div class="header">
+  <a href="/">
+    <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" width="50" />
+    <p>GitLab Documentation</p>
   </a>
-  <nav class="nav-container">
-    <a class="header-link nav-item flex-container justify-center align-center" href="">
-      <p>GitLab</p>
+  <div class="nav-container">
+    <a class="nav-toggle" id="docs-nav-toggle">
+      <i class="fa fa-bars" aria-hidden="true"></i>
     </a>
-    <a class="header-link nav-item flex-container justify-center align-center" href="">
-      <p>Omnibus</p>
-    </a>
-    <a class="header-link nav-item flex-container justify-center align-center" href="">
-      <p>Runner</p>
-    </a>
-  </nav>
+    <ul class="nav">
+      <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+      <li class="search">
+        <form id="search-form" action="/search/" method="get">
+          <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+          <input type="submit" style="visibility: hidden; position:absolute;" />
+        </form>
+      </li>
+      <% end %>
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
