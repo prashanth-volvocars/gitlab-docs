@@ -101,7 +101,7 @@ pre {
     position: absolute;
     color: $white;
     background-color: $pre-code-color;
-    border: 0;
+    border: none;
     outline: 0;
 
     i {
@@ -137,7 +137,7 @@ a > code {
 }
 
 hr {
-  border: 0;
+  border: none;
   border-top: 1px solid $hr-border-color;
 }
 
@@ -369,7 +369,7 @@ li {
   }
 
   .logo-container:hover {
-    color: white;
+    color: $color-white;
   }
 
   .nav-item {
@@ -569,21 +569,22 @@ li {
       color: $white;
       text-decoration: none;
     }
+
   }
 
-.input-container {
-  position: relative;
-  margin-top: 30px;
+  .input-container {
+    position: relative;
+    margin-top: 30px;
 
-  img {
-    position: absolute;
-    left: 12px;
-    top: calc(50% - 10px);
-    height: 20px;
-    width: 20px;
-    z-index: 1;
-    opacity: .8;
-  }
+    img {
+      position: absolute;
+      left: 12px;
+      top: calc(50% - 10px);
+      height: 20px;
+      width: 20px;
+      z-index: 1;
+      opacity: .8;
+    }
 
 }
 
@@ -614,7 +615,7 @@ li {
     display: inline-block;
     background-color: $white;
     border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px $main-box-shadow;
     margin: 10px;
     flex: 1 0 270px;
     min-width: 270px;
@@ -640,8 +641,8 @@ li {
         margin-bottom: 20px;
       }
 
-      h1 {
-        border-bottom: solid 2px $h1-border-bottom;
+      h2 {
+        border-bottom: 1px solid $hr-border-color;
       }
 
       @media all and (max-width: $mobile-width) {
@@ -808,7 +809,7 @@ li {
 // scss-lint:disable ImportantRule
 .dotcom-false {
   .badge-gitlab-com {
-    display: none !important;
+    display: none;
   }
 }
 // scss-lint:enable ImportantRule
@@ -881,8 +882,8 @@ li {
 
 .row {
   margin: 0;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
+  margin-right: 0;
+  margin-left: 0;
   max-width: 100%;
 }
 
@@ -890,13 +891,13 @@ li {
   margin-top: 60px;
 
   .topic {
-    color: #222;
+    color: $blog-color-text;
     width: 100%;
   }
 
   .topic:hover {
     opacity: .6;
-    color: black;
+    color: $black;
   }
 
   .topic:not(:first-child) {
@@ -905,7 +906,7 @@ li {
 
   h4 {
     font-weight: 600;
-    color: #444;
+    color: $black;
   }
 
 }
@@ -926,5 +927,5 @@ li {
 }
 
 .footer-link-title {
-  color: white;
+  color: $color-white;
 }
