@@ -339,35 +339,6 @@ li {
   }
 }
 
-.scrolling-header {
-  background: $color-white;
-  border-bottom: 1px solid $color-gray-extra-light;
-  color: $black;
-  padding: 6px 60px !important;
-
-  @media all and (max-width: $mobile-width) {
-    padding: 10px !important;
-  }
-
-}
-
-.header-link {
-  color: $color-white;
-
-  @media all and (max-width: $mobile-width) {
-    font-size: .8em;
-  }
-
-}
-
-.scrolling-header-links {
-  color: $black !important;
-}
-
-.scrolling-header-links:hover {
-  color: $black !important;
-}
-
 // Styles for breadcrumbs navigation
 .breadcrumbs {
   white-space: nowrap;
@@ -501,7 +472,7 @@ li {
     }
 
     input:focus {
-      box-shadow: 0 10px 20px rgba(0,0,0,.2);
+      box-shadow: 0 10px 20px $secondary-box-shadow;
     }
 
   }
@@ -522,7 +493,35 @@ li {
     }
   }
 
-  .header {
+  .scrolling-header {
+    background: $color-white;
+    border-bottom: 1px solid $color-gray-extra-light;
+    padding: 6px 60px !important;
+
+    @media all and (max-width: $mobile-width) {
+      padding: 10px !important;
+    }
+
+  }
+
+  .header-link {
+    color: $color-white;
+
+    @media all and (max-width: $mobile-width) {
+      font-size: .8em;
+    }
+
+  }
+
+  .scrolling-header-links {
+    color: $black !important;
+  }
+
+  .scrolling-header-links:hover {
+    color: $black !important;
+  }
+
+  .landing-header-top {
     z-index: 1000;
     position: fixed;
     width: 100%;
@@ -648,6 +647,7 @@ li {
         top: 15px;
         right: 15px;
       }
+
     }
 
     // Override bootstrap
@@ -717,7 +717,7 @@ li {
       margin-left: 40px;
 
       @media all and (max-width: $mobile-width) {
-        margin-left: 0px;
+        margin-left: 0;
       }
 
     }
