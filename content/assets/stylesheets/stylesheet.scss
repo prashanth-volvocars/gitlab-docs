@@ -143,9 +143,9 @@ hr {
 
 // Make code in headers match the font size of the given header.
 h2, h3, h4, h5, h6 {
+  border-bottom: solid 1px $h-border-bottom;
   line-height: 1.4;
   padding-bottom: 5px;
-  color: $header-color;
 
   code {
     color: $code-color;
@@ -169,6 +169,8 @@ h2, h3, h4, h5, h6 {
 h1 {
   font-size: 30px;
   font-weight: 500;
+  letter-spacing: -1px;
+  border-bottom: solid 2px $h1-border-bottom;
   padding-bottom: 10px;
 
   @media (max-width: $mobile-width) {
@@ -430,6 +432,10 @@ li {
 
 .landing {
 
+  h2, h3, h4, h5, h6 {
+    color: $header-color;
+  }
+
   .landing-header {
     padding: 140px 20px;
     padding-bottom: 220px;
@@ -658,7 +664,99 @@ li {
 
   }
 
+  .footer-link-title {
+    color: $color-white;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .row {
+    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .topics-container {
+    margin-top: 60px;
+
+    .topic {
+      color: $blog-color-text;
+      width: 100%;
+
+      @media all and (max-width: $mobile-width) {
+        margin-bottom: 20px;
+      }
+
+    }
+
+    .topic:hover {
+      opacity: .6;
+      color: $black;
+    }
+
+    .topic:not(:first-child) {
+      margin-left: 40px;
+
+      @media all and (max-width: $mobile-width) {
+        margin-left: 0px;
+      }
+
+    }
+
+    h4 {
+      font-weight: 600;
+      color: $black;
+    }
+
+    @media all and (max-width: $mobile-width) {
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+  }
+
+  .popular-topics {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+    padding-top: 0;
+    padding-bottom: 160px;
+
+    h1 {
+      text-align: center;
+      color: $header-color;
+    }
+
+    @media all and (max-width: $mobile-width) {
+      flex-wrap: wrap;
+      padding-bottom: 80px;
+    }
+
+  }
+
 }
+
+// End of landing wrapper
 
 .main-topics {
   position: relative;
@@ -932,93 +1030,3 @@ li {
   }
 }
 // scss-lint:enable ImportantRule
-
-.flex-container {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.row {
-  margin: 0;
-  margin-right: 0;
-  margin-left: 0;
-  max-width: 100%;
-}
-
-.topics-container {
-  margin-top: 60px;
-
-  .topic {
-    color: $blog-color-text;
-    width: 100%;
-
-    @media all and (max-width: $mobile-width) {
-      margin-bottom: 20px;
-    }
-
-  }
-
-  .topic:hover {
-    opacity: .6;
-    color: $black;
-  }
-
-  .topic:not(:first-child) {
-    margin-left: 40px;
-
-    @media all and (max-width: $mobile-width) {
-      margin-left: 0px;
-    }
-
-  }
-
-  h4 {
-    font-weight: 600;
-    color: $black;
-  }
-
-  @media all and (max-width: $mobile-width) {
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-
-}
-
-.popular-topics {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 100px 30px;
-  padding-top: 0;
-  padding-bottom: 160px;
-
-  h1 {
-    text-align: center;
-    color: $header-color;
-  }
-
-  @media all and (max-width: $mobile-width) {
-    flex-wrap: wrap;
-    padding-bottom: 80px;
-  }
-
-}
-
-.footer-link-title {
-  color: $color-white;
-}
