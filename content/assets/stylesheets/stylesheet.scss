@@ -399,6 +399,18 @@ li {
   color: inherit;
 }
 
+// Override bootstrap
+.nav > li > a {
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+// Override bootstrap
+.nav > li > a:focus, .nav > li > a:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
 // Home page //
 
 .landing {
@@ -496,10 +508,10 @@ li {
   .scrolling-header {
     background: $color-white;
     border-bottom: 1px solid $color-gray-extra-light;
-    padding: 6px 60px !important;
+    padding: 6px 20px;
 
     @media all and (max-width: $mobile-width) {
-      padding: 10px !important;
+      padding: 10px;
     }
 
   }
@@ -513,12 +525,16 @@ li {
 
   }
 
+  .header-link:hover {
+    color: $color-white;
+  }
+
   .scrolling-header-links {
-    color: $black !important;
+    color: $black;
   }
 
   .scrolling-header-links:hover {
-    color: $black !important;
+    color: $black;
   }
 
   .landing-header-top {
@@ -534,14 +550,8 @@ li {
     font-size: 1.1em;
     transition: .2s cubic-bezier(0, 0, 0, 1);
 
-    a {
-      color: $color-white;
-      cursor: pointer;
-    }
-
     a:hover {
       opacity: .8;
-      color: $color-white;
     }
 
     p {
@@ -648,18 +658,6 @@ li {
         right: 15px;
       }
 
-    }
-
-    // Override bootstrap
-    .nav > li > a {
-      padding: 0 10px;
-      text-decoration: none;
-    }
-
-    // Override bootstrap
-    .nav > li > a:focus, .nav > li > a:hover {
-      text-decoration: none;
-      background-color: transparent;
     }
 
   }
