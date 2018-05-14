@@ -1,8 +1,16 @@
 <div class="header">
-  <a class="header-link logo-container flex-container justify-center align-center" href="/">
-    <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
-    <p>GitLab <strong>Docs</strong></p>
-  </a>
+  <div class="flex-container align-center">
+    <a class="header-link logo-container flex-container justify-center align-center" href="/">
+      <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
+      <p>GitLab <strong>Docs</strong></p>
+    </a>
+    <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+    <form id="search-form" action="/search/" method="get">
+      <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+      <input type="submit" style="visibility: hidden; position:absolute;" />
+    </form>
+    <% end %>
+  </div>
   <div class="nav-container">
     <a class="nav-toggle" id="docs-nav-toggle">
       <i class="fa fa-bars" aria-hidden="true"></i>
@@ -11,7 +19,7 @@
       <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
       <li class="search">
         <form id="search-form" action="/search/" method="get">
-          <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+          <input type="text" name="q" class="docsearch docsearch-mobile" placeholder="Search" required/>
           <input type="submit" style="visibility: hidden; position:absolute;" />
         </form>
       </li>
