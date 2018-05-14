@@ -2,15 +2,18 @@
 title: GitLab Documentation
 ---
 <div class="row">
-  <ul class="topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+  <ul class="main-topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
     <% if ENV['NANOC_ENV'] == 'production' %>
       <% @config[:products].each do |name, product| %>
         <% if product[:expose] == true %>
-          <li class="topic topic-<%= product[:slug] %>">
+          <li>
             <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper">
-                <h2 itemprop="name"><%= product[:short_name] %></h2>
-                <p><%= product[:description] %></p>
+              <div class="wrapper flex-container flex-column">
+                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                <div class="topic-info">
+                  <h2 itemprop="name"><%= product[:short_name] %></h2>
+                  <p><%= product[:description] %></p>
+                </div>
               </div>
             </a>
           </li>
@@ -19,54 +22,20 @@ title: GitLab Documentation
     <% else %>
       <% @config[:products].each do |name, product| %>
         <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-          <li class="topic topic-<%= product[:slug] %>">
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper">
-                <h2><%= product[:short_name] %></h2>
-                <p><%= product[:description] %></p>
+          <li>
+            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+              <div class="wrapper flex-container flex-column">
+                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                <div class="topic-info">
+                  <h2 itemprop="name"><%= product[:short_name] %></h2>
+                  <p><%= product[:description] %></p>
+                </div>
               </div>
             </a>
           </li>
         <% end %>
       <% end %>
     <% end %>
-  </ul>
-</div>
-<div class="row">
-  <ul class="main-topics">
-    <li>
-      <a href="/ee">
-        <div class="wrapper flex-container flex-column">
-          <img src="/assets/images/docs-gitlab.svg" alt="gitlab line logo">
-          <div class="topic-info">
-            <h2 itemprop="name">GitLab</h2>
-            <p>Browse user and administration documentation and guides for GitLab Community Edition, Enterprise Edition, and GitLab.com.</p>
-          </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/omnibus">
-        <div class="wrapper flex-container flex-column">
-          <img src="/assets/images/docs-omnibus.svg" alt="gitlab omnibus icon">
-          <div class="topic-info">
-            <h2 itemprop="name">Omnibus</h2>
-            <p>Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.</p>
-          </div>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="/runner">
-        <div class="wrapper flex-container flex-column">
-          <img src="/assets/images/docs-runner.svg" alt="gitlab runner icon">
-          <div class="topic-info">
-            <h2 itemprop="name">Runner</h2>
-            <p>Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.</p>
-          </div>
-        </div>
-      </a>
-    </li>
   </ul>
 </div>
 <div class="popular-topics">
