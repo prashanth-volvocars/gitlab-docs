@@ -55,27 +55,13 @@ and update the `latest` and `archives` images to include the new version.
     git checkout -b 10.5
     ```
 
-1. Copy `Dockerfile.single` to `Dockerfile.$version` in the root path:
+1. Run the raketask to create the single version:
 
     ```
-    cp dockerfiles/Dockerfile.single Dockerfile.10.5
+    bundle exec rake "release:single[10.5]"
     ```
 
-1. Edit the Dockerfile and add the correct version as well as the remote branches:
-
-    ```
-    # The branch of the docs repo from step 1
-    ARG VER=10.5
-
-    # Replace the versions to match the stable branches of the upstream projects
-    ARG BRANCH_EE=10-5-stable-ee
-    ARG BRANCH_CE=10-5-stable
-    ARG BRANCH_OMNIBUS=10-5-stable
-    ARG BRANCH_RUNNER=10-5-stable
-
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild AS builder
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild
-    ```
+    A new `Dockerfile.10.5` should have been created.
 
 1. Test locally by building the image and running it:
 

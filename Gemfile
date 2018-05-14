@@ -18,6 +18,7 @@ group :nanoc do
   gem 'builder'
 end
 
-group :test do
+group :test, :development do
   gem 'scss_lint', require: false
+  gem 'highline'
 end

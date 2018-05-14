@@ -62,3 +62,30 @@ task :pull_repos do
     end
   end
 end
+
+namespace :release do
+  desc 'Creates a single release archive'
+  task :single, :version do |t, args|
+    require "highline/import"
+    version = args.version.to_s
+    source_dir = File.expand_path('../', __FILE__)
+
+    raise 'You need to specify a version, like 10.1' unless version =~ /\A\d+\.\d+\z/
+
+    dockerfile = "#{source_dir}/Dockerfile.#{version}"
+
+    if File.exist?(dockerfile)
+      abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
+    end
+
+    puts "Created new Dockerfile: #{dockerfile}"
+
+    content = File.read('dockerfiles/Dockerfile.single')
+    content.gsub!('X.Y', version)
+    content.gsub!('X-Y', version.tr('.', '-'))
+
+    open(dockerfile, 'w') do |post|
+      post.puts content
+    end
+  end
+end
