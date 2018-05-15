@@ -464,7 +464,6 @@ li {
 
   li {
     display: inline-block;
-    line-height: 20px;
     margin: 0 10px;
   }
 
@@ -507,10 +506,8 @@ li {
     .docsearch-mobile {
       display: none;
       width: 100%;
-      box-sizing: border-box;
       outline: 0;
       margin-top: 12px;
-      margin-left: 10px;
 
       @media all and (max-width: $mobile-width) {
         display: block;
