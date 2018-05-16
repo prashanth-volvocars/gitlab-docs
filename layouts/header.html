@@ -18,7 +18,7 @@
     <ul class="nav">
       <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
       <li class="nav-item">
-        <form id="mobile-search-form" action="/mobileSearch/" method="get">
+        <form id="mobile-search-form" action="/search/" method="get">
           <input type="text" name="q" class="docsearch docsearch-mobile" placeholder="Search" required/>
           <input type="submit" style="visibility: hidden; position:absolute;" />
         </form>
