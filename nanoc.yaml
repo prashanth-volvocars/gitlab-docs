@@ -130,7 +130,7 @@ products:
     slug: 'ee'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
-    description: 'Browse user and administration documentation and guides for GitLab Community Edition, Enterprise Edition, and GitLab.com.'
+    description: 'Usage and administration of GitLab Community Edition (CE), Enterprise Edition (EE), and GitLab.com.'
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
     dirs:
       temp_dir: 'tmp/ee/'
@@ -143,7 +143,7 @@ products:
     slug: 'omnibus'
     index_file: 'README.*'
     img: '/assets/images/docs-omnibus.svg'
-    description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.'
+    description: 'Default GitLab installer. Full-stack, platform-specific packages. The most common way to install and configure GitLab.'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
     dirs:
       temp_dir: 'tmp/omnibus/'
@@ -156,7 +156,7 @@ products:
     slug: 'runner'
     index_file: 'index.*'
     img: '/assets/images/docs-runner.svg'
-    description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
+    description: 'Agent for GitLab CI. Configure and run build scripts and other jobs as part of GitLab Continuous Integration & Deployment (CI/CD).'
     repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
     dirs:
       temp_dir: 'tmp/runner/'
