@@ -2,15 +2,18 @@
 title: GitLab Documentation
 ---
 <div class="row">
-  <ul class="topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+  <ul class="main-topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
     <% if ENV['NANOC_ENV'] == 'production' %>
       <% @config[:products].each do |name, product| %>
         <% if product[:expose] == true %>
-          <li class="topic topic-<%= product[:slug] %>">
+          <li>
             <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper">
-                <h2 itemprop="name"><%= product[:short_name] %></h2>
-                <p><%= product[:description] %></p>
+              <div class="wrapper flex-container flex-column">
+                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                <div class="topic-info">
+                  <h2 itemprop="name"><%= product[:short_name] %></h2>
+                  <p><%= product[:description] %></p>
+                </div>
               </div>
             </a>
           </li>
@@ -19,11 +22,14 @@ title: GitLab Documentation
     <% else %>
       <% @config[:products].each do |name, product| %>
         <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-          <li class="topic topic-<%= product[:slug] %>">
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper">
-                <h2><%= product[:short_name] %></h2>
-                <p><%= product[:description] %></p>
+          <li>
+            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+              <div class="wrapper flex-container flex-column">
+                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                <div class="topic-info">
+                  <h2 itemprop="name"><%= product[:short_name] %></h2>
+                  <p><%= product[:description] %></p>
+                </div>
               </div>
             </a>
           </li>
@@ -32,45 +38,24 @@ title: GitLab Documentation
     <% end %>
   </ul>
 </div>
-<div class="row">
-  <ul class="topics">
-    <li class="subtopic topic-ci">
-      <a href="ee/ci/yaml/">
-        <div class="wrapper">
-          <h2>CI/CD YAML reference</h2>
-          <p>Learn how to configure <code>.gitlab-ci.yml</code> for your project.
-          </p>
-        </div>
-      </a>
-    </li>
-    <li class="subtopic topic-api">
-      <a href="ee/api/">
-        <div class="wrapper">
-          <h2>API</h2>
-          <p>Automate GitLab via a simple and powerful API.</p>
-        </div>
-      </a>
-    </li>
-    <li class="subtopic topic-ssh">
-      <a href="ee/ssh/">
-        <div class="wrapper">
-          <h2>SSH</h2>
-          <p>Learn how to create an SSH key pair and configure GitLab to
-             authenticate via SSH from your local computer.
-          </p>
-        </div>
-      </a>
-    </li>
-    <li class="subtopic topic-com-settings">
-      <a href="ee/user/gitlab_com/">
-        <div class="wrapper">
-          <h2>GitLab.com settings</h2>
-          <p>
-          Information about the settings that are used on GitLab.com, like SSH
-          keys fingerprints, shared Runners configuration, etc.
-          </p>
-        </div>
-      </a>
-    </li>
-  </ul>
+<div class="popular-topics">
+  <h1>Most popular topics</h1>
+  <div class="topics-container flex-container">
+    <a class="topic" href="/ee/ci/yaml/">
+      <h4>CI/CD YAML reference</h4>
+      <p>Learn how to configure gitlab-ci.yml for your project.</p>
+    </a>
+    <a class="topic" href="/ee/api/">
+      <h4>API</h4>
+      <p>Automate GitLab via a simple and powerful API.</p>
+    </a>
+    <a class="topic" href="/ee/ssh/">
+      <h4>SSH</h4>
+      <p>Learn how to create an SSH key pair and configure GitLab to authenticate via SSH from your local computer.</p>
+    </a>
+    <a class="topic" href="/ee/user/gitlab_com/">
+      <h4>GitLab.com Settings</h4>
+      <p>Information about the settings that are used on GitLab.com, like SSH keys fingerprints, shared Runners configuration, etc.</p>
+    </a>
+  </div>
 </div>

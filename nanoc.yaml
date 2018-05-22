@@ -81,12 +81,10 @@ checks:
       # Exclude major.minor versions that are used under /archives
       - '^/\d{1,2}\.\d{1,2}/$'
       # Exclude the extra links listed in the home page
-      - 'ee\/api\/'
-      - 'ee\/ci\/'
-      - 'ee\/ci\/yaml\/'
-      - 'ee\/ssh\/'
-      - 'ee\/user\/gitlab_com\/'
-      - 'ee\/user\/project\/pages\/'
+      - '\/ee\/ci\/yaml\/'
+      - '\/ee\/api\/'
+      - '\/ee\/ssh\/'
+      - '\/ee\/user\/gitlab_com\/'
 
   # Configuration for the “external_links” checker, which checks whether all
   # external links are valid.
@@ -118,6 +116,7 @@ products:
     short_name: 'GitLab CE'
     slug: 'ce'
     index_file: 'README.*'
+    img: '/assets/images/docs-gitlab.svg'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
     repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git'
     dirs:
@@ -130,7 +129,8 @@ products:
     short_name: 'GitLab'
     slug: 'ee'
     index_file: 'README.*'
-    description: 'Browse user and administration documentation and guides for GitLab Community Edition, Enterprise Edition, and GitLab.com.'
+    img: '/assets/images/docs-gitlab.svg'
+    description: 'Usage and administration of GitLab Community Edition (CE), Enterprise Edition (EE), and GitLab.com.'
     repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
     dirs:
       temp_dir: 'tmp/ee/'
@@ -142,7 +142,8 @@ products:
     short_name: 'Omnibus'
     slug: 'omnibus'
     index_file: 'README.*'
-    description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for Omnibus GitLab.'
+    img: '/assets/images/docs-omnibus.svg'
+    description: 'Default GitLab installer. Full-stack, platform-specific packages. The most common way to install and configure GitLab.'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
     dirs:
       temp_dir: 'tmp/omnibus/'
@@ -154,7 +155,8 @@ products:
     short_name: 'Runner'
     slug: 'runner'
     index_file: 'index.*'
-    description: 'Browse installation, configuration, maintenance, and troubleshooting documentation for GitLab Runner.'
+    img: '/assets/images/docs-runner.svg'
+    description: 'Agent for GitLab CI. Configure and run build scripts and other jobs as part of GitLab Continuous Integration & Deployment (CI/CD).'
     repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
     dirs:
       temp_dir: 'tmp/runner/'
