@@ -59,8 +59,8 @@ before_script:
 .build_base: &build_base
   stage: build
   script:
-    - rake setup_git default
-    - nanoc compile -VV
+    - bundle exec rake setup_git default
+    - bundle exec nanoc compile -VV
   artifacts:
     paths:
       - public
@@ -105,7 +105,7 @@ compile_dev:
 internal_links:
   stage: test
   script:
-    - nanoc check internal_links
+    - bundle exec nanoc check internal_links
   allow_failure: true
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
