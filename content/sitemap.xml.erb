@@ -2,5 +2,5 @@
 is_hidden: true
 ---
 <%= xml_sitemap(
-  items: items.select { |i| !i[:is_hidden] && !i.path.end_with?('.svg') && !i.path.end_with?('.woff2') && !i.path.end_with?('.png') && !i.path.end_with?('.js') && !i.path.end_with?('.css') && !i.path.end_with?('.yaml') && !i.path.end_with?('.gif')}
+  items: items.select { |i| !i[:is_hidden] && i.identifier.to_s.end_with?('.md','.erb','.html')}
 ) %>
