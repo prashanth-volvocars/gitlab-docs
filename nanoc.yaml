@@ -81,6 +81,7 @@ checks:
       # Exclude major.minor versions that are used under /archives
       - '^/\d{1,2}\.\d{1,2}/$'
       # Exclude the extra links listed in the home page
+      - '\/ee\/user\/project\/import\/'
       - '\/ee\/ci\/yaml\/'
       - '\/ee\/api\/'
       - '\/ee\/ssh\/'
