@@ -1,5 +1,5 @@
 ---
-version: 36
+version: 37
 ---
 
 @import "variables";
@@ -321,7 +321,7 @@ li {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    border: 1px solid $border-color-light;
+    border: 2px solid $border-color;
     padding: 5px;
     margin: 5px;
   }
