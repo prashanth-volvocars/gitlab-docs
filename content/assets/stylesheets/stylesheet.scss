@@ -1,5 +1,5 @@
 ---
-version: 37
+version: 38
 ---
 
 @import "variables";
@@ -321,9 +321,9 @@ li {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    border: 2px solid $border-color;
-    padding: 5px;
-    margin: 5px;
+    box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   footer {
