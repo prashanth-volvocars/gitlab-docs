@@ -1,4 +1,5 @@
 require './lib/task_helpers'
+require 'fileutils'
 
 task :default => [:setup_repos, :setup_content_dirs, :pull_repos]
 
@@ -74,6 +75,20 @@ task :pull_repos do
       # Reset so that if the repo is cached, the latest commit will be used
       `git reset --hard origin/#{branch}`
     end
+  end
+end
+
+desc 'Clean temp directories and symlinks'
+task :clean_dirs do
+  products.each_value do |product|
+    temp_dir = product['dirs']['temp_dir']
+    dest_dir = product['dirs']['dest_dir']
+
+    FileUtils.rm_rf(temp_dir)
+    puts "Removed #{temp_dir}"
+
+    FileUtils.rm_rf(dest_dir)
+    puts "Removed #{dest_dir}"
   end
 end
 
