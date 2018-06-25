@@ -1,4 +1,5 @@
 require './lib/task_helpers'
+require 'fileutils'
 
 task :default => [:setup_repos, :setup_content_dirs, :pull_repos]
 
@@ -12,6 +13,13 @@ end
 desc 'Setup repositories for CE, EE, Omnibus and Runner in special way exposing only their doc directories'
 task :setup_repos do
   products.each_value do |product|
+    branch = retrieve_branch(product['slug'])
+
+    # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
+    # First we check if the branch on the docs repo is other than 'master' and
+    # then we skip if the remote branch variable is 'master'.
+    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master'
+
     next if File.exist?(product['dirs']['temp_dir'])
 
     puts "\n=> Setting up repository #{product['repo']} into #{product['dirs']['temp_dir']}\n"
@@ -30,6 +38,8 @@ end
 desc 'Setup content directories by symlinking to the repositories documentation folder'
 task :setup_content_dirs do
   products.each_value do |product|
+    next unless File.exist?(product['dirs']['temp_dir'])
+
     source = File.join('../', product['dirs']['temp_dir'], product['dirs']['doc_dir'])
     target = product['dirs']['dest_dir']
 
@@ -46,6 +56,11 @@ task :pull_repos do
   products.each_value do |product|
     branch = retrieve_branch(product['slug'])
 
+    # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
+    # First we check if the branch on the docs repo is other than 'master' and
+    # then we skip if the remote branch variable is 'master'.
+    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master'
+
     puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
     # Enter the temporary directory and return after block is completed.
@@ -60,6 +75,20 @@ task :pull_repos do
       # Reset so that if the repo is cached, the latest commit will be used
       `git reset --hard origin/#{branch}`
     end
+  end
+end
+
+desc 'Clean temp directories and symlinks'
+task :clean_dirs do
+  products.each_value do |product|
+    temp_dir = product['dirs']['temp_dir']
+    dest_dir = product['dirs']['dest_dir']
+
+    FileUtils.rm_rf(temp_dir)
+    puts "Removed #{temp_dir}"
+
+    FileUtils.rm_rf(dest_dir)
+    puts "Removed #{dest_dir}"
   end
 end
 
