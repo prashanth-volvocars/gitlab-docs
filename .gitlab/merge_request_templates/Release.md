@@ -5,6 +5,7 @@
 - [ ] Edit `content/_data/versions.yaml` and rotate the versions
 - [ ] Edit `Dockerfile.master` and rotate the versions
 - [ ] Edit `dockerfiles/Dockerfile.archives` and add the new version
+- [ ] Add the latest version to `content/robots.txt.erb` to disallow bots (prevent from indexing)
 - [ ] \(Optional) Rerun the stable version pipeline if there are changes in the docs after the Docker image was created
 - [ ] Merge and manually run the [scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules).
 
