@@ -6,6 +6,15 @@ is_hidden: true
 sitemap: https://docs.gitlab.com/sitemap.xml
 user-agent: *
 disallow: /ce/
+<% @items['/_data/versions.yaml'][:current].each do |version| %>
+disallow: /<%= version %>/
+<% end %>
+<% @items['/_data/versions.yaml'][:previous].each do |version| %>
+disallow: /<%= version %>/
+<% end %>
+<% @items['/_data/versions.yaml'][:offline].each do |version| %>
+disallow: /<%= version %>/
+<% end %>
 <% else %>
 # Ban all spiders from the entire site when not on master branch
 user-agent: *
