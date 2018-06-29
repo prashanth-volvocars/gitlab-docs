@@ -47,3 +47,12 @@ title: 404 not found I say you!
     }
   })();
 </script>
+
+<% if ENV['NANOC_ENV'] == 'production' %>
+<script type="text/javascript">
+  // Redirect to /archives on a non-existing versions
+  if (/10.3|10.4|10.5|10.6/.test(window.location.href)) {
+    window.location.replace("https://docs.gitlab.com/archives");
+  }
+</script>
+<% end %>
