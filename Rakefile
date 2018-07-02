@@ -17,8 +17,11 @@ task :setup_repos do
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
     # First we check if the branch on the docs repo is other than 'master' and
-    # then we skip if the remote branch variable is 'master'.
-    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master'
+    # then we skip if the remote branch variable is 'master'. Finally,
+    # check if the pipeline was triggered via the API (multi-project pipeline)
+    # to exclude the case where we create a branch right off the gitlab-docs
+    # project.
+    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master' and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     next if File.exist?(product['dirs']['temp_dir'])
 
@@ -58,8 +61,11 @@ task :pull_repos do
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
     # First we check if the branch on the docs repo is other than 'master' and
-    # then we skip if the remote branch variable is 'master'.
-    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master'
+    # then we skip if the remote branch variable is 'master'. Finally,
+    # check if the pipeline was triggered via the API (multi-project pipeline)
+    # to exclude the case where we create a branch right off the gitlab-docs
+    # project.
+    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master' and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
