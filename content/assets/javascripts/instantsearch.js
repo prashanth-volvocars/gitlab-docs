@@ -9,7 +9,16 @@ const search = instantsearch({
     'hitsPerPage': 10,
   },
   loadingIndicator: true,
-  urlSync: true
+  urlSync: true,
+  searchFunction: function(helper) {
+    var searchResults = $('.search-results');
+    if (helper.state.query === '') {
+      searchResults.hide();
+      return;
+    }
+    helper.search();
+    searchResults.show();
+  }
 });
 
 search.addWidget(
