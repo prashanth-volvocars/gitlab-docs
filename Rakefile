@@ -107,12 +107,6 @@ namespace :release do
 
     raise 'You need to specify a version, like 10.1' unless version =~ /\A\d+\.\d+\z/
 
-    dockerfile = "#{source_dir}/Dockerfile.#{version}"
-
-    if File.exist?(dockerfile)
-      abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
-    end
-
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
     `git stash -u` if git_workdir_dirty?
@@ -121,8 +115,15 @@ namespace :release do
     `git checkout master`
     `git pull origin master`
 
-    # Reset so that if the repo is cached, the latest commit will be used
-    `git checkout -b #{version}`
+    # Create branch
+    `git branch #{version}`
+    `git checkout #{version}`
+
+    dockerfile = "#{source_dir}/Dockerfile.#{version}"
+
+    if File.exist?(dockerfile)
+      abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
+    end
 
     content = File.read('dockerfiles/Dockerfile.single')
     content.gsub!('X.Y', version)
