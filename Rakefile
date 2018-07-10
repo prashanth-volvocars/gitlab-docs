@@ -113,7 +113,16 @@ namespace :release do
       abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
     end
 
-    puts "Created new Dockerfile: #{dockerfile}"
+    # Stash modified and untracked files so we have "clean" environment
+    # without accidentally deleting data
+    `git stash -u` if git_workdir_dirty?
+
+    # Sync with upstream master
+    `git checkout master`
+    `git pull origin master`
+
+    # Reset so that if the repo is cached, the latest commit will be used
+    `git checkout -b #{version}`
 
     content = File.read('dockerfiles/Dockerfile.single')
     content.gsub!('X.Y', version)
@@ -122,5 +131,14 @@ namespace :release do
     open(dockerfile, 'w') do |post|
       post.puts content
     end
+
+    puts "Created new Dockerfile: #{dockerfile}"
+
+    # Add and commit new Dockerfile
+    `git add Dockerfile.#{version}`
+    `git commit -m "Add #{version} Dockerfile"`
+
+    puts "You can now push the new branch:"
+    puts "git push origin #{version}"
   end
 end
