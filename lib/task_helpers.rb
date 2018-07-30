@@ -1,6 +1,6 @@
 require 'yaml'
 
-PRODUCTS = %W[ce ee omnibus runner support].freeze
+PRODUCTS = %W[ce ee omnibus runner debugging].freeze
 
 def config
   # Parse the config file and create a hash.
