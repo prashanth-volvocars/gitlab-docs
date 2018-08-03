@@ -164,16 +164,16 @@ products:
       dest_dir: 'content/runner'
       doc_dir:  'docs'
     expose: true
-  debugging:
+  debug:
     full_name: 'Debugging for GitLab Support'
-    short_name: 'Debugging'
-    slug: 'debugging'
+    short_name: 'Debug'
+    slug: 'debug'
     index_file: 'index.*'
     img: '/assets/images/docs-runner.svg'
     description: 'Debugging resources for GitLab Support Engineers'
     repo: 'https://gitlab.com/axil/debugging.gitlab.io'
     dirs:
-      temp_dir: 'tmp/debugging/'
-      dest_dir: 'content/debugging'
+      temp_dir: 'tmp/debug/'
+      dest_dir: 'content/debug'
       doc_dir:  'content/post'
     expose: false
