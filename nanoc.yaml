@@ -169,11 +169,11 @@ products:
     short_name: 'Debug'
     slug: 'debug'
     index_file: 'index.*'
-    img: '/assets/images/docs-runner.svg'
+    img: '/assets/images/docs-gitlab.svg'
     description: 'Debugging resources for GitLab Support Engineers'
-    repo: 'https://gitlab.com/axil/debugging.gitlab.io'
+    repo: 'https://gitlab.com/debugging/debug'
     dirs:
       temp_dir: 'tmp/debug/'
       dest_dir: 'content/debug'
-      doc_dir:  'content/post'
+      doc_dir:  'content'
     expose: false
