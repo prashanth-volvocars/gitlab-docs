@@ -1,7 +1,7 @@
 require './lib/task_helpers'
 require 'fileutils'
 
-task :default => [:setup_repos, :setup_content_dirs, :pull_repos]
+task :default => [:setup_repos, :pull_repos, :setup_content_dirs]
 
 task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
