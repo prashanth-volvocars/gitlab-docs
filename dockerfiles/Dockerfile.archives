@@ -17,6 +17,7 @@ COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.7 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.8 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.0 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.1 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.2 ${TARGET} ${TARGET}
 
 # Serve the site (target), which is now all static HTML
 CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'

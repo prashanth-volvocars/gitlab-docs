@@ -51,7 +51,8 @@ title: 404 not found I say you!
 <% if ENV['NANOC_ENV'] == 'production' %>
 <script type="text/javascript">
   // Redirect to /archives on a non-existing versions
-  if (/10.3|10.4|10.5|10.6|10.7/.test(window.location.href)) {
+  // Place here all offline versions as seen inside content/_data/versions.yaml
+  if (/10.3|10.4|10.5|10.6|10.7|10.8/.test(window.location.href)) {
     window.location.replace("https://docs.gitlab.com/archives");
   }
 </script>
