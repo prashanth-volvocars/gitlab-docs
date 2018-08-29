@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:stable-alpine
 
 ENV TARGET=/usr/share/nginx/html
 
