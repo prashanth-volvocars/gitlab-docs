@@ -443,7 +443,6 @@ li {
   ul {
     text-align: right;
     list-style-type: none;
-    display: inline-block;
 
     @media all and (max-width: $mobile-width) {
       display: none;
@@ -471,6 +470,26 @@ li {
   li {
     display: inline-block;
     margin: 0 10px;
+  }
+
+  .dropdown-menu {
+    li {
+      display: block;
+    }
+  }
+
+  .btn-versions {
+    color: $black;
+    font-size: 16px;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &:active {
+      opacity: .8;
+      box-shadow: none;
+    }
   }
 
   input {
