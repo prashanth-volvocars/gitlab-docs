@@ -1,5 +1,5 @@
 ---
-version: 39
+version: 40
 ---
 
 @import "variables";
@@ -1206,3 +1206,53 @@ li {
 .flex-column {
   flex-direction: column;
 }
+
+//in-page styles
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.middle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.youtube {
+  color: $youtube;
+}
+
+.half-width {
+  width: 50%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+// scss-lint:disable ImportantRule
+.display-none {
+  display: none !important;
+}
+
+.display-block {
+  display: block !important;
+}
+
+.image-noshadow {
+  box-shadow: none !important;
+}
+// scss-lint:enable ImportantRule
+
+//end of in-page styles
