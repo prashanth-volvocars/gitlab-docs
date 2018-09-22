@@ -10,6 +10,23 @@
       <input type="submit" style="visibility: hidden; position:absolute;" />
     </form>
     <% end %>
+    <!-- versions dropdown-->
+    <div class="dropdown">
+      <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions">
+        Versions
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="versions">
+        <li><a href='/<%= @items['/_data/versions.yaml'][:current].first %>/'>(latest) <%= @items['/_data/versions.yaml'][:current].first %></a></li>
+        <li role="separator" class="divider"></li>
+      <% @items['/_data/versions.yaml'][:previous].each do |version| %>
+        <li><a href='/<%= version %>/'><%= version %></a></li>
+      <% end %>
+        <li><a href='/'>master</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href='/archives/'>Archives</a></li>
+      </ul>
+    </div>
   </div>
   <div class="nav-container">
     <a class="nav-toggle" id="docs-nav-toggle">

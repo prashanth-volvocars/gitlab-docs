@@ -44,14 +44,6 @@ before_script:
 .retry: &retry
   retry: 2
 
-#
-# Tags
-#
-.tags: &tags
-  tags:
-    - docker
-    - gitlab-org
-
 ###############################################
 #             Build the website               #
 ###############################################
@@ -71,7 +63,6 @@ before_script:
       - tmp/
       - vendor/ruby
   <<: *retry
-  <<: *tags
 
 #
 # Compile only on master and stable branches
@@ -113,7 +104,6 @@ internal_links:
       - vendor/ruby
   <<: *except_pipelines
   <<: *retry
-  <<: *tags
 
 #
 # SCSS linting
@@ -128,7 +118,6 @@ scss_lint:
       - vendor/ruby
   <<: *except_pipelines
   <<: *retry
-  <<: *tags
 
 ###############################################
 #               Review Apps                   #
@@ -234,7 +223,6 @@ pages:
   only:
     - master@gitlab-com/gitlab-docs
   <<: *retry
-  <<: *tags
 
 ###############################################
 #           Performance testing               #
@@ -265,7 +253,6 @@ performance:
     - /^\d{1,2}\.\d{1,2}$/
     - pipelines
   <<: *retry
-  <<: *tags
 
 ###############################################
 #           Docker images builds              #
@@ -282,7 +269,6 @@ performance:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   <<: *retry
-  <<: *tags
 
 #
 # Helper Docker image containing all build dependencies
