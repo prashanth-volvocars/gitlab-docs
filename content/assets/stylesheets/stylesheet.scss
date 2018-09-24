@@ -1,5 +1,5 @@
 ---
-version: 40
+version: 41
 ---
 
 @import "variables";
@@ -664,8 +664,8 @@ li {
     min-width: 500px;
 
     @media all and (max-width: $mobile-width) {
-      min-width: 300px;
-      width: 300px;
+      min-width: 230px;
+      width: 230px;
     }
   }
 
@@ -710,6 +710,7 @@ li {
     justify-content: space-between;
     align-items: center;
     white-space: nowrap;
+    overflow: auto;
     // font-size: 1.1em;
     transition: .2s cubic-bezier(0, 0, 0, 1);
 
