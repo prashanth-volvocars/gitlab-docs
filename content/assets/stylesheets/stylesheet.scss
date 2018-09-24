@@ -1,5 +1,5 @@
 ---
-version: 43
+version: 44
 ---
 
 @import "variables";
@@ -1254,6 +1254,46 @@ li {
 
 .half-width {
   width: 50%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.width-60 {
+  width: 60%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.width-70 {
+  width: 70%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.width-75 {
+  width: 75%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.width-80 {
+  width: 80%;
+
+  @media all and (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
+.width-90 {
+  width: 90%;
 
   @media all and (max-width: $mobile-width) {
     width: 100%;
