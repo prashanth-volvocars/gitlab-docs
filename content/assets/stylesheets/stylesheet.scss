@@ -1,5 +1,5 @@
 ---
-version: 42
+version: 43
 ---
 
 @import "variables";
@@ -71,6 +71,10 @@ table {
     td {
       text-align: center;
     }
+  }
+
+  &.fixed-table {
+    table-layout: fixed; // use this for columns with the same width
   }
 }
 
