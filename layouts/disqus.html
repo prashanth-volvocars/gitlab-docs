@@ -23,7 +23,9 @@
           </p>
         </div>
       </div>
-      <div id="disqus_thread"></div>
+      <div id="disqus_thread" class="disqus-comments-gitlab">
+        <a href="#" class="comments-holder" onclick="loadDisqus();return false;">Show/Post Comments</a>
+      </div>
       <script>
           var disqus_config = function () {
               this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
@@ -35,12 +37,16 @@
             <% end %>
           };
 
-          (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = 'https://gitlab-docs.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-              })();
+          var is_disqus_loaded = false;
+              function loadDisqus() {
+                if (!is_disqus_loaded){
+                  is_disqus_loaded = true;
+                  var d = document, s = d.createElement('script');
+                  s.src = 'https://gitlab-docs.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+                }
+              };
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     </div>
