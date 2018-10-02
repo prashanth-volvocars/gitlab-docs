@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import "variables";
@@ -9,5 +9,52 @@ version: 1
   padding-top: 10px;
   border-top-style: solid;
   border-top-color: $border-color;
-  border-top-width: 1px;
+  border-top-width: 3px;
+}
+
+.comments-filter {
+  a {
+    color: $color-tanuki-dark;
+
+    &:hover {
+      color: $color-tanuki-light;
+    }
+  }
+
+  h2 {
+    border-bottom: 0;
+
+    i {
+      color: $color-tanuki-dark;
+    }
+  }
+
+  @media (min-width: $medium-width) {
+    p {
+      padding-left: 30px;
+    }
+
+    ul {
+      padding-left: 50px;
+    }
+  }
+}
+
+.disqus-comments-gitlab {
+  a {
+    margin-bottom: 20px;
+  }
+}
+
+.comments-holder {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: $color-tanuki-dark;
+  box-shadow: 1px 2px 3px transparent;
+
+  &:hover {
+    color: $color-tanuki-dark;
+    background-color: $color-white;
+    box-shadow: 1px 2px 3px $color-gray-extra-light;
+  }
 }

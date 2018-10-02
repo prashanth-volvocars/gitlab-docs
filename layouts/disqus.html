@@ -2,29 +2,24 @@
 <% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
   <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
     <div class="comments">
-      <div class="admonition-wrapper note">
-        <div class="admonition alert alert-info">
-          <p>
-          <em>
-            Was this helpful? Do you think that something is unclear?
-            Use the comments area below and leave your feedback.
-            <strong>
-              For support and other enquiries, see
-              <a href="https://about.gitlab.com/getting-help/" target="_blank">getting help</a>.
-            </strong>
-          </em>
-          </p>
-          <p>
-          <em>
-            Any comments that aren't related to documentation feedback will be <strong>deleted</strong>.
-            Read more on how we handle documentation comments
-            <a href="https://about.gitlab.com/handbook/marketing/community-relations/community-advocacy/#docs-comments"  target="_blank">in our handbook</a>.
-          </em>
-          </p>
-        </div>
+      <div class="comments-filter">
+        <h2>
+          <i class="fa fa-star-half-o" aria-hidden="true"></i> 
+          Your feedback is important!
+        </h2>
+        <p>For submitting effective feedback, choose one of the options below:</p>
+          <ul>
+            <li>If there's something wrong with this document and you would like to fix it yourself, you can quickly <span style="text-transform: lowercase;"><%= edit_on_gitlab(@item) %></span> and submit a merge request with your change.</li>
+            <li>If you are having problems to set up or use GitLab, see how to <a href="https://about.gitlab.com/support/">get support from GitLab</a>.</li>
+            <li>If you want to ask how to do something specific to your own use case, use the <a href="https://forum.gitlab.com/">GitLab Forum</a> instead.</li>
+            <li>If you would like something that GitLab doesn't have or support yet, create a <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">feature proposal</a>.</li>
+            <li>If you want to report something unclear, innacurate, or any other issue with this doc, <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">create an issue</a> with your report.</li>
+            <li>If you want to leave a simple feedback on this document, click the button below and leave your comment in the thread.</li>
+          </ul>
       </div>
+
       <div id="disqus_thread" class="disqus-comments-gitlab">
-        <a href="#" class="comments-holder" onclick="loadDisqus();return false;">Show/Post Comments</a>
+        <a href="#" role="button" class="comments-holder btn btn-default display-block center middle" onclick="loadDisqus();return false;">Show and post comments</a>
       </div>
       <script>
           var disqus_config = function () {
