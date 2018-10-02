@@ -1,5 +1,5 @@
 ---
-version: 44
+version: 45
 ---
 
 @import "variables";
@@ -53,6 +53,12 @@ table {
     padding: 7px 10px;
     border: 1px solid $table-border-color;
     font-size: $body-font-size;
+
+    .badge-small {
+      &:hover::after {
+        padding: 5px 3px;
+      }
+    }
   }
 
   @media all and (max-width: $mobile-width) {
