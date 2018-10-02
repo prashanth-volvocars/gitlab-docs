@@ -1,5 +1,5 @@
 <%# Show comments only in production and on master branch (hide archives) %>
-<% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+<% if @item[:comments].nil? %>
   <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
     <div class="comments">
       <div class="comments-filter">
