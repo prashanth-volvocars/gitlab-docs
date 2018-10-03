@@ -7,43 +7,94 @@
           <i class="fa fa-star-half-o" aria-hidden="true"></i> 
           Your feedback is important!
         </h2>
-        <p>For submitting effective feedback, choose one of the options below:</p>
-          <ul>
-            <li>If there's something wrong with this document and you would like to fix it yourself, you can quickly <span style="text-transform: lowercase;"><%= edit_on_gitlab(@item) %></span> and submit a merge request with your change.</li>
-            <li>If you are having problems to set up or use GitLab, see how to <a href="https://about.gitlab.com/support/">get support from GitLab</a>.</li>
-            <li>If you want to ask how to do something specific to your own use case, use the <a href="https://forum.gitlab.com/">GitLab Forum</a> instead.</li>
-            <li>If you would like something that GitLab doesn't have or support yet, create a <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">feature proposal</a>.</li>
-            <li>If you want to report something unclear, innacurate, or any other issue with this doc, <a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">create an issue</a> with your report.</li>
-            <li>If you want to leave a simple feedback on this document, click the button below and leave your comment in the thread.</li>
+        <div>
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab">
+              <i class="fa fa-gitlab" aria-hidden="true"></i> 
+              FEEDBACK ON THE <strong>PRODUCT</strong></a>
+            </li>
+            <li role="presentation"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i> 
+              FEEDBACK ON THE <strong>DOCS</strong></a>
+            </li>
+            <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">
+              <i class="fa fa-question-circle" aria-hidden="true"></i> 
+              GET <strong>HELP</strong></a>
+            </li>
           </ul>
-      </div>
 
-      <div id="disqus_thread" class="disqus-comments-gitlab">
-        <a href="#" role="button" class="comments-holder btn btn-default display-block center middle" onclick="loadDisqus();return false;">Show and post comments</a>
-      </div>
-      <script>
-          var disqus_config = function () {
-              this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
-              this.page.title = '<%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %>';
-            <% if @item[:redirect_from] %>
-              this.page.identifier = '<%= @item[:redirect_from] %>';
-            <% else %>
-              this.page.identifier = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
-            <% end %>
-          };
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane" id="product-feedback">
+              <p>If there's something <strong>you don't like</strong> about this feature or you want something that <strong>GitLab does not support</strong>:</p>
+              <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">
+                <i class="fa fa-info-circle" aria-hidden="true"></i> 
+                CREATE AN ISSUE
+              </a>
+            </div>
 
-          var is_disqus_loaded = false;
-              function loadDisqus() {
-                if (!is_disqus_loaded){
-                  is_disqus_loaded = true;
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://gitlab-docs.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                }
-              };
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            <div role="tabpanel" class="tab-pane" id="support">
+              <p>If you want help with something very <strong>specific to your use case</strong>:</p>
+              <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/">
+                <i class="fa fa-users" aria-hidden="true"></i> 
+                POST ON THE GITLAB FORUM
+              </a>
+
+              <p>If you <strong>have problems</strong> setting up or using this feature:</p>
+              <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+                GET SUPPORT FROM GITLAB
+              </a>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="docs-feedback">
+              <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong>:</p>
+              <span role="button" class="comments-holder btn btn-default edit-page">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                <%= edit_on_gitlab(@item) %>
+              </span>
+
+              <p>If this <strong>document is confusing or unclear</strong>:</p>
+              <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">
+                <i class="fa fa-info-circle" aria-hidden="true"></i> 
+                CREATE AN ISSUE 
+              </a>
+
+              <p>If you want to give <strong>quick and simple feeback</strong> on this doc:</p>
+              <div id="disqus_thread" class="disqus-comments-gitlab">
+                <a href="#" role="button" class="comments-holder btn btn-default" onclick="loadDisqus();return false;">
+                  <i class="fa fa-comments-o" aria-hidden="true"></i> 
+                  SHOW AND POST COMMENTS
+                </a>
+              </div>
+              <script>
+                  var disqus_config = function () {
+                      this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
+                      this.page.title = '<%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %>';
+                    <% if @item[:redirect_from] %>
+                      this.page.identifier = '<%= @item[:redirect_from] %>';
+                    <% else %>
+                      this.page.identifier = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
+                    <% end %>
+                  };
+
+                  var is_disqus_loaded = false;
+                      function loadDisqus() {
+                        if (!is_disqus_loaded){
+                          is_disqus_loaded = true;
+                          var d = document, s = d.createElement('script');
+                          s.src = 'https://gitlab-docs.disqus.com/embed.js';
+                          s.setAttribute('data-timestamp', +new Date());
+                          (d.head || d.body).appendChild(s);
+                        }
+                      };
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 <% end %>
