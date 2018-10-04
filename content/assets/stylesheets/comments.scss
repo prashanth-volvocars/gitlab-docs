@@ -13,7 +13,7 @@ version: 2
 }
 
 .comments-filter {
-  a, span {
+  a {
     color: $color-tanuki-dark;
     border-color: $color-tanuki-light;
 
@@ -67,7 +67,6 @@ version: 2
   }
 }
 
-.edit-page {
-  text-transform: uppercase;
+.tab-content {
+  padding-bottom: 20px;
 }
-

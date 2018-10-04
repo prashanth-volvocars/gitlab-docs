@@ -49,16 +49,16 @@
             </div>
 
             <div role="tabpanel" class="tab-pane" id="docs-feedback">
-              <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong>:</p>
-              <span role="button" class="comments-holder btn btn-default edit-page">
+              <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong> in a merge request:</p>
+              <a role="button" class="comments-holder btn btn-default" href="<%= edit_on_gitlab(@item) %>">
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
-                <%= edit_on_gitlab(@item) %>
-              </span>
+                EDIT THIS PAGE
+              </a>
 
               <p>If this <strong>document is confusing or unclear</strong>:</p>
               <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new">
                 <i class="fa fa-info-circle" aria-hidden="true"></i> 
-                CREATE AN ISSUE 
+                CREATE AN ISSUE
               </a>
 
               <p>If you want to give <strong>quick and simple feeback</strong> on this doc:</p>
