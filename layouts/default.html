@@ -43,12 +43,12 @@
       <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
         <%= yield %>
       </div>
-      <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+      
       <%# Show Edit button only in production and on master branch (hide archives) %>
       <div class="edit-on">
         <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
       </div>
-      <% end %>
+      
       <% if @item[:last_updated] %>
         <hr>
         <p class="last-updated">
