@@ -1,78 +1,78 @@
-<%# Show comments only in production and on master branch (hide archives) %>
-<% if @item[:comments].nil? %>
-  <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
-    <div class="comments">
-      <div class="comments-filter">
-        <h2>
-          <i class="fa fa-star-half-o" aria-hidden="true"></i> 
-          Your feedback is important!
-        </h2>
-        <div>
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab">
-              <i class="fa fa-gitlab" aria-hidden="true"></i> 
-              FEEDBACK ON THE <strong>PRODUCT</strong></a>
-            </li>
-            <li role="presentation"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
-              <i class="fa fa-file-text-o" aria-hidden="true"></i> 
-              FEEDBACK ON THE <strong>DOCS</strong></a>
-            </li>
-            <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">
-              <i class="fa fa-question-circle" aria-hidden="true"></i> 
-              GET <strong>HELP</strong></a>
-            </li>
-          </ul>
+<div class="comments">
+  <div class="comments-filter">
+    <h2>
+      <i class="fa fa-star-half-o" aria-hidden="true"></i> 
+      Your feedback is important!
+    </h2>
+    <div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#product-feedback" aria-controls="product-feedback" role="tab" data-toggle="tab">
+          <i class="fa fa-gitlab" aria-hidden="true"></i> 
+          FEEDBACK ON THE <strong>PRODUCT</strong></a>
+        </li>
+        <li role="presentation"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
+          <i class="fa fa-file-text-o" aria-hidden="true"></i> 
+          FEEDBACK ON THE <strong>DOCS</strong></a>
+        </li>
+        <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">
+          <i class="fa fa-question-circle" aria-hidden="true"></i> 
+          GET <strong>HELP</strong></a>
+        </li>
+      </ul>
 
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="product-feedback">
-              <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong>:</p>
-              <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved" target="_blank">
-                <i class="fa fa-info-circle" aria-hidden="true"></i> 
-                CREATE AN ISSUE
-              </a>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="product-feedback">
+          <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong>:</p>
+          <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20-%20product%20feedback:%20Write%20your%20title&issue[description]=Describe%20what%20you%20would%20like%20to%20see%20improved" target="_blank">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> 
+            CREATE AN ISSUE
+          </a>
 
-              <p>If you want something that <strong>GitLab does not support</strong>:</p>
-              <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i> 
-                CREATE A FEATURE PROPOSAL
-              </a>
-            </div>
+          <p>If you want something that <strong>GitLab does not support</strong>:</p>
+          <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issuable_template=Feature%20proposal&issue[title]=Docs%20feedback%20-%20feature%20proposal:%20Write%20your%20title" target="_blank">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> 
+            CREATE A FEATURE PROPOSAL
+          </a>
+        </div>
 
-            <div role="tabpanel" class="tab-pane" id="support">
-              <p>If you <strong>didn't find</strong> what you were looking for:</p>
-              <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank">
-                <i class="fa fa-search" aria-hidden="true"></i> 
-                SEARCH THE DOCS
-              </a>
+        <div role="tabpanel" class="tab-pane" id="support">
+          <p>If you <strong>didn't find</strong> what you were looking for:</p>
+          <a role="button" class="comments-holder btn btn-default" href="/search/" target="_blank">
+            <i class="fa fa-search" aria-hidden="true"></i> 
+            SEARCH THE DOCS
+          </a>
 
-              <p>If you want help with something very <strong>specific to your use case</strong>:</p>
-              <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank">
-                <i class="fa fa-users" aria-hidden="true"></i> 
-                POST ON THE GITLAB FORUM
-              </a>
+          <p>If you want help with something very <strong>specific to your use case</strong>:</p>
+          <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank">
+            <i class="fa fa-users" aria-hidden="true"></i> 
+            POST ON THE GITLAB FORUM
+          </a>
 
-              <p>If you <strong>have problems</strong> setting up or using this feature, depending on your GitLab subscription, you can:</p>
-              <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
-                GET SUPPORT FROM GITLAB
-              </a>
-            </div>
+          <p>If you <strong>have problems</strong> setting up or using this feature, depending on your GitLab subscription, you can:</p>
+          <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> 
+            GET SUPPORT FROM GITLAB
+          </a>
+        </div>
 
-            <div role="tabpanel" class="tab-pane" id="docs-feedback">
-              <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong> in a merge request:</p>
-              <a role="button" class="comments-holder btn btn-default" href="<%= edit_on_gitlab(@item) %>" target="_blank">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
-                EDIT THIS PAGE
-              </a>
+        <div role="tabpanel" class="tab-pane" id="docs-feedback">
+          <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong> in a merge request:</p>
+          <a role="button" class="comments-holder btn btn-default" href="<%= edit_on_gitlab(@item) %>" target="_blank">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+            EDIT THIS PAGE
+          </a>
 
-              <p>If this <strong>document is confusing or unclear</strong>:</p>
-              <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20feedback:%20Write%20your%20title&issue[description]=Link%20the%20doc%20and%20describe%20what%20is%20wrong%20with%20it%0A%0A%2Flabel%20~Documentation" target="_blank">
-                <i class="fa fa-info-circle" aria-hidden="true"></i> 
-                CREATE AN ISSUE
-              </a>
-
+          <p>If this <strong>document is confusing or unclear</strong>:</p>
+          <a role="button" class="comments-holder btn btn-default" href="https://gitlab.com/gitlab-org/gitlab-ce/issues/new?issue[title]=Docs%20feedback:%20Write%20your%20title&issue[description]=Link%20the%20doc%20and%20describe%20what%20is%20wrong%20with%20it%0A%0A%2Flabel%20~Documentation" target="_blank">
+            <i class="fa fa-info-circle" aria-hidden="true"></i> 
+            CREATE AN ISSUE
+          </a>
+          
+          <%# Show comments only in production and on master branch (hide archives) %>
+          <% if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+            <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
               <p>If you want to give <strong>quick and simple feeback</strong> on this doc:</p>
               <div id="disqus_thread" class="disqus-comments-gitlab">
                 <a href="#" role="button" class="comments-holder btn btn-default" onclick="loadDisqus();return false;">
@@ -103,10 +103,11 @@
                       };
               </script>
               <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-            </div>
-          </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
+
