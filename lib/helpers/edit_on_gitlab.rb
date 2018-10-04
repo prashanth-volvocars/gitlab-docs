@@ -29,7 +29,7 @@ module Nanoc::Helpers
         gitlab_url = "https://gitlab.com/gitlab-com/gitlab-docs/blob/master/#{@item[:content_filename]}"
       end
 
-      result = "<a href='#{gitlab_url}'>Edit this page</a>"
+      result = gitlab_url
     end
   end
 end
