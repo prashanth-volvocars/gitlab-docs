@@ -1,5 +1,5 @@
 ---
-version: 46
+version: 47
 ---
 
 @import "variables";
@@ -30,9 +30,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   overflow-x: auto;
-  border: 1px solid $table-border-color;
-  margin: 0 0 15px;
+  margin: 15px auto;
   word-wrap: break-word;
+  clear: both;
+  display: inline-table;
 
   thead {
     background: $thead-background-color;
