@@ -16,7 +16,7 @@
           <i class="fa fa-gitlab" aria-hidden="true"></i>
           FEEDBACK ON THE <strong>PRODUCT</strong></a>
         </li>
-        <li role="presentation"><a href="#questions" aria-controls="questions" role="tab" data-toggle="tab">
+        <li role="presentation"><a href="#get-help" aria-controls="get-help" role="tab" data-toggle="tab">
           <i class="fa fa-question-circle" aria-hidden="true"></i>
           GET <strong>HELP</strong></a>
         </li>
@@ -24,7 +24,7 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane" id="product-feedback"><!-- product-feedback -->
+        <div role="tabpanel" class="tab-pane" id="product-feedback"><!-- product-feedback tab -->
           <div class="row" id="issue-row"><!-- issue-row -->
             <div class="col-md-8 col-sm-12">
               <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong>
@@ -51,26 +51,9 @@
               </a>
             </div>
           </div><!-- feature-proposal-row -->
+        </div><!-- product-feedback tab -->
 
-          <div class="row" id="sales-row"><!-- sales-row -->
-            <div class="col-md-8 col-sm-12">
-              <p>If you want to use a feature that's not available in your 
-                <a href="https://about.gitlab.com/pricing/" target="_blank">
-                  GitLab tier
-                </a>
-                <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
-              </p>
-            </div>
-            <div class="col-md-4 col-sm-12">
-              <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/sales/" target="_blank">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                CONTACT SALES
-              </a>
-            </div>
-          </div><!-- sales-row -->
-        </div><!-- product-feedback -->
-
-        <div role="tabpanel" class="tab-pane" id="questions"><!-- questions -->
+        <div role="tabpanel" class="tab-pane" id="get-help"><!-- get-help tab -->
           <div class="row" id="search-row"><!-- search-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you <strong>didn't find</strong> what you were looking for
@@ -117,9 +100,28 @@
               </p>
             </div>
           </div><!-- support-row -->
-        </div><!-- questions -->
 
-        <div role="tabpanel" class="tab-pane active" id="docs-feedback"><!-- docs-feedback -->
+          <div class="row" id="sales-row"><!-- sales-row -->
+            <div class="col-md-8 col-sm-12">
+              <p>If you want to use a 
+                <a href="https://about.gitlab.com/features/">feature</a>
+                that's <strong>not available in your</strong>
+                <a href="https://about.gitlab.com/pricing/" target="_blank">
+                  GitLab tier
+                </a>
+                <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/sales/" target="_blank">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                CONTACT SALES
+              </a>
+            </div>
+          </div><!-- sales-row -->
+        </div><!-- get-help tab -->
+
+        <div role="tabpanel" class="tab-pane active" id="docs-feedback"><!-- docs-feedback tab -->
           <div class="row" id="edit-page-row"><!-- edit-page-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong> in a merge request
@@ -167,7 +169,7 @@
               </div><!-- disqus-row-->
             <% end %>
           <%# end %>
-        </div><!-- docs-feedback -->
+        </div><!-- docs-feedback tab -->
       </div>
     </div>
   </div>
