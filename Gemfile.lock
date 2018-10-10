@@ -46,6 +46,7 @@ GEM
       concurrent-ruby (~> 1.0)
     highline (2.0.0)
     http_parser.rb (0.6.0)
+    json_schema (0.19.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -53,13 +54,14 @@ GEM
     lumberjack (1.0.13)
     method_source (0.9.0)
     mini_portile2 (2.1.0)
-    nanoc (4.9.6)
+    nanoc (4.9.9)
       addressable (~> 2.5)
       cri (~> 2.15)
       ddmemoize (~> 1.0)
       ddmetrics (~> 1.0)
       ddplugin (~> 1.0)
       hamster (~> 3.0)
+      json_schema (~> 0.19)
       parallel (~> 1.12)
       ref (~> 2.0)
       slow_enumerator_tools (~> 1.0)
@@ -103,18 +105,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  adsf
-  adsf-live
-  builder
-  guard-nanoc
-  highline
-  nanoc (~> 4.8)
+  adsf (~> 1.4)
+  adsf-live (~> 1.4)
+  builder (~> 3.2)
+  guard-nanoc (~> 2.1)
+  highline (~> 2.0)
+  nanoc (~> 4.9)
   nokogiri (~> 1.7.0)
-  rake (~> 12.0)
-  redcarpet
-  rouge (~> 2.0)
-  sass
-  scss_lint
+  rake (~> 12.3)
+  redcarpet (~> 3.4)
+  rouge (~> 2.2)
+  sass (~> 3.6)
+  scss_lint (~> 0.57)
 
 BUNDLED WITH
    1.16.4
