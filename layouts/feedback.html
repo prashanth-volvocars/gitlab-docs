@@ -3,12 +3,12 @@
     <h2 id="help-and-feedback">
       <i class="fa fa-star-half-o" aria-hidden="true"></i>
       Help and feedback
-      <a class="anchor" href="#help-and-feedback" title="Permalink"></a>
+      <a class="anchor" href="#help-and-feedback"></a>
     </h2>
     <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
+        <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
           <i class="fa fa-file-text-o" aria-hidden="true"></i>
           FEEDBACK ON THE <strong>DOCS</strong></a>
         </li>
@@ -16,7 +16,7 @@
           <i class="fa fa-gitlab" aria-hidden="true"></i>
           FEEDBACK ON THE <strong>PRODUCT</strong></a>
         </li>
-        <li role="presentation"><a href="#support" aria-controls="support" role="tab" data-toggle="tab">
+        <li role="presentation"><a href="#questions" aria-controls="questions" role="tab" data-toggle="tab">
           <i class="fa fa-question-circle" aria-hidden="true"></i>
           QUESTIONS</a>
         </li>
@@ -25,7 +25,7 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane" id="product-feedback"><!-- product-feedback -->
-          <div class="row"><!-- row1 -->
+          <div class="row" id="issue-row"><!-- issue-row -->
             <div class="col-md-8 col-sm-12">
               <p>If there's something <strong>you don't like</strong> about <strong>this feature</strong>
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -37,8 +37,8 @@
                 CREATE AN ISSUE
               </a>
             </div>
-          </div> <!-- row1 -->
-          <div class="row"><!-- row2 -->
+          </div> <!-- issue-row -->
+          <div class="row" id="feature-proposal-row"><!-- feature-proposal-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you want something that <strong>GitLab does not support</strong>
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -50,11 +50,11 @@
                 SUBMIT FEATURE PROPOSAL
               </a>
             </div>
-          </div><!-- row2 -->
+          </div><!-- feature-proposal-row -->
         </div><!-- product-feedback -->
 
-        <div role="tabpanel" class="tab-pane" id="support"><!-- support -->
-          <div class="row"><!-- row3 -->
+        <div role="tabpanel" class="tab-pane" id="questions"><!-- questions -->
+          <div class="row" id="search-row"><!-- search-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you <strong>didn't find</strong> what you were looking for
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -66,9 +66,9 @@
                 SEARCH THE DOCS
               </a>
             </div>
-          </div><!-- row3 -->
+          </div><!-- search-row -->
 
-          <div class="row"><!-- row4 -->
+          <div class="row" id="forum-row"><!-- forum-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you want help with something very <strong>specific to your use case</strong>,
                 and can use some community support
@@ -76,28 +76,32 @@
               </p>
             </div>
             <div class="col-md-4 col-sm-12">
-              <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank">
-                <i class="fa fa-users" aria-hidden="true"></i>
-                POST ON GITLAB FORUM
-              </a>
+              <p>
+                <a role="button" class="comments-holder btn btn-default" href="https://forum.gitlab.com/" target="_blank">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  POST ON GITLAB FORUM
+                </a>
+              </p>
             </div>
-          </div><!-- row4 -->
+          </div><!-- forum-row -->
 
-          <div class="row"><!-- row5 -->
+          <div class="row" id="support-row"><!-- support-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you <strong>have problems</strong> setting up or using this feature (depending on your GitLab subscription)
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
               </p>
             </div>
             <div class="col-md-4 col-sm-12">
-              <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                REQUEST SUPPORT
-              </a>
+              <p>
+                <a role="button" class="comments-holder btn btn-default" href="https://about.gitlab.com/support/" target="_blank">
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                  REQUEST SUPPORT
+                </a>
+              </p>
             </div>
-          </div><!-- row5 -->
+          </div><!-- support-row -->
 
-          <div class="row"><!-- row6 -->
+          <div class="row" id="sales-row"><!-- sales-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you have questions about the <a href="https://about.gitlab.com/features/" target="_blank">features</a>
                  or <a href="https://about.gitlab.com/pricing/" target="_blank">pricing</a> of GitLab's paid tiers
@@ -110,11 +114,11 @@
                 CONTACT SALES
               </a>
             </div>
-          </div><!-- row6 -->
+          </div><!-- sales-row -->
         </div><!-- support -->
 
-        <div role="tabpanel" class="tab-pane" id="docs-feedback"><!-- docs-feedback -->
-          <div class="row"><!-- row7 -->
+        <div role="tabpanel" class="tab-pane active" id="docs-feedback"><!-- docs-feedback -->
+          <div class="row" id="edit-page-row"><!-- edit-page-row -->
             <div class="col-md-8 col-sm-12">
               <p>If you <strong>spot an error</strong> and would like to <strong>fix it yourself</strong> in a merge request
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -126,9 +130,9 @@
                 EDIT THIS PAGE
               </a>
             </div>
-          </div><!-- row7 -->
+          </div><!-- edit-page-row -->
 
-          <div class="row"><!-- row8 -->
+          <div class="row" id="doc-issue-row"><!-- doc-issue-row -->
             <div class="col-md-8 col-sm-12">
               <p>If this <strong>document is confusing or unclear</strong>
                 <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -140,11 +144,11 @@
                 CREATE AN ISSUE
               </a>
             </div>
-          </div><!-- row8 -->
+          </div><!-- doc-issue-row -->
           <%# Show comments only in production and on master branch (hide archives) %>
           <%# if @item[:comments].nil? && ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
             <% unless @item.identifier.to_s.split('/')[1] == 'ce' %>
-              <div class="row"><!-- row9-->
+              <div class="row" id="disqus-row"><!-- disqus-row-->
                 <div class="col-md-8 col-sm-12">
                   <p>If you want to give <strong>quick and simple feeback</strong> on this doc
                     <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
@@ -158,7 +162,7 @@
                     </a>
                   </div>
                 </div>
-              </div><!-- row9-->
+              </div><!-- disqus-row-->
             <% end %>
           <%# end %>
         </div><!-- docs-feedback -->
