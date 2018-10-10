@@ -1,5 +1,5 @@
 ---
-version: 46
+version: 47
 ---
 
 @import "variables";
@@ -265,8 +265,9 @@ li {
 }
 
 .main {
-  margin: auto;
+  margin: 0;
   padding: 8px 40px;
+  padding-bottom: 0;
   position: relative;
   width: auto;
   max-width: 900px;
