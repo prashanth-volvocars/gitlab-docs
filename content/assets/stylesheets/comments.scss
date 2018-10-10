@@ -10,6 +10,15 @@ version: 2
   border-top-style: solid;
   border-top-color: $border-color;
   border-top-width: 3px;
+  background-color: $body-bg;
+
+  @media all and (min-width: $mobile-width) {
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-bottom: -10px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .comments-filter {
@@ -29,7 +38,8 @@ version: 2
     }
 
     &.comments-holder {
-      display: block;
+      display: inline-block;
+      width: 100%;
     }
   }
 
@@ -43,16 +53,6 @@ version: 2
     &.black-icon {
       color: $color-gray;
       padding-left: 5px;
-    }
-  }
-
-  li > a {
-    color: $body-color;
-    border: solid 1px $border-color-light;
-
-    &:hover {
-      color: $body-color;
-      border: solid 1px $border-color;
     }
   }
 }
@@ -104,3 +104,25 @@ version: 2
     padding-bottom: 0;
   }
 }
+
+// scss-lint:disable ImportantRule
+.nav-tabs {
+  > li {
+
+    > a {
+      color: $body-color;
+      border: solid 1px $border-color-light;
+      background-color: $color-white;
+
+      &:hover {
+        color: $body-color;
+        border: solid 1px $border-color;
+      }
+    }
+
+    &.active > a {
+      background-color: $body-bg !important;
+    }
+  }
+}
+// scss-lint:enable ImportantRule
