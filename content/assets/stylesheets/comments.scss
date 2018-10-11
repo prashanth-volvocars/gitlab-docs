@@ -63,7 +63,6 @@ version: 2
 }
 
 .disqus-comments-gitlab {
-  padding-left: 15px;
 
   a {
     margin-bottom: 13px;
@@ -71,6 +70,12 @@ version: 2
 
   iframe {
     margin-top: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px $search-border;
+    margin-top: 25px;
   }
 }
 
