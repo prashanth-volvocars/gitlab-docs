@@ -90,6 +90,10 @@ version: 2
     background-color: $color-white;
     box-shadow: 1px 2px 3px $color-gray-extra-light;
   }
+
+  @media all and (max-width: $medium-width) {
+    font-size: 12px;
+  }
 }
 
 .tab-content {
