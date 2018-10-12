@@ -1,5 +1,5 @@
 ---
-version: 48
+version: 49
 ---
 
 @import "variables";
@@ -33,7 +33,6 @@ table {
   margin: 15px auto;
   word-wrap: break-word;
   clear: both;
-  display: inline-table;
 
   thead {
     background: $thead-background-color;
