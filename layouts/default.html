@@ -65,6 +65,9 @@
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
   <% end %>
+  <% if @item[:table_display_block] %>
+    <script type="application/javascript" src="/assets/javascripts/table-display-block.js"></script>
+  <% end %>
   <%= render '/footer.*' %>
 </body>
 </html>
