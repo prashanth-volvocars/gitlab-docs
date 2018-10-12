@@ -5,13 +5,7 @@
 <%= render '/canonical_urls.*' %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-<% if ENV['NANOC_ENV'] == 'production' %>
-  <%# Adds GTM only in production // leave this immediately after the opening the body tag%>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCXKT5"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-<% end %>
+  <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
     <div class="main class js-main-wrapper">

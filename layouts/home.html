@@ -5,13 +5,7 @@
     <link rel="canonical" href="<%= @config[:base_url] %>/">
   </head>
   <body class="landing">
-    <% if ENV['NANOC_ENV'] == 'production' %>
-      <%# Adds GTM only in production // leave this immediately after the opening the body tag%>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCXKT5"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-    <% end %>
+    <%= render '/gtm.*' %>
     <%= render '/landing-header.*' %>
     <div class="landing-header flex-container flex-column justify-center align-center">
       <h1 class="flex-container">👋 Hello, how can we help?</h1>
