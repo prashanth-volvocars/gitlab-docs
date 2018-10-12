@@ -11,13 +11,7 @@
     <!-- end of instantsearch -->
   </head>
   <body>
-    <% if ENV['NANOC_ENV'] == 'production' %>
-      <%# Adds GTM only in production // leave this immediately after the opening the body tag%>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCXKT5"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-    <% end %>
+    <%= render '/gtm.*' %>
     <%= render '/header.*' %>
     <div class=wrapper>
       <div id="doc-nav" class="doc-nav"></div>
