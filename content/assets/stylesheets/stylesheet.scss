@@ -1,5 +1,5 @@
 ---
-version: 47
+version: 48
 ---
 
 @import "variables";
@@ -266,7 +266,7 @@ li {
 }
 
 .main {
-  margin: 0;
+  margin: auto;
   padding: 8px 40px;
   padding-bottom: 0;
   position: relative;
@@ -362,12 +362,14 @@ li {
 
   .breadcrumbs {
     font-style: italic;
-
-    .last-updated {
-      color: $color-light-gray;
-      font-size: 13px;
-    }
   }
+}
+
+.last-updated {
+  color: $color-light-gray;
+  font-size: 13px;
+  padding-bottom: 10px;
+  text-align: right;
 }
 
 .btn-tanuki {
