@@ -10,6 +10,9 @@
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<% if @item[:noindex] %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
