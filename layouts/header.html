@@ -17,16 +17,17 @@
         <span class="caret"></span>
       </a>
       <ul class="dropdown-menu" aria-labelledby="versions">
-        <li><a href='/<%= @items['/_data/versions.yaml'][:current].first %>/'>(latest) <%= @items['/_data/versions.yaml'][:current].first %></a></li>
+        <li><a href='<%= @item.identifier.without_ext + '.html' %>'>master</a></li>
         <li role="separator" class="divider"></li>
+        <li><a href='/<%= @items['/_data/versions.yaml'][:current].first %><%= @item.identifier.without_ext + '.html' %>'><%= @items['/_data/versions.yaml'][:current].first %></a></li>
       <% @items['/_data/versions.yaml'][:previous].each do |version| %>
-        <li><a href='/<%= version %>/'><%= version %></a></li>
+        <li><a href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'><%= version %></a></li>
       <% end %>
-        <li><a href='/'>master</a></li>
         <li role="separator" class="divider"></li>
         <li><a href='/archives/'>Archives</a></li>
       </ul>
     </div>
+    <!-- versions dropdown-->
   </div>
   <div class="nav-container">
     <a class="nav-toggle" id="docs-nav-toggle">
