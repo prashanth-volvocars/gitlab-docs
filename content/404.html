@@ -5,10 +5,15 @@ title: 404 not found I say you!
 <div class='four-oh-four'>
   <center>
     <h1>404</h1>
-      <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
-      <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
+    <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
+    <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
     <br>
     <h2>Oh noes! Something's not right!</h2>
+    <br>
+    <p>
+      If you followed a link from the versions dropdown menu, that means that the
+      page you're looking for doesn't exist in this version!
+    </p>
     <br>
   </center>
 
@@ -32,21 +37,9 @@ title: 404 not found I say you!
   <% end %>
 
   <center>
-    <h3>
-      <a href="javascript:history.back()" class="js-go-back go-back">Go back</a>
-    </h3>
+    <a href="javascript:history.back()" class="btn btn-warning">← Go back</a>
   <center>
 </div>
-
-<script>
-  (function () {
-    var goBack = document.querySelector('.js-go-back');
-
-    if (history.length > 1) {
-      goBack.style.display = 'inline';
-    }
-  })();
-</script>
 
 <% if ENV['NANOC_ENV'] == 'production' %>
 <script type="text/javascript">

@@ -1,11 +1,12 @@
 ---
-version: 1
+version: 2
 ---
 
 // Override some main elements
 .four-oh-four {
   img {
     border: 0;
+    box-shadow: none;
   }
 
   h2, h3 {
