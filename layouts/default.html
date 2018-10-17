@@ -5,6 +5,7 @@
 <%= render '/canonical_urls.*' %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
+  <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
     <div class="main class js-main-wrapper">
@@ -43,19 +44,13 @@
       <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
         <%= yield %>
       </div>
-      <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
-      <%# Show Edit button only in production and on master branch (hide archives) %>
-      <div class="edit-on">
-        <%= edit_on_gitlab(@item) %>
-      </div>
-      <% end %>
       <% if @item[:last_updated] %>
         <hr>
         <p class="last-updated">
           <em>Last updated <%= @item[:last_updated] %></em>
         </p>
       <% end %>
-      <%= render '/disqus.*' %>
+      <%= render '/feedback.*' %>
     </div>
     <div class="clear"></div>
   </div>
@@ -69,6 +64,9 @@
   <% if ENV['NANOC_ENV'] == 'production' %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
+  <% end %>
+  <% if @item[:table_display_block] %>
+    <script type="application/javascript" src="/assets/javascripts/table-display-block.js"></script>
   <% end %>
   <%= render '/footer.*' %>
 </body>

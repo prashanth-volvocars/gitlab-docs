@@ -4,6 +4,7 @@
 <%= render '/head.*' %>
 </head>
 <body>
+  <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
     <div class="main class js-main-wrapper">
@@ -13,16 +14,15 @@
       <% if ENV['NANOC_ENV'] == 'production' && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
       <%# Show Edit button only in production and on master branch (hide archives) %>
       <div class="edit-on">
-        <%= edit_on_gitlab(@item) %>
+        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
       </div>
       <% end %>
       <% if @item[:last_updated] %>
         <hr>
-        <p class="last-updated">
+        <p class="last-updated" style="padding-bottom: 24px;">
           <em>Last updated <%= @item[:last_updated] %></em>
         </p>
       <% end %>
-      <%= render '/disqus.*' %>
     </div>
     <div class="clear"></div>
   </div>

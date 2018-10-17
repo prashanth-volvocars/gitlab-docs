@@ -1,7 +1,7 @@
 require './lib/task_helpers'
 require 'fileutils'
 
-task :default => [:setup_repos, :setup_content_dirs, :pull_repos]
+task :default => [:setup_repos, :pull_repos, :setup_content_dirs]
 
 task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
@@ -133,13 +133,19 @@ namespace :release do
       post.puts content
     end
 
-    puts "Created new Dockerfile: #{dockerfile}"
+    puts "=> Created new Dockerfile: #{dockerfile}"
 
     # Add and commit new Dockerfile
     `git add Dockerfile.#{version}`
     `git commit -m "Add #{version} Dockerfile"`
 
-    puts "You can now push the new branch:"
-    puts "git push origin #{version}"
+    puts
+    puts "--------------------------------"
+    puts
+    puts "=> You can now push the new branch:"
+    puts
+    puts "    git push origin #{version}"
+    puts
+    puts "--------------------------------"
   end
 end

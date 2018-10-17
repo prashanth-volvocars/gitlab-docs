@@ -9,6 +9,10 @@
 <% else %>
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<% if @item[:noindex] %>
+  <meta name="robots" content="noindex nofollow">
+<% end %>
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/bootstrap.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
@@ -19,12 +23,20 @@
 <!-- new fontawesome version 4 - via CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- end of fontawesome -->
+<% if ENV['NANOC_ENV'] == 'production' %>
+  <%# Adds GTM only in production %>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WZCXKT5');</script>
+  <!-- End Google Tag Manager -->
+<% end %>
 <script async src="<%= @items['/assets/javascripts/classlist-polyfill.*'].path %>"></script>
 <script async src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
 <!-- add cookie consent  -->
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" type="text/javascript" async></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <!-- you don't need to keep this, but it's cool for stats! -->
 <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 <!-- Algolia Searching from the URL bar https://www.algolia.com/doc/tutorials/search-ui/ux-patterns/search-from-the-url-bar/ -->

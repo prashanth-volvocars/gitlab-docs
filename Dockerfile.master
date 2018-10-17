@@ -26,9 +26,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # Go oldest-to-newest to take advantage of the fact that we change older
 # archives less often than new ones. Copy the versions found in
 # 'content/_data/versions.yaml' under current and previous.
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.7 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.8 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.0 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.1 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.2 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:11.3 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive
