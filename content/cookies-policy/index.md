@@ -1,5 +1,6 @@
 ---
 comments: false
+noindex: true
 ---
 
 # Cookies policy
