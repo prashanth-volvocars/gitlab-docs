@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import "variables";
@@ -32,6 +32,10 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 
 .search-input {
   border-radius: 2px;
+}
+
+.instantsearch-input {
+  padding-bottom: 7px;
 }
 
 .ais-stats {

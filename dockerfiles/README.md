@@ -48,13 +48,6 @@ and update the `latest` and `archives` images to include the new version.
 ### 1. Create an image for a single version
 
 1. Make sure you're on the root path of the repo
-1. Create the branch if it doesn't exist. Name the branch by using the major
-   minor versions:
-
-    ```
-    git checkout -b 10.5
-    ```
-
 1. Run the raketask to create the single version:
 
     ```
@@ -83,12 +76,12 @@ Make sure the mentioned [single images](#create-an-image-for-a-single-version)
 are built first.
 
 With every new release on the 22nd, we need to update the `latest` and `archives`
-Docker images.
+Docker images:
 
-There are 2 things to change:
-
-1. [`Dockerfile.archives`](Dockerfile.archives)
-1. [`Dockerfile.master`](../Dockerfile.master)
+1. [`Dockerfile.archives`](Dockerfile.archives) - Add the latest version to the
+   list.
+1. [`Dockerfile.master`](../Dockerfile.master) - Rotate the versions (oldest
+   gets removed and latest is added at the end of the list).
 
 Once you push, you may need to [run the scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules)
 (press the play button), since both of those images are built on a schedule,
@@ -114,6 +107,16 @@ the versions to reflect the new changes:
 
 Create a merge request with the changes and check if the links in the `/archives`
 page work as expected. If not, the `latest` image is possibly not yet updated.
+
+### 4. Add the new offline version in the redirect loop
+
+Since we're deprecating the oldest version each month, we need to redirect
+those URLs in order not to create [404 entries](https://gitlab.com/gitlab-com/gitlab-docs/issues/221).
+There's a temporary hack for now:
+
+1. Edit [`content/404.html`](../content/404.html)
+1. Make sure all offline versions under `content/_data/versions.yaml` are
+   in the javascript snippet at the end of the document.
 
 ## Update an old image with new upstream content
 

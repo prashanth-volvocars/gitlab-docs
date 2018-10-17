@@ -16,7 +16,7 @@ module Nanoc::Helpers
         anchor.squeeze!('-')        # replace multiple dashes with one
         anchor.gsub!(/^-|-$/, '')   # remove any first or last dashes
 
-        %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}' title='Permalink'></a></h#{header_level}>)
+        %(<h#{header_level} id='#{anchor}'>#{text} <a class='anchor' href='##{anchor}'></a></h#{header_level}>)
       end
 
       def image(link, title, alt_text)

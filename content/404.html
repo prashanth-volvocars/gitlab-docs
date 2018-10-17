@@ -5,15 +5,20 @@ title: 404 not found I say you!
 <div class='four-oh-four'>
   <center>
     <h1>404</h1>
-      <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
-      <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
+    <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
+    <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
     <br>
     <h2>Oh noes! Something's not right!</h2>
+    <br>
+    <p>
+      If you followed a link from the versions dropdown menu, that means that the
+      page you're looking for doesn't exist in this version!
+    </p>
     <br>
   </center>
 
   <% unless ENV['NANOC_ENV'] == 'production' %>
-  <p>Is it a Review App you're looking for? If yes, then did you <a href="/ee/development/writing_documentation.html#previewing-the-changes-live">read the docs</a>? Follow these steps to debug:</p>
+  <p>Is it a Review App you're looking for? If yes, then did you <a href="https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live">read the docs</a>? Follow these steps to debug:</p>
   <ol>
     <li>
       <strong>Did you follow the URL from the merge request widget?</strong> If yes, then check if
@@ -32,26 +37,15 @@ title: 404 not found I say you!
   <% end %>
 
   <center>
-    <h3>
-      <a href="javascript:history.back()" class="js-go-back go-back">Go back</a>
-    </h3>
+    <a href="javascript:history.back()" class="btn btn-warning">← Go back</a>
   <center>
 </div>
-
-<script>
-  (function () {
-    var goBack = document.querySelector('.js-go-back');
-
-    if (history.length > 1) {
-      goBack.style.display = 'inline';
-    }
-  })();
-</script>
 
 <% if ENV['NANOC_ENV'] == 'production' %>
 <script type="text/javascript">
   // Redirect to /archives on a non-existing versions
-  if (/10.3|10.4|10.5|10.6|10.7/.test(window.location.href)) {
+  // Place here all offline versions as seen inside content/_data/versions.yaml
+  if (/10.3|10.4|10.5|10.6|10.7|10.8|11.0/.test(window.location.href)) {
     window.location.replace("https://docs.gitlab.com/archives");
   }
 </script>

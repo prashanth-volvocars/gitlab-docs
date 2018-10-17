@@ -8,7 +8,7 @@
     <%# Show Edit button only in production and on master branch (hide archives) %>
     <div class="edit-on">
       <i class="fa fa-code-fork" aria-hidden="true"></i>
-      <%= edit_on_gitlab(@item) %>
+      <a href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
     </div>
     <% end %>
   </div>

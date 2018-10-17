@@ -60,12 +60,18 @@ $black: #333;
 $color-tanuki-dark: rgb(226, 67, 41);
 $color-tanuki-medium: rgb(252, 109, 38);
 $color-tanuki-light: rgb(252, 163, 38);
+$color-btn-tanuki: rgba(252, 163, 38, .1);
 
 // badges
 $badge-gitlab: $color-tanuki-medium;
 $badge-gitlab-com: $color-tanuki-light;
 $badge-gitlab-transparent: rgba(252, 109, 38, .1);
 $badge-gitlab-com-transparent: rgba(252, 163, 38, .1);
+
+//help and feedback section
+$feedback-bkg: #f3f3f3;
+$inactive-tabs: #e8e8e8;
+$buttons-bkg: #f9f9f9; //== body-bg
 
 // Footer variables
 
