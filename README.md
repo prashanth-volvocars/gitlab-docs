@@ -21,7 +21,7 @@ The [deployment process](#deployment-process) happens automatically every hour.
 - [Requirements](#requirements)
     - [Ruby](#ruby)
     - [Bundler](#bundler)
-- [Install Nanoc's dependencies](#install-nanoc-s-dependencies)
+- [Install Nanoc's dependencies](#install-nanocs-dependencies)
 - [Development under GDK](#development-under-gdk)
 - [Development when contributing to GitLab documentation](#development-when-contributing-to-gitlab-documentation)
     - [Clone the repositories](#clone-the-repositories)
@@ -126,14 +126,14 @@ See [how to preview the docs changes locally using the GitLab Development Kit](h
 ## Development when contributing to GitLab documentation
 
 This section is about contributing to one of GitLab's
-[projects' documentation](projects-we-pull-from), and preview your changes at
+[projects' documentation](#projects-we-pull-from), and preview your changes at
 the same time. To contribute how the docs website looks like, see
-[contributing to the docs site](contributing-to-the-docs-website-itself).
+[contributing to the docs site](#contributing-to-the-docs-website-itself).
 
 Before diving into writing, here's a few links that will come in handy:
 
-- [Writing documentation](https://docs.gitlab.com/ee/development/writing_documentation.html)
-- [Style guide](https://docs.gitlab.com/ee/development/doc_styleguide.html)
+- [Writing documentation](https://docs.gitlab.com/ee/development/documentation/index.html)
+- [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
 - [Community writers](https://about.gitlab.com/community-writers/)
 
 ### Clone the repositories
@@ -276,7 +276,7 @@ bundle exec rake pull_repos
 ```
 
 This will download all the docs content under the `tmp/` directory and copy it
-in `content/`. You can then [preview the website](preview-the-docs-website).
+in `content/`. You can then [preview the website](#preview-the-docs-website).
 
 If you want to force-delete the `tmp/` and `content/` folders so the task will
 run without manual intervention, run:
@@ -319,8 +319,8 @@ we reference the array with a symbol (`:versions`).
 
 ## Review Apps for documentation merge requests
 
-If you are contributing to GitLab docs read how to create a Review App with each
-merge request: https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live.
+If you are contributing to GitLab docs read how to [create a Review App with each
+merge request](https://docs.gitlab.com/ee/development/documentation/index.html#previewing-the-changes-live).
 
 ## Deployment process
 
@@ -333,7 +333,7 @@ to build the site once an hour.
 By default, we pull from the master branch of [all the projects](#projects-we-pull-from).
 
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
-[pages]: https://pages.gitlab.io
+[pages]: https://about.gitlab.com/features/pages/
 [environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
 [pipelines page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines
