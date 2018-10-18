@@ -1,27 +1,42 @@
 ---
 title: Docs archives | GitLab
 comments: false
-last_updated: 2018-04-12
+last_updated: 2018-10-17
 ---
 
 <h1>Docs archives</h1>
 
-This website contains online documentation for the current version of GitLab
-and the two previous versions.
+This website contains online versions of the GitLab
+documentation: the default version, the latest released
+version, and the two previously released versions.
 
 <% unless @items['/_data/versions.yaml'][:offline].nil? %>
 To browse a version that is not available online, see the
-<a href='#offline-archives'>offline archives</a>.
+<a href='#offline-archives'>offline archives</a>. They're
+available for download so that you can browse through them
+locally.
 <% end %>
 
-<h2 id="current-version">Current versions <a class="anchor" href="#current-version" title="Permalink"></a></h2>
+<h2 id="default-version">Default version <a class="anchor" href="#default-version"></a></h2>
 
-The current stable version is
+The <a href="/">default version</a> of this website
+is built from the <code>doc</code> directories on the <code>master</code> branches of
+<a href="https://gitlab.com/gitlab-org/gitlab-ce/tree/master/doc">GitLab Community Edition</a>,
+<a href="https://gitlab.com/gitlab-org/gitlab-ee/tree/master/doc">GitLab Enterprise Edition</a>,
+<a href="https://gitlab.com/gitlab-org/omnibus-gitlab/tree/master/doc">Omnibus GitLab</a>, and
+<a href="https://gitlab.com/gitlab-org/gitlab-runner/tree/master/docs">GitLab Runner</a>,
+all of them brought together by the
+<a href="https://gitlab.com/gitlab-com/gitlab-docs/">GitLab Docs</a>
+project, which continuously deploys this content to <a href="/">docs.gitlab.com</a>.
+
+<h2 id="latest-released-version">Latest released version <a class="anchor" href="#latest-released-version"></a></h2>
+
+The latest released stable version is
 <a href='/<%= @items['/_data/versions.yaml'][:current].first %>/'><%= @items['/_data/versions.yaml'][:current].first %></a>.
 
-<h2 id="previous-online-versions">Previous online versions <a class="anchor" href="#previous-online-versions" title="Permalink"></a></h2>
+<h2 id="previously-released-versions">Previously released versions <a class="anchor" href="#previously-released-versions"></a></h2>
 
-The following archives are available online:
+The following versions are available online:
 
 <ul>
 <% @items['/_data/versions.yaml'][:previous].each do |version| %>
@@ -32,10 +47,11 @@ The following archives are available online:
 </ul>
 
 <% unless @items['/_data/versions.yaml'][:offline].nil? %>
-<h2 id="offline-archives">Offline archives <a class="anchor" href="#offline-archives" title="Permalink"></a></h2>
+<h2 id="offline-archives">Offline archives <a class="anchor" href="#offline-archives"></a></h2>
 
 The following archives are available and can be browsed offline. You'll need to have
-<a href='https://docs.docker.com/install/' target='_blank'>Docker installed</a>.
+<a href='https://docs.docker.com/install/' target='_blank'>Docker installed</a>
+to access them.
 
 <% @items['/_data/versions.yaml'][:offline].each do |version| %>
 
