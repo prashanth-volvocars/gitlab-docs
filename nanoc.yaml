@@ -79,7 +79,10 @@ checks:
     # If an internal link matches this pattern, the validity check will be skipped.
     exclude:
       # Exclude major.minor versions that are used under /archives
-      - '^/\d{1,2}\.\d{1,2}/$'
+      - '^/\d{1,2}\.\d{1,2}/'
+      # The versions dropdown for the archives is incorrect. Remove this
+      # when fixed.
+      - '\/archives.html'
       # Exclude the extra links listed in the home page
       - '\/ee\/user\/project\/import\/'
       - '\/ee\/ci\/yaml\/'
