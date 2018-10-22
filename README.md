@@ -21,7 +21,7 @@ The [deployment process](#deployment-process) happens automatically every hour.
 - [Requirements](#requirements)
     - [Ruby](#ruby)
     - [Bundler](#bundler)
-- [Install Nanoc's dependencies](#install-nanoc-s-dependencies)
+- [Install Nanoc's dependencies](#install-nanocs-dependencies)
 - [Development under GDK](#development-under-gdk)
 - [Development when contributing to GitLab documentation](#development-when-contributing-to-gitlab-documentation)
     - [Clone the repositories](#clone-the-repositories)
@@ -32,6 +32,7 @@ The [deployment process](#deployment-process) happens automatically every hour.
 - [Using YAML data files](#using-yaml-data-files)
 - [Review Apps for documentation merge requests](#review-apps-for-documentation-merge-requests)
 - [Deployment process](#deployment-process)
+- [Algolia search](#algolia-search)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -126,14 +127,14 @@ See [how to preview the docs changes locally using the GitLab Development Kit](h
 ## Development when contributing to GitLab documentation
 
 This section is about contributing to one of GitLab's
-[projects' documentation](projects-we-pull-from), and preview your changes at
+[projects' documentation](#projects-we-pull-from), and preview your changes at
 the same time. To contribute how the docs website looks like, see
-[contributing to the docs site](contributing-to-the-docs-website-itself).
+[contributing to the docs site](#contributing-to-the-docs-website-itself).
 
 Before diving into writing, here's a few links that will come in handy:
 
-- [Writing documentation](https://docs.gitlab.com/ee/development/writing_documentation.html)
-- [Style guide](https://docs.gitlab.com/ee/development/doc_styleguide.html)
+- [Writing documentation](https://docs.gitlab.com/ee/development/documentation/index.html)
+- [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
 - [Community writers](https://about.gitlab.com/community-writers/)
 
 ### Clone the repositories
@@ -276,7 +277,7 @@ bundle exec rake pull_repos
 ```
 
 This will download all the docs content under the `tmp/` directory and copy it
-in `content/`. You can then [preview the website](preview-the-docs-website).
+in `content/`. You can then [preview the website](#preview-the-docs-website).
 
 If you want to force-delete the `tmp/` and `content/` folders so the task will
 run without manual intervention, run:
@@ -319,8 +320,8 @@ we reference the array with a symbol (`:versions`).
 
 ## Review Apps for documentation merge requests
 
-If you are contributing to GitLab docs read how to create a Review App with each
-merge request: https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live.
+If you are contributing to GitLab docs read how to [create a Review App with each
+merge request](https://docs.gitlab.com/ee/development/documentation/index.html#previewing-the-changes-live).
 
 ## Deployment process
 
@@ -332,8 +333,35 @@ to build the site once an hour.
 
 By default, we pull from the master branch of [all the projects](#projects-we-pull-from).
 
+## Algolia search
+
+The docs site uses [Algolia docsearch](https://community.algolia.com/docsearch/)
+for its search function. This is how it works:
+
+1. GitLab is a member of the [docsearch program](https://community.algolia.com/docsearch/#join-docsearch-program),
+   which is the free tier of [Algolia](https://www.algolia.com/).
+1. Algolia hosts a [doscsearch config](https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json)
+   for the GitLab docs site, and we've worked together to refine it.
+1. That [config](https://community.algolia.com/docsearch/config-file.html) is
+   parsed by their [crawler](https://community.algolia.com/docsearch/crawler-overview.html)
+   every 24h and [stores](https://community.algolia.com/docsearch/inside-the-engine.html)
+   the [docsearch index](https://community.algolia.com/docsearch/how-do-we-build-an-index.html)
+   on [Algolia's servers](https://community.algolia.com/docsearch/faq.html#where-is-my-data-hosted%3F).
+1. On the docs side, we use a [docsearch layout](/layouts/docsearch.html) which
+   is present on pretty much every page except https://docs.gitlab.com/search/,
+   which uses its [own layout](/layouts/instantsearch.html). In those layouts,
+   there's a javascript snippet which initiates docsearch by using an API key
+   and an index name (`gitlab`) that are needed for Algolia to show the results.
+
+**For GitLab employees:**
+The credentials to access the Algolia dashboard are stored in 1Password. If you
+want to receive weekly reports of the search usage, search the Google doc with
+title "Email, Slack, and GitLab Groups and Aliases", search for `docsearch`,
+and add a comment with your email to be added to the alias that gets the weekly
+reports.
+
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
-[pages]: https://pages.gitlab.io
+[pages]: https://about.gitlab.com/features/pages/
 [environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
 [pipelines page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines
