@@ -4,11 +4,13 @@
       <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
       <p>GitLab <strong>Docs</strong></p>
     </a>
-    <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-    <form id="search-form" action="/search/" method="get">
-      <input type="text" name="q" class="docsearch" placeholder="Search" required/>
-      <input type="submit" style="visibility: hidden; position:absolute;" />
-    </form>
+    <% if @item[:searchbar].nil? %>
+      <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+      <form id="search-form" action="/search/" method="get">
+        <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+        <input type="submit" style="visibility: hidden; position:absolute;" />
+      </form>
+      <% end %>
     <% end %>
     <!-- versions dropdown-->
     <div class="dropdown">
