@@ -24,6 +24,8 @@ module Nanoc::Helpers
           product = "ce" if File.exists?(ce_file)
         end
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
+      elsif product == "debug"
+        gitlab_url = "https://gitlab.com/debugging/#{product}/blob/master/content/#{docs_content_filename}"
       else
         # gitlab-docs pages
         gitlab_url = "https://gitlab.com/gitlab-com/gitlab-docs/blob/master/#{@item[:content_filename]}"
