@@ -1,44 +1,47 @@
 ---
-title: 404 not found I say you!
+title: Page Not Found | GitLab Documentation
+searchbar: false
 ---
 
 <div class='four-oh-four'>
-  <center>
-    <h1>404</h1>
-    <img src="<%= @items['/assets/images/404.png'].path %>" alt="Thank you GitLab Fan for the image!"/>
-    <!-- https://gitlabfan.com/gitlab-stickers-for-telegram-and-slack-16639b2c126 -->
+  <div class="center">
+    <img src="<%= @items['/assets/images/error-404.svg'].path %>" alt="404"/>
     <br>
-    <h2>Oh noes! Something's not right!</h2>
+    <h2>There's no page at this address!</h2>
     <br>
-    <p>
-      If you followed a link from the versions dropdown menu, that means that the
-      page you're looking for doesn't exist in this version!
+    <div id="pagesearchbar"> <!-- pagesearchbar -->
+      <form id="search-form" action="/search/" method="get">
+        <div class="input-container input-group">
+          <span class="input-group-addon search-icon">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+          <input id="search-input" type="text" name="q" class="docsearch form-control" placeholder="Type to search" required="true"/>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">All results</button>
+          </span>
+        </div>
+      </form>
+    </div> <!-- pagesearchbar -->
+    <div class="back-button center">
+      <a href="javascript:history.back()" class="btn btn-warning">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i> Go back</a>
+    </div>
+    <p class="left gray">
+      <em>If you followed a link from the <strong>Versions dropdown menu</strong>, 
+      the page does not exist in this version.</em>
     </p>
     <br>
-  </center>
+  </div>
 
   <% unless ENV['NANOC_ENV'] == 'production' %>
-  <p>Is it a Review App you're looking for? If yes, then did you <a href="https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live">read the docs</a>? Follow these steps to debug:</p>
-  <ol>
-    <li>
-      <strong>Did you follow the URL from the merge request widget?</strong> If yes, then check if
-      the link is the same as the one in the job output. It can happen that if the
-      branch name slug is longer than 35 characters, it is automatically
-      truncated. That means that the merge request widget will not show the proper
-      URL due to a limitation of how <code>environment: url</code> works, but you can find the
-      real URL from the output of the <code>review-docs-deploy</code> job.</li>
-    <li>
-      <strong>Did you follow the URL from the job output?</strong> If yes, then it means that
-      either the site is not yet deployed or something went wrong with the remote
-      pipeline. Give it a few minutes and it should appear online, otherwise you
-      can check the status of the remote pipeline from the link in the job output.
-      If the pipeline failed or got stuck, drop a line in the <code>#docs</code> chat channel.</li>
-  </ol>
+    <p class="gray">
+      <em>Are you coming from a <strong>Review App</strong> when working on this site? Read the docs on
+        <a href="https://docs.gitlab.com/ee/development/writing_documentation.html#troubleshooting-review-apps" >troubleshooting its review apps
+        </a> for info on how to preview the page you're looking for.
+      </em>
+    </p>
+    <br>
   <% end %>
-
-  <center>
-    <a href="javascript:history.back()" class="btn btn-warning">← Go back</a>
-  <center>
 </div>
 
 <% if ENV['NANOC_ENV'] == 'production' %>

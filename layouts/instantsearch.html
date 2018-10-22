@@ -3,12 +3,7 @@
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
-    <!-- instantsearch -->
-    <link rel="stylesheet" href="<%= @items['/assets/stylesheets/instantsearch.*'].path %>">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch-theme-algolia.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0/dist/instantsearch.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.5.0"></script>
-    <!-- end of instantsearch -->
+    <%= render '/instantsearch-head.*' %>
   </head>
   <body>
     <%= render '/gtm.*' %>
@@ -23,6 +18,8 @@
     </div>
       <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
       <script type="application/javascript" src="/assets/javascripts/instantsearch.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="application/javascript" src="/assets/javascripts/badges.js"></script>
       <%= render '/footer.*' %>
       <%= render '/analytics.*' %>
       <%= render '/https_redirect.*' %>
