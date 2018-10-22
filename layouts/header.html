@@ -24,11 +24,11 @@
         </li>
         <li role="separator" class="divider"></li>
         <li>
-          <a href='/<%= @items['/_data/versions.yaml'][:current].first %><%= @item.identifier.without_ext + '.html' %>'>
-          <%= @items['/_data/versions.yaml'][:current].first %>
+          <a href='/<%= @items['/_data/versions.yaml'][:online].first %><%= @item.identifier.without_ext + '.html' %>'>
+          <%= @items['/_data/versions.yaml'][:online].first %>
           </a>
         </li>
-        <% @items['/_data/versions.yaml'][:previous].each do |version| %>
+        <% @items['/_data/versions.yaml'][:online].drop(1).each do |version| %>
         <li>
           <a href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
             <%= version %>
