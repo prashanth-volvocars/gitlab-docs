@@ -1,6 +1,8 @@
 ---
-version: 2
+version: 3
 ---
+
+@import "variables";
 
 // Override some main elements
 .four-oh-four {
@@ -9,7 +11,26 @@ version: 2
     box-shadow: none;
   }
 
-  h2, h3 {
+  h1 {
+    font-size: 65px;
+    border-bottom-color: $color-gray-medium;
+  }
+
+  h2 {
     border-bottom: 0;
+    font-size: 22px;
+  }
+
+  .back-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .gray {
+    color: $color-gray;
+  }
+
+  .search-icon {
+    background-color: $color-white;
   }
 }
