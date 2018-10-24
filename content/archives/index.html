@@ -32,14 +32,18 @@ project, which continuously deploys this content to <a href="/">docs.gitlab.com<
 <h2 id="latest-released-version">Latest released version <a class="anchor" href="#latest-released-version"></a></h2>
 
 The latest released stable version is
-<a href='/<%= @items['/_data/versions.yaml'][:current].first %>/'><%= @items['/_data/versions.yaml'][:current].first %></a>.
+<a href='/<%= @items['/_data/versions.yaml'][:online].first %>/'><%= @items['/_data/versions.yaml'][:online].first %></a>.
 
 <h2 id="previously-released-versions">Previously released versions <a class="anchor" href="#previously-released-versions"></a></h2>
 
 The following versions are available online:
 
 <ul>
-<% @items['/_data/versions.yaml'][:previous].each do |version| %>
+<!--
+  List the online versions dropping the first and starting from the second one,
+  since the first is always the current and we list it in the previous section.
+-->
+<% @items['/_data/versions.yaml'][:online].drop(1).each do |version| %>
   <li>
     <a href='/<%= version %>/'><%= version %></a>
   </li>

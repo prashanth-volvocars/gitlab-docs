@@ -1,7 +1,7 @@
-current:
+# The first online version should always point to the
+# current stable version.
+online:
   - "11.4"
-
-previous:
   - "11.3"
   - "11.2"
 
