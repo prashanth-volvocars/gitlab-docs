@@ -3,10 +3,11 @@
   <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions">
     <!--
       Name the label dropdown after the release version so that you know
-      which version you're browsing. For `/archives` show 'Versions'.
+      which version you're browsing. For `/archives` show 'Archives' since
+      they're supposed to be versionless.
     -->
-    <% if @item.identifier.to_s.split('/')[1] == 'archives.html' %>
-    Versions
+    <% if @item.identifier.to_s.split('/')[1] == 'archives' %>
+    Archives
     <% else %>
     <%= ENV['CI_COMMIT_REF_NAME'] %>
     <% end %>
