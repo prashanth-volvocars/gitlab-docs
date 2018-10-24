@@ -4,7 +4,7 @@ const search = instantsearch({
   indexName: 'gitlab',
   algoliaOptions: {
     // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
-    'filters': "tags:gitlab OR tags:omnibus OR tags:runner",
+    'filters': "tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>",
     // Number of results shown in the search dropdown
     'hitsPerPage': 10,
   },
