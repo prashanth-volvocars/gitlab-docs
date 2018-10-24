@@ -1,0 +1,39 @@
+<!-- versions dropdown-->
+<div class="dropdown">
+  <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions">
+    <!--
+      Name the label dropdown after the release version so that you know
+      which version you're browsing. For `/archives` show 'Archives' since
+      they're supposed to be versionless.
+    -->
+    <% if @item.identifier.to_s.split('/')[1] == 'archives' %>
+    Archives
+    <% else %>
+    <%= ENV['CI_COMMIT_REF_NAME'] %>
+    <% end %>
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
+    <li>
+      <a href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
+        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="The latest docs from GitLab's master branches, to which this site defaults."></i>
+      </a>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li>
+      <a href='/<%= @items['/_data/versions.yaml'][:online].first %><%= @item.identifier.without_ext + '.html' %>'>
+      <%= @items['/_data/versions.yaml'][:online].first %>
+      </a>
+    </li>
+    <% @items['/_data/versions.yaml'][:online].drop(1).each do |version| %>
+    <li>
+      <a href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
+        <%= version %>
+      </a>
+    </li>
+    <% end %>
+    <li role="separator" class="divider"></li>
+    <li><a href='/archives/'>Archives</a></li>
+  </ul>
+</div>
+<!-- versions dropdown-->
