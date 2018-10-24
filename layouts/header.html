@@ -4,42 +4,15 @@
       <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
       <p>GitLab <strong>Docs</strong></p>
     </a>
-    <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-    <form id="search-form" action="/search/" method="get">
-      <input type="text" name="q" class="docsearch" placeholder="Search" required/>
-      <input type="submit" style="visibility: hidden; position:absolute;" />
-    </form>
+    <% if @item[:searchbar].nil? %>
+      <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+      <form id="search-form" action="/search/" method="get">
+        <input type="text" name="q" class="docsearch" placeholder="Search" required/>
+        <input type="submit" style="visibility: hidden; position:absolute;" />
+      </form>
+      <% end %>
     <% end %>
-    <!-- versions dropdown-->
-    <div class="dropdown">
-      <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions">
-        Versions
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
-        <li>
-          <a href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
-            <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="The latest docs from GitLab's master branches, to which this site defaults."></i>
-          </a>
-        </li>
-        <li role="separator" class="divider"></li>
-        <li>
-          <a href='/<%= @items['/_data/versions.yaml'][:current].first %><%= @item.identifier.without_ext + '.html' %>'>
-          <%= @items['/_data/versions.yaml'][:current].first %>
-          </a>
-        </li>
-        <% @items['/_data/versions.yaml'][:previous].each do |version| %>
-        <li>
-          <a href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
-            <%= version %>
-          </a>
-        </li>
-        <% end %>
-        <li role="separator" class="divider"></li>
-        <li><a href='/archives/'>Archives</a></li>
-      </ul>
-    </div>
-    <!-- versions dropdown-->
+    <%= render '/versions_dropdown.*' %>
   </div>
   <div class="nav-container">
     <a class="nav-toggle" id="docs-nav-toggle">
