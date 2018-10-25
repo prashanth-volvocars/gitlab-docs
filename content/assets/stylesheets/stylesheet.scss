@@ -1,5 +1,5 @@
 ---
-version: 52
+version: 53
 ---
 
 @import "variables";
@@ -1060,7 +1060,7 @@ h1, h2, h3, h4, h5, h6 {
 //badges
 .badges-drop {
   display: inline-block;
-  cursor: default;
+  cursor: pointer;
   padding-left: 5px;
   transition: background-color .5s ease-in-out;
 
