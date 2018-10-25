@@ -66,11 +66,13 @@
     };
 
     var template = function(title, badges) {
-      var container = $('<div>', {
+      var container = $('<a>', {
         class: 'badges-drop',
         'data-toggle': 'tooltip',
         'data-placement': 'top auto',
+        'target': '_blank',
         title: title,
+        href: 'https://about.gitlab.com/pricing/'
       });
       container.append($('<span>').append(badges));
 
