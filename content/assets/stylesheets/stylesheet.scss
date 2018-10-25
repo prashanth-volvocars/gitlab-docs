@@ -1,5 +1,5 @@
 ---
-version: 51
+version: 52
 ---
 
 @import "variables";
@@ -1209,15 +1209,6 @@ li {
   .badge-trigger {
     display: none;
   }
-}
-
-// https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
-*[id]:not(sup)::before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
 }
 
 //
