@@ -445,16 +445,6 @@ li {
     display: none;
   }
 
-  // https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
-  *[id]:not(sup)::before {
-    display: block;
-    content: " ";
-    margin-top: -75px;
-    height: 75px;
-    visibility: hidden;
-  }
-}
-
 // Override bootstrap's alert color
 .alert {
   color: inherit;
