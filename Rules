@@ -67,6 +67,7 @@ compile '/**/*.md' do
     filter :gitlab_kramdown,
       input: 'GitlabKramdown',
       syntax_highlighter: 'rouge',
+      default_lang: 'Plain Text',
       hard_wrap: false,
       auto_ids: true,
       toc_levels: 2..5,
