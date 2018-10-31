@@ -53,7 +53,7 @@ compile '/**/*.html' do
 end
 
 compile '/**/*.md' do
-  if item[:redirect_to].nil?
+  if item[:redirect].nil?
 
     # If 'toc' is absent in a file's yaml frontmatter, show ToC.
     # Set to 'toc: false' to disable it.
@@ -62,24 +62,19 @@ compile '/**/*.md' do
     # GitLab price / tiers specific badges
     filter :badges
 
-    # Use Redcarpet with Rouge.
-    filter :redcarpet,
-      renderer: HTML,
-      options: {
-        fenced_code_blocks:  true,
-        footnotes:           true,
-        lax_spacing:         true,
-        no_intra_emphasis:   true,
-        space_after_headers: true,
-        strikethrough:       true,
-        superscript:         true,
-        tables:              true,
-        autolink:            true,
-      },
-      renderer_options: {
-        with_toc_data: true
-      },
+    # Use GitlabKramdown with Rouge.
+    # https://gitlab.com/brodock/gitlab_kramdown
+    filter :gitlab_kramdown,
+      input: 'GitlabKramdown',
+      syntax_highlighter: 'rouge',
+      default_lang: 'Plain Text',
+      hard_wrap: false,
+      auto_ids: true,
+      toc_levels: 2..5,
       with_toc: include_toc
+
+    filter :colorize_syntax,
+      default_colorizer: :rouge
 
     filter :md_to_html_ext
     filter :admonition

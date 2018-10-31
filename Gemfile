@@ -4,12 +4,15 @@ gem 'nanoc', '~> 4.10'
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sass', '~> 3.6'
-gem 'redcarpet', '~> 3.4'
-gem 'rouge', '~> 2.2'
+gem 'kramdown'
+gem 'rouge', '~> 3.2'
 gem 'rake', '~> 12.3'
 
 group :nanoc do
   gem 'guard-nanoc', '~> 2.1'
+
+  # custom kramdown dialect
+  gem 'gitlab_kramdown', '~> 0.4'
 
   # nanoc checks
   gem 'nokogiri', '~> 1.7.0'
