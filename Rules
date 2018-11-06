@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_PATTERN})/
+TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/
 
 preprocess do
   badges_filter = BadgesFilter.new
@@ -31,7 +31,7 @@ preprocess do
       item[:title] ||= raw_title.gsub(TITLE_FILTER_REGEXP, '')
 
       # Run badges filter with title fragment
-      item[:title_badge] = badges_filter.run(raw_title.match(BadgesFilter::BADGES_PATTERN).to_s)
+      item[:title_badge] = badges_filter.run_from_markdown(raw_title.match(BadgesFilter::BADGES_MARKDOWN_PATTERN).to_s)
     end
   end
 end
@@ -59,9 +59,6 @@ compile '/**/*.md' do
     # Set to 'toc: false' to disable it.
     include_toc = item[:toc].nil? ? true : false
 
-    # GitLab price / tiers specific badges
-    filter :badges
-
     # Use GitlabKramdown with Rouge.
     # https://gitlab.com/brodock/gitlab_kramdown
     filter :gitlab_kramdown,
@@ -75,6 +72,9 @@ compile '/**/*.md' do
 
     filter :colorize_syntax,
       default_colorizer: :rouge
+
+    # GitLab price / tiers specific badges
+    filter :badges
 
     filter :md_to_html_ext
     filter :admonition
