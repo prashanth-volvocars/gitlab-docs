@@ -53,7 +53,7 @@ compile '/**/*.html' do
 end
 
 compile '/**/*.md' do
-  if item[:redirect].nil?
+  if item[:redirect_to].nil?
 
     # If 'toc' is absent in a file's yaml frontmatter, show ToC.
     # Set to 'toc: false' to disable it.
