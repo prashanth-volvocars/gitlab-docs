@@ -5,11 +5,18 @@
       Name the label dropdown after the release version so that you know
       which version you're browsing. For `/archives` show 'Archives' since
       they're supposed to be versionless.
+      If we build on master and stable branches (versions), show the branch
+      name in the dropdown menu. For local development and review apps, show
+      "Versions".
     -->
     <% if @item.identifier.to_s.split('/')[1] == 'archives' %>
     Archives
     <% else %>
-    <%= ENV['CI_COMMIT_REF_NAME'] %>
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <%= ENV['CI_COMMIT_REF_NAME'] %>
+      <% else %>
+        Versions
+      <% end %>
     <% end %>
     <span class="caret"></span>
   </a>
