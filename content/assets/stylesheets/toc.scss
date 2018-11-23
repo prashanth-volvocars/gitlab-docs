@@ -24,7 +24,8 @@ version: 4
       list-style: none;
 
       &::before {
-        content: "›\00a0";
+        content: "›";
+        margin-right: 8px;
       }
 
       > a {

@@ -14,7 +14,15 @@
 class BadgesFilter < Nanoc::Filter
   identifier :badges
 
-  BADGES_PATTERN = %r{
+  BADGES_HTML_PATTERN = %r{
+    <strong>
+    \[
+    (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE)(?:\s+(?<only>ONLY))?
+    \]
+    </strong>
+  }x
+
+  BADGES_MARKDOWN_PATTERN = %r{
     (?:^|[^`]) # must be start of the line or anything except backtick
     \*\*\[
     (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE)(?:\s+(?<only>ONLY))
@@ -23,14 +31,18 @@ class BadgesFilter < Nanoc::Filter
   }x
 
   def run(content, params = {})
-    content.gsub(BADGES_PATTERN) { generate(Regexp.last_match[:badge_type].downcase, !Regexp.last_match[:only].nil?) }
+    content.gsub(BADGES_HTML_PATTERN) { generate(Regexp.last_match[:badge_type].downcase, !Regexp.last_match[:only].nil?) }
+  end
+
+  def run_from_markdown(content)
+    content.gsub(BADGES_MARKDOWN_PATTERN) { generate(Regexp.last_match[:badge_type].downcase, !Regexp.last_match[:only].nil?) }
   end
 
   def generate(badge_type, only)
     if only
-      %[<span class="badge-trigger #{badge_type}-only"></span>]
+      %(<span class="badge-trigger #{badge_type}-only"></span>)
     else
-      %[<span class="badge-trigger #{badge_type}"></span>]
+      %(<span class="badge-trigger #{badge_type}"></span>)
     end
   end
 end

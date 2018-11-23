@@ -9,6 +9,11 @@ searchbar: false
     <br>
     <h2>There's no page at this address!</h2>
     <br>
+    <p class="gray">
+      <em>If you followed a link from the <strong>Versions dropdown menu</strong>,
+      the page does not exist in this version.</em>
+    </p>
+    <br>
     <div id="pagesearchbar"> <!-- pagesearchbar -->
       <form id="search-form" action="/search/" method="get">
         <div class="input-container input-group">
@@ -26,29 +31,15 @@ searchbar: false
       <a href="javascript:history.back()" class="btn btn-warning">
       <i class="fa fa-arrow-left" aria-hidden="true"></i> Go back</a>
     </div>
-    <p class="left gray">
-      <em>If you followed a link from the <strong>Versions dropdown menu</strong>, 
-      the page does not exist in this version.</em>
-    </p>
     <br>
   </div>
-
-  <% unless ENV['NANOC_ENV'] == 'production' %>
-    <p class="gray">
-      <em>Are you coming from a <strong>Review App</strong> when working on this site? Read the docs on
-        <a href="https://docs.gitlab.com/ee/development/writing_documentation.html#troubleshooting-review-apps" >troubleshooting its review apps
-        </a> for info on how to preview the page you're looking for.
-      </em>
-    </p>
-    <br>
-  <% end %>
 </div>
 
 <% if ENV['NANOC_ENV'] == 'production' %>
 <script type="text/javascript">
   // Redirect to /archives on a non-existing versions
   // Place here all offline versions as seen inside content/_data/versions.yaml
-  if (/10.3|10.4|10.5|10.6|10.7|10.8|11.0|11.1/.test(window.location.href)) {
+  if (/10.3|10.4|10.5|10.6|10.7|10.8|11.0|11.1|11.2/.test(window.location.href)) {
     window.location.replace("https://docs.gitlab.com/archives");
   }
 </script>

@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 @import "variables";
@@ -10,7 +10,7 @@ version: 2
   border-top-style: solid;
   border-top-color: $border-color;
   border-top-width: 3px;
-  background-color: $feedback-bkg;
+  background-color: $feedback-bg;
 
   @media all and (min-width: $mobile-width) {
     margin-left: -40px;
@@ -40,7 +40,7 @@ version: 2
     &.comments-holder {
       display: inline-block;
       width: 100%;
-      background-color: $buttons-bkg;
+      background-color: $buttons-bg;
 
       &:hover {
         background-color: $color-white;
@@ -133,7 +133,7 @@ version: 2
     }
 
     &.active > a {
-      background-color: $feedback-bkg !important;
+      background-color: $feedback-bg !important;
     }
   }
 }
