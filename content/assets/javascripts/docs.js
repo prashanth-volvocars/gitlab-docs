@@ -63,7 +63,7 @@ function toggleNavigation() {
 
     if (sidebar) {
       // if there are items
-      if (tocList.children.length > 1) {
+      if (tocList.children.length > 0) {
         var menu = tocList;
 
         // grab the h1's li anchor text
