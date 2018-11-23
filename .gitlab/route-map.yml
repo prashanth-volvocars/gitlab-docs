@@ -1,0 +1,52 @@
+########################################
+##                                    ##
+## Files under content/ and layouts/  ##
+##                                    ##
+########################################
+
+## Versions pointing to archives/
+- source: '/(content\/_data\/versions.yaml|layouts\/archives.html)/'
+  public: 'archives/'
+
+## Everything under content/*/index.md
+- source: '/content/(.+)\/index.md/'
+  public: '\1'
+
+## Home page
+- source: '/(content\/index.erb|layouts\/home.html)'
+  public: 'index.html'
+
+## 404
+- source: '/(content|layouts)\/404.html'
+  public: '404.html'
+
+##########################
+##                      ##
+## Files under content/ ##
+##                      ##
+##########################
+
+## Everything ending in erb hosted under content/
+- source: '/content\/(.+).erb/'
+  public: '\1'
+
+## HTML files
+- source: '/content\/(.+?\/html)/'
+  public: '\1'
+
+## Other files
+- source: '/content\/(.*)/'
+  public: '\1'
+
+##########################
+##                      ##
+## Files under layouts/ ##
+##                      ##
+##########################
+
+## Search
+- source: '/layouts\/instantsearch*/'
+  public: 'search/'
+
+- source: 'layouts/landing-header.html'
+  public: 'index.html'
