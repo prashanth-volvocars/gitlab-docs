@@ -1,5 +1,5 @@
 ---
-version: 51
+version: 54
 ---
 
 @import "variables";
@@ -191,6 +191,11 @@ h2, h3, h4, h5, h6 {
   @media all and (min-width: $mobile-width) {
     .anchor {
       opacity: 0;
+      float: left;
+      margin-left: -30px;
+      vertical-align: bottom;
+      margin-top: 8px;
+      height: 22px;
     }
 
     &:hover .anchor {
@@ -540,6 +545,23 @@ li {
     li {
       display: block;
       margin: 5px 0;
+
+      a {
+        color: $versions-link-color;
+
+        &:hover {
+          color: $versions-link-color-hover;
+        }
+      }
+
+      &.active a {
+        background-color: $versions-active-bg-color;
+        font-weight: 600;
+
+        &:hover {
+          color: $versions-link-color-hover;
+        }
+      }
 
       &.divider {
         margin: 0;
@@ -1060,7 +1082,7 @@ h1, h2, h3, h4, h5, h6 {
 //badges
 .badges-drop {
   display: inline-block;
-  cursor: default;
+  cursor: pointer;
   padding-left: 5px;
   transition: background-color .5s ease-in-out;
 
@@ -1209,15 +1231,6 @@ li {
   .badge-trigger {
     display: none;
   }
-}
-
-// https://gitlab.com/gitlab-com/gitlab-docs/issues/107#note_36655246
-*[id]:not(sup)::before {
-  display: block;
-  content: " ";
-  margin-top: -75px;
-  height: 75px;
-  visibility: hidden;
 }
 
 //
