@@ -19,7 +19,7 @@ $link-code-color: rgb(55, 119, 176);
 $code-color: rgb(95, 131, 65);
 $code-background-color: rgba(95, 131, 65, .1);
 
-//copy button bkg color == pre code color
+//copy button bg color == pre code color
 $pre-code-color: #2b303b;
 
 // Home page colors
@@ -69,9 +69,14 @@ $badge-gitlab-transparent: rgba(252, 109, 38, .1);
 $badge-gitlab-com-transparent: rgba(252, 163, 38, .1);
 
 //help and feedback section
-$feedback-bkg: #f3f3f3;
+$feedback-bg: #f3f3f3;
 $inactive-tabs: #e8e8e8;
-$buttons-bkg: #f9f9f9; //== body-bg
+$buttons-bg: #f9f9f9; //== body-bg
+
+// versions menu
+$versions-link-color: #707070;
+$versions-link-color-hover: #3a3a3a;
+$versions-active-bg-color: rgba(0, 0, 0, .04);
 
 // Footer variables
 

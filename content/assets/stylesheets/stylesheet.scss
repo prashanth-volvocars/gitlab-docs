@@ -1,5 +1,5 @@
 ---
-version: 53
+version: 54
 ---
 
 @import "variables";
@@ -545,6 +545,23 @@ li {
     li {
       display: block;
       margin: 5px 0;
+
+      a {
+        color: $versions-link-color;
+
+        &:hover {
+          color: $versions-link-color-hover;
+        }
+      }
+
+      &.active a {
+        background-color: $versions-active-bg-color;
+        font-weight: 600;
+
+        &:hover {
+          color: $versions-link-color-hover;
+        }
+      }
 
       &.divider {
         margin: 0;
