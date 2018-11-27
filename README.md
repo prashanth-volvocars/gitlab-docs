@@ -321,7 +321,8 @@ we reference the array with a symbol (`:versions`).
 ## Bumping versions of CSS and Javascript
 
 Whenever the custom CSS and Javascript files under `content/assets/` change,
-make sure to bump their version in the frontmatter.
+make sure to bump their version in the frontmatter. This method guarantees that
+your changes will take effect by clearing the cache of previous files.
 
 Always use Nanoc's way of including those files, do not hardcode them in the
 layouts. For example use:
