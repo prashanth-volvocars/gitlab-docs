@@ -1,5 +1,5 @@
 ---
-version: 54
+version: 55
 ---
 
 @import "variables";
@@ -276,17 +276,24 @@ li {
 }
 
 .main {
-  margin: auto;
+  margin: auto 15%;
   padding: 8px 40px;
   padding-bottom: 0;
   position: relative;
   width: auto;
   max-width: 900px;
-  box-shadow: 0 3px 3px $main-box-shadow;
+  border-left: 1px solid $main-box-shadow;
+  border-right: 1px solid $main-box-shadow;
   background: $main-background-color;
+  z-index: 1;
 
   @media (max-width: $mobile-width) {
     padding: 5px 10px;
+  }
+
+  @media(min-width:1601px) {
+    margin: auto 18%;
+    max-width: 64%;
   }
 
   &:not(.has-toc) {
@@ -377,6 +384,116 @@ li {
     font-style: italic;
   }
 }
+
+//global nav
+.global-nav {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+  margin-top: 56px;
+  padding-top: 15px;
+  padding-bottom: 5%;
+  padding-left: 3px;
+  background-color: $body-background-color;
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    &.active {
+      background-color: $link-color-bg-active;
+      font-weight: 600;
+      border-left: 3px solid;
+      color: $link-color-nav;
+
+      &:hover {
+        color: $link-color-nav;
+      }
+    }
+  }
+
+  @media(max-width:1099px) {
+    display: none;
+  }
+
+  @media(min-width:1601px) {
+    width: 18%;
+  }
+}
+
+.global-nav-block {
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+// scss-lint:disable QualifyingElement
+a.global-nav-link {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $link-color-bg-active;
+    color: $link-color-nav-hover;
+    box-shadow: 1px 1px 2px $global-nav-link-shadow;
+  }
+}
+// scss-lint:enable QualifyingElement
+
+.global-nav-block-top {
+  font-weight: 600;
+  margin-bottom: 3px;
+  margin-top: 3px;
+
+  a {
+    text-decoration: none;
+    text-shadow: 3px 3px 5px $link-color-bg-active;
+  }
+}
+
+// use these classes to add color and padding-left to the nav links
+.level-0 {
+  padding-left: 10px;
+  color: $global-nav-link-level0;
+
+  &.active {
+    padding-left: 7px; //10 - 3px of border
+  }
+}
+
+.level-1 {
+  padding-left: 20px;
+  color: $global-nav-link-level1;
+
+  &.active {
+    padding-left: 17px; //20 - 3px of border
+  }
+}
+
+.level-2 {
+  padding-left: 36px;
+  color: $global-nav-link-level2;
+  font-size: 14px;
+
+  &.active {
+    padding-left: 33px; //36 - 3px of border
+  }
+}
+
+.global-nav-badges {
+  color: $global-nav-link-level2;
+  opacity: .4;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+//end of global-nav
 
 .last-updated {
   color: $color-light-gray;
@@ -640,6 +757,7 @@ li {
       position: absolute;
       top: 15px;
       right: 15px;
+      color: $link-color-nav;
     }
   }
 

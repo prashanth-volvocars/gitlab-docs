@@ -97,7 +97,6 @@ internal_links:
   stage: test
   script:
     - bundle exec nanoc check internal_links
-  allow_failure: true
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
