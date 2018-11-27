@@ -1,3 +1,7 @@
+---
+version: 1
+---
+
 const search = instantsearch({
   appId: 'BH4D9OD16A',
   apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
