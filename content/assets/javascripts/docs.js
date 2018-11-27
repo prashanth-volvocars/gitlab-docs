@@ -1,3 +1,7 @@
+---
+version: 1
+---
+
 var NAV_INLINE_BREAKPOINT = 1100;
 
 var landingHeaderBar = document.getElementById('landing-header-bar');

@@ -65,8 +65,8 @@
   <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-  <script type="application/javascript" src="/assets/javascripts/clipboardjs.js"></script>
-  <script type="application/javascript" src="/assets/javascripts/badges.js"></script>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   <%= render '/docsearch.*' %>
   <%= render '/https_redirect.*' %>
   <% if ENV['NANOC_ENV'] == 'production' %>
@@ -74,7 +74,7 @@
     <%= render '/analytics.*' %>
   <% end %>
   <% if @item[:table_display_block] %>
-    <script type="application/javascript" src="/assets/javascripts/table-display-block.js"></script>
+    <script type="application/javascript" src="<%= @items['/assets/javascripts/table-display-block.*'].path %>"></script>
   <% end %>
   <%= render '/footer.*' %>
 </body>
