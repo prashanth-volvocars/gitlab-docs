@@ -8,6 +8,9 @@
   <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
+    <aside id="global-nav" class="global-nav">
+      <%= render '/global_nav.*' %>
+    </aside>
     <div class="main class js-main-wrapper">
       <% if @config[:breadcrumbs] %>
         <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
@@ -18,10 +21,15 @@
             <% end %>
             <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
           </ul>
+          <div id="doc-nav" class="doc-nav">
+            <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
+          </div>
+        <% else %>
+          <div id="doc-nav" class="doc-nav toc-no-breadcrumbs">
+            <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
+          </div>
         <% end %>
       <% end %>
-      <div id="doc-nav" class="doc-nav">
-      </div>
       <% if @item[:title] %>
         <h1 class="article-title" itemprop="name">
           <%= @item[:title] %><%= @item[:title_badge] %>

@@ -14,6 +14,9 @@ $body-font-size: 15px;
 $link-color: rgb(32, 137, 196);
 $link-color-hover: rgb(79, 172, 225);
 $link-code-color: rgb(55, 119, 176);
+$link-color-bg-active: rgba(170, 170, 170, .2);
+$link-color-nav: #707070;
+$link-color-nav-hover: #3a3a3a;
 
 // Inline code colors
 $code-color: rgb(95, 131, 65);
@@ -77,6 +80,12 @@ $buttons-bg: #f9f9f9; //== body-bg
 $versions-link-color: #707070;
 $versions-link-color-hover: #3a3a3a;
 $versions-active-bg-color: rgba(0, 0, 0, .04);
+
+//global nav
+$global-nav-link-level0: $link-color-nav;
+$global-nav-link-level1: $link-color-nav;
+$global-nav-link-level2: rgb(136, 136, 136);
+$global-nav-link-shadow: rgba(170, 170, 170, .5); // == $features-gray-light-barely-transparent;
 
 // Footer variables
 
