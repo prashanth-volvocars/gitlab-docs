@@ -2,39 +2,39 @@
 version: 1
 ---
 
-var NAV_INLINE_BREAKPOINT = 1100;
+document.addEventListener('DOMContentLoaded', function() {
+  var NAV_INLINE_BREAKPOINT = 1100;
 
-var landingHeaderBar = document.getElementById('landing-header-bar');
-var headerLinks = document.getElementsByClassName('header-link');
+  var landingHeaderBar = document.getElementById('landing-header-bar');
+  var headerLinks = document.getElementsByClassName('header-link');
 
-if (landingHeaderBar) {
-  window.addEventListener('scroll', function() {
-    if (window.scrollY >= 100) {
-      landingHeaderBar.classList.add('scrolling-header');
-      for (var i = 0; i < headerLinks.length; i++) {
-        headerLinks[i].classList.add('scrolling-header-links');
+  if (landingHeaderBar) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY >= 100) {
+        landingHeaderBar.classList.add('scrolling-header');
+        for (var i = 0; i < headerLinks.length; i++) {
+          headerLinks[i].classList.add('scrolling-header-links');
+        }
+      } else {
+        landingHeaderBar.classList.remove('scrolling-header');
+        for (var i = 0; i < headerLinks.length; i++) {
+          headerLinks[i].classList.remove('scrolling-header-links');
+        }
       }
-    } else {
-      landingHeaderBar.classList.remove('scrolling-header');
-      for (var i = 0; i < headerLinks.length; i++) {
-        headerLinks[i].classList.remove('scrolling-header-links');
-      }
-    }
-  });
-}
+    });
+  }
 
-var navtoggle = document.getElementById('docs-nav-toggle');
-if (navtoggle) {
-  navtoggle.addEventListener('click', toggleNavigation);
-}
+  var navtoggle = document.getElementById('docs-nav-toggle');
+  if (navtoggle) {
+    navtoggle.addEventListener('click', toggleNavigation);
+  }
 
-function toggleNavigation() {
-  nav = document.getElementsByClassName('header')[0];
-  nav.classList.toggle('active');
-}
+  function toggleNavigation() {
+    nav = document.getElementsByClassName('header')[0];
+    nav.classList.toggle('active');
+  }
 
-// move document nav to sidebar
-(function() {
+  // move document nav to sidebar
   var timeofday = document.getElementById('timeofday');
   var tocList = document.querySelector('.js-article-content > ul#markdown-toc');
   var main = document.querySelector('.js-main-wrapper');
@@ -125,36 +125,34 @@ function toggleNavigation() {
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var globalNav = document.getElementById('global-nav');
-    var media = window.matchMedia('(max-width: 1099px)');
+  var globalNav = document.getElementById('global-nav');
+  var media = window.matchMedia('(max-width: 1099px)');
 
-    window.addEventListener('scroll', function(e) {
-      var isTouchingBottom = false;
+  window.addEventListener('scroll', function(e) {
+    var isTouchingBottom = false;
 
-      if (!media.matches) {
-        isTouchingBottom =
-          window.scrollY + window.innerHeight >=
-          document.querySelector('.footer').offsetTop;
-      }
+    if (!media.matches) {
+      isTouchingBottom =
+        window.scrollY + window.innerHeight >=
+        document.querySelector('.footer').offsetTop;
+    }
 
-      if (isTouchingBottom) {
-        globalNav.style.top =
-          main.offsetHeight -
-          (window.scrollY + globalNav.offsetHeight) +
-          80 +
-          'px';
-      } else {
-        globalNav.style.top = '';
-      }
-    });
-
-    if (media.matches) {
-      var el = document.getElementById('markdown-toc');
-      el.classList.add('collapse');
-      el.classList.add('out');
-      el.style.height = '34px';
-      el.previousElementSibling.classList.add('collapsed');
+    if (isTouchingBottom) {
+      globalNav.style.top =
+        main.offsetHeight -
+        (window.scrollY + globalNav.offsetHeight) +
+        80 +
+        'px';
+    } else {
+      globalNav.style.top = '';
     }
   });
-})();
+
+  if (media.matches) {
+    var el = document.getElementById('markdown-toc');
+    el.classList.add('collapse');
+    el.classList.add('out');
+    el.style.height = '34px';
+    el.previousElementSibling.classList.add('collapsed');
+  }
+});
