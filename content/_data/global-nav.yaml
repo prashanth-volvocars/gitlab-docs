@@ -121,12 +121,14 @@ sections:
         docs:
           - doc_title: Authentication
             doc_url: 'topics/authentication/'
-          - doc_title: Git
-            doc_url: 'topics/git/'
           - doc_title: SSH
             doc_url: 'ssh/README.html'
+          - doc_title: API
+            doc_url: 'api/README.html'
           - doc_title: Integrations
             doc_url: 'integration/README.html'
+          - doc_title: Git
+            doc_url: 'topics/git/'
 
   - section_title: Administrator
     section_url: 'administration/'
