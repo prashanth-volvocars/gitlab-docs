@@ -91,9 +91,9 @@ compile_dev:
 ###############################################
 
 #
-# Check for 404s in internal links
+# Check for broken internal links
 #
-internal_links:
+test_internal_links:
   stage: test
   script:
     - bundle exec nanoc check internal_links
@@ -103,6 +103,20 @@ internal_links:
       - vendor/ruby
   <<: *except_pipelines
   <<: *retry
+
+#
+# Check for broken external links
+#
+test_external_links:
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
+  allow_failure: true
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
 
 #
 # SCSS linting
