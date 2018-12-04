@@ -67,7 +67,6 @@
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-  <script async src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
   <%= render '/docsearch.*' %>
   <%= render '/https_redirect.*' %>
   <% if ENV['NANOC_ENV'] == 'production' %>
@@ -78,5 +77,6 @@
     <script type="application/javascript" src="<%= @items['/assets/javascripts/table-display-block.*'].path %>"></script>
   <% end %>
   <%= render '/footer.*' %>
+  <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
 </body>
 </html>
