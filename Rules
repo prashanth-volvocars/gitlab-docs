@@ -7,19 +7,23 @@ preprocess do
 
   @items.each do |item|
     if item.identifier.to_s.end_with?(".md") && !item.binary?
+      # Check if there is a 'redirect_to' defined in the yaml frontmatter.
+      if item[:redirect_to]
+        # If the provided URL is in Markdown, correct it to HTML.
+        if item[:redirect_to].to_s.match(/.md$/)
+          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+        end
       # If there isn't already a 'redirect_to' defined in the yaml frontmatter,
       # use the text to assume the redirect URL.
-      unless item[:redirect_to]
+      else
+        # If the pattern 'This document was moved to [here](link)' is found.
         if item.raw_content =~ /^This document was moved to \[.*\]\(.*\)/m
           # Capture the intended page so the redirect page can redirect to it.
           item[:redirect_to] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
-          # Correct the URL.
-          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
-        end
-      else
-        # If the provided relative URL is in Markdown, correct it to HTML.
-        if item[:redirect_to].to_s.match(/.md$/)
-          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+          # If the provided URL is in Markdown, correct it to HTML.
+          if item[:redirect_to].to_s.match(/.md$/)
+            item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
+          end
         end
       end
 
