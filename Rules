@@ -18,7 +18,7 @@ preprocess do
         end
       else
         # If the provided relative URL is in Markdown, correct it to HTML.
-        unless item[:redirect_to].to_s.match(/.html$/)
+        if item[:redirect_to].to_s.match(/.md$/)
           item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
         end
       end
