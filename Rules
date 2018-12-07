@@ -21,9 +21,7 @@ preprocess do
           # Capture the intended page so the redirect page can redirect to it.
           item[:redirect_to] = item.raw_content.match(/^This document was moved to \[.*\]\((.*)\)/m)[1]
           # If the provided URL is in Markdown, correct it to HTML.
-          if item[:redirect_to].to_s.match(/.md$/)
-            item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html')
-          end
+          item[:redirect_to] = item[:redirect_to].gsub!(/\.md/, '.html') if item[:redirect_to].to_s.match(/.md/)
         end
       end
 
