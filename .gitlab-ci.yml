@@ -287,18 +287,18 @@ pages:
 #
 # GitLab docs lint image containing all test tools
 #
-image:docs-lint:
-  <<: *docker_prepare
-  stage: pre-deploy
-  variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
-    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
-  script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker push $IMAGE_NAME
-  only:
-    - schedules
-    - master
+#image:docs-lint:
+#  <<: *docker_prepare
+#  stage: pre-deploy
+#  variables:
+#    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
+#    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
+#  script:
+#    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+#    - docker push $IMAGE_NAME
+#  only:
+#    - schedules
+#    - master
 
 #
 # Helper Docker image containing all build dependencies
