@@ -9,7 +9,9 @@
   <%= render '/header.*' %>
   <div class="wrapper">
     <aside id="global-nav" class="global-nav">
+    <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
       <%= render '/global_nav.*' %>
+    <% end %>
     </aside>
     <div class="main class js-main-wrapper">
       <% if @config[:breadcrumbs] %>
