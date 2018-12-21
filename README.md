@@ -318,6 +318,30 @@ We can then loop over the `versions` array with something like:
 Note that the data file must have the `yaml` extension (not `yml`) and that
 we reference the array with a symbol (`:versions`).
 
+## Bumping versions of CSS and Javascript
+
+Whenever the custom CSS and Javascript files under `content/assets/` change,
+make sure to bump their version in the frontmatter. This method guarantees that
+your changes will take effect by clearing the cache of previous files.
+
+Always use Nanoc's way of including those files, do not hardcode them in the
+layouts. For example use:
+
+```erb
+<script async type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
+
+<link rel="stylesheet" href="<%= @items['/assets/stylesheets/toc.*'].path %>">
+```
+
+The links pointing to the files should be similar to:
+
+```erb
+<%= @items['/path/to/assets/file.*'].path %>
+```
+
+Nanoc will then build and render those links correctly according with what's
+defined in [`Rules`](/Rules).
+
 ## Review Apps for documentation merge requests
 
 If you are contributing to GitLab docs read how to [create a Review App with each

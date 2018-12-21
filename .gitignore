@@ -12,6 +12,7 @@ content/runner
 content/debug
 content/doc
 content/docs
+content/charts
 
 # Temporary file directory
 tmp/

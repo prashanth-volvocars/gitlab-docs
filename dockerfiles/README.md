@@ -108,7 +108,7 @@ the versions to reflect the new changes:
 Create a merge request with the changes and check if the links in the `/archives`
 page work as expected. If not, the `latest` image is possibly not yet updated.
 
-### 4. Add the new offline version in the redirect loop
+### 4. Add the new offline version in the 404 page redirect script
 
 Since we're deprecating the oldest version each month, we need to redirect
 those URLs in order not to create [404 entries](https://gitlab.com/gitlab-com/gitlab-docs/issues/221).

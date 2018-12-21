@@ -8,6 +8,11 @@
   <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
+    <aside id="global-nav" class="global-nav">
+    <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
+      <%= render '/global_nav.*' %>
+    <% end %>
+    </aside>
     <div class="main class js-main-wrapper">
       <% if @config[:breadcrumbs] %>
         <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
@@ -18,10 +23,15 @@
             <% end %>
             <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
           </ul>
+          <div id="doc-nav" class="doc-nav">
+            <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
+          </div>
+        <% else %>
+          <div id="doc-nav" class="doc-nav toc-no-breadcrumbs">
+            <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
+          </div>
         <% end %>
       <% end %>
-      <div id="doc-nav" class="doc-nav">
-      </div>
       <% if @item[:title] %>
         <h1 class="article-title" itemprop="name">
           <%= @item[:title] %><%= @item[:title_badge] %>
@@ -57,8 +67,8 @@
   <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-  <script type="application/javascript" src="/assets/javascripts/clipboardjs.js"></script>
-  <script type="application/javascript" src="/assets/javascripts/badges.js"></script>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   <%= render '/docsearch.*' %>
   <%= render '/https_redirect.*' %>
   <% if ENV['NANOC_ENV'] == 'production' %>
@@ -66,8 +76,9 @@
     <%= render '/analytics.*' %>
   <% end %>
   <% if @item[:table_display_block] %>
-    <script type="application/javascript" src="/assets/javascripts/table-display-block.js"></script>
+    <script type="application/javascript" src="<%= @items['/assets/javascripts/table-display-block.*'].path %>"></script>
   <% end %>
   <%= render '/footer.*' %>
+  <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
 </body>
 </html>
