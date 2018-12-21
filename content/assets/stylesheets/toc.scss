@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 @import "variables";
@@ -17,7 +17,6 @@ version: 5
 
   > ul {
     position: relative;
-    background: $body-background-color;
     padding: 16px 8px;
     margin-top: 60px;
 
@@ -31,7 +30,7 @@ version: 5
 
       > a {
         font-size: 14px;
-        color: $link-color-nav;
+        color: $toc-link-color;
 
         &:hover {
           color: $link-color-nav-hover;

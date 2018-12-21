@@ -1,5 +1,5 @@
 ---
-version: 56
+version: 57
 ---
 
 @import "variables";
@@ -15,14 +15,16 @@ body {
   line-height: 1.6;
   font-family: $sans-font-family;
   font-size: $body-font-size;
+  color: $body-color;
 }
 
 a, a:visited {
   text-decoration: none;
+  color: $link-color;
 
   &:hover {
     color: $link-color-hover;
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
@@ -302,10 +304,6 @@ li {
     }
   }
 
-  a {
-    text-decoration: none;
-  }
-
   .edit-on {
     text-align: center;
     border-top: 1px solid $hr-border-color;
@@ -385,6 +383,11 @@ li {
   }
 }
 
+// Override Bootstraps default button (for GDS colors)
+.btn-default:hover {
+  background-color: $button-default-bg-hover;
+}
+
 //global nav
 .global-nav {
   height: 100%;
@@ -398,7 +401,6 @@ li {
   padding-top: 15px;
   padding-bottom: 5%;
   padding-left: 3px;
-  background-color: $body-background-color;
 
   a {
     display: block;
@@ -431,7 +433,7 @@ li {
 }
 
 // scss-lint:disable QualifyingElement
-a.global-nav-link {
+a.global-nav-link, .nav-link {
   padding-top: 1px;
   padding-bottom: 1px;
   text-decoration: none;
@@ -463,6 +465,10 @@ a.global-nav-link {
   &.active {
     padding-left: 7px; //10 - 3px of border
   }
+
+  &:visited {
+    color: $global-nav-link-level0;
+  }
 }
 
 .level-1 {
@@ -471,6 +477,10 @@ a.global-nav-link {
 
   &.active {
     padding-left: 17px; //20 - 3px of border
+  }
+
+  &:visited {
+    color: $global-nav-link-level1;
   }
 }
 
@@ -481,6 +491,10 @@ a.global-nav-link {
 
   &.active {
     padding-left: 33px; //36 - 3px of border
+  }
+
+  &:visited {
+    color: $global-nav-link-level2;
   }
 }
 
@@ -668,16 +682,14 @@ a.global-nav-link {
 
         &:hover {
           color: $versions-link-color-hover;
+          background-color: $versions-link-color-bg-hover;
         }
       }
 
       &.active a {
         background-color: $versions-active-bg-color;
         font-weight: 600;
-
-        &:hover {
-          color: $versions-link-color-hover;
-        }
+        color: $link-color-nav;
       }
 
       &.divider {
