@@ -17,9 +17,9 @@
       <div class="clear"></div>
     </div>
       <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
-      <script type="application/javascript" src="/assets/javascripts/instantsearch.js"></script>
+      <script type="application/javascript" src="<%= @items['/assets/javascripts/instantsearch.*'].path %>"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script type="application/javascript" src="/assets/javascripts/badges.js"></script>
+      <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
       <%= render '/footer.*' %>
       <%= render '/analytics.*' %>
       <%= render '/https_redirect.*' %>

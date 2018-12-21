@@ -1,0 +1,205 @@
+# use "ee_only: true" for categories and docs available only in EE
+# use "external_url: true" for external URLs in docs and categories
+# do not start the URL with "/"
+
+sections:
+  - section_title: GitLab
+    section_url: 'README.html'
+
+  - section_title: User
+    section_url: 'user/'
+    section_categories:
+      - category_title: Groups
+        category_url: 'user/group/'
+        docs:
+          - doc_title: Subgroups
+            doc_url: 'user/group/subgroups/'
+          - doc_title: "Epics"
+            doc_url: 'user/group/epics/'
+            ee_only: true
+          - doc_title: Roadmaps
+            doc_url: 'user/group/roadmap/'
+            ee_only: true
+
+      - category_title: Projects
+        category_url: 'user/project/'
+        docs:
+          - doc_title: Settings
+            doc_url: 'user/project/settings/'
+          - doc_title: Members
+            doc_url: 'user/project/members/'
+          - doc_title: Security Dashboard
+            doc_url:  'user/project/security_dashboard.html'
+            ee_only: true
+          - doc_title: Cycle Analytics
+            doc_url: 'user/project/cycle_analytics.html'
+          - doc_title: Wikis
+            doc_url: 'user/project/wiki/'
+          - doc_title: Snippets
+            doc_url: 'user/snippets.html'
+          - doc_title: Discussions
+            doc_url: 'user/discussions/'
+
+      - category_title: Repositories
+        category_url: 'user/project/repository/'
+        docs:
+          - doc_title: Branches
+            doc_url: 'user/project/repository/branches/'
+          - doc_title: Signed Commits
+            doc_url: 'user/project/repository/gpg_signed_commits/'
+          - doc_title: Web Editor
+            doc_url: 'user/project/repository/web_editor.html'
+          - doc_title: Web IDE
+            doc_url: 'user/project/web_ide/'
+          - doc_title: Locked files
+            doc_url: 'user/project/file_lock.html'
+            ee_only: true
+
+      - category_title: Issues
+        category_url: 'user/project/issues/'
+        docs:
+          - doc_title: Issue Boards
+            doc_url: 'user/project/issue_board.html'
+          - doc_title: Labels
+            doc_url: 'user/project/labels.html'
+          - doc_title: Milestones
+            doc_url: 'user/project/milestones/'
+          - doc_title: Service Desk
+            doc_url: 'user/project/service_desk.html'
+            ee_only: true
+
+      - category_title: Merge Requests
+        category_url: 'user/project/merge_requests/'
+
+      - category_title: "GitLab CI/CD"
+        category_url: 'ci/README.html'
+        docs:
+          - doc_title: Configuration
+            doc_url: 'ci/yaml/README.html'
+          - doc_title: Examples
+            doc_url: 'ci/examples/README.html'
+          - doc_title: Pipelines
+            doc_url: 'ci/pipelines.html'
+          - doc_title: Schedules
+            doc_url: 'user/project/pipelines/schedules.html'
+          - doc_title: Review Apps
+            doc_url: 'ci/review_apps/'
+          - doc_title: GitLab Pages
+            doc_url: 'user/project/pages/'
+          - doc_title: Auto DevOps
+            doc_url: 'topics/autodevops/'
+
+      - category_title: Operations
+        category_url: 'user/project/integrations/prometheus_library/'
+        docs:
+          - doc_title: Metrics
+            doc_url: 'user/project/integrations/prometheus_library/'
+          - doc_title: Tracing
+            doc_url: 'user/project/operations/tracing.html'
+            ee_only: true
+          - doc_title: Environments
+            doc_url: 'ci/environments.html'
+          - doc_title: Kubernetes
+            doc_url: 'user/project/clusters/'
+          - doc_title: Feature Flags
+            doc_url: 'user/project/operations/feature_flags.html'
+            ee_only: true
+
+      - category_title: Container Registry
+        category_url: 'user/project/container_registry.html'
+
+      - category_title: Account
+        category_url: 'user/profile/'
+        docs:
+          - doc_title: Permissions
+            doc_url: 'user/permissions.html'
+          - doc_title: Markdown
+            doc_url: 'user/markdown.html'
+
+      - category_title: General
+        category_url: 'topics/authentication/'
+        docs:
+          - doc_title: Authentication
+            doc_url: 'topics/authentication/'
+          - doc_title: SSH
+            doc_url: 'ssh/README.html'
+          - doc_title: API
+            doc_url: 'api/README.html'
+          - doc_title: Integrations
+            doc_url: 'integration/README.html'
+          - doc_title: Git
+            doc_url: 'topics/git/'
+
+  - section_title: Administrator
+    section_url: 'administration/'
+    section_categories:
+      - category_title: Install
+        category_url: 'install/README.html'
+
+      - category_title: Update
+        category_url: 'update/README.html'
+
+      - category_title: Configure
+        category_url: 'user/admin_area/settings/'
+        docs:
+          - doc_title: Appearance
+            doc_url: 'customization/branded_login_page.html'
+          - doc_title: "CI/CD"
+            doc_url: 'user/admin_area/settings/continuous_integration.html'
+          - doc_title: Email
+            doc_url: 'user/admin_area/settings/email.html'
+          - doc_title: Gitaly
+            doc_url: 'administration/gitaly/'
+          - doc_title: GitLab Pages
+            doc_url: 'administration/pages/'
+          - doc_title: Health Check
+            doc_url: 'user/admin_area/monitoring/health_check.html'
+          - doc_title: Labels
+            doc_url: 'user/admin_area/labels.html'
+          - doc_title: Log system
+            doc_url: 'administration/logs.html'
+          - doc_title: OAuth applications
+            doc_url: 'administration/auth/README.html'
+          - doc_title: PlantUML Integration
+            doc_url: 'administration/integration/plantuml.html'
+          - doc_title: Repository checks
+            doc_url: 'administration/repository_checks.html'
+          - doc_title: Repository path
+            doc_url: 'administration/repository_storage_paths.html'
+          - doc_title: Repository size
+            doc_url: 'user/admin_area/settings/account_and_limit_settings.html'
+            ee_only: true
+          - doc_title: Runner
+            doc_url: 'ci/runners/README.html'
+          - doc_title: Service templates
+            doc_url: 'user/project/integrations/services_templates.html'
+          - doc_title: System Hooks
+            doc_url: 'system_hooks/system_hooks.html'
+
+      - category_title: Metrics
+        category_url: 'administration/monitoring/'
+        docs:
+          - doc_title: Influx
+            doc_url: 'administration/monitoring/performance/influxdb_configuration.html'
+          - doc_title: Prometheus
+            doc_url: 'administration/monitoring/prometheus/'
+          - doc_title: Performance bar
+            doc_url: 'administration/monitoring/performance/performance_bar.html'
+          - doc_title: Usage statistics
+            doc_url: 'user/admin_area/settings/usage_statistics.html'
+
+  - section_title: Contributor
+    section_url: 'development/README.html'
+    section_categories:
+      - category_title: Architecture
+        category_url: 'development/architecture.html#components'
+
+      - category_title: Documentation
+        category_url: 'development/documentation/'
+
+      - category_title: GitLab Design System
+        category_url: 'https://design.gitlab.com'
+        external_url: true
+
+      - category_title: Translate GitLab
+        category_url: 'development/i18n/'

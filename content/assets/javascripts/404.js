@@ -1,3 +1,7 @@
+---
+version: 1
+---
+
 document.addEventListener('DOMContentLoaded', function() {
   var el = document.getElementById('search-input');
   var path = window.location.pathname

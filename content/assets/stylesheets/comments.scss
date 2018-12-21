@@ -1,21 +1,23 @@
 ---
-version: 3
+version: 4
 ---
 
 @import "variables";
 
 .comments {
-  margin-top: 15px;
-  padding-top: 10px;
+  margin: 15px -10px 0;
+  padding: 10px 10px 0;
   border-top-style: solid;
   border-top-color: $border-color;
   border-top-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: $border-color;
+  border-bottom-width: 3px;
   background-color: $feedback-bg;
 
   @media all and (min-width: $mobile-width) {
     margin-left: -40px;
     margin-right: -40px;
-    margin-bottom: -10px;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -117,12 +119,19 @@ version: 3
   }
 }
 
+// Fixes padding in this row when the Disqus row isn't shown
+// scss-lint:disable IdSelector
+#doc-issue-row {
+  padding-bottom: 20px;
+}
+// scss-lint:enable IdSelector
+
 // scss-lint:disable ImportantRule
 .nav-tabs {
   > li {
     > a {
       color: $body-color;
-      border: solid 1px $border-color-light;
+      border: solid 1px $tabs-border;
       background-color: $inactive-tabs;
 
       &:hover {

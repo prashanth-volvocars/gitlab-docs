@@ -96,10 +96,16 @@ checks:
     # A list of patterns, specified as regular expressions, to exclude from the check.
     # If an external link matches this pattern, the validity check will be skipped.
     exclude:
-      - 'http:\/\/127\.0\.0\.1:3000.*'
-      - 'http:\/\/www\.amazon\.com\/.*'
-      - 'http:\/\/www\.amazon\.co\.uk\/.*'
-      - 'http:\/\/192\.168\.59\.103'
+      # Valid links incorrectly reported as broken
+      - 'https:\/\/www\.linkedin\.com\/company\/gitlab-com'
+      - 'https:\/\/auth0\.com\/auth\/login'
+      - 'https:\/\/gitlab-org\.gitlab\.io\/gitlab-svgs'
+      - 'https:\/\/dl\.acm\.org\/citation\.cfm\?id=361591'
+      - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
+      # Don't check links matching the following patterns
+      - 'https?:\/\/\w*\.example\.com.*'
+      - 'https?:\/\/localhost.*'
+      - 'https?:\/\/127.0.0.1.*'
 
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.

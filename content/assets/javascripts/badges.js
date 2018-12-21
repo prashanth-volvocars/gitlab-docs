@@ -1,3 +1,7 @@
+---
+version: 1
+---
+
 (function() {
   var BADGES_TITLES = {
     core: 'Available in GitLab Core, GitLab.com Free, and higher tiers',

@@ -1,3 +1,7 @@
+---
+version: 1
+---
+
 // add a copy button to every code // working
 $('pre').append($('<button class="clip-btn" title="Click to copy" data-selector="true"><i class="fa fa-clipboard" aria-hidden="true"></i></button>'));
 
