@@ -1,11 +1,12 @@
 image: ruby:2.5
 
 stages:
-  - images
+  - build-images
   - build
   - test
+  - pre-deploy
   - deploy
-  - docker-stable
+  - post-deploy
 
 #
 # Pick the remote branch, by default master (see the Rakefile for more info)
@@ -16,9 +17,32 @@ variables:
   BRANCH_OMNIBUS: 'master'
   BRANCH_RUNNER: 'master'
 
+#
+# Check Ruby version and install gems
+#
 before_script:
   - ruby -v
   - bundle install --jobs 4 --path vendor
+
+# Skip this job when it's invoked by a cross project pipeline. That will speed
+# up the pipeline when a docs preview is triggered. The triggered pipeline is
+# always a branch off master which should be green anyway. For more info:
+# https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
+.except_pipelines: &except_pipelines
+  except:
+    - pipelines
+#
+# Except stable branches (with names like '10.4', '11.2', etc.)
+#
+.except_stable: &except_stable
+  except:
+    - /^\d{1,2}\.\d{1,2}$/
+
+#
+# Retry a job automatically if it fails (2 times)
+#
+.retry: &retry
+  retry: 2
 
 ###############################################
 #             Build the website               #
@@ -27,8 +51,8 @@ before_script:
 .build_base: &build_base
   stage: build
   script:
-    - rake setup_git default
-    - nanoc compile -VV
+    - bundle exec rake setup_git default
+    - bundle exec nanoc compile -VV
   artifacts:
     paths:
       - public
@@ -38,8 +62,7 @@ before_script:
     paths:
       - tmp/
       - vendor/ruby
-  tags:
-    - docker
+  <<: *retry
 
 #
 # Compile only on master and stable branches
@@ -68,25 +91,32 @@ compile_dev:
 ###############################################
 
 #
-# Check for 404s in internal links
+# Check for broken internal links
 #
-internal_links:
+test_internal_links:
   stage: test
   script:
-    - nanoc check internal_links
+    - bundle exec nanoc check internal_links
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
+  <<: *retry
+
+#
+# Check for broken external links
+#
+test_external_links:
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
   allow_failure: true
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
-  tags:
-    - docker
-  # Skip this job when it's invoked by a cross project pipeline. That will speed
-  # up the pipeline when a docs preview is triggered. We already check for
-  # internal links in every MR anyway. For more info:
-  # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
-  except:
-    - pipelines
+  <<: *except_pipelines
 
 #
 # SCSS linting
@@ -99,14 +129,8 @@ scss_lint:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
-  tags:
-    - docker
-  # Skip this job when it's invoked by a cross project pipeline. That will speed
-  # up the pipeline when a docs preview is triggered. The triggered pipeline is
-  # always a branch off master which should be green anyway. For more info:
-  # https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
-  except:
-    - pipelines
+  <<: *except_pipelines
+  <<: *retry
 
 ###############################################
 #               Review Apps                   #
@@ -124,11 +148,15 @@ review:
   before_script: []
   cache: {}
   script:
+    - echo $CI_ENVIRONMENT_URL > environment_url.txt
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
+  artifacts:
+    paths:
+    - environment_url.txt
   only:
     - branches@gitlab-com/gitlab-docs
   # Except master and stable branches
@@ -138,6 +166,7 @@ review:
   tags:
     - nginx
     - review-apps
+  <<: *retry
 
 #
 # Stop the Review App
@@ -165,6 +194,7 @@ review_stop:
   tags:
     - nginx
     - review-apps
+  <<: *retry
 
 ###############################################
 #          GitLab Pages (production)          #
@@ -174,6 +204,7 @@ review_stop:
 # Deploy to production with GitLab Pages
 #
 pages:
+  image: registry.gitlab.com/gitlab-com/gitlab-docs:latest
   stage: deploy
   variables:
     GIT_STRATEGY: none
@@ -182,93 +213,156 @@ pages:
   environment:
     name: production
     url: https://docs.gitlab.com
+  dependencies:
+    - compile_prod    # Contains the public directory
   script:
-    # Symlink all README.html to index.html
+    # Use the URL in the browser performance testing below
+    - echo $CI_ENVIRONMENT_URL > environment_url.txt
+    # Move the already built versions to the public directory.
+    # We want to use the artifacts of the compile_prod job as
+    # the latest docs deployment, and the other versions are
+    # taken from /usr/share/nginx/html which are included in
+    # the image we pull from.
+    - mv public latest
+    - mv /usr/share/nginx/html public
+    - cp -a latest/* public/
+    # Symlink all README.html to index.html so that we can have clean URLs
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
   artifacts:
     paths:
     - public
-    expire_in: 1h
+    - environment_url.txt
+    expire_in: 1d
   only:
     - master@gitlab-com/gitlab-docs
-  tags:
-    - docker
-  dependencies:
-    - compile_prod
+  <<: *retry
+
+###############################################
+#           Performance testing               #
+###############################################
+
+# Disable as we don't really use it
+#performance:
+#  stage: post-deploy
+#  image: docker:git
+#  services:
+#    - docker:dind
+#  before_script: []
+#  cache: {}
+#  script:
+#    - export CI_ENVIRONMENT_URL=$(cat environment_url.txt)
+#    - mkdir gitlab-exporter
+#    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
+#    - mkdir sitespeed-results
+#    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results "$CI_ENVIRONMENT_URL"
+#    - mv sitespeed-results/data/performance.json performance.json
+#  artifacts:
+#    paths:
+#      - performance.json
+#      - sitespeed-results/
+#    expire_in: 1w
+#  only:
+#    - branches
+#  except:
+#    - /^\d{1,2}\.\d{1,2}$/
+#    - pipelines
+#  <<: *retry
 
 ###############################################
 #           Docker images builds              #
 ###############################################
 
-.docker_build: &docker_build
+#
+# Reuse some common commands
+#
+.docker_prepare: &docker_prepare
   image: docker:latest
   services:
     - docker:dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  <<: *retry
 
 #
-# Except stable branches with versions like 10.4
+# GitLab docs lint image containing all test tools
 #
-.except_stable: &except_stable
-  except:
-    - /^\d{1,2}\.\d{1,2}$/
+#image:docs-lint:
+#  <<: *docker_prepare
+#  stage: pre-deploy
+#  variables:
+#    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
+#    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
+#  script:
+#    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+#    - docker push $IMAGE_NAME
+#  only:
+#    - schedules
+#    - master
 
 #
-# Build the image containing all build dependencies
+# Helper Docker image containing all build dependencies
+# It must be rebuilt every time Gemfile.lock changes
 #
 image:bootstrap:
-  stage: images
-  <<: *docker_build
+  <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
+    DOCKERFILE: dockerfiles/Dockerfile.bootstrap
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.bootstrap .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
   <<: *except_stable
 
 #
-# Build the image that takes the website and builds it
+# Helper Docker image that builds the gitlab-docs website
 #
 image:builder-onbuild:
-  stage: images
-  <<: *docker_build
+  <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
+    DOCKERFILE: dockerfiles/Dockerfile.builder.onbuild
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.builder.onbuild .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
   <<: *except_stable
 
 #
-# Build the image that copies the final HTML files in a smaller image
+# Helper Docker image that copies the final HTML files in a smaller image
+# (no rubygems included)
 #
 image:nginx-onbuild:
-  stage: images
-  <<: *docker_build
+  <<: *docker_prepare
+  stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
+    DOCKERFILE: dockerfiles/Dockerfile.nginx.onbuild
   script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.nginx.onbuild .
+    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
-  only:
-    - web
+  <<: *except_stable
 
 #
-# Build the single archive image for stable versions
+# Final Docker image containing a single version
+# It is based on Dockerfile.single for each branch
 #
-image:docs-stable:
-  stage: docker-stable
-  <<: *docker_build
+image:docs-single:
+  <<: *docker_prepare
+  stage: pre-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   only:
@@ -277,31 +371,39 @@ image:docs-stable:
     - tags
 
 #
-# Build the multiple archives image
+# Final Docker image containing all the archives
 #
 image:docs-archives:
-  stage: images
-  <<: *docker_build
+  <<: *docker_prepare
+  stage: pre-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
     - docker push $IMAGE_NAME
-  when: manual
-  <<: *except_stable
+  # Run only on schedules since this will contain only the archives
+  only:
+    - schedules
 
 #
-# Build master containing all archives and latest docs
+# Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
-  stage: docker-stable
-  <<: *docker_build
+  <<: *docker_prepare
+  stage: pre-deploy
+  artifacts: {}
+  cache: {}
+  dependencies: []
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
+    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME .
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  only:
-    - master
   allow_failure: true
+  only:
+    - schedules
