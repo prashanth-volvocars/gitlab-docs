@@ -44,14 +44,6 @@ before_script:
 .retry: &retry
   retry: 2
 
-#
-# Tags
-#
-.tags: &tags
-  tags:
-    - docker
-    - gitlab-org
-
 ###############################################
 #             Build the website               #
 ###############################################
@@ -59,8 +51,8 @@ before_script:
 .build_base: &build_base
   stage: build
   script:
-    - rake setup_git default
-    - nanoc compile -VV
+    - bundle exec rake setup_git default
+    - bundle exec nanoc compile -VV
   artifacts:
     paths:
       - public
@@ -71,7 +63,6 @@ before_script:
       - tmp/
       - vendor/ruby
   <<: *retry
-  <<: *tags
 
 #
 # Compile only on master and stable branches
@@ -100,20 +91,32 @@ compile_dev:
 ###############################################
 
 #
-# Check for 404s in internal links
+# Check for broken internal links
 #
-internal_links:
+test_internal_links:
   stage: test
   script:
-    - nanoc check internal_links
-  allow_failure: true
+    - bundle exec nanoc check internal_links
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
   <<: *except_pipelines
   <<: *retry
-  <<: *tags
+
+#
+# Check for broken external links
+#
+test_external_links:
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
+  allow_failure: true
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
 
 #
 # SCSS linting
@@ -128,7 +131,6 @@ scss_lint:
       - vendor/ruby
   <<: *except_pipelines
   <<: *retry
-  <<: *tags
 
 ###############################################
 #               Review Apps                   #
@@ -234,36 +236,37 @@ pages:
   only:
     - master@gitlab-com/gitlab-docs
   <<: *retry
-  <<: *tags
 
 ###############################################
 #           Performance testing               #
 ###############################################
 
-performance:
-  stage: post-deploy
-  image: docker:git
-  services:
-    - docker:dind
-  before_script: []
-  cache: {}
-  script:
-    - export CI_ENVIRONMENT_URL=$(cat environment_url.txt)
-    - mkdir gitlab-exporter
-    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
-    - mkdir sitespeed-results
-    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results "$CI_ENVIRONMENT_URL"
-    - mv sitespeed-results/data/performance.json performance.json
-  artifacts:
-    paths:
-      - performance.json
-      - sitespeed-results/
-    expire_in: 1w
-  only:
-    - branches
-  <<: *except_pipelines
-  <<: *retry
-  <<: *tags
+# Disable as we don't really use it
+#performance:
+#  stage: post-deploy
+#  image: docker:git
+#  services:
+#    - docker:dind
+#  before_script: []
+#  cache: {}
+#  script:
+#    - export CI_ENVIRONMENT_URL=$(cat environment_url.txt)
+#    - mkdir gitlab-exporter
+#    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
+#    - mkdir sitespeed-results
+#    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results "$CI_ENVIRONMENT_URL"
+#    - mv sitespeed-results/data/performance.json performance.json
+#  artifacts:
+#    paths:
+#      - performance.json
+#      - sitespeed-results/
+#    expire_in: 1w
+#  only:
+#    - branches
+#  except:
+#    - /^\d{1,2}\.\d{1,2}$/
+#    - pipelines
+#  <<: *retry
 
 ###############################################
 #           Docker images builds              #
@@ -280,7 +283,22 @@ performance:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   <<: *retry
-  <<: *tags
+
+#
+# GitLab docs lint image containing all test tools
+#
+#image:docs-lint:
+#  <<: *docker_prepare
+#  stage: pre-deploy
+#  variables:
+#    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
+#    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
+#  script:
+#    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+#    - docker push $IMAGE_NAME
+#  only:
+#    - schedules
+#    - master
 
 #
 # Helper Docker image containing all build dependencies
