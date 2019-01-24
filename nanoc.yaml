@@ -180,7 +180,7 @@ products:
     index_file: 'index.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Debugging resources for GitLab Support Engineers'
-    repo: 'https://gitlab.com/debugging/debug'
+    repo: 'https://gitlab.com/debugging/debug.git'
     dirs:
       temp_dir: 'tmp/debug/'
       dest_dir: 'content/debug'
