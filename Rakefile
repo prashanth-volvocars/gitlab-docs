@@ -38,22 +38,6 @@ task :setup_repos do
   end
 end
 
-desc 'Setup content directories by symlinking to the repositories documentation folder'
-task :setup_content_dirs do
-  products.each_value do |product|
-    next unless File.exist?(product['dirs']['temp_dir'])
-
-    source = File.join('../', product['dirs']['temp_dir'], product['dirs']['doc_dir'])
-    target = product['dirs']['dest_dir']
-
-    next if File.symlink?(target)
-
-    puts "\n=> Setting up content directory for #{product['repo']}\n"
-
-    `ln -s #{source} #{target}`
-  end
-end
-
 desc 'Pulls down the CE, EE, Omnibus and Runner git repos fetching and keeping only the most recent commit'
 task :pull_repos do
   products.each_value do |product|
@@ -81,6 +65,22 @@ task :pull_repos do
       # Reset so that if the repo is cached, the latest commit will be used
       `git reset --hard origin/#{branch}`
     end
+  end
+end
+
+desc 'Setup content directories by symlinking to the repositories documentation folder'
+task :setup_content_dirs do
+  products.each_value do |product|
+    next unless File.exist?(product['dirs']['temp_dir'])
+
+    source = File.join('../', product['dirs']['temp_dir'], product['dirs']['doc_dir'])
+    target = product['dirs']['dest_dir']
+
+    next if File.symlink?(target)
+
+    puts "\n=> Setting up content directory for #{product['repo']}\n"
+
+    `ln -s #{source} #{target}`
   end
 end
 
