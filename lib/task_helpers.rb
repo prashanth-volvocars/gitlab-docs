@@ -19,7 +19,7 @@ end
 
 def retrieve_branch(slug)
   # If we're on a stable branch, catch the version and
-  # assign the right BRANCH_* variable.
+  # assign the product branches correctly.
   if version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
     case slug
     when 'ee'
