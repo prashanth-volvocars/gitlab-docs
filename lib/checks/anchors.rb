@@ -20,14 +20,20 @@ module Gitlab
       File.exists?(@file)
     end
 
-    def path
+    def directory
       File.dirname(@file)
     end
 
-    def document
-      raise ArgumentError unless exists?
+    def content
+      raise unless exists?
 
-      @doc ||= Nokogiri::HTML(File.read(@file))
+      @content ||= File.read(@file)
+    end
+
+    def document
+      raise if content.to_s.empty?
+
+      @doc ||= Nokogiri::HTML(content)
     end
 
     def links
@@ -58,10 +64,6 @@ module Gitlab
       @page = page
     end
 
-    def path
-      @href.to_s.partition('#').first
-    end
-
     def to_anchor?
       @href.to_s.include?('#')
     end
@@ -82,13 +84,17 @@ module Gitlab
       @href.to_s.length > 0 && !@href.include?(':')
     end
 
-    def destination_path
+    def path
+      @href.to_s.partition('#').first
+    end
+
+    def absolute_path
       raise unless internal?
 
       if @href.start_with?('/')
         Gitlab::Nanoc.output_dir + path
       else
-        ::File.expand_path(path, @page.path)
+        ::File.expand_path(path, @page.directory)
       end
     end
 
@@ -96,7 +102,7 @@ module Gitlab
       if internal_anchor?
         @page
       else
-        Gitlab::Page.build(destination_path)
+        Gitlab::Page.build(absolute_path)
       end
     end
 
@@ -133,12 +139,13 @@ Nanoc::Check.define(:internal_anchors) do
                 - source file `#{link.source_file}`
         ERROR
       elsif link.destination_anchor_not_found?
+        (require 'pry'; binding.pry) if link.anchor_name == '1-stop-server'
         add_issue <<~ERROR
           Broken anchor detected!
                 - anchor `##{link.anchor_name}`
                 - link `#{link.href}`
                 - source file `#{link.source_file}`
-                - destination `#{link.destination_file}
+                - destination `#{link.destination_file}`
         ERROR
       end
     end
