@@ -39,6 +39,14 @@ module Gitlab
     def has_anchor?(name)
       document.at_css(%Q{[id="#{name}"]})
     end
+
+    def self.build(path)
+      if path.end_with?('.html')
+        new(path)
+      else
+        new(File.join(path, 'index.html'))
+      end
+    end
   end
 
   class Link
@@ -84,38 +92,54 @@ module Gitlab
       end
     end
 
-    def destination_file
-      if destination_path.end_with?('.html')
-        destination_path
-      else
-        File.join(destination_path, 'index.html')
-      end
-    end
-
     def destination_page
       if internal_anchor?
         @page
       else
-        Gitlab::Page.new(destination_file)
+        Gitlab::Page.build(destination_path)
       end
+    end
+
+    def source_file
+      @page.file
+    end
+
+    def destination_file
+      destination_page.file
+    end
+
+    def destination_page_not_found?
+      !destination_page.exists?
+    end
+
+    def destination_anchor_not_found?
+      !destination_page.has_anchor?(anchor_name)
     end
   end
 end
 
 Nanoc::Check.define(:internal_anchors) do
-  @output_filenames.each do |file|
+  output_html_filenames.each do |file|
     Gitlab::Page.new(file).links.each do |link|
       next unless link.internal?
       next unless link.to_anchor?
+      next if link.anchor_name == 'markdown-toc'
 
-      link.destination_page.yield_self do |page|
-        next if link.anchor_name == 'markdown-toc'
-
-        if !page.exists?
-          add_issue("Page `#{page.file}` linked from `#{link.page.file}` not found!")
-        elsif !page.has_anchor?(link.anchor_name)
-          add_issue("Broken anchor `##{link.anchor_name}` found in `#{link.page.file}` to `#{link.destination_file}`")
-        end
+      if link.destination_page_not_found?
+        add_issue <<~ERROR
+          Destination page not found!
+                - link `#{link.href}`
+                - destination `#{link.destination_file}`
+                - source file `#{link.source_file}`
+        ERROR
+      elsif link.destination_anchor_not_found?
+        add_issue <<~ERROR
+          Broken anchor detected!
+                - anchor `##{link.anchor_name}`
+                - link `#{link.href}`
+                - source file `#{link.source_file}`
+                - destination `#{link.destination_file}
+        ERROR
       end
     end
   end
