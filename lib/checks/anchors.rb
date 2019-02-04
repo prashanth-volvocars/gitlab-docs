@@ -10,11 +10,63 @@ module Gitlab
       end
     end
 
+    class Element
+      def initialize(name, attributes)
+        @name = name
+        @attributes = attributes
+      end
+
+      def link?
+        @name == 'a' && !href.to_s.empty?
+      end
+
+      def has_id?
+        !id.to_s.empty?
+      end
+
+      def href
+        @href ||= attribute('href')
+      end
+
+      def id
+        @id ||= attribute('id')
+      end
+
+      private
+
+      def attribute(name)
+        @attributes.find { |attr| attr.first == name }&.last
+      end
+    end
+
+    class Document < Nokogiri::XML::SAX::Document
+      def initialize(page)
+        @page = page
+      end
+
+      def start_element(name, attributes = [])
+        Gitlab::Docs::Element.new(name, attributes).tap do |element|
+          @page.hrefs << element.href if element.link?
+          @page.ids << element.id if element.has_id?
+        end
+      end
+    end
+
     class Page
       attr_reader :file
+      attr_accessor :hrefs, :ids
 
       def initialize(file)
         @file = file
+
+        @hrefs = []
+        @ids = []
+
+        return unless exists?
+
+        Nokogiri::HTML::SAX::Parser
+          .new(Gitlab::Docs::Document.new(self))
+          .parse(File.read(file))
       end
 
       def exists?
@@ -31,20 +83,14 @@ module Gitlab
         @content ||= File.read(@file)
       end
 
-      def document
-        raise if content.to_s.empty?
-
-        @doc ||= Nokogiri::HTML(content)
-      end
-
       def links
-        @links ||= document.css(:a).map do |link|
+        @links ||= @hrefs.map do |link|
           Gitlab::Docs::Link.new(link, self)
         end
       end
 
       def has_anchor?(name)
-        document.at_css(%Q{[id="#{name}"]})
+        @ids.include?(name)
       end
 
       def self.build(path)
@@ -60,8 +106,7 @@ module Gitlab
       attr_reader :link, :href, :page
 
       def initialize(link, page)
-        @link = link
-        @href = link[:href]
+        @href = link
         @page = page
       end
 
@@ -72,7 +117,7 @@ module Gitlab
       def anchor_name
         raise ArguentError unless to_anchor?
 
-        @href.to_s.partition('#').last
+        @href.to_s.partition('#').last.downcase
       end
 
       def internal_anchor?
@@ -148,8 +193,9 @@ Nanoc::Check.define(:internal_anchors) do
                 - source file `#{link.source_file}`
                 - destination `#{link.destination_file}`
         ERROR
-
       end
     end
   end
+
+  add_issue "#{issues.count} offenses found!"
 end
