@@ -126,14 +126,14 @@ route '/**/*.{html,md}' do
   end
 end
 
+# Leave yaml files out
+ignore '/_data/*.yaml'
+
 compile '/**/*' do
   unless item.identifier.ext == 'scss'
     write item.identifier.to_s
   end
 end
-
-# Leave yaml files out
-ignore '/_data/*.yaml'
 
 layout '/**/*', :erb
 
