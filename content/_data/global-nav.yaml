@@ -90,7 +90,7 @@ sections:
             doc_url: 'topics/autodevops/'
 
       - category_title: Operations
-        category_url: 'user/project/integrations/prometheus_library/'
+        category_url: 'user/project/operations/'
         docs:
           - doc_title: Metrics
             doc_url: 'user/project/integrations/prometheus_library/'
