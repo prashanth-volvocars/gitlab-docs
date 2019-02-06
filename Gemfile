@@ -23,4 +23,5 @@ end
 group :test, :development do
   gem 'scss_lint', '~> 0.57', require: false
   gem 'highline', '~> 2.0'
+  gem 'rspec', '~> 3.5'
 end
