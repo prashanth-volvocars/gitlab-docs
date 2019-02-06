@@ -122,6 +122,7 @@ test_internal_links:
 #
 test_internal_anchors:
   stage: test
+  allow_failure: true
   tags:
     - docker
     - gitlab-org
