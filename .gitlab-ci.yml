@@ -109,6 +109,9 @@ test_internal_links:
 #
 test_internal_anchors:
   stage: test
+  tags:
+    - docker
+    - gitlab-org
   script:
     - bundle exec nanoc check internal_anchors
   cache:
