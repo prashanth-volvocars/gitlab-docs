@@ -91,6 +91,19 @@ compile_dev:
 ###############################################
 
 #
+# Run unit tests for internal classes
+#
+internal_unit_tests:
+  stage: test
+  script:
+    - bundle exec rspec
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
+
+#
 # Check for broken internal links
 #
 test_internal_links:
