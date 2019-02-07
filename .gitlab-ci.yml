@@ -91,6 +91,19 @@ compile_dev:
 ###############################################
 
 #
+# Run unit tests for internal classes
+#
+internal_unit_tests:
+  stage: test
+  script:
+    - bundle exec rspec
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
+
+#
 # Check for broken internal links
 #
 test_internal_links:
@@ -105,6 +118,23 @@ test_internal_links:
   <<: *retry
 
 #
+# Validate internal anchors
+#
+test_internal_anchors:
+  stage: test
+  allow_failure: true
+  tags:
+    - docker
+    - gitlab-org
+  script:
+    - bundle exec nanoc check internal_anchors
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+  <<: *except_pipelines
+  <<: *retry
+
 # Check for broken external links
 #
 test_external_links:
