@@ -1,7 +1,7 @@
 require 'yaml'
 
 PRODUCTS = %W[ce ee omnibus runner debug].freeze
-VERSION_FORMAT = /^(\d{1,2})\.(\d{1,2})$/
+VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/
 
 def config
   # Parse the config file and create a hash.
@@ -23,9 +23,9 @@ def retrieve_branch(slug)
   if version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
     case slug
     when 'ee'
-      "#{version[1]}-#{version[2]}-stable-ee"
+      "#{version[:major]}-#{version[:minor]}-stable-ee"
     when 'ce', 'omnibus', 'runner'
-      "#{version[1]}-#{version[2]}-stable"
+      "#{version[:major]}-#{version[:minor]}-stable"
     else
       'master'
     end
