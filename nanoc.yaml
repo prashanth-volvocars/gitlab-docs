@@ -173,6 +173,19 @@ products:
       dest_dir: 'content/runner'
       doc_dir:  'docs'
     expose: true
+  charts:
+    full_name: 'GitLab Helm chart'
+    short_name: 'Chart'
+    slug: 'charts'
+    index_file: 'index.*'
+    img: '/assets/images/docs-gitlab.svg'
+    description: 'Deploy GitLab to Kubernetes using the GitLab Helm Charts.'
+    repo: 'https://gitlab.com/charts/gitlab.git'
+    dirs:
+      temp_dir: 'tmp/charts/'
+      dest_dir: 'content/charts'
+      doc_dir:  'doc'
+    expose: false
   debug:
     full_name: 'Debugging for GitLab Support'
     short_name: 'Debug'
