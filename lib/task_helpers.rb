@@ -1,6 +1,7 @@
 require 'yaml'
 
 PRODUCTS = %W[ce ee omnibus runner debug].freeze
+VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/
 
 def config
   # Parse the config file and create a hash.
@@ -17,7 +18,20 @@ def products
 end
 
 def retrieve_branch(slug)
-  ENV.fetch("BRANCH_#{slug.upcase}", 'master')
+  # If we're on a stable branch, catch the version and
+  # assign the product branches correctly.
+  if version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
+    case slug
+    when 'ee'
+      "#{version[:major]}-#{version[:minor]}-stable-ee"
+    when 'ce', 'omnibus', 'runner'
+      "#{version[:major]}-#{version[:minor]}-stable"
+    else
+      'master'
+    end
+  else
+    ENV.fetch("BRANCH_#{slug.upcase}", 'master')
+  end
 end
 
 def git_workdir_dirty?
