@@ -4,32 +4,32 @@ module Gitlab
       attr_reader :link, :href, :page
 
       def initialize(link, page)
-        @href = link
+        @href = link.to_s
         @page = page
       end
 
       def to_anchor?
-        @href.to_s.include?('#')
+        !anchor_name.to_s.empty?
       end
 
       def anchor_name
-        raise ArgumentError unless to_anchor?
+        return unless @href.include?('#')
 
-        @href.to_s.partition('#').last.downcase
+        @href.partition('#').last.downcase
       end
 
       def internal_anchor?
-        raise ArgumentError unless to_anchor?
+        return false unless to_anchor?
 
-        @href.to_s.partition('#').first.empty?
+        @href.partition('#').first.empty?
       end
 
       def internal?
-        @href.to_s.length > 0 && !@href.include?(':')
+        @href.length > 0 && !@href.include?(':')
       end
 
       def path
-        @href.to_s.partition('#').first
+        @href.partition('#').first
       end
 
       def absolute_path
