@@ -67,6 +67,8 @@ function toggleNavigation() {
       // if there are items
       if (tocList.children.length >= 1) {
         var menu = tocList;
+        $(tocList).addClass('nav nav-pills nav-stacked');
+        $(tocList).find('ul').addClass('nav nav-pills nav-stacked');
 
         // grab the h1's li anchor text
         var title = document.createElement('h4');

@@ -31,10 +31,25 @@ version: 6
       > a {
         font-size: 14px;
         color: $toc-link-color;
+        display: inline;
+        padding: 3px 7px;
 
         &:hover {
           color: $link-color-nav-hover;
           text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+
+      &.active > a {
+        font-weight: 600;
+        color: $link-color-nav;
+        background-color: transparent;
+
+        &:hover, &:only-child {
+          color: $link-color-nav-hover;
+          text-decoration: underline;
+          background-color: transparent;
         }
       }
     }
