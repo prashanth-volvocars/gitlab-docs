@@ -1,6 +1,13 @@
 # First use the bootstrap image to build master
 FROM registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap as builder
 
+# Set up needed environment variables that are called with --build-arg when
+# the Docker image is built (see .gitlab-ci.yml).
+ARG NANOC_ENV
+ARG CI_COMMIT_REF_NAME
+# If CI_COMMIT_REF_NAME is not set (local development), set it to master
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
+
 # Build the docs from this branch
 COPY . /source/
 RUN bundle exec rake setup_git default

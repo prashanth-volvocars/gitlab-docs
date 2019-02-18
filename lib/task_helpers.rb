@@ -18,17 +18,24 @@ def products
 end
 
 def retrieve_branch(slug)
-  # If we're on a stable branch, catch the version and
-  # assign the product branches correctly.
-  if version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
+  # If CI_COMMIT_REF_NAME is not defined, set it to master.
+  if ENV["CI_COMMIT_REF_NAME"].nil?
+    'master'
+  # If we're on a gitlab-docs stable branch according to the regex, catch the
+  # version and assign the product stable branches correctly.
+  elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
     case slug
+    # EE has different branch name scheme
     when 'ee'
       "#{version[:major]}-#{version[:minor]}-stable-ee"
     when 'ce', 'omnibus', 'runner'
       "#{version[:major]}-#{version[:minor]}-stable"
+    # For all other products (see charts), use master
     else
       'master'
     end
+  # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
+  # variable, and if not assigned, set to master.
   else
     ENV.fetch("BRANCH_#{slug.upcase}", 'master')
   end
