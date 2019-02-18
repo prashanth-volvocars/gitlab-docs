@@ -77,6 +77,22 @@ function toggleNavigation() {
         // add the text as a title
         menu.insertBefore(title, menu.children[0]);
 
+        var hasHelpSection = document.getElementById('help-and-feedback');
+
+        // Adds help section anchor to the ToC sidebar
+        if(hasHelpSection) {
+          var listItem = document.createElement('li');
+          var anchor = document.createElement('a');
+          var separator = document.createElement('hr');
+
+          anchor.innerHTML = 'Help and feedback';
+          anchor.setAttribute('href', '#help-and-feedback');
+          listItem.appendChild(anchor);
+
+          menu.insertBefore(separator, menu.children[menu.children.length]);
+          menu.insertBefore(listItem, menu.children[menu.children.length]);
+        }
+
         sidebar.appendChild(menu);
 
         var sidebarContent = sidebar.querySelector('ul');
