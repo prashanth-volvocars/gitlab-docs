@@ -143,7 +143,7 @@ sections:
         category_url: 'user/admin_area/settings/'
         docs:
           - doc_title: Appearance
-            doc_url: 'customization/branded_login_page.html'
+            doc_url: 'customization/'
           - doc_title: "CI/CD"
             doc_url: 'user/admin_area/settings/continuous_integration.html'
           - doc_title: Email
