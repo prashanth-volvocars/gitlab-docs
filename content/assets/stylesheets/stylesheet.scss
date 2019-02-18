@@ -399,8 +399,11 @@ li {
   overflow: scroll;
   margin-top: 56px;
   padding-top: 15px;
-  padding-bottom: 5%;
   padding-left: 3px;
+
+  .global-nav-content {
+    margin-bottom: 70px;
+  }
 
   a {
     display: block;
