@@ -1,6 +1,10 @@
 ---
-version: 1
+version: 2
 ---
 
-var tableBlock = document.querySelector('table');
-tableBlock.classList.add('display-block');
+var tableList = document.querySelectorAll('.js-article-content table');
+tableList.forEach(
+  function(table) {
+    table.classList.add('display-block');
+  }
+);
