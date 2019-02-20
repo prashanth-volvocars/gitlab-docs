@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'nanoc', '~> 4.10'
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
-gem 'sass', '~> 3.6'
+gem 'sassc', '~> 2.0'
 gem 'rouge', '~> 3.2'
 gem 'rake', '~> 12.3'
 
