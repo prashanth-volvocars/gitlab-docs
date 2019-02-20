@@ -136,14 +136,15 @@ namespace :release do
     puts "=> Created new Dockerfile: #{dockerfile}"
 
     # Add and commit new Dockerfile
-    `git add Dockerfile.#{version}`
-    `git commit -m "Add #{version} Dockerfile"`
+    puts "!! Make sure to change the charts branch in Dockerfile.#{version} !!"
 
     puts
     puts "--------------------------------"
     puts
-    puts "=> You can now push the new branch:"
+    puts "=> You can now add, commit and push the new branch:"
     puts
+    puts "    git add Dockerfile.#{version}"
+    puts "    git commit -m 'Add #{version} Dockerfile'"
     puts "    git push origin #{version}"
     puts
     puts "--------------------------------"
