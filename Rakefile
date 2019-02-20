@@ -133,13 +133,12 @@ namespace :release do
       post.puts content
     end
 
-    puts "=> Created new Dockerfile: #{dockerfile}"
-
-    # Add and commit new Dockerfile
-    puts "!! Make sure to change the charts branch in Dockerfile.#{version} !!"
-
     puts
     puts "--------------------------------"
+    puts
+    puts "=> Created new Dockerfile: #{dockerfile}"
+    puts
+    puts "!! Make sure to change the charts branch in Dockerfile.#{version} !!"
     puts
     puts "=> You can now add, commit and push the new branch:"
     puts
