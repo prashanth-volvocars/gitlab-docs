@@ -53,6 +53,7 @@ There are currently 4 products that are pulled and generate the docs website:
 - [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
+- [GitLab Chart](https://gitlab.com/charts/gitlab)
 
 **Note:**
 Although GitLab Community Edition is generated, it is hidden from the website
@@ -65,7 +66,7 @@ In order to be able to preview any changes you make to GitLab's documentation,
 here's what you will need to have:
 
 - A Unix/Linux environment
-- Ruby 2.4+
+- Ruby 2.5+
 - Bundler
 
 **Note:**
@@ -179,6 +180,7 @@ Then, it's time to clone the needed repositories.
      git clone https://gitlab.com/<username>/gitlab-ee.git
      git clone https://gitlab.com/<username>/gitlab-runner.git
      git clone https://gitlab.com/<username>/omnibus-gitlab.git
+     git clone https://gitlab.com/<username>/gitlab.git charts
      ```
 
      For members that have Developer access (usually the **GitLab Team members**),
@@ -191,6 +193,7 @@ Then, it's time to clone the needed repositories.
      git clone git@gitlab.com:gitlab-org/gitlab-ee.git
      git clone git@gitlab.com:gitlab-org/gitlab-runner.git
      git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
+     git clone git@gitlab.com:charts/gitlab.git charts
      ```
 
 ### Create the content symlinks
@@ -210,6 +213,7 @@ the directory that holds the documentation content.
     ln -s ~/dev/gitlab/gitlab-ee/doc ~/dev/gitlab/gitlab-docs/content/ee
     ln -s ~/dev/gitlab/omnibus-gitlab/doc ~/dev/gitlab/gitlab-docs/content/omnibus
     ln -s ~/dev/gitlab/gitlab-runner/docs ~/dev/gitlab/gitlab-docs/content/runner
+    ln -s ~/dev/gitlab/charts/doc ~/dev/gitlab/gitlab-docs/content/charts
     ```
 
 1. Check if the symlinks where successfully created:
