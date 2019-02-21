@@ -109,6 +109,7 @@ namespace :release do
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
+    puts "Stashing changes"
     `git stash -u` if git_workdir_dirty?
 
     # Sync with upstream master
@@ -116,8 +117,7 @@ namespace :release do
     `git pull origin master`
 
     # Create branch
-    `git branch #{version}`
-    `git checkout #{version}`
+    `git checkout -b #{version}`
 
     dockerfile = "#{source_dir}/Dockerfile.#{version}"
 
@@ -128,22 +128,23 @@ namespace :release do
     content = File.read('dockerfiles/Dockerfile.single')
     content.gsub!('X.Y', version)
     content.gsub!('X-Y', version.tr('.', '-'))
+    content.gsub!('W-Z', chart_version(version).tr('.', '-'))
 
     open(dockerfile, 'w') do |post|
       post.puts content
     end
+
+    # Add and commit
+    `git add Dockerfile.#{version}`
+    `git commit -m 'Add #{version} Dockerfile'`
 
     puts
     puts "--------------------------------"
     puts
     puts "=> Created new Dockerfile: #{dockerfile}"
     puts
-    puts "!! Make sure to change the charts branch in Dockerfile.#{version} !!"
-    puts
     puts "=> You can now add, commit and push the new branch:"
     puts
-    puts "    git add Dockerfile.#{version}"
-    puts "    git commit -m 'Add #{version} Dockerfile'"
     puts "    git push origin #{version}"
     puts
     puts "--------------------------------"
