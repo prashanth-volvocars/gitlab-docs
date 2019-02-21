@@ -45,7 +45,15 @@ For each image, there's a manual job under the `images` stage in
 When a new version is released, we need to create the single Docker image,
 and update the `latest` and `archives` images to include the new version.
 
-### 1. Create an image for a single version
+### 1. Add the chart version
+
+Since the charts use a different version number than all the other GitLab
+products, we need to add the new version mapping:
+
+1. Open `content/_data/chart_versions.yaml` and add the new version.
+1. Create a merge request and merge before continuing to the next step.
+
+### 2. Create an image for a single version
 
 1. Make sure you're on the root path of the repo
 1. Run the raketask to create the single version:
@@ -69,7 +77,7 @@ and update the `latest` and `archives` images to include the new version.
 Once you push, the `image:docker-singe` job will create a new Docker image
 tagged with the branch name you created in the first step.
 
-### 2. Update the `latest` and `archives` images
+### 3. Update the `latest` and `archives` images
 
 **Note:**
 Make sure the mentioned [single images](#create-an-image-for-a-single-version)
@@ -90,7 +98,7 @@ once an hour.
 Once done, the new `latest` image will be built and it will contain the new
 version.
 
-### 3. Rotate the versions
+### 4. Rotate the versions
 
 **Note:**
 Make sure the `latest` image is already updated to reflect the new versions
@@ -108,7 +116,7 @@ the versions to reflect the new changes:
 Create a merge request with the changes and check if the links in the `/archives`
 page work as expected. If not, the `latest` image is possibly not yet updated.
 
-### 4. Add the new offline version in the 404 page redirect script
+### 5. Add the new offline version in the 404 page redirect script
 
 Since we're deprecating the oldest version each month, we need to redirect
 those URLs in order not to create [404 entries](https://gitlab.com/gitlab-com/gitlab-docs/issues/221).
@@ -127,8 +135,10 @@ for the branch in question.
 ## Porting new website changes to old versions
 
 The website will keep changing and being improved. In order to consolidate
-those changes to the stable branches, we'd need to merge master into them
+those changes to the stable branches, we'd need to pick certain changes
 from time to time.
+
+If this is not possible or there are many changes, merge master into them:
 
 ```sh
 git branch 10.5

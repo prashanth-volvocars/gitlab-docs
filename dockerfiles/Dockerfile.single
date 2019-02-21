@@ -10,7 +10,7 @@ ARG BRANCH_EE=X-Y-stable-ee
 ARG BRANCH_CE=X-Y-stable
 ARG BRANCH_OMNIBUS=X-Y-stable
 ARG BRANCH_RUNNER=X-Y-stable
-ARG BRANCH_CHARTS=X-Y-stable
+ARG BRANCH_CHARTS=W-Z-stable
 
 # This image comes from the Dockerfile.builder.onbuild file
 # https://gitlab.com/gitlab-com/gitlab-docs/blob/master/dockerfiles/Dockerfile.builder.onbuild

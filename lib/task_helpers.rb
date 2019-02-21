@@ -30,7 +30,12 @@ def retrieve_branch(slug)
       "#{version[:major]}-#{version[:minor]}-stable-ee"
     when 'ce', 'omnibus', 'runner'
       "#{version[:major]}-#{version[:minor]}-stable"
-    # For all other products (see charts), use master
+    # Charts don't use the same version scheme as GitLab, we need to
+    # deduct their version from the GitLab equivalent one.
+    when 'charts'
+      chart = chart_version(ENV["CI_COMMIT_REF_NAME"]).match(VERSION_FORMAT)
+      "#{chart[:major]}-#{chart[:minor]}-stable"
+    # For all other products use master
     else
       'master'
     end
@@ -44,4 +49,10 @@ end
 def git_workdir_dirty?
   status = `git status --porcelain`
   !status.empty?
+end
+
+def chart_version(gitlab_version)
+  config = YAML.load_file('./content/_data/chart_versions.yaml')
+
+  config.fetch(gitlab_version)
 end
