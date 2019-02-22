@@ -1,21 +1,19 @@
-**Merge on the 22nd at 14:30 UTC**
-
 [> How to](https://gitlab.com/gitlab-com/gitlab-docs/blob/master/dockerfiles/README.md)
 
 ## During release
 
-- [ ] Push the new version which will create a Docker image with the stable version.
+1. [ ] Push the new version which will create a Docker image with the stable version:
 
    ```sh
-   bundle exec rake "release:single[11.7]"
+   bundle exec rake "release:single[X.Y]"
    ```
 
-1. [ ] \(Optional) If there are changes in the stable branches of the docs **after** the release version Docker image was created, rerun the release version pipeline.
 1. [ ] Make sure the proper milestone is assigned to this MR and:
     1. [ ] Edit `content/_data/versions.yaml` and rotate the versions.
     1. [ ] Edit `content/404.html` and add the old removed version to the list of redirects at the bottom of the file.
     1. [ ] Edit `dockerfiles/Dockerfile.archives` and add the new version.
     1. [ ] Edit `Dockerfile.master` and rotate the versions.
+1. [ ] \(Optional) If there are changes in the stable branches of the docs **after** the release version Docker image was created, rerun the release version pipeline.
 
 ## Before merge
 
