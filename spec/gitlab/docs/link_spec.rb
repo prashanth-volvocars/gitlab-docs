@@ -23,6 +23,12 @@ describe Gitlab::Docs::Link do
 
       it { is_expected.to be_to_anchor }
     end
+
+    context 'when link contains an empty anchor' do
+      let(:href) { '../some/page.html#' }
+
+      it { is_expected.not_to be_to_anchor }
+    end
   end
 
   describe '#internal_anchor?' do
