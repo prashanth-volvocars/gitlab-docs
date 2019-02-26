@@ -9,7 +9,7 @@ module Gitlab
       end
 
       def to_anchor?
-        !anchor_name.to_s.empty?
+        !anchor_name.to_s.strip.empty?
       end
 
       def anchor_name
