@@ -122,12 +122,11 @@ test_internal_links:
 #
 test_internal_anchors:
   stage: test
-  allow_failure: true
   tags:
-    - docker
     - gitlab-org
   script:
     - bundle exec nanoc check internal_anchors
+  allow_failure: true
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
