@@ -47,7 +47,7 @@ See [LICENSE](LICENSE).
 
 ## Projects we pull from
 
-There are currently 4 products that are pulled and generate the docs website:
+There are currently 5 products that are pulled and generate the docs website:
 
 - [GitLab Enterprise Edition](https://gitlab.com/gitlab-org/gitlab-ee)
 - [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
