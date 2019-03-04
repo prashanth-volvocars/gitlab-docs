@@ -17,6 +17,9 @@ module Nanoc::Helpers
       elsif product == "runner"
         # gitlab-runner repo
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/docs/#{docs_content_filename}"
+      elsif product == "charts"
+        # GitLab Helm chart repo
+        gitlab_url = "https://gitlab.com/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
       elsif %w[ce ee].include?(product)
         # gitlab-ce and gitlab-ee repos
         if product == "ee"
