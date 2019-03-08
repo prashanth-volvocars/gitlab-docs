@@ -74,8 +74,10 @@ sections:
       - category_title: "GitLab CI/CD"
         category_url: 'ci/README.html'
         docs:
-          - doc_title: Configuration
-            doc_url: 'ci/yaml/README.html'
+          - doc_title: Introduction
+            doc_url: 'ci/introduction/index.html'
+          - doc_title: Getting Started
+            doc_url: 'ci/quick_start/README.html'
           - doc_title: Examples
             doc_url: 'ci/examples/README.html'
           - doc_title: Pipelines
@@ -88,6 +90,8 @@ sections:
             doc_url: 'user/project/pages/'
           - doc_title: Auto DevOps
             doc_url: 'topics/autodevops/'
+          - doc_title: '.gitlab-ci.yml Reference'
+            doc_url: 'ci/yaml/README.html'
 
       - category_title: Operations
         category_url: 'user/project/operations/'
