@@ -102,6 +102,7 @@ checks:
       - 'https:\/\/gitlab-org\.gitlab\.io\/gitlab-svgs'
       - 'https:\/\/dl\.acm\.org\/citation\.cfm\?id=361591'
       - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
+      - 'https:\/\/www\.amazon\.com\/.*'
       # Don't check links matching the following patterns
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
