@@ -103,6 +103,8 @@ checks:
       - 'https:\/\/dl\.acm\.org\/citation\.cfm\?id=361591'
       - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
       - 'https:\/\/www\.amazon\.com\/.*'
+      # GitLab.com links with no public access
+      - 'https:\/\/gitlab.com\/gitlab-org\/gitlab-qa\/pipelines'
       # Don't check links matching the following patterns
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
