@@ -1,5 +1,5 @@
 ---
-version: 57
+version: 58
 ---
 
 @import "variables";
@@ -104,7 +104,7 @@ blockquote {
     background-color: $white;
   }
 
-  //Override bootstrap
+  // Override bootstrap
   ol:last-child, p:last-child, ul:last-child {
     margin: inherit;
   }
@@ -124,9 +124,7 @@ pre {
 
   .clip-btn {
     display: inline-block;
-    padding: 10px;
-    padding-left: 10px;
-    padding-top: 13px;
+    padding: 10px 10px 10px 13px;
     right: 0;
     top: 0;
     cursor: pointer;
@@ -279,8 +277,7 @@ li {
 
 .main {
   margin: auto 15%;
-  padding: 8px 40px;
-  padding-bottom: 0;
+  padding: 8px 40px 0;
   position: relative;
   width: auto;
   max-width: 900px;
@@ -363,10 +360,7 @@ li {
     max-width: calc(100% - 10px);
     max-height: 100vh;
     box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
-    margin-bottom: 40px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto;
     display: block;
   }
 
@@ -466,7 +460,7 @@ a.global-nav-link, .nav-link {
   color: $global-nav-link-level0;
 
   &.active {
-    padding-left: 7px; //10 - 3px of border
+    padding-left: 7px; // 10 - 3px of border
   }
 
   &:visited {
@@ -479,7 +473,7 @@ a.global-nav-link, .nav-link {
   color: $global-nav-link-level1;
 
   &.active {
-    padding-left: 17px; //20 - 3px of border
+    padding-left: 17px; // 20 - 3px of border
   }
 
   &:visited {
@@ -493,7 +487,7 @@ a.global-nav-link, .nav-link {
   font-size: 14px;
 
   &.active {
-    padding-left: 33px; //36 - 3px of border
+    padding-left: 33px; // 36 - 3px of border
   }
 
   &:visited {
@@ -614,11 +608,7 @@ a.global-nav-link, .nav-link {
     font-size: 16px;
     color: $black;
     display: inline-block;
-    margin-left: 4px;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    margin: 0 0 0 4px;
   }
 
   ul {
@@ -714,15 +704,10 @@ a.global-nav-link, .nav-link {
     box-sizing: content-box;
     border: 1px solid $search-border;
     border-radius: $border-radius;
-    background: none;
-    background-color: $white;
     -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
     width: 260px;
-    background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
-    background-repeat: no-repeat;
-    background-size: 14px;
-    background-position: 9px 12px;
+    background: $white url("<%= @items['/assets/images/icon_search.svg'].path %>") 9px 12px / 14px no-repeat;
     outline: 0;
 
     @media(max-width:$medium-width) {
@@ -803,8 +788,7 @@ a.global-nav-link, .nav-link {
   }
 
   .landing-header {
-    padding: 120px 20px;
-    padding-bottom: 220px;
+    padding: 120px 20px 220px;
     color: $white;
     background: $landing-background;
 
@@ -875,8 +859,7 @@ a.global-nav-link, .nav-link {
   .docsearch {
     box-sizing: content-box;
     position: relative;
-    padding: 12px;
-    padding-left: 40px;
+    padding: 12px 12px 12px 40px;
     border: 0;
     color: $black;
     width: 500px;
@@ -1008,15 +991,11 @@ a.global-nav-link, .nav-link {
       box-sizing: content-box;
       border: 1px solid $search-border;
       border-radius: $border-radius;
-      background-color: $white;
       -webkit-appearance: none;
       padding: 7px 11px 7px 28px;
       margin: -20;
       width: 190px;
-      background-image: url("<%= @items['/assets/images/icon_search.svg'].path %>");
-      background-repeat: no-repeat;
-      background-size: 16px;
-      background-position: 7px 8px;
+      background: $white url("<%= @items['/assets/images/icon_search.svg'].path %>") 7px 8px / 16px no-repeat;
 
       @media(max-width:1099px) {
         width: 130px;
@@ -1048,8 +1027,6 @@ a.global-nav-link, .nav-link {
 
   .row {
     margin: 0;
-    margin-right: 0;
-    margin-left: 0;
     max-width: 100%;
   }
 
@@ -1096,9 +1073,7 @@ a.global-nav-link, .nav-link {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 100px 30px;
-    padding-top: 0;
-    padding-bottom: 160px;
+    padding: 0 30px 160px;
 
     h1 {
       text-align: center;
@@ -1138,8 +1113,7 @@ a.global-nav-link, .nav-link {
       width: 100%;
       min-width: auto;
       flex: initial;
-      margin: 0;
-      margin-top: 20px;
+      margin: 20px 0 0;
     }
 
     a p, a:visited p {
@@ -1152,8 +1126,7 @@ a.global-nav-link, .nav-link {
 
       img {
         height: 76px;
-        margin: auto;
-        margin-bottom: 20px;
+        margin: auto auto 20px;
         transition: .2s cubic-bezier(0, 0, 0, 1);
       }
 
@@ -1180,8 +1153,7 @@ a.global-nav-link, .nav-link {
 
       h2 {
         height: 50px;
-        margin: 10px 0 25px;
-        margin-top: 0;
+        margin: 0 0 25px;
 
         @media all and (max-width: $mobile-width) {
           height: auto;

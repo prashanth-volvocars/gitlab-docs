@@ -1,5 +1,5 @@
 ---
-version: 8
+version: 9
 ---
 
 @import "variables";
@@ -48,7 +48,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   }
 } 
 
-ais-search-box--powered-by {
+.ais-search-box--powered-by {
   font-family: $sans-font-family;
   font-size: $body-font-size;
 }
@@ -188,8 +188,7 @@ ais-search-box--powered-by {
 
 .ais-infinite-hits--showmore {
   display: block;
-  margin: auto;
-  margin-top: 10px;
+  margin: 10px auto auto;
 
   button {
     padding: 20px 10px;
