@@ -78,16 +78,18 @@ sections:
             doc_url: 'ci/introduction/index.html'
           - doc_title: Getting Started
             doc_url: 'ci/quick_start/README.html'
-          - doc_title: Auto DevOps
-            doc_url: 'topics/autodevops/'
           - doc_title: Examples
             doc_url: 'ci/examples/README.html'
           - doc_title: Pipelines
             doc_url: 'ci/pipelines.html'
+          - doc_title: Schedules
+            doc_url: 'user/project/pipelines/schedules.html'
           - doc_title: Review Apps
             doc_url: 'ci/review_apps/'
           - doc_title: GitLab Pages
             doc_url: 'user/project/pages/'
+          - doc_title: Auto DevOps
+            doc_url: 'topics/autodevops/'
           - doc_title: '.gitlab-ci.yml Reference'
             doc_url: 'ci/yaml/README.html'
 
