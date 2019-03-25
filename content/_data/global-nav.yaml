@@ -75,7 +75,7 @@ sections:
         category_url: 'ci/README.html'
         docs:
           - doc_title: Introduction
-            doc_url: 'ci/introduction/index.html'
+            doc_url: 'ci/introduction/'
           - doc_title: Getting Started
             doc_url: 'ci/quick_start/README.html'
           - doc_title: Examples
