@@ -24,7 +24,10 @@
     <%= yield %>
     <%= render '/footer.*' %>
     <%= render '/docsearch.*' %>
-    <%= render '/analytics.*' %>
+    <% if ENV['NANOC_ENV'] == 'production' %>
+    <%# Add analytics only in production %>
+      <%= render '/analytics.*' %>
+    <% end %>
     <%= render '/https_redirect.*' %>
     <%= render '/schema-microdata.*' %>
   </body>
