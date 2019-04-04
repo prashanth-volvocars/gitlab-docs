@@ -35,7 +35,10 @@
   });
   </script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
-  <%= render '/analytics.*' %>
+  <% if ENV['NANOC_ENV'] == 'production' %>
+  <%# Add analytics only in production %>
+    <%= render '/analytics.*' %>
+  <% end %>
   <%= render '/https_redirect.*' %>
   </body>
 </html>
