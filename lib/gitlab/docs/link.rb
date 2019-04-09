@@ -15,7 +15,7 @@ module Gitlab
       def anchor_name
         return unless @href.include?('#')
 
-        @href.partition('#').last.downcase
+        @href.partition('#').last
       end
 
       def internal_anchor?

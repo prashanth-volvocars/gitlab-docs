@@ -6,8 +6,8 @@ module Gitlab
 
       def initialize(file)
         @file = file
-        @hrefs = []
-        @ids = []
+        @hrefs = Set.new
+        @ids = Set.new
 
         return unless exists?
 
@@ -31,7 +31,7 @@ module Gitlab
       end
 
       def has_anchor?(name)
-        @ids.include?(name)
+        @ids.include?(Docs::Element.decode(name.downcase))
       end
 
       def self.build(path)
