@@ -1,3 +1,5 @@
+require 'cgi'
+
 module Gitlab
   module Docs
     class Element
@@ -15,17 +17,25 @@ module Gitlab
       end
 
       def href
-        @href ||= attribute('href')
+        @href ||= self.class.decode(attribute('href'))
       end
 
       def id
-        @id ||= attribute('id')
+        @id ||= attribute('id')&.downcase
+      end
+
+      def self.decode(name)
+        return if name.to_s.empty?
+
+        CGI.unescape(name)
       end
 
       private
 
       def attribute(name)
-        @attributes.find { |attr| attr.first == name }&.last
+        @attributes.to_a
+          .find { |attr| attr.first == name }
+          .to_a.last
       end
     end
   end

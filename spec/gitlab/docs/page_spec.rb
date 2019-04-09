@@ -25,8 +25,11 @@ describe Gitlab::Docs::Page do
               <a href="../link.html#my-anchor">See external file</a>
               <a href="#internal-anchor">See internal section</a>
               <a href="#internal-anchor-2">See internal section broken</a>
+              <a href="#utf-8-id-✔">See utf-8 anchor</a>
+              <a href="#utf-8-id-%E2%9C%94">See utf-8 anchor 2</a>
 
               <h1 id="internal-anchor">Some section</h1>
+              <h1 id="utf-8-id-✔">Some section 2</h1>
             </body
           </html>
         HTML
@@ -34,7 +37,7 @@ describe Gitlab::Docs::Page do
 
     describe '#links' do
       it 'collects links on a page' do
-        expect(subject.links.count).to eq 3
+        expect(subject.links.count).to eq 4
       end
     end
 
@@ -42,23 +45,31 @@ describe Gitlab::Docs::Page do
       it 'collects all hrefs' do
         expect(subject.hrefs).to match_array %w[../link.html#my-anchor
                                                 #internal-anchor
-                                                #internal-anchor-2]
+                                                #internal-anchor-2
+                                                #utf-8-id-✔]
       end
     end
 
     describe '#ids' do
       it 'collects all ids' do
-        expect(subject.ids).to match_array %w[internal-anchor]
+        expect(subject.ids).to match_array %w[internal-anchor
+                                              utf-8-id-✔]
       end
     end
 
     describe '#has_anchor?' do
       it 'returns true when anchor exists on a page' do
-        expect(subject.has_anchor?('internal-anchor')).to be true
+        expect(subject).to have_anchor('internal-anchor')
       end
 
       it 'returns false when anchors does not exist' do
-        expect(subject.has_anchor?('internal-anchor-2')).to be false
+        expect(subject).not_to have_anchor('internal-anchor-2')
+      end
+
+      it 'returns true when UTF-8 encoded anchors are compared' do
+        expect(subject).to have_anchor('utf-8-id-✔')
+        expect(subject).to have_anchor('utf-8-id-%E2%9C%94')
+        expect(subject).to have_anchor('utf-8-id-%e2%9c%94')
       end
     end
   end
