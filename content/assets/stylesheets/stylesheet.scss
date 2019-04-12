@@ -1,5 +1,5 @@
 ---
-version: 58
+version: 59
 ---
 
 @import "variables";
@@ -47,6 +47,12 @@ table {
   }
 
   tbody {
+    border-top: 3px solid $gds-gray-200;
+
+    &:first-child {
+      border-top: 0;
+    }
+
     tr > td {
       max-width: 100%;
       min-width: 100px;
