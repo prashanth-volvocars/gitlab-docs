@@ -649,9 +649,14 @@ a.global-nav-link, .nav-link {
     }
   }
 
+  .choose-version {
+    padding: 10px;
+  }
+
   .btn-versions {
     color: $black;
     font-size: 16px;
+    border: 1px solid $color-tanuki-medium;
 
     &:hover {
       opacity: .8;
