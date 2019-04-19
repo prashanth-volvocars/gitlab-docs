@@ -57,7 +57,7 @@ before_script:
   artifacts:
     paths:
       - public
-    expire_in: 1w
+    expire_in: 1d
   cache:
     key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
