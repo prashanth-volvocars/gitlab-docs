@@ -1,5 +1,5 @@
 ---
-version: 59
+version: 60
 ---
 
 @import "variables";
@@ -1345,33 +1345,18 @@ li {
 }
 
 //
-// Algolia search for mobile
-// https://github.com/algolia/docsearch/issues/181#issuecomment-301730219
+// Algolia search override
+// https://community.algolia.com/docsearch/styling.html
 //
-// Since some values are added by Javascript, we have to add the
-// !important option to override these values.
-// scss-lint:disable ImportantRule
 .algolia-autocomplete {
-  // On a max-width of 768px
-  @media (max-width: 768px) {
-    .ds-dropdown-menu {
-      max-width: 100% !important;
-      min-width: 350px !important;
-      width: 370px !important;
-    }
-    .algolia-docsearch-suggestion--content {
-      width: 100% !important;
-      padding-left: 0 !important;
-    }
-    .algolia-docsearch-suggestion--content::before {
-      display: none !important;
-    }
-    .algolia-docsearch-suggestion--subcategory-column {
-      display: none !important;
-    }
+  // Scrollable search results box
+  // https://gitlab.com/gitlab-com/gitlab-docs/issues/362
+  .ds-dropdown-menu [class^=ds-dataset-] {
+    max-height: 85vh;
+    overflow-x: hidden;
   }
 }
-// scss-lint:enable ImportantRule
+// Algolia search override end
 
 .flex-container {
   display: flex;
