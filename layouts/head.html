@@ -17,12 +17,14 @@
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/footer.*'].path %>">
-<link rel="stylesheet" href="<%= @items['/assets/stylesheets/docsearch.min.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/toc.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/comments.*'].path %>">
 <!-- new fontawesome version 4 - via CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- end of fontawesome -->
+<!-- Docsearch https://community.algolia.com/docsearch/ - via CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+<!-- end of docsearch -->
 <% if ENV['NANOC_ENV'] == 'production' %>
   <%# Adds GTM only in production %>
   <!-- Google Tag Manager -->
