@@ -1,6 +1,9 @@
 <!-- versions dropdown-->
+<div class="choose-version">
+Choose version
+</div>
 <div class="dropdown">
-  <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions">
+  <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <!--
       Name the label dropdown after the release version so that you know
       which version you're browsing. For `/archives` show 'Archives' since
@@ -23,7 +26,7 @@
   <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
     <li<%= active_dropdown('master') %>>
       <a href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
-        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="The latest docs from GitLab's master branches, to which this site defaults."></i>
+        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="This documentation reflects the latest pre-release version of GitLab. Be sure to select the correct version."></i>
       </a>
     </li>
     <li role="separator" class="divider"></li>
