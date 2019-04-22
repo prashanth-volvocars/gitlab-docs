@@ -17,7 +17,7 @@ class BadgesFilter < Nanoc::Filter
   BADGES_HTML_PATTERN = %r{
     <strong>
     \[
-    (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE)(?:\s+(?<only>ONLY))?
+    (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))?
     \]
     </strong>
   }x
@@ -25,7 +25,7 @@ class BadgesFilter < Nanoc::Filter
   BADGES_MARKDOWN_PATTERN = %r{
     (?:^|[^`]) # must be start of the line or anything except backtick
     \*\*\[
-    (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE)(?:\s+(?<only>ONLY))
+    (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))
     ?\]\*\*
     (?:$|[^`]) # must end of line or anything except backtick
   }x
