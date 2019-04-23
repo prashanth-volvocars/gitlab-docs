@@ -16,6 +16,8 @@ version: 2
       'Available in GitLab Premium and higher tiers. Not available in GitLab.com',
     'ultimate-only':
       'Available in GitLab Ultimate. Not available in GitLab.com',
+    'free-only':
+      'Available in GitLab Free and higher tiers. Not available in self-hosted instances.',
     'bronze-only':
       'Available in GitLab Bronze and higher tiers. Not available in self-hosted instances.',
     'silver-only':
@@ -33,6 +35,7 @@ version: 2
     'starter-only': ['starter'],
     'premium-only': ['premium'],
     'ultimate-only': ['ultimate'],
+    'free-only': ['free'],
     'bronze-only': ['bronze'],
     'silver-only': ['silver'],
     'gold-only': ['gold'],
@@ -110,7 +113,7 @@ version: 2
     var match = $badge
       .attr('class')
       .match(
-        /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|bronze-only|silver-only|gold-only/
+        /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|free-only|bronze-only|silver-only|gold-only/
       );
 
     if (match) {
