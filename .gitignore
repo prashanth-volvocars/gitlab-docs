@@ -25,3 +25,4 @@ crash.log
 .sass-cache/
 .bundle/
 .idea/
+vendor/
