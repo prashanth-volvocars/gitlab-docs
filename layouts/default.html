@@ -70,6 +70,7 @@
   <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   <%= render '/docsearch.*' %>
+  <%= render '/mermaid.*' %>
   <%= render '/https_redirect.*' %>
   <% if ENV['NANOC_ENV'] == 'production' %>
   <%# Add analytics only in production %>
