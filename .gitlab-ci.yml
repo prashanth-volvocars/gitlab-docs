@@ -331,8 +331,8 @@ pages:
 #    - master
 
 #
-# Helper Docker image containing all build dependencies
-# It must be rebuilt every time Gemfile.lock changes
+# Helper Docker image containing all build dependencies.
+# It must be rebuilt every time Gemfile and/or Gemfile.lock changes.
 #
 image:bootstrap:
   <<: *docker_prepare
@@ -343,8 +343,11 @@ image:bootstrap:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  when: manual
-  <<: *except_stable
+  only:
+    refs:
+      - master
+    changes:
+      - "Gemfile*"
 
 #
 # Helper Docker image that builds the gitlab-docs website
