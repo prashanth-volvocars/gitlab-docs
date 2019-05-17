@@ -3,7 +3,7 @@
 # all Nanoc's runtime dependencies and gems.
 #
 
-FROM ruby:2.5-alpine
+FROM ruby:2.6.3-alpine3.8
 
 # Install packages needed at build and run time
 RUN apk add --no-cache --virtual build-deps \
