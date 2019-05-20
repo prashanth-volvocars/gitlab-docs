@@ -9,6 +9,7 @@
     <div class="edit-on">
       <i class="fa fa-code-fork" aria-hidden="true"></i>
       <a href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
+      (<a href="<%= edit_on_gitlab(@item, editor: :webide) %>">Web IDE</a>)
     </div>
     <% end %>
   </div>

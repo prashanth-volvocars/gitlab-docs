@@ -15,6 +15,7 @@
       <%# Show Edit button only in production and on master branch (hide archives) %>
       <div class="edit-on">
         <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
+        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item, editor: :webide) %>">Web IDE</a>
       </div>
       <% end %>
       <% if @item[:last_updated] %>

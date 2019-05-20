@@ -346,6 +346,17 @@ The links pointing to the files should be similar to:
 Nanoc will then build and render those links correctly according with what's
 defined in [`Rules`](/Rules).
 
+## Linking to source files
+
+A helper called [`edit_on_gitlab`](/lib/helpers/edit_on_gitlab.rb) can be used
+to link to a page's source file. We can link to both the simple editor and the
+web IDE. Here's how you can use it in a Nanoc layout:
+
+- Default editor: `<a href="<%= edit_on_gitlab(@item, editor: :simple) %>">Simple editor</a>`
+- Web IDE: `<a href="<%= edit_on_gitlab(@item, editor: :webide) %>">Web IDE</a>`
+
+If you don't specify `editor:`, the simple one is used by default.
+
 ## Review Apps for documentation merge requests
 
 If you are contributing to GitLab docs read how to [create a Review App with each
