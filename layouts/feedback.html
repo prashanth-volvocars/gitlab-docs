@@ -9,7 +9,7 @@
       <div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
+          <li role="presentation"><a class="active" href="#docs-feedback" aria-controls="docs-feedback" role="tab" data-toggle="tab">
             <i class="fa fa-file-text-o" aria-hidden="true"></i>
              <strong>DOCS</strong> FEEDBACK</a>
           </li>
@@ -203,13 +203,11 @@
                       <i class="fa fa-arrow-right black-icon" aria-hidden="true"></i>
                     </p>
                   </div>
-                  <div id="disqus_thread" class="disqus-comments-gitlab">
-                    <div class="col-md-4 col-sm-12">
-                      <a href="#" role="button" class="comments-holder btn btn-default" onclick="loadDisqus();return false;">
-                        <i class="fa fa-comments-o" aria-hidden="true"></i>
-                        SHOW AND POST COMMENTS
-                      </a>
-                    </div>
+                  <div id="disqus_thread" class="disqus-comments-gitlab col-md-4 col-sm-12">
+                    <a href="#" role="button" class="comments-holder btn btn-default" onclick="loadDisqus();return false;">
+                      <i class="fa fa-comments-o" aria-hidden="true"></i>
+                      SHOW AND POST COMMENTS
+                    </a>
                   </div>
                 </div><!-- disqus-row-->
               <% end %>
@@ -234,7 +232,10 @@
     function loadDisqus() {
       if (!is_disqus_loaded){
         is_disqus_loaded = true;
+        var disqusThread = document.getElementById('disqus_thread');
         var d = document, s = d.createElement('script');
+        disqusThread.innerHTML = '';
+        disqusThread.className = 'col-12'; // ensure the thread stretches the entire row
         s.src = 'https://gitlab-docs.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);

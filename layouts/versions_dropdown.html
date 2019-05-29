@@ -3,7 +3,7 @@
 Choose version
 </div>
 <div class="dropdown">
-  <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions" href="#">
     <!--
       Name the label dropdown after the release version so that you know
       which version you're browsing. For `/archives` show 'Archives' since
@@ -24,12 +24,12 @@ Choose version
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
-    <li<%= active_dropdown('master') %>>
-      <a href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
+    <li>
+      <a<%= active_dropdown('master') %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
         <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="This documentation reflects the latest pre-release version of GitLab. Be sure to select the correct version."></i>
       </a>
     </li>
-    <li role="separator" class="divider"></li>
+    <li class="dropdown-divider"></li>
     <% @items['/_data/versions.yaml'][:online].each do |version| %>
       <!--
         If we are on the archives page, the link here is hardcoded to always
@@ -45,15 +45,15 @@ Choose version
           </a>
         </li>
       <% else %>
-        <li<%= active_dropdown(version) %>>
-          <a href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
+        <li>
+          <a<%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
             <%= version %>
           </a>
         </li>
       <% end %>
     <% end %>
-    <li role="separator" class="divider"></li>
-    <li<%= active_dropdown('archives') %>><a href='/archives/'>Archives</a></li>
+    <li class="dropdown-divider"></li>
+    <li><a<%= active_dropdown('archives') %> href='/archives/'>Archives</a></li>
   </ul>
 </div>
 <!-- versions dropdown-->
