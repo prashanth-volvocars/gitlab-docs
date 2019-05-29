@@ -38,10 +38,10 @@ version: 6
           color: $link-color-nav-hover;
           text-decoration: underline;
           background-color: transparent;
+          box-shadow: none;
         }
       }
-
-      &.active > a {
+      .nav-link.active {
         font-weight: 600;
         color: $link-color-nav;
         background-color: transparent;
@@ -58,6 +58,10 @@ version: 6
 
 .markdown-toc {
   padding-left: 16px;
+}
+
+.nav-pills {
+  flex-wrap: nowrap;
 }
 
 // not wide enough to show quick nav and toc

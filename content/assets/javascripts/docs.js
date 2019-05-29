@@ -67,8 +67,9 @@ function toggleNavigation() {
       // if there are items
       if (tocList.children.length >= 1) {
         var menu = tocList;
-        $(tocList).addClass('nav nav-pills nav-stacked');
-        $(tocList).find('ul').addClass('nav nav-pills nav-stacked');
+        $(tocList).addClass('nav nav-pills flex-column');
+        $(tocList).find('ul').addClass('nav nav-pills flex-column');
+        $(tocList).find('a').addClass('nav-link');
 
         // grab the h1's li anchor text
         var title = document.createElement('h4');
@@ -85,6 +86,7 @@ function toggleNavigation() {
           var anchor = document.createElement('a');
           var separator = document.createElement('hr');
 
+          anchor.className = 'nav-link';
           anchor.innerHTML = 'Help and feedback';
           anchor.setAttribute('href', '#help-and-feedback');
           listItem.appendChild(anchor);

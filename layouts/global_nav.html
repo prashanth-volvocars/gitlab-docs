@@ -32,7 +32,7 @@
                 <% if dir == 'ce' && cat[:ee_only] %>
                   <a class="global-nav-link level-1 <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% end %>" href="/ee/<%= cat[:category_url] %>">
                     <%= cat[:category_title] %>
-                    <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="auto" title="Not available in GitLab free tiers"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                    <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Not available in GitLab free tiers"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                   </a>
                 <% else %>
                   <a class="global-nav-link level-1 <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% end %>" href="/<%= dir %>/<%= cat[:category_url] %>">
@@ -60,7 +60,7 @@
                     <% if dir == 'ce' && doc[:ee_only] %>
                       <a class="global-nav-link level-2 <% if @item.path == "/#{dir}/#{doc[:doc_url]}" %>active<% end %>" href="/ee/<%= doc[:doc_url] %>">
                         <%= doc[:doc_title] %>
-                        <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="auto" title="Not available in GitLab free tiers"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                        <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Not available in GitLab free tiers"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                       </a>
                     <% else %>
                       <a class="global-nav-link level-2 <% if @item.path == "/#{dir}/#{doc[:doc_url]}" %>active<% end %>" href="/<%= dir %>/<%= doc[:doc_url] %>">

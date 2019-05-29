@@ -85,7 +85,7 @@ version: 2
       var container = $('<a>', {
         class: 'badges-drop',
         'data-toggle': 'tooltip',
-        'data-placement': 'top auto',
+        'data-placement': 'top',
         'target': '_blank',
         title: title,
         href: 'https://about.gitlab.com/pricing/'

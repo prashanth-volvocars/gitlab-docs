@@ -8,7 +8,7 @@ $('pre').append($('<button class="clip-btn" title="Click to copy" data-selector=
 // Tooltip
 $('button').tooltip({
   trigger: 'click',
-  placement: 'auto left'
+  placement: 'left'
 });
 
 function setTooltip(btn, message) {
