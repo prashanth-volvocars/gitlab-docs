@@ -1,5 +1,5 @@
 ---
-version: 60
+version: 61
 ---
 
 @import "variables";
@@ -114,6 +114,7 @@ blockquote {
   ol:last-child, p:last-child, ul:last-child {
     margin: inherit;
   }
+
 }
 
 pre {
@@ -623,6 +624,20 @@ a.global-nav-link, .nav-link {
 
   &:hover {
     text-decoration: none;
+  }
+}
+
+// Version availability ("Introduced in") notes
+.introduced-in {
+  font-size: 13px;
+  border-left: solid 3px $gds-gray-500;
+  margin: 17px 0;
+  padding: 2px 10px;
+  opacity: .7;
+
+  ul {
+    margin: 5px 0;
+    padding-left: 16px;
   }
 }
 

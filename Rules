@@ -82,6 +82,7 @@ compile '/**/*.md' do
 
     filter :md_to_html_ext
     filter :admonition
+    filter :introduced_in
 
     if item[:layout].nil?
       layout '/default.*'
