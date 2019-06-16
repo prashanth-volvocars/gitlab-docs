@@ -3,7 +3,6 @@ scss_files: "./content/assets/stylesheets/**"
 exclude:
   - "./content/assets/stylesheets/highlight.scss"
   - "./content/assets/stylesheets/font-awesome.min.css"
-  - "./content/assets/stylesheets/bootstrap.min.css"
 
 # Remove the first three lines so the frontmatter doesn't
 # cause SCSS Lint to throw errors. Also remove ERB code.
