@@ -25,4 +25,5 @@ group :test, :development do
   gem 'highline', '~> 2.0'
   gem 'rspec', '~> 3.5'
   gem 'pry-byebug', '~> 3.7', require: false
+  gem 'mdl', '~> 0.5.0'
 end
