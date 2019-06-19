@@ -20,16 +20,21 @@ if the link doesn't end with README.md or index.md
   <% if (@item.identifier =~ /(index|README)\.md$/) == 0 %>
     <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
       <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />
+      <meta property="og:url" content="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />
     <% else %>
       <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.to_s.split('/')[0..-2].join('/') %>/" />
+      <meta property="og:url" content="<%= @config[:base_url] %><%= @item.identifier.to_s.split('/')[0..-2].join('/') %>/" />
     <% end %>
   <% else %>
     <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
       <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.without_ext.to_s.split('/')[2..-1].join('/') + '.html' %>" />
+      <meta property="og:url" content="<%= @config[:base_url] %>/ee/<%= @item.identifier.without_ext.to_s.split('/')[2..-1].join('/') + '.html' %>" />
     <% elsif @item.identifier.to_s == '/index.erb' %>
       <link rel="canonical" href="<%= @config[:base_url] %>/" />
+      <meta property="og:url" content="<%= @config[:base_url] %>/" />
     <% else %>
       <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>" />
+      <meta property="og:url" content="<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>" />
     <% end %>
   <% end %>
 <% end %>
