@@ -65,8 +65,8 @@ until the [GitLab codebase is unified](https://gitlab.com/gitlab-org/gitlab-ee/i
 In order to be able to preview any changes you make to GitLab's documentation,
 here's what you will need to have:
 
-- A Unix/Linux environment
-- Ruby 2.5+
+- A Unix/Linux or macOS environment
+- Ruby 2.6:+
 - Bundler
 
 **Note:**
@@ -84,13 +84,13 @@ One way is to use RVM:
 1. Install the latest Ruby:
 
     ```sh
-    rvm install 2.5.3
+    rvm install 2.6.3
     ```
 
 1. Use the newly installed Ruby:
 
     ```sh
-    rvm use 2.5.3
+    rvm use 2.6.3
     ```
 
 Check your Ruby version with `ruby --version`.
@@ -112,7 +112,7 @@ Now let's make Bundler deal with the dependencies defined in the
 1. Switch to Ruby using RVM:
 
     ```sh
-    rvm use 2.5.3
+    rvm use 2.6.3
     ```
 
 1. Run:
