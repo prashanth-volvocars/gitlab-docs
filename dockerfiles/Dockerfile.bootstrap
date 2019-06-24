@@ -25,6 +25,6 @@ WORKDIR /source
 RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 
 # Install packages needed at build and run time
-RUN apk add --no-cache libxslt libcurl openssl git grep bash
+RUN apk add --no-cache libxslt libcurl openssl git grep bash pngquant
 
 CMD echo "Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site."
