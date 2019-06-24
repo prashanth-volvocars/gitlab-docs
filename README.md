@@ -20,7 +20,6 @@ The [deployment process](#deployment-process) happens automatically every hour.
 - [Projects we pull from](#projects-we-pull-from)
 - [Requirements](#requirements)
     - [Ruby](#ruby)
-    - [Bundler](#bundler)
 - [Install Nanoc's dependencies](#install-nanocs-dependencies)
 - [Development under GDK](#development-under-gdk)
 - [Development when contributing to GitLab documentation](#development-when-contributing-to-gitlab-documentation)
@@ -66,8 +65,7 @@ In order to be able to preview any changes you make to GitLab's documentation,
 here's what you will need to have:
 
 - A Unix/Linux or macOS environment
-- Ruby 2.6:+
-- Bundler
+- Ruby 2.6+
 
 **Note:**
 On Windows, the process described here would be different, but as most of
@@ -94,14 +92,7 @@ One way is to use RVM:
     ```
 
 Check your Ruby version with `ruby --version`.
-
-### Bundler
-
-[Bundler](https://bundler.io/) is a Ruby dependency manager. Install it with:
-
-```
-gem install bundler
-```
+Also check the bundled Bundler version with `bundle --version`. You will see `Bundler version 1.17.3`.
 
 ## Install Nanoc's dependencies
 
