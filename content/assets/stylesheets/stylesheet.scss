@@ -1,5 +1,5 @@
 ---
-version: 61
+version: 62
 ---
 
 @import "variables";
@@ -654,6 +654,30 @@ a.global-nav-link, .nav-link {
   > h1:first-of-type {
     display: none;
   }
+}
+
+// Embedded video
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  margin: 20px 0;
+  box-shadow: 5px 5px 10px $gds-gray-300;
+
+  iframe,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Embedded video fallback for GitLab's /help
+.video-fallback {
+  display: none;
 }
 
 // Override bootstrap's alert color
