@@ -98,6 +98,8 @@ sections:
         docs:
           - doc_title: Metrics
             doc_url: 'user/project/integrations/prometheus_library/'
+          - doc_title: Error Tracking
+            doc_url: 'user/project/operations/error_tracking.html'
           - doc_title: Tracing
             doc_url: 'user/project/operations/tracing.html'
             ee_only: true
