@@ -107,26 +107,11 @@ internal_unit_tests:
 #
 # Check for broken internal links
 #
-test_internal_links:
+test_internal_links_and_anchors:
   stage: test
   script:
     - bundle exec nanoc check internal_links
-  cache:
-    key: "test-$CI_COMMIT_REF_NAME"
-    paths:
-      - vendor/ruby
-  <<: *except_pipelines
-
-#
-# Validate internal anchors
-#
-test_internal_anchors:
-  stage: test
-  tags:
-    - gitlab-org
-  script:
     - bundle exec nanoc check internal_anchors
-  allow_failure: true
   cache:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
