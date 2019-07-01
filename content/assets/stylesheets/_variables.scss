@@ -97,8 +97,9 @@ $versions-link-color-bg-hover: rgba($gds-gray-200, .6);
 $versions-active-bg-color: $versions-link-color-bg-hover;
 
 /// Elements
-$blockquote-border-color: $gds-blue-200;
-$blockquote-background-color: rgba($gds-blue-100, .3);
+$blockquote-border-color: #b8d6f4;
+$blockquote-background-color: rgba($gds-blue-100, .5);
+$blockquote-txt-color: #0f3b66;
 $h1-border-bottom: $gds-gray-700;
 $h-border-bottom: $gds-gray-300;
 $divider-color: $gds-gray-200;
@@ -112,6 +113,28 @@ $thead-background-color: $gds-gray-100;
 $button-default-bg-hover: $gds-gray-100;
 $button-primary: #337ab7;
 $button-warning: #f0ad4e;
+
+// Pajama alerts
+$alert-info-bg: $gds-blue-100;
+$alert-info-txt:#0f3b66;
+$alert-info-border: #b8d6f4;
+
+$alert-success-bg: #dcf5e7;
+$alert-success-txt: #0e5a2d;
+$alert-success-border: #b3e6c8;
+
+$alert-warning-bg: #fff1de;
+$alert-warning-txt: #853c00;
+$alert-warning-border: #fed69f;
+
+$alert-danger-bg: #fbe5e1;
+$alert-danger-txt: #711e11;
+$alert-danger-border: #f2b4a9;
+
+$alert-gray-bg: $gds-gray-100;
+$alert-gray-txt: $gds-gray-900;
+$alert-gray-border: $gds-gray-200;
+
 //// end of colors conforming with GitLab Design System ////
 
 // Badges
