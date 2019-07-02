@@ -1,6 +1,7 @@
 # use "ee_only: true" for categories and docs available only in EE
 # use "external_url: true" for external URLs in docs and categories
 # do not start the URL with "/"
+# do not add anchors to the links
 
 sections:
   - section_title: GitLab
@@ -29,7 +30,7 @@ sections:
           - doc_title: Members
             doc_url: 'user/project/members/'
           - doc_title: Security Dashboard
-            doc_url:  'user/project/security_dashboard.html'
+            doc_url:  'user/application_security/security_dashboard/'
             ee_only: true
           - doc_title: Cycle Analytics
             doc_url: 'user/project/cycle_analytics.html'
@@ -198,10 +199,13 @@ sections:
     section_url: 'development/README.html'
     section_categories:
       - category_title: Architecture
-        category_url: 'development/architecture.html#components'
+        category_url: 'development/architecture.html'
 
       - category_title: Documentation
         category_url: 'development/documentation/'
+        docs:
+          - doc_title: Style Guide
+            doc_url: 'development/documentation/styleguide.html'
 
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
