@@ -5,7 +5,10 @@
 # This allows us to add visual Badges to our documentation using standard Markdown
 # that will render in any markdown editor.
 #
-# The available pattern is `**[<BADGE_TYPE> <MODIFIER>]**`
+# The available pattern is either:
+#  - `**(<BADGE_TYPE> <MODIFIER>)**` (preferred)
+#  - `**[<BADGE_TYPE> <MODIFIER>]**` (deprecated)
+#
 # The following TIERS are supported: CORE, STARTER, PREMIUM, ULTIMATE
 # The following MODIFIERS are supported: ONLY
 #
@@ -16,17 +19,17 @@ class BadgesFilter < Nanoc::Filter
 
   BADGES_HTML_PATTERN = %r{
     <strong>
-    \[
+    [\[|\(]
     (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))?
-    \]
+    [\]|\)]
     </strong>
   }x
 
   BADGES_MARKDOWN_PATTERN = %r{
     (?:^|[^`]) # must be start of the line or anything except backtick
-    \*\*\[
+    \*\*(\[|\()
     (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))
-    ?\]\*\*
+    ?(\]|\))\*\*
     (?:$|[^`]) # must end of line or anything except backtick
   }x
 
