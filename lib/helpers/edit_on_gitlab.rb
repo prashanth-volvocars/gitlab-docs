@@ -36,8 +36,8 @@ module Nanoc::Helpers
         gitlab_ide_url = "https://gitlab.com/-/ide/project/debugging/#{product}/edit/master/-/content/#{docs_content_filename}"
       else
         # gitlab-docs pages
-        gitlab_url = "https://gitlab.com/gitlab-com/gitlab-docs/blob/master/#{@item[:content_filename]}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-com/gitlab-docs/edit/master/-/#{@item[:content_filename]}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/master/#{@item[:content_filename]}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-docs/edit/master/-/#{@item[:content_filename]}"
       end
 
       case editor

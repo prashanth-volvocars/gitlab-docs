@@ -186,7 +186,7 @@ review:
     paths:
     - environment_url.txt
   only:
-    - branches@gitlab-com/gitlab-docs
+    - branches@gitlab-org/gitlab-docs
   # Except master and stable branches
   except:
     - master
@@ -215,7 +215,7 @@ review_stop:
     name: review/$CI_COMMIT_REF_SLUG
     action: stop
   only:
-    - branches@gitlab-com/gitlab-docs
+    - branches@gitlab-org/gitlab-docs
   # Except master and stable branches
   except:
     - master
@@ -234,7 +234,7 @@ review_stop:
 # Deploy to production with GitLab Pages
 #
 pages:
-  image: registry.gitlab.com/gitlab-com/gitlab-docs:latest
+  image: registry.gitlab.com/gitlab-org/gitlab-docs:latest
   stage: deploy
   variables:
     GIT_STRATEGY: none
@@ -264,7 +264,7 @@ pages:
     - environment_url.txt
     expire_in: 1d
   only:
-    - master@gitlab-com/gitlab-docs
+    - master@gitlab-org/gitlab-docs
   <<: *retry
 
 ###############################################
