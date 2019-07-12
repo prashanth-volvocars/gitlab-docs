@@ -17,14 +17,14 @@ For each image, there's a manual job under the `images` stage in
 Build and tag all tooling images:
 
 ```sh
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
 ```
 
 For each archive branch, build the archive's image:
 
 ```
 git checkout 10-4-stable
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs/docs:10.4 .
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs/docs:10.4 .
 ```
