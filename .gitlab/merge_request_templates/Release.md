@@ -1,4 +1,4 @@
-[> How to](https://gitlab.com/gitlab-com/gitlab-docs/blob/master/dockerfiles/README.md)
+[> How to](https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/README.md)
 
 ## During release
 
@@ -24,6 +24,6 @@ On the 22nd, a few minutes before merging this and **before the scheduled pipeli
 
 ## After merge
 
-1. [ ] Manually run the [scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules).
+1. [ ] Manually run the [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
 
 /label ~release
