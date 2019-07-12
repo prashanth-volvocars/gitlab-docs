@@ -26,7 +26,7 @@ module Nanoc::Helpers
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
       else
         # gitlab-docs pages
-        gitlab_url = "https://gitlab.com/gitlab-com/gitlab-docs/blob/master/#{@item[:content_filename]}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/master/#{@item[:content_filename]}"
       end
 
       result = gitlab_url
