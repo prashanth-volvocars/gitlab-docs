@@ -12,9 +12,9 @@ ARG BRANCH_OMNIBUS=10-5-stable
 ARG BRANCH_RUNNER=10-5-stable
 
 # This image comes from the Dockerfile.builder.onbuild file
-# https://gitlab.com/gitlab-com/gitlab-docs/blob/master/dockerfiles/Dockerfile.builder.onbuild
-FROM registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild AS builder
+# https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/Dockerfile.builder.onbuild
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild AS builder
 
 # This image comes from the Dockerfile.nginx.onbuild file
-# https://gitlab.com/gitlab-com/gitlab-docs/blob/master/dockerfiles/Dockerfile.nginx.onbuild
-FROM registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild
+# https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/Dockerfile.nginx.onbuild
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild
