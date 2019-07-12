@@ -12,7 +12,7 @@ module Nanoc::Helpers
         anchor = text.gsub(/\s+/, '-').gsub(/<\/?[^>]*>/, '').downcase
         # https://github.com/rails/rails/blob/e491b2c06329afb3c989261a2865d2a93c8b84b8/activesupport/lib/active_support/inflector/transliterate.rb#L86
         anchor.gsub!(/[^a-z0-9\-_]+/i, '-')
-        anchor.gsub!(/39-/, '')     # remove weird symbol https://gitlab.com/gitlab-com/gitlab-docs/issues/84
+        anchor.gsub!(/39-/, '')     # remove weird symbol https://gitlab.com/gitlab-org/gitlab-docs/issues/84
         anchor.squeeze!('-')        # replace multiple dashes with one
         anchor.gsub!(/^-|-$/, '')   # remove any first or last dashes
 
