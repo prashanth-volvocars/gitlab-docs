@@ -32,9 +32,9 @@ The following Dockerfiles are used.
 You can build and tag all tooling images locally (while in this directory):
 
 ```sh
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
 ```
 
 For each image, there's a manual job under the `images` stage in
@@ -73,8 +73,8 @@ and update the `latest` and `archives` images to include the new version.
     ARG BRANCH_OMNIBUS=10-5-stable
     ARG BRANCH_RUNNER=10-5-stable
 
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild AS builder
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild
+    FROM registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild AS builder
+    FROM registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild
     ```
 
 1. Test locally by building the image and running it:
@@ -104,7 +104,7 @@ There are 2 things to change:
 1. [`Dockerfile.archives`](Dockerfile.archives)
 1. [`Dockerfile.master`](../Dockerfile.master)
 
-Once you push, you may need to [run the scheduled pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipeline_schedules)
+Once you push, you may need to [run the scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
 (press the play button), since both of those images are built on a schedule,
 once an hour.
 
@@ -132,7 +132,7 @@ page work as expected. If not, the `latest` image is possibly not yet updated.
 ## Update an old image with new upstream content
 
 If there are upstream changes not included in the single Docker image, just
-[rerun the pipeline](https://gitlab.com/gitlab-com/gitlab-docs/pipelines/new)
+[rerun the pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipelines/new)
 for the branch in question.
 
 ## Porting new website changes to old versions

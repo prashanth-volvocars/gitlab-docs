@@ -1,5 +1,5 @@
 # First use the bootstrap image to build master
-FROM registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap as builder
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap as builder
 
 # Build the docs from this branch
 COPY . /source/
@@ -18,7 +18,7 @@ ENV TARGET=/usr/share/nginx/html
 
 # Get the nginx config from the nginx-onbuild image
 # This hardly ever changes so should usually be cached
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
 RUN rm -rf /usr/share/nginx/html/*
 
@@ -26,9 +26,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # Go oldest-to-newest to take advantage of the fact that we change older
 # archives less often than new ones. Copy the versions found in
 # 'content/_data/versions.yaml' under current and previous.
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.4 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.5 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-com/gitlab-docs:10.6 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.4 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.5 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.6 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive
