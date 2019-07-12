@@ -26,7 +26,7 @@ is built from the <code>doc</code> directories on the <code>master</code> branch
 <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/tree/master/doc">Omnibus GitLab</a>, and
 <a href="https://gitlab.com/gitlab-org/gitlab-runner/tree/master/docs">GitLab Runner</a>,
 all of them brought together by the
-<a href="https://gitlab.com/gitlab-com/gitlab-docs/">GitLab Docs</a>
+<a href="https://gitlab.com/gitlab-org/gitlab-docs/">GitLab Docs</a>
 project, which continuously deploys this content to <a href="/">docs.gitlab.com</a>.
 
 <h2 id="latest-released-version">Latest released version <a class="anchor" href="#latest-released-version"></a></h2>
@@ -61,7 +61,7 @@ to access them.
 
 <h3><%= version %></h3>
 
-<div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 4000:4000 registry.gitlab.com/gitlab-com/gitlab-docs:<%= version %>
+<div class="highlight"><pre class="highlight shell"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 4000:4000 registry.gitlab.com/gitlab-org/gitlab-docs:<%= version %>
 </code></pre></div>
 
 <% end %>
