@@ -1,4 +1,4 @@
-[![build status](https://gitlab.com/gitlab-com/gitlab-docs/badges/master/build.svg)](https://gitlab.com/gitlab-com/gitlab-docs/commits/master)
+[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/master/build.svg)](https://gitlab.com/gitlab-com/gitlab-docs/commits/master)
 
 # GitLab Documentation
 
@@ -158,10 +158,10 @@ Then, it's time to clone the needed repositories.
 
     ```sh
     ## Using SSH (for members that have Developer access)
-    git clone git@gitlab.com:gitlab-com/gitlab-docs.git
+    git clone git@gitlab.com:gitlab-org/gitlab-docs.git
 
     ## Using HTTPS (for external contributors)
-    git clone https://gitlab.com/gitlab-com/gitlab-docs.git
+    git clone https://gitlab.com/gitlab-org/gitlab-docs.git
     ```
 
 1. Then, clone the repositories you wish to contribute changes to the documentation.
@@ -301,7 +301,7 @@ By default, we pull from the master branch of [all the projects](#projects-we-pu
 
 [job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
 [pages]: https://pages.gitlab.io
-[environments page]: https://gitlab.com/gitlab-com/gitlab-docs/environments/folders/review
+[environments page]: https://gitlab.com/gitlab-org/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
-[pipelines page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines
-[new pipeline page]: https://gitlab.com/gitlab-com/gitlab-docs/pipelines/new
+[pipelines page]: https://gitlab.com/gitlab-org/gitlab-docs/pipelines
+[new pipeline page]: https://gitlab.com/gitlab-org/gitlab-docs/pipelines/new

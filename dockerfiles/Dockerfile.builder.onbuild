@@ -1,5 +1,5 @@
 # Get Nanoc bootstrap
-FROM registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap
 
 # Make the variables of the archive Dockerfiles accessible to this build-stage
 ONBUILD ARG VER

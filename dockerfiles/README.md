@@ -18,9 +18,9 @@ The following Dockerfiles are used.
 Build and tag all tooling images:
 
 ```sh
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
-docker build -t registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap -f Dockerfile.bootstrap ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild -f Dockerfile.builder.onbuild ../
+docker build -t registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild -f Dockerfile.nginx.onbuild ../
 ```
 
 For each image, there's a manual job under the `images` stage in
@@ -56,8 +56,8 @@ branch:
     ARG BRANCH_OMNIBUS=10-5-stable
     ARG BRANCH_RUNNER=10-5-stable
 
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:builder-onbuild AS builder
-    FROM registry.gitlab.com/gitlab-com/gitlab-docs:nginx-onbuild
+    FROM registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild AS builder
+    FROM registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild
     ```
 
 1. Test locally by building the image and running it:
