@@ -176,5 +176,19 @@ function toggleNavigation() {
       el.style.height = '34px';
       el.previousElementSibling.classList.add('collapsed');
     }
+
+    // Adds the ability to auto-scroll to the active item in the TOC
+    $(window).on('activate.bs.scrollspy', () => {
+      const activeAnchors = document.querySelectorAll('#markdown-toc .nav-link.active');
+
+      if(activeAnchors.length) {
+        const sidebarAnchorOffset = 45;
+        const lastActiveAnchor = activeAnchors[activeAnchors.length -1];
+        const sidebar = document.getElementById('doc-nav');
+        // Takes the last active anchor in the tree and scrolls it into view.
+        lastActiveAnchor.scrollIntoView();
+        sidebar.scrollTop -= sidebarAnchorOffset;
+      }
+    });
   });
 })();
