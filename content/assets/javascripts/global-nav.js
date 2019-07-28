@@ -1,0 +1,32 @@
+(function() {
+  const menu = document.getElementById('global-nav');
+  const activeMenuItem = menu.querySelector('.nav-link .active');
+  const collapsedMenu = activeMenuItem.closest('.collapse');
+
+  expand(collapsedMenu);
+
+  // Expands the menu tree for the selected menu item
+  function expand(menu) {
+
+    if(!menu) {
+      return;
+    }
+
+    const collapseToggle = menu.previousElementSibling.querySelector('.collapse-toggle');
+
+    menu.previousElementSibling.classList.add('active');
+    menu.classList.add('show');
+
+    if(collapseToggle) {
+      collapseToggle.classList.remove('collapsed');
+      collapseToggle.setAttribute('aria-expanded', true);
+    }
+
+    if(menu.parentElement.classList.contains('collapse')) {
+      // This will traverse up until all parents are expanded
+      expand(menu.parentElement);
+    } else if (menu.parentElement.classList.contains('global-nav-section')) {
+      menu.parentElement.classList.add('expanded');
+    }
+  };
+})();

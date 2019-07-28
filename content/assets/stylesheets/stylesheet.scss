@@ -447,31 +447,88 @@ li {
 .global-nav {
   height: 100%;
   width: 15%;
+  max-width: 220px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
-  overflow: scroll;
+  overflow: auto;
   margin-top: 56px;
   padding-top: 15px;
-  padding-left: 3px;
+  background: $gds-gray-50;
+  border-right: 1px solid $gds-gray-200;
+
+  .global-nav-section {
+    &.expanded {
+      background-color: $gds-gray-100;
+      box-shadow: inset 4px 0 0 $gds-indigo-800;
+    }
+  }
+
+  .global-nav-cat.active {
+    a {
+      color: $gds-indigo-800;
+    }
+  }
 
   .global-nav-content {
     margin-bottom: 70px;
   }
 
   a {
-    display: block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 7px;
 
     &.active {
-      background-color: $link-color-bg-active;
+      background-color: $gds-gray-100;
       font-weight: 600;
-      border-left: 3px solid;
-      color: $link-color-nav;
+      border-left: 4px solid;
+      color: $gds-indigo-800;
 
       &:hover {
-        color: $link-color-nav;
+        color: $gds-indigo-800;
+      }
+
+      &.level-1, &.level-2 {
+        background-color: $gds-gray-200;
+      }
+    }
+  }
+
+  .collapse-toggle {
+    cursor: pointer;
+    float: right;
+    width: 26px;
+    height: 36px;
+    display: flex;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      border: solid $gds-gray-700;
+      border-width: 0 1px 1px 0;
+      display: inline-block;
+      transform: rotate(-135deg);
+      width: 7px;
+      height: 7px;
+    }
+
+    &.collapsed {
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+
+    &.active {
+      background-color: $gds-gray-200;
+      &.section-title {
+        background-color: $gds-gray-100;
       }
     }
   }
@@ -492,8 +549,6 @@ li {
 
 // scss-lint:disable QualifyingElement
 a.global-nav-link, .nav-link {
-  padding-top: 1px;
-  padding-bottom: 1px;
   text-decoration: none;
 
   &:hover {
@@ -501,13 +556,20 @@ a.global-nav-link, .nav-link {
   }
 }
 
+a.global-nav-link {
+  line-height: 1.25;
+  font-size: 14px;
+  width: 100%;
+}
+
 .nav-link {
   padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-link:hover {
   background-color: $link-color-bg-active;
-  box-shadow: 1px 1px 2px $global-nav-link-shadow;
 }
 // scss-lint:enable QualifyingElement
 
@@ -524,53 +586,46 @@ a.global-nav-link, .nav-link {
 
 // use these classes to add color and padding-left to the nav links
 .level-0 {
-  padding-left: 10px;
   color: $global-nav-link-level0;
-
-  &.active {
-    padding-left: 7px; // 10 - 3px of border
-  }
+  padding-left: 18px;
 
   &:visited {
     color: $global-nav-link-level0;
   }
+
+  &.active {
+    padding-left: 14px;
+  }
 }
 
 .level-1 {
-  padding-left: 20px;
   color: $global-nav-link-level1;
-
-  &.active {
-    padding-left: 17px; // 20 - 3px of border
-  }
+  padding-left: 35px;
 
   &:visited {
     color: $global-nav-link-level1;
   }
+
+  &.active {
+    padding-left: 31px;
+  }
 }
 
 .level-2 {
-  padding-left: 36px;
   color: $global-nav-link-level2;
-  font-size: 14px;
-
-  &.active {
-    padding-left: 33px; // 36 - 3px of border
-  }
+  padding-left: 53px;
 
   &:visited {
     color: $global-nav-link-level2;
   }
+
+  &.active {
+    padding-left: 49px;
+  }
 }
 
 .global-nav-badges {
-  color: $global-nav-link-level2;
-  opacity: .4;
-  transition: opacity .3s;
-
-  &:hover {
-    opacity: 1;
-  }
+  color: $gds-gray-700;
 }
 //end of global-nav
 

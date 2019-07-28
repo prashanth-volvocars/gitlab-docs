@@ -13,10 +13,12 @@
             <%= sec[:section_title] %>
           </a>
         <% end %><!-- end of if dir -->
+        <div class="section-title <% if sec[:section_categories] %>collapse-toggle<% end %> <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>active<% else %>collapsed<% end %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= sec[:section_title].gsub(/[\s\/]/, '') %>"></div>
       </span>
 
       <!-- nav categories -->
       <% if sec[:section_categories] %>
+      <div class="collapse <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>show<% end %>" id="<%= sec[:section_title].delete(' ') %>">
         <% sec[:section_categories].each do |cat| %>
           <span class="global-nav-cat nav-link">
             <% if cat[:external_url] %>
@@ -40,10 +42,12 @@
                 </a>
               <% end %><!-- end of if dir != 'ce' -->
             <% end %><!-- end of if cat[:external_url] -->
+            <div class="<% if cat[:docs] %>collapse-toggle<% end %> <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% else %>collapsed<% end %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= cat[:category_title].gsub(/[\s\/]/, '') %>"></div>
           </span>
 
           <!-- nav docs -->
           <% if cat[:docs] %>
+            <div class="collapse <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>show<% end %>" id="<%= cat[:category_title].gsub(/[\s\/]/, '') %>">
             <% cat[:docs].each do |doc| %>
               <span class="nav-link">
                 <% if doc[:external_url] %>
@@ -69,8 +73,10 @@
                 <% end %><!-- end of if doc[:external_url] -->
               </span>
             <% end %><!-- end of cat[:docs] -->
+            </div>
           <% end %><!-- end of if cat[:docs].nil? -->
         <% end %><!-- end of sec[:section_categories] -->
+      </div>
       <% end %><!-- end of if sec[:section_categories].nil? -->
     </div><!-- end of div class="global-nav-section" -->
   <% end %><!-- end of @items['/_data/global-nav.yaml'] -->
