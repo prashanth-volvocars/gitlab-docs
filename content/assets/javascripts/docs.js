@@ -178,7 +178,7 @@ function toggleNavigation() {
     }
 
     // Adds the ability to auto-scroll to the active item in the TOC
-    $(window).on('activate.bs.scrollspy', () => {
+    $(window).on('activate.bs.scrollspy', function() {
       const activeAnchors = document.querySelectorAll('#markdown-toc .nav-link.active');
 
       if(activeAnchors.length) {
