@@ -18,6 +18,7 @@ variables:
   BRANCH_RUNNER: 'master'
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
+  GIT_DEPTH: '20'
 
 #
 # Check Ruby version and install gems
