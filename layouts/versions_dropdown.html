@@ -8,15 +8,17 @@ Choose version
       Name the label dropdown after the release version so that you know
       which version you're browsing. For `/archives` show 'Archives' since
       they're supposed to be versionless.
-      If we build on master and stable branches (versions), show the branch
-      name in the dropdown menu. For local development and review apps, show
-      "Versions".
+      If we build on master and stable branches (versions), show the following
+      name in the drodown menu:
+        - GitLab.com if master.
+        - The branch name otherwise.
+      For local development and review apps, show "Versions".
     -->
     <% if archives? %>
     Archives
     <% else %>
       <% if ENV['NANOC_ENV'] == 'production' %>
-        <%= ENV['CI_COMMIT_REF_NAME'] %>
+        <%= ENV['CI_COMMIT_REF_NAME'] == 'master' ? 'GitLab.com' : ENV['CI_COMMIT_REF_NAME'] %>
       <% else %>
         Versions
       <% end %>
