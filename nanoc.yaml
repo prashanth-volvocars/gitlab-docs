@@ -103,6 +103,7 @@ checks:
       - 'https:\/\/dl\.acm\.org\/citation\.cfm\?id=361591'
       - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
       - 'https:\/\/www\.amazon\.com\/.*'
+      - 'https:\/\/contributors\.gitlab\.com\/'
       # Don't check links matching the following patterns
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
