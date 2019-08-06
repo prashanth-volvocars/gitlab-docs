@@ -55,3 +55,7 @@ sections:
     section_url: 'faq/README.html'
   - section_title: Contribute
     section_url: 'development/README.html'
+    section_categories:
+      - category_title: Documentation
+        category_url: 'https://docs.gitlab.com/ee/development/documentation/'
+        external_url: true
