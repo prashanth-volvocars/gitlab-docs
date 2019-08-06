@@ -149,12 +149,220 @@ sections:
             doc_url: 'topics/authentication/'
           - doc_title: SSH
             doc_url: 'ssh/README.html'
-          - doc_title: API
-            doc_url: 'api/README.html'
           - doc_title: Integrations
             doc_url: 'integration/README.html'
           - doc_title: Git
             doc_url: 'topics/git/'
+
+  - section_title: API
+    section_url: 'api/README.html'
+    section_categories:
+      - category_title: Group and project access requests
+        category_url: 'api/access_requests.html'
+      - category_title: Applications
+        category_url: 'api/applications.html'
+      - category_title: Avatar
+        category_url: 'api/avatar.html'
+      - category_title: Award emoji
+        category_url: 'api/award_emoji.html'
+      - category_title: Project issue boards
+        category_url: 'api/boards.html'
+      - category_title: Branches
+        category_url: 'api/branches.html'
+      - category_title: Broadcast messages
+        category_url: 'api/broadcast_messages.html'
+      - category_title: Commits
+        category_url: 'api/commits.html'
+      - category_title: Container Registry
+        category_url: 'api/container_registry.html'
+      - category_title: Custom attributes
+        category_url: 'api/custom_attributes.html'
+      - category_title: Dependencies
+        category_url: 'api/dependencies.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Deploy keys
+        category_url: 'api/deploy_keys.html'
+      - category_title: Deployments
+        category_url: 'api/deployments.html'
+      - category_title: Discussions
+        category_url: 'api/discussions.html'
+      - category_title: Environments
+        category_url: 'api/environments.html'
+      - category_title: Epic issues
+        category_url: 'api/epic_issues.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Epic links
+        category_url: 'api/epic_links.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Epics
+        category_url: 'api/epics.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Events
+        category_url: 'api/events.html'
+      - category_title: Features flags
+        category_url: 'api/features.html'
+      - category_title: Geo nodes
+        category_url: 'api/geo_nodes.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium'
+      - category_title: GraphQL
+        category_url: 'api/graphql/'
+      - category_title: GraphQL reference
+        category_url: 'api/graphql/reference/'
+      - category_title: Group badges
+        category_url: 'api/group_badges.html'
+      - category_title: Group issue boards
+        category_url: 'api/group_boards.html'
+      - category_title: Group clusters
+        category_url: 'api/group_clusters.html'
+      - category_title: Group labels
+        category_url: 'api/group_labels.html'
+      - category_title: Group-level variables
+        category_url: 'api/group_level_variables.html'
+      - category_title: Group milestones
+        category_url: 'api/group_milestones.html'
+      - category_title: Groups
+        category_url: 'api/groups.html'
+      - category_title: Import
+        category_url: 'api/import.html'
+      - category_title: Issue links
+        category_url: 'api/issue_links.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter and GitLab.com Bronze'
+      - category_title: Issues
+        category_url: 'api/issues.html'
+      - category_title: Issues statistics
+        category_url: 'api/issues_statistics.html'
+      - category_title: Jobs
+        category_url: 'api/jobs.html'
+      - category_title: Keys
+        category_url: 'api/keys.html'
+      - category_title: Labels
+        category_url: 'api/labels.html'
+      - category_title: License
+        category_url: 'api/license.html'
+      - category_title: Lint .gitlab-ci.yml
+        category_url: 'api/lint.html'
+      - category_title: Managed licenses
+        category_url: 'api/managed_licenses.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Markdown
+        category_url: 'api/markdown.html'
+      - category_title: Members
+        category_url: 'api/members.html'
+      - category_title: Merge request approvals
+        category_url: 'api/merge_request_approvals.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter and GitLab.com Bronze'
+      - category_title: Merge requests
+        category_url: 'api/merge_requests.html'
+      - category_title: Project milestones
+        category_url: 'api/milestones.html'
+      - category_title: Namespaces
+        category_url: 'api/namespaces.html'
+      - category_title: Notes (comments)
+        category_url: 'api/notes.html'
+      - category_title: Notification settings
+        category_url: 'api/notification_settings.html'
+      - category_title: GitLab as an OAuth2 provider
+        category_url: 'api/oauth2.html'
+      - category_title: Packages
+        category_url: 'api/packages.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium and GitLab.com Silver'
+      - category_title: Pages domains
+        category_url: 'api/pages_domains.html'
+      - category_title: Pipelines schedules
+        category_url: 'api/pipeline_schedules.html'
+      - category_title: Pipeline triggers
+        category_url: 'api/pipeline_triggers.html'
+      - category_title: Pipelines
+        category_url: 'api/pipelines.html'
+      - category_title: Project aliases
+        category_url: 'api/project_aliases.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium'
+      - category_title: Project badges
+        category_url: 'api/project_badges.html'
+      - category_title: Project clusters
+        category_url: 'api/project_clusters.html'
+      - category_title: Project import/export
+        category_url: 'api/project_import_export.html'
+      - category_title: Project-level variables
+        category_url: 'api/project_level_variables.html'
+      - category_title: Project snippets
+        category_url: 'api/project_snippets.html'
+      - category_title: Project statistics
+        category_url: 'api/project_statistics.html'
+      - category_title: Project templates
+        category_url: 'api/project_templates.html'
+      - category_title: Projects
+        category_url: 'api/projects.html'
+      - category_title: Protected branches
+        category_url: 'api/protected_branches.html'
+      - category_title: Protected tags
+        category_url: 'api/protected_tags.html'
+      - category_title: Releases
+        category_url: 'api/releases/'
+      - category_title: Release links
+        category_url: 'api/releases/links.html'
+      - category_title: Repositories
+        category_url: 'api/repositories.html'
+      - category_title: Repository files
+        category_url: 'api/repository_files.html'
+      - category_title: Repository submodules
+        category_url: 'api/repository_submodules.html'
+      - category_title: Resource label events
+        category_url: 'api/resource_label_events.html'
+      - category_title: Runners
+        category_url: 'api/runners.html'
+      - category_title: SCIM
+        category_url: 'api/scim.html'
+        ee_only: true
+        ee_tier: 'GitLab Silver'
+      - category_title: Search
+        category_url: 'api/search.html'
+      - category_title: Services
+        category_url: 'api/services.html'
+      - category_title: Application settings
+        category_url: 'api/settings.html'
+      - category_title: Sidekiq metrics
+        category_url: 'api/sidekiq_metrics.html'
+      - category_title: Snippets
+        category_url: 'api/snippets.html'
+      - category_title: Suggestions
+        category_url: 'api/suggestions.html'
+      - category_title: System hooks
+        category_url: 'api/system_hooks.html'
+      - category_title: Tags
+        category_url: 'api/tags.html'
+      - category_title: Dockerfile templates
+        category_url: 'api/templates/dockerfiles.html'
+      - category_title: .gitignore templates
+        category_url: 'api/templates/gitignores.html'
+      - category_title: .gitlab-ci.yml template
+        category_url: 'api/templates/gitlab_ci_ymls.html'
+      - category_title: License templates
+        category_url: 'api/templates/licenses.html'
+      - category_title: To-Do lists
+        category_url: 'api/todos.html'
+      - category_title: Users
+        category_url: 'api/users.html'
+      - category_title: Version
+        category_url: 'api/version.html'
+      - category_title: Vulnerabilities
+        category_url: 'api/vulnerabilities.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Wikis
+        category_url: 'api/wikis.html'
+      - category_title: v3 to v4
+        category_url: 'api/v3_to_v4.html'
 
   - section_title: Administrator
     section_url: 'administration/'
