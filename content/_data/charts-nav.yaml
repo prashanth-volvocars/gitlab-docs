@@ -1,0 +1,98 @@
+## READ BEFORE EDITING THIS FILE ##
+#
+### Rules
+# - Do not start the URL with "/"
+# - Do not add anchors to the links
+# - If the URL ends with index.html, leave it empty (e.g. section_url: 'index.html' --> section_url: '')
+#
+### Options
+# - Use "ee_only: true" for categories and docs available only in EE.
+#   - When "ee_only: true", use `ee_tier:` to indicate the tiers the feature is available in:
+#.    - For Ultimate: `ee_tier: 'GitLab Ultimate and GitLab.com Gold'`
+#     - For Premium: `ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'`
+#     - For Starter: `ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'`
+#.    - For self-managed only: `ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'`
+#.    - For GitLab.com only: `ee_tier: 'GitLab.com Silver only. Not available in GitLab self-managed instances'`
+# - Use "external_url: true" for external URLs in docs and categories
+
+sections:
+  - section_title: GitLab Helm Charts
+    section_url: ''
+  - section_title: Install
+    section_url: 'installation/'
+    section_categories:
+      - category_title: Required tools
+        category_url: 'installation/tools.html'
+      - category_title: Cloud cluster preparation
+        category_url: 'installation/cloud/'
+        docs:
+          - doc_title: EKS
+            doc_url: 'installation/cloud/eks.html'
+          - doc_title: GKE
+            doc_url: 'installation/cloud/gke.html'
+          - doc_title: OpenShift
+            doc_url: 'installation/cloud/openshift.html'
+      - category_title: Deploy
+        category_url: 'installation/deployment.html'
+      - category_title: Upgrade
+        category_url: 'installation/upgrade.html'
+      - category_title: Migrate from Omnibus
+        category_url: 'installation/migration/'
+      - category_title: Version mappings
+        category_url: 'installation/version_mappings.html'
+  - section_title: Charts
+    section_url: 'charts/'
+    section_categories:
+      - category_title: Globals
+        category_url: 'charts/globals.html'
+      - category_title: GitLab
+        category_url: 'charts/gitlab/'
+        docs:
+          - doc_title: Gitaly
+            doc_url: 'charts/gitlab/gitaly/'
+          - doc_title: GitLab Monitor
+            doc_url: 'charts/gitlab/gitlab-monitor/'
+          - doc_title: GitLab Runner
+            doc_url: 'charts/gitlab/gitlab-runner/'
+          - doc_title: GitLab Shell
+            doc_url: 'charts/gitlab/gitlab-shell/'
+          - doc_title: Migrations
+            doc_url: 'charts/gitlab/migrations/'
+          - doc_title: Sidekiq
+            doc_url: 'charts/gitlab/sidekiq/'
+          - doc_title: Unicorn
+            doc_url: 'charts/gitlab/unicorn/'
+      - category_title: Minio
+        category_url: 'charts/minio/'
+      - category_title: Nginx
+        category_url: 'charts/nginx/'
+      - category_title: Redis
+        category_url: 'charts/redis/'
+      - category_title: Redis HA
+        category_url: 'charts/redis-ha/'
+      - category_title: Registry
+        category_url: 'charts/registry/'
+  - section_title: Advanced
+    section_url: 'advanced/'
+    section_categories:
+      - category_title: External database
+        category_url: 'advanced/external-db/'
+      - category_title: External Gitaly
+        category_url: 'advanced/external-gitaly/'
+      - category_title: External Nginx
+        category_url: 'advanced/external-nginx/'
+      - category_title: External object storage
+        category_url: 'advanced/external-object-storage/'
+        docs:
+          - doc_title: AWS IAM roles
+            doc_url: 'advanced/external-object-storage/aws-iam-roles.html'
+          - doc_title: Azure Minio gateway
+            doc_url: 'advanced/external-object-storage/azure-minio-gateway.html'
+      - category_title: External Redis
+        category_url: 'advanced/external-redis/'
+      - category_title: Persistent volumes
+        category_url: 'advanced/persistent-volumes/'
+  - section_title: Troubleshoot
+    section_url: 'troubleshooting/'
+  - section_title: Contribute
+    section_url: 'development/'
