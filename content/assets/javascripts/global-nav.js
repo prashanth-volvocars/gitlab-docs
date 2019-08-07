@@ -1,9 +1,13 @@
 (function() {
   const menu = document.getElementById('global-nav');
   const activeMenuItem = menu.querySelector('.nav-link .active');
-  const collapsedMenu = activeMenuItem.closest('.collapse');
+  const collapsedMenu = activeMenuItem ? activeMenuItem.closest('.collapse') : null;
+  let resizeTimeout;
 
   expand(collapsedMenu);
+  toggleSidebar();
+
+  window.addEventListener('resize', resizeHandler);
 
   // Expands the menu tree for the selected menu item
   function expand(menu) {
@@ -28,5 +32,24 @@
     } else if (menu.parentElement.classList.contains('global-nav-section')) {
       menu.parentElement.classList.add('expanded');
     }
-  };
+  }
+
+  function resizeHandler() {
+    const debounceDelay = 250; // the debounce ensures that we don't call the event handler unnecessarily
+
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(toggleSidebar, debounceDelay);
+  }
+
+  function toggleSidebar() {
+    const mediaQuery = window.matchMedia('(max-width: 1099px)');
+    const navWrapper = document.querySelector('.nav-wrapper');
+
+    if (mediaQuery.matches) {
+      navWrapper.classList.remove('active');
+      return;
+    }
+
+    navWrapper.classList.add('active');
+  }
 })();

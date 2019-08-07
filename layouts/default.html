@@ -8,11 +8,18 @@
   <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div class="wrapper">
-    <aside id="global-nav" class="global-nav">
-    <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
-      <%= render '/global_nav.*' %>
-    <% end %>
-    </aside>
+    <div class="nav-wrapper active">
+      <aside id="global-nav" class="global-nav">
+      <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
+        <%= render '/global_nav.*' %>
+      <% end %>
+      </aside>
+      <button type="button" class="btn nav-toggle" data-gl-class-toggle="active" data-target=".nav-wrapper">
+        <span class="arrow"></span>
+        <span class="arrow"></span>
+        <div class="label">Collapse sidebar</div>
+      </button>
+    </div>
     <div class="main class js-main-wrapper">
       <% if @config[:breadcrumbs] %>
         <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
@@ -83,5 +90,6 @@
   <%= render '/footer.*' %>
   <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
+  <script src="<%= @items['/assets/javascripts/class-toggle.*'].path %>"></script>
 </body>
 </html>
