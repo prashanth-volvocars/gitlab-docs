@@ -381,6 +381,8 @@ image:docs-single:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+  environment:
+    name: registry/$CI_COMMIT_REF_SLUG
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -401,6 +403,8 @@ image:docs-archives:
   dependencies: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
+  environment:
+    name: registry/archives
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
     - docker push $IMAGE_NAME
@@ -421,6 +425,8 @@ image:docs-latest:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+  environment:
+    name: registry/latest
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
