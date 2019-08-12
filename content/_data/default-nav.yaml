@@ -108,6 +108,8 @@ sections:
             doc_url: 'user/project/pages/'
           - doc_title: Auto DevOps
             doc_url: 'topics/autodevops/'
+          - doc_title: GitLab ChatOps
+            doc_url: 'ci/chatops/README.html'
           - doc_title: '.gitlab-ci.yml Reference'
             doc_url: 'ci/yaml/README.html'
 
