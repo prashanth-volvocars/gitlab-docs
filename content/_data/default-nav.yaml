@@ -447,3 +447,6 @@ sections:
 
       - category_title: Translate GitLab
         category_url: 'development/i18n/'
+
+  - section_title: Customer
+    section_url: 'subscriptions/'
