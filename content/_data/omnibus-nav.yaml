@@ -16,7 +16,7 @@
 # - Use "external_url: true" for external URLs in docs and categories
 
 sections:
-  - section_title: Omnibus
+  - section_title: Omnibus GitLab
     section_url: 'README.html'
   - section_title: Configure
     section_url: 'settings/README.html'
