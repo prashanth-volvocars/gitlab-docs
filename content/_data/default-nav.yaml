@@ -172,6 +172,10 @@ sections:
             doc_url: 'customization/'
           - doc_title: "CI/CD"
             doc_url: 'user/admin_area/settings/continuous_integration.html'
+          - doc_title: Disaster recovery (Geo)
+            doc_url: 'administration/geo/disaster_recovery/'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers'
           - doc_title: Email
             doc_url: 'user/admin_area/settings/email.html'
           - doc_title: Gitaly
@@ -188,6 +192,10 @@ sections:
             doc_url: 'administration/auth/README.html'
           - doc_title: PlantUML Integration
             doc_url: 'administration/integration/plantuml.html'
+          - doc_title: Replication (Geo)
+            doc_url: 'administration/geo/replication/'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers'
           - doc_title: Repository checks
             doc_url: 'administration/repository_checks.html'
           - doc_title: Repository path
