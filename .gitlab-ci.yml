@@ -59,7 +59,7 @@ before_script:
     # Symlink all README.html to index.html so that we can have clean URLs
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
-    - if [ -d "public/ce/" ]; then rm -r public/ce && ln -s ee public/ce; fi
+    - if [ -d "public/ce/" ]; then cd public && rm -r ce && ln -s ee ce; fi
   artifacts:
     paths:
       - public
@@ -240,14 +240,11 @@ pages:
   script:
     # Use the URL in the browser performance testing below
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
-    # Move the already built versions to the public directory.
     # We want to use the artifacts of the compile_prod job as
     # the latest docs deployment, and the other versions are
     # taken from /usr/share/nginx/html which are included in
     # the image we pull from.
-    - mv public latest
-    - mv /usr/share/nginx/html public
-    - cp -a latest/* public/
+    - for version in `seq 11 12`; do mv /usr/share/nginx/html/${version}* public/;done
   artifacts:
     paths:
     - public
