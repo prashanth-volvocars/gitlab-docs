@@ -56,6 +56,10 @@ before_script:
   script:
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
+    # Symlink all README.html to index.html so that we can have clean URLs
+    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+    # Remove CE dir and symlink EE to CE
+    - if [ -d "public/ce/" ]; then rm -r public/ce && ln -s ee public/ce; fi
   artifacts:
     paths:
       - public
@@ -164,6 +168,7 @@ review:
   cache: {}
   script:
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
+    # Rsync to the Pages dir
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   environment:
     name: review/$CI_COMMIT_REF_SLUG
@@ -243,8 +248,6 @@ pages:
     - mv public latest
     - mv /usr/share/nginx/html public
     - cp -a latest/* public/
-    # Symlink all README.html to index.html so that we can have clean URLs
-    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
   artifacts:
     paths:
     - public
