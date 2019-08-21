@@ -52,7 +52,7 @@ There are currently 5 products that are pulled and generate the docs website:
 - [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
-- [GitLab Chart](https://gitlab.com/charts/gitlab)
+- [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
 
 **Note:**
 Although GitLab Community Edition is generated, it is hidden from the website
@@ -184,7 +184,7 @@ Then, it's time to clone the needed repositories.
      git clone git@gitlab.com:gitlab-org/gitlab-ee.git
      git clone git@gitlab.com:gitlab-org/gitlab-runner.git
      git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
-     git clone git@gitlab.com:charts/gitlab.git charts
+     git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts
      ```
 
 ### Create the content symlinks

@@ -186,7 +186,7 @@ products:
     index_file: 'index.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Deploy GitLab to Kubernetes using the GitLab Helm Charts.'
-    repo: 'https://gitlab.com/charts/gitlab.git'
+    repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
     dirs:
       temp_dir: 'tmp/charts/'
       dest_dir: 'content/charts'
