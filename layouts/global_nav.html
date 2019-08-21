@@ -19,7 +19,7 @@ nav_items = nav_items_exists ? @items[nav_items_dir] : @items["/_data/default-na
 
       <!-- nav categories -->
       <% if sec[:section_categories] %>
-      <div class="collapse <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>show<% end %>" id="<%= sec[:section_title].delete(' ') %>">
+      <div class="collapse <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>show<% end %>" id="<%= sec[:section_title].gsub(/[\s\/]/, '') %>">
         <% sec[:section_categories].each do |cat| %>
           <span class="global-nav-cat nav-link">
             <% if cat[:external_url] %>
