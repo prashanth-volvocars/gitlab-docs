@@ -244,7 +244,7 @@ pages:
     # the latest docs deployment, and the other versions are
     # taken from /usr/share/nginx/html which are included in
     # the image we pull from.
-    - for version in `seq 11 12`; do mv /usr/share/nginx/html/${version}* public/;done
+    - mv /usr/share/nginx/html/1* public/
   artifacts:
     paths:
     - public
