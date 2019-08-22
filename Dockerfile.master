@@ -1,3 +1,8 @@
+#
+# This Dockerfile is mainly used to create the docs:latest image which includes
+# the latest 3 stable versions plus the most recent one built from master.
+#
+
 # First use the bootstrap image to build master
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap as builder
 
@@ -13,6 +18,13 @@ COPY . /source/
 RUN bundle exec rake setup_git default
 RUN bundle exec nanoc compile -VV
 
+# Symlink all README.html to index.html
+RUN for i in `find /source/public/ -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+
+# Remove CE dir and symlink EE to CE
+# https://gitlab.com/gitlab-org/gitlab-docs/issues/418
+RUN if [ -d "/source/public/ce/" ]; then cd /source/public/ce && rm -r ce && ln -s ee ce; fi
+
 # Remove tmp dir to save some space
 RUN rm -rf /source/tmp
 
@@ -27,6 +39,7 @@ ENV TARGET=/usr/share/nginx/html
 # This hardly ever changes so should usually be cached
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
+# Remove default Nginx HTML files
 RUN rm -rf /usr/share/nginx/html/*
 
 # Get all the archive static HTML and put it into place
