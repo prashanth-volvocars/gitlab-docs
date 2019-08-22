@@ -1,7 +1,7 @@
 #!/bin/sh
 
-TARGET="$1"
-VER="$2"
+TARGET="$1" # usually /site, the directory that has all the HTML files including versions
+VER="$2"    # the docs version
 
 if [ -z "$TARGET" ]; then
   echo "Usage: $0 <target> <version>"
@@ -32,3 +32,7 @@ find ${TARGET} -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#docs.git
 
 # Symlink all README.html to index.html
 for i in `find ${TARGET}/${VER} -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+
+# Remove CE dir and symlink EE to CE
+# https://gitlab.com/gitlab-org/gitlab-docs/issues/418
+if [ -d "${TARGET}/${VER}/ce/" ]; then cd ${TARGET}/${VER} && rm -r ce && ln -s ee ce; fi
