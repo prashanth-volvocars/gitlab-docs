@@ -23,7 +23,7 @@ RUN for i in `find /source/public/ -name README.html`; do ln -sf README.html $(d
 
 # Remove CE dir and symlink EE to CE
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
-RUN if [ -d "/source/public/ce/" ]; then cd /source/public/ce && rm -r ce && ln -s ee ce; fi
+RUN if [ -d "/source/public/ce/" ]; then cd /source/public/ && rm -r ce && ln -s ee ce; fi
 
 # Remove tmp dir to save some space
 RUN rm -rf /source/tmp
