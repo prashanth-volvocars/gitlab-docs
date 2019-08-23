@@ -59,7 +59,7 @@ before_script:
     # Symlink all README.html to index.html so that we can have clean URLs
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
-    - if [ -d "public/ce/" ]; then cd public && rm -r ce && ln -s ee ce; fi
+    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ] && [ -d "public/ce/" ]; then cd public && rm -r ce && ln -s ee ce; fi
   artifacts:
     paths:
       - public
