@@ -16,7 +16,7 @@
 # - Use "external_url: true" for external URLs in docs and categories
 
 sections:
-  - section_title: GitLab Helm Charts
+  - section_title: GitLab Helm Charts Docs
     section_url: ''
   - section_title: Install
     section_url: 'installation/'
