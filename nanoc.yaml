@@ -104,6 +104,10 @@ checks:
       - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
       - 'https:\/\/www\.amazon\.com\/.*'
       - 'https:\/\/contributors\.gitlab\.com\/'
+      - 'https:\/\/downloads\.raspberrypi\.org\/raspbian\/images\/'
+      - 'https:\/\/wiki\.jenkins\.io\/display\/JENKINS\/'
+      # Redirected links to ignore
+      - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
       # Don't check links matching the following patterns
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
