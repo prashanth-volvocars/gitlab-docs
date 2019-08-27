@@ -28,12 +28,24 @@ sections:
   - section_title: Groups
     section_url: 'user/group/'
     section_categories:
-      - category_title: Subgroups
-        category_url: 'user/group/subgroups/'
-      - category_title: "Epics"
+      - category_title: Contribution analytics
+        category_url: 'user/group/contribution_analytics/'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Epics
         category_url: 'user/group/epics/'
         ee_only: true
         ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Dependency proxy
+        category_url: 'user/group/dependency_proxy/'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Issue analytics
+        category_url: 'user/group/issues_analytics/'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Subgroups
+        category_url: 'user/group/subgroups/'
       - category_title: Roadmaps
         category_url: 'user/group/roadmap/'
         ee_only: true
@@ -76,6 +88,10 @@ sections:
   - section_title: Issues
     section_url: 'user/project/issues/'
     section_categories:
+      - category_title: Design management
+        category_url: 'user/project/issues/design_management.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Issue Boards
         category_url: 'user/project/issue_board.html'
       - category_title: Labels
@@ -86,6 +102,10 @@ sections:
         category_url: 'user/project/service_desk.html'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Weight
+        category_url: 'workflow/issue_weight.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
 
   - section_title: Merge Requests
     section_url: 'user/project/merge_requests/'
