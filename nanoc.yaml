@@ -181,7 +181,7 @@ products:
     expose: true
   charts:
     full_name: 'GitLab Helm chart'
-    short_name: 'Chart'
+    short_name: 'Charts'
     slug: 'charts'
     index_file: 'index.*'
     img: '/assets/images/docs-gitlab.svg'
@@ -191,7 +191,7 @@ products:
       temp_dir: 'tmp/charts/'
       dest_dir: 'content/charts'
       doc_dir:  'doc'
-    expose: false
+    expose: true
   debug:
     full_name: 'Debugging for GitLab Support'
     short_name: 'Debug'
