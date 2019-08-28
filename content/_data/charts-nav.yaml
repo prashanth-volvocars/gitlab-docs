@@ -40,58 +40,53 @@ sections:
         category_url: 'installation/migration/'
       - category_title: Version mappings
         category_url: 'installation/version_mappings.html'
-  - section_title: Charts
+  - section_title: Configure
     section_url: 'charts/'
     section_categories:
       - category_title: Globals
         category_url: 'charts/globals.html'
-      - category_title: GitLab
+      - category_title: GitLab chart
         category_url: 'charts/gitlab/'
         docs:
-          - doc_title: Gitaly
+          - doc_title: Gitaly chart
             doc_url: 'charts/gitlab/gitaly/'
-          - doc_title: GitLab Monitor
+          - doc_title: GitLab Monitor chart
             doc_url: 'charts/gitlab/gitlab-monitor/'
-          - doc_title: GitLab Runner
+          - doc_title: GitLab Runner chart
             doc_url: 'charts/gitlab/gitlab-runner/'
-          - doc_title: GitLab Shell
+          - doc_title: GitLab Shell chart
             doc_url: 'charts/gitlab/gitlab-shell/'
-          - doc_title: Migrations
+          - doc_title: Migrations chart
             doc_url: 'charts/gitlab/migrations/'
-          - doc_title: Sidekiq
+          - doc_title: Sidekiq chart
             doc_url: 'charts/gitlab/sidekiq/'
-          - doc_title: Unicorn
+          - doc_title: Unicorn chart
             doc_url: 'charts/gitlab/unicorn/'
-      - category_title: Minio
+      - category_title: Minio chart
         category_url: 'charts/minio/'
-      - category_title: Nginx
+      - category_title: Nginx chart
         category_url: 'charts/nginx/'
-      - category_title: Redis
+      - category_title: Redis chart
         category_url: 'charts/redis/'
-      - category_title: Redis HA
+      - category_title: Redis HA chart
         category_url: 'charts/redis-ha/'
-      - category_title: Registry
+      - category_title: Registry chart
         category_url: 'charts/registry/'
-  - section_title: Advanced
-    section_url: 'advanced/'
-    section_categories:
-      - category_title: External database
-        category_url: 'advanced/external-db/'
-      - category_title: External Gitaly
-        category_url: 'advanced/external-gitaly/'
-      - category_title: External Nginx
-        category_url: 'advanced/external-nginx/'
-      - category_title: External object storage
-        category_url: 'advanced/external-object-storage/'
+      - category_title: Advanced
+        category_url: 'advanced/'
         docs:
-          - doc_title: AWS IAM roles
-            doc_url: 'advanced/external-object-storage/aws-iam-roles.html'
-          - doc_title: Azure Minio gateway
-            doc_url: 'advanced/external-object-storage/azure-minio-gateway.html'
-      - category_title: External Redis
-        category_url: 'advanced/external-redis/'
-      - category_title: Persistent volumes
-        category_url: 'advanced/persistent-volumes/'
+          - doc_title: External database
+            doc_url: 'advanced/external-db/'
+          - doc_title: External Gitaly
+            doc_url: 'advanced/external-gitaly/'
+          - doc_title: External Nginx
+            doc_url: 'advanced/external-nginx/'
+          - doc_title: External object storage
+            doc_url: 'advanced/external-object-storage/'
+          - doc_title: External Redis
+            doc_url: 'advanced/external-redis/'
+          - doc_title: Persistent volumes
+            doc_url: 'advanced/persistent-volumes/'
   - section_title: Troubleshoot
     section_url: 'troubleshooting/'
   - section_title: Contribute
