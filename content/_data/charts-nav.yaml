@@ -45,7 +45,7 @@ sections:
     section_categories:
       - category_title: Globals
         category_url: 'charts/globals.html'
-      - category_title: GitLab chart
+      - category_title: GitLab subcharts
         category_url: 'charts/gitlab/'
         docs:
           - doc_title: Gitaly chart
