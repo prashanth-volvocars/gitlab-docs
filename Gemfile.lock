@@ -1,3 +1,32 @@
+GIT
+  remote: git://github.com/nanoc/nanoc.git
+  revision: 94422c7b2670a4ebe7a1191f43dbab20509e469f
+  ref: 94422c7
+  specs:
+    guard-nanoc (2.1.6)
+      guard (~> 2.8)
+      guard-compat (~> 1.0)
+      nanoc (>= 4.3.8, < 5.0)
+    nanoc (4.11.9)
+      addressable (~> 2.5)
+      colored (~> 1.2)
+      cri (~> 2.15)
+      nanoc-core (= 4.11.9)
+      parallel (~> 1.12)
+      tomlrb (~> 1.2)
+      tty-command (~> 0.8)
+      tty-file (~> 0.7)
+      tty-platform (~> 0.2)
+      tty-which (~> 0.4)
+    nanoc-core (4.11.9)
+      ddmemoize (~> 1.0)
+      ddmetrics (~> 1.0)
+      ddplugin (~> 1.0)
+      hamster (~> 3.0)
+      json_schema (~> 0.19)
+      slow_enumerator_tools (~> 1.0)
+      zeitwerk (~> 2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,10 +72,6 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
-    guard-nanoc (2.1.6)
-      guard (~> 2.8)
-      guard-compat (~> 1.0)
-      nanoc (>= 4.3.8, < 5.0)
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     highline (2.0.2)
@@ -67,25 +92,6 @@ GEM
     mixlib-cli (1.7.0)
     mixlib-config (2.2.18)
       tomlrb
-    nanoc (4.11.7)
-      addressable (~> 2.5)
-      colored (~> 1.2)
-      cri (~> 2.15)
-      nanoc-core (= 4.11.7)
-      parallel (~> 1.12)
-      tomlrb (~> 1.2)
-      tty-command (~> 0.8)
-      tty-file (~> 0.7)
-      tty-platform (~> 0.2)
-      tty-which (~> 0.4)
-    nanoc-core (4.11.7)
-      ddmemoize (~> 1.0)
-      ddmetrics (~> 1.0)
-      ddplugin (~> 1.0)
-      hamster (~> 3.0)
-      json_schema (~> 0.19)
-      slow_enumerator_tools (~> 1.0)
-      zeitwerk (~> 2.1)
     necromancer (0.5.0)
     nenv (0.3.0)
     nokogiri (1.10.3)
@@ -175,7 +181,7 @@ DEPENDENCIES
   guard-nanoc (~> 2.1)
   highline (~> 2.0)
   mdl (~> 0.5.0)
-  nanoc (~> 4.10)
+  nanoc!
   nokogiri (~> 1.10.3)
   pry-byebug (~> 3.7)
   rake (~> 12.3)
