@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.10'
+# Use the development branch of Nanoc to test
+# https://github.com/nanoc/nanoc/issues/1445#issuecomment-525607877
+gem 'nanoc', github: 'nanoc/nanoc', ref: '94422c7'
+#gem 'nanoc', '~> 4.10'
+#
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sassc', '~> 2.0'
