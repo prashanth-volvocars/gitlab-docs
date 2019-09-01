@@ -50,8 +50,8 @@ sections:
         docs:
           - doc_title: Gitaly chart
             doc_url: 'charts/gitlab/gitaly/'
-          - doc_title: GitLab Monitor chart
-            doc_url: 'charts/gitlab/gitlab-monitor/'
+          - doc_title: GitLab Exporter chart
+            doc_url: 'charts/gitlab/gitlab-exporter/'
           - doc_title: GitLab Runner chart
             doc_url: 'charts/gitlab/gitlab-runner/'
           - doc_title: GitLab Shell chart
