@@ -1,14 +1,13 @@
 source 'https://rubygems.org'
 
-# Use the development branch of Nanoc to test
-# https://github.com/nanoc/nanoc/issues/1445#issuecomment-525607877
-gem 'nanoc', github: 'nanoc/nanoc', ref: '94422c7'
-#gem 'nanoc', '~> 4.10'
-#
+gem 'nanoc', '~> 4.10'
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sassc', '~> 2.0'
-gem 'rouge', '~> 3.2'
+# Later versions of Rouge cause nanoc to hang when
+# processing some JSON fenced code blocks.
+# Unpin when fixed (current latest version is 3.9.0).
+gem 'rouge', '3.7.0'
 gem 'rake', '~> 12.3'
 
 group :nanoc do
@@ -29,5 +28,4 @@ group :test, :development do
   gem 'highline', '~> 2.0'
   gem 'rspec', '~> 3.5'
   gem 'pry-byebug', '~> 3.7', require: false
-  gem 'mdl', '~> 0.5.0'
 end
