@@ -18,6 +18,7 @@ variables:
   BRANCH_RUNNER: 'master'
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
+  GIT_DEPTH: '20'
 
 #
 # Check Ruby version and install gems
@@ -55,6 +56,10 @@ before_script:
   script:
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
+    # Symlink all README.html to index.html so that we can have clean URLs
+    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+    # Remove CE dir and symlink EE to CE
+    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ] && [ -d "public/ce/" ]; then cd public && rm -r ce && ln -s ee ce; fi
   artifacts:
     paths:
       - public
@@ -163,6 +168,7 @@ review:
   cache: {}
   script:
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
+    # Rsync to the Pages dir
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
   environment:
     name: review/$CI_COMMIT_REF_SLUG
@@ -234,16 +240,11 @@ pages:
   script:
     # Use the URL in the browser performance testing below
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
-    # Move the already built versions to the public directory.
     # We want to use the artifacts of the compile_prod job as
     # the latest docs deployment, and the other versions are
     # taken from /usr/share/nginx/html which are included in
     # the image we pull from.
-    - mv public latest
-    - mv /usr/share/nginx/html public
-    - cp -a latest/* public/
-    # Symlink all README.html to index.html so that we can have clean URLs
-    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+    - mv /usr/share/nginx/html/1* public/
   artifacts:
     paths:
     - public
@@ -380,6 +381,8 @@ image:docs-single:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+  environment:
+    name: registry/$CI_COMMIT_REF_SLUG
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -400,6 +403,8 @@ image:docs-archives:
   dependencies: []
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
+  environment:
+    name: registry/archives
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
     - docker push $IMAGE_NAME
@@ -420,6 +425,8 @@ image:docs-latest:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
     DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+  environment:
+    name: registry/latest
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
