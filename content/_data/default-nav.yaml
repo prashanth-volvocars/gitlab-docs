@@ -582,8 +582,6 @@ sections:
     section_categories:
       - category_title: Install
         category_url: 'install/README.html'
-      - category_title: Update
-        category_url: 'update/README.html'
       - category_title: Configure
         category_url: 'user/admin_area/settings/'
         docs:
@@ -591,10 +589,6 @@ sections:
             doc_url: 'customization/'
           - doc_title: CI/CD
             doc_url: 'user/admin_area/settings/continuous_integration.html'
-          - doc_title: Disaster recovery (Geo)
-            doc_url: 'administration/geo/disaster_recovery/'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers'
           - doc_title: Email
             doc_url: 'user/admin_area/settings/email.html'
           - doc_title: Gitaly
@@ -611,10 +605,6 @@ sections:
             doc_url: 'administration/auth/README.html'
           - doc_title: PlantUML Integration
             doc_url: 'administration/integration/plantuml.html'
-          - doc_title: Replication (Geo)
-            doc_url: 'administration/geo/replication/'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers'
           - doc_title: Repository checks
             doc_url: 'administration/repository_checks.html'
           - doc_title: Repository path
@@ -638,6 +628,50 @@ sections:
             doc_url: 'administration/monitoring/performance/performance_bar.html'
           - doc_title: Usage statistics
             doc_url: 'user/admin_area/settings/usage_statistics.html'
+      - category_title: Replication (Geo)
+        category_url: 'administration/geo/replication/'
+        ee_only: true
+        ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+        docs:
+          - doc_title: Database replication
+            doc_url: 'administration/geo/replication/database.html'
+          - doc_title: External PostgreSQL instances
+            doc_url: 'administration/geo/replication/external_database.html'
+          - doc_title: Configuration
+            doc_url: 'administration/geo/replication/configuration.html'
+          - doc_title: Using a Geo server
+            doc_url: 'administration/geo/replication/using_a_geo_server.html'
+          - doc_title: Updating Geo nodes
+            doc_url: 'administration/geo/replication/updating_the_geo_nodes.html'
+          - doc_title: Using object storage
+            doc_url: 'administration/geo/replication/object_storage.html'
+          - doc_title: Using Docker Registry
+            doc_url: 'administration/geo/replication/docker_registry.html'
+          - doc_title: Geo high availability
+            doc_url: 'administration/geo/replication/high_availability.html'
+          - doc_title: Geo security review
+            doc_url: 'administration/geo/replication/security_review.html'
+          - doc_title: Tuning Geo
+            doc_url: 'administration/geo/replication/tuning.html'
+          - doc_title: Removing a node
+            doc_url: 'administration/geo/replication/remove_geo_node.html'
+          - doc_title: Frequently asked questions
+            doc_url: 'administration/geo/replication/faq.html'
+          - doc_title: Troubleshooting
+            doc_url: 'administration/geo/replication/troubleshooting.html'
+      - category_title: Disaster recovery (Geo)
+        category_url: 'administration/geo/disaster_recovery/'
+        ee_only: true
+        ee_tier: 'GitLab Premium and higher tiers. Not available on GitLab.com'
+        docs:
+          - doc_title: Planned failover
+            doc_url: 'administration/geo/disaster_recovery/planned_failover.html'
+          - doc_title: Bring primary back
+            doc_url: 'administration/geo/disaster_recovery/bring_primary_back.html'
+          - doc_title: Automatic background verification
+            doc_url: 'administration/geo/disaster_recovery/background_verification.html'
+      - category_title: Update
+        category_url: 'update/README.html'
 
   - section_title: Contributor
     section_url: 'development/README.html'
