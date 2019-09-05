@@ -87,6 +87,59 @@ sections:
             doc_url:  'user/application_security/license_compliance/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Integrations
+        category_url: 'user/project/integrations/'
+        docs:
+          - doc_title: Project services
+            doc_url: 'user/project/integrations/project_services.html'
+          - doc_title: Bamboo CI
+            doc_url: 'user/project/integrations/bamboo.html'
+          - doc_title: Bugzilla
+            doc_url: 'user/project/integrations/bugzilla.html'
+          - doc_title: Custom issue tracker
+            doc_url: 'user/project/integrations/custom_issue_tracker.html'
+          - doc_title: Discord
+            doc_url: 'user/project/integrations/discord_notifications.html'
+          - doc_title: Emails on push
+            doc_url: 'user/project/integrations/emails_on_push.html'
+          - doc_title: GitHub
+            doc_url: 'user/project/integrations/github.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Hangouts Chat
+            doc_url: 'user/project/integrations/hangouts_chat.html'
+          - doc_title: HipChat
+            doc_url: 'user/project/integrations/hipchat.html'
+          - doc_title: Irker
+            doc_url: 'user/project/integrations/irker.html'
+          - doc_title: Jira
+            doc_url: 'user/project/integrations/jira.html'
+          - doc_title: Mattermost notifications
+            doc_url: 'user/project/integrations/mattermost.html'
+          - doc_title: Mattermost slash commands
+            doc_url: 'user/project/integrations/mattermost_slash_commands.html'
+          - doc_title: Microsoft Teams
+            doc_url: 'user/project/integrations/microsoft_teams.html'
+          - doc_title: Mock CI
+            doc_url: 'user/project/integrations/mock_ci.html'
+          - doc_title: Prometheus
+            doc_url: 'user/project/integrations/prometheus.html'
+          - doc_title: Redmine
+            doc_url: 'user/project/integrations/redmine.html'
+          - doc_title: Slack application
+            doc_url: 'user/project/integrations/gitlab_slack_application.html'
+            ee_only: true
+            ee_tier: 'Available in Free and higher tiers. Not available in self-managed instances'
+          - doc_title: Slack notifications
+            doc_url: 'user/project/integrations/slack.html'
+          - doc_title: Slack slash commands
+            doc_url: 'user/project/integrations/slack_slash_commands.html'
+            ee_only: true
+            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
+          - doc_title: Webhooks
+            doc_url: 'user/project/integrations/webhooks.html'
+          - doc_title: YouTrack
+            doc_url: 'user/project/integrations/youtrack.html'
       - category_title: Issues
         category_url: 'user/project/issues/'
         docs:
@@ -662,7 +715,7 @@ sections:
       - category_title: Disaster recovery (Geo)
         category_url: 'administration/geo/disaster_recovery/'
         ee_only: true
-        ee_tier: 'GitLab Premium and higher tiers. Not available on GitLab.com'
+        ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
         docs:
           - doc_title: Planned failover
             doc_url: 'administration/geo/disaster_recovery/planned_failover.html'
