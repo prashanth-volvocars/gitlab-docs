@@ -25,6 +25,36 @@ sections:
       - category_title: Cycle Analytics
         category_url: 'user/analytics/cycle_analytics.html'
 
+  - section_title: Clusters
+    section_url: 'user/project/clusters/'
+    section_categories:
+      - category_title: Canary deployments
+        category_url: 'user/project/canary_deployments.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Deploy boards
+        category_url: 'user/project/deploy_boards.html'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: EKS clusters
+        category_url: 'user/project/clusters/eks_and_gitlab/'
+      - category_title: GitLab Managed Apps
+        category_url: 'user/clusters/applications.html'
+      - category_title: Group-level clusters
+        category_url: 'user/group/clusters/'
+      - category_title: Instance-level clusters
+        category_url: 'user/instance/clusters/'
+      - category_title: Monitoring
+        category_url: 'user/project/integrations/prometheus_library/kubernetes.html'
+      - category_title: Pod logs
+        category_url: 'user/project/clusters/kubernetes_pod_logs.html'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Runbooks
+        category_url: 'user/project/clusters/runbooks/'
+      - category_title: Serverless
+        category_url: 'user/project/clusters/serverless/'
+
   - section_title: Groups
     section_url: 'user/group/'
     section_categories:
@@ -213,8 +243,6 @@ sections:
             doc_url: 'user/project/operations/tracing.html'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
-          - doc_title: Kubernetes
-            doc_url: 'user/project/clusters/'
           - doc_title: Feature Flags
             doc_url: 'user/project/operations/feature_flags.html'
             ee_only: true
