@@ -1,5 +1,5 @@
 ---
-version: 63
+version: 64
 ---
 
 @import "variables";
@@ -728,7 +728,6 @@ a.global-nav-link {
 
 // Styles for breadcrumbs navigation
 .breadcrumbs {
-  white-space: nowrap;
   overflow-x: auto;
   padding: 0;
 
@@ -943,7 +942,7 @@ a.global-nav-link {
         width: 100%;
       }
 
-      li {
+      .nav-item {
         display: block;
         padding: 10px 0;
       }
@@ -963,6 +962,10 @@ a.global-nav-link {
 
   .choose-version {
     padding: 10px;
+
+    @media(max-width:$mobile-width) {
+      display: none;
+    }
   }
 
   .btn-versions {
