@@ -151,6 +151,18 @@ scss_lint:
   <<: *except_pipelines
   <<: *retry
 
+#
+# Yamllint of *.yml for .gitlab-ci.yml.
+# This uses rules from project root `.yamllint`.
+#
+yaml_lint:
+  stage: test
+  image: sdesbure/yamllint:latest
+  before_script: []
+  dependencies: []
+  script:
+    - yamllint .gitlab-ci.yml content/_data
+
 ###############################################
 #               Review Apps                   #
 ###############################################
@@ -176,7 +188,7 @@ review:
     on_stop: review_stop
   artifacts:
     paths:
-    - environment_url.txt
+      - environment_url.txt
   only:
     - branches@gitlab-org/gitlab-docs
   # Except master and stable branches
@@ -247,43 +259,12 @@ pages:
     - mv /usr/share/nginx/html/1* public/
   artifacts:
     paths:
-    - public
-    - environment_url.txt
+      - public
+      - environment_url.txt
     expire_in: 1d
   only:
     - master@gitlab-org/gitlab-docs
   <<: *retry
-
-###############################################
-#           Performance testing               #
-###############################################
-
-# Disable as we don't really use it
-#performance:
-#  stage: post-deploy
-#  image: docker:git
-#  services:
-#    - docker:dind
-#  before_script: []
-#  cache: {}
-#  script:
-#    - export CI_ENVIRONMENT_URL=$(cat environment_url.txt)
-#    - mkdir gitlab-exporter
-#    - wget -O ./gitlab-exporter/index.js https://gitlab.com/gitlab-org/gl-performance/raw/master/index.js
-#    - mkdir sitespeed-results
-#    - docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:6.3.1 --plugins.add ./gitlab-exporter --outputFolder sitespeed-results "$CI_ENVIRONMENT_URL"
-#    - mv sitespeed-results/data/performance.json performance.json
-#  artifacts:
-#    paths:
-#      - performance.json
-#      - sitespeed-results/
-#    expire_in: 1w
-#  only:
-#    - branches
-#  except:
-#    - /^\d{1,2}\.\d{1,2}$/
-#    - pipelines
-#  <<: *retry
 
 ###############################################
 #           Docker images builds              #
@@ -304,18 +285,18 @@ pages:
 #
 # GitLab docs lint image containing all test tools
 #
-#image:docs-lint:
-#  <<: *docker_prepare
-#  stage: pre-deploy
-#  variables:
-#    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
-#    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
-#  script:
-#    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
-#    - docker push $IMAGE_NAME
-#  only:
-#    - schedules
-#    - master
+# image:docs-lint:
+#   <<: *docker_prepare
+#   stage: pre-deploy
+#   variables:
+#     IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
+#     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
+#   script:
+#     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+#     - docker push $IMAGE_NAME
+#   only:
+#     - schedules
+#     - master
 
 #
 # Helper Docker image containing all build dependencies.
