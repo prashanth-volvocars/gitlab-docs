@@ -192,16 +192,3 @@ products:
       dest_dir: 'content/charts'
       doc_dir:  'doc'
     expose: true
-  debug:
-    full_name: 'Debugging for GitLab Support'
-    short_name: 'Debug'
-    slug: 'debug'
-    index_file: 'index.*'
-    img: '/assets/images/docs-gitlab.svg'
-    description: 'Debugging resources for GitLab Support Engineers'
-    repo: 'https://gitlab.com/debugging/debug.git'
-    dirs:
-      temp_dir: 'tmp/debug/'
-      dest_dir: 'content/debug'
-      doc_dir:  'content'
-    expose: false

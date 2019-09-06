@@ -31,9 +31,6 @@ module Nanoc::Helpers
         end
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/master/-/doc/#{docs_content_filename}"
-      elsif product == "debug"
-        gitlab_url = "https://gitlab.com/debugging/#{product}/blob/master/content/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/debugging/#{product}/edit/master/-/content/#{docs_content_filename}"
       else
         # gitlab-docs pages
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/master/#{@item[:content_filename]}"
