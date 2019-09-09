@@ -28,4 +28,6 @@ group :test, :development do
   gem 'highline', '~> 2.0'
   gem 'rspec', '~> 3.5'
   gem 'pry-byebug', '~> 3.7', require: false
+  # Although we now use markdownlint-cli, we need the mdl gem for backwards compatibility
+  gem 'mdl'
 end
