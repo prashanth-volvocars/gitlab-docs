@@ -70,6 +70,10 @@ sections:
         category_url: 'user/group/dependency_proxy/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Insights
+        category_url: 'user/group/insights/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Issue analytics
         category_url: 'user/group/issues_analytics/'
         ee_only: true
@@ -117,6 +121,18 @@ sections:
             doc_url: 'user/application_security/license_compliance/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Badges
+        category_url: 'user/project/badges.html'
+      - category_title: Bulk editing
+        category_url: 'user/project/bulk_editing.html'
+      - category_title: Code owners
+        category_url: 'user/project/code_owners.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter and GitLab.com Bronze'
+      - category_title: Description templates
+        category_url: 'user/project/description_templates.html'
+      - category_title: Deploy tokens
+        category_url: 'user/project/deploy_tokens/'
       - category_title: Integrations
         category_url: 'user/project/integrations/'
         docs:
@@ -170,6 +186,10 @@ sections:
             doc_url: 'user/project/integrations/webhooks.html'
           - doc_title: YouTrack
             doc_url: 'user/project/integrations/youtrack.html'
+      - category_title: Insights
+        category_url: 'user/project/insights/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Issues
         category_url: 'user/project/issues/'
         docs:
@@ -232,6 +252,41 @@ sections:
             doc_url: 'user/project/merge_requests/work_in_progress_merge_requests.html'
       - category_title: Members
         category_url: 'user/project/members/'
+      - category_title: Migrating projects
+        category_url: 'user/project/import/'
+        docs:
+          - doc_title: Bitbucket Cloud
+            doc_url: 'user/project/import/bitbucket.html'
+          - doc_title: Bitbucket Server
+            doc_url: 'user/project/import/bitbucket_server.html'
+          - doc_title: ClearCase
+            doc_url: 'user/project/import/clearcase.html'
+          - doc_title: CVS
+            doc_url: 'user/project/import/cvs.html'
+          - doc_title: FogBugz
+            doc_url: 'user/project/import/fogbugz.html'
+          - doc_title: Gemnasium
+            doc_url: 'user/project/import/gemnasium.html'
+            ee_only: true
+            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+          - doc_title: GitHub
+            doc_url: 'user/project/import/github.html'
+          - doc_title: GitLab.com
+            doc_url: 'user/project/import/gitlab_com.html'
+          - doc_title: Gitea
+            doc_url: 'user/project/import/gitea.html'
+          - doc_title: Perforce Helix
+            doc_url: 'user/project/import/perforce.html'
+          - doc_title: Phabricator
+            doc_url: 'user/project/import/phabricator.html'
+          - doc_title: Repo by manifest file
+            doc_url: 'user/project/import/manifest.html'
+          - doc_title: Repo by URL
+            doc_url: 'user/project/import/repo_by_url.html'
+          - doc_title: SVN
+            doc_url: 'user/project/import/svn.html'
+          - doc_title: TFVC
+            doc_url: 'user/project/import/tfvc.html'
       - category_title: Operations
         category_url: 'user/project/operations/'
         docs:
@@ -247,17 +302,27 @@ sections:
             doc_url: 'user/project/operations/feature_flags.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Releases
+        category_url: 'user/project/releases/'
       - category_title: Repositories
         category_url: 'user/project/repository/'
         docs:
           - doc_title: Branches
             doc_url: 'user/project/repository/branches/'
+          - doc_title: Git attributes
+            doc_url: 'user/project/git_attributes.html'
           - doc_title: Locked files
             doc_url: 'user/project/file_lock.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Protected branches
+            doc_url: 'user/project/protected_branches.html'
+          - doc_title: Protected tags
+            doc_url: 'user/project/protected_tags.html'
           - doc_title: Signed Commits
             doc_url: 'user/project/repository/gpg_signed_commits/'
+          - doc_title: Syntax highlighting
+            doc_url: 'user/project/highlighting.html'
           - doc_title: Web Editor
             doc_url: 'user/project/repository/web_editor.html'
           - doc_title: Web IDE
@@ -588,6 +653,8 @@ sections:
             doc_url: 'api/snippets.html'
           - doc_title: Snippets (project)
             doc_url: 'api/project_snippets.html'
+          - doc_title: Statistics (application)
+            doc_url: 'api/statistics.html'
           - doc_title: Suggestions
             doc_url: 'api/suggestions.html'
           - doc_title: System hooks
@@ -655,7 +722,12 @@ sections:
             doc_url: 'topics/git/'
       - category_title: Markdown
         category_url: 'user/markdown.html'
-      - category_title: "To-Do lists"
+      - category_title: Quick actions
+        category_url: 'user/project/quick_actions.html'
+        docs:
+          - doc_title: Autocomplete characters
+            doc_url: 'user/project/autocomplete_characters.html'
+      - category_title: To-Do lists
         category_url: 'workflow/todos.html'
 
   - section_title: Administrator
