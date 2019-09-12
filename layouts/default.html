@@ -58,7 +58,7 @@
           Level: <%= @item[:level] %>
         </div>
       <% end %>
-      <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
+      <div class="article-content js-article-content <% if @item[:table_display_block] %>table-display-block<% end %>" role="main" itemscope itemprop="mainContentOfPage">
         <%= yield %>
       </div>
       <% if @item[:last_updated] %>
@@ -83,9 +83,6 @@
   <% if ENV['NANOC_ENV'] == 'production' %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
-  <% end %>
-  <% if @item[:table_display_block] %>
-    <script type="application/javascript" src="<%= @items['/assets/javascripts/table-display-block.*'].path %>"></script>
   <% end %>
   <%= render '/footer.*' %>
   <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
