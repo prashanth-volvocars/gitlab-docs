@@ -98,6 +98,12 @@ table {
   }
 }
 
+// this targets tables where the `table_display_block: true` attribute is present
+// for more information: https://docs.gitlab.com/ee/development/documentation/styleguide.html#tables-overlapping-the-toc
+.table-display-block table {
+  display: block;
+}
+
 blockquote {
   background-color: $blockquote-background-color;
   color: $blockquote-txt-color;
