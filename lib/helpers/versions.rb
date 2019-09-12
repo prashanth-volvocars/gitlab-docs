@@ -3,6 +3,8 @@
 module Nanoc::Helpers
   module VersionsDropdown
 
+    STABLE_VERSIONS_REGEX=/^\d{1,2}\.\d{1,2}$/
+
     #
     # Set the active class based on CI_COMMIT_REF_NAME and exclude if on
     # the archives page, otherwise we would end up with two active links.
@@ -29,5 +31,13 @@ module Nanoc::Helpers
       %( class="active")
     end
 
+    #
+    # Stable versions regexp
+    #
+    # At most two digits for major and minor numbers.
+    #
+    def stable_version?(version)
+      version.match?(STABLE_VERSIONS_REGEX)
+    end
   end
 end
