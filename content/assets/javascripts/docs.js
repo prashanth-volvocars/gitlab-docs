@@ -179,6 +179,12 @@ function toggleNavigation() {
 
     // Adds the ability to auto-scroll to the active item in the TOC
     $(window).on('activate.bs.scrollspy', function() {
+      const isMobile = window.matchMedia('(max-width: 1099px)').matches;
+
+      if(isMobile) {
+        return;
+      }
+
       const activeAnchors = document.querySelectorAll('#markdown-toc .nav-link.active');
 
       if(activeAnchors.length) {
