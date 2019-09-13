@@ -16,25 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-  <!-- Algolia docsearch https://community.algolia.com/docsearch/ -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-  <script type="text/javascript">
-  var search = docsearch({
-    apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
-    indexName: 'gitlab',
-    inputSelector: '#search-input',
-    algoliaOptions: {
-      // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
-      'filters': "tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>",
-      // Number of results shown in the search dropdown
-      'hitsPerPage': 10
-    },
-    debug: false, // Set debug to true if you want to inspect the dropdown
-    autocompleteOptions: {
-        'autoselect': false
-      }
-  });
-  </script>
+  <%= render '/docsearch.*' %>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
   <% if ENV['NANOC_ENV'] == 'production' %>
   <%# Add analytics only in production %>
