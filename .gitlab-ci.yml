@@ -162,6 +162,7 @@ yaml_lint:
   dependencies: []
   script:
     - yamllint .gitlab-ci.yml content/_data
+  <<: *except_pipelines
 
 ###############################################
 #               Review Apps                   #
