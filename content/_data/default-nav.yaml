@@ -133,6 +133,8 @@ sections:
         category_url: 'user/project/description_templates.html'
       - category_title: Deploy tokens
         category_url: 'user/project/deploy_tokens/'
+      - category_title: File finder
+        category_url: 'workflow/file_finder.html'
       - category_title: Integrations
         category_url: 'user/project/integrations/'
         docs:
@@ -197,6 +199,10 @@ sections:
             doc_url: 'user/project/issues/design_management.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Confidential issues
+            doc_url: 'user/project/issues/confidential_issues.html'
+          - doc_title: Due dates
+            doc_url: 'user/project/issues/due_dates.html'
           - doc_title: Issue Boards
             doc_url: 'user/project/issue_board.html'
           - doc_title: Labels
@@ -311,10 +317,14 @@ sections:
             doc_url: 'user/project/repository/branches/'
           - doc_title: Git attributes
             doc_url: 'user/project/git_attributes.html'
+          - doc_title: Git LFS
+            doc_url: 'workflow/lfs/manage_large_binaries_with_git_lfs.html'
           - doc_title: Locked files
             doc_url: 'user/project/file_lock.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Mirroring
+            doc_url: 'workflow/repository_mirroring.html'
           - doc_title: Protected branches
             doc_url: 'user/project/protected_branches.html'
           - doc_title: Protected tags
@@ -329,6 +339,8 @@ sections:
             doc_url: 'user/project/web_ide/'
       - category_title: Settings
         category_url: 'user/project/settings/'
+      - category_title: Share projects
+        category_url: 'user/project/members/share_project_with_groups.html'
       - category_title: Snippets
         category_url: 'user/snippets.html'
       - category_title: Wikis
@@ -421,6 +433,8 @@ sections:
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: GitLab Pages
         category_url: 'user/project/pages/'
+      - category_title: Interactive web terminals
+        category_url: 'ci/interactive_web_terminal/'
       - category_title: Large repositories
         category_url: 'ci/large_repositories/'
       - category_title: Metrics reports
@@ -720,13 +734,19 @@ sections:
             doc_url: 'integration/README.html'
           - doc_title: Git
             doc_url: 'topics/git/'
+      - category_title: Keyboard shortcuts
+        category_url: 'workflow/shortcuts.html'
       - category_title: Markdown
         category_url: 'user/markdown.html'
+      - category_title: Notification emails
+        category_url: 'workflow/notifications.html'
       - category_title: Quick actions
         category_url: 'user/project/quick_actions.html'
         docs:
           - doc_title: Autocomplete characters
             doc_url: 'user/project/autocomplete_characters.html'
+      - category_title: Time tracking
+        category_url: 'workflow/time_tracking.html'
       - category_title: To-Do lists
         category_url: 'workflow/todos.html'
 
@@ -744,6 +764,8 @@ sections:
             doc_url: 'user/admin_area/settings/continuous_integration.html'
           - doc_title: Email
             doc_url: 'user/admin_area/settings/email.html'
+          - doc_title: Git LFS administration
+            doc_url: 'workflow/lfs/lfs_administration.html'
           - doc_title: Gitaly
             doc_url: 'administration/gitaly/'
           - doc_title: GitLab Pages
@@ -770,6 +792,8 @@ sections:
             doc_url: 'user/project/integrations/services_templates.html'
           - doc_title: System Hooks
             doc_url: 'system_hooks/system_hooks.html'
+          - doc_title: Timezone
+            doc_url: 'workflow/timezone.html'
       - category_title: Metrics
         category_url: 'administration/monitoring/'
         docs:
