@@ -46,18 +46,18 @@ See [LICENSE](LICENSE).
 
 ## Projects we pull from
 
-There are currently 5 products that are pulled and generate the docs website:
+There are currently 4 products that are pulled and generate the docs website:
 
-- [GitLab Enterprise Edition](https://gitlab.com/gitlab-org/gitlab-ee)
-- [GitLab Community Edition](https://gitlab.com/gitlab-org/gitlab-ce)
+- [GitLab](https://gitlab.com/gitlab-org/gitlab)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 - [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
 
 **Note:**
 Although GitLab Community Edition is generated, it is hidden from the website
-as it's a subset of the Enterprise Edition. We generate it for consistency,
-until the [GitLab codebase is unified](https://gitlab.com/gitlab-org/gitlab-ee/issues/2952).
+as it's the same as the Enterprise Edition. We generate it for consistency,
+until [better redirects](https://gitlab.com/gitlab-org/gitlab-pages/issues/24)
+are implemented.
 
 ## Requirements
 
@@ -167,8 +167,7 @@ Then, it's time to clone the needed repositories.
      ```sh
      ## Using HTTPS (for members that do not have Developer access)
 
-     git clone https://gitlab.com/<username>/gitlab-ce.git
-     git clone https://gitlab.com/<username>/gitlab-ee.git
+     git clone https://gitlab.com/<username>/gitlab.git
      git clone https://gitlab.com/<username>/gitlab-runner.git
      git clone https://gitlab.com/<username>/omnibus-gitlab.git
      git clone https://gitlab.com/<username>/gitlab.git charts
@@ -180,8 +179,7 @@ Then, it's time to clone the needed repositories.
      ```sh
      ## Using SSH (for members that have Developer access)
 
-     git clone git@gitlab.com:gitlab-org/gitlab-ce.git
-     git clone git@gitlab.com:gitlab-org/gitlab-ee.git
+     git clone git@gitlab.com:gitlab-org/gitlab.git
      git clone git@gitlab.com:gitlab-org/gitlab-runner.git
      git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
      git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts
@@ -200,8 +198,7 @@ the directory that holds the documentation content.
 1. For each one of the products, create the symlink:
 
     ```sh
-    ln -s ~/dev/gitlab/gitlab-ce/doc ~/dev/gitlab/gitlab-docs/content/ce
-    ln -s ~/dev/gitlab/gitlab-ee/doc ~/dev/gitlab/gitlab-docs/content/ee
+    ln -s ~/dev/gitlab/gitlab/doc ~/dev/gitlab/gitlab-docs/content/ee
     ln -s ~/dev/gitlab/omnibus-gitlab/doc ~/dev/gitlab/gitlab-docs/content/omnibus
     ln -s ~/dev/gitlab/gitlab-runner/docs ~/dev/gitlab/gitlab-docs/content/runner
     ln -s ~/dev/gitlab/charts/doc ~/dev/gitlab/gitlab-docs/content/charts
@@ -380,7 +377,7 @@ for its search function. This is how it works:
 1. On the docs side, we use a [docsearch layout](/layouts/docsearch.html) which
    is present on pretty much every page except https://docs.gitlab.com/search/,
    which uses its [own layout](/layouts/instantsearch.html). In those layouts,
-   there's a javascript snippet which initiates docsearch by using an API key
+   there's a Javascript snippet which initiates docsearch by using an API key
    and an index name (`gitlab`) that are needed for Algolia to show the results.
 
 **For GitLab employees:**
@@ -390,7 +387,6 @@ title "Email, Slack, and GitLab Groups and Aliases", search for `docsearch`,
 and add a comment with your email to be added to the alias that gets the weekly
 reports.
 
-[job]: https://gitlab.com/gitlab-org/gitlab-ce/blob/2c00d00ec1c39dbea0e0e54265027b5476b78e3c/.gitlab-ci.yml#L308-318
 [pages]: https://about.gitlab.com/features/pages/
 [environments page]: https://gitlab.com/gitlab-org/gitlab-docs/environments/folders/review
 [env-url-button]: https://docs.gitlab.com/ce/ci/environments.html#making-use-of-the-environment-url
