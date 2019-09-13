@@ -182,6 +182,9 @@ review:
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
     # Rsync to the Pages dir
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
+    # Remove public directory so that the next review app can run in a
+    # clean environment (limitation of the shell executor).
+    - rm -rf public
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
