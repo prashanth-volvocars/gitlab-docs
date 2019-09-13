@@ -180,7 +180,6 @@ review:
   before_script: []
   cache: {}
   script:
-    - echo $CI_ENVIRONMENT_URL > environment_url.txt
     # Rsync to the Pages dir
     - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
     # Remove public directory so that the next review app can run in a
