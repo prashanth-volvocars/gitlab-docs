@@ -128,13 +128,13 @@ debug: false
 
 products:
   ce:
-    full_name: 'GitLab CE'
-    short_name: 'GitLab CE'
+    full_name: 'GitLab FOSS'
+    short_name: 'GitLab FOSS'
     slug: 'ce'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ce.git'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-foss.git'
     dirs:
       temp_dir: 'tmp/ce/'
       dest_dir: 'content/ce'
@@ -147,7 +147,7 @@ products:
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Usage and administration of GitLab Community Edition (CE), Enterprise Edition (EE), and GitLab.com.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-ee.git'
+    repo: 'https://gitlab.com/gitlab-org/gitlab.git'
     dirs:
       temp_dir: 'tmp/ee/'
       dest_dir: 'content/ee'

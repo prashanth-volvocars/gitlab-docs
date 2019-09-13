@@ -23,14 +23,10 @@ module Nanoc::Helpers
         # GitLab Helm chart repo
         gitlab_url = "https://gitlab.com/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
+      # gitlab-foss and gitlab repos
       elsif %w[ce ee].include?(product)
-        # gitlab-ce and gitlab-ee repos
-        if product == "ee"
-          ce_file = File.join(root_dir, @item[:content_filename].sub(@config[:products][:ee][:dirs][:dest_dir], @config[:products][:ce][:dirs][:dest_dir]))
-          product = "ce" if File.exists?(ce_file)
-        end
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/master/-/doc/#{docs_content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/#{docs_content_filename}"
       else
         # gitlab-docs pages
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/master/#{@item[:content_filename]}"
