@@ -190,9 +190,6 @@ review:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
-  artifacts:
-    paths:
-      - environment_url.txt
   only:
     - branches@gitlab-org/gitlab-docs
   # Except master and stable branches
