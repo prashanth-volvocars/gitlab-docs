@@ -24,7 +24,7 @@ variables:
 # Check Ruby version and install gems
 #
 before_script:
-  - apk add --no-cache build-base bash git
+  - apk add --no-cache build-base bash git xz-dev
   - ruby -v
   - bundle install --jobs 4 --path vendor
 
