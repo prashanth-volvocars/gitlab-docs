@@ -1,4 +1,4 @@
-image: ruby:2.6.3
+image: ruby:2.6.3-alpine3.10
 
 stages:
   - build-images
@@ -24,6 +24,7 @@ variables:
 # Check Ruby version and install gems
 #
 before_script:
+  - apk add --no-cache build-base bash git
   - ruby -v
   - bundle install --jobs 4 --path vendor
 
