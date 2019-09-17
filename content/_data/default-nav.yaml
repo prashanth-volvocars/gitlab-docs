@@ -494,8 +494,23 @@ sections:
       - category_title: '.gitlab-ci.yml Reference'
         category_url: 'ci/yaml/README.html'
 
-  - section_title: Container Registry
-    section_url: 'user/project/container_registry.html'
+  - section_title: Packages
+    section_url: 'user/packages/'
+    section_categories:
+      - category_title: Container Registry
+        category_url: 'user/packages/container_registry/'
+      - category_title: Dependency Proxy
+        category_url: 'user/packages/dependency_proxy/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: Maven Repository
+        category_url: 'user/packages/maven_repository/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+      - category_title: NPM Registry
+        category_url: 'user/packages/npm_registry/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
 
   - section_title: API
     section_url: 'api/README.html'
@@ -844,6 +859,11 @@ sections:
             doc_url: 'administration/monitoring/performance/performance_bar.html'
           - doc_title: Usage statistics
             doc_url: 'user/admin_area/settings/usage_statistics.html'
+      - category_title: Packages
+        category_url: 'administration/packages/'
+        docs:
+          - doc_title: Container Registry
+            doc_url: 'administration/packages/container_registry.html'
       - category_title: Replication (Geo)
         category_url: 'administration/geo/replication/'
         ee_only: true
