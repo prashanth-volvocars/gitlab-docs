@@ -4,10 +4,7 @@ gem 'nanoc', '~> 4.10'
 gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sassc', '~> 2.0'
-# Later versions of Rouge cause nanoc to hang when
-# processing some JSON fenced code blocks.
-# Unpin when fixed (current latest version is 3.9.0).
-gem 'rouge', '3.7.0'
+gem 'rouge', '~> 3.11'
 gem 'rake', '~> 12.3'
 
 group :nanoc do
