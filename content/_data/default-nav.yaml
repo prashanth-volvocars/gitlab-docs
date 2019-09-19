@@ -24,6 +24,8 @@ sections:
     section_categories:
       - category_title: Cycle Analytics
         category_url: 'user/analytics/cycle_analytics.html'
+      - category_title: Productivity Analytics
+        category_url: 'user/analytics/productivity_analytics.html'
 
   - section_title: Clusters
     section_url: 'user/project/clusters/'
@@ -925,6 +927,17 @@ sections:
   - section_title: Contributor
     section_url: 'development/README.html'
     section_categories:
+      - category_title: Contribute to GitLab
+        category_url: 'development/contributing/'
+        docs:
+          - doc_title: Community roles
+            doc_url: 'development/contributing/community_roles.html'
+          - doc_title: Design and UI
+            doc_url: 'development/contributing/design.html'
+          - doc_title: Issues workflow
+            doc_url: 'development/contributing/issue_workflow.html'
+          - doc_title: Merge request workflow
+            doc_url: 'development/contributing/merge_request_workflow.html'
       - category_title: Architecture
         category_url: 'development/architecture.html'
       - category_title: Documentation
@@ -932,11 +945,30 @@ sections:
         docs:
           - doc_title: Style Guide
             doc_url: 'development/documentation/styleguide.html'
+      - category_title: Event tracking
+        category_url: 'development/event_tracking/'
+        docs:
+          - doc_title: Frontend
+            doc_url: 'development/event_tracking/frontend.html'
+          - doc_title: Backend
+            doc_url: 'development/event_tracking/backend.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
         external_url: true
+      - category_title: GitLab Development Kit
+        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
+        external_url: true
       - category_title: Translate GitLab
         category_url: 'development/i18n/'
+        docs:
+          - doc_title: Externalization
+            doc_url: 'development/i18n/externalization.html'
+          - doc_title: Translation
+            doc_url: 'development/i18n/translation.html'
+          - doc_title: Proofreading
+            doc_url: 'development/i18n/proofreader.html'
+          - doc_title: Merging
+            doc_url: 'development/i18n/merging_translations.html'
 
   - section_title: Customer
     section_url: 'subscriptions/'
