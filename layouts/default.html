@@ -58,7 +58,7 @@
           Level: <%= @item[:level] %>
         </div>
       <% end %>
-      <div class="article-content js-article-content <% if @item[:table_display_block] %>table-display-block<% end %>" role="main" itemscope itemprop="mainContentOfPage">
+      <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
         <%= yield %>
       </div>
       <% if @item[:last_updated] %>
@@ -88,5 +88,6 @@
   <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/class-toggle.*'].path %>"></script>
+  <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
 </body>
 </html>
