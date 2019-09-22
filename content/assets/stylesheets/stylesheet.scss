@@ -64,9 +64,9 @@ table {
 
   td, th {
     text-align: left;
-    padding: 7px 10px;
+    padding: 8px;
     border: 1px solid $table-border-color;
-    font-size: $body-font-size;
+    font-size: 14px;
 
     .badge-small {
       &:hover::after {
@@ -96,12 +96,6 @@ table {
   &.fixed-table {
     table-layout: fixed; // use this for columns with the same width
   }
-}
-
-// this targets tables where the `table_display_block: true` attribute is present
-// for more information: https://docs.gitlab.com/ee/development/documentation/styleguide.html#tables-overlapping-the-toc
-.table-display-block table {
-  display: block;
 }
 
 blockquote {
