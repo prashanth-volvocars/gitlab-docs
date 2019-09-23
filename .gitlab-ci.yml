@@ -196,7 +196,7 @@ review:
   except:
     - master
     - /^\d{1,2}\.\d{1,2}$/
-    - /^release-\d{1,2}-\d{1,2}$/
+    - /release-\d{1,2}-\d{1,2}/
   tags:
     - nginx
     - review-apps
@@ -225,7 +225,7 @@ review_stop:
   except:
     - master
     - /^\d{1,2}\.\d{1,2}$/
-    - /^release-\d{1,2}-\d{1,2}$/
+    - /release-\d{1,2}-\d{1,2}/
   tags:
     - nginx
     - review-apps
