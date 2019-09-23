@@ -952,6 +952,15 @@ sections:
             doc_url: 'development/event_tracking/frontend.html'
           - doc_title: Backend
             doc_url: 'development/event_tracking/backend.html'
+      - category_title: Feature flags for GitLab development
+        category_url: 'development/feature_flags/'
+        docs:
+          - doc_title: Using feature flags
+            doc_url: 'development/feature_flags/process.html'
+          - doc_title: Developing with feature flags
+            doc_url: 'development/feature_flags/development.html'
+          - doc_title: Controlling feature flags
+            doc_url: 'development/feature_flags/controls.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
         external_url: true
