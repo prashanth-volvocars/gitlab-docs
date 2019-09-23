@@ -17,13 +17,16 @@
 
 ## Before merge
 
-On the 22nd, a few minutes before merging this and **before the scheduled pipeline runs**:
+On the 22nd, before merging this and **right after a scheduled pipeline has run**:
 
-1. [ ] Bump the versions in `content/_data/versions.yaml` for all online versions by pushing the change to the according stable branches.
-1. [ ] Now it's time to merge.
+1. [ ] Bump the dropdown versions for all online versions:
 
-## After merge
+   ```sh
+   bundle exec rake release:dropdowns
+   ```
 
-1. [ ] Manually run the [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
+1. [ ] Merge all merge requests created from the above command.
+1. [ ] Once all above pipelines are green, it's time to merge this MR.
+1. [ ] \(Optional) Manually run the [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
 
 /label ~release

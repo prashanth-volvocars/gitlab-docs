@@ -149,4 +149,34 @@ namespace :release do
     puts
     puts "--------------------------------"
   end
+
+  desc 'Creates merge requests to update the dropdowns in all online versions'
+  task :dropdowns do
+    # Load online versions
+    versions = YAML.load_file('./content/_data/versions.yaml')
+
+    # The first online version should be the current stable one
+    current_version = versions['online'].first
+
+    # Set the commit title
+    commit_title = "Update dropdown to #{current_version}"
+
+    # Create a merge request to update the dropdowns in all online versions
+    versions['online'].each do |version|
+      # Set the commit title
+      mr_title = "Update #{version} dropdown to match that of #{current_version}"
+      branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
+
+      puts "Create a new branch off of the online version"
+      `git checkout -b #{branch_name} #{version}`
+
+      puts "Copy the versions.yaml content from the release-#{current_version} branch"
+      `git checkout release-#{current_version.tr('.', '-')} -- content/_data/versions.yaml`
+
+      puts "Commit and push to create a merge request"
+      `git commit -m "Update dropdown to #{current_version}"`
+      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds -o merge_request.title="#{mr_title}" -o merge_request.label="release"`
+    end
+  end
 end
+
