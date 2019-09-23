@@ -24,9 +24,11 @@ On the 22nd, before merging this and **right after a scheduled pipeline has run*
    ```sh
    bundle exec rake release:dropdowns
    ```
+   This will create all the needed merge requests and will set them to MWPS.
 
-1. [ ] Merge all merge requests created from the above command.
-1. [ ] Once all above pipelines are green, it's time to merge this MR.
+1. [ ] Once all above MRs are merged, check the newly-created pipelines of the
+       respective versions https://gitlab.com/gitlab-org/gitlab-docs/pipelines.
+       Once they are green, it's time to merge this MR.
 1. [ ] \(Optional) Manually run the [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
 
 /label ~release
