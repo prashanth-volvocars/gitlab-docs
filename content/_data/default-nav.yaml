@@ -943,6 +943,8 @@ sections:
       - category_title: Documentation
         category_url: 'development/documentation/'
         docs:
+          - doc_title: Process
+            doc_url: 'development/documentation/workflow.html'
           - doc_title: Style Guide
             doc_url: 'development/documentation/styleguide.html'
       - category_title: Event tracking
