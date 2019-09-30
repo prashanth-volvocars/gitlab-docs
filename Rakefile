@@ -10,7 +10,7 @@ task :setup_git do
   `git config --global user.email johndoe@example.com`
 end
 
-desc 'Setup repositories for CE, EE, Omnibus and Runner in special way exposing only their doc directories'
+desc 'Setup repositories for EE, Omnibus, and Runner in special way exposing only their doc directories'
 task :setup_repos do
   products.each_value do |product|
     branch = retrieve_branch(product['slug'])

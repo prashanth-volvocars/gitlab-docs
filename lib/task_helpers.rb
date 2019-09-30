@@ -1,6 +1,6 @@
 require 'yaml'
 
-PRODUCTS = %W[ce ee omnibus runner charts].freeze
+PRODUCTS = %W[ee omnibus runner charts].freeze
 VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/
 
 def config
@@ -28,7 +28,7 @@ def retrieve_branch(slug)
     # EE has different branch name scheme
     when 'ee'
       "#{version[:major]}-#{version[:minor]}-stable-ee"
-    when 'ce', 'omnibus', 'runner'
+    when 'omnibus', 'runner'
       "#{version[:major]}-#{version[:minor]}-stable"
     # Charts don't use the same version scheme as GitLab, we need to
     # deduct their version from the GitLab equivalent one.
