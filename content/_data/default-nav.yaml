@@ -902,6 +902,8 @@ sections:
             doc_url: 'administration/geo/replication/high_availability.html'
           - doc_title: Geo security review
             doc_url: 'administration/geo/replication/security_review.html'
+          - doc_title: Location-aware Git remote URLs
+            doc_url: 'administration/geo/replication/location_aware_git_url.html'
           - doc_title: Tuning Geo
             doc_url: 'administration/geo/replication/tuning.html'
           - doc_title: Removing a node
