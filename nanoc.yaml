@@ -127,26 +127,13 @@ breadcrumbs: true
 debug: false
 
 products:
-  ce:
-    full_name: 'GitLab FOSS'
-    short_name: 'GitLab FOSS'
-    slug: 'ce'
-    index_file: 'README.*'
-    img: '/assets/images/docs-gitlab.svg'
-    description: 'Browse user and administration documentation and guides for GitLab Community Edition.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-foss.git'
-    dirs:
-      temp_dir: 'tmp/ce/'
-      dest_dir: 'content/ce'
-      doc_dir:  'doc'
-    expose: false
   ee:
     full_name: 'GitLab'
     short_name: 'GitLab'
     slug: 'ee'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
-    description: 'Usage and administration of GitLab Community Edition (CE), Enterprise Edition (EE), and GitLab.com.'
+    description: 'Usage and administration of GitLab self-managed and GitLab.com.'
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
     dirs:
       temp_dir: 'tmp/ee/'

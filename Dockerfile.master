@@ -21,9 +21,9 @@ RUN bundle exec nanoc compile -VV
 # Symlink all README.html to index.html
 RUN for i in `find /source/public/ -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
 
-# Remove CE dir and symlink EE to CE
+# Symlink EE to CE
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
-RUN if [ -d "/source/public/ce/" ]; then cd /source/public/ && rm -r ce && ln -s ee ce; fi
+RUN cd /source/public/ && rm -rf ce && ln -s ee ce
 
 # Remove tmp dir to save some space
 RUN rm -rf /source/tmp

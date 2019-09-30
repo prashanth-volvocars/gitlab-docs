@@ -7,7 +7,6 @@ ARG VER=X.Y
 
 # Replace the versions to march the stable branches of the upstream projects
 ARG BRANCH_EE=X-Y-stable-ee
-ARG BRANCH_CE=X-Y-stable
 ARG BRANCH_OMNIBUS=X-Y-stable
 ARG BRANCH_RUNNER=X-Y-stable
 ARG BRANCH_CHARTS=W-Z-stable
