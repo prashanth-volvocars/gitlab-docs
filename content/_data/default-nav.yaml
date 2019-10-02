@@ -341,6 +341,10 @@ sections:
             doc_url: 'user/project/protected_branches.html'
           - doc_title: Protected tags
             doc_url: 'user/project/protected_tags.html'
+          - doc_title: Push rules
+            doc_url: 'push_rules/push_rules.html'
+            ee_only: true
+            ee_tier: 'GitLab Starter and GitLab.com Bronze'
           - doc_title: Signed Commits
             doc_url: 'user/project/repository/gpg_signed_commits/'
           - doc_title: Syntax highlighting
@@ -923,6 +927,47 @@ sections:
             doc_url: 'administration/geo/disaster_recovery/bring_primary_back.html'
           - doc_title: Automatic background verification
             doc_url: 'administration/geo/disaster_recovery/background_verification.html'
+      - category_title: Rake tasks
+        category_url: 'raketasks/README.html'
+        docs:
+          - doc_title: Backup and restore
+            doc_url: 'raketasks/backup_restore.html'
+          - doc_title: Clean up
+            doc_url: 'raketasks/cleanup.html'
+          - doc_title: Enable namespaces
+            doc_url: 'raketasks/features.html'
+          - doc_title: General maintenance
+            doc_url: 'administration/raketasks/maintenance.html'
+          - doc_title: Geo tasks
+            doc_url: 'administration/raketasks/geo.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+          - doc_title: GitHub import
+            doc_url: 'administration/raketasks/github_import.html'
+          - doc_title: Import repositories
+            doc_url: 'raketasks/import.html'
+          - doc_title: Integrity check
+            doc_url: 'administration/raketasks/check.html'
+          - doc_title: LDAP maintenance
+            doc_url: 'administration/raketasks/ldap.html'
+          - doc_title: List repositories
+            doc_url: 'raketasks/list_repos.html'
+          - doc_title: Project import and export
+            doc_url: 'administration/raketasks/project_import_export.html'
+            ee_only: true
+            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
+          - doc_title: Repository storage
+            doc_url: 'administration/raketasks/storage.html'
+          - doc_title: Uploads migration
+            doc_url: 'administration/raketasks/uploads/migrate.html'
+          - doc_title: Uploads sanitization
+            doc_url: 'administration/raketasks/uploads/sanitize.html'
+          - doc_title: User management
+            doc_url: 'raketasks/user_management.html'
+          - doc_title: Webhooks administration
+            doc_url: 'raketasks/web_hooks.html'
+            ee_only: true
+            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: Update
         category_url: 'update/README.html'
 
