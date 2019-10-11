@@ -11,6 +11,9 @@ GEM
       eventmachine (~> 1.2)
       listen (~> 3.0)
       rack-livereload (~> 0.3)
+    asciidoctor (2.0.10)
+    asciidoctor-plantuml (0.0.9)
+      asciidoctor (>= 1.5.6, < 3.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     coderay (1.1.2)
@@ -30,8 +33,10 @@ GEM
     eventmachine (1.2.7)
     ffi (1.11.1)
     formatador (0.2.5)
-    gitlab_kramdown (0.6.0)
+    gitlab_kramdown (0.8.0)
+      asciidoctor-plantuml (= 0.0.9)
       kramdown (~> 1.16.2)
+      nokogiri (~> 1.10.4)
       rouge (~> 3.0)
     guard (2.15.1)
       formatador (>= 0.2.4)
@@ -151,8 +156,9 @@ PLATFORMS
 DEPENDENCIES
   adsf (~> 1.4)
   adsf-live (~> 1.4)
+  asciidoctor-plantuml (= 0.0.9)
   builder (~> 3.2)
-  gitlab_kramdown (~> 0.6.0)
+  gitlab_kramdown (~> 0.8.0)
   guard-nanoc (~> 2.1)
   highline (~> 2.0)
   mdl
@@ -166,4 +172,4 @@ DEPENDENCIES
   scss_lint (~> 0.57)
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
