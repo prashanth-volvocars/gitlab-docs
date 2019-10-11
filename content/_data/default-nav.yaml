@@ -60,6 +60,9 @@ sections:
         category_url: 'user/project/clusters/runbooks/'
       - category_title: Serverless
         category_url: 'user/project/clusters/serverless/'
+        docs:
+          - doc_title: Deploying AWS Lambda functions
+            doc_url: 'user/project/clusters/serverless/aws.html'
 
   - section_title: Groups
     section_url: 'user/group/'
