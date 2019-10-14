@@ -66,6 +66,8 @@ here's what you will need to have:
 
 - A Unix/Linux or macOS environment
 - Ruby 2.6+
+- Node
+- Yarn
 
 **Note:**
 On Windows, the process described here would be different, but as most of
@@ -93,6 +95,34 @@ One way is to use RVM:
 
 Check your Ruby version with `ruby --version`.
 Also check the bundled Bundler version with `bundle --version`. You will see `Bundler version 1.17.3`.
+
+### Node
+
+The recommended way is to use a Node version manager to install Node in your
+system.
+
+One way is to use NVM:
+
+1. [Install NVM](https://github.com/nvm-sh/nvm#installation-and-update)
+1. Install the latest Node:
+
+    ```sh
+    nvm install node
+    ```
+
+1. Use the newly installed Node:
+
+    ```sh
+    nvm use node
+    ```
+
+Check your Node version with `node -v`.
+
+### Yarn
+
+Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the Node ecosystem.
+
+Check your Yarn version with `yarn -v`.
 
 ## Install Nanoc's dependencies
 
@@ -310,9 +340,32 @@ We can then loop over the `versions` array with something like:
 Note that the data file must have the `yaml` extension (not `yml`) and that
 we reference the array with a symbol (`:versions`).
 
-## Bumping versions of CSS and Javascript
+## Modern JavaScript
 
-Whenever the custom CSS and Javascript files under `content/assets/` change,
+Currently a lot of the JavaScript can be found in [content/assets/javascripts/](/content/assets/javascripts). The files in
+ this directory are handcrafted `ES5` JavaScript files. 
+ 
+We've [recently introduced](https://gitlab.com/gitlab-org/gitlab-docs/merge_requests/577) the ability to write modern 
+JavaScript. All modern JavaScript should be added to the [content/frontend/](/content/frontend) directory.
+
+### Adding a new bundle
+
+When adding a new bundle, the layout name (html) and bundle name (js) should
+match to make it easier to find:
+
+1. Add the new bundle to `content/frontend/bundles/<bundle-name>.js`
+1. Import the bundle in the html file `layouts/<bundle-name>.html`:
+
+   ```html
+   <script src="<%= @items['/frontend/bundles/<bundle-name>.*'].path %>"></script>
+   ```
+
+You should replace `<bundle-name>` with whatever you'd like to call your
+bundle. 
+
+## Bumping versions of CSS and JavaScript
+
+Whenever the custom CSS and JavaScript files under `content/assets/` change,
 make sure to bump their version in the frontmatter. This method guarantees that
 your changes will take effect by clearing the cache of previous files.
 

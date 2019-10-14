@@ -26,3 +26,4 @@ crash.log
 .bundle/
 .idea/
 vendor/
+node_modules/
