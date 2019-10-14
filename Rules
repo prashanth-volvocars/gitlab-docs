@@ -105,7 +105,7 @@ end
 # Do not compile minified assets
 passthrough '/**/*.min.*'
 
-compile '/**/*.js' do
+compile '/assets/javascripts/*.js' do
   filter :erb
   write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.js'
 end
@@ -147,3 +147,7 @@ layout '/**/*', :erb
 
 # Leave the favicon alone.
 passthrough '/favicon.ico'
+
+postprocess do
+  system('nanoc frontend')
+end

@@ -3,7 +3,7 @@
 # all Nanoc's runtime dependencies and gems.
 #
 
-FROM ruby:2.6.3-alpine3.8
+FROM registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-docs
 
 # Install packages needed at build and run time
 RUN apk add --no-cache --virtual build-deps \
@@ -12,7 +12,7 @@ RUN apk add --no-cache --virtual build-deps \
   libxslt-dev
 
 # Install packages needed at build and run time
-RUN apk add --no-cache libxslt libcurl openssl git grep bash pngquant
+RUN apk add --no-cache libxslt libcurl openssl git grep bash pngquant nodejs
 
 # Do not install rdoc to save some space
 RUN echo 'gem: --no-document' >> /etc/gemrc
