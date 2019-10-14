@@ -84,11 +84,11 @@ checks:
       # when fixed.
       - '\/archives.html'
       # Exclude the extra links listed in the home page
-      - '\/ee\/user\/project\/import\/'
-      - '\/ee\/ci\/yaml\/'
-      - '\/ee\/api\/'
-      - '\/ee\/ssh\/'
-      - '\/ee\/user\/gitlab_com\/'
+      - '\/ee\/user\/project\/import\/$'
+      - '\/ee\/ci\/yaml\/$'
+      - '\/ee\/api\/$'
+      - '\/ee\/ssh\/$'
+      - '\/ee\/user\/gitlab_com\/$'
 
   # Configuration for the “external_links” checker, which checks whether all
   # external links are valid.
