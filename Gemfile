@@ -6,12 +6,13 @@ gem 'adsf-live', '~> 1.4'
 gem 'sassc', '~> 2.0'
 gem 'rouge', '~> 3.11'
 gem 'rake', '~> 12.3'
+gem 'asciidoctor-plantuml', '0.0.9'
 
 group :nanoc do
   gem 'guard-nanoc', '~> 2.1'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.6.0'
+  gem 'gitlab_kramdown', '~> 0.8.0'
 
   # nanoc checks
   gem 'nokogiri', '~> 1.10.3'
