@@ -381,6 +381,9 @@ sections:
             doc_url: 'ci/jenkins/'
       - category_title: Auto DevOps
         category_url: 'topics/autodevops/'
+        docs:
+          - doc_title: Getting started
+            doc_url: 'topics/autodevops/quick_start_guide.html'
       - category_title: Caching
         category_url: 'ci/caching/'
       - category_title: ChatOps
