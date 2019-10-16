@@ -50,6 +50,8 @@ sections:
         category_url: 'user/group/clusters/'
       - category_title: Instance-level clusters
         category_url: 'user/instance/clusters/'
+      - category_title: Management project
+        category_url: 'user/clusters/management_project.html'
       - category_title: Monitoring
         category_url: 'user/project/integrations/prometheus_library/kubernetes.html'
       - category_title: Pod logs
