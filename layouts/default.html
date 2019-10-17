@@ -14,11 +14,7 @@
         <%= render '/global_nav.*' %>
       <% end %>
       </aside>
-      <button type="button" class="btn nav-toggle" data-gl-class-toggle="active" data-target=".nav-wrapper">
-        <span class="arrow"></span>
-        <span class="arrow"></span>
-        <div class="label">Collapse sidebar</div>
-      </button>
+      <div id="js-nav-toggle"></div>
     </div>
     <div class="main class js-main-wrapper">
       <% if @config[:breadcrumbs] %>
@@ -87,7 +83,7 @@
   <%= render '/footer.*' %>
   <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
-  <script src="<%= @items['/assets/javascripts/class-toggle.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
+  <script src="<%= @items['/frontend/bundles/default.*'].path %>"></script>
 </body>
 </html>
