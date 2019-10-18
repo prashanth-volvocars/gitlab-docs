@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 /* https://github.com/idleberg/base16-pygments/blob/master/css/base16-ocean.dark.css */
 
@@ -15,7 +15,8 @@ pre.highlight {
 
   // Code itself
   code {
-    padding: 13px 33px 13px 15px; // 33px: the width of the .clip-btn
+    padding: 13px 0 13px 15px;
+    margin-right: 36px; // 36px: the width of the .clip-btn
     display: block;
     color: inherit;
     overflow-x: auto;
