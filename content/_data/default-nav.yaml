@@ -1002,6 +1002,10 @@ sections:
             doc_url: 'development/documentation/workflow.html'
           - doc_title: Style Guide
             doc_url: 'development/documentation/styleguide.html'
+          - doc_title: Site architecture
+            doc_url: 'development/documentation/site_architecture/'
+          - doc_title: Global navigation
+            doc_url: 'development/documentation/site_architecture/global_nav.html'
       - category_title: Event tracking
         category_url: 'development/event_tracking/'
         docs:
