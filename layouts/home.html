@@ -24,7 +24,7 @@
     <%= yield %>
     <%= render '/footer.*' %>
     <%= render '/docsearch.*' %>
-    <% if ENV['NANOC_ENV'] == 'production' %>
+    <% if ENV['NANOC_ENV'] == 'production' and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
     <% end %>
