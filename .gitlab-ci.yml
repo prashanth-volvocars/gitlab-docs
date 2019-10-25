@@ -12,11 +12,11 @@ stages:
 # Pick the remote branch, by default master (see the Rakefile for more info)
 #
 variables:
-  BRANCH_CE: 'master'
-  BRANCH_EE: 'master'
-  BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'master'
-  BRANCH_CHARTS: 'master'
+  BRANCH_CE: '12-0-stable'
+  BRANCH_EE: '12-0-stable-ee'
+  BRANCH_OMNIBUS: '12-0-stable'
+  BRANCH_RUNNER: '12-0-stable'
+  BRANCH_CHARTS: '2-0-stable'
 
 #
 # Check Ruby version and install gems
