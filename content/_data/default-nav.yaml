@@ -247,6 +247,8 @@ sections:
             doc_url: 'user/project/merge_requests/browser_performance_testing.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Creating merge requests
+            doc_url: 'user/project/merge_requests/creating_merge_requests.html'
           - doc_title: Cherry pick changes
             doc_url: 'user/project/merge_requests/cherry_pick_changes.html'
           - doc_title: Code quality
@@ -265,6 +267,8 @@ sections:
             doc_url: 'user/project/merge_requests/resolve_conflicts.html'
           - doc_title: Reverting changes
             doc_url: 'user/project/merge_requests/revert_changes.html'
+          - doc_title: Reviewing and managing merge requests
+            doc_url: 'user/project/merge_requests/reviewing_and_managing_merge_requests.html'
           - doc_title: Squash and merge
             doc_url: 'user/project/merge_requests/squash_and_merge.html'
           - doc_title: Versions
