@@ -1,5 +1,5 @@
 ---
-version: 9
+version: 10
 ---
 
 @import "variables";
@@ -46,7 +46,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   @media all and (max-width: $mobile-width) {
     margin-top: -25px !important;
   }
-} 
+}
 
 .ais-search-box--powered-by {
   font-family: $sans-font-family;
@@ -59,6 +59,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   top: 35% !important;
   bottom: auto;
   right: 10px !important;
+  width: 14px;
 }
 
 .hit-content {
