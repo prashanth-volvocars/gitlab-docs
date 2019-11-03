@@ -151,7 +151,7 @@ sections:
       - category_title: Deploy tokens
         category_url: 'user/project/deploy_tokens/'
       - category_title: File finder
-        category_url: 'workflow/file_finder.html'
+        category_url: 'user/project/repository/file_finder.html'
       - category_title: Integrations
         category_url: 'user/project/integrations/'
         docs:
@@ -231,7 +231,7 @@ sections:
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Weight
-            doc_url: 'workflow/issue_weight.html'
+            doc_url: 'user/project/issues/issue_weight.html'
             ee_only: true
             ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Merge Requests
@@ -341,13 +341,13 @@ sections:
           - doc_title: Git attributes
             doc_url: 'user/project/git_attributes.html'
           - doc_title: Git LFS
-            doc_url: 'workflow/lfs/manage_large_binaries_with_git_lfs.html'
+            doc_url: 'administration/lfs/manage_large_binaries_with_git_lfs.html'
           - doc_title: Locked files
             doc_url: 'user/project/file_lock.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Mirroring
-            doc_url: 'workflow/repository_mirroring.html'
+            doc_url: 'user/project/repository/repository_mirroring.html'
           - doc_title: Protected branches
             doc_url: 'user/project/protected_branches.html'
           - doc_title: Protected tags
@@ -795,23 +795,23 @@ sections:
           - doc_title: Git
             doc_url: 'topics/git/'
       - category_title: Keyboard shortcuts
-        category_url: 'workflow/shortcuts.html'
+        category_url: 'user/shortcuts.html'
       - category_title: Markdown
         category_url: 'user/markdown.html'
         docs:
           - doc_title: AsciiDoc
             doc_url: 'user/asciidoc.html'
       - category_title: Notification emails
-        category_url: 'workflow/notifications.html'
+        category_url: 'user/profile/notifications.html'
       - category_title: Quick actions
         category_url: 'user/project/quick_actions.html'
         docs:
           - doc_title: Autocomplete characters
             doc_url: 'user/project/autocomplete_characters.html'
       - category_title: Time tracking
-        category_url: 'workflow/time_tracking.html'
+        category_url: 'user/project/time_tracking.html'
       - category_title: To-Do lists
-        category_url: 'workflow/todos.html'
+        category_url: 'user/todos.html'
 
   - section_title: Administrator
     section_url: 'administration/'
@@ -840,7 +840,7 @@ sections:
             ee_only: true
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Git LFS administration
-            doc_url: 'workflow/lfs/lfs_administration.html'
+            doc_url: 'administration/lfs/lfs_administration.html'
           - doc_title: Gitaly
             doc_url: 'administration/gitaly/'
           - doc_title: GitLab Pages
@@ -874,7 +874,7 @@ sections:
           - doc_title: System Hooks
             doc_url: 'system_hooks/system_hooks.html'
           - doc_title: Timezone
-            doc_url: 'workflow/timezone.html'
+            doc_url: 'administration/timezone.html'
           - doc_title: Uploads
             doc_url: 'administration/uploads.html'
       - category_title: Abuse reports
