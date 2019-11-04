@@ -234,7 +234,7 @@ the directory that holds the documentation content.
     ln -s ~/dev/gitlab/charts/doc ~/dev/gitlab/gitlab-docs/content/charts
     ```
 
-1. Check if the symlinks where successfully created:
+1. Check if the symlinks were successfully created:
 
     ```sh
     ls -la content/
