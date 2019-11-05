@@ -464,18 +464,20 @@ sections:
       - category_title: GitLab Pages
         category_url: 'user/project/pages/'
         docs:
-          - doc_title: Introduction
-            doc_url: 'user/project/pages/introduction.html'
-          - doc_title: Static sites and domains
+          - doc_title: "Getting started"
+            doc_url: 'user/project/pages/#getting-started'
+          - doc_title: Default domains, URLs, and baseurls
             doc_url: 'user/project/pages/getting_started_part_one.html'
-          - doc_title: Projects and URL structure
-            doc_url: 'user/project/pages/getting_started_part_two.html'
           - doc_title: CI/CD for GitLab Pages
             doc_url: 'user/project/pages/getting_started_part_four.html'
-          - doc_title: Custom domains and SSL/TSL certificates
+          - doc_title: Custom domains and SSL/TLS certificates
             doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/'
-          - doc_title: Let's Encrypt integration
+          - doc_title: "Let's Encrypt integration"
             doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
+          - doc_title: "Access control"
+            doc_url: 'user/project/pages/pages_access_control.html'
+          - doc_title: Exploring GitLab Pages
+            doc_url: 'user/project/pages/introduction.html'
       - category_title: Interactive web terminals
         category_url: 'ci/interactive_web_terminal/'
       - category_title: Large repositories
