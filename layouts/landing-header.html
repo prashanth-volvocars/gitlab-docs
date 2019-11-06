@@ -1,25 +1,26 @@
 <div class="landing-header-top" id="landing-header-bar">
-  <a class="header-link logo-container flex-container justify-center align-center" href="/">
+  <a class="header-link logo-container flex-container align-center" href="/">
     <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
     <p>GitLab <strong>Docs</strong></p>
   </a>
   <nav class="nav-container">
-    <% if ENV['NANOC_ENV'] == 'production' %>
-      <% @config[:products].each do |name, product| %>
-        <% if product[:expose] == true %>
-          <a class="header-link nav-item flex-container justify-center align-center" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-            <p><%= product[:short_name] %></p>
-          </a>
+    <a class="nav-toggle" id="docs-nav-toggle">
+      <i class="fa fa-bars nav-toggle-icon mt-2" aria-hidden="true"></i>
+    </a>
+    <ul class="nav">
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <%= render '/nav-item.*', product: product %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <%= render '/nav-item.*', product: product %>
+          <% end %>
         <% end %>
       <% end %>
-    <% else %>
-      <% @config[:products].each do |name, product| %>
-        <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-          <a class="header-link nav-item flex-container justify-center align-center" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-            <p><%= product[:short_name] %></p>
-          </a>
-        <% end %>
-      <% end %>
-    <% end %>
+    </ul>
   </nav>
 </div>
