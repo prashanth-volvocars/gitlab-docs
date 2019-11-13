@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import NavigationToggle from '../components/nav-toggle/NavigationToggle.vue';
+import NavigationToggle from '../components/navigation_toggle/navigation_toggle.vue';
 
 document.addEventListener(
   'DOMContentLoaded',
