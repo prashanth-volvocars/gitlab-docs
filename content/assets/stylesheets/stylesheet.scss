@@ -1,5 +1,5 @@
 ---
-version: 65
+version: 66
 ---
 
 @import "variables";
@@ -289,9 +289,14 @@ li {
   float: left;
 }
 
+// main content
+.wrapper.show-version-banner .main {
+  padding-top: calc(#{$page-header-height} + #{$version-banner-height});
+}
+
 .main {
   margin: auto 15%;
-  padding: 55px 40px 0;
+  padding: $page-header-height 40px 0;
   position: relative;
   width: auto;
   max-width: 900px;
@@ -444,11 +449,15 @@ li {
 }
 
 //global nav
+.wrapper.show-version-banner .nav-wrapper {
+  padding-top: calc(#{$page-header-height} + #{$version-banner-height});
+}
+
 .nav-wrapper {
   display: flex;
   flex-direction: column;
   position: fixed;
-  padding-top: 56px;
+  padding-top: $page-header-height;
   max-width: 220px;
   width: 50px;
   height: 100vh;
@@ -895,6 +904,7 @@ a.global-nav-link {
   background: $main-background-color;
   position: fixed;
   width: 100%;
+  height: $page-header-height;
   padding: 6px 24px;
   border-bottom: 1px solid $border-color;
   text-align: left;
@@ -1231,7 +1241,7 @@ a.global-nav-link {
     z-index: 1000;
     position: fixed;
     width: 100%;
-    height: 57px;
+    height: $page-header-height;
     padding: 4px 24px;
     text-align: left;
     display: flex;
@@ -1791,3 +1801,12 @@ li {
 // scss-lint:enable ImportantRule
 
 //end of in-page styles
+
+.version-banner {
+  z-index: 5;
+  line-height: 2;
+  top: $page-header-height;
+  height: $version-banner-height;
+  background: $gds-gray-50;
+  border-bottom: 1px solid $gds-gray-200;
+}
