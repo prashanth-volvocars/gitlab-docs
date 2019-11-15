@@ -7,7 +7,9 @@
 <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
   <%= render '/gtm.*' %>
   <%= render '/header.*' %>
-  <div class="wrapper">
+  <div id="js-version-banner" <%= 'data-is-outdated' if show_version_banner? %> data-latest-version-url="<%= @item.identifier.without_ext + '.html' %>" data-archives-url="/archives/"></div>
+
+  <div class="wrapper <%= 'show-version-banner' if show_version_banner? %>">
     <div class="nav-wrapper active">
       <aside id="global-nav" class="global-nav">
       <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>

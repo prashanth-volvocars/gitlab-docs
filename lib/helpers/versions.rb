@@ -18,6 +18,24 @@ module Nanoc::Helpers
     end
 
     #
+    # Determines whether or not to display the version banner on the frontend.
+    #
+    # Note: We only want the banner to display on production.
+    # Production is the only environment where we serve multiple versions.
+    #
+    def show_version_banner?
+      ENV['NANOC_ENV'] == 'production' && !latest?
+    end
+
+    #
+    # Check if the current version is the latest.
+    #
+    def latest?
+      latest_version = @items['/_data/versions.yaml'][:online][0]
+      ENV['CI_COMMIT_REF_NAME'] == 'master' || ENV['CI_COMMIT_REF_NAME'] == latest_version
+    end
+
+    #
     # Check if we are on the /archives page
     #
     def archives?
