@@ -12,10 +12,10 @@ stages:
 # Pick the remote branch, by default master (see the Rakefile for more info)
 #
 variables:
-  BRANCH_EE: 'master'
-  BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'master'
-  BRANCH_CHARTS: 'master'
+  BRANCH_EE: '12-5-stable-ee'
+  BRANCH_OMNIBUS: '12-5-stable'
+  BRANCH_RUNNER: '12-5-stable'
+  BRANCH_CHARTS: '2-5-stable'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
 
