@@ -15,16 +15,12 @@ module.exports = glob.sync(
   },
   plugins: [
     commonjs(),
+    babel(),
     vue(),
     importResolver({
       alias: {
         'vue': './node_modules/vue/dist/vue.esm.browser.min.js'
       }
-    }),
-    babel({
-      exclude: 'node_modules/**',
-      babelrc: false,
-      presets: ['@babel/preset-env'],
     }),
   ],
 }));
