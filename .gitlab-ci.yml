@@ -98,9 +98,9 @@ compile_dev:
 ###############################################
 
 #
-# Run unit tests for internal classes
+# Run rspec tests
 #
-internal_unit_tests:
+rspec:
   stage: test
   script:
     - bundle exec rspec
@@ -108,6 +108,21 @@ internal_unit_tests:
     key: "test-$CI_COMMIT_REF_NAME"
     paths:
       - vendor/ruby
+  <<: *except_pipelines
+
+#
+# Run JavaScript tests
+#
+jest:
+  stage: test
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - yarn test
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+      - .yarn-cache/
   <<: *except_pipelines
 
 #

@@ -25,5 +25,6 @@ crash.log
 .sass-cache/
 .bundle/
 .idea/
+.yarn-cache/
 vendor/
 node_modules/
