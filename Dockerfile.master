@@ -49,8 +49,7 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy the versions found in 'content/_data/versions.yaml' under online.
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.5 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.4 ${TARGET} ${TARGET}
-# Until https://gitlab.com/gitlab-org/gitlab-docs/issues/467 is fixed
-#COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.3 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.3 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive
