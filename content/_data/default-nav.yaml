@@ -767,6 +767,8 @@ sections:
       - category_title: GraphQL
         category_url: 'api/graphql/'
         docs:
+          - doc_title: Getting started
+            doc_url: 'api/graphql/getting_started.html'
           - doc_title: GraphQL reference
             doc_url: 'api/graphql/reference/'
       - category_title: v3 to v4
