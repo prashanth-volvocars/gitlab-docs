@@ -272,6 +272,8 @@ pages:
     - mv /usr/share/nginx/html/1* public/
     # Check the size
     - du -sh public/
+    - /scripts/minify-assets.sh public/ public/
+    - du -sh public/
   artifacts:
     paths:
       - public

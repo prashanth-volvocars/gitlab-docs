@@ -28,6 +28,9 @@ ONBUILD RUN /scripts/normalize-links.sh /site ${VER}
 # Compress images
 ONBUILD RUN /scripts/compress_images.sh /site ${VER}
 
+# Minify assets
+ONBUILD RUN /scripts/minify ${VER}
+
 # Make an index.html and 404.html which will redirect / to /${VER}/
 ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html
 ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/404.html
