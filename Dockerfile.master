@@ -57,5 +57,9 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.4 ${TARGET} ${TARGET}
 # changes
 COPY --from=builder /source/public ${TARGET}
 
+# Minify assets
+COPY --from=builder /scripts/minify* /scripts/
+RUN /scripts/minify-assets.sh ${TARGET}/ ${TARGET}
+
 # Serve the site (target), which is now all static HTML
 CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
