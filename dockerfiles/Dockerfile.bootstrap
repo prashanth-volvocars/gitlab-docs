@@ -4,8 +4,9 @@
 #
 FROM golang:1.13-alpine AS minifier
 RUN apk add --no-cache git
-RUN go get -d github.com/tdewolff/minify/cmd/minify \
- && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
+RUN export GO111MODULE=on \
+  && go get -d github.com/tdewolff/minify/v2@v2.5.1 \
+  && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
 
 #
 # This is the Nanoc boostrap Dockerfile which builds an image that contains
