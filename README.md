@@ -2,8 +2,8 @@
 
 # GitLab Documentation
 
-This project hosts the repository which is used to generate the GitLab
-documentation website and is deployed to https://docs.gitlab.com. It uses the
+This project hosts the repository used to generate the GitLab
+documentation website and deployed to https://docs.gitlab.com. It uses the
 [Nanoc](http://nanoc.ws) static site generator.
 
 You will not find any GitLab docs content here. All documentation files are
@@ -141,10 +141,6 @@ Now let's make Bundler deal with the dependencies defined in the
     ```sh
     bundle install
     ```
-
-## Development under GDK
-
-See [how to preview the docs changes locally using the GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md).
 
 ## Development when contributing to GitLab documentation
 
@@ -287,6 +283,10 @@ bundle exec nanoc live -o 192.168.0.105
 Now, open your mobile's browser and type `http://192.168.0.105:3000`, and you should
 be able to navigate through the docs site. This process applies to previewing the
 docs site on every device connected to your network.
+
+### Preview on the GitLab Development Kit
+
+Alternatively, you can preview changes using the GitLab Development Kit (GDK). For more information, see [Setting up GitLab Docs](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md) in the GDK repository.
 
 ## Contributing to the docs website itself
 
