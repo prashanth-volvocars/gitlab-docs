@@ -97,7 +97,7 @@ checks:
     # If an external link matches this pattern, the validity check will be skipped.
     exclude:
       # Valid links incorrectly reported as broken
-      - 'https?:\/\/gitlab.com\/api\/v4\/.*'
+      - 'https:\/\/gitlab.com\/api\/v4\/.*'
       - 'https:\/\/www\.linkedin\.com\/company\/gitlab-com'
       - 'https:\/\/auth0\.com\/auth\/login'
       - 'https:\/\/gitlab-org\.gitlab\.io\/gitlab-svgs'
