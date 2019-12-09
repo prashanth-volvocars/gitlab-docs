@@ -1,11 +1,11 @@
 import { mount } from '@vue/test-utils';
-import NavigationToggle from '~/components/navigation_toggle/navigation_toggle.vue';
+import NavigationToggle from '../../../../content/frontend/components/navigation_toggle/navigation_toggle.vue';
 
-describe('component: Navigation Toggle', function () {
+describe('component: Navigation Toggle', () => {
   let wrapper;
 
   beforeEach(() => {
-    let propsData = { targetSelector: '.some-selector' };
+    const propsData = { targetSelector: '.some-selector' };
     wrapper = mount(NavigationToggle, { propsData, });
   });
 

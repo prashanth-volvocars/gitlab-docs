@@ -229,7 +229,7 @@
     };
 
     var is_disqus_loaded = false;
-    function loadDisqus() {
+    window.loadDisqus = function() {
       if (!is_disqus_loaded){
         is_disqus_loaded = true;
         var disqusThread = document.getElementById('disqus_thread');

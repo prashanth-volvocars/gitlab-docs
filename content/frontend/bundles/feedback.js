@@ -4,7 +4,7 @@ document.addEventListener(
     const hasCommentAnchor = window.location.hash.includes('#comment-');
 
     if(hasCommentAnchor) {
-      loadDisqus();
+      window.loadDisqus();
     }
   }
 );

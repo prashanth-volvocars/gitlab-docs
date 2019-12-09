@@ -11,7 +11,6 @@ export default {
       const target = document.querySelector(this.targetSelector);
 
       if(!target) {
-        console.warn('No target found for selector > ', this.targetSelector);
         return;
       }
 

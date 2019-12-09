@@ -9,6 +9,7 @@ document.addEventListener(
     const isOutdated = versionBanner.hasAttribute('data-is-outdated');
     const { latestVersionUrl, archivesUrl } = versionBanner.dataset;
 
+    // eslint-disable-next-line no-new
     new Vue({
       el: versionBanner,
       components: {
@@ -21,6 +22,7 @@ document.addEventListener(
       },
     });
 
+    // eslint-disable-next-line no-new
     new Vue({
       el: '#js-nav-toggle',
       components: {
