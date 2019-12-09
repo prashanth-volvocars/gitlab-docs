@@ -280,14 +280,36 @@ pages:
   dependencies:
     - compile_prod    # Contains the public directory
   script:
+    #
     # We want to use the artifacts of the compile_prod job as
     # the latest docs deployment, and the other versions are
     # taken from /usr/share/nginx/html which are included in
     # the image we pull from.
+    #
     - mv /usr/share/nginx/html/1* public/
-    # Check the size
+
+    #
+    # Check the size before minifying
+    #
     - du -sh public/
-    - /scripts/minify-assets.sh public/ public/
+
+    #
+    # Minify the assets of the resulting site. The single versions
+    # will be minified eventually when the minification propagates
+    # to all versions that are included in gitlab-docs:latest
+    # (around 12.7), but we also need to minify the content we
+    # pull from master. Currently, there's no way to exclude
+    # files or directories when minifying, so we minify the whole
+    # site (even the versions that are already minified).
+    # TODO: Move to top.
+    # When all versions are minified, we can move this script
+    # to run first and avoid minifying the already minified versions.
+    #
+    - /scripts/minify-assets.sh ./ public/
+
+    #
+    # Check the size after minifying
+    #
     - du -sh public/
   artifacts:
     paths:
