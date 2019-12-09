@@ -21,6 +21,5 @@ printf "HTML..."; /scripts/minify -r --type=html --match=\.html -o ${TARGET}/${V
 printf "CSS..." ; /scripts/minify -r --type=css  --match=\.css  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
 printf "JSON..."; /scripts/minify -r --type=json --match=\.json -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
 printf "SVG..." ; /scripts/minify -r --type=svg  --match=\.svg  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
-printf "XML..." ; /scripts/minify -r --type=xml  --match=\.xml  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
 
 echo "Done"
