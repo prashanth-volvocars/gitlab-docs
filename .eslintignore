@@ -1,0 +1,7 @@
+/node_modules/
+/public/
+/vendor/
+/tmp/
+
+# ignore legacy code to be migrated
+/content/assets/

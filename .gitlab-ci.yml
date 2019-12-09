@@ -126,6 +126,21 @@ jest:
   <<: *except_pipelines
 
 #
+# Lint JavaScript
+#
+js_lint:
+  stage: test
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - yarn eslint
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+      - .yarn-cache/
+  <<: *except_pipelines
+
+#
 # Check for broken internal links
 #
 test_internal_links_and_anchors:
