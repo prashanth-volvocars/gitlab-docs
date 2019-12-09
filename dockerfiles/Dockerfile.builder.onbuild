@@ -29,7 +29,7 @@ ONBUILD RUN [ -f /scripts/normalize-links.sh ] && /scripts/normalize-links.sh /s
 ONBUILD RUN [ -f /scripts/compress_images.sh ] && /scripts/compress_images.sh /site ${VER} || "/scripts/compress_images.sh not found"
 
 # Minify assets
-ONBUILD RUN [ -f /scripts/minify ] && /scripts/minify ${VER} || "/scripts/minify not found"
+ONBUILD RUN [ -f /scripts/minify ] && /scripts/minify /site ${VER} || "/scripts/minify not found"
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
 ONBUILD RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html
