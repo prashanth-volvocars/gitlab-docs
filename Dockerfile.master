@@ -57,8 +57,8 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.3 ${TARGET} ${TARGET}
 COPY --from=builder /source/public ${TARGET}
 
 # Since we changed images when we invoked 'FROM nginx:1.12-alpine' above,
-# the minify script is not included. Thus, we copy it from the previous image
-# (aliased as builder).
+# the minify script and binary are not included. Thus, we copy them from the
+# previous image (aliased as builder).
 COPY --from=builder /scripts/minify* /scripts/
 
 # Serve the site (target), which is now all static HTML
