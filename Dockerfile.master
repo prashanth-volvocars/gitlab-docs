@@ -56,9 +56,10 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.3 ${TARGET} ${TARGET}
 # changes
 COPY --from=builder /source/public ${TARGET}
 
-# Minify assets
+# Since we changed images when we invoked 'FROM nginx:1.12-alpine' above,
+# the minify script is not included. Thus, we copy it from the previous image
+# (aliased as builder).
 COPY --from=builder /scripts/minify* /scripts/
-RUN /scripts/minify-assets.sh ${TARGET}/ ${TARGET}
 
 # Serve the site (target), which is now all static HTML
 CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
