@@ -5,7 +5,7 @@
 FROM golang:1.13-alpine AS minifier
 RUN apk add --no-cache git
 RUN export GO111MODULE=on \
-  && go get -d github.com/tdewolff/minify/v2@v2.5.1 \
+  && go get -d github.com/tdewolff/minify/v2@latest \
   && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
 
 #
