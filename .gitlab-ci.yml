@@ -141,33 +141,6 @@ js_lint:
   <<: *except_pipelines
 
 #
-# Check for broken internal links
-#
-test_internal_links_and_anchors:
-  stage: test
-  script:
-    - bundle exec nanoc check internal_links
-    - bundle exec nanoc check internal_anchors
-  cache:
-    key: "test-$CI_COMMIT_REF_NAME"
-    paths:
-      - vendor/ruby
-  <<: *except_pipelines
-
-# Check for broken external links
-#
-test_external_links:
-  stage: test
-  script:
-    - bundle exec nanoc check external_links
-  allow_failure: true
-  cache:
-    key: "test-$CI_COMMIT_REF_NAME"
-    paths:
-      - vendor/ruby
-  <<: *except_pipelines
-
-#
 # SCSS linting
 #
 scss_lint:
@@ -335,6 +308,10 @@ pages:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   <<: *retry
 
+.scheduled_infrequent: &scheduled_infrequent
+  rules:
+    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly" && $CI_PIPELINE_SOURCE == "schedule"'
+
 #
 # GitLab docs lint image containing all test tools
 #
@@ -431,6 +408,7 @@ image:docs-single:
 #
 image:docs-archives:
   <<: *docker_prepare
+  <<: *scheduled_infrequent
   stage: pre-deploy
   artifacts: {}
   cache: {}
@@ -442,15 +420,13 @@ image:docs-archives:
   script:
     - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
     - docker push $IMAGE_NAME
-  # Run only on schedules since this will contain only the archives
-  only:
-    - schedules
 
 #
 # Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
   <<: *docker_prepare
+  <<: *scheduled_infrequent
   stage: pre-deploy
   artifacts: {}
   cache: {}
@@ -465,5 +441,33 @@ image:docs-latest:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   allow_failure: true
-  only:
-    - schedules
+
+#
+# Check for broken external links
+# Set to be part of infrequent pipeline
+#
+test_external_links:
+  <<: *scheduled_infrequent
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
+  allow_failure: true
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
+
+#
+# Check for broken internal links
+# Set to be part of infrequent pipeline
+#
+test_internal_links_and_anchors:
+  <<: *scheduled_infrequent
+  stage: test
+  script:
+    - bundle exec nanoc check internal_links
+    - bundle exec nanoc check internal_anchors
+  cache:
+    key: "test-$CI_COMMIT_REF_NAME"
+    paths:
+      - vendor/ruby
