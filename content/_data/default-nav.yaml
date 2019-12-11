@@ -1024,19 +1024,25 @@ sections:
             doc_url: 'development/contributing/issue_workflow.html'
           - doc_title: Merge request workflow
             doc_url: 'development/contributing/merge_request_workflow.html'
+          - doc_title: Style guides
+            doc_url: 'development/contributing/style_guides.html'
       - category_title: Architecture
         category_url: 'development/architecture.html'
       - category_title: Documentation
         category_url: 'development/documentation/'
         docs:
-          - doc_title: Process
-            doc_url: 'development/documentation/workflow.html'
           - doc_title: Style Guide
             doc_url: 'development/documentation/styleguide.html'
+          - doc_title: Documentation structure and template
+            doc_url: 'development/documentation/structure.html'
+          - doc_title: Process
+            doc_url: 'development/documentation/workflow.html'
           - doc_title: Site architecture
             doc_url: 'development/documentation/site_architecture/'
           - doc_title: Global navigation
             doc_url: 'development/documentation/site_architecture/global_nav.html'
+          - doc_title: Monthly release process
+            doc_url: 'development/documentation/site_architecture/release_process.html'
       - category_title: Event tracking
         category_url: 'development/event_tracking/'
         docs:
@@ -1070,6 +1076,124 @@ sections:
             doc_url: 'development/i18n/proofreader.html'
           - doc_title: Merging
             doc_url: 'development/i18n/merging_translations.html'
+      - category_title: Experiment guide
+        category_url: 'development/experiment_guide/'
+      - category_title: Frontend development guidelines
+        category_url: 'development/fe_guide/'
+        docs:
+          - doc_title: Accessibility
+            doc_url: 'development/fe_guide/accessibility.html'
+          - doc_title: Ajax
+            doc_url: 'development/fe_guide/droplab/plugins/ajax.html'
+          - doc_title: Architecture
+            doc_url: 'development/fe_guide/architecture.html'
+          - doc_title: Axios
+            doc_url: 'development/fe_guide/axios.html'
+          - doc_title: Design patterns
+            doc_url: 'development/fe_guide/design_patterns.html'
+          - doc_title: Development process
+            doc_url: 'development/fe_guide/development_process.html'
+          - doc_title: Droplab
+            doc_url: 'development/fe_guide/droplab/droplab.html'
+          - doc_title: Emojis
+            doc_url: 'development/fe_guide/emojis.html'
+          - doc_title: Filter
+            doc_url: 'development/fe_guide/droplab/plugins/filter.html'
+          - doc_title: Frontend FAQ
+            doc_url: 'development/fe_guide/frontend_faq.html'
+          - doc_title: GraphQL
+            doc_url: 'development/fe_guide/graphql.html'
+          - doc_title: Icons and SVG illustrations
+            doc_url: 'development/fe_guide/icons.html'
+          - doc_title: InputSetter
+            doc_url: 'development/fe_guide/droplab/plugins/input_setter.html'
+          - doc_title: Performance
+            doc_url: 'development/fe_guide/performance.html'
+          - doc_title: Principles
+            doc_url: 'development/fe_guide/principles.html'
+          - doc_title: Security
+            doc_url: 'development/fe_guide/security.html'
+          - doc_title: Testing
+            doc_url: 'development/fe_guide/testing.html'
+          - doc_title: Tooling
+            doc_url: 'development/fe_guide/tooling.html'
+          - doc_title: Vuex
+            doc_url: 'development/fe_guide/vuex.html'
+          - doc_title: Vue
+            doc_url: 'development/fe_guide/vue.html'
+      - category_title: GitLab development style guides
+        category_url: 'development/fe_guide/style/'
+        docs:
+          - doc_title: API style guide
+            doc_url: 'development/api_styleguide.html'
+          - doc_title: Go standards and style guidelines
+            doc_url: 'development/go_guide/index.html'
+          - doc_title: GraphQL API style guide
+            doc_url: 'development/api_graphql_styleguide.html'
+          - doc_title: Guidelines for shell commands
+            doc_url: 'development/shell_commands.html'
+          - doc_title: HTML style guide
+            doc_url: 'development/fe_guide/style/html.html'
+          - doc_title: JavaScript style guide
+            doc_url: 'development/fe_guide/style/javascript.html'
+          - doc_title: Migration style guide
+            doc_url: 'development/migration_style_guide.html'
+          - doc_title: Newlines style guide
+            doc_url: 'development/newlines_styleguide.html'
+          - doc_title: Python development guidelines
+            doc_url: 'development/python_guide/index.html'
+          - doc_title: SCSS style guide
+            doc_url: 'development/fe_guide/style/scss.html'
+          - doc_title: Shell scripting standards and style guidelines
+            doc_url: 'development/shell_scripting_guide/index.html'
+          - doc_title: Sidekiq debugging
+            doc_url: 'development/sidekiq_debugging.html'
+          - doc_title: Sidekiq style guide
+            doc_url: 'development/sidekiq_style_guide.html'
+          - doc_title: SQL query guidelines
+            doc_url: 'development/sql.html'
+          - doc_title: Vue style guide
+            doc_url: 'development/fe_guide/style/vue.html'
+      - category_title: Testing standards and style guidelines
+        category_url: 'development/testing_guide/'
+        docs:
+          - doc_title: Flaky tests
+            doc_url: 'development/testing_guide/flaky_tests.html'
+          - doc_title: Frontend testing standards and style guidelines
+            doc_url: 'development/testing_guide/frontend_testing.html'
+          - doc_title: GitLab tests in CI context
+            doc_url: 'development/testing_guide/ci.html'
+          - doc_title: Review apps
+            doc_url: 'development/testing_guide/review_apps.html'
+          - doc_title: Smoke tests
+            doc_url: 'development/testing_guide/smoke.html'
+          - doc_title: Testing best practices
+            doc_url: 'development/testing_guide/best_practices.html'
+          - doc_title: Testing levels
+            doc_url: 'development/testing_guide/testing_levels.html'
+          - doc_title: Testing Rails migrations
+            doc_url: 'development/testing_guide/testing_migrations_guide.html'
+          - doc_title: Testing Rake tasks
+            doc_url: 'development/testing_guide/testing_rake_tasks.html'
+      - category_title: End-to-end testing
+        category_url: 'development/testing_guide/end_to_end/'
+        docs:
+          - doc_title: Best practices when writing end-to-end tests
+            doc_url: 'development/testing_guide/end_to_end/best_practices.html'
+          - doc_title: Dynamic element validation
+            doc_url: 'development/testing_guide/end_to_end/dynamic_element_validation.html'
+          - doc_title: Flows in GitLab QA
+            doc_url: 'development/testing_guide/end_to_end/flows.html'
+          - doc_title: Page objects in GitLab QA
+            doc_url: 'development/testing_guide/end_to_end/page_objects.html'
+          - doc_title: Resource class in GitLab QA
+            doc_url: 'development/testing_guide/end_to_end/resources.html'
+          - doc_title: Style guide for writing end-to-end tests
+            doc_url: 'development/testing_guide/end_to_end/style_guide.html'
+          - doc_title: Testing with feature flags
+            doc_url: 'development/testing_guide/end_to_end/feature_flags.html'
+          - doc_title: Writing end-to-end tests step-by-step
+            doc_url: 'development/testing_guide/end_to_end/quick_start_guide.html'
 
   - section_title: Customer
     section_url: 'subscriptions/'
