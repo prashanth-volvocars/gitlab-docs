@@ -1028,10 +1028,12 @@ sections:
             doc_url: 'development/contributing/style_guides.html'
       - category_title: Architecture
         category_url: 'development/architecture.html'
+      - category_title: Development raketasks
+        category_url: 'development/rake_tasks.html'
       - category_title: Documentation
         category_url: 'development/documentation/'
         docs:
-          - doc_title: Style Guide
+          - doc_title: Style guide
             doc_url: 'development/documentation/styleguide.html'
           - doc_title: Documentation structure and template
             doc_url: 'development/documentation/structure.html'
@@ -1050,6 +1052,8 @@ sections:
             doc_url: 'development/event_tracking/frontend.html'
           - doc_title: Backend
             doc_url: 'development/event_tracking/backend.html'
+      - category_title: Experiment guide
+        category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
         category_url: 'development/feature_flags/'
         docs:
@@ -1059,25 +1063,6 @@ sections:
             doc_url: 'development/feature_flags/development.html'
           - doc_title: Controlling feature flags
             doc_url: 'development/feature_flags/controls.html'
-      - category_title: GitLab Design System
-        category_url: 'https://design.gitlab.com'
-        external_url: true
-      - category_title: GitLab Development Kit
-        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
-        external_url: true
-      - category_title: Translate GitLab
-        category_url: 'development/i18n/'
-        docs:
-          - doc_title: Externalization
-            doc_url: 'development/i18n/externalization.html'
-          - doc_title: Translation
-            doc_url: 'development/i18n/translation.html'
-          - doc_title: Proofreading
-            doc_url: 'development/i18n/proofreader.html'
-          - doc_title: Merging
-            doc_url: 'development/i18n/merging_translations.html'
-      - category_title: Experiment guide
-        category_url: 'development/experiment_guide/'
       - category_title: Frontend development guidelines
         category_url: 'development/fe_guide/'
         docs:
@@ -1121,6 +1106,12 @@ sections:
             doc_url: 'development/fe_guide/vuex.html'
           - doc_title: Vue
             doc_url: 'development/fe_guide/vue.html'
+      - category_title: GitLab Design System
+        category_url: 'https://design.gitlab.com'
+        external_url: true
+      - category_title: GitLab Development Kit
+        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
+        external_url: true
       - category_title: GitLab development style guides
         category_url: 'development/fe_guide/style/'
         docs:
@@ -1175,7 +1166,7 @@ sections:
             doc_url: 'development/testing_guide/testing_migrations_guide.html'
           - doc_title: Testing Rake tasks
             doc_url: 'development/testing_guide/testing_rake_tasks.html'
-      - category_title: End-to-end testing
+      - category_title: Testing (end to end)
         category_url: 'development/testing_guide/end_to_end/'
         docs:
           - doc_title: Best practices when writing end-to-end tests
@@ -1194,6 +1185,17 @@ sections:
             doc_url: 'development/testing_guide/end_to_end/feature_flags.html'
           - doc_title: Writing end-to-end tests step-by-step
             doc_url: 'development/testing_guide/end_to_end/quick_start_guide.html'
+      - category_title: Translate GitLab
+        category_url: 'development/i18n/'
+        docs:
+          - doc_title: Externalization
+            doc_url: 'development/i18n/externalization.html'
+          - doc_title: Translation
+            doc_url: 'development/i18n/translation.html'
+          - doc_title: Proofreading
+            doc_url: 'development/i18n/proofreader.html'
+          - doc_title: Merging
+            doc_url: 'development/i18n/merging_translations.html'
 
   - section_title: Customer
     section_url: 'subscriptions/'
