@@ -1,6 +1,6 @@
-[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/master/build.svg)](https://gitlab.com/gitlab-com/gitlab-docs/commits/master)
-
 # GitLab Documentation
+
+[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/gitlab-docs/commits/master)
 
 This project hosts the repository used to generate the GitLab
 documentation website and deployed to https://docs.gitlab.com. It uses the
@@ -343,9 +343,9 @@ we reference the array with a symbol (`:versions`).
 ## Modern JavaScript
 
 Currently a lot of the JavaScript can be found in [content/assets/javascripts/](/content/assets/javascripts). The files in
- this directory are handcrafted `ES5` JavaScript files. 
- 
-We've [recently introduced](https://gitlab.com/gitlab-org/gitlab-docs/merge_requests/577) the ability to write modern 
+ this directory are handcrafted `ES5` JavaScript files.
+
+We've [recently introduced](https://gitlab.com/gitlab-org/gitlab-docs/merge_requests/577) the ability to write modern
 JavaScript. All modern JavaScript should be added to the [content/frontend/](/content/frontend) directory.
 
 ### Adding a new bundle
@@ -361,7 +361,7 @@ match to make it easier to find:
    ```
 
 You should replace `<bundle-name>` with whatever you'd like to call your
-bundle. 
+bundle.
 
 ## Bumping versions of CSS and JavaScript
 
