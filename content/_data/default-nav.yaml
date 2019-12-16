@@ -355,6 +355,10 @@ sections:
             doc_url: 'user/project/file_lock.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: File Blame
+            doc_url: 'user/project/repository/git_blame.html'
+          - doc_title: File History
+            doc_url: 'user/project/repository/git_history.html'
           - doc_title: Mirroring
             doc_url: 'user/project/repository/repository_mirroring.html'
           - doc_title: Protected branches
