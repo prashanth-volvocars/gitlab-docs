@@ -65,7 +65,9 @@ before_script:
       - public
     expire_in: 1d
   cache:
-    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
       - tmp/
       - vendor/ruby
