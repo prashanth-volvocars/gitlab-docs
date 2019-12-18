@@ -409,6 +409,8 @@ sections:
         category_url: 'ci/caching/'
       - category_title: ChatOps
         category_url: 'ci/chatops/README.html'
+      - category_title: Cloud deployment
+        category_url: 'ci/cloud_deployment/'
       - category_title: Docker integration
         category_url: 'ci/docker/README.html'
         docs:
