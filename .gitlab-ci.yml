@@ -65,9 +65,10 @@ before_script:
       - public
     expire_in: 1d
   cache:
-    key: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
-      - tmp/
       - vendor/ruby
   <<: *retry
 
@@ -105,7 +106,9 @@ rspec:
   script:
     - bundle exec rspec
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
       - vendor/ruby
   <<: *except_pipelines
@@ -119,7 +122,10 @@ jest:
     - yarn install --cache-folder .yarn-cache
     - yarn test
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
+        - yarn.lock
     paths:
       - vendor/ruby
       - .yarn-cache/
@@ -134,7 +140,10 @@ js_lint:
     - yarn install --cache-folder .yarn-cache
     - yarn eslint
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
+        - yarn.lock
     paths:
       - vendor/ruby
       - .yarn-cache/
@@ -148,7 +157,9 @@ scss_lint:
   script:
     - bundle exec scss-lint
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
       - vendor/ruby
   <<: *except_pipelines
@@ -453,7 +464,9 @@ test_external_links:
     - bundle exec nanoc check external_links
   allow_failure: true
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
       - vendor/ruby
 
@@ -468,6 +481,8 @@ test_internal_links_and_anchors:
     - bundle exec nanoc check internal_links
     - bundle exec nanoc check internal_anchors
   cache:
-    key: "test-$CI_COMMIT_REF_NAME"
+    key:
+      files:
+        - Gemfile.lock
     paths:
       - vendor/ruby
