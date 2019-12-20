@@ -29,6 +29,7 @@ ONBUILD RUN [ -f /scripts/normalize-links.sh ] && /scripts/normalize-links.sh /s
 ONBUILD RUN [ -f /scripts/compress_images.sh ] && /scripts/compress_images.sh /site ${VER} || "/scripts/compress_images.sh not found"
 
 # Minify assets
+# ATTENTION: This should be the last script to run
 ONBUILD RUN [ -f /scripts/minify-assets.sh ] && /scripts/minify-assets.sh /site ${VER} || "/scripts/minify-assets.sh not found"
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
