@@ -1,4 +1,4 @@
-[> How to](https://gitlab.com/gitlab-org/gitlab-docs/blob/master/dockerfiles/README.md)
+[> How to](https://docs.gitlab.com/ee/development/documentation/site_architecture/release_process.html)
 
 ## During release
 
@@ -8,11 +8,10 @@
    bundle exec rake "release:single[X.Y]"
    ```
 
-1. [ ] Make sure the proper milestone is assigned to this MR and:
-    1. [ ] Edit `content/_data/versions.yaml` and rotate the versions.
-    1. [ ] Edit `content/404.html` and add the old removed version to the list of redirects at the bottom of the file.
-    1. [ ] Edit `dockerfiles/Dockerfile.archives` and add the new version.
-    1. [ ] Edit `Dockerfile.master` and rotate the versions.
+1. [ ] Edit `content/_data/versions.yaml` and rotate the versions.
+1. [ ] Edit `content/404.html` and add the old removed version to the list of redirects at the bottom of the file.
+1. [ ] Edit `dockerfiles/Dockerfile.archives` and add the new version.
+1. [ ] Edit `Dockerfile.master` and rotate the versions.
 1. [ ] \(Optional) If there are changes in the stable branches of the docs **after** the release version Docker image was created, rerun the release version pipeline.
 
 ## Before merge
@@ -29,6 +28,8 @@ On the 22nd, before merging this and **right after a scheduled pipeline has run*
 1. [ ] Once all above MRs are merged, check the newly-created pipelines of the
        respective versions https://gitlab.com/gitlab-org/gitlab-docs/pipelines.
        Once they are green, it's time to merge this MR.
-1. [ ] \(Optional) Manually run the [scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
+1. [ ] Manually run the ["Build docker images weekly" scheduled pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules).
+       This is needed so that the `image:docs-latest` image is built that will
+       contain all the updated versions.
 
 /label ~release
