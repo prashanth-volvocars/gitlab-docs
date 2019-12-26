@@ -1,0 +1,21 @@
+FROM ruby:2.6.3-alpine3.10
+MAINTAINER GitLab Documentation Team
+
+ENV YARN_VERSION="1.19.0"
+ENV YARN_ARCHIVE_FILE="yarn-v${YARN_VERSION}.tar.gz"
+ENV YARN_URL="https://yarnpkg.com/downloads/${YARN_VERSION}/${YARN_ARCHIVE_FILE}"
+ENV PATH $PATH:/yarn-v${YARN_VERSION}/bin
+
+# Install dependencies
+RUN apk --no-cache add -U openssl tar gzip xz gnupg bash nodejs \
+  && mkdir -p /opt
+
+# Install Yarn
+RUN wget "${YARN_URL}" \
+  && wget -qO- https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --import \
+  && wget "${YARN_URL}".asc \
+  && gpg --verify "${YARN_ARCHIVE_FILE}".asc \
+  && tar zvxf "${YARN_ARCHIVE_FILE}"
+
+# Update bundler
+RUN gem install bundler -v "1.17.3"
