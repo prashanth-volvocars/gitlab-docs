@@ -328,7 +328,6 @@ pages:
 #
 image:docs-lint:
   <<: *docker_prepare
-  <<: *scheduled_infrequent
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
@@ -336,13 +335,13 @@ image:docs-lint:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
+  when: manual
 
 #
 # GitLab docs image
 #
 image:gitlab-docs:
   <<: *docker_prepare
-  <<: *scheduled_infrequent
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:gitlab-docs
@@ -350,6 +349,7 @@ image:gitlab-docs:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
+  when: manual
 
 #
 # Helper Docker image containing all build dependencies.
