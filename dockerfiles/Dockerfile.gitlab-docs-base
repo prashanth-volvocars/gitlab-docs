@@ -1,0 +1,32 @@
+#
+# Image that contains all Nanoc dependencies and tools that
+# are needed to build the docs site and run the tests.
+#
+FROM ruby:2.6.3-alpine3.10
+MAINTAINER GitLab Documentation Team
+
+# Install dependencies
+RUN apk add --no-cache -U \
+    bash        \
+    build-base  \
+    git         \
+    gnupg       \
+    gzip        \
+    grep        \
+    libcurl     \
+    libxslt     \
+    libxslt-dev \
+    nodejs      \
+    openssl     \
+    pngquant    \
+    ruby-dev    \
+    tar         \
+    xz          \
+    xz-dev      \
+    yarn
+
+# Do not install rdoc to save some space
+RUN echo 'gem: --no-document' >> /etc/gemrc
+
+# Update bundler
+RUN gem install bundler -v "1.17.3"

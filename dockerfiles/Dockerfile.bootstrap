@@ -1,3 +1,6 @@
+# This is the Nanoc boostrap Dockerfile which builds an image that contains
+# all Nanoc's runtime dependencies and gems.
+
 #
 # Build minifier utility
 # Adapted from https://github.com/docker/docker.github.io/blob/publish-tools/Dockerfile.builder
@@ -9,22 +12,9 @@ RUN export GO111MODULE=on \
   && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
 
 #
-# This is the Nanoc boostrap Dockerfile which builds an image that contains
-# all Nanoc's runtime dependencies and gems.
+# Image that contains all needed dependencies
 #
-FROM registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-docs
-
-# Install packages needed at build and run time
-RUN apk add --no-cache --virtual build-deps \
-  build-base \
-  ruby-dev \
-  libxslt-dev
-
-# Install packages needed at build and run time
-RUN apk add --no-cache libxslt libcurl openssl git grep bash pngquant nodejs
-
-# Do not install rdoc to save some space
-RUN echo 'gem: --no-document' >> /etc/gemrc
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
 
 # Copy only Gemfile and Gemfile.lock
 COPY /Gemfile* /source/
@@ -36,5 +26,7 @@ RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 # Copy scripts used for static HTML post-processing
 COPY scripts /scripts/
 COPY --from=minifier /minify /scripts/minify
+
+MAINTAINER GitLab Documentation Team
 
 CMD echo "Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site."

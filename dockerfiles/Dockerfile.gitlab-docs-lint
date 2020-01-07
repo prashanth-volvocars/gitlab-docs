@@ -1,13 +1,19 @@
-FROM ruby:2.6.5-alpine3.10
+#
+# Image the contains the dependencies to run the lints.
+# It downloads the gitlab-docs repository based on the
+# branch the Docker image is invoked from.
+# Based on Alpine.
+#
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
 MAINTAINER GitLab Documentation Team
 
-WORKDIR /tmp
+# Set up needed environment variables that are called with --build-arg when
+# the Docker image is built (see .gitlab-ci.yml).
+ARG CI_COMMIT_REF_NAME
+# If CI_COMMIT_REF_NAME is not set (local development), set it to master
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
 
-RUN apk update && apk upgrade && apk add --no-cache \
-  build-base \
-  bash \
-  grep \
-  yarn
+WORKDIR /tmp
 
 RUN yarn global add markdownlint-cli && yarn cache clean
 
@@ -17,4 +23,4 @@ RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME
   && rm gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2
 
 RUN cd gitlab-docs \
-  && bundle install --jobs 4
+  && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
