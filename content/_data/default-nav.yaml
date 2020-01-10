@@ -580,6 +580,8 @@ sections:
             doc_url: 'api/templates/gitlab_ci_ymls.html'
           - doc_title: Access requests
             doc_url: 'api/access_requests.html'
+          - doc_title: Appearance (application)
+            doc_url: 'api/appearance.html'
           - doc_title: Applications
             doc_url: 'api/applications.html'
           - doc_title: Avatar
