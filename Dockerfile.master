@@ -50,6 +50,8 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.6 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.5 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.4 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.11 ${TARGET} ${TARGET}
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.8 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive
