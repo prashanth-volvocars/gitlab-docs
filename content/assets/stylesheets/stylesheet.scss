@@ -1810,3 +1810,12 @@ li {
   background: $gds-gray-50;
   border-bottom: 1px solid $gds-gray-200;
 }
+
+.gl-icon {
+  @each $size in $gl-icon-sizes {
+    &.s#{$size} {
+      width: #{$size}px;
+      height: #{$size}px;
+    }
+  }
+}

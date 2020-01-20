@@ -53,6 +53,7 @@ before_script:
 .build_base: &build_base
   stage: build
   script:
+    - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
     # Symlink all README.html to index.html so that we can have clean URLs
