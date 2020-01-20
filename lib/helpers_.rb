@@ -4,3 +4,4 @@ include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::ChildParentBetter
 include Nanoc::Helpers::EditOnGitLab
 include Nanoc::Helpers::VersionsDropdown
+include Nanoc::Helpers::IconsHelper

@@ -26,6 +26,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "@gitlab/svgs": "^1.85.0"
   }
 }
