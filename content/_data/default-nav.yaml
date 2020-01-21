@@ -22,6 +22,8 @@ sections:
   - section_title: Analytics
     section_url: 'user/analytics/'
     section_categories:
+      - category_title: Code Review Analytics
+        category_url: 'user/analytics/code_review_analytics.html'
       - category_title: Cycle Analytics
         category_url: 'user/analytics/cycle_analytics.html'
       - category_title: Productivity Analytics
