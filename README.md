@@ -118,6 +118,12 @@ One way is to use NVM:
 
 Check your Node version with `node -v`.
 
+1. Install node dependences in the `node_modules` folder
+
+    ```sh
+    npm install
+    ```
+
 ### Yarn
 
 Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the Node ecosystem.
