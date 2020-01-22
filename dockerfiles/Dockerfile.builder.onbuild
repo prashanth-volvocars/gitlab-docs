@@ -12,6 +12,7 @@ ONBUILD ARG BRANCH_RUNNER
 # Build the docs from this branch
 ONBUILD COPY . /source/
 ONBUILD RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+ONBUILD RUN yarn install
 ONBUILD RUN bundle exec rake setup_git default
 ONBUILD RUN bundle exec nanoc compile -VV
 
