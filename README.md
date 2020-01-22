@@ -1,5 +1,6 @@
 # GitLab Documentation
 
+
 [![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/gitlab-docs/commits/master)
 
 This project hosts the repository used to generate the GitLab
