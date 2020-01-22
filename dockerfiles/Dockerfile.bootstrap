@@ -16,12 +16,15 @@ RUN export GO111MODULE=on \
 #
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
 
-# Copy only Gemfile and Gemfile.lock
+# Copy only the Gemfiles and yarn.lock to install the dependencies
 COPY /Gemfile* /source/
+COPY /yarn.lock /source/
 WORKDIR /source
 
 # Install gems
 RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+# Install node libraries
+RUN yarn install
 
 # Copy scripts used for static HTML post-processing
 COPY scripts /scripts/
