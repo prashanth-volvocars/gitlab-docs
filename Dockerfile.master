@@ -15,6 +15,7 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
 
 # Build the docs from this branch
 COPY . /source/
+RUN yarn install
 RUN bundle exec rake setup_git default
 RUN bundle exec nanoc compile -VV
 
