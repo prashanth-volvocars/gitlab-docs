@@ -118,17 +118,19 @@ One way is to use NVM:
 
 Check your Node version with `node -v`.
 
-1. Install node dependences in the `node_modules` folder
-
-    ```sh
-    npm install
-    ```
-
 ### Yarn
 
 Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the Node ecosystem.
 
 Check your Yarn version with `yarn -v`.
+
+### Install node dependencies
+
+1. Install node dependences in the `node_modules` folder:
+
+    ```sh
+    yarn install
+    ```
 
 ## Install Nanoc's dependencies
 
