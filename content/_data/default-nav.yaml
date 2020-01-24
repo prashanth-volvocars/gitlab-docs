@@ -823,6 +823,8 @@ sections:
             doc_url: 'integration/README.html'
           - doc_title: Git
             doc_url: 'topics/git/'
+      - category_title: GitLab.com settings
+        category_url: 'user/gitlab_com/index.html'
       - category_title: Keyboard shortcuts
         category_url: 'user/shortcuts.html'
       - category_title: Markdown
