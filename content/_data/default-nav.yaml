@@ -849,6 +849,8 @@ sections:
     section_categories:
       - category_title: Install
         category_url: 'install/README.html'
+      - category_title: High Availability
+        category_url: 'administration/high_availability/README.html'
       - category_title: Configure
         category_url: 'user/admin_area/settings/'
         docs:
