@@ -17,7 +17,13 @@ document.addEventListener(
       },
       render(createElement) {
         return createElement(VersionBanner, {
-          props: { isOutdated, latestVersionUrl, archivesUrl }
+          props: { isOutdated, latestVersionUrl, archivesUrl },
+          on: {
+            toggleVersionBanner(isVisible) {
+              const wrapper = document.querySelector('.wrapper');
+              wrapper.classList.toggle('show-banner', isVisible);
+            }
+          },
         });
       },
     });
