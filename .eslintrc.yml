@@ -9,4 +9,4 @@ parserOptions:
 rules:
   filenames/match-regex:
     - error
-    - "^[a-z_]+(\\.config|\\.[a-z_]+\\_spec)?$"
+    - "^[a-z0-9_]+(\\.config|\\.[a-z_]+\\_spec)?$"
