@@ -14,8 +14,8 @@ export default {
   },
   data() {
     return {
-      isVisible: this.show
-    }
+      isVisible: this.show,
+    };
   },
   mounted() {
     this.toggleBanner(this.isVisible);
