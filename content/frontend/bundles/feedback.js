@@ -1,10 +1,7 @@
-document.addEventListener(
-  'DOMContentLoaded',
-  () => {
-    const hasCommentAnchor = window.location.hash.includes('#comment-');
+document.addEventListener('DOMContentLoaded', () => {
+  const hasCommentAnchor = window.location.hash.includes('#comment-');
 
-    if(hasCommentAnchor) {
-      window.loadDisqus();
-    }
+  if (hasCommentAnchor) {
+    window.loadDisqus();
   }
-);
+});

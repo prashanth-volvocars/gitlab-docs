@@ -6,7 +6,7 @@ describe('component: Navigation Toggle', () => {
 
   beforeEach(() => {
     const propsData = { targetSelector: '.some-selector' };
-    wrapper = mount(NavigationToggle, { propsData, });
+    wrapper = mount(NavigationToggle, { propsData });
   });
 
   it('renders a toggle button', () => {

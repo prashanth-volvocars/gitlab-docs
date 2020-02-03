@@ -7,7 +7,7 @@ describe('component: Banner', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Banner, { propsData, });
+    wrapper = mount(Banner, { propsData });
   });
 
   it('renders a banner', () => {
@@ -15,7 +15,7 @@ describe('component: Banner', () => {
   });
 
   it('renders the correct banner text', () => {
-    const bannerText =  wrapper.find('span');
+    const bannerText = wrapper.find('span');
     expect(bannerText.text()).toEqual(propsData.text);
   });
 

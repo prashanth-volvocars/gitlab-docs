@@ -10,12 +10,12 @@ export default {
     toggle() {
       const target = document.querySelector(this.targetSelector);
 
-      if(!target) {
+      if (!target) {
         return;
       }
 
       target.classList.toggle('active');
-    }
+    },
   },
 };
 </script>

@@ -139,6 +139,7 @@ js_lint:
   script:
     - yarn install --cache-folder .yarn-cache
     - yarn eslint
+    - yarn prettier
   cache:
     key:
       files:

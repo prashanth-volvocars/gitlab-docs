@@ -5,7 +5,9 @@
   "scripts": {
     "bundle": "rollup --config rollup.config.js",
     "test": "jest",
-    "eslint": "eslint --max-warnings 0 --ext .js,.vue ."
+    "eslint": "eslint --max-warnings 0 --ext .js,.vue .",
+    "prettier": "prettier --check '**/*.{js,vue}'",
+    "prettier:fix": "prettier --write '**/*.{js,vue}'"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -17,6 +19,7 @@
     "eslint": "^6.7.1",
     "glob": "^7.1.4",
     "jest": "^24.9.0",
+    "prettier": "1.19.1",
     "rollup": "^1.20.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -26,7 +29,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "vue": "^2.6.10",
-    "@gitlab/svgs": "^1.85.0"
+    "@gitlab/svgs": "^1.85.0",
+    "vue": "^2.6.10"
   }
 }

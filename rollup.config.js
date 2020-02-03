@@ -8,9 +8,7 @@ function mapDirectory(file) {
   return file.replace('content/', 'public/');
 }
 
-module.exports = glob.sync(
-  'content/frontend/bundles/*.js',
-).map(file => ({
+module.exports = glob.sync('content/frontend/bundles/*.js').map(file => ({
   input: file,
   output: {
     file: mapDirectory(file),
@@ -23,8 +21,8 @@ module.exports = glob.sync(
     vue(),
     importResolver({
       alias: {
-        'vue': './node_modules/vue/dist/vue.esm.browser.min.js'
-      }
+        vue: './node_modules/vue/dist/vue.esm.browser.min.js',
+      },
     }),
   ],
 }));

@@ -22,13 +22,14 @@ export default {
   methods: {
     toggleVersionBanner(isVisible) {
       this.$emit('toggleVersionBanner', isVisible);
-    }
+    },
   },
 };
 </script>
 
 <template>
   <banner :show="isOutdated" @toggle="toggleVersionBanner">
-    This is <a :href="archivesUrl">archived documentation</a> for GitLab. Go to <a :href="latestVersionUrl">the latest</a>.
+    This is <a :href="archivesUrl">archived documentation</a> for GitLab. Go to
+    <a :href="latestVersionUrl">the latest</a>.
   </banner>
 </template>
