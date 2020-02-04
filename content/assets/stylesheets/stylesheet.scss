@@ -392,7 +392,9 @@ li {
   }
 
   .breadcrumbs {
-    font-style: italic;
+    // Italics removed from breadcrumbs until the following Chromium issue is resolved.
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=1018581&q=BlinkMacSystemFont&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
+    // font-style: italic;
   }
 
   // Override bootstrap defaults
