@@ -1025,6 +1025,9 @@ sections:
             ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: Update
         category_url: 'update/README.html'
+        docs:
+          - doc_title: Releases and maintenance
+            doc_url: 'policy/maintenance.html'
 
   - section_title: Contributor
     section_url: 'development/README.html'
