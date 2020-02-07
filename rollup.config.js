@@ -8,7 +8,7 @@ function mapDirectory(file) {
   return file.replace('content/', 'public/');
 }
 
-module.exports = glob.sync('content/frontend/bundles/*.js').map(file => ({
+module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
   input: file,
   output: {
     file: mapDirectory(file),

@@ -361,11 +361,11 @@ JavaScript. All modern JavaScript should be added to the [content/frontend/](/co
 When adding a new bundle, the layout name (html) and bundle name (js) should
 match to make it easier to find:
 
-1. Add the new bundle to `content/frontend/bundles/<bundle-name>.js`
+1. Add the new bundle to `content/frontend/<bundle-name>/<bundle-name>.js`
 1. Import the bundle in the html file `layouts/<bundle-name>.html`:
 
    ```html
-   <script src="<%= @items['/frontend/bundles/<bundle-name>.*'].path %>"></script>
+   <script src="<%= @items['/frontend/<bundle-name>/<bundle-name>.*'].path %>"></script>
    ```
 
 You should replace `<bundle-name>` with whatever you'd like to call your

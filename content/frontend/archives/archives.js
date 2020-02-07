@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Banner from '../components/banner/banner.vue';
+import Banner from '../shared/components/banner.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = window.location.search;

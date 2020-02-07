@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Banner from '../../../../content/frontend/components/banner/banner.vue';
+import Banner from '../../../../content/frontend/shared/components/banner.vue';
 
 const propsData = { text: 'Some text', show: true };
 
