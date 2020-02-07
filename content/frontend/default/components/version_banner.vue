@@ -1,5 +1,5 @@
 <script>
-import Banner from '../banner/banner.vue';
+import Banner from '../../shared/components/banner.vue';
 
 export default {
   components: {

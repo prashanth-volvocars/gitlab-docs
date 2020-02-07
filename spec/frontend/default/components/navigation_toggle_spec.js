@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import NavigationToggle from '../../../../content/frontend/components/navigation_toggle/navigation_toggle.vue';
+import NavigationToggle from '../../../../content/frontend/default/components/navigation_toggle.vue';
 
 describe('component: Navigation Toggle', () => {
   let wrapper;

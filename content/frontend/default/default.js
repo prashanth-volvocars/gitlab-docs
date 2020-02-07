@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import NavigationToggle from '../components/navigation_toggle/navigation_toggle.vue';
-import VersionBanner from '../components/version_banner/version_banner.vue';
+import NavigationToggle from './components/navigation_toggle.vue';
+import VersionBanner from './components/version_banner.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
   const versionBanner = document.querySelector('#js-version-banner');

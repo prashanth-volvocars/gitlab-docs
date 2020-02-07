@@ -3,7 +3,7 @@ const moduleNameMapper = {
 };
 
 module.exports = {
-  testMatch: ['<rootDir>/spec/javascripts/**/**/*_spec.js'],
+  testMatch: ['<rootDir>/spec/frontend/**/**/*_spec.js'],
   moduleFileExtensions: ['js', 'json', 'vue'],
   moduleNameMapper,
   cacheDirectory: '<rootDir>/tmp/cache/jest',
