@@ -24,8 +24,8 @@ sections:
     section_categories:
       - category_title: Code Review Analytics
         category_url: 'user/analytics/code_review_analytics.html'
-      - category_title: Cycle Analytics
-        category_url: 'user/analytics/cycle_analytics.html'
+      - category_title: Value Stream Analytics
+        category_url: 'user/analytics/value_stream_analytics.html'
       - category_title: Productivity Analytics
         category_url: 'user/analytics/productivity_analytics.html'
 
@@ -1221,6 +1221,8 @@ sections:
             doc_url: 'development/i18n/proofreader.html'
           - doc_title: Merging
             doc_url: 'development/i18n/merging_translations.html'
+      - category_title: Value Stream Analytics
+        category_url: 'development/value_stream_analytics.html'
 
   - section_title: Customer
     section_url: 'subscriptions/'
