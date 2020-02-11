@@ -839,6 +839,8 @@ sections:
         docs:
           - doc_title: Autocomplete characters
             doc_url: 'user/project/autocomplete_characters.html'
+      - category_title: Reserved project and group names
+        category_url: 'user/reserved_names.html'
       - category_title: Time tracking
         category_url: 'user/project/time_tracking.html'
       - category_title: To-Do lists
