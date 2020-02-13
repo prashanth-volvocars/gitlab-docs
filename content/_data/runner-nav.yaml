@@ -142,5 +142,5 @@ sections:
       - category_title: Reviewing GitLab Runner
         category_url: 'development/reviewing-gitlab-runner.html'
 
-  - section_title: Best Practice
+  - section_title: Best Practices
     section_url: 'best_practice/'
