@@ -83,15 +83,15 @@ One way is to use RVM:
 1. [Install RVM](https://rvm.io/rvm/install)
 1. Install the latest Ruby:
 
-    ```sh
-    rvm install 2.6.5
-    ```
+   ```shell
+   rvm install 2.6.5
+   ```
 
 1. Use the newly installed Ruby:
 
-    ```sh
-    rvm use 2.6.5
-    ```
+   ```shell
+   rvm use 2.6.5
+   ```
 
 Check your Ruby version with `ruby --version`.
 Also check the bundled Bundler version with `bundle --version`. You will see `Bundler version 1.17.3`.
@@ -106,15 +106,15 @@ One way is to use NVM:
 1. [Install NVM](https://github.com/nvm-sh/nvm#installation-and-update)
 1. Install the latest Node:
 
-    ```sh
-    nvm install node
-    ```
+   ```shell
+   nvm install node
+   ```
 
 1. Use the newly installed Node:
 
-    ```sh
-    nvm use node
-    ```
+   ```shell
+   nvm use node
+   ```
 
 Check your Node version with `node -v`.
 
@@ -128,9 +128,9 @@ Check your Yarn version with `yarn -v`.
 
 1. Install node dependences in the `node_modules` folder:
 
-    ```sh
-    yarn install
-    ```
+   ```shell
+   yarn install
+   ```
 
 ## Install Nanoc's dependencies
 
@@ -140,15 +140,15 @@ Now let's make Bundler deal with the dependencies defined in the
 1. Open a terminal and navigate to the GitLab Docs repo
 1. Switch to Ruby using RVM:
 
-    ```sh
-    rvm use 2.6.5
-    ```
+   ```shell
+   rvm use 2.6.5
+   ```
 
 1. Run:
 
-    ```sh
-    bundle install
-    ```
+   ```shell
+   bundle install
+   ```
 
 ## Development when contributing to GitLab documentation
 
@@ -170,13 +170,13 @@ create a separate directory to have them all together. For example, let's say
 the directory will be under your user's home directory. Open a terminal and
 execute:
 
-```sh
+```shell
 mkdir -p ~/dev/gitlab
 ```
 
 Once you do that, navigate to the directory you'd like the repos to be cloned:
 
-```sh
+```shell
 cd ~/dev/gitlab/
 ```
 
@@ -184,13 +184,13 @@ Then, it's time to clone the needed repositories.
 
 1. First of all, clone the docs website repository:
 
-    ```sh
-    ## Using SSH (for members that have Developer access)
-    git clone git@gitlab.com:gitlab-org/gitlab-docs.git
+   ```shell
+   ## Using SSH (for members that have Developer access)
+   git clone git@gitlab.com:gitlab-org/gitlab-docs.git
 
-    ## Using HTTPS (for external contributors)
-    git clone https://gitlab.com/gitlab-org/gitlab-docs.git
-    ```
+   ## Using HTTPS (for external contributors)
+   git clone https://gitlab.com/gitlab-org/gitlab-docs.git
+   ```
 
 1. Then, clone the repositories you wish to contribute changes to the documentation.
    For **GitLab contributors**, that do not have Developer access to the projects,
@@ -198,26 +198,26 @@ Then, it's time to clone the needed repositories.
    and then clone them by using your forked version (replace `<username>` with
    your own username):
 
-     ```sh
-     ## Using HTTPS (for members that do not have Developer access)
+   ```shell
+   ## Using HTTPS (for members that do not have Developer access)
 
-     git clone https://gitlab.com/<username>/gitlab.git
-     git clone https://gitlab.com/<username>/gitlab-runner.git
-     git clone https://gitlab.com/<username>/omnibus-gitlab.git
-     git clone https://gitlab.com/<username>/gitlab.git charts
-     ```
+   git clone https://gitlab.com/<username>/gitlab.git
+   git clone https://gitlab.com/<username>/gitlab-runner.git
+   git clone https://gitlab.com/<username>/omnibus-gitlab.git
+   git clone https://gitlab.com/<username>/gitlab.git charts
+   ```
 
-     For members that have Developer access (usually the **GitLab Team members**),
-     clone the required repos using SSH:
+   For members that have Developer access (usually the **GitLab Team members**),
+   clone the required repos using SSH:
 
-     ```sh
-     ## Using SSH (for members that have Developer access)
+   ```shell
+   ## Using SSH (for members that have Developer access)
 
-     git clone git@gitlab.com:gitlab-org/gitlab.git
-     git clone git@gitlab.com:gitlab-org/gitlab-runner.git
-     git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
-     git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts
-     ```
+   git clone git@gitlab.com:gitlab-org/gitlab.git
+   git clone git@gitlab.com:gitlab-org/gitlab-runner.git
+   git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
+   git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts
+   ```
 
 ### Create the content symlinks
 
@@ -231,18 +231,18 @@ the directory that holds the documentation content.
 1. Open a terminal and navigate to the directory where gitlab-docs was cloned.
 1. For each one of the products, create the symlink:
 
-    ```sh
-    ln -s ~/dev/gitlab/gitlab/doc ~/dev/gitlab/gitlab-docs/content/ee
-    ln -s ~/dev/gitlab/omnibus-gitlab/doc ~/dev/gitlab/gitlab-docs/content/omnibus
-    ln -s ~/dev/gitlab/gitlab-runner/docs ~/dev/gitlab/gitlab-docs/content/runner
-    ln -s ~/dev/gitlab/charts/doc ~/dev/gitlab/gitlab-docs/content/charts
-    ```
+   ```shell
+   ln -s ~/dev/gitlab/gitlab/doc ~/dev/gitlab/gitlab-docs/content/ee
+   ln -s ~/dev/gitlab/omnibus-gitlab/doc ~/dev/gitlab/gitlab-docs/content/omnibus
+   ln -s ~/dev/gitlab/gitlab-runner/docs ~/dev/gitlab/gitlab-docs/content/runner
+   ln -s ~/dev/gitlab/charts/doc ~/dev/gitlab/gitlab-docs/content/charts
+   ```
 
 1. Check if the symlinks were successfully created:
 
-    ```sh
-    ls -la content/
-    ```
+   ```shell
+   ls -la content/
+   ```
 
 If they're there, we're good to go!
 
@@ -254,7 +254,7 @@ commands above.
 
 Run the following command to bring the embedded web server up:
 
-```sh
+```shell
 bundle exec nanoc live
 ```
 
@@ -264,7 +264,7 @@ content of the docs, will be reloaded automatically.
 
 To preview the site on another port, use:
 
-```sh
+```shell
 bundle exec nanoc live -p 3004
 ```
 
@@ -284,7 +284,7 @@ default `http://127.0.0.1` to your computer's
 Once you know what's your computer's private IPv4, use the flag `-o`. For
 example, let's say your current IPv4 address is `192.168.0.105`:
 
-```sh
+```shell
 bundle exec nanoc live -o 192.168.0.105
 ```
 
@@ -302,7 +302,7 @@ If you want to just contribute to the docs website, and not the content, you
 can use the following command to automatically pull the docs content in order
 to have something to preview:
 
-```sh
+```shell
 bundle exec rake pull_repos
 ```
 
@@ -312,7 +312,7 @@ in `content/`. You can then [preview the website](#preview-the-docs-website).
 If you want to force-delete the `tmp/` and `content/` folders so the task will
 run without manual intervention, run:
 
-```sh
+```shell
 RAKE_FORCE_DELETE=true rake pull_repos
 ```
 
