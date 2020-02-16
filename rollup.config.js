@@ -2,6 +2,7 @@ const importResolver = require('rollup-plugin-import-resolver');
 const commonjs = require('rollup-plugin-commonjs');
 const vue = require('rollup-plugin-vue');
 const babel = require('rollup-plugin-babel');
+const json = require('@rollup/plugin-json');
 const glob = require('glob');
 
 function mapDirectory(file) {
@@ -18,6 +19,7 @@ module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
   plugins: [
     commonjs(),
     babel(),
+    json(),
     vue(),
     importResolver({
       alias: {

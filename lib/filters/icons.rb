@@ -28,6 +28,6 @@ class IconsFilter < Nanoc::Filter
   end
 
   def generate(icon, size, css_class)
-    sprite_icon(icon, size, css_class)
+    icon(icon, size, css_class)
   end
 end

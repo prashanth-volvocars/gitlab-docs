@@ -12,7 +12,7 @@ module Nanoc::Helpers
       %[<div class="d-none">#{read_file(sprite_path)}</div>]
     end
 
-    def sprite_icon(icon_name, size, css_class)
+    def icon(icon_name, size = nil, css_class = nil)
       unless known_sprites.include?(icon_name)
         exception = ArgumentError.new("#{icon_name} is not a known icon in @gitlab-org/gitlab-svg")
         raise exception
