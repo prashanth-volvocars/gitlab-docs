@@ -6,13 +6,7 @@ searchbar: false
 <div class='four-oh-four'>
   <div class="center">
     <img src="<%= @items['/assets/images/error-404.svg'].path %>" alt="404"/>
-    <br>
-    <h2>There's no page at this address!</h2>
-    <br>
-    <p class="gray">
-      <em>If you followed a link from the <strong>Versions dropdown menu</strong>,
-      the page does not exist in this version.</em>
-    </p>
+    <div id="js-error-message"></div>
     <br>
     <div id="pagesearchbar"> <!-- pagesearchbar -->
       <form id="search-form" action="/search/" method="get">
@@ -35,4 +29,4 @@ searchbar: false
   </div>
 </div>
 
-<div data-archives-path="/archives/index.html?offline" data-environment="<%= ENV['NANOC_ENV'] %>" data-offline-versions="<%= @items['/_data/versions.yaml'][:offline].to_s.tr('[]" ', '') %>" id="offline-versions"></div>
+<div data-archives-path="/archives/" data-environment="<%= ENV['NANOC_ENV'] %>" data-offline-versions="<%= @items['/_data/versions.yaml'][:offline].to_s.tr('[]" ', '') %>" id="offline-versions"></div>
