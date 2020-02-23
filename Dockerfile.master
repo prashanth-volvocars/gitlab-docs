@@ -29,9 +29,6 @@ RUN /scripts/compress_images.sh /source/public ee
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
 RUN cd /source/public/ && rm -rf ce && ln -s ee ce
 
-# Remove tmp dir to save some space
-RUN rm -rf /source/tmp
-
 # BUILD OF MASTER DOCS IS NOW DONE!
 
 # Reset to alpine so we don't get any docs source or extra apps
