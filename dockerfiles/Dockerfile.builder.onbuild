@@ -15,14 +15,12 @@ ONBUILD COPY . /source/
 ONBUILD RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 ONBUILD RUN yarn install
 ONBUILD RUN bundle exec rake setup_git default
+ONBUILD RUN yarn install
 ONBUILD RUN bundle exec nanoc compile -VV
 
 # Move generated HTML to /site
 ONBUILD RUN mkdir /site
-ONBUILD RUN mv /source/public /site/${VER}
-
-# Remove tmp dir to save some space
-ONBUILD RUN rm -rf /source/tmp
+ONBUILD RUN mv public /site/${VER}
 
 # Do some HTML post-processing on the archive
 ONBUILD RUN [ -f /scripts/normalize-links.sh ] && /scripts/normalize-links.sh /site ${VER} || "/scripts/normalize-links.sh not found"
