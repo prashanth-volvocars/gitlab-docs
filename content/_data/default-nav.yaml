@@ -1137,6 +1137,11 @@ sections:
             doc_url: 'development/fe_guide/vuex.html'
           - doc_title: Vue
             doc_url: 'development/fe_guide/vue.html'
+      - category_title: Geo (development)
+        category_url: 'development/geo.html'
+        docs:
+          - doc_title: Geo framework
+            doc_url: 'development/geo/framework.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
         external_url: true
