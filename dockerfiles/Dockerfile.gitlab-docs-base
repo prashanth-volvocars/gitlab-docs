@@ -2,7 +2,7 @@
 # Image that contains all Nanoc dependencies and tools that
 # are needed to build the docs site and run the tests.
 #
-FROM ruby:2.6.5-alpine3.10
+FROM ruby:2.6.5-alpine3.11
 MAINTAINER GitLab Documentation Team
 
 # Install dependencies
@@ -23,6 +23,7 @@ RUN apk add --no-cache -U \
     tar         \
     xz          \
     xz-dev      \
+    go          \
     yarn
 
 # Do not install rdoc to save some space
