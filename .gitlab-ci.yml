@@ -314,7 +314,7 @@ pages:
 .docker_prepare: &docker_prepare
   image: docker:latest
   services:
-    - docker:dind
+    - docker:19.03.5-dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
