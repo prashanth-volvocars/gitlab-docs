@@ -337,6 +337,8 @@ image:docs-lint:
     - docker build --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
+  environment:
+    name: registry/docs-lint
 
 #
 # GitLab docs image
@@ -351,6 +353,8 @@ image:gitlab-docs-base:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
+  environment:
+    name: registry/docs-base
 
 #
 # Helper Docker image containing all build dependencies.
@@ -370,6 +374,8 @@ image:bootstrap:
       - master
     changes:
       - "Gemfile*"
+  environment:
+    name: registry/docs-bootstrap
 
 #
 # Helper Docker image that builds the gitlab-docs website
@@ -384,6 +390,8 @@ image:builder-onbuild:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
+  environment:
+    name: registry/builder-onbuild
   <<: *except_stable
 
 #
@@ -400,6 +408,8 @@ image:nginx-onbuild:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   when: manual
+  environment:
+    name: registry/nginx-onbuild
   <<: *except_stable
 
 #
