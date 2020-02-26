@@ -39,4 +39,5 @@ RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME
   && rm gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2
 
 RUN cd gitlab-docs \
+  && yarn install --frozen-lockfile \
   && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
