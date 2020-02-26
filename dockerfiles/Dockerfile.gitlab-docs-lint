@@ -7,21 +7,21 @@
 #
 ############################
 
+FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
+MAINTAINER GitLab Documentation Team
+
 # Install vale
 # We need to build it from source, see https://github.com/errata-ai/vale/issues/128
-FROM golang:alpine AS builder
 
 ENV VALE_VERSION=1.7.1
+ENV GOBIN=/usr/local/bin
 
 RUN apk add --no-cache wget zip tar make && \
     wget https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz && \
     tar -xvzf v${VALE_VERSION}.tar.gz && \
     cd vale-${VALE_VERSION} && \
     make && \
-    mv bin/vale /vale
-
-FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
-MAINTAINER GitLab Documentation Team
+    make install
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
@@ -40,5 +40,3 @@ RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME
 
 RUN cd gitlab-docs \
   && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
-
-COPY --from=builder /vale /usr/local/bin/vale
