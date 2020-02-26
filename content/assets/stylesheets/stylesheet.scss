@@ -16,6 +16,15 @@ body {
   font-family: $sans-font-family;
   font-size: $body-font-size;
   color: $body-color;
+
+  >.wrapper {
+    min-height: 100vh;
+
+    // adds extra padding to the side-nav and main content if a banner is displayed.
+    &.show-banner .nav-wrapper, &.show-banner .main {
+      padding-top: calc(#{$page-header-height} + #{$banner-height});
+    }
+  }
 }
 
 a, a:visited {
@@ -289,11 +298,6 @@ li {
   float: left;
 }
 
-// main content
-.wrapper.show-banner .main {
-  padding-top: calc(#{$page-header-height} + #{$banner-height});
-}
-
 .main {
   margin: auto 15%;
   padding: $page-header-height 40px 0;
@@ -452,11 +456,6 @@ li {
 // Override Bootstrap tooltip
 .tooltip .tooltip-inner {
   font-size: $tooltip-font-size;
-}
-
-//global nav
-.wrapper.show-banner .nav-wrapper {
-  padding-top: calc(#{$page-header-height} + #{$banner-height});
 }
 
 .nav-wrapper {
