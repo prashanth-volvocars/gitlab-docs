@@ -14,7 +14,7 @@ run do |opts, args, cmd|
   if check_requirements?
     puts 'Compiling JavaScript...'
 
-    system('yarn install')
+    system('yarn install --frozen-lockfile')
 
     system('yarn bundle')
   end
