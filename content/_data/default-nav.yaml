@@ -857,6 +857,31 @@ sections:
         category_url: 'install/README.html'
       - category_title: High Availability
         category_url: 'administration/high_availability/README.html'
+        docs:
+          - doc_title: Consul
+            doc_url: 'administration/high_availability/consul.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+          - doc_title: Database
+            doc_url: 'administration/high_availability/database.html'
+          - doc_title: Gitaly
+            doc_url: 'administration/high_availability/gitaly.html'
+          - doc_title: GitLab
+            doc_url: 'administration/high_availability/gitlab.html'
+          - doc_title: Load balancer
+            doc_url: 'administration/high_availability/load_balancer.html'
+          - doc_title: Monitoring node
+            doc_url: 'administration/high_availability/monitoring_node.html'
+          - doc_title: NFS
+            doc_url: 'administration/high_availability/nfs.html'
+          - doc_title: Object storage
+            doc_url: 'administration/high_availability/object_storage.html'
+          - doc_title: Pgbouncer
+            doc_url: 'administration/high_availability/pgbouncer.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+          - doc_title: Redis
+            doc_url: 'administration/high_availability/redis.html'
       - category_title: Configure
         category_url: 'user/admin_area/settings/'
         docs:
