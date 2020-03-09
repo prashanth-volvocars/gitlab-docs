@@ -1103,13 +1103,13 @@ sections:
             doc_url: 'development/documentation/site_architecture/global_nav.html'
           - doc_title: Monthly release process
             doc_url: 'development/documentation/site_architecture/release_process.html'
-      - category_title: Event tracking
-        category_url: 'development/event_tracking/'
+      - category_title: Telemetry
+        category_url: 'telemetry/'
         docs:
           - doc_title: Frontend
-            doc_url: 'development/event_tracking/frontend.html'
+            doc_url: 'telemetry/frontend.html'
           - doc_title: Backend
-            doc_url: 'development/event_tracking/backend.html'
+            doc_url: 'telemetry/backend.html'
       - category_title: Experiment guide
         category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
