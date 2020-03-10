@@ -603,6 +603,8 @@ sections:
             doc_url: 'api/appearance.html'
           - doc_title: Applications
             doc_url: 'api/applications.html'
+          - doc_title: Audit events
+            doc_url: 'api/audit_events.html'
           - doc_title: Avatar
             doc_url: 'api/avatar.html'
           - doc_title: Award emoji
