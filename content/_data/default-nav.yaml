@@ -52,6 +52,9 @@ sections:
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: GitLab Managed Apps
         category_url: 'user/clusters/applications.html'
+        docs:
+          - doc_title: Configuring Crossplane
+            doc_url: 'user/clusters/crossplane.html'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Monitoring
