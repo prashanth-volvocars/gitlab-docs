@@ -21,6 +21,7 @@ module Nanoc::Helpers
       svg_class = [
         'gl-icon',
         'ml-1',
+        'mr-1',
         "s#{size || 16}",
         *css_class
       ].join(' ')
