@@ -427,6 +427,8 @@ sections:
         docs:
           - doc_title: Getting started
             doc_url: 'topics/autodevops/quick_start_guide.html'
+          - doc_title: Upgrading PostgreSQL
+            doc_url: 'topics/autodevops/upgrading_postgresql.html'
       - category_title: Caching
         category_url: 'ci/caching/'
       - category_title: ChatOps
