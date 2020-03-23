@@ -26,32 +26,77 @@ before_script:
   - ruby -v
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
 
-# Skip this job when it's invoked by a cross project pipeline. That will speed
-# up the pipeline when a docs preview is triggered. The triggered pipeline is
-# always a branch off master which should be green anyway. For more info:
-# https://docs.gitlab.com/ee/development/writing_documentation.html#previewing-the-changes-live
-.except_pipelines: &except_pipelines
-  except:
-    - pipelines
-#
-# Except stable branches (with names like '10.4', '11.2', etc.)
-#
-.except_stable: &except_stable
-  except:
-    - /^\d{1,2}\.\d{1,2}$/
-
 #
 # Retry a job automatically if it fails (2 times)
 #
-.retry: &retry
+.retry:
   retry: 2
+
+#
+# Rules to determine which pipelines jobs will run in.
+#
+.rules_scheduled:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: never
+    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
+    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
+      when: manual
+      allow_failure: true
+
+.rules_scheduled_manual:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: manual
+      allow_failure: true
+
+.rules_site_tests:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_prod:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_dev:
+  rules:
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+
+#
+# Caching keys
+#
+.cache_gem:
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+    paths:
+      - vendor/ruby
+
+.cache_gem_yarn:
+  cache:
+    key:
+      files:
+        - Gemfile.lock
+        - yarn.lock
+    paths:
+      - vendor/ruby
+      - .yarn-cache/
 
 ###############################################
 #             Build the website               #
 ###############################################
 
-.build_base: &build_base
+.build_base:
   stage: build
+  extends:
+    - .cache_gem_yarn
+    - .retry
   script:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
@@ -64,120 +109,121 @@ before_script:
     paths:
       - public
     expire_in: 1d
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-    paths:
-      - vendor/ruby
-  <<: *retry
+
 
 #
 # Compile only on master and stable branches
 #
 compile_prod:
-  <<: *build_base
+  extends:
+    - .rules_prod
+    - .build_base
   variables:
     NANOC_ENV: 'production'
-  only:
-    - master
-    - /^\d{1,2}\.\d{1,2}$/
 
 #
 # Compile on all branches except master
 #
 compile_dev:
-  <<: *build_base
-  only:
-    - branches
-  except:
-    - master
-    - /^\d{1,2}\.\d{1,2}$/
+  extends:
+    - .rules_dev
+    - .build_base
 
 ###############################################
 #              Test the website               #
 ###############################################
 
 #
+# Test internal links and anchors with nanoc
+#
+test_internal_links_and_anchors:
+  extends:
+    - .rules_site_tests
+    - .cache_gem
+  stage: test
+  script:
+    - bundle exec nanoc check internal_links
+    - bundle exec nanoc check internal_anchors
+
+#
 # Run rspec tests
 #
 rspec:
+  extends:
+    - .rules_site_tests
+    - .cache_gem
   stage: test
   script:
     - bundle exec rspec
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-    paths:
-      - vendor/ruby
-  <<: *except_pipelines
 
 #
 # Run JavaScript tests
 #
 jest:
+  extends:
+    - .rules_site_tests
+    - .cache_gem_yarn
   stage: test
   script:
     - yarn install --cache-folder .yarn-cache
     - yarn test
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-        - yarn.lock
-    paths:
-      - vendor/ruby
-      - .yarn-cache/
-  <<: *except_pipelines
 
 #
 # Lint JavaScript
 #
 js_lint:
+  extends:
+    - .rules_site_tests
+    - .cache_gem_yarn
   stage: test
   script:
     - yarn install --cache-folder .yarn-cache
     - yarn eslint
     - yarn prettier
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-        - yarn.lock
-    paths:
-      - vendor/ruby
-      - .yarn-cache/
-  <<: *except_pipelines
 
 #
 # SCSS linting
 #
 scss_lint:
+  extends:
+    - .rules_site_tests
+    - .cache_gem
+    - .retry
   stage: test
   script:
     - bundle exec scss-lint
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-    paths:
-      - vendor/ruby
-  <<: *except_pipelines
-  <<: *retry
 
 #
 # Yamllint of *.yml for .gitlab-ci.yml.
 # This uses rules from project root `.yamllint`.
 #
 yaml_lint:
+  extends:
+    - .rules_site_tests
   stage: test
   image: sdesbure/yamllint:latest
   before_script: []
   dependencies: []
   script:
     - yamllint .gitlab-ci.yml content/_data
-  <<: *except_pipelines
+
+#
+# Check for broken external links, weekly pipelines only
+#
+test_external_links:
+  extends:
+    - .cache_gem
+  stage: test
+  script:
+    - bundle exec nanoc check external_links
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: never
+    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
+      allow_failure: true
+    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
+      when: manual
+      allow_failure: true
 
 ###############################################
 #               Review Apps                   #
@@ -188,6 +234,9 @@ yaml_lint:
 #
 review:
   stage: deploy
+  extends:
+    - .rules_dev
+    - .retry
   variables:
     GIT_STRATEGY: none
   dependencies:
@@ -204,23 +253,17 @@ review:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
-  only:
-    - branches@gitlab-org/gitlab-docs
-  # Except master and stable branches
-  except:
-    - master
-    - /^\d{1,2}\.\d{1,2}$/
-    - /release-\d{1,2}-\d{1,2}/
   tags:
     - nginx
     - review-apps
-  <<: *retry
 
 #
 # Stop the Review App
 #
 review_stop:
   stage: deploy
+  extends:
+    - .retry
   variables:
     GIT_STRATEGY: none
   dependencies: []
@@ -229,21 +272,16 @@ review_stop:
   cache: {}
   script:
     - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
-  when: manual
   environment:
     name: review/$CI_COMMIT_REF_SLUG
     action: stop
-  only:
-    - branches@gitlab-org/gitlab-docs
-  # Except master and stable branches
-  except:
-    - master
-    - /^\d{1,2}\.\d{1,2}$/
-    - /release-\d{1,2}-\d{1,2}/
+  rules:
+    - if: '$CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH =~ /docs-preview/'
+      allow_failure: true
+      when: manual
   tags:
     - nginx
     - review-apps
-  <<: *retry
 
 ###############################################
 #          GitLab Pages (production)          #
@@ -253,6 +291,9 @@ review_stop:
 # Deploy to production with GitLab Pages
 #
 pages:
+  extends:
+    - .rules_prod
+    - .retry
   image: registry.gitlab.com/gitlab-org/gitlab-docs:latest
   stage: deploy
   variables:
@@ -300,9 +341,6 @@ pages:
     paths:
       - public
     expire_in: 1d
-  only:
-    - master@gitlab-org/gitlab-docs
-  <<: *retry
 
 ###############################################
 #           Docker images builds              #
@@ -311,24 +349,23 @@ pages:
 #
 # Reuse some common commands
 #
-.docker_prepare: &docker_prepare
+.docker_prepare:
+  extends:
+    - .retry
   image: docker:latest
   services:
     - docker:19.03.5-dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-  <<: *retry
-
-.scheduled_infrequent: &scheduled_infrequent
-  rules:
-    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly" && $CI_PIPELINE_SOURCE == "schedule"'
 
 #
 # GitLab docs lint image containing all test tools
 #
 image:docs-lint:
-  <<: *docker_prepare
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
@@ -336,7 +373,6 @@ image:docs-lint:
   script:
     - docker build --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  when: manual
   environment:
     name: registry/docs-lint
 
@@ -344,7 +380,9 @@ image:docs-lint:
 # GitLab docs image
 #
 image:gitlab-docs-base:
-  <<: *docker_prepare
+  extends:
+    - .rules_scheduled_manual
+    - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:base
@@ -352,7 +390,6 @@ image:gitlab-docs-base:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  when: manual
   environment:
     name: registry/docs-base
 
@@ -361,7 +398,9 @@ image:gitlab-docs-base:
 # It must be rebuilt every time Gemfile and/or Gemfile.lock changes.
 #
 image:bootstrap:
-  <<: *docker_prepare
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
@@ -369,11 +408,6 @@ image:bootstrap:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  only:
-    refs:
-      - master
-    changes:
-      - "Gemfile*"
   environment:
     name: registry/docs-bootstrap
 
@@ -381,7 +415,9 @@ image:bootstrap:
 # Helper Docker image that builds the gitlab-docs website
 #
 image:builder-onbuild:
-  <<: *docker_prepare
+  extends:
+    - .rules_scheduled_manual
+    - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
@@ -389,17 +425,17 @@ image:builder-onbuild:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  when: manual
   environment:
     name: registry/builder-onbuild
-  <<: *except_stable
 
 #
 # Helper Docker image that copies the final HTML files in a smaller image
 # (no rubygems included)
 #
 image:nginx-onbuild:
-  <<: *docker_prepare
+  extends:
+    - .rules_scheduled_manual
+    - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
@@ -407,17 +443,16 @@ image:nginx-onbuild:
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  when: manual
   environment:
     name: registry/nginx-onbuild
-  <<: *except_stable
 
 #
 # Final Docker image containing a single version
 # It is based on Dockerfile.single for each branch
 #
 image:docs-single:
-  <<: *docker_prepare
+  extends:
+    - .docker_prepare
   stage: pre-deploy
   artifacts: {}
   cache: {}
@@ -432,17 +467,16 @@ image:docs-single:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
-  only:
-    - /^\d{1,2}\.\d{1,2}$/
-  except:
-    - tags
+  rules:
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 #
 # Final Docker image containing all the archives
 #
 image:docs-archives:
-  <<: *docker_prepare
-  <<: *scheduled_infrequent
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
   stage: pre-deploy
   artifacts: {}
   cache: {}
@@ -459,8 +493,9 @@ image:docs-archives:
 # Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
-  <<: *docker_prepare
-  <<: *scheduled_infrequent
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
   stage: pre-deploy
   artifacts: {}
   cache: {}
@@ -474,38 +509,3 @@ image:docs-latest:
   script:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
-  allow_failure: true
-
-#
-# Check for broken external links
-# Set to be part of infrequent pipeline
-#
-test_external_links:
-  <<: *scheduled_infrequent
-  stage: test
-  script:
-    - bundle exec nanoc check external_links
-  allow_failure: true
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-    paths:
-      - vendor/ruby
-
-#
-# Check for broken internal links
-# Set to be part of infrequent pipeline
-#
-test_internal_links_and_anchors:
-  <<: *scheduled_infrequent
-  stage: test
-  script:
-    - bundle exec nanoc check internal_links
-    - bundle exec nanoc check internal_anchors
-  cache:
-    key:
-      files:
-        - Gemfile.lock
-    paths:
-      - vendor/ruby
