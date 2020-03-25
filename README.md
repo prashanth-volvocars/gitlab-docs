@@ -124,14 +124,6 @@ Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the N
 
 Check your Yarn version with `yarn -v`.
 
-### Install node dependencies
-
-1. Install node dependences in the `node_modules` folder:
-
-   ```shell
-   yarn install
-   ```
-
 ## Install Nanoc's dependencies
 
 Now let's make Bundler deal with the dependencies defined in the
@@ -241,14 +233,23 @@ the directory that holds the documentation content.
 1. Check if the symlinks were successfully created:
 
    ```shell
+   cd dev/gitlab/gitlab-docs
    ls -la content/
    ```
 
-If they're there, we're good to go!
+If they're there, we're almost good to go!
 
 **Note:** You can use the `pwd` command when in the terminal to check the
 directory path you are currently in and use that output to use with the symlinks
 commands above.
+
+### Install node dependencies
+
+1. Install node dependences in the `gitlab-docs/node_modules` folder:
+
+   ```shell
+   yarn install
+   ```
 
 ## Preview the Docs website
 
