@@ -22,11 +22,11 @@ sections:
   - section_title: Analytics
     section_url: 'user/analytics/'
     section_categories:
-      - category_title: Code Review Analytics
+      - category_title: Code Review
         category_url: 'user/analytics/code_review_analytics.html'
-      - category_title: Productivity Analytics
+      - category_title: Productivity
         category_url: 'user/analytics/productivity_analytics.html'
-      - category_title: Value Stream Analytics
+      - category_title: Value Stream
         category_url: 'user/analytics/value_stream_analytics.html'
 
   - section_title: Clusters
