@@ -19,6 +19,28 @@ sections:
   - section_title: GitLab Docs
     section_url: 'README.html'
 
+  - section_title: Install
+    section_url: 'install/README.html'
+    section_categories:
+      - category_title: Requirements
+        category_url: 'install/requirements.html'
+      - category_title: Omnibus packages
+        category_url: 'https://about.gitlab.com/install/'
+        external_url: true
+      - category_title: Kubernetes
+        category_url: 'https://docs.gitlab.com/charts/'
+        external_url: true
+      - category_title: Docker
+        category_url: 'install/docker.html'
+      - category_title: From source
+        category_url: 'install/installation.html'
+      - category_title: Azure
+        category_url: 'install/azure/'
+      - category_title: Google Cloud Platform (GCP)
+        category_url: 'install/google_cloud_platform/'
+      - category_title: Amazon Web Services (AWS)
+        category_url: 'install/aws/'
+
   - section_title: Analytics
     section_url: 'user/analytics/'
     section_categories:
@@ -875,8 +897,6 @@ sections:
   - section_title: Administrator
     section_url: 'administration/'
     section_categories:
-      - category_title: Install
-        category_url: 'install/README.html'
       - category_title: High Availability
         category_url: 'administration/high_availability/README.html'
         docs:
