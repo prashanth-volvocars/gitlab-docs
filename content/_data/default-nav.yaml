@@ -125,6 +125,8 @@ sections:
         category_url: 'user/group/issues_analytics/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Public access
+        category_url: 'public_access/public_access.html'
       - category_title: SAML SSO for GitLab.com groups
         category_url: 'user/group/saml_sso/'
         ee_only: true
