@@ -56,6 +56,11 @@ sections:
     section_categories:
       - category_title: Adding and removing clusters
         category_url: 'user/project/clusters/add_remove_clusters.html'
+        docs:
+          - doc_title: Add EKS clusters
+            doc_url: 'user/project/clusters/add_eks_clusters.html'
+          - doc_title: Add GKE clusters
+            doc_url: 'user/project/clusters/add_gke_clusters.html'
       - category_title: Group-level clusters
         category_url: 'user/group/clusters/'
       - category_title: Instance-level clusters
