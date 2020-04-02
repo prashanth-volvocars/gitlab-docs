@@ -557,30 +557,34 @@ sections:
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Pipelines
-        category_url: 'ci/pipelines.html'
+        category_url: 'ci/pipelines/'
         docs:
+          - doc_title: Architecture
+            doc_url: 'ci/pipelines/pipeline_architectures.html'
           - doc_title: Directed acyclic graph
             doc_url: 'ci/directed_acyclic_graph/'
-          - doc_title: Merge trains
-            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Multi-project pipelines
             doc_url: 'ci/multi_project_pipelines.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Parent-child pipelines
+            doc_url: 'ci/parent_child_pipelines.html'
           - doc_title: Pipelines for merge requests
             doc_url: 'ci/merge_request_pipelines/'
           - doc_title: Pipelines for merged results
             doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Merge trains
+            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Job artifacts
-            doc_url: 'user/project/pipelines/job_artifacts.html'
+            doc_url: 'ci/pipelines/job_artifacts.html'
           - doc_title: Schedules
-            doc_url: 'user/project/pipelines/schedules.html'
+            doc_url: 'ci/pipelines/schedules.html'
           - doc_title: Settings
-            doc_url: 'user/project/pipelines/settings.html'
+            doc_url: 'ci/pipelines/settings.html'
           - doc_title: Triggering pipelines
             doc_url: 'ci/triggers/README.html'
       - category_title: Review Apps
