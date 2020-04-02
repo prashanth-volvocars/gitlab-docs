@@ -1,4 +1,10 @@
-image: registry.gitlab.com/gitlab-org/gitlab-docs:base
+default:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs:base
+  # Check Ruby version and install gems
+  before_script:
+    - ruby -v
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
+
 
 stages:
   - build-images
@@ -18,13 +24,6 @@ variables:
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
-
-#
-# Check Ruby version and install gems
-#
-before_script:
-  - ruby -v
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
 
 #
 # Retry a job automatically if it fails (2 times)
