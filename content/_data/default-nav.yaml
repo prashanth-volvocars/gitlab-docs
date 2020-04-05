@@ -215,8 +215,8 @@ sections:
       - category_title: Integrations
         category_url: 'user/project/integrations/'
         docs:
-          - doc_title: Project services
-            doc_url: 'user/project/integrations/project_services.html'
+          - doc_title: Overview
+            doc_url: 'user/project/integrations/overview.html'
           - doc_title: Bamboo CI
             doc_url: 'user/project/integrations/bamboo.html'
           - doc_title: Bugzilla
