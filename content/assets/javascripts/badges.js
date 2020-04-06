@@ -69,7 +69,7 @@ version: 2
     var smallBadgeTag = function(title) {
       return $('<span>', {
         class: 'badge-small',
-        html: '<i class="fa fa-question-circle-o" aria-hidden="true"></i>',
+        html: '<i class="fa fa-info-circle" aria-hidden="true"></i>',
         'data-title': title,
       });
     };
