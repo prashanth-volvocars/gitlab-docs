@@ -29,6 +29,8 @@
     } else if (menu.parentElement.classList.contains('global-nav-section')) {
       menu.parentElement.classList.add('expanded');
     }
+
+    activeMenuItem.scrollIntoView({block: "center"});
   }
 
   function toggleSidebar() {
