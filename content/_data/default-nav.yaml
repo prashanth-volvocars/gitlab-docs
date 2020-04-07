@@ -456,6 +456,8 @@ sections:
         docs:
           - doc_title: Getting started
             doc_url: 'topics/autodevops/quick_start_guide.html'
+          - doc_title: Customize
+            doc_url: 'topics/autodevops/customize.html'
           - doc_title: Stages
             doc_url: 'topics/autodevops/stages.html'
           - doc_title: Upgrading PostgreSQL
