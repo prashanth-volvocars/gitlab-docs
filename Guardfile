@@ -3,7 +3,7 @@
 
 ## Uncomment and set this to only include directories you want to watch
 # directories %w(app lib config test spec features) \
-#  .select{|d| Dir.exists?(d) ? d : UI.warning("Directory #{d} does not exist")}
+#  .select{|d| Dir.exist?(d) ? d : UI.warning("Directory #{d} does not exist")}
 
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move
@@ -15,11 +15,10 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
+# frozen_string_literal: true
+
 guard 'nanoc' do
   watch('nanoc.yaml') # Change this to config.yaml if you use the old config file name
   watch('Rules')
   watch(%r{^(content|layouts|lib)/.*$})
-  if (RUBY_PLATFORM == "i686-linux")
-    notification :libnotify, display_message: false
-  end
 end
