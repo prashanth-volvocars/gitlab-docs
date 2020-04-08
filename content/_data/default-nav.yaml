@@ -935,8 +935,6 @@ sections:
             doc_url: 'administration/high_availability/monitoring_node.html'
           - doc_title: NFS
             doc_url: 'administration/high_availability/nfs.html'
-          - doc_title: Object storage
-            doc_url: 'administration/high_availability/object_storage.html'
           - doc_title: Pgbouncer
             doc_url: 'administration/high_availability/pgbouncer.html'
             ee_only: true
@@ -1029,6 +1027,8 @@ sections:
             doc_url: 'administration/monitoring/performance/performance_bar.html'
           - doc_title: Usage statistics
             doc_url: 'user/admin_area/settings/usage_statistics.html'
+      - category_title: Object storage
+        category_url: 'administration/object_storage.html'
       - category_title: Packages
         category_url: 'administration/packages/'
         docs:
