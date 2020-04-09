@@ -12,7 +12,7 @@ class IntroducedInFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('blockquote').each do |blockquote|
       content = blockquote.inner_html
-      next if content !~ /(<a href="[^"]+">)?Introduced(<\/a>)? in (<a href="[^"]+">)?GitLab/mi
+      next if content !~ /(<a href="[^"]+">)?((Introduced(<\/a>)? in )|(moved(<\/a>))? to )(<a href="[^"]+">)?GitLab/mi
       new_content = generate(content)
       blockquote.replace(new_content)
     end
