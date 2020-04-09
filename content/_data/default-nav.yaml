@@ -179,6 +179,10 @@ sections:
             doc_url: 'user/application_security/license_compliance/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+          - doc_title: Offline Environments
+            doc_url: 'user/application_security/offline_deployments/'
+            ee_only: true
+            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Compliance Dashboard
             doc_url: 'user/application_security/compliance_dashboard/'
             ee_only: true
