@@ -8,17 +8,17 @@ Nanoc::Check.define(:internal_anchors) do
       if link.destination_page_not_found?
         add_issue <<~ERROR
           Destination page not found!
-                - link `#{link.href}`
                 - source file `#{link.source_file}`
                 - destination `#{link.destination_file}`
+                - link `#{link.href}`
         ERROR
       elsif link.destination_anchor_not_found?
         add_issue <<~ERROR
           Broken anchor detected!
-                - anchor `##{link.anchor_name}`
-                - link `#{link.href}`
                 - source file `#{link.source_file}`
                 - destination `#{link.destination_file}`
+                - link `#{link.href}`
+                - anchor `##{link.anchor_name}`
         ERROR
       end
     end
