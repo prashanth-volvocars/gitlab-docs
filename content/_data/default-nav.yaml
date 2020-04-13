@@ -175,20 +175,12 @@ sections:
             doc_url: 'user/application_security/security_dashboard/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
-          - doc_title: License Compliance
-            doc_url: 'user/application_security/license_compliance/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Offline Environments
             doc_url: 'user/application_security/offline_deployments/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Standalone Vulnerability Pages
             doc_url: 'user/application_security/vulnerabilities/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
-          - doc_title: Compliance Dashboard
-            doc_url: 'user/application_security/compliance_dashboard/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Badges
