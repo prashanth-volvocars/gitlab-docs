@@ -362,6 +362,8 @@ sections:
             doc_url: 'user/project/import/gitlab_com.html'
           - doc_title: Gitea
             doc_url: 'user/project/import/gitea.html'
+          - doc_title: Jira
+            doc_url: 'user/project/import/jira.html'
           - doc_title: Perforce Helix
             doc_url: 'user/project/import/perforce.html'
           - doc_title: Phabricator
