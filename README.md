@@ -68,7 +68,7 @@ here's what you will need to have:
 - Ruby 2.6 or greater
 - Node
 - Yarn
-- Xcode _(macOS only)_: Download and install using the App Store
+- Xcode *(macOS only)*: Download and install using the App Store
 
 **Note:**
 On Windows, the process described here would be different, but as most of
