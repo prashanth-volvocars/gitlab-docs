@@ -64,10 +64,11 @@ are implemented.
 In order to be able to preview any changes you make to GitLab's documentation,
 here's what you will need to have:
 
-- A Unix/Linux or macOS environment
-- Ruby 2.6+
+- Environment: Unix/Linux or macOS
+- Ruby 2.6 or greater
 - Node
 - Yarn
+- Xcode *(macOS only)*: Download and install using the App Store
 
 **Note:**
 On Windows, the process described here would be different, but as most of
