@@ -430,6 +430,8 @@ sections:
             doc_url: 'user/project/repository/web_editor.html'
           - doc_title: Web IDE
             doc_url: 'user/project/web_ide/'
+      - category_title: Requirements
+        category_url: 'user/project/requirements/'
       - category_title: Settings
         category_url: 'user/project/settings/'
       - category_title: Share projects
