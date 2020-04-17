@@ -424,8 +424,6 @@ sections:
             ee_tier: 'GitLab Starter and GitLab.com Bronze'
           - doc_title: Signed Commits
             doc_url: 'user/project/repository/gpg_signed_commits/'
-          - doc_title: Static Site Editor
-            doc_url: 'user/project/static_site_editor/'
           - doc_title: Syntax highlighting
             doc_url: 'user/project/highlighting.html'
           - doc_title: Web Editor
@@ -440,6 +438,8 @@ sections:
         category_url: 'user/project/members/share_project_with_groups.html'
       - category_title: Snippets
         category_url: 'user/snippets.html'
+      - category_title: Static Site Editor
+        category_url: 'user/project/static_site_editor/'
       - category_title: Wikis
         category_url: 'user/project/wiki/'
 
