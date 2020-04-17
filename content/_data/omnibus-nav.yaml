@@ -115,8 +115,11 @@ sections:
       - category_title: Documentation
         category_url: 'https://docs.gitlab.com/ee/development/documentation/'
         external_url: true
-      - category_title: Set up a build environment
-        category_url: 'build/prepare-build-environment.html'
+      - category_title: Prepare a build environment
+        category_url: 'build/README.html'
+        docs:
+          - doc_title: With Docker
+            doc_url: 'build/prepare-build-environment.html'
       - category_title: Set up a development environment
         category_url: 'development/setup.html'
       - category_title: Config options
