@@ -28,7 +28,7 @@ if (!("classList" in document.createElement("_"))
 
 if (!('Element' in view)) return;
 
-var
+const
 	  classListProp = "classList"
 	, protoProp = "prototype"
 	, elemCtrProto = view.Element[protoProp]
@@ -37,11 +37,8 @@ var
 		return this.replace(/^\s+|\s+$/g, "");
 	}
 	, arrIndexOf = Array[protoProp].indexOf || function (item) {
-		var
-			  i = 0
-			, len = this.length
-		;
-		for (; i < len; i++) {
+		
+		for (let i =0; i < this.length; i++) {
 			if (i in this && this[i] === item) {
 				return i;
 			}
@@ -70,13 +67,11 @@ var
 		return arrIndexOf.call(classList, token);
 	}
 	, ClassList = function (elem) {
-		var
+		const
 			  trimmedClasses = strTrim.call(elem.getAttribute("class") || "")
 			, classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
-			, i = 0
-			, len = classes.length
 		;
-		for (; i < len; i++) {
+		for (let i = 0; i < classes.length; i++) {
 			this.push(classes[i]);
 		}
 		this._updateClassName = function () {
@@ -99,11 +94,11 @@ classListProto.contains = function (token) {
 	return checkTokenAndGetIndex(this, token) !== -1;
 };
 classListProto.add = function () {
-	var
+	let
 		  tokens = arguments
 		, i = 0
 		, l = tokens.length
-		, token
+		, token = ''
 		, updated = false
 	;
 	do {
@@ -120,13 +115,13 @@ classListProto.add = function () {
 	}
 };
 classListProto.remove = function () {
-	var
+	let
 		  tokens = arguments
 		, i = 0
 		, l = tokens.length
-		, token
+		, token = ''
 		, updated = false
-		, index
+		, index = null
 	;
 	do {
 		token = tokens[i] + "";
@@ -146,7 +141,7 @@ classListProto.remove = function () {
 classListProto.toggle = function (token, force) {
 	token += "";
 
-	var
+	const
 		  result = this.contains(token)
 		, method = result ?
 			force !== true && "remove"
@@ -169,7 +164,7 @@ classListProto.toString = function () {
 };
 
 if (objCtr.defineProperty) {
-	var classListPropDesc = {
+	const classListPropDesc = {
 		  get: classListGetter
 		, enumerable: true
 		, configurable: true
@@ -195,21 +190,22 @@ if (objCtr.defineProperty) {
 // There is full or partial native classList support, so just check if we need
 // to normalize the add/remove and toggle APIs.
 
-(function () {
+(() => {
 	"use strict";
 
-	var testElement = document.createElement("_");
+	let testElement = document.createElement("_");
 
 	testElement.classList.add("c1", "c2");
 
 	// Polyfill for IE 10/11 and Firefox <26, where classList.add and
 	// classList.remove exist but support only one argument at a time.
 	if (!testElement.classList.contains("c2")) {
-		var createMethod = function(method) {
-			var original = DOMTokenList.prototype[method];
+		const createMethod = function(method) {
+			const original = DOMTokenList.prototype[method];
 
-			DOMTokenList.prototype[method] = function(token) {
-				var i, len = arguments.length;
+			DOMTokenList.prototype[method] = (token) => {
+				console.log(this)
+				let i, len = arguments.length;
 
 				for (i = 0; i < len; i++) {
 					token = arguments[i];
@@ -226,9 +222,9 @@ if (objCtr.defineProperty) {
 	// Polyfill for IE 10 and Firefox <24, where classList.toggle does not
 	// support the second argument.
 	if (testElement.classList.contains("c3")) {
-		var _toggle = DOMTokenList.prototype.toggle;
+		let _toggle = DOMTokenList.prototype.toggle;
 
-		DOMTokenList.prototype.toggle = function(token, force) {
+		DOMTokenList.prototype.toggle = (token, force) => {
 			if (1 in arguments && !this.contains(token) === !force) {
 				return force;
 			} else {
@@ -239,6 +235,5 @@ if (objCtr.defineProperty) {
 	}
 
 	testElement = null;
-}());
-
+  })();
 }

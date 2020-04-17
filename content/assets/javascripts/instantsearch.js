@@ -15,7 +15,7 @@ const search = instantsearch({
   loadingIndicator: true,
   urlSync: true,
   searchFunction: function(helper) {
-    var searchResults = $('.search-results');
+    const searchResults = $('.search-results');
     if (helper.state.query === '') {
       searchResults.hide();
       return;

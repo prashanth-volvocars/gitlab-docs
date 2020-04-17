@@ -2,9 +2,9 @@
 version: 1
 ---
 
-document.addEventListener('DOMContentLoaded', function() {
-  var el = document.getElementById('search-input');
-  var path = window.location.pathname
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('search-input');
+  const path = window.location.pathname
     .replace(/^\/((\d+)\.(\d+)?)(\/?(ee|ce)?)\//, '')
     .split(/[-/_]/)
     .join(' ')
