@@ -671,6 +671,8 @@ sections:
             doc_url: 'api/container_registry.html'
           - doc_title: Custom attributes
             doc_url: 'api/custom_attributes.html'
+          - doc_title: Dashboard annotations
+            doc_url: 'api/metrics_dashboard_annotations.html'
           - doc_title: Dependencies
             doc_url: 'api/dependencies.html'
             ee_only: true
