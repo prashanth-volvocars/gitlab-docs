@@ -1177,10 +1177,8 @@ sections:
       - category_title: Telemetry
         category_url: 'telemetry/'
         docs:
-          - doc_title: Frontend
-            doc_url: 'telemetry/frontend.html'
-          - doc_title: Backend
-            doc_url: 'telemetry/backend.html'
+          - doc_title: Snowplow
+            doc_url: 'telemetry/snowplow.html'
       - category_title: Experiment guide
         category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
