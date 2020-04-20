@@ -1,5 +1,7 @@
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
+  tags:
+    - gitlab-org
   # Check Ruby version and install gems
   before_script:
     - ruby -v
@@ -352,6 +354,8 @@ pages:
   extends:
     - .retry
   image: docker:latest
+  tags:
+    - gitlab-org-docker
   services:
     - docker:19.03.5-dind
   before_script:
