@@ -921,9 +921,11 @@ sections:
       - category_title: To-Do lists
         category_url: 'user/todos.html'
 
-  - section_title: Administrator (GitLab.com)
+  - section_title: Administrator
     section_url: 'administration/'
     section_categories:
+      - category_title: Scaling
+        category_url: 'administration/scaling/'
       - category_title: Availability
         category_url: 'administration/availability/'
         docs:
@@ -1129,8 +1131,6 @@ sections:
             doc_url: 'raketasks/web_hooks.html'
             ee_only: true
             ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
-      - category_title: Scaling
-        category_url: 'administration/scaling/'
       - category_title: Static objects external storage
         category_url: 'administration/static_objects_external_storage.html'
       - category_title: Update
@@ -1138,42 +1138,6 @@ sections:
         docs:
           - doc_title: Releases and maintenance
             doc_url: 'policy/maintenance.html'
-
-  - section_title: Administrator (Self-managed)
-    section_url: 'user/admin_area/'
-    section_categories:
-      - category_title: Overview
-        category_url: 'user/admin_area/#overview-section'
-        docs:
-          - doc_title: Dashboard
-            doc_url: 'user/admin_area/#admin-dashboard'
-          - doc_title: Projects
-            doc_url: 'user/admin_area/#administering-projects'
-          - doc_title: Users
-            doc_url: 'user/admin_area/#administering-users'
-          - doc_title: Groups
-            doc_url: 'user/admin_area/#administering-groups'
-          - doc_title: Jobs
-            doc_url: 'user/admin_area/#administering-jobs'
-          - doc_title: Runners
-            doc_url: 'user/admin_area/#administering-runners'
-          - doc_title: Gitaly servers
-            doc_url: 'user/admin_area/#administering-gitaly-servers'
-      - category_title: Monitoring
-        category_url: 'user/admin_area/monitoring/health_check.html'
-        docs:
-          - doc_title: System information
-            doc_url: 'user/admin_area/#system-info'
-          - doc_title: Background jobs
-            doc_url: 'user/admin_area/#background-jobs'
-          - doc_title: Logs
-            doc_url: 'user/admin_area/#logs'
-          - doc_title: Health checks
-            doc_url: 'user/admin_area/monitoring/health_check.html'
-          - doc_title: Requests profiles
-            doc_url: 'user/admin_area/#requests-profiles'
-          - doc_title: Audit logs
-            doc_url: 'user/admin_area/#audit-log-premium-only'
 
   - section_title: Contributor
     section_url: 'development/README.html'
