@@ -2,8 +2,8 @@
 version: 2
 ---
 
-(() => {
-  const BADGES_TITLES = {
+(function() {
+  var BADGES_TITLES = {
     core: 'Available in GitLab Core, GitLab.com Free, and higher tiers',
     starter: 'Available in GitLab Starter, GitLab.com Bronze, and higher tiers',
     premium: 'Available in GitLab Premium, GitLab.com Silver, and higher tiers',
@@ -26,7 +26,7 @@ version: 2
       'Available in GitLab Gold. Not available in self-hosted instances.',
   };
 
-  const BADGES_MAPPING = {
+  var BADGES_MAPPING = {
     core: ['core', 'free'],
     starter: ['starter', 'bronze'],
     premium: ['premium', 'silver'],
@@ -41,7 +41,7 @@ version: 2
     'gold-only': ['gold'],
   };
 
-  const BADGES_CLASS = {
+  var BADGES_CLASS = {
     core: 'gitlab',
     starter: 'gitlab',
     premium: 'gitlab',
@@ -53,7 +53,7 @@ version: 2
   };
 
   function init() {
-    const $badges = $('.badge-trigger');
+    var $badges = $('.badge-trigger');
 
     $badges.each(function() {
       convertBadge($(this));
@@ -63,10 +63,10 @@ version: 2
   }
 
   function convertBadge($badge) {
-    const small = isSmall($badge);
-    const badgeType = retrieveBadgeType($badge);
+    var small = isSmall($badge);
+    var badgeType = retrieveBadgeType($badge);
 
-    const smallBadgeTag = function(title) {
+    var smallBadgeTag = function(title) {
       return $('<span>', {
         class: 'badge-small',
         html: '<i class="fa fa-info-circle" aria-hidden="true"></i>',
@@ -74,15 +74,15 @@ version: 2
       });
     };
 
-    const largeBadgeTag = function(badge, badgeClass) {
+    var largeBadgeTag = function(badge, badgeClass) {
       return $('<div>', {
         class: 'badge-display badge-' + badgeClass,
         text: badge,
       });
     };
 
-    const template = function(title, badges) {
-      const container = $('<a>', {
+    var template = function(title, badges) {
+      var container = $('<a>', {
         class: 'badges-drop',
         'data-toggle': 'tooltip',
         'data-placement': 'top',
@@ -95,12 +95,12 @@ version: 2
       return container;
     };
 
-    const tags = [];
+    var tags = [];
 
     if (small) {
       tags.push(smallBadgeTag(BADGES_MAPPING[badgeType].join(' | ')));
     } else {
-      $.each(BADGES_MAPPING[badgeType], (i, badge) => {
+      $.each(BADGES_MAPPING[badgeType], function(i, badge) {
         tags.push(largeBadgeTag(badge, BADGES_CLASS[badge]));
       });
     }
@@ -110,7 +110,7 @@ version: 2
 
   // Get the badge type from a specific list of expected values in element class
   function retrieveBadgeType($badge) {
-    const match = $badge
+    var match = $badge
       .attr('class')
       .match(
         /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|free-only|bronze-only|silver-only|gold-only/

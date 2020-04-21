@@ -2,10 +2,10 @@
 version: 1
 ---
 
-(() => {
-  const tableList = document.querySelectorAll('.js-article-content table');
+(function() {
+  var tableList = document.querySelectorAll('.js-article-content table');
 
-  for (let i = 0; i < tableList.length; i++) {
+  for (var i = 0; i < tableList.length; i++) {
     const tableWidth = tableList[i].offsetWidth;
     const parentWidth = tableList[i].parentNode.offsetWidth;
 

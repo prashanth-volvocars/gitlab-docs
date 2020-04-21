@@ -24,19 +24,19 @@ function hideTooltip(btn) {
 }
 
 // trigger clipboardjs
-const clipboard = new ClipboardJS('.clip-btn', {
-  target: (trigger) => {
+var clipboard = new ClipboardJS('.clip-btn', {
+  target: function(trigger) {
     return trigger.previousElementSibling;
   }
 });
 
-clipboard.on('success', (e) => {
+clipboard.on('success', function(e) {
   setTooltip(e.trigger, 'Copied!');
   hideTooltip(e.trigger);
   e.clearSelection();
 });
 
-clipboard.on('error', (e) => {
+clipboard.on('error', function(e) {
   setTooltip(e.trigger, 'Failed!');
   hideTooltip(e.trigger);
 });

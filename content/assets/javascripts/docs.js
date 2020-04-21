@@ -2,28 +2,28 @@
 version: 1
 ---
 
-const NAV_INLINE_BREAKPOINT = 1100;
+var NAV_INLINE_BREAKPOINT = 1100;
 
-const landingHeaderBar = document.getElementById('landing-header-bar');
-const headerLinks = document.getElementsByClassName('header-link');
+var landingHeaderBar = document.getElementById('landing-header-bar');
+var headerLinks = document.getElementsByClassName('header-link');
 
 if (landingHeaderBar) {
   window.addEventListener('scroll', function() {
     if (window.scrollY >= 100) {
       landingHeaderBar.classList.add('scrolling-header');
-      for (let i = 0; i < headerLinks.length; i++) {
+      for (var i = 0; i < headerLinks.length; i++) {
         headerLinks[i].classList.add('scrolling-header-links');
       }
     } else {
       landingHeaderBar.classList.remove('scrolling-header');
-      for (let i = 0; i < headerLinks.length; i++) {
+      for (var i = 0; i < headerLinks.length; i++) {
         headerLinks[i].classList.remove('scrolling-header-links');
       }
     }
   });
 }
 
-const navtoggle = document.getElementById('docs-nav-toggle');
+var navtoggle = document.getElementById('docs-nav-toggle');
 if (navtoggle) {
   navtoggle.addEventListener('click', toggleNavigation);
 }
@@ -35,15 +35,15 @@ function toggleNavigation() {
 
 // move document nav to sidebar
 (function() {
-  const timeofday = document.getElementById('timeofday');
-  const tocList = document.querySelector('.js-article-content > ul#markdown-toc');
-  const main = document.querySelector('.js-main-wrapper');
+  var timeofday = document.getElementById('timeofday');
+  var tocList = document.querySelector('.js-article-content > ul#markdown-toc');
+  var main = document.querySelector('.js-main-wrapper');
 
-  // Set timeofday const depending on the time //
+  // Set timeofday var depending on the time //
 
   if (timeofday) {
-    const date = new Date();
-    const hour = date.getHours();
+    var date = new Date();
+    var hour = date.getHours();
 
     if (hour < 11) {
       timeofday.innerHTML = 'morning';
@@ -61,30 +61,30 @@ function toggleNavigation() {
   // if the document has a top level nav
   if (tocList) {
     // append to the sidebar
-    const sidebar = document.getElementById('doc-nav');
+    var sidebar = document.getElementById('doc-nav');
 
     if (sidebar) {
       // if there are items
       if (tocList.children.length >= 1) {
-        const menu = tocList;
+        var menu = tocList;
         $(tocList).addClass('nav nav-pills flex-column');
         $(tocList).find('ul').addClass('nav nav-pills flex-column');
         $(tocList).find('a').addClass('nav-link');
 
         // grab the h1's li anchor text
-        const title = document.createElement('h4');
+        var title = document.createElement('h4');
         title.innerHTML = 'On this page:';
 
         // add the text as a title
         menu.insertBefore(title, menu.children[0]);
 
-        const hasHelpSection = document.getElementById('help-and-feedback');
+        var hasHelpSection = document.getElementById('help-and-feedback');
 
         // Adds help section anchor to the ToC sidebar
         if(hasHelpSection) {
-          const listItem = document.createElement('li');
-          const anchor = document.createElement('a');
-          const separator = document.createElement('hr');
+          var listItem = document.createElement('li');
+          var anchor = document.createElement('a');
+          var separator = document.createElement('hr');
 
           anchor.className = 'nav-link';
           anchor.innerHTML = 'Help and feedback';
@@ -97,8 +97,8 @@ function toggleNavigation() {
 
         sidebar.appendChild(menu);
 
-        const sidebarContent = sidebar.querySelector('ul');
-        let sidebarContentHeight = 0;
+        var sidebarContent = sidebar.querySelector('ul');
+        var sidebarContentHeight = 0;
 
         // remove whitespace between elements to prevent list spacing issues
         sidebarContent.innerHTML = sidebarContent.innerHTML.replace(
@@ -110,14 +110,14 @@ function toggleNavigation() {
         // the TOC list (sticky behavior)
         document.addEventListener(
           'scroll',
-          () => {
+          function() {
             // Wait a cycle for the dimensions to kick in
             if (!sidebarContentHeight) {
               sidebarContentHeight =
                 sidebarContent.getBoundingClientRect().height + 55;
             }
 
-            let isTouchingBottom = false;
+            var isTouchingBottom = false;
             if (window.innerWidth >= NAV_INLINE_BREAKPOINT) {
               isTouchingBottom =
                 window.scrollY + sidebarContentHeight >= main.offsetHeight;
@@ -145,12 +145,12 @@ function toggleNavigation() {
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const globalNav = document.getElementById('global-nav');
-    const media = window.matchMedia('(max-width: 1099px)');
+  document.addEventListener('DOMContentLoaded', function() {
+    var globalNav = document.getElementById('global-nav');
+    var media = window.matchMedia('(max-width: 1099px)');
 
-    window.addEventListener('scroll', () => {
-      let isTouchingBottom = false;
+    window.addEventListener('scroll', function(e) {
+      var isTouchingBottom = false;
 
       if (!media.matches) {
         isTouchingBottom =
@@ -170,7 +170,7 @@ function toggleNavigation() {
     });
 
     if (media.matches) {
-      const el = document.getElementById('markdown-toc');
+      var el = document.getElementById('markdown-toc');
       el.classList.add('collapse');
       el.classList.add('out');
       el.style.height = '34px';
@@ -178,7 +178,7 @@ function toggleNavigation() {
     }
 
     // Adds the ability to auto-scroll to the active item in the TOC
-    $(window).on('activate.bs.scrollspy', () => {
+    $(window).on('activate.bs.scrollspy', function() {
       const isMobile = window.matchMedia('(max-width: 1099px)').matches;
 
       if(isMobile) {

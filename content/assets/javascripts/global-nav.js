@@ -1,4 +1,4 @@
-(() => {
+(function() {
   const menu = document.getElementById('global-nav');
   const activeMenuItem = menu.querySelector('.nav-link .active');
   const collapsedMenu = activeMenuItem ? activeMenuItem.closest('.collapse') : null;

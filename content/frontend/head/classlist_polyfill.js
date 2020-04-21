@@ -37,12 +37,13 @@ if ('document' in window.self) {
         });
 
       // Vendors: please allow content code to instantiate DOMExceptions
-      // TODO: Use arrow function and bind the this correctly to DOMEx
-      const DOMEx = function(type, message) {
-        this.name = type;
-        this.code = DOMException[type];
-        this.message = message;
-      };
+      class DOMEx {
+        constructor(type, message) {
+          this.name = type;
+          this.code = DOMException[type];
+          this.message = message;
+        }
+      }
 
       const checkTokenAndGetIndex = (classList, token) => {
         if (token === '') {
@@ -54,7 +55,7 @@ if ('document' in window.self) {
         return arrIndexOf.call(classList, token);
       };
 
-      const ClassList = elem => {
+      const ClassList = function(elem) {
         const trimmedClasses = strTrim.call(elem.getAttribute('class') || '');
         const classes = trimmedClasses ? trimmedClasses.split(/\s+/) : [];
 
@@ -62,23 +63,30 @@ if ('document' in window.self) {
           this.push(classes[i]);
         }
 
-        this.updateClassName = () => {
+        this.updateClassName = function() {
           elem.setAttribute('class', this.toString());
         };
       };
 
-      const classListProto = [];
       ClassList[protoProp] = [];
+      const classListProto = ClassList[protoProp];
 
-      const classListGetter = () => new ClassList(this);
+      // TODO: To use arrow function, we need to change how we pass the this ref. Might not be
+      // worth the trouble.
+      const classListGetter = function() {
+        return new ClassList(this);
+      };
 
       // Most DOMException implementations don't allow calling DOMException's toString()
       // on non-DOMExceptions. Error's toString() is sufficient here.
       DOMEx[protoProp] = Error[protoProp];
       classListProto.item = i => this[i] || null;
-      classListProto.contains = token => checkTokenAndGetIndex(this, String(token)) !== -1;
+      // TODO: change to arrow function when this changes
+      classListProto.contains = function(token) {
+        return checkTokenAndGetIndex(this, String(token)) !== -1;
+      };
 
-      classListProto.add = ([...args]) => {
+      classListProto.add = function([...args]) {
         let token = '';
         let updated = false;
 
@@ -95,7 +103,7 @@ if ('document' in window.self) {
         }
       };
 
-      classListProto.remove = (...args) => {
+      classListProto.remove = function(...args) {
         let token = '';
         let updated = false;
         let index = null;
@@ -116,7 +124,7 @@ if ('document' in window.self) {
         }
       };
 
-      classListProto.toggle = (token, force) => {
+      classListProto.toggle = function(token, force) {
         const stringToken = String(token);
 
         const result = this.contains(stringToken);
@@ -133,7 +141,9 @@ if ('document' in window.self) {
         return !result;
       };
 
-      classListProto.toString = () => this.join(' ');
+      classListProto.toString = function() {
+        return this.join(' ');
+      };
 
       if (objCtr.defineProperty) {
         const classListPropDesc = {
@@ -156,51 +166,53 @@ if ('document' in window.self) {
         Object.defineProperty(elemCtrProto, classListProp, classListGetter);
       }
     })(window.self);
-  }
+    // }
 
-  // There is full or partial native classList support, so just check if we need
-  // to normalize the add/remove and toggle APIs.
+    // There is full or partial native classList support, so just check if we need
+    // to normalize the add/remove and toggle APIs.
 
-  (() => {
-    let testElement = document.createElement('_');
+    (() => {
+      let testElement = document.createElement('_');
+      testElement.className = 'foo';
 
-    testElement.classList.add('c1', 'c2');
+      testElement.classList.add('c1', 'c2');
 
-    // Polyfill for IE 10/11 and Firefox <26, where classList.add and
-    // classList.remove exist but support only one argument at a time.
-    if (!testElement.classList.contains('c2')) {
-      const createMethod = method => {
-        const original = DOMTokenList.prototype[method];
+      // Polyfill for IE 10/11 and Firefox <26, where classList.add and
+      // classList.remove exist but support only one argument at a time.
+      if (!testElement.classList.contains('c2')) {
+        const createMethod = function(method) {
+          const original = DOMTokenList.prototype[method];
 
-        DOMTokenList.prototype[method] = (...args) => {
-          for (let i = 0; i < args.length; i += 1) {
-            const token = args[i];
-            original.call(this, token);
-          }
+          DOMTokenList.prototype[method] = (...args) => {
+            for (let i = 0; i < args.length; i += 1) {
+              const token = args[i];
+              original.call(this, token);
+            }
+          };
         };
-      };
-      createMethod('add');
-      createMethod('remove');
-    }
+        createMethod('add');
+        createMethod('remove');
+      }
 
-    testElement.classList.toggle('c3', false);
+      testElement.classList.toggle('c3', false);
 
-    // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
-    // support the second argument.
-    if (testElement.classList.contains('c3')) {
-      const { toggle } = DOMTokenList.prototype;
+      // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
+      // support the second argument.
+      if (testElement.classList.contains('c3')) {
+        const { toggle } = DOMTokenList.prototype;
 
-      DOMTokenList.prototype.toggle = (...args) => {
-        const [token, force] = args;
+        DOMTokenList.prototype.toggle = function(...args) {
+          const [token, force] = args;
 
-        if (1 in args && !this.contains(token) === !force) {
-          return force;
-        }
+          if (1 in args && !this.contains(token) === !force) {
+            return force;
+          }
 
-        return toggle.call(this, token);
-      };
-    }
+          return toggle.call(this, token);
+        };
+      }
 
-    testElement = null;
-  })();
+      testElement = null;
+    })();
+  }
 }
