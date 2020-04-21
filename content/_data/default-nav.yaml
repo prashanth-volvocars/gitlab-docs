@@ -1121,6 +1121,8 @@ sections:
             ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Repository storage
             doc_url: 'administration/raketasks/storage.html'
+          - doc_title: Sample Prometheus data
+            doc_url: 'raketasks/generate_sample_prometheus_data.html'
           - doc_title: Uploads migration
             doc_url: 'administration/raketasks/uploads/migrate.html'
           - doc_title: Uploads sanitization
@@ -1159,8 +1161,11 @@ sections:
         category_url: 'development/architecture.html'
       - category_title: CI/CD development
         category_url: 'development/cicd/index.html'
-      - category_title: Development raketasks
+      - category_title: Development Rake tasks
         category_url: 'development/rake_tasks.html'
+        docs:
+          - doc_title: Mass insert Rails models
+            doc_url: 'development/mass_insert.html'
       - category_title: Documentation
         category_url: 'development/documentation/'
         docs:
