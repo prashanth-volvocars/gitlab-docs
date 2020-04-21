@@ -434,6 +434,9 @@ sections:
         category_url: 'user/project/requirements/'
       - category_title: Settings
         category_url: 'user/project/settings/'
+        docs:
+          - doc_title: Project import/export
+            doc_url: 'user/project/settings/import_export.html'
       - category_title: Share projects
         category_url: 'user/project/members/share_project_with_groups.html'
       - category_title: Snippets
