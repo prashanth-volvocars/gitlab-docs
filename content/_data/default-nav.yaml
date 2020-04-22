@@ -117,6 +117,8 @@ sections:
         category_url: 'user/group/dependency_proxy/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Group Import/Export
+        category_url: 'user/group/settings/import_export.html'
       - category_title: Insights
         category_url: 'user/group/insights/'
         ee_only: true
@@ -434,6 +436,9 @@ sections:
         category_url: 'user/project/requirements/'
       - category_title: Settings
         category_url: 'user/project/settings/'
+        docs:
+          - doc_title: Project Import/Export
+            doc_url: 'user/project/settings/import_export.html'
       - category_title: Share projects
         category_url: 'user/project/members/share_project_with_groups.html'
       - category_title: Snippets
