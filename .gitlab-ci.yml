@@ -23,7 +23,7 @@ variables:
   BRANCH_EE: '12-10-stable-ee'
   BRANCH_OMNIBUS: '12-10-stable'
   BRANCH_RUNNER: '12-10-stable'
-  BRANCH_CHARTS: '3-3-stable'
+  BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
 
