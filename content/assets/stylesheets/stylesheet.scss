@@ -362,7 +362,7 @@ li {
   }
 
   p {
-    margin: 0 0 1.25em;    
+    margin: 0 0 1.25em;
   }
 
   ul, ol {
@@ -905,35 +905,45 @@ a.global-nav-link {
 
 .header {
   z-index: 10;
-  background: $main-background-color;
+  background: $header-background-color;
+  color: $header-font-color;
   position: fixed;
   width: 100%;
   height: $page-header-height;
-  padding: 6px 24px;
-  border-bottom: 1px solid $border-color;
+  padding: 4px 16px;
   text-align: left;
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
 
   .logo-container {
-    margin-right: 24px;
+    margin-right: 32px;
+
+    @media (max-width: $medium-width) {
+      margin-right: 16px;
+    }
   }
 
   @media all and (max-width: $mobile-width) {
     height: auto;
-    padding-left: 5px;
   }
 
   img {
-    height: 40px;
+    height: 24px;
+    margin-right: 10px;
   }
 
   p {
     font-size: 16px;
-    color: $black;
+    color: $white;
     display: inline-block;
     margin: 0 0 0 4px;
+  }
+
+  .header-company-name {
+    @media (max-width: $medium-width) {
+      display: none;
+    }
   }
 
   ul {
@@ -943,6 +953,10 @@ a.global-nav-link {
     @media all and (max-width: $mobile-width) {
       display: none;
     }
+  }
+
+  .nav-item a {
+    color: $header-font-color;
   }
 
   @media all and (max-width: $mobile-width) {
@@ -968,6 +982,21 @@ a.global-nav-link {
     margin: 0 10px;
   }
 
+  .version-dropdown-desktop {
+    display: flex;
+    align-items: center;
+
+    @media all and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+
+  .dropdown {
+    height: $page-header-height;
+    display: flex;
+    align-items: center;
+  }
+
   .dropdown-menu {
     li {
       display: block;
@@ -975,7 +1004,8 @@ a.global-nav-link {
   }
 
   .choose-version {
-    padding: 10px;
+    margin-left: 32px;
+    font-size: 14px;
 
     @media(max-width:$mobile-width) {
       display: none;
@@ -983,16 +1013,16 @@ a.global-nav-link {
   }
 
   .btn-versions {
-    color: $black;
-    font-size: 16px;
-    border: 1px solid $color-tanuki-medium;
-
-    &:hover {
-      opacity: .8;
-    }
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: inherit;
+    color: $header-font-color;
+    margin-left: 4px;
+    border: 0;
 
     &:active {
-      opacity: .8;
       box-shadow: none;
     }
   }
@@ -1003,6 +1033,7 @@ a.global-nav-link {
     li {
       display: block;
       margin: 5px 0;
+      text-align: left;
 
       a {
         color: $versions-link-color;
@@ -1041,25 +1072,27 @@ a.global-nav-link {
 
   input {
     box-sizing: content-box;
-    border: 1px solid $search-border;
     border-radius: $border-radius;
     -webkit-appearance: none;
-    padding: 7px 11px 7px 28px;
-    width: 260px;
-    background: $white url("<%= @items['/assets/images/icon_search.svg'].path %>") 9px 12px / 14px no-repeat;
+    border: 0;
+    padding: 4px 12px;
+    width: 355px;
+    color: $search-input-font-color;
+    background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 355px 9px / 14px no-repeat;
     outline: 0;
 
-    @media(max-width:$medium-width) {
+    @media(max-width: $medium-width) {
       width: 210px;
-    }
-
-    @media(max-width:$mobile-width) {
-      display: none;
+      background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 210px 9px / 14px no-repeat;
     }
   }
 
+  input::placeholder {
+    color: $search-placeholder-font-color;
+  }
+
   input:focus {
-    border: 1px solid $search-border-dark;
+    border: 0;
   }
 
   input:visited {
@@ -1070,32 +1103,27 @@ a.global-nav-link {
   .nav-container {
     margin: auto 0;
 
-    .docsearch-mobile {
+    .version-dropdown-mobile {
       display: none;
-      width: 100%;
-      outline: 0;
-      margin-top: 12px;
 
       @media all and (max-width: $mobile-width) {
         display: block;
       }
-
     }
-
-    .docsearch-mobile:focus {
-      border: 1px solid $search-border-dark;
-    }
-
   }
 
   .nav-toggle {
     display: none;
 
     @media all and (max-width: $mobile-width) {
-      display: inline-block;
+      display: flex;
+      height: $page-header-height;
+      align-items: center;
       position: absolute;
-      top: 15px;
-      right: 15px;
+      padding: 0 15px;
+      cursor: pointer;
+      top: 0;
+      right: 0;
       color: $link-color-nav;
     }
   }
@@ -1103,9 +1131,10 @@ a.global-nav-link {
   // Override bootstrap
   .nav > li > a {
     text-decoration: none;
-    color: $black;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: $header-font-color;
   }
 
   // Override bootstrap
@@ -1266,8 +1295,8 @@ a.global-nav-link {
     }
 
     .logo {
-      height: 40px;
-      margin-right: 6px;
+      height: 24px;
+      margin-right: 10px;
     }
 
     .logo-container {
