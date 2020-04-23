@@ -434,6 +434,8 @@ sections:
             doc_url: 'user/project/web_ide/'
       - category_title: Requirements
         category_url: 'user/project/requirements/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Settings
         category_url: 'user/project/settings/'
         docs:
