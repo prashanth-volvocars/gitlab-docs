@@ -446,6 +446,8 @@ sections:
   - section_title: CI/CD
     section_url: 'ci/README.html'
     section_categories:
+      - category_title: '.gitlab-ci.yml Reference'
+        category_url: 'ci/yaml/README.html'
       - category_title: Introduction
         category_url: 'ci/introduction/'
         docs:
@@ -612,8 +614,6 @@ sections:
             doc_url: 'ci/services/postgres.html'
           - doc_title: Redis
             doc_url: 'ci/services/redis.html'
-      - category_title: '.gitlab-ci.yml Reference'
-        category_url: 'ci/yaml/README.html'
 
   - section_title: Packages
     section_url: 'user/packages/'
