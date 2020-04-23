@@ -3,7 +3,7 @@ $medium-width: 1100px;
 $mobile-width: 900px;
 
 // Border radius
-$border-radius: 3px;
+$border-radius: 4px;
 
 // Border colors
 $introduced-in-border-color: #e3e3e3;
@@ -23,7 +23,7 @@ $h-margin-bottom: 10px;
 $nav-item-padding: 7px;
 
 // Heights
-$page-header-height: 53px;
+$page-header-height: 40px;
 $banner-height: 31px;
 
 // GitLab colors
@@ -67,7 +67,13 @@ $gds-blue-600: #1b69b6;
 $gds-blue-700: #17599c;
 $gds-blue-800: #134a81;
 
+// Purple palatte
+$gds-purple-50: #f4f0ff;
+$gds-purple-900: #2f2a6b;
+
 // Indigo palatte
+$gds-indigo-100: #dbdbf8;
+$gds-indigo-600: #5252b5;
 $gds-indigo-800: #393982;
 //// end of GitLab Design System's colors ////
 
@@ -78,6 +84,8 @@ $gds-indigo-800: #393982;
 $body-color: $gds-gray-950; //font color
 $body-background-color: rgba($gds-gray-50, .3); //body background
 $main-background-color: $gds-white; // content background
+$header-background-color: $gds-purple-900;
+$header-font-color: $gds-indigo-100;
 
 // Link colors
 $link-color: $gds-blue-600;
@@ -313,8 +321,6 @@ $container-large-desktop: 1200px;
 
 $body-bg: #f9f9f9;
 
-$border-radius-large: 3px;
-
 $grid-float-breakpoint: 992px;
 $screen-sm-min: 768px;
 
@@ -330,8 +336,10 @@ $dropdown-bg: #019875;
 $dropdown-link-color: #fff;
 $dropdown-link-hover-color: #18be97;
 
-$search-input-font-color: #333;
+$search-input-font-color: $white;
+$search-placeholder-font-color: $gds-indigo-100;
 $search-border-color: #bcbcbc;
+$search-background-color: #4b4c7b;
 
 $reseller-divider-color: $navbar-default-border;
 $reseller-hero-bg-color: #35393d;
