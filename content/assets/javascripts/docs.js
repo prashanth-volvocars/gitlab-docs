@@ -108,8 +108,11 @@ function getUlAncestorsCount(el, root) {
 
         // grab the h1's li anchor text
         var title = document.createElement('h4');
-        title.classList.add('border-bottom-0', 'font-weight-bold', 'mb-0', 'pb-0');
-        title.innerHTML = 'On this page';
+        title.classList.add('border-bottom-0', 'mb-0', 'pb-0');
+        title.innerHTML = [
+          '<span class="font-weight-bold toc-header">On this page</span>',
+          '<button type="button" class="btn btn-link p-0 toc-collapse" data-toggle="collapse" data-target="#markdown-toc" aria-expanded="true" aria-contols="markdown-toc">On this page</button>'
+        ].join('');
 
         // add the text as a title
         sidebarContent.appendChild(title);

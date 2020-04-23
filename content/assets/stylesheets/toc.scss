@@ -78,48 +78,26 @@ version: 8
 
     // ToC toggle button
     .toc-collapse {
-      font-size: 13px;
-      display: block;
-      padding: 5px 5px 5px 0;
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      color: $link-color-nav;
-
-      &:hover {
-        color: $link-color-nav-hover;
-      }
-
       &::before {
         font-family: FontAwesome;
-        content: "\f147";
+        content: "\f078";
         padding-right: 5px;
       }
 
-      &::after {
-        content: "";
-        font-style: italic;
-      }
-
       &.collapsed {
-        left: 0;
-        right: 0;
-        text-align: right;
-        background-color: $body-background-color;
-
         &::before {
-          content: "\f196";
-        }
-
-        &::after {
-          content: "On this page";
+          content: "\f054";
         }
       }
     }
-    // ToC toggle button
+
+    .toc-header {
+      display: none;
+    }
 
     .doc-nav-content {
       margin: 0;
+      padding-left: 5px;
     }
   }
 
@@ -152,6 +130,10 @@ version: 8
 
     .toc-collapse {
       display: none; // ToC toggle button => don't display on big screens
+    }
+
+    .toc-header {
+      display: block;
     }
   }
 

@@ -30,11 +30,9 @@
             <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
           </ul>
           <div id="doc-nav" class="doc-nav">
-            <a class="toc-collapse" data-toggle="collapse" href="#doc-nav-content" aria-expanded="true" aria-controls="doc-nav-content"></a>
           </div>
         <% else %>
           <div id="doc-nav" class="doc-nav toc-no-breadcrumbs">
-            <a class="toc-collapse" role="button" data-toggle="collapse" href="#doc-nav-content" aria-expanded="true" aria-controls="doc-nav-content"></a>
           </div>
         <% end %>
       <% end %>
