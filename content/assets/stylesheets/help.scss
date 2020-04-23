@@ -1,0 +1,112 @@
+---
+version: 1
+---
+
+@import "variables";
+
+.help-and-feedback-section {
+  background-color: $help-indigo-50;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: $help-gray-900;
+  font-size: 14px;
+  line-height: 20px;
+
+  .right-col {
+    @media all and (min-width: 768px) {
+      border-left: 1px solid $help-gray-100;
+    }
+  }
+
+  .help-subsection {
+    @media all and (max-width: 767px) {
+      margin-top: 1rem;
+    }
+  }
+
+  // scss-lint:disable QualifyingElement
+  h4,
+  h5 {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h4[id]::before {
+    display: none;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+  // scss-lint:enable QualifyingElement
+
+  .help-icon,
+  .toggle-icon {
+    fill: $help-indigo-500;
+    vertical-align: text-top;
+  }
+
+  // scss-lint:disable ImportantRule
+  .help-icon {
+    margin-left: 0 !important;
+  }
+  // scss-lint:enable ImportantRule
+
+  .toggle-icon {
+    float: right;
+    transition: .35s ease-in-out;
+  }
+
+  .help-and-feedback-toggle {
+    color: $gds-gray-950;
+
+    &:hover {
+      color: $gds-gray-950;
+      text-decoration: none;
+    }
+
+    &.collapsed .toggle-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .help-and-feedback-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .help-and-feedback-heading {
+    color: $gds-gray-950;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: .25rem;
+  }
+
+  .help-and-feedback-link {
+    text-decoration: underline;
+  }
+
+  .support-btn {
+    background-color: $gds-white;
+    border-color: $help-gray-200;
+    color: $help-gray-900;
+    font-size: 14px;
+
+    &:hover {
+      color: $help-gray-900;
+    }
+  }
+}
+
+.disqus-comments-gitlab {
+  iframe {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px $search-border;
+    margin-top: 25px;
+  }
+}
