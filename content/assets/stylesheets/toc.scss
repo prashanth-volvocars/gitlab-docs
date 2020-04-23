@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import "variables";
@@ -14,44 +14,50 @@ version: 7
     padding-bottom: 5px;
     font-size: 16px;
   }
+}
 
-  > ul {
-    position: relative;
-    padding: 16px 8px;
-    margin-top: 60px;
+.doc-nav-content {
+  position: relative;
+  padding: 16px 8px;
+  margin-top: 60px;
 
-    li {
-      list-style: none;
+  li {
+    list-style: none;
 
-      &::before {
-        content: "›";
-        margin-right: 8px;
-      }
+    > a {
+      font-size: 14px;
+      color: $toc-link-color;
+      display: inline;
+      padding: 3px 7px;
 
-      > a {
-        font-size: 14px;
-        color: $toc-link-color;
-        display: inline;
-        padding: 3px 7px;
-
-        &:hover {
-          color: $link-color-nav-hover;
-          text-decoration: underline;
-          background-color: transparent;
-          box-shadow: none;
-        }
-      }
-      .nav-link.active {
-        font-weight: 600;
-        color: $link-color-nav;
+      &:hover {
+        color: $link-color-nav-hover;
         background-color: transparent;
-
-        &:hover, &:only-child {
-          color: $link-color-nav-hover;
-          text-decoration: underline;
-          background-color: transparent;
-        }
+        box-shadow: none;
       }
+    }
+    .nav-link.active {
+      font-weight: 600;
+      color: $link-color-nav;
+      background-color: transparent;
+
+      &:hover, &:only-child {
+        color: $link-color-nav-hover;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.indigo-border-nav {
+  .nav-link {
+    display: block;
+    border-left: 4px solid $gds-indigo-50;
+    border-radius: 0;
+    padding-left: 8px;
+
+    &.active {
+      border-left-color: $gds-indigo-600;
     }
   }
 }
@@ -112,7 +118,7 @@ version: 7
     }
     // ToC toggle button
 
-    > ul {
+    .doc-nav-content {
       margin: 0;
     }
   }
