@@ -1,3 +1,11 @@
+stages:
+  - build-images
+  - build
+  - test
+  - pre-deploy
+  - deploy
+  - post-deploy
+
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
   tags:
@@ -6,15 +14,6 @@ default:
   before_script:
     - ruby -v
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
-
-
-stages:
-  - build-images
-  - build
-  - test
-  - pre-deploy
-  - deploy
-  - post-deploy
 
 #
 # Pick the remote branch, by default master (see the Rakefile for more info)
@@ -248,6 +247,32 @@ test_external_links:
     - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
       when: manual
       allow_failure: true
+
+#
+# Dependency scanning
+#
+dependency_scanning:
+  extends:
+    - .rules_dev
+  stage: test
+  needs: []
+  image: docker:19.03.5
+  allow_failure: true
+  dependencies: []
+  services:
+    - docker:19.03.5-dind
+  variables:
+    DOCKER_DRIVER: overlay2
+  script:
+    - export SP_VERSION=$(echo "$CI_SERVER_VERSION" | sed 's/^\([0-9]*\)\.\([0-9]*\).*/\1-\2-stable/')
+    - docker run
+        --env DEP_SCAN_DISABLE_REMOTE_CHECKS="${DEP_SCAN_DISABLE_REMOTE_CHECKS:-false}"
+        --volume "$PWD:/code"
+        --volume /var/run/docker.sock:/var/run/docker.sock
+        "registry.gitlab.com/gitlab-org/security-products/dependency-scanning:$SP_VERSION" /code
+  artifacts:
+    reports:
+      dependency_scanning: gl-dependency-scanning-report.json
 
 ###############################################
 #               Review Apps                   #
