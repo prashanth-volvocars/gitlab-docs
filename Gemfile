@@ -9,7 +9,7 @@ gem 'rake', '~> 12.3'
 gem 'asciidoctor-plantuml', '0.0.9'
 
 group :nanoc do
-  gem 'guard-nanoc', '~> 2.1'
+  gem 'guard-nanoc'
 
   # custom kramdown dialect
   gem 'gitlab_kramdown', '~> 0.8.0'
