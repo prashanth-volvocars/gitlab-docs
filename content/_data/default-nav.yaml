@@ -192,7 +192,7 @@ sections:
       - category_title: Code owners
         category_url: 'user/project/code_owners.html'
         ee_only: true
-        ee_tier: 'GitLab Starter and GitLab.com Bronze'
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Compliance
         category_url: 'user/compliance/'
         ee_only: true
@@ -256,7 +256,7 @@ sections:
           - doc_title: Slack application
             doc_url: 'user/project/integrations/gitlab_slack_application.html'
             ee_only: true
-            ee_tier: 'Available in Free and higher tiers. Not available in self-managed instances'
+            ee_tier: 'GitLab.com only. Not available in GitLab self-managed instances'
           - doc_title: Slack notifications
             doc_url: 'user/project/integrations/slack.html'
           - doc_title: Slack slash commands
@@ -423,7 +423,7 @@ sections:
           - doc_title: Push rules
             doc_url: 'push_rules/push_rules.html'
             ee_only: true
-            ee_tier: 'GitLab Starter and GitLab.com Bronze'
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Signed Commits
             doc_url: 'user/project/repository/gpg_signed_commits/'
           - doc_title: Syntax highlighting
@@ -719,7 +719,7 @@ sections:
           - doc_title: Geo nodes
             doc_url: 'api/geo_nodes.html'
             ee_only: true
-            ee_tier: 'GitLab Premium'
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Group activity analytics
             doc_url: 'api/group_activity_analytics.html'
           - doc_title: Groups
@@ -753,7 +753,7 @@ sections:
           - doc_title: Links (issue)
             doc_url: 'api/issue_links.html'
             ee_only: true
-            ee_tier: 'GitLab Starter and GitLab.com Bronze'
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Links (epic)
             doc_url: 'api/epic_links.html'
             ee_only: true
@@ -769,7 +769,7 @@ sections:
           - doc_title: Merge request approvals
             doc_url: 'api/merge_request_approvals.html'
             ee_only: true
-            ee_tier: 'GitLab Starter and GitLab.com Bronze'
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Merge requests
             doc_url: 'api/merge_requests.html'
           - doc_title: Milestones (project)
@@ -785,7 +785,7 @@ sections:
           - doc_title: Packages
             doc_url: 'api/packages.html'
             ee_only: true
-            ee_tier: 'GitLab Premium and GitLab.com Silver'
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Pages domains
             doc_url: 'api/pages_domains.html'
           - doc_title: Pipelines schedules
@@ -797,7 +797,7 @@ sections:
           - doc_title: Project aliases
             doc_url: 'api/project_aliases.html'
             ee_only: true
-            ee_tier: 'GitLab Premium'
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Project import/export
             doc_url: 'api/project_import_export.html'
           - doc_title: Project statistics
@@ -827,7 +827,7 @@ sections:
           - doc_title: SCIM
             doc_url: 'api/scim.html'
             ee_only: true
-            ee_tier: 'GitLab Silver'
+            ee_tier: 'GitLab.com Silver and higher tiers. Not available in GitLab self-managed instances'
           - doc_title: Search
             doc_url: 'api/search.html'
           - doc_title: Services
