@@ -21,8 +21,8 @@ module Nanoc::Helpers
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/master/-/docs/#{docs_content_filename}"
       elsif product == "charts"
         # GitLab Helm chart repo
-        gitlab_url = "https://gitlab.com/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
       # gitlab-foss and gitlab repos
       elsif %w[ce ee].include?(product)
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
