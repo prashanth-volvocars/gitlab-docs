@@ -334,6 +334,8 @@ pages:
     #
     - /scripts/minify-assets.sh ./ public/
 
+    # Use gzip to compress content
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
     #
     # Check the size after minifying
     #
