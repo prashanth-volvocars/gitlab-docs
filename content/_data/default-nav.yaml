@@ -569,6 +569,8 @@ sections:
             doc_url: 'user/project/pages/pages_access_control.html'
           - doc_title: Exploring GitLab Pages
             doc_url: 'user/project/pages/introduction.html'
+      - category_title: Incremental rollouts
+        category_url: 'ci/environments/incremental_rollouts.html'
       - category_title: Interactive web terminals
         category_url: 'ci/interactive_web_terminal/'
       - category_title: Large repositories
