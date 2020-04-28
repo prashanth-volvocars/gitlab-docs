@@ -996,6 +996,8 @@ sections:
             doc_url: 'administration/lfs/lfs_administration.html'
           - doc_title: Gitaly
             doc_url: 'administration/gitaly/'
+          - doc_title: Praefect
+            doc_url: 'administration/gitaly/praefect.html'
           - doc_title: GitLab Pages
             doc_url: 'administration/pages/'
           - doc_title: Health Check
