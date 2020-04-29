@@ -316,7 +316,7 @@ pages:
     - mv /usr/share/nginx/html/1* public/
 
     #
-    # Check the size before minifying and gzipping
+    # Check the size before minifying
     #
     - du -sh public/
 
@@ -334,13 +334,10 @@ pages:
     #
     - /scripts/minify-assets.sh ./ public/
 
-    #
     # Use gzip to compress content
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
     #
-    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip -f {} \;
-
-    #
-    # Check the size after minifying and gzipping
+    # Check the size after minifying
     #
     - du -sh public/
   artifacts:
