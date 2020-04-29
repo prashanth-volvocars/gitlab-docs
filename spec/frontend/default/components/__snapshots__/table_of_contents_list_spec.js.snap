@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`frontend/default/components/table_of_contents_list with empty items shows empty ul 1`] = `
+<ul
+  class="nav nav-pills flex-column"
+/>
+`;

@@ -28,13 +28,9 @@
             <% end %>
             <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
           </ul>
-          <div id="doc-nav" class="doc-nav">
-            <a class="toc-collapse" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
-          </div>
+          <div id="doc-nav" class="doc-nav"></div>
         <% else %>
-          <div id="doc-nav" class="doc-nav toc-no-breadcrumbs">
-            <a class="toc-collapse" role="button" data-toggle="collapse" href="#markdown-toc" aria-expanded="true" aria-controls="markdown-toc"></a>
-          </div>
+          <div id="doc-nav" class="doc-nav toc-no-breadcrumbs"></div>
         <% end %>
       <% end %>
       <% if @item[:title] %>

@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 var NAV_INLINE_BREAKPOINT = 1100;
@@ -80,14 +80,6 @@ function toggleNavigation() {
         globalNav.style.top = '';
       }
     });
-
-    if (media.matches) {
-      var el = document.getElementById('markdown-toc');
-      el.classList.add('collapse');
-      el.classList.add('out');
-      el.style.height = '34px';
-      el.previousElementSibling.classList.add('collapsed');
-    }
 
     // Adds the ability to auto-scroll to the active item in the TOC
     $(window).on('activate.bs.scrollspy', function() {

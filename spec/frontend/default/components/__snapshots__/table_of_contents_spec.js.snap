@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
+<div
+  class="table-of-contents-container position-relative"
+  id="markdown-toc"
+>
+  <a
+    aria-controls="markdown-toc"
+    class="toc-collapse collapsed"
+    data-testid="collapse"
+    href="#"
+    role="button"
+  />
+   
+  <div
+    class="table-of-contents sm-collapsed"
+    data-testid="container"
+  >
+    <h4>
+      On this page:
+    </h4>
+     
+    <ul
+      class="nav nav-pills flex-column my-0"
+      data-testid="main-list"
+    >
+      <li>
+        <a
+          class="nav-link"
+          href="#lorem"
+          id="Lorem-anchor"
+        >
+          Lorem
+        </a>
+         
+        <ul
+          class="nav nav-pills flex-column"
+        >
+          <li>
+            <a
+              class="nav-link"
+              href="#lorem-"
+              id="Lorem 2-anchor"
+            >
+              Lorem 2
+            </a>
+             
+            <!---->
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          href="#ipsum"
+          id="Ipsum-anchor"
+        >
+          Ipsum
+        </a>
+         
+        <ul
+          class="nav nav-pills flex-column"
+        >
+          <li>
+            <a
+              class="nav-link"
+              href="#dolar"
+              id="Dolar-anchor"
+            >
+              Dolar
+            </a>
+             
+            <ul
+              class="nav nav-pills flex-column"
+            >
+              <li>
+                <a
+                  class="nav-link"
+                  href="#sit"
+                  id="Sit-anchor"
+                >
+                  Sit
+                </a>
+                 
+                <!---->
+              </li>
+              <li>
+                <a
+                  class="nav-link"
+                  href="#amit"
+                  id="Amit-anchor"
+                >
+                  Amit
+                </a>
+                 
+                <!---->
+              </li>
+              <li>
+                <a
+                  class="nav-link"
+                  href="#test"
+                  id="Test-anchor"
+                >
+                  Test
+                </a>
+                 
+                <!---->
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+     
+    <div
+      class="border-top mt-3 pt-3"
+    >
+      <ul
+        class="nav nav-pills flex-column my-0"
+        data-testid="help-and-feedback"
+      >
+        <li>
+          <a
+            class="nav-link"
+            href="#test-help-and-feedback"
+          >
+            Help and feedback
+          </a>
+           
+          <!---->
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
