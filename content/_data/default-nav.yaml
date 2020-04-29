@@ -455,6 +455,9 @@ sections:
     section_categories:
       - category_title: '.gitlab-ci.yml Reference'
         category_url: 'ci/yaml/README.html'
+        docs:
+          - doc_title: Includes examples
+            doc_url: 'ci/yaml/includes.html'
       - category_title: Introduction
         category_url: 'ci/introduction/'
         docs:
