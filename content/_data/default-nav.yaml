@@ -1327,6 +1327,8 @@ sections:
       - category_title: Testing (end to end)
         category_url: 'development/testing_guide/end_to_end/'
         docs:
+          - doc_title: Beginner's guide to writing end-to-end tests
+            doc_url: 'development/testing_guide/end_to_end/beginners_guide.html'
           - doc_title: Best practices when writing end-to-end tests
             doc_url: 'development/testing_guide/end_to_end/best_practices.html'
           - doc_title: Dynamic element validation
@@ -1341,8 +1343,6 @@ sections:
             doc_url: 'development/testing_guide/end_to_end/style_guide.html'
           - doc_title: Testing with feature flags
             doc_url: 'development/testing_guide/end_to_end/feature_flags.html'
-          - doc_title: Writing end-to-end tests step-by-step
-            doc_url: 'development/testing_guide/end_to_end/quick_start_guide.html'
       - category_title: Translate GitLab
         category_url: 'development/i18n/'
         docs:
