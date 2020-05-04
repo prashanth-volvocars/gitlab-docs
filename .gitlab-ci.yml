@@ -106,11 +106,12 @@ variables:
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
     - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce; fi
+    # Use gzip to compress content
+    - find . -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
   artifacts:
     paths:
       - public
     expire_in: 1d
-
 
 #
 # Compile only on master and stable branches
