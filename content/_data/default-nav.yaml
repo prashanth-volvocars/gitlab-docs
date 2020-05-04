@@ -942,10 +942,8 @@ sections:
   - section_title: Administrator
     section_url: 'administration/'
     section_categories:
-      - category_title: Scaling
-        category_url: 'administration/scaling/'
-      - category_title: Availability
-        category_url: 'administration/availability/'
+      - category_title: Reference Architectures
+        category_url: 'administration/reference_architectures/'
         docs:
           - doc_title: Consul
             doc_url: 'administration/high_availability/consul.html'
