@@ -94,6 +94,7 @@ variables:
 ###############################################
 
 .build_base:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap
   stage: build
   extends:
     - .cache_gem_yarn
@@ -105,9 +106,16 @@ variables:
     # Symlink all README.html to index.html so that we can have clean URLs
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
-    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce; fi
+    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce && cd ../; fi
     # Use gzip to compress content
-    - find . -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
+    - SIZE_BEFORE_GZIP=$(du -sh public/)
+    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
+    - SIZE_AFTER_GZIP=$(du -sh public/)
+    # Minify the assets of the resulting site
+    - ./scripts/minify-assets.sh ./ public/
+    - SIZE_AFTER_MINIFY=$(du -sh public/)
+    # Print size results
+    - echo -e "Size before gzipping $SIZE_BEFORE_GZIP\nSize after gzipping $SIZE_AFTER_GZIP\nSize after minifying $SIZE_AFTER_MINIFY"
   artifacts:
     paths:
       - public
@@ -315,30 +323,6 @@ pages:
     # the image we pull from.
     #
     - mv /usr/share/nginx/html/1* public/
-
-    #
-    # Check the size before minifying
-    #
-    - du -sh public/
-
-    #
-    # Minify the assets of the resulting site. The single versions
-    # will be minified eventually when the minification propagates
-    # to all versions that are included in gitlab-docs:latest
-    # (around 12.7), but we also need to minify the content we
-    # pull from master. Currently, there's no way to exclude
-    # files or directories when minifying, so we minify the whole
-    # site (even the versions that are already minified).
-    # TODO: Move to top.
-    # When all versions are minified, we can move this script
-    # to run first and avoid minifying the already minified versions.
-    #
-    - /scripts/minify-assets.sh ./ public/
-
-    #
-    # Check the size after minifying
-    #
-    - du -sh public/
   artifacts:
     paths:
       - public
