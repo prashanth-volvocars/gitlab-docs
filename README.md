@@ -68,7 +68,8 @@ here's what you will need to have:
 - Ruby 2.6 or greater
 - Node
 - Yarn
-- Xcode *(macOS only)*: Download and install using the App Store
+- Xcode *(macOS only)*: Run `xcode-select --install` to install the command line tools only,
+  or, alternativelly, download and install the entire package using the macOS's App Store.
 
 **Note:**
 On Windows, the process described here would be different, but as most of
@@ -272,6 +273,25 @@ bundle exec nanoc live -p 3004
 
 This will generate and the site and you will be able to view it in your browser
 at <http://localhost:3004>.
+
+### Recompile documentation changes
+
+Due to a [bug on **macOS**](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/81),
+every time you change a file in the documentation (in one
+of the repos: GitLab, Omnibus, Runner, or Charts), you'll need to recompile the site
+to preview your changes:
+
+```shell
+bundle exec nanoc compile
+```
+
+It recompiles incrementally, only updating the recently changed files.
+
+This command can be run in parallel to `bundle exec nanoc live`, in a separate
+terminal tab or window opened in `gitlab-docs`.
+
+Stopping `bundle exec nanoc live` with <kbd>control</kbd> + <kbd>C</kbd> and restarting
+it again also works.
 
 ### Preview on mobile
 
