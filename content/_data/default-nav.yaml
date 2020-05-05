@@ -719,6 +719,8 @@ sections:
             doc_url: 'api/events.html'
           - doc_title: Features flags
             doc_url: 'api/features.html'
+          - doc_title: Feature flag user lists
+            doc_url: 'api/feature_flag_user_lists.html'
           - doc_title: Geo nodes
             doc_url: 'api/geo_nodes.html'
             ee_only: true
