@@ -5,7 +5,6 @@
 <%= render '/canonical_urls.*' %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
-  <%= icons_sprite %>
   <%= render '/gtm.*' %>
   <%= render '/header.*' %>
   <div id="js-version-banner" <%= 'data-is-outdated' if show_version_banner? %> data-latest-version-url="<%= @item.identifier.without_ext + '.html' %>" data-archives-url="/archives/"></div>
@@ -91,5 +90,6 @@
   <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
   <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
   <script src="<%= @items['/frontend/default/default.*'].path %>" data-cookieconsent="ignore"></script>
+  <%= icons_sprite %>
 </body>
 </html>
