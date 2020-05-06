@@ -1097,6 +1097,8 @@ sections:
             doc_url: 'administration/geo/replication/remove_geo_node.html'
           - doc_title: Supported data types
             doc_url: 'administration/geo/replication/datatypes.html'
+          - doc_title: Geo Validation Tests
+            doc_url: 'administration/geo/replication/geo_validation_tests.html'
           - doc_title: Frequently asked questions
             doc_url: 'administration/geo/replication/faq.html'
           - doc_title: Troubleshooting
