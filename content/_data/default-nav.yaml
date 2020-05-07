@@ -376,7 +376,7 @@ sections:
             doc_url: 'user/project/import/svn.html'
           - doc_title: TFVC
             doc_url: 'user/project/import/tfvc.html'
-      - category_title: Operations
+      - category_title: Project operations
         category_url: 'user/project/operations/'
         docs:
           - doc_title: Metrics
@@ -1061,6 +1061,27 @@ sections:
             doc_url: 'user/admin_area/settings/usage_statistics.html'
       - category_title: Object storage
         category_url: 'administration/object_storage.html'
+      - category_title: Operations
+        category_url: 'administration/operations/'
+        docs:
+          - doc_title: Clean up Redis sessions
+            doc_url: 'administration/operations/cleaning_up_redis_sessions.html'
+          - doc_title: Fast SSH key lookup
+            doc_url: 'administration/operations/fast_ssh_key_lookup.html'
+          - doc_title: Filesystem benchmarking
+            doc_url: 'administration/operations/filesystem_benchmarking.html'
+          - doc_title: Move repositories
+            doc_url: 'administration/operations/moving_repositories.html'
+          - doc_title: Multiple Sidekiq processes
+            doc_url: 'administration/operations/extra_sidekiq_processes.html'
+          - doc_title: Sidekiq MemoryKiller
+            doc_url: 'administration/operations/sidekiq_memory_killer.html'
+          - doc_title: Switch to Puma
+            doc_url: 'administration/operations/puma.html'
+          - doc_title: Unicorn
+            doc_url: 'administration/operations/unicorn.html'
+          - doc_title: Use SSH certificates
+            doc_url: 'administration/operations/ssh_certificates.html'
       - category_title: Packages
         category_url: 'administration/packages/'
         docs:
