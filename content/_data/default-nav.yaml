@@ -632,14 +632,14 @@ sections:
   - section_title: Packages
     section_url: 'user/packages/'
     section_categories:
-      - category_title: Conan Repository
-        category_url: 'user/packages/conan_repository/'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Container Registry
         category_url: 'user/packages/container_registry/'
       - category_title: Dependency Proxy
         category_url: 'user/packages/dependency_proxy/'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Conan Repository
+        category_url: 'user/packages/conan_repository/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Maven Repository
