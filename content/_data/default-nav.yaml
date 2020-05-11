@@ -1053,8 +1053,6 @@ sections:
       - category_title: Metrics
         category_url: 'administration/monitoring/'
         docs:
-          - doc_title: Influx
-            doc_url: 'administration/monitoring/performance/influxdb_configuration.html'
           - doc_title: Prometheus
             doc_url: 'administration/monitoring/prometheus/'
           - doc_title: Performance bar
