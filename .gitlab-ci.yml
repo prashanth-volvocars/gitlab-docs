@@ -44,12 +44,16 @@ variables:
     - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
       when: manual
       allow_failure: true
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: manual
 
 .rules_scheduled_manual:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: manual
       allow_failure: true
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: manual
 
 .rules_site_tests:
   rules:
