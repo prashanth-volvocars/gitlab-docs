@@ -1204,6 +1204,8 @@ sections:
             doc_url: 'development/contributing/issue_workflow.html'
           - doc_title: Merge request workflow
             doc_url: 'development/contributing/merge_request_workflow.html'
+          - doc_title: Code review guidelines
+            doc_url: 'development/code_review.html'
           - doc_title: Style guides
             doc_url: 'development/contributing/style_guides.html'
       - category_title: Architecture
