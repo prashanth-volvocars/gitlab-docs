@@ -1200,6 +1200,9 @@ sections:
             doc_url: 'development/contributing/community_roles.html'
           - doc_title: Design and UI
             doc_url: 'development/contributing/design.html'
+          - doc_title: GitLab Development Kit
+            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
+            external_url: true
           - doc_title: Issues workflow
             doc_url: 'development/contributing/issue_workflow.html'
           - doc_title: Merge request workflow
@@ -1300,9 +1303,6 @@ sections:
             doc_url: 'development/geo/framework.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
-        external_url: true
-      - category_title: GitLab Development Kit
-        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
         external_url: true
       - category_title: GitLab development style guides
         category_url: 'development/fe_guide/style/'
