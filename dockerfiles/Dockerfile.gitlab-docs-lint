@@ -13,7 +13,7 @@ MAINTAINER GitLab Documentation Team
 # Install vale
 # We need to build it from source, see https://github.com/errata-ai/vale/issues/128
 
-ENV VALE_VERSION=2.1.0
+ENV VALE_VERSION=2.2.0
 ENV GOBIN=/usr/local/bin
 
 RUN apk add --no-cache wget zip tar make && \
