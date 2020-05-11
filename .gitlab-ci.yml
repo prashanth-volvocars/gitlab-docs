@@ -46,6 +46,7 @@ variables:
       allow_failure: true
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: manual
+      allow_failure: true
 
 .rules_scheduled_manual:
   rules:
@@ -54,6 +55,7 @@ variables:
       allow_failure: true
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: manual
+      allow_failure: true
 
 .rules_site_tests:
   rules:
