@@ -722,7 +722,7 @@ sections:
           - doc_title: Events
             doc_url: 'api/events.html'
           - doc_title: Features flags
-            doc_url: 'api/features.html'
+            doc_url: 'api/feature_flags.html'
           - doc_title: Feature flag user lists
             doc_url: 'api/feature_flag_user_lists.html'
           - doc_title: Geo nodes
