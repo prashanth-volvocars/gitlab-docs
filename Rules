@@ -52,6 +52,13 @@ compile '/archives/index.*' do
   write '/archives/index.html'
 end
 
+compile '/ee/test.md.*' do
+  filter :erb
+  filter :gitlab_kramdown
+  layout '/default.*'
+  write '/ee/test.html'
+end
+
 compile '/**/*.html' do
   layout '/default.*'
 end
