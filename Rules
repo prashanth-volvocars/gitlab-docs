@@ -52,7 +52,7 @@ compile '/archives/index.*' do
   write '/archives/index.html'
 end
 
-compile '/ee/test.md.*' do
+compile '/ee/test.erb.md' do
   filter :erb
   filter :gitlab_kramdown
   layout '/default.*'
