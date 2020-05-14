@@ -216,6 +216,8 @@ sections:
         category_url: 'gitlab-basics/create-project.html'
       - category_title: Description templates
         category_url: 'user/project/description_templates.html'
+      - category_title: Deploy keys
+        category_url: 'user/project/deploy_keys/'
       - category_title: Deploy tokens
         category_url: 'user/project/deploy_tokens/'
       - category_title: File finder
