@@ -5,19 +5,19 @@
 ########################################
 
 ## Versions pointing to archives/
-- source: '/(content\/_data\/versions.yaml|layouts\/archives.html)/'
+- source: '/(content\/_data\/versions\.yaml|layouts\/archives\.html)/'
   public: 'archives/'
 
 ## Everything under content/*/index.md
-- source: '/content/(.+)\/index.md/'
+- source: '/content/(.+)\/index\.md/'
   public: '\1'
 
 ## Home page
-- source: '/(content\/index.erb|layouts\/home.html)'
+- source: '/(content\/index\.erb|layouts\/home\.html)/'
   public: 'index.html'
 
 ## 404
-- source: '/(content|layouts)\/404.html'
+- source: '/(content|layouts)\/404\.html/'
   public: '404.html'
 
 ##########################
@@ -27,7 +27,7 @@
 ##########################
 
 ## Everything ending in erb hosted under content/
-- source: '/content\/(.+).erb/'
+- source: '/content\/(.+)\.erb/'
   public: '\1'
 
 ## HTML files
