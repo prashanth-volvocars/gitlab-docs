@@ -971,8 +971,6 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Database
             doc_url: 'administration/high_availability/database.html'
-          - doc_title: Gitaly
-            doc_url: 'administration/high_availability/gitaly.html'
           - doc_title: GitLab
             doc_url: 'administration/high_availability/gitlab.html'
           - doc_title: Load balancer
@@ -1012,10 +1010,6 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Git LFS administration
             doc_url: 'administration/lfs/lfs_administration.html'
-          - doc_title: Gitaly
-            doc_url: 'administration/gitaly/'
-          - doc_title: Praefect
-            doc_url: 'administration/gitaly/praefect.html'
           - doc_title: GitLab Pages
             doc_url: 'administration/pages/'
           - doc_title: Health Check
@@ -1068,6 +1062,11 @@ sections:
         category_url: 'user/admin_area/broadcast_messages.html'
         ee_only: true
         ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
+      - category_title: Gitaly
+        category_url: 'administration/gitaly/'
+        docs:
+          - doc_title: Gitaly Cluster
+            doc_url: 'administration/gitaly/praefect.html'
       - category_title: Metrics
         category_url: 'administration/monitoring/'
         docs:
