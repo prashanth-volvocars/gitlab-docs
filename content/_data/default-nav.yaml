@@ -1131,7 +1131,7 @@ sections:
             doc_url: 'administration/geo/replication/object_storage.html'
           - doc_title: Using Docker Registry
             doc_url: 'administration/geo/replication/docker_registry.html'
-          - doc_title: Geo high availability
+          - doc_title: Geo for multiple servers
             doc_url: 'administration/geo/replication/high_availability.html'
           - doc_title: Geo security review
             doc_url: 'administration/geo/replication/security_review.html'
