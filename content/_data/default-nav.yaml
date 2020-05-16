@@ -1130,7 +1130,7 @@ sections:
           - doc_title: Using Docker Registry
             doc_url: 'administration/geo/replication/docker_registry.html'
           - doc_title: Geo for multiple servers
-            doc_url: 'administration/geo/replication/high_availability.html'
+            doc_url: 'administration/geo/replication/multiple_servers.html'
           - doc_title: Geo security review
             doc_url: 'administration/geo/replication/security_review.html'
           - doc_title: Location-aware Git remote URLs
