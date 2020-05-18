@@ -735,6 +735,8 @@ sections:
             doc_url: 'api/feature_flags.html'
           - doc_title: Feature flag user lists
             doc_url: 'api/feature_flag_user_lists.html'
+          - doc_title: Freeze periods
+            doc_url: 'api/freeze_periods.html'
           - doc_title: Geo nodes
             doc_url: 'api/geo_nodes.html'
             ee_only: true
