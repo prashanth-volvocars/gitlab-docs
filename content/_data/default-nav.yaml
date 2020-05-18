@@ -292,6 +292,10 @@ sections:
             doc_url: 'user/project/labels.html'
           - doc_title: Milestones
             doc_url: 'user/project/milestones/'
+          - doc_title: Related issues
+            doc_url: 'user/project/issues/related_issues.html'
+            ee_only: true
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Service Desk
             doc_url: 'user/project/service_desk.html'
             ee_only: true
