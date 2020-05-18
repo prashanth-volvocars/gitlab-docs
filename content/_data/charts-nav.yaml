@@ -79,6 +79,8 @@ sections:
             doc_url: 'advanced/external-db/'
           - doc_title: External Gitaly
             doc_url: 'advanced/external-gitaly/'
+          - doc_title: External Mattermost
+            doc_url: 'advanced/external-mattermost/'
           - doc_title: External Nginx
             doc_url: 'advanced/external-nginx/'
           - doc_title: External object storage
