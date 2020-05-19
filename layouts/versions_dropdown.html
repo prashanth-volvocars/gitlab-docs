@@ -17,7 +17,7 @@ Version
     <% if archives? %>
     Archives
     <% else %>
-      <% if ENV['NANOC_ENV'] == 'production' %>
+      <% if is_production? %>
         <%= ENV['CI_COMMIT_REF_NAME'] == 'master' ? 'GitLab.com' : ENV['CI_COMMIT_REF_NAME'] %>
       <% else %>
         Versions

@@ -16,7 +16,7 @@ if the link doesn't end with README.md or index.md
   if the link doesn't start with ce
     use its initial path
 <% end %>
-<% if ENV['NANOC_ENV'] == 'production' %>
+<% if is_production? %>
   <% if (@item.identifier =~ /(index|README)\.md$/) == 0 %>
     <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
       <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />

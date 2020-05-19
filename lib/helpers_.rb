@@ -6,3 +6,4 @@ include Nanoc::Helpers::EditOnGitLab
 include Nanoc::Helpers::VersionsDropdown
 include Nanoc::Helpers::IconsHelper
 include Nanoc::Helpers::ReadingTimeHelper
+include Nanoc::Helpers::Generic

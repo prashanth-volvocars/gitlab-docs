@@ -24,7 +24,7 @@ module Nanoc::Helpers
     # Production is the only environment where we serve multiple versions.
     #
     def show_version_banner?
-      ENV['NANOC_ENV'] == 'production' && !latest?
+      is_production? && !latest?
     end
 
     #

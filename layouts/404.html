@@ -19,7 +19,7 @@
   <%= render '/docsearch.*' %>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
   <script src="<%= @items['/frontend/404/404.*'].path %>"></script>
-  <% if ENV['NANOC_ENV'] == 'production' %>
+  <% if is_production? %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
   <% end %>
