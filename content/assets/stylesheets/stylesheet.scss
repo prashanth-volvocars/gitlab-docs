@@ -3,6 +3,7 @@ version: 66
 ---
 
 @import "variables";
+@import "utilities";
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -391,7 +392,6 @@ li {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-
   }
 
   .breadcrumbs {
@@ -1147,403 +1147,125 @@ a.global-nav-link {
 }
 
 
-// Home page //
-
+// Home page styles
 .landing {
-
-  h2, h3, h4, h5, h6 {
-    color: $header-color;
+  p {
+    color: $help-gray-900;
   }
 
-  .landing-header {
-    padding: 120px 20px 220px;
-    color: $white;
-    background: $landing-background;
-
-    input {
-      border-radius: $border-radius;
-      font-size: 18px;
-      line-height: inherit;
-      outline: 0;
-    }
-
-    img {
-      width: 280px;
-    }
-
-    h1 {
-      text-align: center;
-      letter-spacing: normal;
-      white-space: nowrap;
-
-      span {
-        margin-left: 8px;
-      }
-
-    }
-
-    @media all and (max-width: $mobile-width) {
-      h1 {
-        font-size: 22px;
-        transform: translateY(20px);
-      }
-    }
-
+  .landing-header-title {
+    line-height: 52px;
+    font-size: 45px;
   }
 
-  h1 {
-    font-size: 34px;
-    font-weight: 300;
-    margin-top: 20px;
-    border-bottom: 0;
-
-    a {
-      color: $white;
-      text-decoration: none;
-    }
-
+  .landing-header-subtitle {
+    font-size: 32px;
+    line-height: 36px;
   }
 
-  .input-container {
-    position: relative;
-    margin-top: 30px;
-
-    img {
-      position: absolute;
-      left: 12px;
-      top: calc(50% - 10px);
-      height: 20px;
-      width: 20px;
-      z-index: 1;
-      opacity: .8;
-    }
-
-    input:focus {
-      box-shadow: 0 10px 20px $secondary-box-shadow;
-    }
-
-  }
-
-  .docsearch {
-    box-sizing: content-box;
-    position: relative;
-    padding: 12px 12px 12px 40px;
-    border: 0;
-    color: $black;
-    width: 500px;
-    min-width: 500px;
-
-    @media all and (max-width: $mobile-width) {
-      min-width: 230px;
-      width: 230px;
+  .popular-topics-title {
+    color: $gds-indigo-700;
+    font-size: larger;
+    .gl-icon {
+      fill: $help-indigo-500;
     }
   }
 
-  .scrolling-header {
-    background: $color-white;
-    border-bottom: 1px solid $color-gray-extra-light;
-
-    @media all and (max-width: $mobile-width) {
-      padding: 10px;
+  .header {
+    a:hover, a:visited:hover {
+      color: $header-font-color;
     }
-
-  }
-
-  .header-link {
-    color: $color-white;
-
-    @media all and (max-width: $mobile-width) {
-      font-size: .8em;
-    }
-
-  }
-
-  .header-link:hover {
-    color: $color-white;
-  }
-
-  .scrolling-header-links {
-    color: $black;
-  }
-
-  .scrolling-header-links:hover {
-    color: $black;
-  }
-
-  .landing-header-top {
-    z-index: 1000;
-    position: fixed;
-    width: 100%;
-    height: $page-header-height;
-    padding: 4px 24px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    white-space: nowrap;
-    overflow: auto;
-    background-color: $landing-background;
-    transition: .2s cubic-bezier(0, 0, 0, 1);
-
-    a:hover {
-      opacity: .8;
-    }
-
     p {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .logo {
-      height: 24px;
-      margin-right: 10px;
-    }
-
-    .logo-container {
-      margin-right: auto;
-    }
-
-    .nav-toggle-icon {
       color: $white;
     }
+  }
 
-    .nav-item {
-      padding: 0 $nav-item-padding;
-      margin-right: 4px;
-      text-align: center;
+  .container-fluid {
+    padding-top: 40px;
+    background-color: $white;
+  }
 
-      @media all and (max-width: $mobile-width) {
-        font-size: .8em;
-        padding: 10px;
-        margin-right: 0;
+  .content {
+    max-width: $landing-page-content;
+  }
+
+  .sidebar-left {
+    @include sidebar-fixed;
+    background-color: $gds-gray-50;
+    .list-group-item {
+      line-height: 24px;
+      background-color: $gds-gray-50;
+      color: $landing-sidebar-gray;
+      padding-top: $sidebar-padding;
+      padding-bottom: $sidebar-padding;
+      padding-right: $sidebar-padding;
+
+      &:hover {
+        background-color: $landing-sidebar-gray-light;
       }
 
-    }
-
-    @media all and (max-width: $mobile-width) {
-      height: auto;
-      padding: 10px;
-    }
-
-    ul {
-      text-align: right;
-      list-style-type: none;
-      display: inline-block;
-
-      @media all and (max-width: $mobile-width) {
-        display: none;
+      .gl-icon {
+        fill: $landing-sidebar-gray-500;
       }
-    }
 
-    @media all and (max-width: $mobile-width) {
       &.active {
-        display: block;
+        background-color: $landing-sidebar-gray-light;
+        font-weight: 600;
+        box-shadow: inset -4px 0 0 $landing-gl-indigo;
 
-        ul {
-          display: block;
-          text-align: left;
-          padding: 0;
-          width: 100%;
+        .gl-icon {
+          fill: $help-indigo-500;
         }
 
-        li {
-          display: block;
-          padding: 10px 0;
+        &:hover {
+          color: $gds-indigo-800;
         }
       }
     }
+  }
 
-    li {
-      display: inline-block;
-      line-height: 20px;
-      vertical-align: middle;
+  .card {
+    border-color: $help-gray-100;
+
+    &:hover {
+      background-color: $landing-sidebar-gray-light;
     }
 
-    input {
-      box-sizing: content-box;
-      border: 1px solid $search-border;
-      border-radius: $border-radius;
-      -webkit-appearance: none;
-      padding: 7px 11px 7px 28px;
-      margin: -20;
-      width: 190px;
-      background: $white url("<%= @items['/assets/images/icon_search.svg'].path %>") 7px 8px / 16px no-repeat;
+    .card-title {
+      color: $gds-indigo-700;
+      font-size: larger;
+    }
 
-      @media(max-width:1099px) {
-        width: 130px;
+    .product-img {
+      width: 55px;
+    }
+
+    @media all and (min-width: $medium-width) {
+      .gitlab-image {
+        width: 86px;
       }
     }
-
-    .nav-container {
-      line-height: 1;
-      margin: auto 0;
-      display: flex;
-    }
-
-    .nav-toggle {
-      display: none;
-
-      @media all and (max-width: $mobile-width) {
-        display: inline-block;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-      }
-
-    }
-
   }
-
-  .footer-link-title {
-    color: $color-white;
-  }
-
-  .row {
-    margin: 0;
-    max-width: 100%;
-  }
-
-  .topics-container {
-    margin-top: 60px;
-
-    .topic {
-      color: $blog-color-text;
-      width: 100%;
-
-      @media all and (max-width: $mobile-width) {
-        margin-bottom: 20px;
-      }
-
-    }
-
-    .topic:hover {
-      opacity: .6;
-      color: $black;
-    }
-
-    .topic:not(:first-child) {
-      margin-left: 40px;
-
-      @media all and (max-width: $mobile-width) {
-        margin-left: 0;
-      }
-
-    }
-
-    h4 {
-      font-weight: 600;
-      color: $black;
-    }
-
-    @media all and (max-width: $mobile-width) {
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-  }
-
-  .popular-topics {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 30px 160px;
-
-    h1 {
-      text-align: center;
-      color: $header-color;
-    }
-
-    @media all and (max-width: $mobile-width) {
-      flex-wrap: wrap;
-      padding-bottom: 80px;
-    }
-
-  }
-
 }
 
 // End of landing wrapper
 
-.main-topics {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
-  top: -80px;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-
-  li {
-    display: inline-block;
-    background-color: $white;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px $main-box-shadow;
-    margin: 10px;
-    flex: 1 0 270px;
-    min-width: 270px;
-
-    @media all and (max-width: $mobile-width) {
-      width: 100%;
-      min-width: auto;
-      flex: initial;
-      margin: 20px 0 0;
-    }
-
-    a p, a:visited p {
-      color: $black;
-      vertical-align: bottom;
-    }
-
-    .wrapper {
-      padding: 40px;
-
-      img {
-        height: 76px;
-        margin: auto auto 20px;
-        transition: .2s cubic-bezier(0, 0, 0, 1);
-      }
-
-      h2 {
-        border-bottom: 1px solid $hr-border-color;
-      }
-
-      .topic-info {
-        transition: .2s cubic-bezier(0, 0, 0, 1);
-      }
-
-      @media all and (max-width: $mobile-width) {
-        padding: 30px;
-      }
-    }
-
-    h2 {
-      text-align: center;
-      font-weight: 400;
-    }
-
-    a, a:visited {
-      text-decoration: none;
-
-      h2 {
-        height: 50px;
-        margin: 0 0 25px;
-
-        @media all and (max-width: $mobile-width) {
-          height: auto;
-        }
-      }
-    }
+.footer-new {
+  border-color: $gds-gray-100;
+  max-width: $landing-page-content;
+  font-size: $body-font-size;
+  a {
+    color: $landing-sidebar-gray-500;
   }
 
-  li:hover {
-    img {
-      transform: scale(1.05);
-    }
-    .topic-info {
-      transform: translateY(4px);
-    }
+  .fa {
+    font-size: 20px;
+    color: $landing-sidebar-gray-400;
   }
 
+  .fa-creative-commons, .fa-user-circle-o, .fa-copyright {
+    color: $gds-gray-1000;
+  }
 }
 
 // https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246

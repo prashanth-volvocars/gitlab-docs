@@ -1,66 +1,145 @@
 ---
 title: GitLab Documentation
 ---
-<div class="row">
-  <ul class="main-topics" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-    <% if ENV['NANOC_ENV'] == 'production' %>
-      <% @config[:products].each do |name, product| %>
-        <% if product[:expose] == true %>
-          <li>
-            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper flex-container flex-column">
-                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                <div class="topic-info">
-                  <h2 itemprop="name"><%= product[:short_name] %></h2>
-                  <p><%= product[:description] %></p>
-                </div>
-              </div>
-            </a>
-          </li>
+<section class="container-fluid px-0 d-flex">
+  <nav class="sidebar-left d-none d-md-block border-right p-0">
+    <div class="list-group list-group-flush pt-5">
+      <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
+        <%= icon('home', nil, 'menu-icon') %> Home
+      </a>
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
+          <% end %>
+        <% end %>
+        <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
+          <% end %>
         <% end %>
       <% end %>
-    <% else %>
+    </div>
+  </nav>
+  <main class="content">
+    <div class="row px-4 pt-4">
+      <div class="col-12">
+        <h1 class="landing-header-title border-bottom-0 font-weight-bold">Welcome to GitLab Docs</h1>
+        <p class="text-break">Here you can access the complete documentation for GitLab, the single application for the <span class="text-decoration-underline"><a href="https://docs.gitlab.com/ee/README.html#the-entire-devops-lifecycle">entire DevOps lifecycle</a></span>.</p>
+      </div>
+      <div class="col-12 pb-3">
+        <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Select a product area</h2>
+      </div>
+    </div>
+    <div class="row px-4" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+      <% if ENV['NANOC_ENV'] == 'production' %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <% if product[:short_name] == 'GitLab' %>
+              <div class="col-12  mb-3">
+            <% else %>
+              <div class="col-12 col-md-4 mb-3">
+            <% end %>
+          <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+            <div class="card h-100">
+              <div class="row flex-nowrap w-100">
+                <div class="col-2">
+                  <% if product[:short_name] == 'GitLab' %>
+                    <img class="product-img pl-3 py-3 gitlab-image" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                  <% else %>
+                    <img class="product-img pl-3 py-3" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                  <% end %>
+                </div>
+                <div class="col-10">
+                  <div class="card-body py-3">
+                    <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                    <p class="card-text text-break"><%= product[:description] %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+      <% end %>
+      <% else %>
       <% @config[:products].each do |name, product| %>
         <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-          <li>
-            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
-              <div class="wrapper flex-container flex-column">
-                <img src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                <div class="topic-info">
-                  <h2 itemprop="name"><%= product[:short_name] %></h2>
-                  <p><%= product[:description] %></p>
+          <% if product[:short_name] == 'GitLab' %>
+            <div class="col-md-12 mb-3">
+          <% else %>
+            <div class="col-12 col-md-4 mb-3">
+          <% end %>
+            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+              <div class="card h-100">
+                <div class="row flex-nowrap w-100">
+                  <div class="col-2">
+                    <% if product[:short_name] == 'GitLab' %>
+                      <img class="product-img pl-3 py-3 gitlab-image" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                    <% else %>
+                      <img class="product-img pl-3 py-3" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                    <% end %>
+                  </div>
+                  <div class="col-10">
+                    <div class="card-body py-3">
+                      <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                      <p class="card-text text-break"><%= product[:description] %></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </a>
-          </li>
+          </div>
         <% end %>
       <% end %>
-    <% end %>
-  </ul>
-</div>
-<div class="popular-topics">
-  <h1>Most popular topics</h1>
-  <div class="topics-container flex-container">
-  <!-- The links below are absolute so they are valid without needing the GitLab project in place -->
-    <a class="topic" href="https://docs.gitlab.com/ee/user/project/import/index.html">
-      <h4>Moving to GitLab</h4>
-      <p>Learn how to migrate your projects to GitLab.com or your own GitLab instance</p>
-    </a>
-    <a class="topic" href="https://docs.gitlab.com/ee/ci/yaml/README.html">
-      <h4>CI/CD YAML reference</h4>
-      <p>Learn how to configure gitlab-ci.yml for your project</p>
-    </a>
-    <a class="topic" href="https://docs.gitlab.com/ee/api/README.html">
-      <h4>API</h4>
-      <p>Automate GitLab via a simple and powerful API</p>
-    </a>
-    <a class="topic" href="https://docs.gitlab.com/ee/ssh/README.html">
-      <h4>SSH</h4>
-      <p>Learn how to create an SSH key pair and configure GitLab to authenticate via SSH from your local computer</p>
-    </a>
-    <a class="topic" href="https://docs.gitlab.com/ee/user/gitlab_com/index.html">
-      <h4>GitLab.com Settings</h4>
-      <p>Information about the settings that are used on GitLab.com, like SSH keys fingerprints, shared Runners configuration, etc.</p>
-    </a>
-  </div>
-</div>
+      <% end %>
+    </div>
+      <div class="row px-4 mb-3">
+        <div class="col-12 pb-3">
+          <p class="h2 border-bottom-0 font-weight-bold text-break">Popular Topics</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/project/import/index.html">
+            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('tanuki', nil, 'menu-icon') %> Moving to GitLab</h3>
+            <p class="pl-4 ml-1 mt-1 text-break">Learn how to migrate your projects to GitLab.com or your own GitLab instance</p>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/ci/yaml/README.html">
+            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('doc-code', nil, 'menu-icon') %> CI/CD YAML reference</h3>
+            <p class="pl-4 ml-1 mt-1 text-break">Learn how to configure gitlab-ci.yml for your project</p>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/api/README.html">
+            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('code', nil, 'menu-icon') %> API</h3>
+            <p class="pl-4 ml-1 mt-1 text-break">Automate GitLab via a simple and powerful API.</p>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/ssh/README.html">
+            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('key', nil, 'menu-icon') %> SSH</h3>
+            <p class="pl-4 ml-1 mt-1 text-break">Learn how to create an SSH key pair and configure GitLab to authenticate via SSH from your local computer</p>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/gitlab_com/index.html">
+            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('settings', nil, 'menu-icon') %> GitLab.com Settings</h3>
+            <p class="pl-4 ml-1 mt-1 text-break">Information about the settings that are used on GitLab.com, like SSH keys fingerprints, shared Runners configuration, etc.</p>
+          </a>
+        </div>
+      </div>
+      <div class="row px-4">
+        <div class="col">
+          <%= render '/feedback.*' %>
+        </div>
+      </div>
+      <div class="row mr-1">
+        <div class="col">
+          <%= render '/footer-new.*' %>
+      </div>
+    </div>
+  </main>
+  <aside class="sidebar-right d-none d-lg-block"></aside>
+</section>
