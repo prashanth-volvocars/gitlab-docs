@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import "variables";
@@ -155,9 +155,7 @@ version: 7
 }
 
 @media(min-width:1100px) and (max-width:1600px) {
-  $doc-nav-desired-width: 20vw;
-  // Get around the scroll bar
-  $doc-nav-width: $doc-nav-desired-width;
+  $doc-nav-width: 19vw;
 
   .main.class.has-toc {
     width: 64vw;
