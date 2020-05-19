@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const navBar = document.getElementById('landing-header-bar');
-  const navToggle = document.getElementById('docs-nav-toggle');
+  const navBar = document.querySelector('.header');
+  const navToggle = document.querySelector('.nav-toggle');
   navToggle.addEventListener('click', () => navBar.classList.toggle('active'));
 });

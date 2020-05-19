@@ -21,10 +21,15 @@ $h-margin-bottom: 10px;
 
 // Padding
 $nav-item-padding: 7px;
+$sidebar-padding: 7px;
 
 // Heights
 $page-header-height: 40px;
 $banner-height: 31px;
+
+// Width
+$landing-page-content: 955px;
+$sidebar-width: 236px;
 
 // GitLab colors
 // Tanuki
@@ -50,6 +55,7 @@ $gds-gray-800: #4f4f4f;
 $gds-gray-900: #2e2e2e;
 $gds-gray-950: #1f1f1f;
 $gds-black: #000;
+$gds-gray-1000: #666;
 
 // Transparency
 $gds-t-gray-a2: rgba($gds-black, .02);
@@ -74,6 +80,7 @@ $gds-purple-900: #2f2a6b;
 // Indigo palatte
 $gds-indigo-100: #dbdbf8;
 $gds-indigo-600: #5252b5;
+$gds-indigo-700: #41419f;
 $gds-indigo-800: #393982;
 //// end of GitLab Design System's colors ////
 
@@ -178,13 +185,11 @@ $pre-code-color: #2b303b;
 
 // Home page colors
 $header-color: #55448d;
-$landing-background: #352958;
-$topic-border: rgb(215, 215, 215);
-$topic-ee-header-color: rgb(107, 79, 187);
-$topic-omnibus-header-color: rgb(9, 96, 153);
-$topic-runner-header-color: rgb(203, 88, 15);
-$subtopic-color: rgba(0, 0, 0, .6);
-$subtopic-border-color: rgb(79, 172, 225);
+$landing-gl-indigo: #41419f;
+$landing-sidebar-gray: #525252;
+$landing-sidebar-gray-light: #f0f0f0;
+$landing-sidebar-gray-400: #868686;
+$landing-sidebar-gray-500: #666;
 
 // Help & feedback section colors
 $help-indigo-50: #f1f1ff;
@@ -206,7 +211,6 @@ $white: #fff;
 $black: #333;
 
 // Colors
-
 $color-white: #fff;
 $color-white-alt: #d9ccff;
 $color-transparent: rgba(0, 0, 0, 0);
@@ -266,7 +270,6 @@ $mvp-table-border: #584985;
 $mvp-table-header-color: #9583c9;
 
 $landing-community-bg: #34373c;
-$landing-organization-color: #d7d7d7;
 
 $downloads-btn-color: #7769a0;
 $downloads-btn-hover-color: #403366;

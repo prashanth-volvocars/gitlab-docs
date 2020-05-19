@@ -5,24 +5,10 @@
     <link rel="canonical" href="<%= @config[:base_url] %>/">
   </head>
   <body class="landing">
+    <%= icons_sprite %>
     <%= render '/gtm.*' %>
-    <%= render '/landing-header.*' %>
-    <div class="landing-header flex-container flex-column justify-center align-center">
-      <h1 class="flex-container">👋 Hello, how can we help?</h1>
-      <div itemscope itemtype="http://schema.org/WebSite">
-        <meta itemprop="url" content="https://docs.gitlab.com"/>
-        <form id="search-form" action="/search/" method="get" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-          <meta itemprop="target" content="https://docs.gitlab.com/search/?q={q}"/>
-          <div class="input-container">
-            <img src="/assets/images/icon_search.svg" alt="search-icon">
-            <input itemprop="query-input" type="text" name="q" class="docsearch" placeholder="Find anything in our docs" autofocus required/>
-          </div>
-          <input type="submit" style="visibility: hidden; position:absolute;"/>
-        </form>
-      </div>
-    </div>
+    <%= render '/header.*' %>
     <%= yield %>
-    <%= render '/footer.*' %>
     <%= render '/docsearch.*' %>
     <% if ENV['NANOC_ENV'] == 'production' and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
     <%# Add analytics only in production %>
@@ -30,5 +16,8 @@
     <% end %>
     <%= render '/schema-microdata.*' %>
     <script src="<%= @items['/frontend/home/home.*'].path %>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
