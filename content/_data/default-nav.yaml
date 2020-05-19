@@ -1260,11 +1260,13 @@ sections:
             doc_url: 'development/documentation/site_architecture/global_nav.html'
           - doc_title: Monthly release process
             doc_url: 'development/documentation/site_architecture/release_process.html'
-      - category_title: Telemetry
-        category_url: 'telemetry/'
+      - category_title: Telemetry guide
+        category_url: 'development/telemetry/'
         docs:
-          - doc_title: Snowplow
-            doc_url: 'telemetry/snowplow.html'
+          - doc_title: Usage Ping guide
+            doc_url: 'development/telemetry/usage_ping.html'
+          - doc_title: Snowplow guide
+            doc_url: 'development/telemetry/snowplow.html'
       - category_title: Experiment guide
         category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
