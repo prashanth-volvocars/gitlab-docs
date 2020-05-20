@@ -107,6 +107,12 @@ namespace :release do
 
     raise 'You need to specify a version, like 10.1' unless version =~ /\A\d+\.\d+\z/
 
+    # Check if the chart version has been defined
+    unless chart_version_added?(version)
+      abort('Rake aborted! The chart version does not exist. Make sure `content/_data/charts_versions.yaml` is updated.
+            https://docs.gitlab.com/ee/development/documentation/site_architecture/release_process.html#1-add-the-chart-version')
+    end
+
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
     puts "Stashing changes"
@@ -119,6 +125,7 @@ namespace :release do
     # Create branch
     `git checkout -b #{version}`
 
+    # Replace the branches variables in Dockerfile.X.Y
     dockerfile = "#{source_dir}/Dockerfile.#{version}"
 
     if File.exist?(dockerfile)
@@ -132,6 +139,18 @@ namespace :release do
 
     open(dockerfile, 'w') do |post|
       post.puts content
+    end
+
+    # Replace the branches variables in .gitlab-ci.yml
+    ci_yaml = "#{source_dir}/.gitlab-ci.yml"
+    ci_yaml_content = File.read(ci_yaml)
+    ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '"+version.tr('.', '-')+"-stable-ee'")
+    ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '"+version.tr('.', '-')+"-stable'")
+    ci_yaml_content.gsub!("BRANCH_RUNNER: 'master'", "BRANCH_RUNNER: '"+version.tr('.', '-')+"-stable'")
+    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '"+chart_version(version).tr('.', '-')+"-stable'")
+
+    open(ci_yaml, 'w') do |post|
+      post.puts ci_yaml_content
     end
 
     # Add and commit
