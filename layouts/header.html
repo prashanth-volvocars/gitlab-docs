@@ -24,7 +24,7 @@
       <div class="version-dropdown-mobile">
         <%= render '/versions_dropdown.*' %>
       </div>
-      <% if ENV['NANOC_ENV'] == 'production' %>
+      <% if is_production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <li class="nav-item">

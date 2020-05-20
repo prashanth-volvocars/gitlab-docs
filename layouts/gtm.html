@@ -1,4 +1,4 @@
-<% if ENV['NANOC_ENV'] == 'production' and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+<% if is_production? and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
   <%# Adds GTM only in production // leave this immediately after the opening the body tag%>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCXKT5"

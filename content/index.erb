@@ -7,7 +7,7 @@ title: GitLab Documentation
       <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
         <%= icon('home', nil, 'menu-icon') %> Home
       </a>
-      <% if ENV['NANOC_ENV'] == 'production' %>
+      <% if is_production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
@@ -33,7 +33,7 @@ title: GitLab Documentation
       </div>
     </div>
     <div class="row px-4" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-      <% if ENV['NANOC_ENV'] == 'production' %>
+      <% if is_production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <% if product[:short_name] == 'GitLab' %>
