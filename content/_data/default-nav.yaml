@@ -517,7 +517,7 @@ sections:
           - doc_title: Deprecated variables
             doc_url: 'ci/variables/deprecated_variables.html'
       - category_title: Environments
-        category_url: 'ci/environments/index.html'
+        category_url: 'ci/environments/'
         docs:
           - doc_title: Protected environments
             doc_url: 'ci/environments/protected_environments.html'
