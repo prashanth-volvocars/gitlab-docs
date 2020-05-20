@@ -459,6 +459,10 @@ sections:
         category_url: 'user/snippets.html'
       - category_title: Static Site Editor
         category_url: 'user/project/static_site_editor/'
+      - category_title: Status Page
+        category_url: 'user/project/status_page/'
+        ee_only: true
+        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Wikis
         category_url: 'user/project/wiki/'
 
