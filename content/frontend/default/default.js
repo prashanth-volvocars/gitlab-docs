@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import setupTableOfContents from './setup_table_of_contents';
 import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
 
@@ -40,4 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     },
   });
+
+  setupTableOfContents();
 });
