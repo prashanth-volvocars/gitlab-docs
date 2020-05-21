@@ -13,7 +13,7 @@ title: GitLab Documentation
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
           <% end %>
         <% end %>
-        <% else %>
+      <% else %>
         <% @config[:products].each do |name, product| %>
           <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
@@ -37,67 +37,63 @@ title: GitLab Documentation
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <% if product[:short_name] == 'GitLab' %>
-              <div class="col-12  mb-3">
+              <div class="col-md-12 mb-3 gitlab-product-card">
             <% else %>
-              <div class="col-12 col-md-4 mb-3">
+              <div class="col-12 col-lg-4 mb-3">
             <% end %>
-          <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
-            <div class="card h-100">
-              <div class="row flex-nowrap w-100">
-                <div class="col-2">
-                  <% if product[:short_name] == 'GitLab' %>
-                    <img class="product-img pl-3 py-3 gitlab-image" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                  <% else %>
-                    <img class="product-img pl-3 py-3" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                  <% end %>
-                </div>
-                <div class="col-10">
-                  <div class="card-body py-3">
-                    <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
-                    <p class="card-text text-break"><%= product[:description] %></p>
+                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+                  <div class="card h-100">
+                    <div class="flex-nowrap w-100">
+                      <div class="col-12 d-flex flex-md-row">
+                        <div>
+                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                        </div>
+                        <div>
+                          <div class="card-body">
+                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                            <p class="card-text text-break"><%= product[:description] %></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
-            </div>
-          </a>
-        </div>
       <% end %>
       <% end %>
       <% else %>
-      <% @config[:products].each do |name, product| %>
-        <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-          <% if product[:short_name] == 'GitLab' %>
-            <div class="col-md-12 mb-3">
-          <% else %>
-            <div class="col-12 col-md-4 mb-3">
-          <% end %>
-            <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
-              <div class="card h-100">
-                <div class="row flex-nowrap w-100">
-                  <div class="col-2">
-                    <% if product[:short_name] == 'GitLab' %>
-                      <img class="product-img pl-3 py-3 gitlab-image" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                    <% else %>
-                      <img class="product-img pl-3 py-3" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                    <% end %>
-                  </div>
-                  <div class="col-10">
-                    <div class="card-body py-3">
-                      <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
-                      <p class="card-text text-break"><%= product[:description] %></p>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <% if product[:short_name] == 'GitLab' %>
+              <div class="col-md-12 mb-3 gitlab-product-card">
+            <% else %>
+              <div class="col-12 col-lg-4 mb-3">
+            <% end %>
+                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
+                  <div class="card h-100">
+                    <div class="flex-nowrap w-100">
+                      <div class="col-12 d-flex flex-md-row">
+                        <div>
+                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
+                        </div>
+                        <div>
+                          <div class="card-body">
+                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
+                            <p class="card-text text-break"><%= product[:description] %></p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
-            </a>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
       <% end %>
     </div>
       <div class="row px-4 mb-3">
         <div class="col-12 pb-3">
-          <p class="h2 border-bottom-0 font-weight-bold text-break">Popular Topics</p>
+          <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Popular Topics</h2>
         </div>
         <div class="col-12 col-md-4">
           <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/project/import/index.html">

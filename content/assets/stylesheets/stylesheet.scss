@@ -1161,6 +1161,7 @@ a.global-nav-link {
   .landing-header-subtitle {
     font-size: 32px;
     line-height: 36px;
+    margin-bottom: 0;
   }
 
   .popular-topics-title {
@@ -1226,6 +1227,7 @@ a.global-nav-link {
 
   .card {
     border-color: $help-gray-100;
+    font-size: 1.1em;
 
     &:hover {
       background-color: $landing-sidebar-gray-light;
@@ -1240,12 +1242,8 @@ a.global-nav-link {
       width: 55px;
     }
 
-    @media all and (min-width: $medium-width) {
-      .gitlab-image {
-        width: 86px;
-      }
-    }
   }
+
 }
 
 // End of landing wrapper
