@@ -113,6 +113,11 @@ namespace :release do
             https://docs.gitlab.com/ee/development/documentation/site_architecture/release_process.html#1-add-the-chart-version')
     end
 
+    # Check if local branch exists
+    if local_branch_exist?(version)
+      abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.")
+    end
+
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
     puts "Stashing changes"

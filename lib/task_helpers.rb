@@ -51,6 +51,11 @@ def git_workdir_dirty?
   !status.empty?
 end
 
+def local_branch_exist?(branch)
+  status = `git branch --list #{branch}`
+  !status.empty?
+end
+
 def chart_version_added?(gitlab_version)
   config = YAML.load_file('./content/_data/chart_versions.yaml')
   config.key?(gitlab_version)
