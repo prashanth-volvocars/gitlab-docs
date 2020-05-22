@@ -154,8 +154,8 @@ namespace :release do
     end
 
     # Add and commit
-    `git add Dockerfile.#{version}`
-    `git commit -m 'Add #{version} Dockerfile'`
+    `git add .gitlab-ci.yml Dockerfile.#{version}`
+    `git commit -m 'Release cut #{version}'`
 
     puts
     puts "--------------------------------"
