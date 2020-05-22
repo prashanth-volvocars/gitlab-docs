@@ -67,6 +67,11 @@ variables:
 .rules_prod:
   rules:
     - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+
+.rules_pages:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
 
 .rules_dev:
   rules:
@@ -307,7 +312,7 @@ review_stop:
 #
 pages:
   extends:
-    - .rules_prod
+    - .rules_pages
     - .retry
   image: registry.gitlab.com/gitlab-org/gitlab-docs:latest
   stage: deploy
