@@ -1192,6 +1192,7 @@ a.global-nav-link {
 
   .sidebar-left {
     @include sidebar-fixed;
+    border-right: 1px solid $help-gray-100;
     background-color: $gds-gray-50;
     .list-group-item {
       line-height: 24px;

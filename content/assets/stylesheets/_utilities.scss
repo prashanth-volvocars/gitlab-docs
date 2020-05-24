@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import "variables";
@@ -10,4 +10,8 @@ version: 1
   top: 0;
   height: 100vh;
   width: $sidebar-width;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
 }
