@@ -34,8 +34,7 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
 
 WORKDIR /tmp
 
-# markdownlint-cli pinned to 0.22 because 0.23 generates false positives.
-RUN yarn global add markdownlint-cli@0.22.0 && yarn cache clean
+RUN yarn global add markdownlint-cli && yarn cache clean
 
 RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME/gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
   && tar xvjf gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
