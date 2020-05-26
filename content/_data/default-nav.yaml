@@ -282,6 +282,8 @@ sections:
       - category_title: Issues
         category_url: 'user/project/issues/'
         docs:
+          - doc_title: Crosslinking issues
+            doc_url: 'user/project/issues/crosslinking_issues.html'
           - doc_title: Design management
             doc_url: 'user/project/issues/design_management.html'
           - doc_title: Confidential issues
@@ -290,10 +292,18 @@ sections:
             doc_url: 'user/project/issues/due_dates.html'
           - doc_title: Issue Boards
             doc_url: 'user/project/issue_board.html'
+          - doc_title: Issue data and actions
+            doc_url: 'user/project/issues/issue_data_and_actions.html'
           - doc_title: Labels
             doc_url: 'user/project/labels.html'
+          - doc_title: Managing issues
+            doc_url: 'user/project/issues/managing_issues.html'
           - doc_title: Milestones
             doc_url: 'user/project/milestones/'
+          - doc_title: Multiple assignees
+            doc_url: 'user/project/issues/multiple_assignees_for_issues.html'
+            ee_only: true
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Related issues
             doc_url: 'user/project/issues/related_issues.html'
             ee_only: true
@@ -302,10 +312,14 @@ sections:
             doc_url: 'user/project/service_desk.html'
             ee_only: true
             ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+          - doc_title: Sorting and ordering issue lists
+            doc_url: 'user/project/issues/sorting_issue_lists.html'
           - doc_title: Weight
             doc_url: 'user/project/issues/issue_weight.html'
             ee_only: true
             ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+          - doc_title: Zoom meetings in issues
+            doc_url: 'user/project/issues/associate_zoom_meeting.html'
       - category_title: Merge Requests
         category_url: 'user/project/merge_requests/'
         docs:
