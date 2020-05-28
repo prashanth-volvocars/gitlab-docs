@@ -30,10 +30,17 @@ describe('frontend/default/components/table_of_contents', () => {
   };
 
   const findCollapseButton = () => wrapper.find('[data-testid="collapse"]');
+  const findCollapseIcon = () => findCollapseButton().find('i');
   const findCollapsibleContainer = () => wrapper.find('[data-testid="container"]');
   const findMainList = () => wrapper.find('[data-testid="main-list"]');
-  const findHelpAndFeedback = () => wrapper.find('[data-testid="help-and-feedback"]');
+  const findMainListItems = () => findMainList().props('items');
   const clickCollapseButton = () => findCollapseButton().trigger('click');
+
+  const expectCollapsed = (isCollapsed = true) => {
+    expect(findCollapseButton().attributes('aria-expanded')).toBe(isCollapsed ? undefined : 'true');
+    expect(findCollapsibleContainer().props('isCollapsed')).toBe(isCollapsed);
+    expect(findCollapseIcon().classes(isCollapsed ? 'fa-angle-right' : 'fa-angle-down')).toBe(true);
+  };
 
   it('matches snapshot', () => {
     createComponent({ hasHelpAndFeedback: true }, mount);
@@ -45,16 +52,18 @@ describe('frontend/default/components/table_of_contents', () => {
       createComponent({ hasHelpAndFeedback: true });
     });
 
-    it('shows help and feedback', () => {
-      expect(findHelpAndFeedback().exists()).toBe(true);
-      expect(findHelpAndFeedback().props('items')).toEqual([
-        {
-          href: `#${TEST_HELP_AND_FEEDBACK_ID}`,
-          id: null,
-          items: [],
-          text: 'Help and feedback',
-        },
-      ]);
+    it('appends help and feedback item', () => {
+      expect(findMainListItems()).toEqual(
+        TEST_ITEMS.concat([
+          {
+            href: `#${TEST_HELP_AND_FEEDBACK_ID}`,
+            id: null,
+            items: [],
+            text: 'Help and feedback',
+            withSeparator: true,
+          },
+        ]),
+      );
     });
   });
 
@@ -63,17 +72,12 @@ describe('frontend/default/components/table_of_contents', () => {
       createComponent({}, mount);
     });
 
-    it('does not show help and feedback', () => {
-      expect(findHelpAndFeedback().exists()).toBe(false);
-    });
-
     it('renders toc list', () => {
-      expect(findMainList().props('items')).toEqual(TEST_ITEMS);
+      expect(findMainListItems()).toEqual(TEST_ITEMS);
     });
 
-    it('is initially collapsed', () => {
-      expect(findCollapseButton().classes('collapsed')).toBe(true);
-      expect(findCollapsibleContainer().classes('sm-collapsed')).toBe(true);
+    it('is initially uncollapsed', () => {
+      expectCollapsed(false);
     });
 
     describe('when collapse button is pressed', () => {
@@ -85,8 +89,8 @@ describe('frontend/default/components/table_of_contents', () => {
         expect(findCollapsibleContainer().classes('sm-collapsing')).toBe(true);
       });
 
-      it('updates button class', () => {
-        expect(findCollapseButton().classes('collapsed')).toBe(false);
+      it('immediately updates collapse status', () => {
+        expectCollapsed(true);
       });
 
       it('when button pressed again, nothing happens because in the middle of collapsing', () => {
@@ -94,7 +98,7 @@ describe('frontend/default/components/table_of_contents', () => {
 
         return wrapper.vm.$nextTick(() => {
           expect(findCollapsibleContainer().classes('sm-collapsing')).toBe(true);
-          expect(findCollapseButton().classes('collapsed')).toBe(false);
+          expectCollapsed(true);
         });
       });
     });

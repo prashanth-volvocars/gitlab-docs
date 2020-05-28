@@ -26,19 +26,30 @@ export default {
   },
   data() {
     return {
-      isCollapsed: true,
+      isCollapsed: false,
     };
   },
   computed: {
     helpAndFeedbackItems() {
+      if (!this.hasHelpAndFeedback) {
+        return [];
+      }
+
       return [
         {
           text: 'Help and feedback',
           href: `#${this.helpAndFeedbackId}`,
           id: null,
           items: [],
+          withSeparator: true,
         },
       ];
+    },
+    allItems() {
+      return this.items.concat(this.helpAndFeedbackItems);
+    },
+    collapseIconClass() {
+      return this.isCollapsed ? 'fa-angle-right' : 'fa-angle-down';
     },
   },
   methods: {
@@ -50,31 +61,29 @@ export default {
 </script>
 <template>
   <div id="markdown-toc" class="table-of-contents-container position-relative">
-    <a
-      class="toc-collapse"
-      :class="{ collapsed: isCollapsed }"
-      role="button"
-      href="#"
-      :aria-expanded="!isCollapsed"
-      aria-controls="markdown-toc"
-      data-testid="collapse"
-      @click.prevent="toggleCollapse"
-    ></a>
-    <collapsible-container
-      ref="container"
-      v-model="isCollapsed"
-      class="table-of-contents"
-      data-testid="container"
-    >
-      <h4>On this page:</h4>
-      <table-of-contents-list :items="items" class="my-0" data-testid="main-list" />
-      <div v-if="hasHelpAndFeedback" class="border-top mt-3 pt-3">
-        <table-of-contents-list
-          :items="helpAndFeedbackItems"
-          class="my-0"
-          data-testid="help-and-feedback"
-        />
-      </div>
-    </collapsible-container>
+    <div class="table-of-contents">
+      <h4 class="border-0 toc-sm">
+        <a
+          class="d-flex text-decoration-none"
+          href="#"
+          role="button"
+          :aria-expanded="!isCollapsed"
+          aria-controls="markdown-toc"
+          data-testid="collapse"
+          @click.prevent="toggleCollapse"
+        >
+          <i
+            class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3"
+            :class="collapseIconClass"
+            role="presentation"
+          ></i>
+          On this page
+        </a>
+      </h4>
+      <h4 class="border-0 gl-font-base font-weight-bold toc-lg">On this page</h4>
+      <collapsible-container ref="container" v-model="isCollapsed" data-testid="container">
+        <table-of-contents-list :items="allItems" class="my-0" data-testid="main-list" />
+      </collapsible-container>
+    </div>
   </div>
 </template>

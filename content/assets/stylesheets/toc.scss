@@ -1,55 +1,48 @@
 ---
-version: 9
+version: 10
 ---
 
 @import "variables";
+
+$base-nav-link-padding: .75rem;
+$sm-nav-link-padding: 1.25rem;
+$nav-link-font-size: 14px;
 
 .clear {
   clear: both;
 }
 
 // ToC styles
-.doc-nav {
-  h4 {
-    padding-bottom: 5px;
-    font-size: 16px;
+.table-of-contents {
+  position: relative;
+  padding: 16px 8px;
+  margin-top: 60px;
+
+  li {
+    list-style: none;
   }
 
-  .table-of-contents {
-    position: relative;
-    padding: 16px 8px;
-    margin-top: 60px;
+  .nav-link {
+    font-size: $nav-link-font-size;
+    color: $toc-link-color;
+    border-radius: 0;
+    border-left: 3px solid $gds-indigo-100;
 
-    li {
-      list-style: none;
+    &:hover {
+      color: $link-color-nav-hover;
+      text-decoration: underline;
+      background-color: transparent;
+      box-shadow: none;
+    }
 
-      &::before {
-        content: "›";
-        margin-right: 8px;
-      }
+    &.active {
+      color: $link-color-nav;
+      background-color: transparent;
+      border-color: $gds-indigo-800;
 
-      > a {
-        font-size: 14px;
-        color: $toc-link-color;
-        display: inline;
-
-        &:hover {
-          color: $link-color-nav-hover;
-          text-decoration: underline;
-          background-color: transparent;
-          box-shadow: none;
-        }
-      }
-      .nav-link.active {
-        font-weight: 600;
-        color: $link-color-nav;
+      &:hover, &:only-child {
+        color: $link-color-nav-hover;
         background-color: transparent;
-
-        &:hover, &:only-child {
-          color: $link-color-nav-hover;
-          text-decoration: underline;
-          background-color: transparent;
-        }
       }
     }
   }
@@ -68,51 +61,19 @@ version: 9
   .doc-nav {
     position: relative;
     min-height: 34px;
+  }
 
-    // ToC toggle button
-    .toc-collapse {
-      font-size: 13px;
-      display: block;
-      padding: 5px 5px 5px 0;
-      position: absolute;
-      z-index: 1;
-      right: 0;
-      color: $link-color-nav;
+  .table-of-contents {
+    margin: 0;
+    padding: 0;
 
-      &:hover {
-        color: $link-color-nav-hover;
-      }
-
-      &::before {
-        font-family: FontAwesome;
-        content: "\f147";
-        padding-right: 5px;
-      }
-
-      &::after {
-        content: "";
-        font-style: italic;
-      }
-
-      &.collapsed {
-        left: 0;
-        right: 0;
-        text-align: right;
-        background-color: $body-background-color;
-
-        &::before {
-          content: "\f196";
-        }
-
-        &::after {
-          content: "On this page";
-        }
-      }
+    .nav-link {
+      border-left: 0;
+      padding-left: $sm-nav-link-padding;
     }
-    // ToC toggle button
 
-    .table-of-contents {
-      margin: 0;
+    h4 {
+      font-size: $nav-link-font-size;
     }
   }
 
@@ -131,6 +92,14 @@ version: 9
     width: inherit;
     max-width: 900px;
     margin: auto 1% auto 50px;
+  }
+
+  .toc-lg {
+    display: none;
+  }
+
+  .toc-sm {
+    display: block;
   }
 }
 
@@ -152,14 +121,29 @@ version: 9
     &.toc-no-breadcrumbs {
       padding-top: 6px;
     }
-
-    .toc-collapse {
-      display: none; // ToC toggle button => don't display on big screens
-    }
   }
 
-  .doc-nav ul ul {
-    padding-left: 25px;
+  .toc-lg {
+    display: block;
+  }
+
+  .toc-sm {
+    display: none;
+  }
+
+  .toc-separator {
+    border-top: 1px solid $gds-gray-200;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+
+  // NOTE: This only allows for 10 levels.
+  // This should be acceptable since levels are determined by the `<h1-6>` which is less
+  // than 10 anyways...
+  @for $i from 0 to 10 {
+    .nav-link.toc-level-#{$i} {
+      padding-left: $base-nav-link-padding * ($i + 1);
+    }
   }
 }
 
