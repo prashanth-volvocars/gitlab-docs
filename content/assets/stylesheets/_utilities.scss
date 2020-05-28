@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 @import "variables";
@@ -14,4 +14,12 @@ version: 2
 
 .text-decoration-underline {
   text-decoration: underline;
+}
+
+.gl-font-base {
+  font-size: 1rem;
+}
+
+.gl-w-3 {
+  width: 1rem;
 }
