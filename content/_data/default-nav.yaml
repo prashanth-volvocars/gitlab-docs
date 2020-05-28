@@ -1101,6 +1101,8 @@ sections:
             doc_url: 'administration/gitaly/praefect.html'
             ee_only: true
             ee_tier: 'GitLab Core and higher tiers. However, technical support is limited to GitLab Premium and Ultimate customers only. Not available in GitLab.com'
+          - doc_title: Gitaly reference
+            doc_url: 'administration/gitaly/reference.html'
       - category_title: Metrics
         category_url: 'administration/monitoring/'
         docs:
