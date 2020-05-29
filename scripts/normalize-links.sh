@@ -22,7 +22,8 @@ fi
 
 ##
 ## In order for the version to be correct, we need to replace any occurrences
-## of relative or full URLs with the respective version.
+## of relative or full URLs with the respective version. Basically, prefix
+## all top level directories (except archives/) under public/ with the version.
 ##
 ##
 ## Relative URLs
@@ -44,6 +45,9 @@ find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/charts/#="
 
 echo "Replace relative URLs in $TARGET/$VER for /assets/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
+
+echo "Replace relative URLs in $TARGET/$VER for /frontend/"
+find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/frontend/#="/'"$VER"'/frontend/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#<a href="/">#<a href="/'"$VER"'/">#g'
