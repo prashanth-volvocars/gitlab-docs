@@ -668,6 +668,10 @@ sections:
         category_url: 'user/packages/dependency_proxy/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Composer Repository
+        category_url: 'user/packages/composer_repository/'
+        ee_only: true
+        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Conan Repository
         category_url: 'user/packages/conan_repository/'
         ee_only: true
