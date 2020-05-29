@@ -24,9 +24,9 @@
         <h2>Redirecting...</h2>
           <a href="<%= @item[:redirect_to] %>">Click here if you are not redirected.</a>
           <script>location='<%= @item[:redirect_to] %>'</script>
+        <%= render '/footer.*' %>
       </div>
     </div>
-    <%= render '/footer-new.*' %>
     <%= render '/docsearch.*' %>
   </body>
 </html>
