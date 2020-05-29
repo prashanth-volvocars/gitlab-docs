@@ -1,5 +1,5 @@
 ---
-version: 68
+version: 70
 ---
 
 @import "variables";
@@ -305,8 +305,8 @@ li {
   position: relative;
   width: auto;
   max-width: 900px;
-  border-left: 1px solid $main-box-shadow;
   border-right: 1px solid $main-box-shadow;
+  border-left: 1px solid $main-box-shadow;
   background: $main-background-color;
   z-index: 1;
 
@@ -347,9 +347,9 @@ li {
     }
   }
 
-  // external link
+  // external link and footer social links
   [href^="http://"], [href^="https://"] {
-    &:not([href*="gitlab.com"]) {
+    &:not([href*="gitlab.com"]):not(.gitlab-social) {
       &::after {
         content: "\f08e";
         font-family: FontAwesome;
@@ -387,13 +387,6 @@ li {
     display: block;
   }
 
-  footer {
-    padding: 10px 5px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-
   .breadcrumbs {
     // Italics removed from breadcrumbs until the following Chromium issue is resolved.
     // https://bugs.chromium.org/p/chromium/issues/detail?id=1018581&q=BlinkMacSystemFont&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
@@ -425,6 +418,21 @@ li {
   .input-group-text {
     background-color: transparent;
     display: flex;
+  }
+
+  .footer-new {
+    margin-left: -40px;
+    margin-right: -40px;
+    max-width: unset;
+
+    .row {
+      padding-left: 20px;
+      padding-right: 40px;
+    }
+
+    img {
+      box-shadow: none;
+    }
   }
 
 }
@@ -1245,27 +1253,15 @@ a.global-nav-link {
 
   }
 
+  .footer-new {
+    .social-icons {
+      padding-right: 25px;
+    }
+  }
+
 }
 
 // End of landing wrapper
-
-.footer-new {
-  border-color: $gds-gray-100;
-  max-width: $landing-page-content;
-  font-size: $body-font-size;
-  a {
-    color: $landing-sidebar-gray-500;
-  }
-
-  .fa {
-    font-size: 20px;
-    color: $landing-sidebar-gray-400;
-  }
-
-  .fa-creative-commons, .fa-user-circle-o, .fa-copyright {
-    color: $gds-gray-1000;
-  }
-}
 
 // https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
 h1, h2, h3, h4, h5, h6 {

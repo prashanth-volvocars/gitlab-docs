@@ -67,7 +67,7 @@ function toggleNavigation() {
       if (!media.matches) {
         isTouchingBottom =
           window.scrollY + window.innerHeight >=
-          document.querySelector('.footer').offsetTop;
+          document.querySelector('.footer-new').offsetTop;
       }
 
       if (isTouchingBottom) {
