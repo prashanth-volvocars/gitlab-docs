@@ -863,6 +863,8 @@ sections:
             doc_url: 'api/repository_submodules.html'
           - doc_title: Resource label events
             doc_url: 'api/resource_label_events.html'
+          - doc_title: Resource milestone events
+            doc_url: 'api/resource_milestone_events.html'
           - doc_title: Runners
             doc_url: 'api/runners.html'
           - doc_title: SCIM
