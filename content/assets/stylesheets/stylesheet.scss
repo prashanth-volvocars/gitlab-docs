@@ -1,5 +1,5 @@
 ---
-version: 70
+version: 71
 ---
 
 @import "variables";
@@ -420,7 +420,7 @@ li {
     display: flex;
   }
 
-  .footer-new {
+  .footer {
     margin-left: -40px;
     margin-right: -40px;
     max-width: unset;
@@ -1253,7 +1253,7 @@ a.global-nav-link {
 
   }
 
-  .footer-new {
+  .footer {
     .social-icons {
       padding-right: 25px;
     }
