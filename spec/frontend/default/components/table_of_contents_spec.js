@@ -1,6 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import TableOfContents from '../../../../content/frontend/default/components/table_of_contents.vue';
 import * as dom from '../../../../content/frontend/shared/dom';
+import { flattenItems } from '../../../../content/frontend/shared/toc/flatten_items';
 import { createExampleToc } from '../../shared/toc_helper';
 
 const TEST_ITEMS = createExampleToc();
@@ -54,15 +55,17 @@ describe('frontend/default/components/table_of_contents', () => {
 
     it('appends help and feedback item', () => {
       expect(findMainListItems()).toEqual(
-        TEST_ITEMS.concat([
-          {
-            href: `#${TEST_HELP_AND_FEEDBACK_ID}`,
-            id: null,
-            items: [],
-            text: 'Help and feedback',
-            withSeparator: true,
-          },
-        ]),
+        flattenItems(
+          TEST_ITEMS.concat([
+            {
+              href: `#${TEST_HELP_AND_FEEDBACK_ID}`,
+              id: null,
+              items: [],
+              text: 'Help and feedback',
+              withSeparator: true,
+            },
+          ]),
+        ),
       );
     });
   });
@@ -73,7 +76,7 @@ describe('frontend/default/components/table_of_contents', () => {
     });
 
     it('renders toc list', () => {
-      expect(findMainListItems()).toEqual(TEST_ITEMS);
+      expect(findMainListItems()).toEqual(flattenItems(TEST_ITEMS));
     });
 
     it('is initially uncollapsed', () => {

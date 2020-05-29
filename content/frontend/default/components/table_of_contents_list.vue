@@ -13,8 +13,16 @@ export default {
     },
   },
   computed: {
-    levelClass() {
-      return `toc-level-${this.level}`;
+    allItems() {
+      return this.items.map(item => {
+        const level = this.level + (item.level || 0);
+
+        return {
+          ...item,
+          level,
+          levelClass: `toc-level-${level}`,
+        };
+      });
     },
   },
 };
@@ -22,17 +30,17 @@ export default {
 <template>
   <ul class="nav nav-pills flex-column">
     <li
-      v-for="(item, index) in items"
+      v-for="(item, index) in allItems"
       :key="`${item.text}_${index}`"
       :class="{ 'toc-separator': item.withSeparator }"
     >
-      <a :id="item.id" class="nav-link d-block" :href="item.href" :class="levelClass">{{
+      <a :id="item.id" class="nav-link d-block" :href="item.href" :class="item.levelClass">{{
         item.text
       }}</a>
       <table-of-contents-list
         v-if="item.items && item.items.length"
         :items="item.items"
-        :level="level + 1"
+        :level="item.level + 1"
       />
     </li>
   </ul>

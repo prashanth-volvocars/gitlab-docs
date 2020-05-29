@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { findChildByTagName } from './dom';
+import { findChildByTagName } from '../dom';
 
 const TAG_LI = 'LI';
 const TAG_A = 'A';

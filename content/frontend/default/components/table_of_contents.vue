@@ -1,6 +1,7 @@
 <script>
 import TableOfContentsList from './table_of_contents_list.vue';
 import CollapsibleContainer from './collapsible_container.vue';
+import { flattenItems } from '../../shared/toc/flatten_items';
 
 export default {
   name: 'TableOfContents',
@@ -46,7 +47,8 @@ export default {
       ];
     },
     allItems() {
-      return this.items.concat(this.helpAndFeedbackItems);
+      // Flatten the items so that only one is highlighted at a time
+      return flattenItems(this.items.concat(this.helpAndFeedbackItems));
     },
     collapseIconClass() {
       return this.isCollapsed ? 'fa-angle-right' : 'fa-angle-down';

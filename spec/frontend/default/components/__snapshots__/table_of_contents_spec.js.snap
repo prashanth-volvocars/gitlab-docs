@@ -54,23 +54,20 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
             Lorem
           </a>
            
-          <ul
-            class="nav nav-pills flex-column"
+          <!---->
+        </li>
+        <li
+          class=""
+        >
+          <a
+            class="nav-link d-block toc-level-1"
+            href="#lorem-"
+            id="Lorem 2-anchor"
           >
-            <li
-              class=""
-            >
-              <a
-                class="nav-link d-block toc-level-1"
-                href="#lorem-"
-                id="Lorem 2-anchor"
-              >
-                Lorem 2
-              </a>
-               
-              <!---->
-            </li>
-          </ul>
+            Lorem 2
+          </a>
+           
+          <!---->
         </li>
         <li
           class=""
@@ -83,65 +80,59 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
             Ipsum
           </a>
            
-          <ul
-            class="nav nav-pills flex-column"
+          <!---->
+        </li>
+        <li
+          class=""
+        >
+          <a
+            class="nav-link d-block toc-level-1"
+            href="#dolar"
+            id="Dolar-anchor"
           >
-            <li
-              class=""
-            >
-              <a
-                class="nav-link d-block toc-level-1"
-                href="#dolar"
-                id="Dolar-anchor"
-              >
-                Dolar
-              </a>
-               
-              <ul
-                class="nav nav-pills flex-column"
-              >
-                <li
-                  class=""
-                >
-                  <a
-                    class="nav-link d-block toc-level-2"
-                    href="#sit"
-                    id="Sit-anchor"
-                  >
-                    Sit
-                  </a>
-                   
-                  <!---->
-                </li>
-                <li
-                  class=""
-                >
-                  <a
-                    class="nav-link d-block toc-level-2"
-                    href="#amit"
-                    id="Amit-anchor"
-                  >
-                    Amit
-                  </a>
-                   
-                  <!---->
-                </li>
-                <li
-                  class=""
-                >
-                  <a
-                    class="nav-link d-block toc-level-2"
-                    href="#test"
-                    id="Test-anchor"
-                  >
-                    Test
-                  </a>
-                   
-                  <!---->
-                </li>
-              </ul>
-            </li>
-          </ul>
+            Dolar
+          </a>
+           
+          <!---->
+        </li>
+        <li
+          class=""
+        >
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#sit"
+            id="Sit-anchor"
+          >
+            Sit
+          </a>
+           
+          <!---->
+        </li>
+        <li
+          class=""
+        >
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#amit"
+            id="Amit-anchor"
+          >
+            Amit
+          </a>
+           
+          <!---->
+        </li>
+        <li
+          class=""
+        >
+          <a
+            class="nav-link d-block toc-level-2"
+            href="#test"
+            id="Test-anchor"
+          >
+            Test
+          </a>
+           
+          <!---->
         </li>
         <li
           class="toc-separator"
