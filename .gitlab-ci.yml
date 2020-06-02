@@ -255,7 +255,6 @@ test_external_links:
 review:
   stage: deploy
   extends:
-    - .rules_dev
     - .retry
   variables:
     GIT_STRATEGY: none
@@ -273,6 +272,11 @@ review:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
+  rules:
+    - if: '$CI_PROJECT_NAMESPACE !~ /^gitlab(-org)?($|\/)/'
+      when: never
+    - if: '$CI_MERGE_REQUEST_ID'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
   tags:
     - nginx
     - review-apps
@@ -296,6 +300,8 @@ review_stop:
     name: review/$CI_COMMIT_REF_SLUG
     action: stop
   rules:
+    - if: '$CI_PROJECT_NAMESPACE !~ /^gitlab(-org)?($|\/)/'
+      when: never
     - if: '$CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
