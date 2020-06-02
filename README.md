@@ -86,13 +86,13 @@ One way is to use RVM:
 1. Install the latest Ruby:
 
    ```shell
-   rvm install 2.6.5
+   rvm install 2.6.6
    ```
 
 1. Use the newly installed Ruby:
 
    ```shell
-   rvm use 2.6.5
+   rvm use 2.6.6
    ```
 
 Check your Ruby version with `ruby --version`.
@@ -135,7 +135,7 @@ Now let's make Bundler deal with the dependencies defined in the
 1. Switch to Ruby using RVM:
 
    ```shell
-   rvm use 2.6.5
+   rvm use 2.6.6
    ```
 
 1. Run:
