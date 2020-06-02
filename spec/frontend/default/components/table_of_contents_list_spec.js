@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { parseTOC } from '../../../../content/frontend/shared/dom_parse_toc';
+import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
 import TableOfContentsList from '../../../../content/frontend/default/components/table_of_contents_list.vue';
 import { createExampleToc } from '../../shared/toc_helper';
 
@@ -64,6 +64,7 @@ describe('frontend/default/components/table_of_contents_list', () => {
           },
           {
             text: 'B',
+            level: 1,
             items: [{ text: 'B_1', items: [{ text: 'B_1_1' }] }],
           },
         ],
@@ -85,9 +86,9 @@ describe('frontend/default/components/table_of_contents_list', () => {
         A: 'toc-level-1',
         A_1: 'toc-level-2',
         A_2: 'toc-level-2',
-        B: 'toc-level-1',
-        B_1: 'toc-level-2',
-        B_1_1: 'toc-level-3',
+        B: 'toc-level-2',
+        B_1: 'toc-level-3',
+        B_1_1: 'toc-level-4',
       });
     });
   });

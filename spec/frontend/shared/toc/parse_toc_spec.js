@@ -1,7 +1,7 @@
-import { parseTOC } from '../../../content/frontend/shared/dom_parse_toc';
-import { createItem, createTOCElement, createExampleToc } from './toc_helper';
+import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
+import { createItem, createTOCElement, createExampleToc } from '../toc_helper';
 
-describe('frontend/shared/dom_parse_toc', () => {
+describe('frontend/shared/toc/parse_toc', () => {
   it('parses nested HTML list', () => {
     const list = createExampleToc();
     const el = createTOCElement(list);
