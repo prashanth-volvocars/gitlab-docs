@@ -61,16 +61,16 @@ find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/opensearch
 echo "Replace full URLs in $TARGET/$VER for /ce/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ce/#="/'"$VER"'/ce/#g'
 
-echo "Replace full URLs in $TARGET/$VER for /ce/"
+echo "Replace full URLs in $TARGET/$VER for /ee/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
 
-echo "Replace full URLs in $TARGET/$VER for /ce/"
+echo "Replace full URLs in $TARGET/$VER for /runner/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/runner/#="/'"$VER"'/runner/#g'
 
-echo "Replace full URLs in $TARGET/$VER for /ce/"
+echo "Replace full URLs in $TARGET/$VER for /omnibus/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/omnibus/#="/'"$VER"'/omnibus/#g'
 
-echo "Replace full URLs in $TARGET/$VER for /ce/"
+echo "Replace full URLs in $TARGET/$VER for /charts/"
 find ${TARGET} -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/charts/#="/'"$VER"'/charts/#g'
 
 echo "Fix URLs inside the sitemap"
