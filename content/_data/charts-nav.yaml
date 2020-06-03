@@ -36,6 +36,13 @@ sections:
         category_url: 'installation/deployment.html'
       - category_title: Upgrade
         category_url: 'installation/upgrade.html'
+      - category_title: Backup and Restore
+        category_url: 'backup-restore/'
+        docs:
+          - docs_title: Backup
+            docs_url: 'backup-restore/backup.html'
+          - docs_title: Restore
+            docs_url: 'backup-restore/restore.html'
       - category_title: Migrate from Omnibus
         category_url: 'installation/migration/'
       - category_title: Version mappings
