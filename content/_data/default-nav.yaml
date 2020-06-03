@@ -499,6 +499,8 @@ sections:
             doc_url: 'ci/enable_or_disable_ci.html'
           - doc_title: Using SSH keys
             doc_url: 'ci/ssh_keys/README.html'
+          - doc_title: Migrating from CircleCI
+            doc_url: 'ci/migration/circleci.html'
           - doc_title: Migrating from Jenkins
             doc_url: 'ci/jenkins/'
       - category_title: Auto DevOps
