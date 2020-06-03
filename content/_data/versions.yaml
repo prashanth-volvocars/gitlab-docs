@@ -1,9 +1,8 @@
 # The first online version should always point to the
 # current stable version.
 online:
-  - "12.1"
-  - "12.0"
   - "11.11"
+  - "10.8"
 
 offline:
   - "11.10"
@@ -17,7 +16,6 @@ offline:
   - "11.2"
   - "11.1"
   - "11.0"
-  - "10.8"
   - "10.7"
   - "10.6"
   - "10.5"
