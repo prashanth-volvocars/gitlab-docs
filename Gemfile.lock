@@ -33,7 +33,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.12.2)
     formatador (0.2.5)
-    gitlab_kramdown (0.8.0)
+    gitlab_kramdown (0.9.0)
       asciidoctor-plantuml (= 0.0.9)
       kramdown (~> 1.16.2)
       nokogiri (~> 1.10.4)
@@ -171,7 +171,7 @@ DEPENDENCIES
   adsf-live (~> 1.4)
   asciidoctor-plantuml (= 0.0.9)
   builder (~> 3.2)
-  gitlab_kramdown (~> 0.8.0)
+  gitlab_kramdown (~> 0.9.0)
   guard-nanoc
   highline (~> 2.0)
   mdl
