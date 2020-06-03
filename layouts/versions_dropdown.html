@@ -8,15 +8,17 @@ Choose version
       Name the label dropdown after the release version so that you know
       which version you're browsing. For `/archives` show 'Archives' since
       they're supposed to be versionless.
-      If we build on master and stable branches (versions), show the branch
-      name in the dropdown menu. For local development and review apps, show
-      "Versions".
+      If we build on master and stable branches (versions), show the following
+      name in the drodown menu:
+        - GitLab.com if master.
+        - The branch name otherwise.
+      For local development and review apps, show "Versions".
     -->
     <% if archives? %>
     Archives
     <% else %>
       <% if ENV['NANOC_ENV'] == 'production' %>
-        <%= ENV['CI_COMMIT_REF_NAME'] %>
+        <%= ENV['CI_COMMIT_REF_NAME'] == 'master' ? 'GitLab.com' : ENV['CI_COMMIT_REF_NAME'] %>
       <% else %>
         Versions
       <% end %>
@@ -24,9 +26,9 @@ Choose version
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
-    <li<%= active_dropdown('master') %>>
-      <a href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">master
-        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="This documentation reflects the latest pre-release version of GitLab. Be sure to select the correct version."></i>
+    <li>
+      <a<%= active_dropdown('master') %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">GitLab.com
+        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
       </a>
     </li>
     <li role="separator" class="divider"></li>
