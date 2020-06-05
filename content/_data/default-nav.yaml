@@ -988,6 +988,8 @@ sections:
             doc_url: 'topics/git/'
       - category_title: GitLab.com settings
         category_url: 'user/gitlab_com/'
+      - category_title: Infrastructure as code
+        category_url: 'user/infrastructure/index.html'
       - category_title: Keyboard shortcuts
         category_url: 'user/shortcuts.html'
       - category_title: Markdown
