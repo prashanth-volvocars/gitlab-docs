@@ -1,5 +1,5 @@
 ---
-version: 71
+version: 72
 ---
 
 @import "variables";
@@ -1182,7 +1182,9 @@ a.global-nav-link {
 
   .header {
     a:hover, a:visited:hover {
-      color: $header-font-color;
+      &:not(.dropdown-menu a) {
+        color: $header-font-color;
+      }
     }
     p {
       color: $white;
