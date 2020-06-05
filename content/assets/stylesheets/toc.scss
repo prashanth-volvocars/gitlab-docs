@@ -150,12 +150,6 @@ $nav-link-font-size: 14px;
 @media(min-width:1100px) and (max-width:1600px) {
   $doc-nav-width: 19vw;
 
-  .main.class.has-toc {
-    width: 64vw;
-    max-width: 64vw;
-    float: left;
-  }
-
   .doc-nav {
     width: $doc-nav-width;
   }
@@ -166,12 +160,6 @@ $nav-link-font-size: 14px;
   $doc-nav-desired-width: 0;
   // Get around the scroll bar
   $doc-nav-width: 21%;
-
-  .main.class.has-toc {
-    width: 64vw;
-    max-width: 64vw;
-    margin: auto 13%;
-  }
 
   .doc-nav {
     width: $doc-nav-width;
