@@ -5,18 +5,17 @@ title: GitLab Documentation
   <nav class="sidebar-left d-none d-md-block border-right p-0">
     <div class="list-group list-group-flush pt-5">
       <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
-        <%= icon('home', nil, 'menu-icon') %> Home
-      </a>
+        <%= icon('home', nil, 'menu-icon') %><span class="pl-1">Home</span></a>
       <% if is_production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
           <% end %>
         <% end %>
       <% else %>
         <% @config[:products].each do |name, product| %>
           <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0"><%= icon(product[:icon], nil, 'menu-icon') %> <%= product[:short_name] %></a>
+            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
           <% end %>
         <% end %>
       <% end %>
