@@ -515,6 +515,8 @@ sections:
         docs:
           - doc_title: Getting started
             doc_url: 'topics/autodevops/quick_start_guide.html'
+          - doc_title: Requirements
+            doc_url: 'topics/autodevops/requirements.html'
           - doc_title: Customize
             doc_url: 'topics/autodevops/customize.html'
           - doc_title: Stages
