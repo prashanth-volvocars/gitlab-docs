@@ -1,5 +1,5 @@
 ---
-version: 72
+version: 73
 ---
 
 @import "variables";
@@ -300,11 +300,10 @@ li {
 }
 
 .main {
-  margin: auto 15%;
+  margin: auto;
   padding: $page-header-height 40px 0;
   position: relative;
-  width: auto;
-  max-width: 900px;
+  max-width: 50vw;
   border-right: 1px solid $main-box-shadow;
   border-left: 1px solid $main-box-shadow;
   background: $main-background-color;
@@ -312,11 +311,6 @@ li {
 
   @media (max-width: $mobile-width) {
     padding: 55px 10px 5px;
-  }
-
-  @media(min-width:1601px) {
-    margin: auto 18%;
-    max-width: 64%;
   }
 
   &:not(.has-toc) {
