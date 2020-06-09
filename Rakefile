@@ -64,6 +64,9 @@ task :pull_repos do
 
       # Reset so that if the repo is cached, the latest commit will be used
       `git reset --hard origin/#{branch}`
+      # Print the latest commit so that we can compare it to the branch we're
+      # pulling from, should we need to debug anything.
+      puts "Latest commit: #{`git log --oneline -n 1`}"
     end
   end
 end
