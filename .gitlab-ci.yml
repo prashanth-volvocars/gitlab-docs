@@ -277,7 +277,7 @@ review:
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
     on_stop: review_stop
   rules:
-    - if: '$CI_PROJECT_NAMESPACE !~ /^gitlab(-org)?($|\/)/'
+    - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
@@ -304,7 +304,7 @@ review_stop:
     name: review/$CI_COMMIT_REF_SLUG
     action: stop
   rules:
-    - if: '$CI_PROJECT_NAMESPACE !~ /^gitlab(-org)?($|\/)/'
+    - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
     - if: '$CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
