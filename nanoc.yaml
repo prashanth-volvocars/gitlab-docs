@@ -169,7 +169,7 @@ products:
     short_name: 'Charts'
     slug: 'charts'
     index_file: 'index.*'
-    img: '/assets/images/docs-gitlab.svg'
+    img: '/assets/images/docs-charts.svg'
     description: 'Deploy GitLab to Kubernetes using the GitLab Helm Charts.'
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
     dirs:
