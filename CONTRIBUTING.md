@@ -9,20 +9,31 @@ terms.
 
 [DCO + License](https://gitlab.com/gitlab-org/dco/blob/master/README.md)
 
-_This notice should stay as the first item in the CONTRIBUTING.md file._
+<!-- _This notice should stay as the first item in the CONTRIBUTING.md file._ -->
 
-## Code review guideline
+## Ownership
 
-When contributing code to the docs project, you must get your code reviewed before merging the code into master.
+The [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#static-site-editor-group)
+group within the DevOps Create stage is the team responsible for developing
+and maintaining this project with the Technical Writing team.
 
-The responsibility to find the best solution and implement it lies with the merge request author.
+[Jacques Erasmus](https://gitlab.com/jerasmus) (supported by [Jean du Plessis](https://gitlab.com/jeanduplessis)) is in charge of scheduling work from this project in the [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#static-site-editor-group) group
+and DRI is [Susan Tacker](https://gitlab.com/susantacker), Senior Manager,
+Technical Writing.
 
-Before assigning a merge request to a maintainer for approval and merge, you should be confident that it actually solves the problem it was meant to solve,
-that it does so in the most appropriate way, that it satisfies all requirements, and that there are no remaining bugs, logical problems, uncovered edge cases,
-or known vulnerabilities. The best way to do this, and to avoid unnecessary back-and-forth with reviewers, is to perform a self-review of your own merge
-request.
+## Contribution process
 
-### Frontend
+The DRI and the EM will prioritize and schedule improvements to the docs
+site. Workflow labels (`docs-site::*` and `workflow::*`), as well as priority
+labels `P*` should be handled **exclusively** by them.
 
-1. Once you've verified that your code is in working order, assign the MR to a maintainer (refer to the [team page](https://about.gitlab.com/company/team/) to find a frontend maintainer of the docs project).
-2. The maintainer will review and merge your code.
+When creating issues, merge requests, and epics related to <https://docs.gitlab.com>,
+add the label ~"Category:Docs Site" plus ~frontend, and/or ~backend, and/or
+~UX, accordingly.
+
+### Code review guidelines
+
+You're very welcome to contribute to this project. Once you've verified that
+your code is working, assign the MR to a [reviewer](https://about.gitlab.com/handbook/engineering/projects/#gitlab-docs)
+of the changed subject. Once the review is complete, assign a maintainer to
+merge your changes.
