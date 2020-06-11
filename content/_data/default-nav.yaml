@@ -1207,8 +1207,6 @@ sections:
             doc_url: 'administration/geo/disaster_recovery/background_verification.html'
       - category_title: Rake tasks
         category_url: 'raketasks/README.html'
-        ee_only: true
-        ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
         docs:
           - doc_title: Backup and restore
             doc_url: 'raketasks/backup_restore.html'
@@ -1232,6 +1230,8 @@ sections:
             doc_url: 'administration/raketasks/ldap.html'
           - doc_title: List repositories
             doc_url: 'raketasks/list_repos.html'
+          - doc_title: Praefect tasks
+            doc_url: 'administration/raketasks/praefect.html'
           - doc_title: Project import and export
             doc_url: 'administration/raketasks/project_import_export.html'
           - doc_title: Repository storage
@@ -1248,6 +1248,8 @@ sections:
             doc_url: 'raketasks/web_hooks.html'
           - doc_title: X509 signatures
             doc_url: 'raketasks/x509_signatures.html'
+      - category_title: Server hooks
+        category_url: 'administration/server_hooks.html'
       - category_title: Static objects external storage
         category_url: 'administration/static_objects_external_storage.html'
       - category_title: Update
