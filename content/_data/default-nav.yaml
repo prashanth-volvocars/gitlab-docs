@@ -1398,6 +1398,8 @@ sections:
         docs:
           - doc_title: Geo framework
             doc_url: 'development/geo/framework.html'
+      - category_title: Gitaly development guide
+        category_url: 'development/gitaly.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
         external_url: true
