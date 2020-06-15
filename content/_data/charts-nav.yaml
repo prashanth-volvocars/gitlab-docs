@@ -39,10 +39,10 @@ sections:
       - category_title: Backup and Restore
         category_url: 'backup-restore/'
         docs:
-          - docs_title: Backup
-            docs_url: 'backup-restore/backup.html'
-          - docs_title: Restore
-            docs_url: 'backup-restore/restore.html'
+          - doc_title: Backup
+            doc_url: 'backup-restore/backup.html'
+          - doc_title: Restore
+            doc_url: 'backup-restore/restore.html'
       - category_title: Migrate from Omnibus
         category_url: 'installation/migration/'
       - category_title: Version mappings
