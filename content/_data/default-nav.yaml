@@ -1033,7 +1033,7 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Database
             doc_url: 'administration/high_availability/database.html'
-          - doc_title: GitLab
+          - doc_title: GitLab Rails
             doc_url: 'administration/high_availability/gitlab.html'
           - doc_title: Load balancer
             doc_url: 'administration/high_availability/load_balancer.html'
