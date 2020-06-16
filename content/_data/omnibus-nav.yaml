@@ -44,6 +44,8 @@ sections:
         category_url: 'package-information/deprecated_os.html'
       - category_title: Docker images
         category_url: 'docker/README.html'
+      - category_title: Manual installation
+        category_url: 'manual_install.html'
 
   - section_title: Configure
     section_url: 'settings/README.html'
