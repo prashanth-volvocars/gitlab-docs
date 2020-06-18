@@ -9,7 +9,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
     class="table-of-contents"
   >
     <h4
-      class="border-0 toc-sm"
+      class="border-0 toc-sm d-lg-none"
     >
       <a
         aria-controls="markdown-toc"

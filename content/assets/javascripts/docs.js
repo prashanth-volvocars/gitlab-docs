@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 var NAV_INLINE_BREAKPOINT = 1100;
@@ -81,24 +81,5 @@ function toggleNavigation() {
       }
     });
 
-    // Adds the ability to auto-scroll to the active item in the TOC
-    $(window).on('activate.bs.scrollspy', function() {
-      const isMobile = window.matchMedia('(max-width: 1099px)').matches;
-
-      if(isMobile) {
-        return;
-      }
-
-      const activeAnchors = document.querySelectorAll('#markdown-toc .nav-link.active');
-
-      if(activeAnchors.length) {
-        const sidebarAnchorOffset = 45;
-        const lastActiveAnchor = activeAnchors[activeAnchors.length -1];
-        const sidebar = document.getElementById('doc-nav');
-        // Takes the last active anchor in the tree and scrolls it into view.
-        lastActiveAnchor.scrollIntoView();
-        sidebar.scrollTop -= sidebarAnchorOffset;
-      }
-    });
   });
 })();

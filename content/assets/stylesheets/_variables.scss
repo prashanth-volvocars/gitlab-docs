@@ -2,6 +2,12 @@
 $medium-width: 1100px;
 $mobile-width: 900px;
 
+// New Breakpoints
+$xs-width: 576px;
+$sm-width: 768px;
+$md-width: 992px;
+$lg-width: 1400px;
+
 // Border radius
 $border-radius: 4px;
 
@@ -28,9 +34,8 @@ $page-header-height: 40px;
 $banner-height: 31px;
 
 // Width
-$landing-page-content: 955px;
-$sidebar-width: 236px;
-$page-content-width: 955px;
+$sidebar-width: 220px;
+$page-content-width: 980px;
 
 // GitLab colors
 // Tanuki

@@ -1,8 +1,9 @@
 ---
-version: 12
+version: 14
 ---
 
 @import "variables";
+@import "utilities";
 
 $base-nav-link-padding: .75rem;
 $sm-nav-link-padding: 1.25rem;
@@ -56,17 +57,22 @@ $nav-link-font-size: 14px;
   flex-wrap: nowrap;
 }
 
-// not wide enough to show quick nav and toc
-@media(max-width:1099px) {
+// NOTE: This only allows for 10 levels.
+// This should be acceptable since levels are determined by the `<h1-6>` which is less
+// than 10 anyways...
+@for $i from 0 to 10 {
+  .nav-link.toc-level-#{$i} {
+    padding-left: $base-nav-link-padding * ($i + 1);
+  }
+}
+
+@media(max-width: $md-width) {
   .doc-nav {
-    position: relative;
-    min-height: 34px;
+    padding: 50px 40px 0 70px;
   }
 
   .table-of-contents {
-    margin: 0;
-    padding: 0;
-
+    margin-top: 0;
     .nav-link {
       border-left: 0;
       padding-left: $sm-nav-link-padding;
@@ -87,13 +93,6 @@ $nav-link-font-size: 14px;
     display: none;
   }
 
-  .main.class {
-    float: none;
-    width: inherit;
-    max-width: 955px;
-    margin: auto 1% auto 50px;
-  }
-
   .toc-lg {
     display: none;
   }
@@ -104,19 +103,15 @@ $nav-link-font-size: 14px;
 }
 
 // wide enough to show toc but not quick nav
-@media(min-width:1100px) {
+@media(min-width: $md-width) {
   .header {
     top: 0;
     left: 0;
   }
 
   .doc-nav {
-    position: fixed;
-    top: 0;
-    right: 8px;
+    @include sidebar-fixed;
     margin-top: 55px;
-    overflow: scroll;
-    height: 100%;
 
     &.toc-no-breadcrumbs {
       padding-top: 6px;
@@ -135,33 +130,5 @@ $nav-link-font-size: 14px;
     border-top: 1px solid $gds-gray-200;
     padding-top: 1rem;
     margin-top: 1rem;
-  }
-
-  // NOTE: This only allows for 10 levels.
-  // This should be acceptable since levels are determined by the `<h1-6>` which is less
-  // than 10 anyways...
-  @for $i from 0 to 10 {
-    .nav-link.toc-level-#{$i} {
-      padding-left: $base-nav-link-padding * ($i + 1);
-    }
-  }
-}
-
-@media(min-width:1100px) and (max-width:1600px) {
-  $doc-nav-width: 19vw;
-
-  .doc-nav {
-    width: $doc-nav-width;
-  }
-}
-
-// wide enough to show quick nav and toc
-@media(min-width:1601px) {
-  $doc-nav-desired-width: 0;
-  // Get around the scroll bar
-  $doc-nav-width: 21%;
-
-  .doc-nav {
-    width: $doc-nav-width;
   }
 }
