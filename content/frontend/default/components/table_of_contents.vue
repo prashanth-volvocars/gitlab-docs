@@ -64,7 +64,7 @@ export default {
 <template>
   <div id="markdown-toc" class="table-of-contents-container position-relative">
     <div class="table-of-contents">
-      <h4 class="border-0 toc-sm">
+      <h4 class="border-0 toc-sm d-lg-none">
         <a
           class="d-flex text-decoration-none"
           href="#"

@@ -11,7 +11,7 @@ nav_items = nav_items_exists ? @items[nav_items_dir] : @items["/_data/default-na
     <div class="global-nav-section">
       <span class="global-nav-block-top nav-link">
         <% section_href = is_ee_prefixed ? "/ee/#{sec[:section_url]}" : "/#{dir}/#{sec[:section_url]}" %>
-        <a class="global-nav-link level-0 <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>active<% end %>" href="<%= section_href %>">
+        <a class="global-nav-link level-0 <% if sec[:section_categories] %>has-collapse<% end %> <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>active<% end %>" href="<%= section_href %>">
           <%= sec[:section_title] %>
           <% if sec[:ee_only] %>
             <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in <%= sec[:ee_tier] %>"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
@@ -26,12 +26,12 @@ nav_items = nav_items_exists ? @items[nav_items_dir] : @items["/_data/default-na
         <% sec[:section_categories].each do |cat| %>
           <span class="global-nav-cat nav-link">
             <% if cat[:external_url] %>
-              <a class="global-nav-link level-1" href="<%= cat[:category_url] %>" target="_blank">
+              <a class="global-nav-link level-1 <% if cat[:docs] %>has-collapse<% end %>" href="<%= cat[:category_url] %>" target="_blank">
                 <%= cat[:category_title] %>
               </a>
             <% else %>
               <% category_href = is_ee_prefixed ? "/ee/#{cat[:category_url]}" : "/#{dir}/#{cat[:category_url]}" %>
-              <a class="global-nav-link level-1 <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% end %>" href="<%= category_href %>">
+              <a class="global-nav-link level-1 <% if cat[:docs] %>has-collapse<% end %> <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% end %>" href="<%= category_href %>">
                 <%= cat[:category_title] %>
                 <% if cat[:ee_only] %>
                   <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in <%= cat[:ee_tier] %>"><i class="fa fa-info-circle" aria-hidden="true"></i></span>

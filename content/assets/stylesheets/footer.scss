@@ -1,12 +1,12 @@
 ---
-version: 8
+version: 9
 ---
 
 @import "variables";
 
 .footer {
   border-color: $gds-gray-100;
-  max-width: $landing-page-content;
+  max-width: $page-content-width;
   font-size: $body-font-size;
   a {
     color: $landing-sidebar-gray-500;

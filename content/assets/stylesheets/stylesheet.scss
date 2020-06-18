@@ -1,5 +1,5 @@
 ---
-version: 73
+version: 75
 ---
 
 @import "variables";
@@ -20,6 +20,12 @@ body {
 
   >.wrapper {
     min-height: 100vh;
+    background-color: $gds-gray-50;
+
+    @media(max-width: $md-width) {
+      flex-direction: column-reverse;
+      background-color: $white;
+    }
 
     // adds extra padding to the side-nav and main content if a banner is displayed.
     &.show-banner .nav-wrapper, &.show-banner .main {
@@ -300,18 +306,12 @@ li {
 }
 
 .main {
-  margin: auto;
   padding: $page-header-height 40px 0;
-  position: relative;
-  max-width: 50vw;
+  max-width: $page-content-width;
   border-right: 1px solid $main-box-shadow;
   border-left: 1px solid $main-box-shadow;
   background: $main-background-color;
   z-index: 1;
-
-  @media (max-width: $mobile-width) {
-    padding: 55px 10px 5px;
-  }
 
   &:not(.has-toc) {
     > .doc-nav {
@@ -429,6 +429,13 @@ li {
     }
   }
 
+  @media(max-width: $md-width) {
+    padding: 0 40px 0 80px;
+  }
+
+  @media(max-width: $lg-width) and (min-width: $md-width)  {
+    width: 60%;
+  }
 }
 
 // Override Bootstraps default button (for GDS colors)
@@ -462,19 +469,20 @@ li {
 .nav-wrapper {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: sticky;
   padding-top: $page-header-height;
-  max-width: 220px;
+  max-width: $sidebar-width;
   width: 50px;
   height: 100vh;
   transition: all .3s;
   background: $gds-gray-50;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
+  top: 0;
 
   &.active {
-    width: 15%;
-    min-width: 190px;
+    @include sidebar-fixed;
+    min-width: $sidebar-width;
 
     .nav-toggle {
 
@@ -509,7 +517,6 @@ li {
     height: 50px;
     flex-shrink: 0;
     border-radius: 0;
-    border-top: 1px solid $gds-gray-200;
 
     &:hover {
       background-color: $gds-gray-200;
@@ -555,6 +562,16 @@ li {
       transform: rotate(-45deg) translateY(-4px);
     }
   }
+
+  @media(max-width: $md-width) {
+    position: fixed;
+    top: 0;
+
+    &.active {
+      position: fixed;
+      top: 0;
+    }
+  }
 }
 
 .global-nav {
@@ -565,13 +582,6 @@ li {
   overflow: auto;
   visibility: hidden;
 
-  .global-nav-section {
-    &.expanded {
-      background-color: $gds-gray-100;
-      box-shadow: inset 4px 0 0 $gds-indigo-800;
-    }
-  }
-
   .global-nav-cat.active {
     a {
       color: $gds-indigo-800;
@@ -579,6 +589,7 @@ li {
   }
 
   .global-nav-content {
+    margin-top: 60px;
     margin-bottom: 70px;
   }
 
@@ -590,10 +601,14 @@ li {
     padding-bottom: 7px;
     padding-right: 7px;
 
+    &.has-collapse.active {
+      border-right: 0;
+    }
+
     &.active {
       background-color: $gds-gray-100;
       font-weight: 600;
-      border-left: 4px solid;
+      border-right: 4px solid;
       color: $gds-indigo-800;
 
       &:hover {
@@ -634,6 +649,8 @@ li {
 
     &.active {
       background-color: $gds-gray-200;
+      border-right: 4px solid;
+      color: $gds-indigo-800;
       &.section-title {
         background-color: $gds-gray-100;
       }
@@ -763,6 +780,12 @@ a.global-nav-link {
     &::after {
       padding: 0 4px 0 6px;
     }
+  }
+
+  @media(max-width: $md-width) {
+    padding: 10px 80px 0;
+    margin-top: 60px;
+    margin-bottom: -40px;
   }
 }
 
@@ -1191,7 +1214,7 @@ a.global-nav-link {
   }
 
   .content {
-    max-width: $landing-page-content;
+    max-width: $page-content-width;
   }
 
   .sidebar-left {
