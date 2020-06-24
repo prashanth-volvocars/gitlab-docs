@@ -110,7 +110,7 @@ $nav-link-font-size: 14px;
   }
 
   .doc-nav {
-    @include sidebar-fixed;
+    @include toc-fixed;
     margin-top: 55px;
 
     &.toc-no-breadcrumbs {
