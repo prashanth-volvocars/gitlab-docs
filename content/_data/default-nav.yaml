@@ -196,6 +196,10 @@ sections:
             doc_url: 'user/application_security/vulnerabilities/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+          - doc_title: Security scanner integration
+            doc_url: 'development/integrations/secure.html'
+            ee_only: true
+            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Badges
         category_url: 'user/project/badges.html'
       - category_title: Bulk editing
