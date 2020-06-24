@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import "variables";
@@ -10,6 +10,14 @@ version: 3
   top: 0;
   height: 100vh;
   width: $sidebar-width;
+}
+
+@mixin toc-fixed {
+  overflow: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: $toc-width;
 }
 
 .text-decoration-underline {
