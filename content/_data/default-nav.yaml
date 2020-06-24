@@ -890,6 +890,8 @@ sections:
             doc_url: 'api/resource_label_events.html'
           - doc_title: Resource milestone events
             doc_url: 'api/resource_milestone_events.html'
+          - doc_title: Resource state events
+            doc_url: 'api/resource_state_events.html'
           - doc_title: Resource weight events
             doc_url: 'api/resource_weight_events.html'
             ee_only: true
