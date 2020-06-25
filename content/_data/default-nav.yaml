@@ -1058,6 +1058,8 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Redis
             doc_url: 'administration/high_availability/redis.html'
+          - doc_title: Sidekiq
+            doc_url: 'administration/high_availability/sidekiq.html'
       - category_title: Configure
         category_url: 'user/admin_area/settings/'
         docs:
