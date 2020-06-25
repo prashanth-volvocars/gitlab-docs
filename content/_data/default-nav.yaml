@@ -1328,6 +1328,19 @@ sections:
         category_url: 'development/architecture.html'
       - category_title: CI/CD development
         category_url: 'development/cicd/index.html'
+      - category_title: Database guides
+        category_url: 'development/database/'
+        docs:
+          - doc_title: Database review guidelines
+            doc_url: 'development/database_review.html'
+          - doc_title: SQL guidelines
+            doc_url: 'development/database_review.html'
+          - doc_title: Migrations style guide
+            doc_url: 'development/migration_style_guide.html'
+          - doc_title: What requires downtime
+            doc_url: 'development/what_requires_downtime.html'
+          - doc_title: Understanding EXPLAIN plans
+            doc_url: 'development/understanding_explain_plans.html'
       - category_title: Development Rake tasks
         category_url: 'development/rake_tasks.html'
         docs:
