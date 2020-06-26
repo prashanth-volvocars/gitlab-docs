@@ -1038,6 +1038,8 @@ sections:
             doc_url: 'administration/reference_architectures/25k_users.html'
           - doc_title: Up to 50,000 users
             doc_url: 'administration/reference_architectures/50k_users.html'
+          - doc_title: Troubleshooting
+            doc_url: 'administration/reference_architectures/troubleshooting.html'
           - doc_title: Consul
             doc_url: 'administration/high_availability/consul.html'
             ee_only: true
