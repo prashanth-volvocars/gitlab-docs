@@ -1,5 +1,5 @@
 ---
-version: 75
+version: 76
 ---
 
 @import "variables";
@@ -602,13 +602,13 @@ li {
     padding-right: 7px;
 
     &.has-collapse.active {
-      border-right: 0;
+      box-shadow: 0 0 0 0 inset;
     }
 
     &.active {
       background-color: $gds-gray-100;
       font-weight: 600;
-      border-right: 4px solid;
+      box-shadow: -4px 0 0 0 inset;
       color: $gds-indigo-800;
 
       &:hover {
@@ -649,7 +649,7 @@ li {
 
     &.active {
       background-color: $gds-gray-200;
-      border-right: 4px solid;
+      box-shadow: -4px 0 0 0 inset;
       color: $gds-indigo-800;
       &.section-title {
         background-color: $gds-gray-100;
@@ -888,6 +888,7 @@ a.global-nav-link {
 
   code {
     background-color: $alert-code-background-color;
+    word-break: break-word;
   }
 
   i {
