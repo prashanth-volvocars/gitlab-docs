@@ -107,7 +107,10 @@ checks:
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
       - 'https?:\/\/127.0.0.1.*'
-
+      # Don't check gitlab.com links due to cloudflare thinking the link test is a dos attack
+      # Temporary solution to enable external link checker
+      - 'https:\/\/gitlab.com\/.*'
+   
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.
     # E.g.:
