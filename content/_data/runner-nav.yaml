@@ -123,10 +123,10 @@ sections:
     section_url: 'monitoring/README.html'
 
   - section_title: Security
-    section_url: 'security/index.html'
+    section_url: 'security/'
 
   - section_title: Shells
-    section_url: 'shells/index.html'
+    section_url: 'shells/'
 
   - section_title: Troubleshoot
     section_url: 'faq/README.html'
