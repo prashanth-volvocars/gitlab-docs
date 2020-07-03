@@ -987,7 +987,7 @@ sections:
           - doc_title: Git
             doc_url: 'topics/git/'
       - category_title: GitLab.com settings
-        category_url: 'user/gitlab_com/index.html'
+        category_url: 'user/gitlab_com/'
       - category_title: Keyboard shortcuts
         category_url: 'user/shortcuts.html'
       - category_title: Markdown
@@ -1343,7 +1343,7 @@ sections:
       - category_title: Architecture
         category_url: 'development/architecture.html'
       - category_title: CI/CD development
-        category_url: 'development/cicd/index.html'
+        category_url: 'development/cicd/'
       - category_title: Database guides
         category_url: 'development/database/'
         docs:
@@ -1456,7 +1456,7 @@ sections:
           - doc_title: API style guide
             doc_url: 'development/api_styleguide.html'
           - doc_title: Go standards and style guidelines
-            doc_url: 'development/go_guide/index.html'
+            doc_url: 'development/go_guide/'
           - doc_title: GraphQL API style guide
             doc_url: 'development/api_graphql_styleguide.html'
           - doc_title: Guidelines for shell commands
@@ -1470,11 +1470,11 @@ sections:
           - doc_title: Newlines style guide
             doc_url: 'development/newlines_styleguide.html'
           - doc_title: Python development guidelines
-            doc_url: 'development/python_guide/index.html'
+            doc_url: 'development/python_guide/'
           - doc_title: SCSS style guide
             doc_url: 'development/fe_guide/style/scss.html'
           - doc_title: Shell scripting standards and style guidelines
-            doc_url: 'development/shell_scripting_guide/index.html'
+            doc_url: 'development/shell_scripting_guide/'
           - doc_title: Sidekiq debugging
             doc_url: 'development/sidekiq_debugging.html'
           - doc_title: Sidekiq style guide
