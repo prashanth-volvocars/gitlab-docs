@@ -66,8 +66,11 @@ sections:
       - category_title: Autoscale config
         category_url: 'configuration/autoscale.html'
 
-      - category_title: Autoscaling on AWS
+      - category_title: Autoscale on AWS EC2
         category_url: 'configuration/runner_autoscale_aws/'
+
+      - category_title: Autoscale on AWS Fargate
+        category_url: 'configuration/runner_autoscale_aws_fargate/'
 
       - category_title: Commands
         category_url: 'commands/README.html'
