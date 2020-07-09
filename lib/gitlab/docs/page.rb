@@ -31,7 +31,7 @@ module Gitlab
       end
 
       def has_anchor?(name)
-        @ids.include?(Docs::Element.decode(name.downcase))
+        @ids.include?(Docs::Element.decode(name))
       end
 
       def self.build(path)
