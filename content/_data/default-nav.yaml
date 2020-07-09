@@ -477,7 +477,7 @@ sections:
         category_url: 'user/project/wiki/'
 
   - section_title: Operations
-    section_url: 'user/project/operations/'
+    section_url: 'operations/'
     section_categories:
       - category_title: Dashboard settings
         category_url: 'user/project/operations/dashboard_settings.html'
@@ -512,7 +512,7 @@ sections:
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Feature Flags
-        category_url: 'user/project/operations/feature_flags.html'
+        category_url: 'operations/feature_flags.html'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
 
