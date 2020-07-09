@@ -28,7 +28,7 @@ RUN yarn install
 
 # Copy scripts used for static HTML post-processing
 COPY scripts /scripts/
-COPY --from=minifier /minify /scripts/minify
+COPY --from=minifier /minify /usr/local/bin/minify
 
 MAINTAINER GitLab Documentation Team
 
