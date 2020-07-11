@@ -489,12 +489,16 @@ sections:
       - category_title: Dashboards
         category_url: 'operations/metrics/dashboards/'
         docs:
+          - doc_title: Dashboard YAML properties
+            doc_url: 'operations/metrics/dashboards/yaml.html'
           - doc_title: Dashboard settings
             doc_url: 'user/project/operations/dashboard_settings.html'
           - doc_title: Panel types for dashboards
             doc_url: 'operations/metrics/dashboards/panel_types.html'
-          - doc_title: Dashboard YAML properties
-            doc_url: 'operations/metrics/dashboards/yaml.html'
+          - doc_title: Using Variables
+            doc_url: 'operations/metrics/dashboards/variables.html'
+          - doc_title: Templating variables
+            doc_url: 'operations/metrics/dashboards/templating_variables.html'
       - category_title: Metrics library
         category_url: 'user/project/integrations/prometheus_library/'
         docs:
