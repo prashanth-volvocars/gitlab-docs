@@ -901,6 +901,10 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Project import/export
             doc_url: 'api/project_import_export.html'
+          - doc_title: Project repository storage moves
+            doc_url: 'api/project_repository_storage_moves.html'
+            ee_only: true
+            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Project statistics
             doc_url: 'api/project_statistics.html'
           - doc_title: Project templates
