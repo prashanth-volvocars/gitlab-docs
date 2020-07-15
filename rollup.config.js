@@ -1,3 +1,5 @@
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const nodePolyfills = require('rollup-plugin-node-polyfills');
 const importResolver = require('rollup-plugin-import-resolver');
 const commonjs = require('rollup-plugin-commonjs');
 const vue = require('rollup-plugin-vue');
@@ -17,6 +19,8 @@ module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
     name: file,
   },
   plugins: [
+    nodeResolve(),
+    nodePolyfills(),
     commonjs(),
     babel(),
     json(),

@@ -1,16 +1,23 @@
 <script>
+import GlLink from '@gitlab/ui/dist/components/base/link/link';
+
 export default {
-  props: {
-    isOffline: {
-      type: Boolean,
-      required: true,
+  components: {
+    GlLink,
+  },
+  inject: {
+    archivesPath: {
+      type: String,
+      default: '',
     },
+  },
+  props: {
     isProduction: {
       type: Boolean,
       required: true,
     },
-    archivesPath: {
-      type: String,
+    isOffline: {
+      type: Boolean,
       required: true,
     },
   },
@@ -24,7 +31,7 @@ export default {
     <p v-if="isProduction && isOffline" class="gray js-error-description">
       You attempted to view an older version of the documentation that is no longer available on
       this site. Please select a newer version from the menu above or access an
-      <a :href="archivesPath">archive</a> of the older version.
+      <gl-link :href="archivesPath" target="_blank">archive</gl-link> of the older version.
     </p>
   </div>
 </template>
