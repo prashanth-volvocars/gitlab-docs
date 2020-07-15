@@ -1,5 +1,5 @@
 ---
-version: 16
+version: 17
 ---
 
 @import "variables";
@@ -68,7 +68,7 @@ $nav-link-font-size: 14px;
 
 @media(max-width: $md-width) {
   .doc-nav {
-    padding: 50px 40px 0 70px;
+    padding: 50px 16px 0 66px;
   }
 
   .table-of-contents {
