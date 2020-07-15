@@ -12,7 +12,7 @@ class IntroducedInFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('blockquote').each do |blockquote|
       content = blockquote.inner_html
-      next if content !~ /(<a href="[^"]+">)?((Introduced(<\/a>)? in )|(moved(<\/a>))? to )(<a href="[^"]+">)?GitLab/mi
+      next if content !~ /(<a href="[^"]+">)?((Introduced(<\/a>)? in )|(moved(<\/a>))? to )(<a href="[^"]+">)?/mi
       new_content = generate(content)
       blockquote.replace(new_content)
     end
@@ -22,7 +22,7 @@ class IntroducedInFilter < Nanoc::Filter
   def generate(content)
     @incremental_id += 1
     # If the content is a list of items, collapse the content.
-    if content =~ /<ul>/i
+    if content =~ /<ul>/i && content !~ /disabled/i
       %[<div class="introduced-in">Version history] +
       %[<button class="text-expander" data-toggle="collapse" href="#release_version_notes_#{@incremental_id}" role="button" aria-expanded="false">] +
       %[</button>] +
