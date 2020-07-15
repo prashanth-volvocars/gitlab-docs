@@ -787,6 +787,8 @@ sections:
             doc_url: 'api/project_clusters.html'
           - doc_title: Clusters (group)
             doc_url: 'api/group_clusters.html'
+          - doc_title: Clusters (instance)
+            doc_url: 'api/instance_clusters.html'
           - doc_title: Commits
             doc_url: 'api/commits.html'
           - doc_title: Container Registry
