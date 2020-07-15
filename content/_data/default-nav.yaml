@@ -716,6 +716,8 @@ sections:
             doc_url: 'ci/services/postgres.html'
           - doc_title: Redis
             doc_url: 'ci/services/redis.html'
+      - category_title: Troubleshooting
+        category_url: 'ci/troubleshooting.html'
 
   - section_title: Packages
     section_url: 'user/packages/'
