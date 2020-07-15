@@ -12,4 +12,5 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
     '^.+\\.vue$': 'vue-jest',
   },
+  transformIgnorePatterns: ['node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue)/)'],
 };
