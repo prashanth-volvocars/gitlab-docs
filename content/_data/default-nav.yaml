@@ -93,6 +93,8 @@ sections:
         docs:
           - doc_title: Deploying AWS Lambda functions
             doc_url: 'user/project/clusters/serverless/aws.html'
+      - category_title: Securing your deployed applications
+        category_url: 'user/project/clusters/securing.html'
 
   - section_title: Groups
     section_url: 'user/group/'
