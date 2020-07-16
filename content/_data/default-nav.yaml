@@ -486,6 +486,8 @@ sections:
       - category_title: Metrics dashboard
         category_url: 'operations/metrics/'
         docs:
+          - doc_title: Set up alerts for metrics
+            doc_url: 'operations/metrics/alerts.html'
           - doc_title: Embedding metrics in Markdown
             doc_url: 'operations/metrics/embed.html'
           - doc_title: Embedding metrics in Grafana
