@@ -292,47 +292,6 @@ sections:
         category_url: 'user/project/insights/'
         ee_only: true
         ee_tier: 'GitLab Ultimate and GitLab.com Gold'
-      - category_title: Issues
-        category_url: 'user/project/issues/'
-        docs:
-          - doc_title: Crosslinking issues
-            doc_url: 'user/project/issues/crosslinking_issues.html'
-          - doc_title: Design management
-            doc_url: 'user/project/issues/design_management.html'
-          - doc_title: Confidential issues
-            doc_url: 'user/project/issues/confidential_issues.html'
-          - doc_title: Due dates
-            doc_url: 'user/project/issues/due_dates.html'
-          - doc_title: Issue Boards
-            doc_url: 'user/project/issue_board.html'
-          - doc_title: Issue data and actions
-            doc_url: 'user/project/issues/issue_data_and_actions.html'
-          - doc_title: Labels
-            doc_url: 'user/project/labels.html'
-          - doc_title: Managing issues
-            doc_url: 'user/project/issues/managing_issues.html'
-          - doc_title: Milestones
-            doc_url: 'user/project/milestones/'
-          - doc_title: Multiple assignees
-            doc_url: 'user/project/issues/multiple_assignees_for_issues.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
-          - doc_title: Related issues
-            doc_url: 'user/project/issues/related_issues.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
-          - doc_title: Service Desk
-            doc_url: 'user/project/service_desk.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
-          - doc_title: Sorting and ordering issue lists
-            doc_url: 'user/project/issues/sorting_issue_lists.html'
-          - doc_title: Weight
-            doc_url: 'user/project/issues/issue_weight.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
-          - doc_title: Zoom meetings in issues
-            doc_url: 'user/project/issues/associate_zoom_meeting.html'
       - category_title: Merge Requests
         category_url: 'user/project/merge_requests/'
         docs:
@@ -481,6 +440,53 @@ sections:
         category_url: 'user/project/static_site_editor/'
       - category_title: Wikis
         category_url: 'user/project/wiki/'
+
+  - section_title: Issues
+    section_url: 'user/project/issues/'
+    section_categories:
+      - category_title: Confidential issues
+        category_url: 'user/project/issues/confidential_issues.html'
+      - category_title: Crosslinking issues
+        category_url: 'user/project/issues/crosslinking_issues.html'
+      - category_title: Design management
+        category_url: 'user/project/issues/design_management.html'
+      - category_title: Due dates
+        category_url: 'user/project/issues/due_dates.html'
+      - category_title: Issue Boards
+        category_url: 'user/project/issue_board.html'
+      - category_title: Issue data and actions
+        category_url: 'user/project/issues/issue_data_and_actions.html'
+      - category_title: Labels
+        category_url: 'user/project/labels.html'
+      - category_title: Managing issues
+        category_url: 'user/project/issues/managing_issues.html'
+      - category_title: Milestones
+        category_url: 'user/project/milestones/'
+        docs:
+          - doc_title: Burndown charts
+            doc_url: 'user/project/milestones/burndown_charts.html'
+            ee_only: true
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Multiple assignees
+        category_url: 'user/project/issues/multiple_assignees_for_issues.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Related issues
+        category_url: 'user/project/issues/related_issues.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Service Desk
+        category_url: 'user/project/service_desk.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Sorting and ordering issue lists
+        category_url: 'user/project/issues/sorting_issue_lists.html'
+      - category_title: Weight
+        category_url: 'user/project/issues/issue_weight.html'
+        ee_only: true
+        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
+      - category_title: Zoom meetings in issues
+        category_url: 'user/project/issues/associate_zoom_meeting.html'
 
   - section_title: Operations
     section_url: 'operations/'
