@@ -1027,8 +1027,15 @@ sections:
             doc_url: 'ssh/README.html'
           - doc_title: Integrations
             doc_url: 'integration/README.html'
-          - doc_title: Git
-            doc_url: 'topics/git/'
+      - category_title: Git
+        category_url: 'topics/git/'
+        docs:
+          - doc_title: Partial clone
+            doc_url: 'topics/git/partial_clone.html'
+          - doc_title: Troubleshooting Git
+            doc_url: 'topics/git/troubleshooting_git.html'
+          - doc_title: Useful commands
+            doc_url: 'topics/git/useful_git_commands.html'
       - category_title: GitLab.com settings
         category_url: 'user/gitlab_com/'
       - category_title: Infrastructure as code
