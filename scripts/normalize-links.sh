@@ -66,7 +66,6 @@ find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/opens
 echo "Replace full URLs in $TARGET/$VER for /ce/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ce/#="/'"$VER"'/ce/#g'
 
-<<<<<<< HEAD
 echo "Replace full URLs in $TARGET/$VER for /ee/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
 
