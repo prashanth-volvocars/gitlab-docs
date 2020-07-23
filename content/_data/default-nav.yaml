@@ -506,7 +506,7 @@ sections:
           - doc_title: Dashboard YAML properties
             doc_url: 'operations/metrics/dashboards/yaml.html'
           - doc_title: Dashboard settings
-            doc_url: 'user/project/operations/dashboard_settings.html'
+            doc_url: 'operations/metrics/dashboards/settings.html'
           - doc_title: Panel types for dashboards
             doc_url: 'operations/metrics/dashboards/panel_types.html'
           - doc_title: Using variables
