@@ -938,6 +938,7 @@ sections:
           - doc_title: Resource weight events
             doc_url: 'api/resource_weight_events.html'
             ee_only: true
+            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Runners
             doc_url: 'api/runners.html'
           - doc_title: SCIM
