@@ -51,7 +51,7 @@ sections:
       - category_title: Value Stream
         category_url: 'user/analytics/value_stream_analytics.html'
 
-  - section_title: Clusters
+  - section_title: Infrastructure
     section_url: 'user/project/clusters/'
     section_categories:
       - category_title: Adding and removing clusters
@@ -82,6 +82,8 @@ sections:
         docs:
           - doc_title: Configuring Crossplane
             doc_url: 'user/clusters/crossplane.html'
+      - category_title: Infrastructure as code
+        category_url: 'user/infrastructure/index.html'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Pod logs
@@ -1041,8 +1043,6 @@ sections:
             doc_url: 'topics/git/useful_git_commands.html'
       - category_title: GitLab.com settings
         category_url: 'user/gitlab_com/'
-      - category_title: Infrastructure as code
-        category_url: 'user/infrastructure/index.html'
       - category_title: Keyboard shortcuts
         category_url: 'user/shortcuts.html'
       - category_title: Markdown
