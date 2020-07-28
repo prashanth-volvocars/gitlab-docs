@@ -321,6 +321,7 @@ review_stop:
 # Deploy to production with GitLab Pages
 #
 pages:
+  resource_group: pages
   extends:
     - .rules_pages
     - .retry
