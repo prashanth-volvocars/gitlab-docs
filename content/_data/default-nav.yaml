@@ -1437,6 +1437,8 @@ sections:
       - category_title: Telemetry guide
         category_url: 'development/telemetry/'
         docs:
+          - doc_title: Event dictionary
+            doc_url: 'development/telemetry/event_dictionary.html'
           - doc_title: Usage Ping guide
             doc_url: 'development/telemetry/usage_ping.html'
           - doc_title: Snowplow guide
