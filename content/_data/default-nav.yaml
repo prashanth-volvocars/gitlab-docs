@@ -180,8 +180,6 @@ sections:
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Static Application Security Testing
             doc_url: 'user/application_security/sast/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Secret Detection
             doc_url: 'user/application_security/secret_detection/'
             ee_only: true
