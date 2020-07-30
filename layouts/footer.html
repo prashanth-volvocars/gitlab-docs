@@ -3,8 +3,8 @@
     <div class="col-9">
       <% if is_production? && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
       <%# Show Edit button only in production and on master branch (hide archives) %>
-        <a href="<%= edit_on_gitlab(@item) %>"><span class="text-decoration-underline">Edit this page</span></a>
-        <a href="<%= edit_on_gitlab(@item, editor: :webide) %>">(<span class="text-decoration-underline">Web IDE</span>)</a>
+        <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">Edit this page</span></a>
+        <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">(<span class="text-decoration-underline">Web IDE</span>)</a>
       <% end %>
     </div>
     <div class="col-3 p-0 m-0">

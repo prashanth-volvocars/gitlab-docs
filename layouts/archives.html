@@ -16,8 +16,8 @@
       <% if is_production? && ENV['CI_COMMIT_REF_NAME'] == 'master' %>
       <%# Show Edit button only in production and on master branch (hide archives) %>
       <div class="edit-on">
-        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>">Edit this page</a>
-        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item, editor: :webide) %>">Web IDE</a>
+        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">Edit this page</a>
+        <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Web IDE</a>
       </div>
       <% end %>
       <% if @item[:last_updated] %>
