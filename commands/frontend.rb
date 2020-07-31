@@ -8,33 +8,19 @@ flag   :h, :help, 'show help for this command' do |value, cmd|
   exit 0
 end
 run do |opts, args, cmd|
+  puts 'Compiling JavaScript...'
+  unless system('yarn install --frozen-lockfile')
+    abort <<~ERROR
+      Error: failed to run yarn. JavaScript compilation failed. For more information, see:
+      https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
 
-  puts '--------------------------------'
-
-  if check_requirements?
-    puts 'Compiling JavaScript...'
-
-    system('yarn install --frozen-lockfile')
-
-    system('yarn bundle')
+      ERROR
   end
-end
+  unless system('yarn bundle')
+    abort <<~ERROR
+      Error: failed to run yarn. JavaScript compilation failed. For more information, see:
+      https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
 
-def check_requirements?
-  puts 'Checking requirements...'
-
-  has_requirements = command_exists?('node') && command_exists?('yarn')
-
-  unless has_requirements
-    puts 'Your system may be missing some requirements.'
-    puts 'Please refer to the installation instructions for more details:'
-    puts 'https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md'
+      ERROR
   end
-  has_requirements
-end
-
-def command_exists?(command)
-  exists = system("which #{command} > /dev/null 2>&1")
-  puts "🚨 #{command} is not installed!" unless exists
-  exists
 end
