@@ -452,6 +452,10 @@ sections:
         category_url: 'user/project/issues/confidential_issues.html'
       - category_title: Crosslinking issues
         category_url: 'user/project/issues/crosslinking_issues.html'
+      - category_title: CSV export
+        category_url: 'user/project/issues/csv_export.html'
+      - category_title: CSV import
+        category_url: 'user/project/issues/csv_import.html'
       - category_title: Design management
         category_url: 'user/project/issues/design_management.html'
       - category_title: Due dates
