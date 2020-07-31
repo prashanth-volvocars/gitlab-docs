@@ -31,6 +31,7 @@ Version
         <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
       </a>
     </li>
+    <!-- Start of online versions -->
     <li class="dropdown-divider"></li>
     <% @items['/_data/versions.yaml'][:online].each do |version| %>
       <!--
@@ -54,6 +55,32 @@ Version
         </li>
       <% end %>
     <% end %>
+    <!-- End of online versions -->
+    <!-- Start of last major versions -->
+    <li class="dropdown-divider"></li>
+    <% @items['/_data/versions.yaml'][:previous_majors].each do |version| %>
+      <!--
+        If we are on the archives page, the link here is hardcoded to always
+        point to `/archives/`. If you visit https://docs.gitlab.com/archives/
+        and select a version from the dropdown, that version's archives page
+        will be shown. We want to always show the latest archives page as it
+        contains all current versions and offline archives.
+      -->
+      <% if archives? %>
+        <li>
+          <a href='/archives/'>
+            <%= version %>
+          </a>
+        </li>
+      <% else %>
+        <li>
+          <a<%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
+            <%= version %>
+          </a>
+        </li>
+      <% end %>
+    <% end %>
+    <!-- End of last major versions -->
     <li class="dropdown-divider"></li>
     <li><a<%= active_dropdown('archives') %> href='/archives/'>Archives</a></li>
   </ul>
