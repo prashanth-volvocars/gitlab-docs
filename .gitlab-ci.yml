@@ -360,28 +360,31 @@ test_unlinked_files:
 ###############################################
 
 #
-# Deploy the Review App on a dev server
+# Deploy the Review App on a GCS bucket. Use the Google Cloud SDK image
+# https://hub.docker.com/r/google/cloud-sdk and run the script in scripts/deploy.
 #
 review:
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
   stage: deploy
   extends:
     - .retry
   variables:
-    GIT_STRATEGY: none
+    DEPLOY_TYPE: review
   needs:
     - compile_dev
   before_script: []
   cache: {}
   script:
-    # Rsync to the Pages dir
-    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
-    # Remove public directory so that the next review app can run in a
-    # clean environment (limitation of the shell executor).
-    - rm -rf public
+    - apk add bash --update-cache
+    - ./scripts/deploy
+    # We sometimes have absolute URLs, this replaces them with correct ones for the review app
+    # Disable for now. Alpine's find is not compatible with the script.
+    #- ./scripts/review-replace-urls
   environment:
     name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     url: http://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.$APPS_DOMAIN
     on_stop: review_stop
+    auto_stop_in: 15 days
   rules:
     - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
@@ -393,20 +396,23 @@ review:
     - review-apps
 
 #
-# Stop the Review App
+# Stop the Review App. Use the Google Cloud SDK image
+# https://hub.docker.com/r/google/cloud-sdk and run the script in scripts/deploy.
 #
 review_stop:
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
   stage: deploy
   extends:
     - .retry
   variables:
-    GIT_STRATEGY: none
+    DEPLOY_DELETE_APP: 'true'
   needs: []
   artifacts: {}
   before_script: []
   cache: {}
   script:
-    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    - apk add bash --update-cache
+    - ./scripts/deploy
   environment:
     name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     action: stop
@@ -420,9 +426,6 @@ review_stop:
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
-  tags:
-    - nginx
-    - review-apps
 
 ###############################################
 #          GitLab Pages (production)          #

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+echo "Starting deploy for ${DEPLOY_TYPE} app."
+
+src='public/'
+
+if [ "$DEPLOY_TYPE" = 'review' ]; then
+  gcp_project=$GCP_PROJECT_REVIEW_APPS
+  gcp_bucket=$GCP_BUCKET_REVIEW_APPS
+  gcp_service_account_key=$GCP_SERVICE_ACCOUNT_KEY_REVIEW_APPS
+  cache_control_max_age='60'
+  dest="gs://$gcp_bucket/$CI_COMMIT_REF_SLUG"
+elif [ "$DEPLOY_TYPE" = 'staging' ]; then
+  gcp_project=$GCP_PROJECT_STAGING
+  gcp_bucket=$GCP_BUCKET_STAGING
+  gcp_service_account_key=$GCP_SERVICE_ACCOUNT_KEY_STAGING
+  cache_control_max_age='600'
+  dest="gs://$gcp_bucket"
+elif [ "$DEPLOY_TYPE" = 'production' ]; then
+  gcp_project=$GCP_PROJECT_PRODUCTION
+  gcp_bucket=$GCP_BUCKET_PRODUCTION
+  gcp_service_account_key=$GCP_SERVICE_ACCOUNT_KEY_PRODUCTION
+  cache_control_max_age='600'
+  dest="gs://$gcp_bucket"
+else
+  echo "Invalid DEPLOY_TYPE: '$DEPLOY_TYPE'.  Must be 'review', 'staging', or 'production'"
+  exit 1
+fi
+
+if [ "$DEPLOY_CLEANUP_OLD_DELETED_FILES" = 'true' ]; then
+  echo "'DEPLOY_CLEANUP_OLD_DELETED_FILES' flag is 'true', files which no longer exist will be deleted from ${dest}"
+  delete_flag='-d'
+else
+  delete_flag=''
+fi
+
+echo "$gcp_service_account_key" > key.json
+gcloud auth activate-service-account --key-file key.json
+gcloud config set project "$gcp_project"
+
+if [ "$DEPLOY_DELETE_APP" = 'true' ]; then
+  echo "Deleting ${DEPLOY_TYPE} app from ${dest}..."
+  echo "gsutil -m rm -r \"$dest\""
+  gsutil -m rm -r "$dest"
+else
+  echo "Deploying ${DEPLOY_TYPE} app to ${dest}..."
+  echo "gsutil -h \"Cache-Control:public, max-age=$cache_control_max_age\" -m rsync $delete_flag -c -r \"$src\" \"$dest\""
+  gsutil -h "Cache-Control:public, max-age=$cache_control_max_age" -m rsync $delete_flag -c -r "$src" "$dest"
+fi
