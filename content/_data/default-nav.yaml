@@ -851,6 +851,8 @@ sections:
             doc_url: 'api/issues_statistics.html'
           - doc_title: Jobs
             doc_url: 'api/jobs.html'
+          - doc_title: Job artifacts
+            doc_url: 'api/job_artifacts.html'
           - doc_title: Keys
             doc_url: 'api/keys.html'
           - doc_title: Labels (project)
