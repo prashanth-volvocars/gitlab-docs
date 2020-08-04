@@ -42,7 +42,7 @@ here's what you will need to have:
 
 - Environment: Unix/Linux or macOS.
 - Ruby 2.6.6.
-- Node (latest LTS).
+- Node.js (latest LTS).
 - Yarn (latest version).
 - Xcode *(macOS only)*:
   - Run `xcode-select --install` to install the command line tools only.
@@ -52,12 +52,28 @@ here's what you will need to have:
 On Windows, the process described here would be different, but as most of
 contributors use Unix, we'll go over this process for macOS and Linux users.
 
-### Ruby
+## Install dependencies
 
-The recommended way is to use a Ruby version manager to install Ruby in your
-system.
+There are a couple of options for installing dependencies for `gitlab-docs`:
 
-We recommend [rbenv](https://github.com/rbenv/rbenv):
+- Using [separate dependency managers](#use-separate-dependency-managers) for Ruby, Node.js, and
+  Yarn.
+- The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn.
+
+The choice of which to use will depend on what you currently use. If you don't yet have Ruby,
+Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
+
+### Use separate dependency managers
+
+In the instructions below, you:
+
+- Install Ruby using `rbenv`.
+- Install Node.js using `nvm`.
+- Install Yarn using your preferred method in their installation instructions.
+
+#### Ruby
+
+To install Ruby using [rbenv](https://github.com/rbenv/rbenv):
 
 1. [Install rbenv](https://github.com/rbenv/rbenv#installation).
 1. Install the latest Ruby:
@@ -77,38 +93,70 @@ Check your:
 - Ruby version with `ruby --version`.
 - Bundler version with `bundle --version`. You need version 1.17.3.
 
-### Node
+#### Node.js
 
-The recommended way is to use a Node version manager to install Node in your
-system.
+To install Node.js using [nvm](https://github.com/nvm-sh/nvm):
 
-We recommend NVM:
-
-1. [Install NVM](https://github.com/nvm-sh/nvm#installation-and-update).
-1. Install the latest Node:
+1. [Install nvm](https://github.com/nvm-sh/nvm#installation-and-update).
+1. Install the latest Node.js:
 
    ```shell
    nvm install --lts
    ```
 
-1. Use the newly installed Node:
+1. Use the newly installed Node.js:
 
    ```shell
    nvm use --lts --default
    ```
 
-Check your Node version with `node -v`.
+Check your Node.js version with `node -v`.
 
-### Yarn
+#### Yarn
 
 Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the
-Node ecosystem.
+Node.js ecosystem.
 
 Check your Yarn version with `yarn -v`.
 
+### Use `asdf`
+
+To install Ruby, Node.js, and Yarn using `asdf`:
+
+1. [Install `asdf`](https://asdf-vm.com/#/core-manage-asdf-vm?id=install).
+1. Add the Ruby, Node.js, and Yarn [`asdf` plugins](https://asdf-vm.com/#/core-manage-plugins)
+   required to install versions of these dependencies:
+
+   ```shell
+   asdf plugin add ruby
+   asdf plugin add nodejs
+   asdf plugin add yarn
+   ```
+
+1. [Install](https://asdf-vm.com/#/core-manage-versions) the dependencies listed in the project's
+   `.tool-versions` file:
+
+   ```shell
+   asdf install
+   ```
+
+1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
+   `.tool-versions` files. For example to set Ruby 2.6.6 as the global default, run:
+
+   ```shell
+   asdf global ruby 2.6.6
+   ```
+
+Check your:
+
+- Ruby version with `ruby --version`.
+- Bundler version with `bundle --version`. You need version 1.17.3.
+- Node.js version with `node -v`.
+- Yarn version with `yarn -v`
+
 ## Install Nanoc's dependencies
 
-The project depends on many Ruby and Node libraries. To install these:
+The project depends on many Ruby and Node.js libraries. To install these:
 
 1. Open a terminal and navigate to your local checkout of this project.
 1. Run:
