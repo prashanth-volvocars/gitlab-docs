@@ -117,11 +117,15 @@ sections:
       - category_title: Documentation
         category_url: 'https://docs.gitlab.com/ee/development/documentation/'
         external_url: true
-      - category_title: Prepare a build environment
+      - category_title: Build locally
         category_url: 'build/README.html'
         docs:
-          - doc_title: With Docker
-            doc_url: 'build/prepare-build-environment.html'
+          - doc_title: Build Omnibus GitLab package
+            doc_url: 'build/build_package.html'
+          - doc_title: Build all-in-one Docker image
+            doc_url: 'build/build_docker_image.html'
+          - doc_title: Information for GitLab team members
+            doc_url: 'build/team_member_docs.html'
       - category_title: Set up a development environment
         category_url: 'development/setup.html'
       - category_title: Config options
