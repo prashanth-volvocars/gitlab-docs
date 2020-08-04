@@ -13,11 +13,11 @@ terms.
 
 ## Ownership
 
-The [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#static-site-editor-group)
+The [Static Site Editor](https://about.gitlab.com/handbook/product/product-categories/#static-site-editor-group)
 group within the DevOps Create stage is the team responsible for developing
 and maintaining this project with the Technical Writing team.
 
-[Jacques Erasmus](https://gitlab.com/jerasmus) (supported by [Jean du Plessis](https://gitlab.com/jeanduplessis)) is in charge of scheduling work from this project in the [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#static-site-editor-group) group
+[Jacques Erasmus](https://gitlab.com/jerasmus) (supported by [Jean du Plessis](https://gitlab.com/jeanduplessis)) is in charge of scheduling work from this project in the [Static Site Editor](https://about.gitlab.com/handbook/product/product-categories/#static-site-editor-group) group
 and DRI is [Susan Tacker](https://gitlab.com/susantacker), Senior Manager,
 Technical Writing.
 
