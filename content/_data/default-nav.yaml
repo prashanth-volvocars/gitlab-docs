@@ -1549,6 +1549,8 @@ sections:
             doc_url: 'development/sql.html'
           - doc_title: Vue style guide
             doc_url: 'development/fe_guide/style/vue.html'
+      - category_title: GitLab project pipelines
+        category_url: 'development/pipelines.html'
       - category_title: Instrumenting Ruby code
         category_url: 'development/instrumentation.html'
       - category_title: Testing standards and style guidelines
