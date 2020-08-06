@@ -266,6 +266,10 @@ sections:
             doc_url: 'user/project/integrations/irker.html'
           - doc_title: Jira
             doc_url: 'user/project/integrations/jira.html'
+          - doc_title: Jira Development Panel
+            doc_url: 'integration/jira_development_panel.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Mattermost notifications
             doc_url: 'user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
@@ -1187,6 +1191,12 @@ sections:
             doc_url: 'administration/postgresql/pgbouncer.html'
             ee_only: true
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+          - doc_title: Replication and failover
+            doc_url: 'administration/postgresql/replication_and_failover.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
+          - doc_title: External database service
+            doc_url: 'administration/postgresql/external.html'
       - category_title: Load balancer
         category_url: 'administration/load_balancer.html'
       - category_title: NFS
