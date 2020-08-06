@@ -735,9 +735,11 @@ sections:
       - category_title: Troubleshooting
         category_url: 'ci/troubleshooting.html'
 
-  - section_title: Packages
+  - section_title: Packages & Registries
     section_url: 'user/packages/'
     section_categories:
+      - category_title: Package Registry
+        category_url: 'user/packages/package_registry/'
       - category_title: Container Registry
         category_url: 'user/packages/container_registry/'
       - category_title: Dependency Proxy
