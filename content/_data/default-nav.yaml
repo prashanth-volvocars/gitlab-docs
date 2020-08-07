@@ -1416,6 +1416,8 @@ sections:
         category_url: 'development/architecture.html'
       - category_title: CI/CD development
         category_url: 'development/cicd/'
+      - category_title: Danger bot
+        category_url: 'development/dangerbot.html'
       - category_title: Database guides
         category_url: 'development/database/'
         docs:
