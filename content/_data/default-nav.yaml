@@ -754,6 +754,8 @@ sections:
         category_url: 'user/packages/composer_repository/'
       - category_title: Conan Repository
         category_url: 'user/packages/conan_repository/'
+      - category_title: Go Proxy
+        category_url: 'user/packages/go_proxy/'
       - category_title: Maven Repository
         category_url: 'user/packages/maven_repository/'
       - category_title: NPM Registry
