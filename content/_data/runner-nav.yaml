@@ -38,6 +38,9 @@ sections:
       - category_title: macOS
         category_url: 'install/osx.html'
 
+      - category_title: OpenShift
+        category_url: 'install/openshift.html'
+
       - category_title: Windows
         category_url: 'install/windows.html'
 
