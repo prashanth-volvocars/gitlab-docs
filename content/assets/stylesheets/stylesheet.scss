@@ -913,6 +913,17 @@ a.global-nav-link {
 }
 // End of Pajamas alerts
 
+// Start of banner alert box
+// https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
+.alert-banner {
+  background-color: rgba($banner-background, .3);
+  border-color: rgba($banner-background, .3);
+  color: $banner-text;
+  text-align: center;
+  margin-top: 20px;
+}
+// End of banner alert box
+
 .header {
   z-index: 10;
   background: $header-background-color;
