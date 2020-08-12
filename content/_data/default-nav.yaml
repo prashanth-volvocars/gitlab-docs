@@ -565,11 +565,6 @@ sections:
   - section_title: CI/CD
     section_url: 'ci/README.html'
     section_categories:
-      - category_title: '.gitlab-ci.yml Reference'
-        category_url: 'ci/yaml/README.html'
-        docs:
-          - doc_title: Includes examples
-            doc_url: 'ci/yaml/includes.html'
       - category_title: Introduction
         category_url: 'ci/introduction/'
         docs:
@@ -583,6 +578,11 @@ sections:
             doc_url: 'ci/migration/circleci.html'
           - doc_title: Migrating from Jenkins
             doc_url: 'ci/jenkins/'
+      - category_title: '.gitlab-ci.yml Reference'
+        category_url: 'ci/yaml/README.html'
+        docs:
+          - doc_title: Includes examples
+            doc_url: 'ci/yaml/includes.html'
       - category_title: Auto DevOps
         category_url: 'topics/autodevops/'
         docs:
@@ -1424,6 +1424,9 @@ sections:
         category_url: 'development/architecture.html'
       - category_title: CI/CD development
         category_url: 'development/cicd/'
+        docs:
+          - doc_title: Development guide for CI/CD templates
+            doc_url: 'development/cicd/templates.html'
       - category_title: Danger bot
         category_url: 'development/dangerbot.html'
       - category_title: Database guides
