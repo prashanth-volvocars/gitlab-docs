@@ -919,8 +919,12 @@ a.global-nav-link {
   background-color: rgba($banner-background, .3);
   border-color: rgba($banner-background, .3);
   color: $banner-text;
-  text-align: center;
   margin-top: 20px;
+
+  i {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 // End of banner alert box
 
@@ -1514,7 +1518,9 @@ li {
   }
 }
 
-//end of in-page styles
+.center-align-text {
+  text-align: center;
+}
 
 .banner {
   z-index: 5;
