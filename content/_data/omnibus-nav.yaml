@@ -98,6 +98,8 @@ sections:
         category_url: 'update/convert_to_omnibus.html'
       - category_title: Package signatures
         category_url: 'update/package_signatures.html'
+      - category_title: GitLab 13 changes
+        category_url: 'update/gitlab_13_changes.html'
       - category_title: GitLab 12 changes
         category_url: 'update/gitlab_12_changes.html'
       - category_title: GitLab 11 changes
