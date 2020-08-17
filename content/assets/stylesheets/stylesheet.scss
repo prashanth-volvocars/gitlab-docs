@@ -1,5 +1,5 @@
 ---
-version: 77
+version: 78
 ---
 
 @import "variables";
@@ -708,10 +708,6 @@ a.global-nav-link {
   &:visited {
     color: $global-nav-link-level0;
   }
-
-  &.active {
-    padding-left: 14px;
-  }
 }
 
 .level-1 {
@@ -721,10 +717,6 @@ a.global-nav-link {
   &:visited {
     color: $global-nav-link-level1;
   }
-
-  &.active {
-    padding-left: 31px;
-  }
 }
 
 .level-2 {
@@ -733,10 +725,6 @@ a.global-nav-link {
 
   &:visited {
     color: $global-nav-link-level2;
-  }
-
-  &.active {
-    padding-left: 49px;
   }
 }
 
