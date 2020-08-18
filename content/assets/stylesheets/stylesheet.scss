@@ -935,7 +935,6 @@ a.global-nav-link {
   position: fixed;
   width: 100%;
   height: $page-header-height;
-  padding: 4px 16px;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -996,28 +995,15 @@ a.global-nav-link {
       }
 
       .nav-item {
-        display: block;
-        padding: 10px 0;
+        margin: 10px;
       }
     }
   }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  .version-dropdown-desktop {
-    display: flex;
-    align-items: center;
-
-    @media all and (max-width: $mobile-width) {
-      display: none;
-    }
+  &:not(.active) {
+    height: $page-header-height;
   }
 
   .dropdown {
-    height: $page-header-height;
     display: flex;
     align-items: center;
   }
@@ -1029,12 +1015,7 @@ a.global-nav-link {
   }
 
   .choose-version {
-    margin-left: 32px;
     font-size: 14px;
-
-    @media(max-width:$mobile-width) {
-      display: none;
-    }
   }
 
   .btn-versions {
@@ -1127,14 +1108,6 @@ a.global-nav-link {
 
   .nav-container {
     margin: auto 0;
-
-    .version-dropdown-mobile {
-      display: none;
-
-      @media all and (max-width: $mobile-width) {
-        display: block;
-      }
-    }
   }
 
   .nav-toggle {
@@ -1153,22 +1126,27 @@ a.global-nav-link {
     }
   }
 
-  // Override bootstrap
-  .nav > li > a {
-    text-decoration: none;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    color: $header-font-color;
-  }
+  .nav {
+    > li {
+      margin: 0 10px;
+      padding: 0 10px;
+    }
 
-  // Override bootstrap
-  .nav > li > a:focus, .nav > li > a:hover {
-    text-decoration: none;
-    background-color: transparent;
-    opacity: .8;
+    // Override bootstrap
+    > a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      color: $header-font-color;
+    }
+  
+    // Override bootstrap
+    > a:focus, > a:hover {
+      text-decoration: none;
+      background-color: transparent;
+      opacity: .8;
+    }
   }
-
 }
 
 

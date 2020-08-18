@@ -1,5 +1,5 @@
-<div class="header">
-  <div class="d-flex align-items-center">
+<div class="header align-items-center px-3">
+  <div class="d-flex align-items-center py-1">
     <a class="header-link logo-container d-flex justify-content-center align-items-center" href="/">
       <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="logo" />
       <p><span class="header-company-name">GitLab </span><strong>Docs</strong></p>
@@ -12,18 +12,17 @@
       </form>
       <% end %>
     <% end %>
-    <div class="version-dropdown-desktop">
-      <%= render '/versions_dropdown.*' %>
-    </div>
   </div>
-  <div class="nav-container">
+  <div class="nav-container w-100 ml-4">
     <a class="nav-toggle" id="docs-nav-toggle">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </a>
-    <ul class="nav">
-      <div class="version-dropdown-mobile">
-        <%= render '/versions_dropdown.*' %>
-      </div>
+    <ul class="nav align-items-center">
+      <li class="nav-item flex-grow-1">
+        <div class="d-flex align-items-center">
+          <%= render '/versions_dropdown.*' %>
+        </div>
+      </li>
       <% if is_production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
