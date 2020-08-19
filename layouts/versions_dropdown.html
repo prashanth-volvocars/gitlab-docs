@@ -1,3 +1,10 @@
+<%
+latest_stable = @items['/_data/versions.yaml'][:online].first
+next_major = latest_stable.split('.').first
+next_minor = "#{latest_stable.split('.').last.to_i + 1}"
+next_version = "#{next_major}.#{next_minor}"
+dotcom = "GitLab.com (#{next_version}-pre)"
+%>
 <!-- versions dropdown-->
 <div class="choose-version">
 Version
@@ -18,7 +25,11 @@ Version
     Archives
     <% else %>
       <% if is_production? %>
-        <%= ENV['CI_COMMIT_REF_NAME'] == 'master' ? 'GitLab.com (pre-release)' : ENV['CI_COMMIT_REF_NAME'] %>
+        <% if ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+          <%= dotcom %>
+        <% else %>
+          <%= ENV['CI_COMMIT_REF_NAME'] %>
+        <% end %>
       <% else %>
         Versions
       <% end %>
@@ -27,8 +38,8 @@ Version
   </a>
   <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
     <li>
-      <a<%= active_dropdown('master') %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip">GitLab.com (pre-release)
-        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab (master), with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
+      <a<%= active_dropdown('master') %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip"><%= dotcom %>
+        <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
       </a>
     </li>
     <!-- Start of online versions -->
