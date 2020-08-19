@@ -176,6 +176,7 @@ rspec:
   extends:
     - .rules_site_tests
     - .cache_gem
+  needs: []
   stage: test
   script:
     - bundle exec rspec
@@ -187,6 +188,7 @@ jest:
   extends:
     - .rules_site_tests
     - .cache_gem_yarn
+  needs: []
   stage: test
   script:
     - yarn install --cache-folder .yarn-cache
@@ -199,6 +201,7 @@ js_lint:
   extends:
     - .rules_site_tests
     - .cache_gem_yarn
+  needs: []
   stage: test
   script:
     - yarn install --cache-folder .yarn-cache
@@ -213,6 +216,7 @@ scss_lint:
     - .rules_site_tests
     - .cache_gem
     - .retry
+  needs: []
   stage: test
   script:
     - bundle exec scss-lint
@@ -224,10 +228,10 @@ scss_lint:
 yaml_lint:
   extends:
     - .rules_site_tests
+  needs: []
   stage: test
   image: sdesbure/yamllint:latest
   before_script: []
-  dependencies: []
   script:
     - yamllint .gitlab-ci.yml content/_data
 
@@ -262,7 +266,7 @@ review:
     - .retry
   variables:
     GIT_STRATEGY: none
-  dependencies:
+  needs:
     - compile_dev
   before_script: []
   cache: {}
@@ -294,7 +298,7 @@ review_stop:
     - .retry
   variables:
     GIT_STRATEGY: none
-  dependencies: []
+  needs: []
   artifacts: {}
   before_script: []
   cache: {}
@@ -334,6 +338,8 @@ pages:
   environment:
     name: production
     url: https://docs.gitlab.com
+  # We are using dependencies, because we do not want to
+  # re-deploy if the previous stages failed.
   dependencies:
     - compile_prod    # Contains the public directory
   script:
