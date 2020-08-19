@@ -301,10 +301,6 @@ li {
   }
 }
 
-.float-left {
-  float: left;
-}
-
 .main {
   padding: $page-header-height 40px 0;
   max-width: $page-content-width;
@@ -1450,48 +1446,7 @@ li {
 }
 // Algolia search override end
 
-.flex-container {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
 //in-page styles
-.center {
-  text-align: center;
-}
-
-.justify {
-  text-align: justify;
-}
-
-.right {
-  text-align: right;
-}
-
-.left {
-  text-align: left;
-}
-
-.middle {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .youtube {
   color: $youtube;
 }
@@ -1547,20 +1502,6 @@ li {
     width: 100%;
   }
 }
-
-// scss-lint:disable ImportantRule
-.display-none {
-  display: none !important;
-}
-
-.display-block {
-  display: block !important;
-}
-
-.image-noshadow {
-  box-shadow: none !important;
-}
-// scss-lint:enable ImportantRule
 
 //end of in-page styles
 
