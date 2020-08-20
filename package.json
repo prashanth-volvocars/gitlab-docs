@@ -36,7 +36,7 @@
     "@gitlab/ui": "^17.22.0",
     "bootstrap": "4.5.0",
     "pikaday": "^1.8.0",
-    "popper.js": "^1.16.1",
+    "popper.js": "1.16.1-lts",
     "vue": "^2.6.10"
   }
 }
