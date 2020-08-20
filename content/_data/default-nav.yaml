@@ -542,8 +542,6 @@ sections:
             doc_url: 'user/project/integrations/prometheus_library/nginx_ingress.html'
           - doc_title: NGINX Ingress VTS
             doc_url: 'user/project/integrations/prometheus_library/nginx_ingress_vts.html'
-      - category_title: Alert management
-        category_url: 'user/project/operations/alert_management.html'
       - category_title: Error Tracking
         category_url: 'user/project/operations/error_tracking.html'
       - category_title: Tracing
