@@ -913,6 +913,21 @@ a.global-nav-link {
 }
 // End of Pajamas alerts
 
+// Start of banner alert box
+// https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
+.alert-banner {
+  background-color: rgba($alert-banner-background, .3);
+  border-color: rgba($alert-banner-background, .3);
+  color: $alert-banner-text;
+  margin-top: 20px;
+
+  i {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+// End of banner alert box
+
 .header {
   z-index: 10;
   background: $header-background-color;
@@ -1503,7 +1518,9 @@ li {
   }
 }
 
-//end of in-page styles
+.center-align-text {
+  text-align: center;
+}
 
 .banner {
   z-index: 5;
