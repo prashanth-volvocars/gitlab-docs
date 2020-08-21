@@ -48,7 +48,7 @@ variables:
     - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
       when: manual
       allow_failure: true
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: manual
       allow_failure: true
 
@@ -57,7 +57,7 @@ variables:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: manual
       allow_failure: true
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: manual
       allow_failure: true
 
@@ -73,17 +73,17 @@ variables:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 .rules_prod:
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 .rules_pages:
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 .rules_dev:
   rules:
@@ -156,7 +156,7 @@ variables:
     expire_in: 1d
 
 #
-# Compile only on master and stable branches
+# Compile only on the default and stable branches
 #
 compile_prod:
   extends:
@@ -166,7 +166,7 @@ compile_prod:
     NANOC_ENV: 'production'
 
 #
-# Compile on all branches except master
+# Compile on all branches except the default branch
 #
 compile_dev:
   extends:

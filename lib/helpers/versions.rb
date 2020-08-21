@@ -32,7 +32,7 @@ module Nanoc::Helpers
     #
     def latest?
       latest_version = @items['/_data/versions.yaml'][:online][0]
-      ENV['CI_COMMIT_REF_NAME'] == 'master' || ENV['CI_COMMIT_REF_NAME'] == latest_version
+      ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] || ENV['CI_COMMIT_REF_NAME'] == latest_version
     end
 
     #

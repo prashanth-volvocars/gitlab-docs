@@ -16,12 +16,12 @@ task :setup_repos do
     branch = retrieve_branch(product['slug'])
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
-    # First we check if the branch on the docs repo is other than 'master' and
-    # then we skip if the remote branch variable is 'master'. Finally,
+    # First we check if the branch on the docs repo is other than the default branch and
+    # then we skip if the remote branch variable is the default branch name. Finally,
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master' and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] and branch == ENV['CI_DEFAULT_BRANCH'] and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     next if File.exist?(product['dirs']['temp_dir'])
 
@@ -44,12 +44,12 @@ task :pull_repos do
     branch = retrieve_branch(product['slug'])
 
     # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
-    # First we check if the branch on the docs repo is other than 'master' and
-    # then we skip if the remote branch variable is 'master'. Finally,
+    # First we check if the branch on the docs repo is other than the default branch and
+    # then we skip if the remote branch variable is the default branch name. Finally,
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != 'master' and branch == 'master' and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] and branch == ENV['CI_DEFAULT_BRANCH'] and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
@@ -126,9 +126,9 @@ namespace :release do
     puts "Stashing changes"
     `git stash -u` if git_workdir_dirty?
 
-    # Sync with upstream master
-    `git checkout master`
-    `git pull origin master`
+    # Sync with upstream default branch
+    `git checkout #{ENV['CI_DEFAULT_BRANCH']}`
+    `git pull origin #{ENV['CI_DEFAULT_BRANCH']}`
 
     # Create branch
     `git checkout -b #{version}`
@@ -180,10 +180,10 @@ namespace :release do
   desc 'Creates merge requests to update the dropdowns in all online versions'
   task :dropdowns do
 
-    # Check if you're on master branch before starting. Fail if you are.
-    if `git branch --show-current`.tr("\n",'') == 'master'
+    # Check if you're on the default branch before starting. Fail if you are.
+    if `git branch --show-current`.tr("\n",'') == ENV['CI_DEFAULT_BRANCH']
       abort('
-      It appears you are on master branch. Create the current release
+      It appears you are on the default branch. Create the current release
       branch and run the raketask again. Follow the documentation guide
       on how to create it: https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
       ')
