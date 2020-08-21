@@ -44,16 +44,15 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild /etc/nginx/
 RUN rm -rf /usr/share/nginx/html/*
 
 # Get all the archive static HTML and put it into place
-# Copy the versions found in 'content/_data/versions.yaml' under online.
+# Copy the versions found in 'content/_data/versions.yaml' under online
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.3 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.2 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.1 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.0 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.10 ${TARGET} ${TARGET}
 
 # List the two last major versions
-# Context https://gitlab.com/gitlab-org/gitlab-docs/issues/428
+# Copy the versions found in 'content/_data/versions.yaml' under previous_majors
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:12.10 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:11.11 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.8 ${TARGET} ${TARGET}
 
 # Get the built docs output from the previous build stage
 # This ordering means all previous layers can come from cache unless an archive
