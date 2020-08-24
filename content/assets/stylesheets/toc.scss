@@ -1,5 +1,5 @@
 ---
-version: 17
+version: 18
 ---
 
 @import "variables";
@@ -111,6 +111,7 @@ $nav-link-font-size: 14px;
 
   .doc-nav {
     @include sidebar-fixed;
+    width: $toc-width;
     margin-top: 55px;
 
     &.toc-no-breadcrumbs {

@@ -1,5 +1,5 @@
 ---
-version: 78
+version: 79
 ---
 
 @import "variables";
@@ -430,7 +430,7 @@ li {
   }
 
   @media(max-width: $lg-width) and (min-width: $md-width)  {
-    width: 60%;
+    width: $page-content-width;
   }
 }
 
