@@ -742,6 +742,9 @@ sections:
             doc_url: 'ci/services/redis.html'
       - category_title: Troubleshooting
         category_url: 'ci/troubleshooting.html'
+        docs:
+          - doc_title: CI Lint
+            doc_url: 'ci/lint.html'
 
   - section_title: Packages & Registries
     section_url: 'user/packages/'
