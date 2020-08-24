@@ -7,7 +7,6 @@ default:
     - ruby -v
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
 
-
 stages:
   - build-images
   - build
@@ -54,6 +53,14 @@ variables:
       when: manual
       allow_failure: true
     - if: '$CI_COMMIT_BRANCH == "master"'
+      when: manual
+      allow_failure: true
+
+.rules_chores:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "schedule"'
+      when: never
+    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
       when: manual
       allow_failure: true
 
@@ -237,17 +244,30 @@ yaml_lint:
 test_external_links:
   extends:
     - .cache_gem
+    - .rules_chores
   stage: test
   script:
     - bundle exec nanoc check external_links
-  rules:
-    - if: '$CI_PIPELINE_SOURCE != "schedule"'
-      when: never
-    - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
-      allow_failure: true
-    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
-      when: manual
-      allow_failure: true
+
+#
+# Run markdownlint to find EOL whitespace to clean up
+#
+test_EOL_whitespace:
+  extends:
+    - .rules_chores
+  stage: test
+  image: registry.gitlab.com/gitlab-org/gitlab-docs:lint
+  before_script: []
+  dependencies: []
+  script:
+    - bundle exec rake setup_git default
+    - cd tmp
+    - markdownlint --version
+    - echo "{" > .markdownlint.json
+    - 'echo "  \"default\": false," >> .markdownlint.json'
+    - 'echo "  \"no-trailing-spaces\": true," >> .markdownlint.json'
+    - echo "}" >> .markdownlint.json
+    - markdownlint -c .markdownlint.json **/*.md
 
 ###############################################
 #               Review Apps                   #
