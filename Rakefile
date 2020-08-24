@@ -121,7 +121,7 @@ namespace :release do
       abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.")
     end
 
-    # Stash modified and untracked files so we have "clean" environment
+    # Stash modified and untracked files so we have a "clean" environment
     # without accidentally deleting data
     puts "Stashing changes"
     `git stash -u` if git_workdir_dirty?
@@ -180,13 +180,22 @@ namespace :release do
   desc 'Creates merge requests to update the dropdowns in all online versions'
   task :dropdowns do
 
-    # Check if you're on master branch before starting. Fail if you are.
-    if `git branch --show-current`.tr("\n",'') == 'master'
+    # Check if a release branch has been created and warn the user if it hasn't
+    if `git rev-parse --verify #{release_branch}`.empty?
       abort('
-      It appears you are on master branch. Create the current release
-      branch and run the raketask again. Follow the documentation guide
-      on how to create it: https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
+      A release branch for the latest stable version has not been created.
+      Follow the documentation guide on how to create one:
+      https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
       ')
+    else
+      # Stash modified and untracked files so we have a "clean" environment
+      # without accidentally deleting data
+      puts "Stashing changes"
+      `git stash -u` if git_workdir_dirty?
+
+      # Change to the release branch and sync with upstream
+      `git checkout #{release_branch}`
+      `git pull #{release_branch}`
     end
 
     # Load online versions
@@ -197,15 +206,6 @@ namespace :release do
 
     # The release branch name
     release_branch = "release-#{current_version.tr('.', '-')}"
-
-    # Check if a release branch has been created, if not fail and warn the user
-    if `git rev-parse --verify #{release_branch}`.empty?
-      abort('
-      A release branch for the latest stable version has not been created.
-      Follow the documentation guide on how to create one:
-      https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
-      ')
-    end
 
     # Set the commit title
     commit_title = "Update dropdown to #{current_version}"
