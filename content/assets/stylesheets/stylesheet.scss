@@ -1,5 +1,5 @@
 ---
-version: 78
+version: 79
 ---
 
 @import "variables";
@@ -1516,10 +1516,6 @@ li {
   @media all and (max-width: $mobile-width) {
     width: 100%;
   }
-}
-
-.center-align-text {
-  text-align: center;
 }
 
 .banner {
