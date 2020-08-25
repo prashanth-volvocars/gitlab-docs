@@ -1185,6 +1185,8 @@ sections:
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
         category_url: 'user/admin_area/activating_deactivating_users.html'
+      - category_title: Analytics
+        category_url: 'user/admin_area/analytics/index.html'
       - category_title: Audit events
         category_url: 'administration/audit_events.html'
         ee_only: true
