@@ -1,10 +1,14 @@
-<div class="admonition-wrapper note">
-  <div class="admonition alert alert-banner center-align-text">
-  <i class="fa fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>
-  Help us understand your experience with GitLab documentation.
-  <a href="https://gitlab.fra1.qualtrics.com/jfe/form/SV_eGaifkfVJ335st7?source=banner" target="_blank" rel="noopener noreferrer">
-    Take our 5 minute survey!
-  </a>
-  <i class="fa fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>
+<div class="admonition-wrapper note d-none" id="banner-close">
+  <div class="admonition alert alert-banner alert-dismissible fade show text-center" role="alert">
+    <i class="fa fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>
+    Help us understand your experience with GitLab documentation.
+    <a href="https://gitlab.fra1.qualtrics.com/jfe/form/SV_eGaifkfVJ335st7?source=banner" target="_blank" rel="noopener noreferrer">
+      Take our 5 minute survey!
+    </a>
+    <i class="fa fa-gitlab fa-fw" style="color:rgb(107,79,187); font-size:.85em" aria-hidden="true"></i>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 </div>
+<script type="application/javascript" src="<%= @items['/assets/javascripts/banner.*'].path %>"></script>
