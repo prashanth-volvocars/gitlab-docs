@@ -1,0 +1,52 @@
+topics:
+  - title: Two-factor authentication
+    description: Improve the security of your GitLab account
+    icon: key
+    url: /ee/user/profile/account/two_factor_authentication.html
+  - title: Back up and restore GitLab
+    description: Back up and restore self-managed GitLab instances
+    icon: archive
+    url: /ee/raketasks/backup_restore.html
+  - title: GitLab groups
+    description: Manage projects together
+    icon: group
+    url: /ee/user/group/index.html
+  - title: GitLab CI/CD reference
+    description: GitLab CI/CD pipeline configuration reference
+    icon: rocket
+    url: /ee/ci/yaml/README.html
+  - title: Database settings
+    description: Database settings for Omnibus GitLab self-managed instances
+    icon: table
+    url: /omnibus/settings/database.html
+  - title: Elasticsearch integration
+    description: Integrate Elasticsearch with GitLab to enable advanced searching
+    icon: search
+    url: /ee/integration/elasticsearch.html
+  - title: GitLab policies
+    description: Policies for version naming and cadence, and also upgrade recommendations
+    icon: documents
+    url: /ee/policy/maintenance.html
+  - title: NGINX settings
+    description: NGINX settings for Omnibus GitLab self-managed instances
+    icon: monitor-lines
+    url: /omnibus/settings/nginx.html
+  - title: SSL configuration
+    description: SSL settings for Omnibus GitLab self-managed instances
+    icon: lock
+    url: /omnibus/settings/ssl.html
+  - title: Activate GitLab EE
+    description: Activate GitLab Enterprise Edition functionality with a license
+    icon: license
+    url: /ee/user/admin_area/license.html
+  - title: GitLab.com settings
+    description: |
+      Information about the settings that are used on GitLab.com, like SSH keys
+      fingerprints, and shared Runners configuration
+    icon: settings
+    url: /ee/user/gitlab_com/index.html
+  - title: Reference architectures
+    description: |
+      Recommended configurations to scale your GitLab installation for your number of users
+    icon: tachometer
+    url: /ee/administration/reference_architectures/index.html
