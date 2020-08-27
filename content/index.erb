@@ -97,78 +97,23 @@ title: GitLab Documentation
         <div class="col-12 pb-3">
           <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Popular topics</h2>
         </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/profile/account/two_factor_authentication.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('key', nil, 'menu-icon') %> Two-factor authentication</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Improve the security of your GitLab account</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/raketasks/backup_restore.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('archive', nil, 'menu-icon') %> Back up and restore GitLab</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Back up and restore self-managed GitLab instances</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/group/index.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('group', nil, 'menu-icon') %> GitLab groups</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Manage projects together</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/ci/yaml/README.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('rocket', nil, 'menu-icon') %> GitLab CI/CD reference</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">GitLab CI/CD pipeline configuration reference</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/omnibus/settings/database.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('table', nil, 'menu-icon') %> Database settings</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Database settings for Omnibus GitLab self-managed instances</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/integration/elasticsearch.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('search', nil, 'menu-icon') %> Elasticsearch integration</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Integrate Elasticsearch with GitLab to enable advanced searching</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/policy/maintenance.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('documents', nil, 'menu-icon') %> GitLab policies</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Policies for version naming and cadence, and also upgrade recommendations</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/omnibus/settings/nginx.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('monitor-lines', nil, 'menu-icon') %> NGINX settings</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">NGINX settings for Omnibus GitLab self-managed instances</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/omnibus/settings/ssl.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('lock', nil, 'menu-icon') %> SSL configuration</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">SSL settings for Omnibus GitLab self-managed instances</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/admin_area/license.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('license', nil, 'menu-icon') %> Activate GitLab EE</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Activate GitLab Enterprise Edition functionality with a license</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/user/gitlab_com/index.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('settings', nil, 'menu-icon') %> GitLab.com settings</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Information about the settings that are used on GitLab.com, like SSH keys fingerprints, and shared Runners configuration</p>
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="text-decoration-none" href="https://docs.gitlab.com/ee/administration/reference_architectures/index.html">
-            <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon('tachometer', nil, 'menu-icon') %> Reference architectures</h3>
-            <p class="pl-4 ml-1 mt-1 text-break">Recommended configurations to scale your GitLab installation for your number of users</p>
-          </a>
-        </div>
+        <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
+          <!--
+            The first item of the URL is the product slug
+          -->
+          <% product = topic[:url].split('/')[1] %>
+          <!--
+            Check if content/{slug} is present and hide the topic otherwise
+          -->
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
+          <div class="col-12 col-lg-4">
+            <a class="text-decoration-none" href="<%= topic[:url] %>">
+              <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon("#{topic[:icon]}", nil, 'menu-icon') %> <%= topic[:title] %></h3>
+              <p class="pl-4 ml-1 mt-1 text-break"><%= topic[:description] %></p>
+            </a>
+          </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="row px-4">
         <div class="col">
