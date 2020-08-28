@@ -1386,8 +1386,8 @@ sections:
         category_url: 'security/webhooks.html'
       - category_title: Information exclusivity
         category_url: 'security/information_exclusivity.html'
-      - category_title: Reset your root password
-        category_url: 'security/reset_root_password.html'
+      - category_title: Reset user passwords
+        category_url: 'security/reset_user_password.html'
       - category_title: Unlock a user
         category_url: 'security/unlock_user.html'
       - category_title: User file uploads
