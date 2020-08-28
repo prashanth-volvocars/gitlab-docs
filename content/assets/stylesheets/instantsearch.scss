@@ -1,5 +1,5 @@
 ---
-version: 9
+version: 11
 ---
 
 @import "variables";
@@ -24,11 +24,12 @@ $color11: transparent;
 $color12: rgba(32, 139, 196, .2); //link color lighter
 
 
-//scss-lint:disable ImportantRule
-.ais-search-box {
+//scss-lint:disable ImportantRule SelectorFormat
+.ais-SearchBox {
   width: 100%;
   max-width: 100% !important; // was 300px
 }
+//scss-lint:enable ImportantRule SelectorFormat
 
 .search-input {
   border-radius: 2px;
@@ -38,33 +39,20 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   padding-bottom: 7px;
 }
 
-.ais-stats {
-  display: block;
-  float: left;
-  margin-top: -26px !important;
-
-  @media all and (max-width: $mobile-width) {
-    margin-top: -25px !important;
-  }
-} 
-
-.ais-search-box--powered-by {
+//scss-lint:disable SelectorFormat
+.ais-PoweredBy {
   font-family: $sans-font-family;
   font-size: $body-font-size;
-}
 
-.ais-search-box--magnifier,
-.ais-search-box--reset {
-  display: block;
-  top: 35% !important;
-  bottom: auto;
-  right: 10px !important;
+  svg {
+    display: inline;
+  }
 }
+//scss-lint:enable SelectorFormat
 
 .hit-content {
-  display: block;
-  border-top: 2px solid $color0;
-  padding: 30px 5px;
+  border-top: 1px solid $color0;
+  padding: 1rem .5rem;
   margin: 0;
   font-size: 13px;
   font-weight: 300;
@@ -75,8 +63,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   word-wrap: break-word;
 
   &:hover {
-    border-top: 2px solid $color12;
-    box-shadow: 0 10px 6px -6px $color12;
+    background-color: $color12;
 
     .hit-tag {
       color: $link-color;
@@ -84,17 +71,15 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
     }
   }
 
-  @media all and (max-width: $mobile-width) {
-    padding: 25px 5px;
-  }
-
   .lvl0 {
     color: $black;
   }
 
+  //scss-lint:disable ImportantRule
   .lvl1 {
     font-size: 18px !important;
   }
+  //scss-lint:enable ImportantRule
 
   .lvl2 {
     font-size: 14px;
@@ -155,21 +140,12 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
     }
   }
 }
-//scss-lint:enable ImportantRule
 
 //scss-lint:disable IdSelector
 #hits {
-  border-top: 0;
-  margin: 4px 0;
-  padding: 10px 0;
-
   > h1, h2, h3, h4, h5, h6 {
     border: 0;
   }
-}
-
-#refinement-list {
-  margin-top: 15px;
 }
 //scss-lint:enable IdSelector
 
@@ -186,46 +162,38 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   background-color: $color3;
 }
 
-.ais-infinite-hits--showmore {
-  display: block;
-  margin: 10px auto auto;
-
-  button {
-    padding: 20px 10px;
-    cursor: pointer;
+//scss-lint:disable SelectorFormat
+.ais-InfiniteHits {
+  .ais-InfiniteHits-item {
     width: 100%;
-    background-color: $color8;
-    border-color: $color3;
-    border-right: 0;
-    border-left: 0;
-
-    &:hover {
-      background-color: $color3;
-    }
-
-    &:focus {
-      outline: none;
-    }
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
   }
 }
 
-.stats {
+.ais-InfiniteHits-loadMore {
   display: block;
-  text-align: right;
-  font-size: 11px;
-  color: $body-color;
+  width: 100%;
+  margin: 1rem .5rem;
 
-  @media all and (max-width: $mobile-width) {
-    font-size: 10px;
+  &:focus {
+    outline: none;
   }
 }
 
-.ais-refinement-list--item {
+.ais-Stats-text {
+  color: $body-color;
+}
+
+.ais-RefinementList-item {
   display: inline-block;
   padding-right: 10px;
 }
 
-.ais-refinement-list--label {
+.ais-RefinementList-label {
   text-transform: uppercase;
   color: $link-color;
 }
+//scss-lint:enable SelectorFormat

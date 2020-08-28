@@ -3,10 +3,8 @@ title: Search through GitLab Documentation
 layout: instantsearch
 ---
 <header>
-  <div>
-    <input id="search-input" placeholder="Search GitLab Documentation">
-     <!-- We use a specific placeholder in the input to guides users in their search. -->
-  </div>
+  <div id="searchbox"></div>
+  <div id="powered-by"></div>
 </header>
 <main class="search-results">
   <div id="stats"></div>
