@@ -403,11 +403,20 @@ image:docs-lint:
     - .docker_prepare
   stage: build-images
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
+    VALE_VERSION: 2.3.3
+    MARKDOWNLINT_VERSION: 0.23.2
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
+    IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
   script:
-    - docker build --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build
+      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+      --build-arg VALE_VERSION=${VALE_VERSION}
+      --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+      -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker tag $IMAGE_NAME $IMAGE_LATEST
     - docker push $IMAGE_NAME
+    - docker push $IMAGE_LATEST
   environment:
     name: registry/docs-lint
 
