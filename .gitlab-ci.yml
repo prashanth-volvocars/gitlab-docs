@@ -273,6 +273,9 @@ test_EOL_whitespace:
     - echo "}" >> .markdownlint.json
     - markdownlint -c .markdownlint.json **/*.md
 
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
+
 ###############################################
 #               Review Apps                   #
 ###############################################
