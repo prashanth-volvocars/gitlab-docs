@@ -1,7 +1,7 @@
 import { flattenItems } from '../../../../content/frontend/shared/toc/flatten_items';
 
 describe('shared/toc/flatten_items', () => {
-  const createItem = (text, ...items) => Object.assign({ text }, items ? { items } : {});
+  const createItem = (text, ...items) => ({ text, items });
   const createItemWithLevel = (text, level) => ({ text, level });
 
   it.each`
