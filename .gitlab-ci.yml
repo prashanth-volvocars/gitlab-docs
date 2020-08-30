@@ -67,6 +67,7 @@ variables:
 .rules_site_tests:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+      when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH == "master"'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
