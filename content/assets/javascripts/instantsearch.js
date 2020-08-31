@@ -1,19 +1,16 @@
 ---
-version: 1
+version: 2
 ---
-
 const search = instantsearch({
-  appId: 'BH4D9OD16A',
-  apiKey: 'ce1690e1421303458a1fcbea0cc4a927',
   indexName: 'gitlab',
+  searchClient: algoliasearch('BH4D9OD16A', 'ce1690e1421303458a1fcbea0cc4a927'),
   algoliaOptions: {
     // Filter by tags as described in https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json
     'filters': "tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>",
-    // Number of results shown in the search dropdown
-    'hitsPerPage': 10,
   },
-  loadingIndicator: true,
-  urlSync: true,
+  routing: {
+    stateMapping: instantsearch.stateMappings.singleIndexQ('gitlab')
+  },
   searchFunction: function(helper) {
     var searchResults = $('.search-results');
     if (helper.state.query === '') {
@@ -25,26 +22,27 @@ const search = instantsearch({
   }
 });
 
-search.addWidget(
+search.addWidgets([
   instantsearch.widgets.searchBox({
-    container: '#search-input',
-    reset: true,
-    poweredBy: true
-  })
-);
+    container: '#searchbox',
+    placeholder: 'Search GitLab Documentation',
+    showReset: true,
+    showLoadingIndicator: true
+  }),
 
-search.addWidget(
-    instantsearch.widgets.refinementList({
-      container: '#refinement-list',
-      attributeName: 'tags',
-      sortBy: ["name:asc","isRefined"],
-      templates: {
-        header: 'Refine your search:'
-      }
-    })
-  );
+  instantsearch.widgets.poweredBy({
+    container: '#powered-by',
+  }),
 
-search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list',
+    attribute: 'tags',
+    sortBy: ["name:asc","isRefined"],
+    templates: {
+      header: 'Refine your search:'
+    }
+  }),
+
   instantsearch.widgets.infiniteHits({
     container: '#hits',
     templates: {
@@ -53,16 +51,16 @@ search.addWidget(
     },
     escapeHits: true,
     showMoreLabel: "Load more results..."
-  })
-);
+  }),
 
-search.addWidget(
   instantsearch.widgets.stats({
-    container: '#stats',
-    templates: {
-      body: '<div class="stats">We found {{nbHits}} results, fetched in {{processingTimeMS}}ms.</div>'
-    }
+    container: '#stats'
+  }),
+
+  instantsearch.widgets.configure({
+    // Number of results shown in the search dropdown
+    'hitsPerPage': 10,
   })
-);
+]);
 
 search.start();
