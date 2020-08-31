@@ -197,3 +197,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   color: $link-color;
 }
 //scss-lint:enable SelectorFormat
+
+.search-results {
+  min-height: 50vh;
+}
