@@ -5,7 +5,7 @@ default:
   # Check Ruby version and install gems
   before_script:
     - ruby -v
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
+    - bundle install --jobs 4 --path vendor
 
 stages:
   - build-images
