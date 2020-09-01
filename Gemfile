@@ -11,7 +11,7 @@ group :nanoc do
   gem 'guard-nanoc'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.9.0'
+  gem 'gitlab_kramdown', '~> 0.10.0'
 
   # nanoc checks
   gem 'nokogiri', '~> 1.10.3'
