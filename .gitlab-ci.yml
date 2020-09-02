@@ -7,6 +7,10 @@ default:
     - ruby -v
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 --path vendor
 
+.yarn:
+  before_script:
+    - yarn install --cache-folder .yarn-cache
+
 stages:
   - build-images
   - build
@@ -106,6 +110,14 @@ variables:
       - vendor/ruby
       - .yarn-cache/
 
+.cache_yarn:
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - .yarn-cache/
+
 ###############################################
 #             Build the website               #
 ###############################################
@@ -194,11 +206,11 @@ rspec:
 jest:
   extends:
     - .rules_site_tests
-    - .cache_gem_yarn
+    - .cache_yarn
+    - .yarn
   needs: []
   stage: test
   script:
-    - yarn install --cache-folder .yarn-cache
     - yarn test
 
 #
@@ -207,11 +219,11 @@ jest:
 js_lint:
   extends:
     - .rules_site_tests
-    - .cache_gem_yarn
+    - .cache_yarn
+    - .yarn
   needs: []
   stage: test
   script:
-    - yarn install --cache-folder .yarn-cache
     - yarn eslint
     - yarn prettier
 
