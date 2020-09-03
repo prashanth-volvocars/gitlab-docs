@@ -8,28 +8,23 @@
 ############################
 
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
-MAINTAINER GitLab Documentation Team
-
-# Install vale
-# We need to build it from source, see https://github.com/errata-ai/vale/issues/128
+MAINTAINER GitLab Technical Writing team
 
 # VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 ENV GOBIN=/usr/local/bin
 
-RUN apk add --no-cache wget zip tar make && \
-    wget https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz && \
+# Install vale
+RUN curl -L https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz -o v${VALE_VERSION}.tar.gz && \
     tar -xvzf v${VALE_VERSION}.tar.gz && \
     cd vale-${VALE_VERSION} && \
-    make && \
+    os=linux exe=vale make && \
     make install && \
     cd .. && \
     rm -r vale-${VALE_VERSION} && \
     rm v${VALE_VERSION}.tar.gz && \
-    # Remove the /usr/lib/go directory, we no longer need it after Vale is built,
-    # and it cleans up more than 200MB of space.
-    rm -rf /usr/lib/go
+    apk del go
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
