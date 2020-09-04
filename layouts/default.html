@@ -19,9 +19,11 @@
       <div id="js-nav-toggle"></div>
     </div>
     <div class="main class js-main-wrapper">
+      <% if @config[:show_banner] %>
       <div class="d-lg-block">
         <%= render '/banner.*' %>
       </div>
+      <% end %>
       <div class="d-none d-lg-block">
         <%= render '/breadcrumbs.*' %>
       </div>

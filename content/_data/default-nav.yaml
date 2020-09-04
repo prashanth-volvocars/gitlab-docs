@@ -192,6 +192,10 @@ sections:
             doc_url: 'user/application_security/dast/'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+          - doc_title: API Fuzzing
+            doc_url: 'user/application_security/api_fuzzing/'
+            ee_only: true
+            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Coverage Fuzzing
             doc_url: 'user/application_security/coverage_fuzzing/'
             ee_only: true
@@ -1386,7 +1390,7 @@ sections:
         category_url: 'security/webhooks.html'
       - category_title: Information exclusivity
         category_url: 'security/information_exclusivity.html'
-      - category_title: Reset user passwords
+      - category_title: Reset user password
         category_url: 'security/reset_user_password.html'
       - category_title: Unlock a user
         category_url: 'security/unlock_user.html'

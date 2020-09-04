@@ -12,13 +12,10 @@ const search = instantsearch({
     stateMapping: instantsearch.stateMappings.singleIndexQ('gitlab')
   },
   searchFunction: function(helper) {
-    var searchResults = $('.search-results');
     if (helper.state.query === '') {
-      searchResults.hide();
       return;
     }
     helper.search();
-    searchResults.show();
   }
 });
 
