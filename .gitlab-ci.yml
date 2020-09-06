@@ -424,7 +424,6 @@ image:docs-lint:
       --build-arg VALE_VERSION=${VALE_VERSION}
       --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
       -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker tag $IMAGE_NAME
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint
