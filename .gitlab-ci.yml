@@ -411,14 +411,12 @@ pages:
 #
 image:docs-lint:
   extends:
-    - .rules_scheduled
     - .docker_prepare
   stage: build-images
   variables:
-    VALE_VERSION: 2.3.3
+    VALE_VERSION: 2.2.2
     MARKDOWNLINT_VERSION: 0.23.2
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
-    IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:lint
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
   script:
     - docker build
@@ -426,11 +424,13 @@ image:docs-lint:
       --build-arg VALE_VERSION=${VALE_VERSION}
       --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
       -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker tag $IMAGE_NAME $IMAGE_LATEST
+    - docker tag $IMAGE_NAME
     - docker push $IMAGE_NAME
-    - docker push $IMAGE_LATEST
   environment:
     name: registry/docs-lint
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: manual
 
 #
 # GitLab docs image
