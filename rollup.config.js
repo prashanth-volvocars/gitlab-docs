@@ -1,3 +1,4 @@
+const replace = require('@rollup/plugin-replace');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const nodePolyfills = require('rollup-plugin-node-polyfills');
 const importResolver = require('rollup-plugin-import-resolver');
@@ -29,6 +30,9 @@ module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
       alias: {
         vue: './node_modules/vue/dist/vue.esm.browser.min.js',
       },
+    }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
 }));
