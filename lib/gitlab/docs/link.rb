@@ -1,6 +1,8 @@
 module Gitlab
   module Docs
     class Link
+      PRODUCT_SUFFIX = /-(core|starter|premium|ultimate)(-only)?/.freeze
+
       attr_reader :link, :href, :page
 
       def initialize(link, page)
@@ -63,9 +65,11 @@ module Gitlab
       end
 
       def destination_anchor_not_found?
-        !destination_page.has_anchor?(anchor_name)
+        # TODO: Remove me when https://gitlab.com/gitlab-org/gitlab/-/merge_requests/39715 is merged
+        anchor_without_suffix = anchor_name.gsub(PRODUCT_SUFFIX, '')
+
+        !destination_page.has_anchor?(anchor_without_suffix)
       end
     end
   end
 end
-
