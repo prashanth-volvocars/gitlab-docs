@@ -23,7 +23,7 @@ class IntroducedInFilter < Nanoc::Filter
     @incremental_id += 1
     # If the content is a list of items, collapse the content.
     if content =~ /<ul>/i
-      %[<div class="introduced-in">Version history] +
+      %[<div class="introduced-in mb-3">Version history] +
       %[<button class="text-expander" data-toggle="collapse" href="#release_version_notes_#{@incremental_id}" role="button" aria-expanded="false">] +
       %[</button>] +
       %[<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">] +
