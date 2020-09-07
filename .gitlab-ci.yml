@@ -234,8 +234,10 @@ test_internal_links_and_anchors:
     - .cache_gem
   stage: test
   script:
-    - bundle exec nanoc check internal_links
-    - bundle exec nanoc check internal_anchors
+    - apk add sysstat
+    - "sar 5 120 &"
+    - time bundle exec nanoc check internal_links
+    - time bundle exec nanoc check internal_anchors
 
 #
 # Run rspec tests
