@@ -234,8 +234,8 @@ test_internal_links_and_anchors:
     - .cache_gem
   stage: test
   script:
-    - bundle exec nanoc check internal_links
-    - bundle exec nanoc check internal_anchors
+    - apk add parallel
+    - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
 
 #
 # Run rspec tests
