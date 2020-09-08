@@ -561,6 +561,8 @@ sections:
       - category_title: Incident management
         category_url: 'operations/incident_management/'
         docs:
+          - doc_title: Create and manage incidents
+            doc_url: 'operations/incident_management/incidents.html'
           - doc_title: GitLab Status Page
             doc_url: 'operations/incident_management/status_page.html'
             ee_only: true
