@@ -20,9 +20,6 @@
 <% else %>
 <meta name="docsearch:version" content="master" />
 <% end %>
-<% if is_production? and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none'; style-src 'self' https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src 'self' https://cdnjs.cloudflare.com;">
-<% end %>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
