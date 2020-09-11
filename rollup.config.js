@@ -35,6 +35,6 @@ module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
     replace({
       ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
-    (process.env.NODE_ENV === 'production' && uglify()),
+    process.env.NODE_ENV === 'production' && uglify(),
   ],
 }));
