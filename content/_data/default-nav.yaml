@@ -1550,6 +1550,9 @@ sections:
             doc_url: 'development/fe_guide/vuex.html'
           - doc_title: Vue
             doc_url: 'development/fe_guide/vue.html'
+      - category_title: GitLab Pages (development)
+        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/pages.md'
+        external_url: true
       - category_title: Geo (development)
         category_url: 'development/geo.html'
         docs:
