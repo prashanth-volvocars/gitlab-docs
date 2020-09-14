@@ -152,7 +152,7 @@ sections:
       - category_title: Roadmaps
         category_url: 'user/group/roadmap/'
         ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+        ee_tier: 'GitLab Premium and GitLab.com Silver'
 
   - section_title: Projects
     section_url: 'user/project/'
