@@ -1294,11 +1294,13 @@ sections:
         docs:
           - doc_title: Container Registry
             doc_url: 'administration/packages/container_registry.html'
-      - category_title: Replication (Geo)
-        category_url: 'administration/geo/replication/'
+      - category_title: Geo
+        category_url: 'administration/geo/'
         ee_only: true
         ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
         docs:
+          - doc_title: Setting up Geo
+            doc_url: 'administration/geo/setup/'
           - doc_title: Database replication
             doc_url: 'administration/geo/replication/database.html'
           - doc_title: External PostgreSQL instances
