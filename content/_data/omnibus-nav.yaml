@@ -82,6 +82,8 @@ sections:
         category_url: 'settings/smtp.html'
       - category_title: SSL
         category_url: 'settings/ssl.html'
+      - category_title: DNS
+        category_url: 'settings/dns.html'
       - category_title: Unicorn
         category_url: 'settings/unicorn.html'
 
