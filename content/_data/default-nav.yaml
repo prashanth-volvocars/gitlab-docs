@@ -713,6 +713,8 @@ sections:
         docs:
           - doc_title: Architecture
             doc_url: 'ci/pipelines/pipeline_architectures.html'
+          - doc_title: Pipeline efficiency
+            doc_url: 'ci/pipelines/pipeline_efficiency.html'
           - doc_title: Directed acyclic graph
             doc_url: 'ci/directed_acyclic_graph/'
           - doc_title: Multi-project pipelines
