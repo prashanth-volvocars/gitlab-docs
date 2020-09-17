@@ -84,6 +84,8 @@ sections:
             doc_url: 'user/clusters/crossplane.html'
       - category_title: Infrastructure as code
         category_url: 'user/infrastructure/index.html'
+      - category_title: Kubernetes Agent
+        category_url: 'user/clusters/agent/'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Pod logs
