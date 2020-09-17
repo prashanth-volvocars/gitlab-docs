@@ -550,8 +550,6 @@ sections:
             doc_url: 'user/project/integrations/prometheus_library/nginx_ingress.html'
           - doc_title: NGINX Ingress VTS
             doc_url: 'user/project/integrations/prometheus_library/nginx_ingress_vts.html'
-      - category_title: Alert management
-        category_url: 'user/project/operations/alert_management.html'
       - category_title: Error Tracking
         category_url: 'user/project/operations/error_tracking.html'
       - category_title: Tracing
@@ -561,6 +559,12 @@ sections:
       - category_title: Incident management
         category_url: 'operations/incident_management/'
         docs:
+          - doc_title: Generic alerts endpoint
+            doc_url: 'operations/incident_management/generic_alerts.html'
+          - doc_title: Create and manage alerts
+            doc_url: 'operations/incident_management/alerts.html'
+          - doc_title: Alert details
+            doc_url: 'operations/incident_management/alert_details.html'
           - doc_title: Create and manage incidents
             doc_url: 'operations/incident_management/incidents.html'
           - doc_title: GitLab Status Page
