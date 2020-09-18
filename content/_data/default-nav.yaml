@@ -516,8 +516,6 @@ sections:
         ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Related issues
         category_url: 'user/project/issues/related_issues.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Service Desk
         category_url: 'user/project/service_desk.html'
       - category_title: Sorting and ordering issue lists
