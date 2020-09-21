@@ -836,6 +836,10 @@ sections:
             doc_url: 'api/dependencies.html'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
+          - doc_title: Dependency Proxy
+            doc_url: 'api/dependency_proxy.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Deploy keys
             doc_url: 'api/deploy_keys.html'
           - doc_title: Deployments
