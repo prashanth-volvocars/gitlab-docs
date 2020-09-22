@@ -1,6 +1,6 @@
 <script>
 import data from '@gitlab/svgs/dist/icons.json';
-import iconSizeOptions from '../constants';
+import { iconSizeOptions } from '../constants';
 
 let iconValidator = () => true;
 

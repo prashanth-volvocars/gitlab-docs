@@ -17,7 +17,7 @@ const getTopOffset = (height, offsetHeight) => {
   return 0;
 };
 
-export default {
+export const StickToFooter = {
   bind(el, { value }) {
     let contentHeight;
     const mainEl = document.querySelector(value);
