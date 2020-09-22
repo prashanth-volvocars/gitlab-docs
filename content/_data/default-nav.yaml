@@ -256,7 +256,7 @@ sections:
       - category_title: GitLab Pages
         category_url: 'user/project/pages/'
         docs:
-          - doc_title: "Getting started"
+          - doc_title: Getting started
             doc_url: 'user/project/pages/#getting-started'
           - doc_title: Default domains, URLs, and baseurls
             doc_url: 'user/project/pages/getting_started_part_one.html'
@@ -264,10 +264,12 @@ sections:
             doc_url: 'user/project/pages/getting_started/pages_from_scratch.html'
           - doc_title: Custom domains and SSL/TLS certificates
             doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/'
-          - doc_title: "Let's Encrypt integration"
+          - doc_title: Let's Encrypt integration
             doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
-          - doc_title: "Access control"
+          - doc_title: Access control
             doc_url: 'user/project/pages/pages_access_control.html'
+          - doc_title: Redirects
+            doc_url: 'user/project/pages/redirects.html'
           - doc_title: Exploring GitLab Pages
             doc_url: 'user/project/pages/introduction.html'
       - category_title: Integrations
