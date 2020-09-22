@@ -1197,6 +1197,8 @@ sections:
             doc_url: 'administration/auth/README.html'
           - doc_title: PlantUML Integration
             doc_url: 'administration/integration/plantuml.html'
+          - doc_title: Project integration management
+            doc_url: 'user/admin_area/settings/project_integration_management.html'
           - doc_title: Repository checks
             doc_url: 'administration/repository_checks.html'
           - doc_title: Repository storage paths
