@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import GlIcon from '../../../../content/frontend/shared/components/gl_icon.vue';
-import iconSizeOptions from '../../../../content/frontend/shared/constants';
+import { iconSizeOptions } from '../../../../content/frontend/shared/constants';
 
 const ICONS_PATH = '/path/to/icons.svg';
 const TEST_SIZE = 8;
