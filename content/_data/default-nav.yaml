@@ -1183,6 +1183,8 @@ sections:
             ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Git LFS administration
             doc_url: 'administration/lfs/lfs_administration.html'
+          - doc_title: Gitaly timeouts
+            doc_url: 'user/admin_area/settings/gitaly_timeouts.html'
           - doc_title: GitLab Pages
             doc_url: 'administration/pages/'
           - doc_title: Health Check
