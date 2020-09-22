@@ -1,0 +1,15 @@
+## See https://about.gitlab.com/handbook/engineering/projects/#gitlab-docs
+
+*                   @aqualls @axil @cnorris @eread @jeanduplessis @marcel.amirault @marcia @mjang1 @msedlakjakubowski @ngaskill @rdickenson @sselhorn @susantacker
+
+content/assets      @axil @marcia @derek-knox @ealcantara @jerasmus @oregand @dmishunov @iamphill @nicolasdular
+
+/bin/*              @caalberts @godfat-gitlab @markglenfletcher @rymai @cwoolley-gitlab @vyaklushin
+Gemfile*            @axil @eread @marcel.amirault
+dockerfiles/*       @axil @eread @marcel.amirault
+
+spec                @cwoolley-gitlab @vyaklushin @doregan @mikegreiling
+
+package.json        @derek-knox @ealcantara @jerasmus
+yarn.lock           @derek-knox @ealcantara @jerasmus
+jest.config.js      @derek-knox @ealcantara @jerasmus
