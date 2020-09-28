@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 (function() {
@@ -24,6 +24,8 @@ version: 2
       'Available in GitLab Silver and higher tiers. Not available in self-hosted instances.',
     'gold-only':
       'Available in GitLab Gold. Not available in self-hosted instances.',
+    'core-bronze':
+      'Available in GitLab self-hosted Core and higher tiers. Available in GitLab.com Bronze and higher tiers.',
   };
 
   var BADGES_MAPPING = {
@@ -39,6 +41,7 @@ version: 2
     'bronze-only': ['bronze'],
     'silver-only': ['silver'],
     'gold-only': ['gold'],
+    'core-bronze': ['core', 'bronze'],
   };
 
   var BADGES_CLASS = {
@@ -50,6 +53,7 @@ version: 2
     bronze: 'gitlab-com',
     silver: 'gitlab-com',
     gold: 'gitlab-com',
+    core-bronze: '',
   };
 
   function init() {
@@ -113,7 +117,7 @@ version: 2
     var match = $badge
       .attr('class')
       .match(
-        /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|free-only|bronze-only|silver-only|gold-only/
+        /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|free-only|bronze-only|silver-only|gold-only|core-bronze/
       );
 
     if (match) {
