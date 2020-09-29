@@ -415,7 +415,7 @@ image:docs-lint:
     - .docker_prepare
   stage: build-images
   variables:
-    VALE_VERSION: 2.3.4
+    VALE_VERSION: 2.4.0
     MARKDOWNLINT_VERSION: 0.23.2
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
