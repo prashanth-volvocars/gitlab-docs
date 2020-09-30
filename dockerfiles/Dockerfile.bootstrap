@@ -22,7 +22,7 @@ COPY /yarn.lock /source/
 WORKDIR /source
 
 # Install gems
-RUN bundle install --jobs 4
+RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 # Install node libraries
 RUN yarn install
 
