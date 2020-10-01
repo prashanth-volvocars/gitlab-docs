@@ -20,10 +20,12 @@ module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
     name: file,
   },
   plugins: [
-    nodeResolve(),
-    nodePolyfills(),
+    nodeResolve({ browser: true, preferBuiltins: true }),
     commonjs(),
-    babel(),
+    nodePolyfills(),
+    babel({
+      exclude: 'node_modules/**',
+    }),
     json(),
     vue(),
     importResolver({
