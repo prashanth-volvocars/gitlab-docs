@@ -916,9 +916,8 @@ a.global-nav-link {
 // Start of banner alert box
 // https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
 .alert-banner {
-  background-color: rgba($alert-banner-background, .3);
-  border-color: rgba($alert-banner-background, .3);
-  color: $alert-banner-text;
+  background-color: $help-indigo-50;
+  border-color: rgba($help-indigo-50, .3);
   margin-top: 20px;
 
   i {
