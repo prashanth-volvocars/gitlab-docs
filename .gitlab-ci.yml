@@ -1,3 +1,6 @@
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
+
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
   tags:
@@ -284,6 +287,13 @@ test_EOL_whitespace:
     - 'echo "  \"no-trailing-spaces\": true," >> .markdownlint.json'
     - echo "}" >> .markdownlint.json
     - markdownlint -c .markdownlint.json **/*.md
+
+dependency_scanning:
+  extends:
+    - .rules_site_test
+    - .cache_gem_yarn
+  needs: []
+  stage: test
 
 ###############################################
 #               Review Apps                   #
