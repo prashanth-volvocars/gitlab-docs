@@ -578,15 +578,15 @@ sections:
       - category_title: Incident management
         category_url: 'operations/incident_management/'
         docs:
-          - doc_title: Generic alerts endpoint
-            doc_url: 'operations/incident_management/generic_alerts.html'
-          - doc_title: Create and manage alerts
+          - doc_title: Alerts
             doc_url: 'operations/incident_management/alerts.html'
-          - doc_title: Alert details
-            doc_url: 'operations/incident_management/alert_details.html'
-          - doc_title: Create and manage incidents
+          - doc_title: Alert integrations
+            doc_url: 'operations/incident_management/alert_integrations.html'
+          - doc_title: Alert notifications
+            doc_url: 'operations/incident_management/alert_notifications.html'
+          - doc_title: Incidents
             doc_url: 'operations/incident_management/incidents.html'
-          - doc_title: GitLab Status Page
+          - doc_title: Status page
             doc_url: 'operations/incident_management/status_page.html'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
