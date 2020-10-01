@@ -288,7 +288,21 @@ test_EOL_whitespace:
     - echo "}" >> .markdownlint.json
     - markdownlint -c .markdownlint.json **/*.md
 
-dependency_scanning:
+gemnasium-dependency_scanning:
+  extends:
+    - .rules_site_tests
+    - .cache_gem_yarn
+  needs: []
+  stage: test
+
+bundler-audit-dependency_scanning:
+  extends:
+    - .rules_site_tests
+    - .cache_gem_yarn
+  needs: []
+  stage: test
+
+retire-js-dependency_scanning:
   extends:
     - .rules_site_tests
     - .cache_gem_yarn
