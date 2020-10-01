@@ -290,7 +290,7 @@ test_EOL_whitespace:
 
 dependency_scanning:
   extends:
-    - .rules_site_test
+    - .rules_site_tests
     - .cache_gem_yarn
   needs: []
   stage: test
