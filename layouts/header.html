@@ -7,7 +7,7 @@
     <% if @item[:searchbar].nil? %>
       <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
       <form id="search-form" action="/search/" method="get">
-        <input type="text" name="q" class="docsearch" placeholder="Search our docs" required/>
+        <input type="text" name="query" class="docsearch" placeholder="Search our docs" required/>
         <input type="submit" style="visibility: hidden; position:absolute;" />
       </form>
       <% end %>
