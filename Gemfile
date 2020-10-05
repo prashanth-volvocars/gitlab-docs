@@ -5,7 +5,7 @@ gem 'adsf', '~> 1.4'
 gem 'adsf-live', '~> 1.4'
 gem 'sassc', '~> 2.0'
 gem 'rouge', '~> 3.11'
-gem 'rake', '~> 12.3'
+gem 'rake', '~> 13.0.0'
 
 group :nanoc do
   gem 'guard-nanoc'
