@@ -100,3 +100,12 @@ sections:
     section_url: 'troubleshooting/'
   - section_title: Contribute
     section_url: 'development/'
+    section_categories:
+      - category_title: Architecture
+        category_url: 'architecture/'
+      - category_title: Environment setup
+        category_url: 'development/environment_setup.html'
+      - category_title: Style guide
+        category_url: 'development/style_guide.html'
+      - category_title: Versioning and release
+        category_url: 'development/release.html'
