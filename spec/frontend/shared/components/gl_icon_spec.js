@@ -14,7 +14,7 @@ describe('GlIcon component', () => {
   let wrapper;
   let consoleSpy;
 
-  const createComponent = props => {
+  const createComponent = (props) => {
     wrapper = shallowMount(GlIcon, {
       propsData: {
         size: TEST_SIZE,
@@ -25,8 +25,8 @@ describe('GlIcon component', () => {
     });
   };
 
-  const validateSize = size => GlIcon.props.size.validator(size);
-  const validateName = name => GlIcon.props.name.validator(name);
+  const validateSize = (size) => GlIcon.props.size.validator(size);
+  const validateName = (name) => GlIcon.props.name.validator(name);
 
   afterEach(() => {
     wrapper.destroy();

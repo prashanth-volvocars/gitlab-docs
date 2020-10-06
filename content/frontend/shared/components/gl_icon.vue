@@ -5,7 +5,7 @@ import { iconSizeOptions } from '../constants';
 let iconValidator = () => true;
 
 const { icons } = data;
-iconValidator = value => {
+iconValidator = (value) => {
   if (icons.includes(value)) {
     return true;
   }
@@ -33,7 +33,7 @@ export default {
       type: Number,
       required: false,
       default: 16,
-      validator: value => iconSizeOptions.includes(value),
+      validator: (value) => iconSizeOptions.includes(value),
     },
     className: {
       type: String,

@@ -14,7 +14,7 @@ describe('frontend/default/components/collapsible_container', () => {
 
   beforeEach(() => {
     // jquery is not available in Jest yet so we need to mock this method
-    jest.spyOn(dom, 'getOuterHeight').mockImplementation(x => Number(x.dataset.testOuterHeight));
+    jest.spyOn(dom, 'getOuterHeight').mockImplementation((x) => Number(x.dataset.testOuterHeight));
     jest.useFakeTimers();
   });
 

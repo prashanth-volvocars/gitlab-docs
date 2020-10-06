@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     allItems() {
-      return this.items.map(item => {
+      return this.items.map((item) => {
         const level = this.level + (item.level || 0);
 
         return {

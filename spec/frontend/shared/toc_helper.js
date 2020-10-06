@@ -5,7 +5,7 @@ export const createItem = (text, items = []) => ({
   items,
 });
 
-export const buildHTML = list =>
+export const buildHTML = (list) =>
   list
     .map(
       ({ text, href, id, items }) =>
@@ -16,7 +16,7 @@ ${items?.length ? `<ul>${buildHTML(items)}</ul>` : ''}
     )
     .join('');
 
-export const createTOCElement = list => {
+export const createTOCElement = (list) => {
   const ul = document.createElement('ul');
   ul.innerHTML = buildHTML(list);
   return ul;
