@@ -26,7 +26,7 @@ GEM
     ddmetrics (1.0.1)
     ddplugin (1.0.2)
     diff-lcs (1.4.4)
-    em-websocket (0.5.1)
+    em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     equatable (0.6.1)
@@ -130,7 +130,7 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.2)
+    rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -163,20 +163,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  adsf (~> 1.4)
-  adsf-live (~> 1.4)
-  builder (~> 3.2)
+  adsf (~> 1.4.3)
+  adsf-live (~> 1.4.3)
+  builder (~> 3.2.4)
   gitlab_kramdown (~> 0.10.0)
   guard-nanoc
-  highline (~> 2.0)
-  nanoc (~> 4.10)
-  nokogiri (~> 1.10.3)
-  pry-byebug (~> 3.7)
-  rake (~> 13.0.0)
-  rouge (~> 3.11)
-  rspec (~> 3.5)
-  sassc (~> 2.0)
-  scss_lint (~> 0.57)
+  highline (~> 2.0.3)
+  nanoc (~> 4.11.18)
+  nokogiri (~> 1.10.10)
+  pry-byebug (~> 3.9.0)
+  rake (~> 13.0.1)
+  rouge (~> 3.23.0)
+  rspec (~> 3.9.0)
+  sassc (~> 2.4.0)
+  scss_lint (~> 0.59.0)
 
 BUNDLED WITH
    1.17.3
