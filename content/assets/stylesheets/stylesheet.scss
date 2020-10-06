@@ -1,5 +1,5 @@
 ---
-version: 79
+version: 80
 ---
 
 @import "variables";
@@ -897,6 +897,7 @@ a.global-nav-link {
   code {
     background-color: $alert-code-background-color;
     word-break: break-word;
+    color: $code-color;
   }
 
   i {
