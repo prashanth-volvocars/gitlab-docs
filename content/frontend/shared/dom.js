@@ -9,7 +9,7 @@
  *
  * @param {Element} el
  */
-export const getOuterHeight = el => $(el).outerHeight();
+export const getOuterHeight = (el) => $(el).outerHeight();
 
 /**
  * Find the first child of the given element with the given tag name
@@ -19,4 +19,4 @@ export const getOuterHeight = el => $(el).outerHeight();
  * @returns {Element | null} Returns first child that matches the given tagName (or null if not found)
  */
 export const findChildByTagName = (el, tagName) =>
-  Array.from(el.childNodes).find(x => x.tagName === tagName.toUpperCase());
+  Array.from(el.childNodes).find((x) => x.tagName === tagName.toUpperCase());

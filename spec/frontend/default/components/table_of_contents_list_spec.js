@@ -36,11 +36,7 @@ describe('frontend/default/components/table_of_contents_list', () => {
     });
 
     it('starts at level 0', () => {
-      expect(
-        findLinks()
-          .at(0)
-          .classes('toc-level-0'),
-      ).toBe(true);
+      expect(findLinks().at(0).classes('toc-level-0')).toBe(true);
     });
   });
 
@@ -77,7 +73,7 @@ describe('frontend/default/components/table_of_contents_list', () => {
       const data = findLinks().wrappers.reduce(
         (acc, link) =>
           Object.assign(acc, {
-            [link.text()]: link.classes().find(x => x.startsWith('toc-level')),
+            [link.text()]: link.classes().find((x) => x.startsWith('toc-level')),
           }),
         {},
       );
@@ -109,7 +105,7 @@ describe('frontend/default/components/table_of_contents_list', () => {
     });
 
     it('has separator class for separator item', () => {
-      const data = findListItems().wrappers.map(x => ({
+      const data = findListItems().wrappers.map((x) => ({
         text: x.text(),
         hasSeparator: x.classes('toc-separator'),
       }));

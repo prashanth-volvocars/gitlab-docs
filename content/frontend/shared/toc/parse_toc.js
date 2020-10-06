@@ -16,14 +16,14 @@ const TAG_UL = 'UL';
  *
  * @param {Element} menu Parent <ul> element
  */
-export const parseTOC = menu => {
+export const parseTOC = (menu) => {
   const items = [];
 
   if (!menu) {
     return items;
   }
 
-  menu.childNodes.forEach(li => {
+  menu.childNodes.forEach((li) => {
     if (li.tagName !== TAG_LI) {
       return;
     }

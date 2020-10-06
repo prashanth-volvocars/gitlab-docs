@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     routing: {
       stateMapping: singleIndex('gitlab'),
     },
-    searchFunction: helper => {
+    searchFunction: (helper) => {
       if (helper.state.query === '') {
         return;
       }

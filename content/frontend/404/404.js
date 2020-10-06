@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'offline-versions',
   ).dataset;
   const location = window.location.href;
-  const isOffline = offlineVersions.split(',').find(version => location.includes(version));
+  const isOffline = offlineVersions.split(',').find((version) => location.includes(version));
 
   return new Vue({
     el: '#js-error-message',

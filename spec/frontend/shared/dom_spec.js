@@ -1,10 +1,10 @@
 import { findChildByTagName } from '../../../content/frontend/shared/dom';
 
 describe('frontend/shared/dom', () => {
-  const createElementWithChildren = children => {
+  const createElementWithChildren = (children) => {
     const el = document.createElement('div');
 
-    children.forEach(tag => {
+    children.forEach((tag) => {
       const child = document.createElement(tag);
       el.appendChild(child);
     });
