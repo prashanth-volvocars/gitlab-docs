@@ -161,20 +161,6 @@ products:
       doc_dir:  'doc'
     expose: true
     icon: 'car'
-  runner:
-    full_name: 'GitLab Runner'
-    short_name: 'Runner'
-    slug: 'runner'
-    index_file: 'index.*'
-    img: '/assets/images/docs-runner.svg'
-    description: 'Agent for GitLab CI. Configure and run build scripts and other jobs as part of GitLab Continuous Integration & Deployment (CI/CD).'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    dirs:
-      temp_dir: 'tmp/runner/'
-      dest_dir: 'content/runner'
-      doc_dir:  'docs'
-    expose: true
-    icon: 'status'
   charts:
     full_name: 'GitLab Helm chart'
     short_name: 'Charts'
@@ -189,3 +175,17 @@ products:
       doc_dir:  'doc'
     expose: true
     icon: 'chart'
+  runner:
+    full_name: 'GitLab Runner'
+    short_name: 'Runner'
+    slug: 'runner'
+    index_file: 'index.*'
+    img: '/assets/images/docs-runner.svg'
+    description: 'Agent for GitLab Continuous Integration & Deployment (CI/CD). Configure and run build scripts and other jobs as part of GitLab CI/CD.'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
+    dirs:
+      temp_dir: 'tmp/runner/'
+      dest_dir: 'content/runner'
+      doc_dir:  'docs'
+    expose: true
+    icon: 'status'
