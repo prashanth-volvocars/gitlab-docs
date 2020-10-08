@@ -712,26 +712,27 @@ sections:
     section_categories:
       - category_title: Package Registry
         category_url: 'user/packages/package_registry/'
+        docs:
+          - doc_title: Composer
+            doc_url: 'user/packages/composer_repository/'
+          - doc_title: Conan
+            doc_url: 'user/packages/conan_repository/'
+          - doc_title: Go Proxy
+            doc_url: 'user/packages/go_proxy/'
+          - doc_title: Maven
+            doc_url: 'user/packages/maven_repository/'
+          - doc_title: NPM
+            doc_url: 'user/packages/npm_registry/'
+          - doc_title: NuGet
+            doc_url: 'user/packages/nuget_repository/'
+          - doc_title: PyPI
+            doc_url: 'user/packages/pypi_repository/'
       - category_title: Container Registry
         category_url: 'user/packages/container_registry/'
       - category_title: Dependency Proxy
         category_url: 'user/packages/dependency_proxy/'
         ee_only: true
         ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-      - category_title: Composer Repository
-        category_url: 'user/packages/composer_repository/'
-      - category_title: Conan Repository
-        category_url: 'user/packages/conan_repository/'
-      - category_title: Go Proxy
-        category_url: 'user/packages/go_proxy/'
-      - category_title: Maven Repository
-        category_url: 'user/packages/maven_repository/'
-      - category_title: NPM Registry
-        category_url: 'user/packages/npm_registry/'
-      - category_title: NuGet Repository
-        category_url: 'user/packages/nuget_repository/'
-      - category_title: PyPI Repository
-        category_url: 'user/packages/pypi_repository/'
 
   - section_title: API
     section_url: 'api/README.html'
