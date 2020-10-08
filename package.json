@@ -37,7 +37,7 @@
     "@gitlab/ui": "^21.4.0",
     "algoliasearch": "4.4.0",
     "bootstrap": "^4.5.2",
-    "@tnir/instantsearch.js": "4.7.1-q",
+    "@tnir/instantsearch.js": "4.8.1-q",
     "pikaday": "^1.8.0",
     "popper.js": "1.16.1-lts",
     "vue": "^2.6.10"
