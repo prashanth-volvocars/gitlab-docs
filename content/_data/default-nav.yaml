@@ -1588,15 +1588,6 @@ sections:
             doc_url: 'development/documentation/site_architecture/deployment_process.html'
           - doc_title: Release process
             doc_url: 'development/documentation/site_architecture/release_process.html'
-      - category_title: Telemetry guide
-        category_url: 'development/telemetry/'
-        docs:
-          - doc_title: Event dictionary
-            doc_url: 'development/telemetry/event_dictionary.html'
-          - doc_title: Usage Ping guide
-            doc_url: 'development/telemetry/usage_ping.html'
-          - doc_title: Snowplow guide
-            doc_url: 'development/telemetry/snowplow.html'
       - category_title: Experiment guide
         category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
@@ -1703,6 +1694,15 @@ sections:
         category_url: 'development/pipelines.html'
       - category_title: Instrumenting Ruby code
         category_url: 'development/instrumentation.html'
+      - category_title: Product Analytics guide
+        category_url: 'development/product_analytics/'
+        docs:
+          - doc_title: Event dictionary
+            doc_url: 'development/product_analytics/event_dictionary.html'
+          - doc_title: Usage Ping guide
+            doc_url: 'development/product_analytics/usage_ping.html'
+          - doc_title: Snowplow guide
+            doc_url: 'development/product_analytics/snowplow.html'
       - category_title: Testing standards and style guidelines
         category_url: 'development/testing_guide/'
         docs:
