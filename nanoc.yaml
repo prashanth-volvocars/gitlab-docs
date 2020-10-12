@@ -109,7 +109,7 @@ checks:
       - 'https?:\/\/127.0.0.1.*'
       # Don't check gitlab.com links due to cloudflare thinking the link test is a dos attack
       # Temporary solution to enable external link checker
-      - 'https:\/\/gitlab.com\/.*'
+      - 'https:\/\/gitlab.com.*'
       # Don't check github.com links due to GitHub rate limiting causing 429 errors
       # Temporary solution to enable external link checker
       - 'https:\/\/github.com\/.*'
