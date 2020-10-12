@@ -1275,6 +1275,8 @@ sections:
             doc_url: 'administration/pages/'
           - doc_title: Health Check
             doc_url: 'user/admin_area/monitoring/health_check.html'
+          - doc_title: Incoming email
+            doc_url: 'administration/incoming_email.html'
           - doc_title: Job logs
             doc_url: 'administration/job_logs.html'
           - doc_title: Labels
