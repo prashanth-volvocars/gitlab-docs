@@ -17,12 +17,13 @@ $introduced-in-border-color: #e3e3e3;
 // Fonts
 $mono-font-family: "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
 $sans-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$body-font-size: 15px;
+$body-font-size: 14px;
 $tooltip-font-size: 12px;
 $introduced-in-font-size: 13px;
 
 // Margins
-$h-margin-top: 20px;
+$h-margin-top: 10px;
+$h2-margin-top: 30px;
 $h-margin-bottom: 10px;
 
 // Padding
@@ -133,9 +134,9 @@ $versions-link-color-bg-hover: rgba($gds-gray-200, .6);
 $versions-active-bg-color: $versions-link-color-bg-hover;
 
 /// Elements
-$blockquote-border-color: #b8d6f4;
-$blockquote-background-color: rgba($gds-blue-100, .5);
-$blockquote-txt-color: #0f3b66;
+$blockquote-border-color: #dbdbdb;
+$blockquote-background-color: #fafafa;
+$blockquote-txt-color: #000;
 $h1-border-bottom: $gds-gray-700;
 $h-border-bottom: $gds-gray-300;
 $divider-color: $gds-gray-200;
@@ -151,21 +152,22 @@ $button-primary: #337ab7;
 $button-warning: #f0ad4e;
 
 // Pajama alerts
-$alert-info-bg: $gds-blue-100;
-$alert-info-txt:#0f3b66;
-$alert-info-border: #b8d6f4;
+// $alert-info-bg: $gds-blue-100;
+$alert-info-bg: #fafafa;
+$alert-info-txt: #000;
+$alert-info-border: #dbdbdb;
 
-$alert-success-bg: #dcf5e7;
-$alert-success-txt: #0e5a2d;
-$alert-success-border: #b3e6c8;
+$alert-success-bg: #fafafa;
+$alert-success-txt: #000;
+$alert-success-border: #dbdbdb;
 
-$alert-warning-bg: #fff1de;
-$alert-warning-txt: #853c00;
-$alert-warning-border: #fed69f;
+$alert-warning-bg: #fcf6ed;
+$alert-warning-txt: #000;
+$alert-warning-border: #f5d9a8;
 
-$alert-danger-bg: #fbe5e1;
-$alert-danger-txt: #711e11;
-$alert-danger-border: #f2b4a9;
+$alert-danger-bg: #faf2f1;
+$alert-danger-txt: #000;
+$alert-danger-border: #f6d9d5;
 
 $alert-gray-bg: $gds-gray-100;
 $alert-gray-txt: $gds-gray-900;
