@@ -561,6 +561,8 @@ sections:
         docs:
           - doc_title: Includes examples
             doc_url: 'ci/yaml/includes.html'
+          - doc_title: Visualization
+            doc_url: 'ci/yaml/visualization.html'
       - category_title: Auto DevOps
         category_url: 'topics/autodevops/'
         docs:
