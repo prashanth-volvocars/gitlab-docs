@@ -13,7 +13,7 @@ body {
   background: $body-background-color;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 24px;
   font-family: $sans-font-family;
   font-size: $body-font-size;
   color: $body-color;
@@ -117,7 +117,8 @@ table {
 blockquote {
   background-color: $blockquote-background-color;
   color: $blockquote-txt-color;
-  border-left: solid 3px $blockquote-border-color;
+  border: solid 1px $blockquote-border-color;
+  border-radius: 5px;
   margin: 20px 0;
   padding: 10px 20px;
   font-size: $body-font-size;
@@ -203,7 +204,6 @@ hr {
 
 // Make code in headers match the font size of the given header.
 h2, h3, h4, h5, h6 {
-  border-bottom: solid 1px $h-border-bottom;
   line-height: 1.4;
   padding-bottom: 5px;
 
@@ -232,8 +232,8 @@ h2, h3, h4, h5, h6 {
 // p font size = $body-font-size: 15px;
 
 h1 {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 34px;
+  font-weight: 700;
   border-bottom: solid 2px $h1-border-bottom;
   padding-bottom: 10px;
   margin-top: $h-margin-top;
@@ -246,8 +246,8 @@ h1 {
 
 h2 {
   font-size: 28px;
-  font-weight: 400;
-  margin-top: $h-margin-top;
+  font-weight: 700;
+  margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
   @media (max-width: $mobile-width) {
@@ -256,9 +256,9 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
-  font-weight: 400;
-  margin-top: $h-margin-top;
+  font-size: 23px;
+  font-weight: 700;
+  margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
   @media (max-width: $mobile-width) {
@@ -267,8 +267,10 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: $h2-margin-top;
+  margin-bottom: $h-margin-bottom;
 
   @media (max-width: $mobile-width) {
     font-size: 20px;
@@ -276,9 +278,11 @@ h4 {
 }
 
 h5 {
-  font-size: 20px;
-  color: $color-light-gray;
-  font-weight: 500;
+  font-size: 16px;
+  // color: $color-light-gray;
+  font-weight: 600;
+  margin-top: $h2-margin-top;
+  margin-bottom: $h-margin-bottom;
 
   @media (max-width: $mobile-width) {
     font-size: 18px;
@@ -286,9 +290,11 @@ h5 {
 }
 
 h6 {
-  font-size: 18px;
-  color: $color-light-gray;
-  font-weight: 500;
+  font-size: 14px;
+  // color: $color-light-gray;
+  font-weight: 600;
+  margin-top: $h2-margin-top;
+  margin-bottom: $h-margin-bottom;
 
   @media (max-width: $mobile-width) {
     font-size: 16px;
@@ -353,15 +359,25 @@ li {
   }
 
   p {
-    margin: 0 0 1.25em;
+    margin: 0 0 1em;
   }
 
   ul, ol {
-    margin: 20px 0;
+    margin-top: -8px 0;
+    margin-bottom: 0 0;
   }
 
   li {
-    line-height: 28px;
+    line-height: 1.6em;
+    padding-bottom: 8px;
+
+    ul li:first-of-type {
+      padding-top: 12px;
+    }
+
+    ol li:first-of-type {
+      padding-top: 12px;
+    }
 
     > ul, > ol {
       margin-top: 0;
@@ -372,8 +388,12 @@ li {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
-    margin: 40px auto;
+    // box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
+    border: 1px solid $gds-gray-200;
+    margin-top: 26px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
     display: block;
   }
 
@@ -746,7 +766,11 @@ a.global-nav-link {
 // Styles for breadcrumbs navigation
 .breadcrumbs {
   overflow-x: auto;
-  padding: 0;
+  padding-top: 20px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 14px;
 
   .breadcrumb {
     text-overflow: ellipsis;
@@ -885,31 +909,36 @@ a.global-nav-link {
 .alert-info {
   background-color: $alert-info-bg;
   color: $alert-info-txt;
-  border-left: solid 3px $alert-info-border;
+  border: solid 1px $alert-info-border;
+  border-radius: 5px;
 }
 
 .alert-warning {
   background-color: $alert-warning-bg;
   color: $alert-warning-txt;
-  border-left: solid 3px $alert-warning-border;
+  border: solid 1px $alert-warning-border;
+  border-radius: 5px;
 }
 
 .alert-success {
   background-color: $alert-success-bg;
   color: $alert-success-txt;
-  border-left: solid 3px $alert-success-border;
+  border: solid 1px $alert-success-border;
+  border-radius: 5px;
 }
 
 .alert-danger {
   background-color: $alert-danger-bg;
   color: $alert-danger-txt;
-  border-left: solid 3px $alert-danger-border;
+  border: solid 1px $alert-danger-border;
+  border-radius: 5px;
 }
 
 .alert-gray {
   background-color: $alert-gray-bg;
   color: $alert-gray-txt;
-  border-left: solid 3px $alert-gray-border;
+  border: solid 1px $alert-gray-border;
+  border-radius: 5px;
 }
 // End of Pajamas alerts
 
@@ -1342,7 +1371,7 @@ p {
 // skipping scss-lint rule: keeping all the badges styles together
 h1, h2, h3, h4, h5, h6 {
   .badges-drop {
-    float: right;
+    float: none;
   }
 }
 
