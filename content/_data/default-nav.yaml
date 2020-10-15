@@ -297,8 +297,6 @@ sections:
             doc_url: 'user/project/merge_requests/cherry_pick_changes.html'
           - doc_title: Code quality
             doc_url: 'user/project/merge_requests/code_quality.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Load performance testing
             doc_url: 'user/project/merge_requests/load_performance_testing.html'
             ee_only: true
