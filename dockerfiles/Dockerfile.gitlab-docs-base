@@ -2,7 +2,7 @@
 # Image that contains all Nanoc dependencies and tools that
 # are needed to build the docs site and run the tests.
 #
-FROM ruby:2.7.2-alpine3.12
+FROM ruby:2.6.6-alpine3.12
 MAINTAINER GitLab Technical Writing team
 
 # Install dependencies
