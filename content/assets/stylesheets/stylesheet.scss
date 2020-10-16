@@ -1,5 +1,5 @@
 ---
-version: 80
+version: 81
 ---
 
 @import "variables";
@@ -301,12 +301,6 @@ h6 {
   }
 }
 
-li {
-  ul {
-    padding-left: 20px;
-  }
-}
-
 .main {
   padding: $page-header-height 40px 0;
   max-width: $page-content-width;
@@ -362,9 +356,20 @@ li {
     margin: 0 0 1em;
   }
 
-  ul, ol {
+  ul {
     margin-top: -8px 0;
     margin-bottom: 0 0;
+  }
+
+  ol {
+    margin-top: -8px 0;
+    margin-bottom: 0 0;
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
   }
 
   li {
@@ -378,7 +383,7 @@ li {
     ol li:first-of-type {
       padding-top: 12px;
     }
-
+    
     > ul, > ol {
       margin-top: 0;
       margin-bottom: 0;
