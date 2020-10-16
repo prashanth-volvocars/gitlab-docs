@@ -7,13 +7,45 @@
 #
 ############################
 
-FROM registry.gitlab.com/gitlab-org/gitlab-docs:base
+# RUBY_VERSION and ALPINE_VERSION are defined in .gitlab-ci.yml
+ARG RUBY_VERSION
+ARG ALPINE_VERSION
+
+FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION}
 MAINTAINER GitLab Technical Writing team
 
 # VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 ENV GOBIN=/usr/local/bin
+
+# Install dependencies
+RUN apk add --no-cache -U \
+    bash        \
+    build-base  \
+    curl        \
+    git         \
+    gnupg       \
+    gzip        \
+    grep        \
+    libcurl     \
+    libxslt     \
+    libxslt-dev \
+    nodejs      \
+    openssl     \
+    pngquant    \
+    ruby-dev    \
+    tar         \
+    xz          \
+    xz-dev      \
+    go          \
+    yarn
+
+# Do not install rdoc to save some space
+RUN echo 'gem: --no-document' >> /etc/gemrc
+
+# Update bundler
+RUN gem install bundler -v "1.17.3"
 
 # Install vale
 RUN curl -L https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz -o v${VALE_VERSION}.tar.gz && \

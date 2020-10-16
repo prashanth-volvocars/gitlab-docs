@@ -416,16 +416,20 @@ image:docs-lint:
     - .docker_prepare
   stage: build-images
   variables:
-    VALE_VERSION: 2.4.0
-    MARKDOWNLINT_VERSION: 0.23.2
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
+    RUBY_VERSION: '2.6.6'
+    ALPINE_VERSION: '3.12'
+    VALE_VERSION: '2.4.3'
+    MARKDOWNLINT_VERSION: '0.24.0'
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:ruby-$RUBY_VERSION-alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
   script:
     - docker build
-      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+      --build-arg RUBY_VERSION=${RUBY_VERSION}
+      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
       --build-arg VALE_VERSION=${VALE_VERSION}
       --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
       -t $IMAGE_NAME -f $DOCKERFILE .
     - docker tag $IMAGE_NAME $IMAGE_LATEST
     - docker push $IMAGE_NAME
