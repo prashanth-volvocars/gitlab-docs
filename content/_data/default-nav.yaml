@@ -46,10 +46,43 @@ sections:
     section_categories:
       - category_title: Instance-level
         category_url: 'user/analytics/index.html#instance-level-analytics'
+        docs:
+          - doc_title: DevOps Report
+            doc_url: 'user/admin_area/analytics/dev_ops_report.html'
+          - doc_title: Instance Statistics
+            doc_url: 'user/admin_area/analytics/instance_statistics.html'
+          - doc_title: User Cohorts
+            doc_url: 'user/admin_area/analytics/user_cohorts.html'
       - category_title: Group-level
         category_url: 'user/analytics/index.html#group-level-analytics'
+        docs:
+          - doc_title: Contribution
+            doc_url: 'user/group/contribution_analytics/index.html'
+          - doc_title: Insights
+            doc_url: 'user/group/insights/index.html'
+          - doc_title: Issue
+            doc_url: 'user/group/issues_analytics/index.html'
+          - doc_title: Productivity
+            doc_url: 'user/analytics/productivity_analytics.html'
+          - doc_title: Value Stream
+            doc_url: 'user/analytics/value_stream_analytics.html'
       - category_title: Project-level
         category_url: 'user/analytics/index.html#project-level-analytics'
+        docs:
+          - doc_title: CI/CD
+            doc_url: 'ci/pipelines/index.html#pipeline-success-and-duration-charts'
+          - doc_title: Code Review
+            doc_url: 'user/analytics/code_review_analytics.html'
+          - doc_title: Insights
+            doc_url: 'user/group/insights/index.html'
+          - doc_title: Issue
+            doc_url: 'user/group/issues_analytics/index.html'
+          - doc_title: Merge Request
+            doc_url: 'user/analytics/merge_request_analytics.html'
+          - doc_title: Repository
+            doc_url: 'user/analytics/repository_analytics.html'
+          - doc_title: Value Stream
+            doc_url: 'user/analytics/value_stream_analytics.html'
 
   - section_title: Infrastructure
     section_url: 'user/project/clusters/'
