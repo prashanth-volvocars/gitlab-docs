@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.11.18'
+gem 'nanoc', '~> 4.11.0'
 gem 'adsf', '~> 1.4.3'
 gem 'adsf-live', '~> 1.4.3'
 gem 'sassc', '~> 2.4.0'
-gem 'rouge', '~> 3.23.0'
+gem 'rouge', '~> 3.24.0'
 gem 'rake', '~> 13.0.1'
 
 group :nanoc do
