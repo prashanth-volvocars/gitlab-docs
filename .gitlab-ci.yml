@@ -416,7 +416,7 @@ image:docs-lint:
     - .docker_prepare
   stage: build-images
   variables:
-    RUBY_VERSION: '2.6.6'
+    RUBY_VERSION: '2.7.2'
     ALPINE_VERSION: '3.12'
     VALE_VERSION: '2.4.3'
     MARKDOWNLINT_VERSION: '0.24.0'
