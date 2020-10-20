@@ -52,20 +52,28 @@ sections:
     section_categories:
       - category_title: Globals
         category_url: 'charts/globals.html'
-      - category_title: GitLab subcharts
+      - category_title: GitLab sub-charts
         category_url: 'charts/gitlab/'
         docs:
           - doc_title: Gitaly chart
             doc_url: 'charts/gitlab/gitaly/'
           - doc_title: GitLab Exporter chart
             doc_url: 'charts/gitlab/gitlab-exporter/'
+          - doc_title: GitLab Grafana chart
+            doc_url: 'charts/gitlab/gitlab-grafana/'
           - doc_title: GitLab Runner chart
             doc_url: 'charts/gitlab/gitlab-runner/'
           - doc_title: GitLab Shell chart
             doc_url: 'charts/gitlab/gitlab-shell/'
+          - doc_title: KAS chart
+            doc_url: 'charts/gitlab/kas/'
           - doc_title: Migrations chart
             doc_url: 'charts/gitlab/migrations/'
+          - doc_title: Praefect chart
+            doc_url: 'charts/gitlab/praefect/'
           - doc_title: Sidekiq chart
+            doc_url: 'charts/gitlab/sidekiq/'
+          - doc_title: Task Runner chart
             doc_url: 'charts/gitlab/sidekiq/'
           - doc_title: Webservice chart
             doc_url: 'charts/gitlab/webservice/'
