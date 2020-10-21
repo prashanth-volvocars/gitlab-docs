@@ -1439,6 +1439,8 @@ sections:
         docs:
           - doc_title: Container Registry
             doc_url: 'administration/packages/container_registry.html'
+          - doc_title: Dependency Proxy
+            doc_url: 'administration/packages/dependency_proxy.html'
       - category_title: Geo
         category_url: 'administration/geo/'
         ee_only: true
