@@ -1289,9 +1289,11 @@ sections:
             doc_url: 'integration/twitter.html'
           - doc_title: Vault
             doc_url: 'integration/vault.html'
-      - category_title: Configure
-        category_url: 'user/admin_area/settings/'
+      - category_title: Configuration and Admin Area
+        category_url: 'user/admin_area/'
         docs:
+          - doc_title: Admin Area settings
+            doc_url: 'user/admin_area/settings/'
           - doc_title: Appearance
             doc_url: 'customization/'
           - doc_title: Authentication
