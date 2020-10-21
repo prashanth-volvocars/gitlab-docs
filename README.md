@@ -41,9 +41,11 @@ In order to be able to preview any changes you make to GitLab's documentation,
 here's what you will need to have:
 
 - Environment: Unix/Linux or macOS.
-- Ruby 2.6.6.
-- Node.js (latest LTS).
-- Yarn (latest version).
+- Ruby, at version specified in:
+  - [`.ruby-version`](.ruby-version)
+  - [`.tool-versions`](.tool-versions)
+- Node.js, at the version specified in [`.tool-versions`](.tool-versions).
+- Yarn, at the version specified in [`.tool-versions`](.tool-versions).
 - Xcode *(macOS only)*:
   - Run `xcode-select --install` to install the command line tools only.
   - Or download and install the entire package using the macOS's App Store.
@@ -76,16 +78,16 @@ In the instructions below, you:
 To install Ruby using [rbenv](https://github.com/rbenv/rbenv):
 
 1. [Install rbenv](https://github.com/rbenv/rbenv#installation).
-1. Install the latest Ruby:
+1. Install the supported version of Ruby:
 
    ```shell
-   rbenv install 2.6.6
+   rbenv install <supported-version>
    ```
 
 1. Use the newly installed Ruby:
 
    ```shell
-   rbenv global 2.6.6
+   rbenv global <supported-version>
    ```
 
 Check your:
@@ -141,10 +143,10 @@ To install Ruby, Node.js, and Yarn using `asdf`:
    ```
 
 1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
-   `.tool-versions` files. For example to set Ruby 2.6.6 as the global default, run:
+   `.tool-versions` files. For example to set Ruby 2.7.2 as the global default, run:
 
    ```shell
-   asdf global ruby 2.6.6
+   asdf global ruby 2.7.2
    ```
 
 Check your:
