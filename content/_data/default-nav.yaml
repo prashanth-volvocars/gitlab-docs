@@ -546,7 +546,7 @@ sections:
           - doc_title: NGINX Ingress VTS
             doc_url: 'user/project/integrations/prometheus_library/nginx_ingress_vts.html'
       - category_title: Error Tracking
-        category_url: 'user/project/operations/error_tracking.html'
+        category_url: 'operations/error_tracking.html'
       - category_title: Tracing
         category_url: 'operations/tracing.html'
         ee_only: true
