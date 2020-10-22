@@ -22,106 +22,76 @@ sections:
   - section_title: Install
     section_url: 'install/'
     section_categories:
-
       - category_title: Docker
         category_url: 'install/docker.html'
-
       - category_title: FreeBSD
         category_url: 'install/freebsd.html'
-
       - category_title: Kubernetes (Helm Chart)
         category_url: 'install/kubernetes.html'
-
       - category_title: Linux
         category_url: 'install/linux-manually.html'
-
       - category_title: macOS
         category_url: 'install/osx.html'
-
       - category_title: OpenShift
         category_url: 'install/openshift.html'
-
       - category_title: Windows
         category_url: 'install/windows.html'
-
       - category_title: Bleeding edge releases
         category_url: 'install/bleeding-edge.html'
-
       - category_title: Official Linux packages
         category_url: 'install/linux-repository.html'
-
       - category_title: Old GitLab Runner URLs
         category_url: 'install/old.html'
-
       - category_title: Container Registry and cache server
         category_url: 'install/registry_and_cache_servers.html'
 
   - section_title: Configure
     section_url: 'configuration/'
     section_categories:
-
       - category_title: Advanced config
         category_url: 'configuration/advanced-configuration.html'
-
       - category_title: Autoscale config
         category_url: 'configuration/autoscale.html'
-
       - category_title: Autoscale on AWS EC2
         category_url: 'configuration/runner_autoscale_aws/'
-
       - category_title: Autoscale on AWS Fargate
         category_url: 'configuration/runner_autoscale_aws_fargate/'
-
       - category_title: Commands
         category_url: 'commands/README.html'
-
       - category_title: Feature flags
         category_url: 'configuration/feature-flags.html'
-
       - category_title: Running behind a proxy
         category_url: 'configuration/proxy.html'
-
       - category_title: Rate limited requests
-        category_url: 'configuration/rate_limiting.html'
-
+        category_url: 'configuration/proxy.html#handling-rate-limited-requests'
       - category_title: Self-signed certificates
         category_url: 'configuration/tls-self-signed.html'
-
       - category_title: System services
         category_url: 'configuration/init.html'
 
   - section_title: Register
     section_url: 'register/'
     section_categories:
-
       - category_title: Examples
         category_url: 'examples/gitlab.html'
 
   - section_title: Executors
     section_url: 'executors/README.html'
     section_categories:
-
       - category_title: Custom
         category_url: 'executors/custom.html'
-
       - category_title: Docker
         category_url: 'executors/docker.html'
-
       - category_title: Docker Machine
         category_url: 'executors/docker_machine.html'
-
       - category_title: Kubernetes
         category_url: 'executors/kubernetes.html'
-
       - category_title: Shell
         category_url: 'executors/shell.html'
-
       - category_title: SSH
         category_url: 'executors/ssh.html'
-
       - category_title: Parallels
         category_url: 'executors/parallels.html'
-
       - category_title: Virtual Box
         category_url: 'executors/virtualbox.html'
 
@@ -140,11 +110,9 @@ sections:
   - section_title: Contribute
     section_url: 'development/README.html'
     section_categories:
-
       - category_title: Documentation
         category_url: 'https://docs.gitlab.com/ee/development/documentation/'
         external_url: true
-
       - category_title: Reviewing GitLab Runner
         category_url: 'development/reviewing-gitlab-runner.html'
 
