@@ -63,7 +63,8 @@ sections:
       - category_title: High availability roles
         category_url: 'roles/README.html'
       - category_title: LDAP
-        category_url: 'settings/ldap.html'
+        category_url: 'https://docs.gitlab.com/ee/administration/auth/ldap/index.html'
+        external_url: true
       - category_title: Logs
         category_url: 'settings/logs.html'
       - category_title: NGINX
@@ -136,8 +137,6 @@ sections:
         category_url: 'settings/configuration.html'
       - category_title: Changing YAML config options
         category_url: 'settings/gitlab.yml.html'
-      - category_title: Prepare a build environment
-        category_url: 'build/README.html'
       - category_title: Adding deprecation messages
         category_url: 'development/adding-deprecation-messages.html'
       - category_title: Adding new gitlab-ctl commands

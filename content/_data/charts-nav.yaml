@@ -18,6 +18,7 @@
 sections:
   - section_title: GitLab Helm Charts Docs
     section_url: ''
+
   - section_title: Install
     section_url: 'installation/'
     section_categories:
@@ -47,6 +48,7 @@ sections:
         category_url: 'installation/migration/'
       - category_title: Version mappings
         category_url: 'installation/version_mappings.html'
+
   - section_title: Configure
     section_url: 'charts/'
     section_categories:
@@ -74,7 +76,7 @@ sections:
           - doc_title: Sidekiq chart
             doc_url: 'charts/gitlab/sidekiq/'
           - doc_title: Task Runner chart
-            doc_url: 'charts/gitlab/sidekiq/'
+            doc_url: 'charts/gitlab/task-runner/'
           - doc_title: Webservice chart
             doc_url: 'charts/gitlab/webservice/'
       - category_title: Minio chart
@@ -82,9 +84,9 @@ sections:
       - category_title: Nginx chart
         category_url: 'charts/nginx/'
       - category_title: Redis chart
-        category_url: 'charts/redis/'
+        category_url: 'installation/deployment.html#redis'
       - category_title: Redis HA chart
-        category_url: 'charts/redis-ha/'
+        category_url: 'installation/deployment.html#redis'
       - category_title: Registry chart
         category_url: 'charts/registry/'
       - category_title: Advanced
@@ -104,13 +106,26 @@ sections:
             doc_url: 'advanced/external-redis/'
           - doc_title: Persistent volumes
             doc_url: 'advanced/persistent-volumes/'
+
   - section_title: Troubleshoot
     section_url: 'troubleshooting/'
+
   - section_title: Contribute
     section_url: 'development/'
     section_categories:
-      - category_title: Architecture
+      - category_title: Architecture of Cloud native GitLab Helm charts
         category_url: 'architecture/'
+        docs:
+          - doc_title: Backup and Restore
+            doc_url: 'architecture/backup-restore.html'
+          - doc_title: Goals
+            doc_url: 'architecture/goals.html'
+          - doc_title: Architecture
+            doc_url: 'architecture/architecture.html'
+          - doc_title: Design Decisions
+            doc_url: 'architecture/decisions.html'
+          - doc_title: Resource Usage
+            doc_url: 'architecture/resource-usage.html'
       - category_title: Environment setup
         category_url: 'development/environment_setup.html'
       - category_title: Style guide
