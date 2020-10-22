@@ -82,6 +82,8 @@ compile '/**/*.md' do
       toc_levels: 2..5,
       with_toc: include_toc
 
+    filter :convert_mermaid_html
+
     filter :colorize_syntax,
       default_colorizer: :rouge
 
