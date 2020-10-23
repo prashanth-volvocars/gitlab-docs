@@ -139,7 +139,7 @@ products:
     slug: 'ee'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
-    description: 'Install, use, and administer GitLab self-managed and GitLab.com.'
+    description: 'Administer and use self-managed GitLab and GitLab.com'
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
     dirs:
       temp_dir: 'tmp/ee/'
@@ -147,13 +147,27 @@ products:
       doc_dir:  'doc'
     expose: true
     icon: 'tanuki'
+  runner:
+    full_name: 'GitLab Runner'
+    short_name: 'Runner'
+    slug: 'runner'
+    index_file: 'index.*'
+    img: '/assets/images/docs-runner.svg'
+    description: 'Install and configure software that runs your CI/CD jobs'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
+    dirs:
+      temp_dir: 'tmp/runner/'
+      dest_dir: 'content/runner'
+      doc_dir:  'docs'
+    expose: true
+    icon: 'status'
   omnibus:
-    full_name: 'Omnibus GitLab'
-    short_name: 'Omnibus'
+    full_name: 'Install GitLab'
+    short_name: 'Install GitLab'
     slug: 'omnibus'
     index_file: 'README.*'
     img: '/assets/images/docs-omnibus.svg'
-    description: 'Default GitLab installer. Full-stack, platform-specific packages. The most common way to install and configure GitLab.'
+    description: 'Install and configure GitLab by using the Omnibus installer'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
     dirs:
       temp_dir: 'tmp/omnibus/'
@@ -162,12 +176,12 @@ products:
     expose: true
     icon: 'car'
   charts:
-    full_name: 'GitLab Helm chart'
-    short_name: 'Charts'
+    full_name: 'Deploy GitLab'
+    short_name: 'Deploy GitLab'
     slug: 'charts'
     index_file: 'index.*'
     img: '/assets/images/docs-charts.svg'
-    description: 'Deploy GitLab to Kubernetes using the GitLab Helm Charts.'
+    description: 'Deploy GitLab to Kubernetes by using GitLab Helm Charts'
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
     dirs:
       temp_dir: 'tmp/charts/'
@@ -175,17 +189,3 @@ products:
       doc_dir:  'doc'
     expose: true
     icon: 'chart'
-  runner:
-    full_name: 'GitLab Runner'
-    short_name: 'Runner'
-    slug: 'runner'
-    index_file: 'index.*'
-    img: '/assets/images/docs-runner.svg'
-    description: 'Agent for GitLab Continuous Integration & Deployment (CI/CD). Configure and run build scripts and other jobs as part of GitLab CI/CD.'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    dirs:
-      temp_dir: 'tmp/runner/'
-      dest_dir: 'content/runner'
-      doc_dir:  'docs'
-    expose: true
-    icon: 'status'
