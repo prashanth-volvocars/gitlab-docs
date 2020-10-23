@@ -181,6 +181,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
   extends:
     - .rules_site_tests
     - .cache_gem
