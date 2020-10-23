@@ -7,5 +7,7 @@
       <% end %>
       <li class="breadcrumb"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
     </ul>
+    <% else %>
+    <div class="pt-5" />
   <% end %>
 <% end %>
