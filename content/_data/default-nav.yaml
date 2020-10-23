@@ -1583,6 +1583,8 @@ sections:
       - category_title: Contribute to GitLab
         category_url: 'development/contributing/'
         docs:
+          - doc_title: Changelog entries
+            doc_url: 'development/changelog.html'
           - doc_title: Community roles
             doc_url: 'development/contributing/community_roles.html'
           - doc_title: Design and UI
