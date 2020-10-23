@@ -3,7 +3,9 @@
 ### Rules
 # - Do not start the URL with "/"
 # - Do not add anchors to the links
-# - If the URL ends with index.html, leave it empty (e.g. section_url: 'index.html' --> section_url: '')
+# - If the URL ends with index.html, leave it empty (e.g. section_url: 'dir/index.html' --> section_url: 'dir/')
+# - If you're referring to a section within index.html, include only the anchor (e.g. section_url:`dir/#some-anchor`)
+# For more information, see https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html#urls
 #
 ### Options
 # - Use "ee_only: true" for categories and docs available only in EE.
@@ -45,7 +47,7 @@ sections:
     section_url: 'user/analytics/'
     section_categories:
       - category_title: Instance-level
-        category_url: 'user/analytics/index.html#instance-level-analytics'
+        category_url: 'user/analytics/#instance-level-analytics'
         docs:
           - doc_title: DevOps Report
             doc_url: 'user/admin_area/analytics/dev_ops_report.html'
@@ -54,29 +56,29 @@ sections:
           - doc_title: User Cohorts
             doc_url: 'user/admin_area/analytics/user_cohorts.html'
       - category_title: Group-level
-        category_url: 'user/analytics/index.html#group-level-analytics'
+        category_url: 'user/analytics/#group-level-analytics'
         docs:
           - doc_title: Contribution
-            doc_url: 'user/group/contribution_analytics/index.html'
+            doc_url: 'user/group/contribution_analytics/'
           - doc_title: Insights
-            doc_url: 'user/group/insights/index.html'
+            doc_url: 'user/group/insights/'
           - doc_title: Issue
-            doc_url: 'user/group/issues_analytics/index.html'
+            doc_url: 'user/group/issues_analytics/'
           - doc_title: Productivity
             doc_url: 'user/analytics/productivity_analytics.html'
           - doc_title: Value Stream
             doc_url: 'user/analytics/value_stream_analytics.html'
       - category_title: Project-level
-        category_url: 'user/analytics/index.html#project-level-analytics'
+        category_url: 'user/analytics/#project-level-analytics'
         docs:
           - doc_title: CI/CD
-            doc_url: 'ci/pipelines/index.html#pipeline-success-and-duration-charts'
+            doc_url: 'ci/pipelines/#pipeline-success-and-duration-charts'
           - doc_title: Code Review
             doc_url: 'user/analytics/code_review_analytics.html'
           - doc_title: Insights
-            doc_url: 'user/group/insights/index.html'
+            doc_url: 'user/project/insights/'
           - doc_title: Issue
-            doc_url: 'user/group/issues_analytics/index.html'
+            doc_url: 'user/group/issues_analytics/'
           - doc_title: Merge Request
             doc_url: 'user/analytics/merge_request_analytics.html'
           - doc_title: Repository
@@ -116,7 +118,7 @@ sections:
           - doc_title: Configuring Crossplane
             doc_url: 'user/clusters/crossplane.html'
       - category_title: Infrastructure as code
-        category_url: 'user/infrastructure/index.html'
+        category_url: 'user/infrastructure/'
       - category_title: Kubernetes Agent
         category_url: 'user/clusters/agent/'
       - category_title: Management project
@@ -1349,7 +1351,7 @@ sections:
       - category_title: Activate and deactivate users
         category_url: 'user/admin_area/activating_deactivating_users.html'
       - category_title: Analytics
-        category_url: 'user/admin_area/analytics/index.html'
+        category_url: 'user/admin_area/analytics/'
       - category_title: Audit events
         category_url: 'administration/audit_events.html'
         ee_only: true
