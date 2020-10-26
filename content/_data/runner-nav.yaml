@@ -82,6 +82,11 @@ sections:
     section_categories:
       - category_title: Custom
         category_url: 'executors/custom.html'
+        docs:
+          - doc_title: librvrt
+            doc_url: 'executors/custom_examples/libvirt.html'
+          - doc_title: LXD
+            doc_url: 'executors/custom_examples/lxd.html'
       - category_title: Docker
         category_url: 'executors/docker.html'
       - category_title: Docker Machine
