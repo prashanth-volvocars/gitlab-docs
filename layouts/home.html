@@ -10,7 +10,7 @@
     <%= render '/header.*' %>
     <%= yield %>
     <%= render '/docsearch.*' %>
-    <% if is_production? and ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+    <% if is_production? and ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
     <% end %>

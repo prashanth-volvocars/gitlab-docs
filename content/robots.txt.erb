@@ -2,7 +2,7 @@
 is_hidden: true
 ---
 
-<% if ENV['CI_COMMIT_REF_NAME'] == 'master' %>
+<% if ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
 sitemap: https://docs.gitlab.com/sitemap.xml
 user-agent: *
 disallow: /ce/

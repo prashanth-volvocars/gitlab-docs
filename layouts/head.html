@@ -18,7 +18,7 @@
 <% if !ENV['CI_COMMIT_REF_NAME'].nil? and stable_version?(ENV['CI_COMMIT_REF_NAME']) %>
 <meta name="docsearch:version" content="<%= ENV['CI_COMMIT_REF_NAME'] %>" />
 <% else %>
-<meta name="docsearch:version" content="master" />
+<meta name="docsearch:version" content="<%= ENV['CI_DEFAULT_BRANCH'] %>" />
 <% end %>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
