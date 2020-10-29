@@ -62,8 +62,10 @@ There are a couple of options for installing dependencies for `gitlab-docs`:
   Yarn.
 - The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn.
 
-The choice of which to use will depend on what you currently use. If you don't yet have Ruby,
-Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
+The choice of which to use might depend on what you currently use. For example, you may have already
+[set up a dependency manager for GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/index.md#install-dependencies).
+
+If you don't yet have Ruby, Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
 
 ### Use separate dependency managers
 
