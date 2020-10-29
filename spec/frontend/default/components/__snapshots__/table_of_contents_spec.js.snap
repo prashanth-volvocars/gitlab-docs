@@ -43,9 +43,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
         class="nav nav-pills flex-column my-0"
         data-testid="main-list"
       >
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-0"
             href="#lorem"
@@ -56,9 +54,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-1"
             href="#lorem-"
@@ -69,9 +65,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-0"
             href="#ipsum"
@@ -82,9 +76,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-1"
             href="#dolar"
@@ -95,9 +87,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-2"
             href="#sit"
@@ -108,9 +98,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-2"
             href="#amit"
@@ -121,9 +109,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class=""
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-2"
             href="#test"
@@ -134,9 +120,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
            
           <!---->
         </li>
-        <li
-          class="toc-separator"
-        >
+        <li>
           <a
             class="nav-link d-block toc-level-0"
             href="#test-help-and-feedback"

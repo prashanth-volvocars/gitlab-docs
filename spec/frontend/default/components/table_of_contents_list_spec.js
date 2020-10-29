@@ -16,7 +16,6 @@ describe('frontend/default/components/table_of_contents_list', () => {
 
   const findItemsData = () => parseTOC(wrapper.element);
   const findLinks = () => wrapper.findAll('a');
-  const findListItems = () => wrapper.findAll('li');
 
   afterEach(() => {
     wrapper.destroy();
@@ -86,34 +85,6 @@ describe('frontend/default/components/table_of_contents_list', () => {
         B_1: 'toc-level-3',
         B_1_1: 'toc-level-4',
       });
-    });
-  });
-
-  describe('with separator', () => {
-    beforeEach(() => {
-      createComponent({
-        items: [
-          {
-            text: 'Lorem',
-          },
-          {
-            text: 'Ipsum',
-            withSeparator: true,
-          },
-        ],
-      });
-    });
-
-    it('has separator class for separator item', () => {
-      const data = findListItems().wrappers.map((x) => ({
-        text: x.text(),
-        hasSeparator: x.classes('toc-separator'),
-      }));
-
-      expect(data).toEqual([
-        { text: 'Lorem', hasSeparator: false },
-        { text: 'Ipsum', hasSeparator: true },
-      ]);
     });
   });
 });
