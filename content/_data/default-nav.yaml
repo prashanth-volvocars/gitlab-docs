@@ -1741,7 +1741,7 @@ sections:
           - doc_title: Shell scripting standards and style guidelines
             doc_url: 'development/shell_scripting_guide/'
           - doc_title: Sidekiq debugging
-            doc_url: 'development/sidekiq_debugging.html'
+            doc_url: 'administration/troubleshooting/sidekiq.html'
           - doc_title: Sidekiq style guide
             doc_url: 'development/sidekiq_style_guide.html'
           - doc_title: Vue style guide
