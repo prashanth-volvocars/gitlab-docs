@@ -23,6 +23,6 @@ end
 group :test, :development do
   gem 'scss_lint', '~> 0.59.0', require: false
   gem 'highline', '~> 2.0.3'
-  gem 'rspec', '~> 3.9.0'
+  gem 'rspec', '~> 3.10.0'
   gem 'pry-byebug', '~> 3.9.0', require: false
 end

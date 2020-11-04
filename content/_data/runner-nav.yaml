@@ -44,8 +44,6 @@ sections:
         category_url: 'install/linux-repository.html'
       - category_title: Old GitLab Runner URLs
         category_url: 'install/old.html'
-      - category_title: Container Registry and cache server
-        category_url: 'install/registry_and_cache_servers.html'
 
   - section_title: Configure
     section_url: 'configuration/'
@@ -70,6 +68,8 @@ sections:
         category_url: 'configuration/tls-self-signed.html'
       - category_title: System services
         category_url: 'configuration/init.html'
+      - category_title: Speed up job execution
+        category_url: 'install/registry_and_cache_servers.html'
 
   - section_title: Register
     section_url: 'register/'
