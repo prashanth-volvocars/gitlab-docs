@@ -69,7 +69,7 @@ sections:
       - category_title: System services
         category_url: 'configuration/init.html'
       - category_title: Speed up job execution
-        category_url: 'install/registry_and_cache_servers.html'
+        category_url: 'configuration/speed_up_job_execution.html'
 
   - section_title: Register
     section_url: 'register/'
