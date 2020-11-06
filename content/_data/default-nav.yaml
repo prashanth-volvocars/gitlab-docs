@@ -520,6 +520,8 @@ sections:
       - category_title: Custom dashboards
         category_url: 'operations/metrics/dashboards/'
         docs:
+          - doc_title: GitLab-defined metrics dashboards
+            doc_url: 'operations/metrics/dashboards/default.html'
           - doc_title: Dashboard YAML properties
             doc_url: 'operations/metrics/dashboards/yaml.html'
           - doc_title: Dashboard settings
@@ -528,6 +530,8 @@ sections:
             doc_url: 'operations/metrics/dashboards/panel_types.html'
           - doc_title: Using variables
             doc_url: 'operations/metrics/dashboards/variables.html'
+          - doc_title: Templates for custom dashboards
+            doc_url: 'operations/metrics/dashboards/develop.html'
           - doc_title: Templating variables for dashboards
             doc_url: 'operations/metrics/dashboards/templating_variables.html'
       - category_title: Metrics library
@@ -835,6 +839,8 @@ sections:
             doc_url: 'api/epics.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Error tracking
+            doc_url: 'api/error_tracking.html'
           - doc_title: Events
             doc_url: 'api/events.html'
           - doc_title: Features flags
@@ -1017,6 +1023,8 @@ sections:
             doc_url: 'api/todos.html'
           - doc_title: Users
             doc_url: 'api/users.html'
+          - doc_title: User-starred metrics dashboards
+            doc_url: 'api/metrics_user_starred_dashboards.html'
           - doc_title: Variables (project)
             doc_url: 'api/project_level_variables.html'
           - doc_title: Variables (group)
@@ -1405,10 +1413,38 @@ sections:
       - category_title: Metrics
         category_url: 'administration/monitoring/'
         docs:
+          - doc_title: Configure GitLab
+            doc_url: 'administration/monitoring/performance/gitlab_configuration.html'
+          - doc_title: Configure Grafana
+            doc_url: 'administration/monitoring/performance/grafana_configuration.html'
+          - doc_title: GitHub imports
+            doc_url: 'administration/monitoring/github_imports.html'
+          - doc_title: GitLab exporter
+            doc_url: 'administration/monitoring/prometheus/gitlab_exporter.html'
+          - doc_title: GitLab Prometheus metrics
+            doc_url: 'administration/monitoring/prometheus/gitlab_metrics.html'
+          - doc_title: GitLab self monitoring project
+            doc_url: 'administration/monitoring/gitlab_self_monitoring_project/'
+          - doc_title: IP allowlist endpoints
+            doc_url: 'administration/monitoring/ip_whitelist.html'
+          - doc_title: Node exporter
+            doc_url: 'administration/monitoring/prometheus/node_exporter.html'
+          - doc_title: PGBouncer exporter
+            doc_url: 'administration/monitoring/prometheus/pgbouncer_exporter.html'
+          - doc_title: PostgreSQL server exporter
+            doc_url: 'administration/monitoring/prometheus/postgres_exporter.html'
           - doc_title: Prometheus
             doc_url: 'administration/monitoring/prometheus/'
           - doc_title: Performance bar
             doc_url: 'administration/monitoring/performance/performance_bar.html'
+          - doc_title: Performance monitoring
+            doc_url: 'administration/monitoring/performance/'
+          - doc_title: Redis exporter
+            doc_url: 'administration/monitoring/prometheus/redis_exporter.html'
+          - doc_title: Registry exporter
+            doc_url: 'administration/monitoring/prometheus/registry_exporter.html'
+          - doc_title: Request profiling
+            doc_url: 'administration/monitoring/performance/request_profiling.html'
           - doc_title: Usage statistics
             doc_url: 'user/admin_area/settings/usage_statistics.html'
       - category_title: Object storage
@@ -1626,6 +1662,8 @@ sections:
             doc_url: 'development/what_requires_downtime.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'development/understanding_explain_plans.html'
+      - category_title: Developer guide to logging
+        category_url: 'development/logging.html'
       - category_title: Development Rake tasks
         category_url: 'development/rake_tasks.html'
         docs:
@@ -1652,6 +1690,8 @@ sections:
             doc_url: 'development/documentation/site_architecture/deployment_process.html'
           - doc_title: Release process
             doc_url: 'development/documentation/site_architecture/release_process.html'
+      - category_title: Distributed tracing
+        category_url: 'development/distributed_tracing.html'
       - category_title: Experiments
         category_url: 'development/experiment_guide/'
       - category_title: Feature flags for GitLab development
@@ -1816,6 +1856,8 @@ sections:
             doc_url: 'development/i18n/merging_translations.html'
       - category_title: Value Stream Analytics
         category_url: 'development/value_stream_analytics.html'
+      - category_title: Working with Prometheus metrics
+        category_url: 'development/prometheus_metrics.html'
 
   - section_title: Customer
     section_url: 'subscriptions/'
