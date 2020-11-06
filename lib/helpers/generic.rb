@@ -8,5 +8,9 @@ module Nanoc::Helpers
     def is_production?
       ENV['NANOC_ENV'] == 'production'
     end
+
+    def is_omnibus?
+      ENV['NANOC_ENV'] == 'omnibus'
+    end
   end
 end

@@ -1,8 +1,14 @@
+require_relative '../helpers/generic'
+
 module Gitlab
   class Navigation
+    include Nanoc::Helpers::Generic
+
     def initialize(items, item)
       @items = items
       @item = item
+
+      disable_inactive_sections!
     end
 
     def nav_items
@@ -34,6 +40,20 @@ module Gitlab
     private
 
     attr_reader :items, :item
+
+    def disable_inactive_sections!
+      return unless is_omnibus?
+
+      children.each do |section|
+        section.disable! unless has_active_element?([section])
+      end
+    end
+
+    def has_active_element?(collection)
+      return false unless collection
+
+      collection.any? { |element| show_element?(element) || has_active_element?(element.children) }
+    end
 
     def dir
       @dir ||= item.identifier.to_s[%r{(?<=/)[^/]+}]
