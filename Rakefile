@@ -145,7 +145,7 @@ namespace :release do
     content.gsub!('X-Y', version.tr('.', '-'))
     content.gsub!('W-Z', chart_version(version).tr('.', '-'))
 
-    open(dockerfile, 'w') do |post|
+    File.open(dockerfile, 'w') do |post|
       post.puts content
     end
 
@@ -157,7 +157,7 @@ namespace :release do
     ci_yaml_content.gsub!("BRANCH_RUNNER: 'master'", "BRANCH_RUNNER: '"+version.tr('.', '-')+"-stable'")
     ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '"+chart_version(version).tr('.', '-')+"-stable'")
 
-    open(ci_yaml, 'w') do |post|
+    File.open(ci_yaml, 'w') do |post|
       post.puts ci_yaml_content
     end
 
