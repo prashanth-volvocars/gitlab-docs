@@ -1,0 +1,9 @@
+inherit_gem:
+  gitlab-styles:
+    - rubocop-default.yml
+
+CodeReuse/ActiveRecord:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
