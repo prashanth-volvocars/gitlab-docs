@@ -1,7 +1,7 @@
 require './lib/task_helpers'
 require 'fileutils'
 
-task :default => [:setup_repos, :pull_repos, :setup_content_dirs]
+task default: [:setup_repos, :pull_repos, :setup_content_dirs]
 
 task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
@@ -21,7 +21,7 @@ task :setup_repos do
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] and branch == ENV['CI_DEFAULT_BRANCH'] and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     next if File.exist?(product['dirs']['temp_dir'])
 
@@ -49,7 +49,7 @@ task :pull_repos do
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] and branch == ENV['CI_DEFAULT_BRANCH'] and ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
@@ -106,7 +106,7 @@ namespace :release do
   task :single, :version do |t, args|
     require "highline/import"
     version = args.version.to_s
-    source_dir = File.expand_path('../', __FILE__)
+    source_dir = File.expand_path(__dir__)
 
     raise 'You need to specify a version, like 10.1' unless version =~ /\A\d+\.\d+\z/
 
@@ -152,10 +152,10 @@ namespace :release do
     # Replace the branches variables in .gitlab-ci.yml
     ci_yaml = "#{source_dir}/.gitlab-ci.yml"
     ci_yaml_content = File.read(ci_yaml)
-    ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '"+version.tr('.', '-')+"-stable-ee'")
-    ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '"+version.tr('.', '-')+"-stable'")
-    ci_yaml_content.gsub!("BRANCH_RUNNER: 'master'", "BRANCH_RUNNER: '"+version.tr('.', '-')+"-stable'")
-    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '"+chart_version(version).tr('.', '-')+"-stable'")
+    ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
+    ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
+    ci_yaml_content.gsub!("BRANCH_RUNNER: 'master'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
+    ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{chart_version(version).tr('.', '-')}-stable'")
 
     File.open(ci_yaml, 'w') do |post|
       post.puts ci_yaml_content
@@ -179,9 +179,8 @@ namespace :release do
 
   desc 'Creates merge requests to update the dropdowns in all online versions'
   task :dropdowns do
-
     # Check if you're on the default branch before starting. Fail if you are.
-    if `git branch --show-current`.tr("\n",'') == ENV['CI_DEFAULT_BRANCH']
+    if `git branch --show-current`.tr("\n", '') == ENV['CI_DEFAULT_BRANCH']
       abort('
       It appears you are on the default branch. Create the current release
       branch and run the raketask again. Follow the documentation guide
@@ -206,9 +205,6 @@ namespace :release do
       https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
       ')
     end
-
-    # Set the commit title
-    commit_title = "Update dropdown to #{current_version}"
 
     # Create a merge request to update the dropdowns in all online versions
     versions['online'].each do |version|

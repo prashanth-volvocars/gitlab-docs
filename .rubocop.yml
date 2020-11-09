@@ -5,5 +5,8 @@ inherit_gem:
 CodeReuse/ActiveRecord:
   Enabled: false
 
+Rails/RakeEnvironment:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
