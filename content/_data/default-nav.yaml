@@ -1682,6 +1682,8 @@ sections:
             doc_url: 'development/documentation/structure.html'
           - doc_title: Process
             doc_url: 'development/documentation/workflow.html'
+          - doc_title: Testing
+            doc_url: 'development/documentation/testing.html'
           - doc_title: Site architecture
             doc_url: 'development/documentation/site_architecture/'
           - doc_title: Global navigation
