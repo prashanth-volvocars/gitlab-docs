@@ -3,6 +3,9 @@ dir = @item.identifier.to_s[%r{(?<=/)[^/]+}]
 nav_items_dir = "/_data/#{dir}-nav.yaml"
 nav_items_exists = !@items[nav_items_dir].nil?
 is_ee_prefixed = !nav_items_exists && dir != 'ce'
+unless is_ee_prefixed
+  raise "There are some CE items. Dir: #{dir}. Item: #{@item.identifier.to_s}"
+end
 nav_items = nav_items_exists ? @items[nav_items_dir] : @items["/_data/default-nav.yaml"]
 %>
 <nav class="global-nav-content">
