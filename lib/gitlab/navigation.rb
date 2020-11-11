@@ -50,9 +50,5 @@ module Gitlab
     def is_ee_prefixed
       !nav_items_exists && dir != 'ce'
     end
-
-    def is_omnibus?
-      ENV['NANOC_ENV'] == 'omnibus'
-    end
   end
 end
