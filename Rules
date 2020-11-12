@@ -100,6 +100,11 @@ compile '/**/*.md' do
     else
       layout "/#{item[:layout]}.*"
     end
+
+    if Nanoc::Helpers::Generic.is_omnibus?
+      filter :gzip
+      write ext: 'html.gz'
+    end
   else
     layout '/redirect.*'
   end
