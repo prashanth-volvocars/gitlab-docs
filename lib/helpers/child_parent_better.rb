@@ -5,7 +5,7 @@ module Nanoc::Helpers
       if @config[:debug]
         puts item
       end
-      parent_array = Array.new
+      parent_array = []
       current_item = item
       # Until the current item has no parent, keep running.
       until (get_nearest_parent(current_item.identifier.to_s).nil?) do

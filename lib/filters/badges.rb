@@ -23,7 +23,7 @@ class BadgesFilter < Nanoc::Filter
     (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))?
     [\]|\)]
     </strong>
-  }x
+  }x.freeze
 
   BADGES_MARKDOWN_PATTERN = %r{
     (?:^|[^`]) # must be start of the line or anything except backtick
@@ -31,7 +31,7 @@ class BadgesFilter < Nanoc::Filter
     (?<badge_type>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<only>ONLY))
     ?(\]|\))\*\*
     (?:$|[^`]) # must end of line or anything except backtick
-  }x
+  }x.freeze
 
   def run(content, params = {})
     content.gsub(BADGES_HTML_PATTERN) { generate(Regexp.last_match[:badge_type].downcase, !Regexp.last_match[:only].nil?) }

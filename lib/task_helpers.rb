@@ -1,7 +1,7 @@
 require 'yaml'
 
-PRODUCTS = %W[ee omnibus runner charts].freeze
-VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/
+PRODUCTS = %w[ee omnibus runner charts].freeze
+VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/.freeze
 
 def config
   # Parse the config file and create a hash.
@@ -13,7 +13,7 @@ def products
 
   # Pull products data from the config.
   @products = PRODUCTS.each_with_object({}) do |key, result|
-     result[key] = config['products'][key]
+    result[key] = config['products'][key]
   end
 end
 

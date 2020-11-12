@@ -2,8 +2,7 @@
 
 module Nanoc::Helpers
   module VersionsDropdown
-
-    STABLE_VERSIONS_REGEX=/^\d{1,2}\.\d{1,2}$/
+    STABLE_VERSIONS_REGEX = /^\d{1,2}\.\d{1,2}$/.freeze
 
     #
     # Set the active class based on CI_COMMIT_REF_NAME and exclude if on

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/
+TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
 
 preprocess do
   badges_filter = BadgesFilter.new
@@ -66,26 +66,26 @@ compile '/**/*.md' do
     # Use GitlabKramdown with Rouge.
     # https://gitlab.com/brodock/gitlab_kramdown
     filter :gitlab_kramdown,
-      input: 'GitlabKramdown',
-      syntax_highlighter: 'rouge',
-      syntax_highlighter_opts: {
-        # In kramdown 2.0, the plaintext parser was removed and replaced by the
-        # :guess_lang option:
-        #
-        # - https://github.com/gettalong/kramdown/blob/master/doc/news/release_2_0_0.page
-        # - https://github.com/gettalong/kramdown/pull/573
-        guess_lang: true
-      },
-      default_lang: 'Plain Text',
-      hard_wrap: false,
-      auto_ids: true,
-      toc_levels: 2..5,
-      with_toc: include_toc
+           input: 'GitlabKramdown',
+           syntax_highlighter: 'rouge',
+           syntax_highlighter_opts: {
+             # In kramdown 2.0, the plaintext parser was removed and replaced by the
+             # :guess_lang option:
+             #
+             # - https://github.com/gettalong/kramdown/blob/master/doc/news/release_2_0_0.page
+             # - https://github.com/gettalong/kramdown/pull/573
+             guess_lang: true
+           },
+           default_lang: 'Plain Text',
+           hard_wrap: false,
+           auto_ids: true,
+           toc_levels: 2..5,
+           with_toc: include_toc
 
     filter :convert_mermaid_html
 
     filter :colorize_syntax,
-      default_colorizer: :rouge
+           default_colorizer: :rouge
 
     # GitLab price / tiers specific badges
     filter :badges
@@ -108,8 +108,8 @@ end
 compile '/**/*.scss' do
   filter :erb
   filter :sass,
-    syntax: :scss,
-    style: :compressed
+         syntax: :scss,
+         style: :compressed
   write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.css'
 end
 
