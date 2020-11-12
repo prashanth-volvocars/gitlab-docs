@@ -596,6 +596,8 @@ sections:
         docs:
           - doc_title: Includes examples
             doc_url: 'ci/yaml/includes.html'
+          - doc_title: Script syntax
+            doc_url: 'ci/yaml/script.html'
           - doc_title: Visualization
             doc_url: 'ci/yaml/visualization.html'
       - category_title: Auto DevOps
@@ -721,6 +723,8 @@ sections:
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Job artifacts
             doc_url: 'ci/pipelines/job_artifacts.html'
+          - doc_title: Pipeline artifacts
+            doc_url: 'ci/pipelines/pipeline_artifacts.html'
           - doc_title: Schedules
             doc_url: 'ci/pipelines/schedules.html'
           - doc_title: Settings
