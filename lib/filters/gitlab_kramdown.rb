@@ -39,9 +39,9 @@ module Nanoc::Filters
       end
 
       if warnings.any?
-        $stderr.puts "\nkramdown warning(s) for #{@item_rep.inspect}"
+        warn "\nkramdown warning(s) for #{@item_rep.inspect}"
         warnings.each do |warning|
-          $stderr.puts "  #{warning}"
+          warn "  #{warning}"
         end
       end
 

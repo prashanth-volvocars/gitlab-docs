@@ -35,8 +35,8 @@ module Nanoc::Helpers
         return get_nearest_parent(parent_dir)
       else
         parent_dir = item_identifier.sub(/[^\/]+$/, '').chop
-        parent = @items[parent_dir + '/README.*']
-        alt_parent = @items[parent_dir + '/index.*']
+        parent = @items["#{parent_dir}/README.*"]
+        alt_parent = @items["#{parent_dir}/index.*"]
         if (parent.nil? && alt_parent.nil?)
           get_nearest_parent(parent_dir)
         elsif alt_parent.nil?

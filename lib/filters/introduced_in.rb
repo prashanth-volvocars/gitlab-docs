@@ -23,14 +23,9 @@ class IntroducedInFilter < Nanoc::Filter
       %(<div class="introduced-in mb-3">Version history) +
         %(<button class="text-expander" data-toggle="collapse" href="#release_version_notes_#{@incremental_id}" role="button" aria-expanded="false">) +
         %(</button>) +
-        %(<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">) +
-        content +
-        %(</div>) +
-        %(</div>)
+        %(<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">#{content}</div></div>)
     else
-      %(<div class="introduced-in">) +
-        content +
-        %(</div>)
+      %(<div class="introduced-in">#{content}</div>)
     end
   end
 end

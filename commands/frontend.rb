@@ -9,18 +9,20 @@ flag   :h, :help, 'show help for this command' do |value, cmd|
 end
 run do |opts, args, cmd|
   puts 'Compiling JavaScript...'
+
   unless system('yarn install --frozen-lockfile')
     abort <<~ERROR
       Error: failed to run yarn. JavaScript compilation failed. For more information, see:
       https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
 
-      ERROR
+    ERROR
   end
+
   unless system('yarn bundle')
     abort <<~ERROR
       Error: failed to run yarn. JavaScript compilation failed. For more information, see:
       https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
 
-      ERROR
+    ERROR
   end
 end
