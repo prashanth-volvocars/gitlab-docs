@@ -30,7 +30,7 @@ describe Gitlab::Docs::Page do
 
               <h1 id="internal-anchor">Some section</h1>
               <h1 id="utf-8-id-✔">Some section 2</h1>
-            </body
+            </body>
           </html>
         HTML
     end

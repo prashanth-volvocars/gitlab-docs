@@ -9,7 +9,6 @@ module Nanoc::Helpers
       product = content_filename_array.shift
       # This should be the path from the doc/ directory for a given file.
       docs_content_filename = content_filename_array.join("/")
-      root_dir = File.expand_path('../../', __dir__)
 
       if product == "omnibus"
         # omnibus-gitlab repo

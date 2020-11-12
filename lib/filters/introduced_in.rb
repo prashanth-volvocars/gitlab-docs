@@ -1,8 +1,5 @@
-# encoding: utf-8
-
 # Adapted from the admonition code on http://nanoc.ws/
 class IntroducedInFilter < Nanoc::Filter
-
   identifier :introduced_in
 
   def run(content, params = {})
@@ -23,18 +20,17 @@ class IntroducedInFilter < Nanoc::Filter
     @incremental_id += 1
     # If the content is a list of items, collapse the content.
     if content =~ /<ul>/i
-      %[<div class="introduced-in mb-3">Version history] +
-      %[<button class="text-expander" data-toggle="collapse" href="#release_version_notes_#{@incremental_id}" role="button" aria-expanded="false">] +
-      %[</button>] +
-      %[<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">] +
-      content +
-      %[</div>] +
-      %[</div>]
+      %(<div class="introduced-in mb-3">Version history) +
+        %(<button class="text-expander" data-toggle="collapse" href="#release_version_notes_#{@incremental_id}" role="button" aria-expanded="false">) +
+        %(</button>) +
+        %(<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">) +
+        content +
+        %(</div>) +
+        %(</div>)
     else
-      %[<div class="introduced-in">] +
-      content +
-      %[</div>]
+      %(<div class="introduced-in">) +
+        content +
+        %(</div>)
     end
   end
-
 end

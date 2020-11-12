@@ -26,7 +26,7 @@ module Nanoc::Filters
       warning_filters = params.delete(:warning_filters)
       with_toc = params.delete(:with_toc)
 
-      content = with_toc ? TOC_PATCH+raw_content : raw_content
+      content = with_toc ? TOC_PATCH + raw_content : raw_content
       document = ::Kramdown::Document.new(content, params)
 
       update_anchors_with_product_suffixes!(document.root.children)
