@@ -1,5 +1,5 @@
 ---
-version: 81
+version: 82
 ---
 
 @import "variables";
@@ -820,10 +820,9 @@ a.global-nav-link {
 // Version history ("Introduced in") notes
 .introduced-in {
   font-size: $introduced-in-font-size;
-  color: $gds-gray-700;
+  color: $gds-black;
 
   .introduced-in-content {
-    border-left: solid 1px $gds-gray-500;
     margin-top: 8px;
 
     ul {
