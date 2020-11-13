@@ -23,4 +23,14 @@ run do |opts, args, cmd|
 
       ERROR
   end
+
+  puts 'Create icons.svg ...'
+  root = File.expand_path('../', __dir__)
+  path = 'node_modules/@gitlab/svgs/dist/icons.svg'
+
+  if File.write('public/assets/images/icons.svg', File.read("#{root}/#{path}"))
+    puts 'Done!'
+  else
+    puts 'Failed to create icons.svg!'
+  end
 end

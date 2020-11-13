@@ -6,11 +6,7 @@ module Nanoc::Helpers
   module IconsHelper
     extend self
 
-    def icons_sprite
-      sprite_path = "node_modules/@gitlab/svgs/dist/icons.svg"
-
-      %(<div class="d-none">#{read_file(sprite_path)}</div>)
-    end
+    ICONS_SVG = '/assets/images/icons.svg'.freeze
 
     def icon(icon_name, size = nil, css_class = nil)
       unless known_sprites.include?(icon_name)
@@ -26,7 +22,7 @@ module Nanoc::Helpers
         *css_class
       ].join(' ')
 
-      %(<svg class="#{svg_class}"><use href="##{icon_name}" /></svg>)
+      %(<svg class="#{svg_class}"><use href="#{ICONS_SVG}##{icon_name}" /></svg>)
     end
 
     private
