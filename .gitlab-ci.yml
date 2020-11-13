@@ -438,6 +438,28 @@ image:docs-lint:
   environment:
     name: registry/docs-lint
 
+image:docs-lint-markdown:
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
+  stage: build-images
+  variables:
+    ALPINE_VERSION: '3.12'
+    VALE_VERSION: '2.6.1'
+    MARKDOWNLINT_VERSION: '0.24.0'
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
+    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-markdown
+  script:
+    - docker build
+      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+      --build-arg VALE_VERSION=${VALE_VERSION}
+      --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+      -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/docs-lint
+
 #
 # GitLab docs image
 #
