@@ -1,62 +1,47 @@
-<%
-dir = @item.identifier.to_s[%r{(?<=/)[^/]+}]
-nav_items_dir = "/_data/#{dir}-nav.yaml"
-nav_items_exists = !@items[nav_items_dir].nil?
-is_ee_prefixed = !nav_items_exists && dir != 'ce'
-nav_items = nav_items_exists ? @items[nav_items_dir] : @items["/_data/default-nav.yaml"]
-%>
+<% navigation = Gitlab::Navigation.new(@items, @item) %>
 <nav class="global-nav-content">
   <!-- nav sections -->
-  <% nav_items[:sections].each do |sec| %>
+  <% navigation.children.each do |sec| %>
     <div class="global-nav-section">
       <span class="global-nav-block-top nav-link">
-        <% section_href = is_ee_prefixed ? "/ee/#{sec[:section_url]}" : "/#{dir}/#{sec[:section_url]}" %>
-        <a class="global-nav-link level-0 <% if sec[:section_categories] %>has-collapse<% end %> <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>active<% end %>" href="<%= section_href %>">
-          <%= sec[:section_title] %>
-          <% if sec[:ee_only] %>
-            <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in <%= sec[:ee_tier] %>"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-          <% end %><!-- end of if sec[:ee_only] -->
+        <a class="global-nav-link level-0 <%= sec.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(sec) ? 'active' : '' %>" href="<%= navigation.element_href(sec) %>">
+          <%= sec.title %>
+          <%= navigation.optional_ee_badge(sec) %>
         </a>
-        <div class="section-title <% if sec[:section_categories] %>collapse-toggle<% end %> <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>active<% else %>collapsed<% end %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= sec[:section_title].gsub(/[\s\/\(\)]/, '') %>"></div>
+        <div class="section-title <%= sec.has_children? ? 'collapse-toggle': '' %> <%= navigation.show_element?(sec) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= navigation.id_for(sec) %>"></div>
       </span>
 
       <!-- nav categories -->
-      <% if sec[:section_categories] %>
-      <div class="collapse <% if @item.path == "/#{dir}/#{sec[:section_url]}" %>show<% end %>" id="<%= sec[:section_title].gsub(/[\s\/\(\)]/, '') %>">
-        <% sec[:section_categories].each do |cat| %>
-          <span class="global-nav-cat nav-link">
-            <% if cat[:external_url] %>
-              <a class="global-nav-link level-1 <% if cat[:docs] %>has-collapse<% end %>" href="<%= cat[:category_url] %>" target="_blank">
-                <%= cat[:category_title] %>
-              </a>
-            <% else %>
-              <% category_href = is_ee_prefixed ? "/ee/#{cat[:category_url]}" : "/#{dir}/#{cat[:category_url]}" %>
-              <a class="global-nav-link level-1 <% if cat[:docs] %>has-collapse<% end %> <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% end %>" href="<%= category_href %>">
-                <%= cat[:category_title] %>
-                <% if cat[:ee_only] %>
-                  <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in <%= cat[:ee_tier] %>"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-                <% end %><!-- end of if cat[:ee_only] -->
+      <% if sec.has_children?  %>
+      <div class="collapse <%= navigation.show_element?(sec) ? 'show' : '' %>" id="<%= navigation.id_for(sec) %>">
+        <% sec.children.each do |cat| %>
+        <span class="global-nav-cat nav-link">
+          <% if cat.external_url %>
+          <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %>" href="<%= cat.url %>" target="_blank">
+            <%= cat.title %>
+          </a>
+          <% else %>
+          <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(cat) ? 'active' : '' %>" href="<%= navigation.element_href(cat) %>">
+                <%= cat.title %>
+                <%= navigation.optional_ee_badge(cat) %>
               </a>
             <% end %><!-- end of if cat[:external_url] -->
-            <div class="<% if cat[:docs] %>collapse-toggle<% end %> <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>active<% else %>collapsed<% end %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= cat[:category_title].gsub(/[\s\/\(\)]/, '') %>"></div>
+            <div class="<%= cat.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(cat) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#<%= navigation.id_for(cat) %>"></div>
           </span>
 
           <!-- nav docs -->
-          <% if cat[:docs] %>
-            <div class="collapse <% if @item.path == "/#{dir}/#{cat[:category_url]}" %>show<% end %>" id="<%= cat[:category_title].gsub(/[\s\/\(\)]/, '') %>">
-            <% cat[:docs].each do |doc| %>
+          <% if cat.has_children? %>
+            <div class="collapse <%= navigation.show_element?(cat) ? 'show' : '' %>" id="<%= navigation.id_for(cat) %>">
+            <% cat.children.each do |doc| %>
               <span class="nav-link">
-                <% if doc[:external_url] %>
-                  <a class="global-nav-link level-2" href="<%= doc[:doc_url] %>" target="_blank">
-                    <%= doc[:doc_title] %>
+                <% if doc.external_url %>
+                  <a class="global-nav-link level-2" href="<%= doc.url %>" target="_blank">
+                    <%= doc.title %>
                   </a>
                 <% else%>
-                  <% docs_href = is_ee_prefixed ? "/ee/#{doc[:doc_url]}" : "/#{dir}/#{doc[:doc_url]}" %>
-                  <a class="global-nav-link level-2 <% if @item.path == "/#{dir}/#{doc[:doc_url]}" %>active<% end %>" href="<%= docs_href %>">
-                    <%= doc[:doc_title] %>
-                    <% if doc[:ee_only] %>
-                      <span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in <%= doc[:ee_tier] %>"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-                    <% end %><!-- end if doc[:ee_only] -->
+                  <a class="global-nav-link level-2 <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
+                    <%= doc.title %>
+                    <%= navigation.optional_ee_badge(doc) %>
                   </a>
                 <% end %><!-- end of if doc[:external_url] -->
               </span>
