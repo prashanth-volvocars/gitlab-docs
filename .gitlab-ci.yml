@@ -132,7 +132,7 @@ variables:
   script:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
-    - bundle exec nanoc compile -VV
+    - bundle exec nanoc compile -VV --env omnibus
     # Symlink all README.html to index.html so that we can have clean URLs
     - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
