@@ -1,0 +1,47 @@
+############################
+#
+# Image that contains the doc lint tools.
+#
+############################
+
+# ALPINE_VERSION is defined in .gitlab-ci.yml
+ARG ALPINE_VERSION
+
+FROM alpine:${ALPINE_VERSION}
+MAINTAINER GitLab Technical Writing team
+
+# VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
+ARG VALE_VERSION
+ARG MARKDOWNLINT_VERSION
+
+# Install dependencies
+RUN apk add --no-cache -U \
+    bash         \
+    build-base   \
+    curl         \
+    git          \
+    gnupg        \
+    grep         \
+    libc6-compat \
+    libcurl      \
+    libxslt      \
+    libxslt-dev  \
+    nodejs       \
+    openssl      \
+    pngquant     \
+    tar          \
+    yarn
+
+# Install vale
+RUN curl -sfL https://install.goreleaser.com/github.com/ValeLint/vale.sh | sh -s v${VALE_VERSION}
+
+# Set up needed environment variables that are called with --build-arg when
+# the Docker image is built (see .gitlab-ci.yml).
+ARG CI_COMMIT_REF_NAME
+# If CI_COMMIT_REF_NAME is not set (local development), set it to master
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
+
+WORKDIR /tmp
+
+# markdownlint-cli pinned to control when new versions are put in place.
+RUN yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean
