@@ -1,18 +1,20 @@
-<script type="text/javascript">
-  function loadMermaidJsIfNeeded() {
+---
+version: 1
+---
+
+function loadMermaidJsIfNeeded() {
     if (document.querySelector('.mermaid') === null) {
-      return;
-     }
+        return;
+    }
 
     var element = document.createElement("script");
     element.src = "//cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.0/mermaid.min.js";
     element.onload = function(){mermaid.init();};
     document.body.appendChild(element);
-  }
+}
 
 if (window.addEventListener)
-   window.addEventListener("load", loadMermaidJsIfNeeded, false);
+    window.addEventListener("load", loadMermaidJsIfNeeded, false);
 else if (window.attachEvent)
-   window.attachEvent("onload", loadMermaidJsIfNeeded);
+    window.attachEvent("onload", loadMermaidJsIfNeeded);
 else window.onload = loadMermaidJsIfNeeded;
-</script>

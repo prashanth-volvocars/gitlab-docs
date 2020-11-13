@@ -20,6 +20,13 @@
 <% else %>
 <meta name="docsearch:version" content="<%= ENV['CI_DEFAULT_BRANCH'] %>" />
 <% end %>
+
+<!-- Enable CSP headers -->
+<% unless ENV['DISABLE_CSP'] %>
+<%= render '/csp.*' %>
+<% end %>
+<!-- End of CSP headers -->
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/stylesheet.*'].path %>">
 <link rel="stylesheet" href="<%= @items['/assets/stylesheets/highlight.*'].path %>">
@@ -38,11 +45,7 @@
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="36a06ac5-ddb4-4f91-8337-067ad19ad8d5" type="text/javascript"></script>
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WZCXKT5');</script>
+  <script src="<%= @items['/assets/javascripts/google_tagmanager.*'].path %>"></script>
   <!-- End Google Tag Manager -->
 
   <!-- Google webmasters verification -->
