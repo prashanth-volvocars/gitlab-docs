@@ -33,8 +33,6 @@ class AdmonitionFilter < Nanoc::Filter
   def generate(kind, content)
     %(<div class="admonition-wrapper #{kind}">) +
       %(<div class="admonition alert alert-#{BOOTSTRAP_MAPPING[kind]}">) +
-      %(<i class="fa fa-#{FONT_AWESOME_MAPPING[kind]} fa-fw" aria-hidden="true"></i>) +
-      content +
-      %(</div></div>)
+      %(<i class="fa fa-#{FONT_AWESOME_MAPPING[kind]} fa-fw" aria-hidden="true"></i>#{content}</div></div>)
   end
 end

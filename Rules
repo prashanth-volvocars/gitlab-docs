@@ -110,7 +110,7 @@ compile '/**/*.scss' do
   filter :sass,
          syntax: :scss,
          style: :compressed
-  write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.css'
+  write "#{item.identifier.without_ext}-v#{rep.item[:version]}.css"
 end
 
 # Do not compile minified assets
@@ -118,7 +118,7 @@ passthrough '/**/*.min.*'
 
 compile '/assets/javascripts/*.js' do
   filter :erb
-  write item.identifier.without_ext + '-v' + rep.item[:version].to_s + '.js'
+  write "#{item.identifier.without_ext}-v#{rep.item[:version]}.js"
 end
 
 compile '/index.*' do
@@ -141,7 +141,7 @@ route '/**/*.{html,md}' do
   if item.identifier =~ '/index.*'
     '/index.html'
   else
-    item.identifier.without_ext + '.html'
+    "#{item.identifier.without_ext}.html"
   end
 end
 

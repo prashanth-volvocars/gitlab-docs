@@ -5,6 +5,9 @@ inherit_gem:
 CodeReuse/ActiveRecord:
   Enabled: false
 
+Layout/LineLength:
+  Enabled: false
+
 Rails/RakeEnvironment:
   Enabled: false
 
