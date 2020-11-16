@@ -1729,8 +1729,6 @@ sections:
         docs:
           - doc_title: Accessibility
             doc_url: 'development/fe_guide/accessibility.html'
-          - doc_title: Ajax
-            doc_url: 'development/fe_guide/droplab/plugins/ajax.html'
           - doc_title: Architecture
             doc_url: 'development/fe_guide/architecture.html'
           - doc_title: Axios
