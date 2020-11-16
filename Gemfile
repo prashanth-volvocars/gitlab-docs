@@ -4,7 +4,7 @@ gem 'nanoc', '~> 4.11.0'
 gem 'adsf', '~> 1.4.3'
 gem 'adsf-live', '~> 1.4.3'
 gem 'sassc', '~> 2.4.0'
-gem 'rouge', '~> 3.24.0'
+gem 'rouge', '~> 3.25.0'
 gem 'rake', '~> 13.0.1'
 
 group :nanoc do
@@ -25,5 +25,5 @@ group :test, :development do
   gem 'highline', '~> 2.0.3'
   gem 'rspec', '~> 3.10.0'
   gem 'pry-byebug', '~> 3.9.0', require: false
-  gem 'gitlab-styles', '~> 5.0.0', require: false
+  gem 'gitlab-styles', '~> 5.1.0', require: false
 end
