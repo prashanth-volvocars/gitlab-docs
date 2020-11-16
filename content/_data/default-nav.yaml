@@ -1679,7 +1679,7 @@ sections:
         category_url: 'development/documentation/'
         docs:
           - doc_title: Style guide
-            doc_url: 'development/documentation/styleguide/index.html'
+            doc_url: 'development/documentation/styleguide/'
           - doc_title: GraphQL style guide
             doc_url: 'development/documentation/graphql_styleguide.html'
           - doc_title: RESTful API style guide
