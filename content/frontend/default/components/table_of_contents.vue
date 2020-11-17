@@ -62,7 +62,7 @@ export default {
 };
 </script>
 <template>
-  <div id="markdown-toc" class="table-of-contents-container position-relative">
+  <div class="markdown-toc table-of-contents-container position-sticky">
     <div class="table-of-contents">
       <h4 class="border-0 toc-sm d-lg-none">
         <a

@@ -2,8 +2,7 @@
 
 exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
 <div
-  class="table-of-contents-container position-relative"
-  id="markdown-toc"
+  class="markdown-toc table-of-contents-container position-sticky"
 >
   <div
     class="table-of-contents"

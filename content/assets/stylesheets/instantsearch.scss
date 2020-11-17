@@ -1,5 +1,5 @@
 ---
-version: 11
+version: 12
 ---
 
 @import "variables";
@@ -36,7 +36,9 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 }
 
 .instantsearch-input {
-  padding-bottom: 7px;
+  @media all and (max-width: $sm-width) {
+    margin-top: 40px;
+  }
 }
 
 //scss-lint:disable SelectorFormat
@@ -128,7 +130,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
     color: $link-color;
   }
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     .hit-tag {
       width: 60px;
       height: 23px;
@@ -153,7 +155,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 .main.class {
   padding-top: 90px;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     padding-top: 20px;
   }
 }
