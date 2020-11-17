@@ -322,20 +322,10 @@ sections:
             doc_url: 'user/project/merge_requests/merge_request_approvals.html'
             ee_only: true
             ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
-          - doc_title: Browser performance testing
-            doc_url: 'user/project/merge_requests/browser_performance_testing.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Creating merge requests
             doc_url: 'user/project/merge_requests/creating_merge_requests.html'
           - doc_title: Cherry pick changes
             doc_url: 'user/project/merge_requests/cherry_pick_changes.html'
-          - doc_title: Code quality
-            doc_url: 'user/project/merge_requests/code_quality.html'
-          - doc_title: Load performance testing
-            doc_url: 'user/project/merge_requests/load_performance_testing.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Merge request dependencies
             doc_url: 'user/project/merge_requests/merge_request_dependencies.html'
             ee_only: true
@@ -583,54 +573,51 @@ sections:
       - category_title: Introduction
         category_url: 'ci/introduction/'
         docs:
-          - doc_title: Getting started
+          - doc_title: Get started
             doc_url: 'ci/quick_start/README.html'
-          - doc_title: Enable or disable
-            doc_url: 'ci/enable_or_disable_ci.html'
-          - doc_title: Using SSH keys
-            doc_url: 'ci/ssh_keys/README.html'
-          - doc_title: Migrating from CircleCI
+          - doc_title: Migrate from CircleCI
             doc_url: 'ci/migration/circleci.html'
-          - doc_title: Migrating from Jenkins
+          - doc_title: Migrate from Jenkins
             doc_url: 'ci/migration/jenkins.html'
-      - category_title: '.gitlab-ci.yml Reference'
-        category_url: 'ci/yaml/README.html'
+          - doc_title: Enable or disable CI/CD
+            doc_url: 'ci/enable_or_disable_ci.html'
+      - category_title: Pipelines
+        category_url: 'ci/pipelines/'
         docs:
-          - doc_title: Includes examples
-            doc_url: 'ci/yaml/includes.html'
-          - doc_title: Script syntax
+          - doc_title: Schedule a pipeline
+            doc_url: 'ci/pipelines/schedules.html'
+          - doc_title: Trigger a pipeline
+            doc_url: 'ci/triggers/README.html'
+          - doc_title: Pipeline settings
+            doc_url: 'ci/pipelines/settings.html'
+          - doc_title: Pipeline architectures
+            doc_url: 'ci/pipelines/pipeline_architectures.html'
+          - doc_title: Pipeline efficiency
+            doc_url: 'ci/pipelines/pipeline_efficiency.html'
+          - doc_title: Directed acyclic graph (DAG)
+            doc_url: 'ci/directed_acyclic_graph/'
+          - doc_title: Multi-project pipelines
+            doc_url: 'ci/multi_project_pipelines.html'
+          - doc_title: Parent-child pipelines
+            doc_url: 'ci/parent_child_pipelines.html'
+          - doc_title: Pipelines for merge requests
+            doc_url: 'ci/merge_request_pipelines/'
+          - doc_title: Pipelines for merged results
+            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Merge trains
+            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: Jobs
+        category_url: 'ci/jobs/'
+        docs:
+          - doc_title: Access a terminal for a running job
+            doc_url: 'ci/interactive_web_terminal/'
+          - doc_title: Format scripts and job logs
             doc_url: 'ci/yaml/script.html'
-          - doc_title: Visualization
-            doc_url: 'ci/yaml/visualization.html'
-      - category_title: Auto DevOps
-        category_url: 'topics/autodevops/'
-        docs:
-          - doc_title: Getting started
-            doc_url: 'topics/autodevops/quick_start_guide.html'
-          - doc_title: Requirements
-            doc_url: 'topics/autodevops/requirements.html'
-          - doc_title: Customize
-            doc_url: 'topics/autodevops/customize.html'
-          - doc_title: Stages
-            doc_url: 'topics/autodevops/stages.html'
-          - doc_title: Upgrading PostgreSQL
-            doc_url: 'topics/autodevops/upgrading_postgresql.html'
-      - category_title: Caching
-        category_url: 'ci/caching/'
-      - category_title: ChatOps
-        category_url: 'ci/chatops/README.html'
-      - category_title: Cloud deployment
-        category_url: 'ci/cloud_deployment/'
-      - category_title: Docker integration
-        category_url: 'ci/docker/README.html'
-        docs:
-          - doc_title: Docker build
-            doc_url: 'ci/docker/using_docker_build.html'
-          - doc_title: Docker images
-            doc_url: 'ci/docker/using_docker_images.html'
-          - doc_title: kaniko
-            doc_url: 'ci/docker/using_kaniko.html'
-      - category_title: Environment variables
+      - category_title: Variables
         category_url: 'ci/variables/README.html'
         docs:
           - doc_title: Predefined variables
@@ -639,18 +626,108 @@ sections:
             doc_url: 'ci/variables/where_variables_can_be_used.html'
           - doc_title: Deprecated variables
             doc_url: 'ci/variables/deprecated_variables.html'
-      - category_title: Environments
+      - category_title: Environments and deployments
         category_url: 'ci/environments/'
         docs:
           - doc_title: Protected environments
             doc_url: 'ci/environments/protected_environments.html'
             ee_only: true
             ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-      - category_title: Examples
+          - doc_title: Roll out an application incrementally
+            doc_url: 'ci/environments/incremental_rollouts.html'
+          - doc_title: Deploy to AWS
+            doc_url: 'ci/cloud_deployment/'
+          - doc_title: Review Apps
+            doc_url: 'ci/review_apps/'
+      - category_title: Runners
+        category_url: 'ci/runners/README.html'
+        docs:
+          - doc_title: Best practices for large repositories
+            doc_url: 'ci/large_repositories/'
+      - category_title: Cache and Artifacts
+        category_url: 'ci/caching/'
+        docs:
+          - doc_title: Job artifacts
+            doc_url: 'ci/pipelines/job_artifacts.html'
+          - doc_title: Pipeline artifacts
+            doc_url: 'ci/pipelines/pipeline_artifacts.html'
+      - category_title: '.gitlab-ci.yml reference'
+        category_url: 'ci/yaml/README.html'
+        docs:
+          - doc_title: CI Lint
+            doc_url: 'ci/lint.html'
+          - doc_title: Include examples
+            doc_url: 'ci/yaml/includes.html'
+          - doc_title: Visualization
+            doc_url: 'ci/yaml/visualization.html'
+      - category_title: Docker
+        category_url: 'ci/docker/README.html'
+        docs:
+          - doc_title: Docker build
+            doc_url: 'ci/docker/using_docker_build.html'
+          - doc_title: Docker images
+            doc_url: 'ci/docker/using_docker_images.html'
+          - doc_title: kaniko
+            doc_url: 'ci/docker/using_kaniko.html'
+      - category_title: Integrate a database
+        category_url: 'ci/services/README.html'
+        docs:
+          - doc_title: MySQL Service
+            doc_url: 'ci/services/mysql.html'
+          - doc_title: PostgreSQL Service
+            doc_url: 'ci/services/postgres.html'
+          - doc_title: Redis Service
+            doc_url: 'ci/services/redis.html'
+      - category_title: Auto DevOps
+        category_url: 'topics/autodevops/'
+        docs:
+          - doc_title: Get started
+            doc_url: 'topics/autodevops/quick_start_guide.html'
+          - doc_title: Requirements
+            doc_url: 'topics/autodevops/requirements.html'
+          - doc_title: Customize
+            doc_url: 'topics/autodevops/customize.html'
+          - doc_title: Upgrade PostgreSQL
+            doc_url: 'topics/autodevops/upgrading_postgresql.html'
+          - doc_title: Stages
+            doc_url: 'topics/autodevops/stages.html'
+      - category_title: Testing
+        category_url: 'ci/unit_test_reports.html'
+        docs:
+          - doc_title: Accessibility testing
+            doc_url: 'user/project/merge_requests/accessibility_testing.html'
+          - doc_title: Browser performance testing
+            doc_url: 'user/project/merge_requests/browser_performance_testing.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Code quality
+            doc_url: 'user/project/merge_requests/code_quality.html'
+          - doc_title: Load performance testing
+            doc_url: 'user/project/merge_requests/load_performance_testing.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Metrics reports
+            doc_url: 'ci/metrics_reports.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+      - category_title: External integrations
+        category_url: 'ci/ci_cd_for_external_repos/'
+        docs:
+          - doc_title: SSH keys
+            doc_url: 'ci/ssh_keys/README.html'
+          - doc_title: Bitbucket Cloud
+            doc_url: 'ci/ci_cd_for_external_repos/bitbucket_integration.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: GitHub
+            doc_url: 'ci/ci_cd_for_external_repos/github_integration.html'
+            ee_only: true
+            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
+          - doc_title: Slack
+            doc_url: 'ci/chatops/README.html'
+      - category_title: CI/CD examples
         category_url: 'ci/examples/README.html'
         docs:
-          - doc_title: Browser performance testing
-            doc_url: 'user/project/merge_requests/browser_performance_testing.html#configuring-browser-performance-testing'
           - doc_title: Clojure
             doc_url: 'ci/examples/test-clojure-application.html'
           - doc_title: Deployment with Dpl
@@ -677,80 +754,8 @@ sections:
             doc_url: 'ci/examples/test-and-deploy-ruby-application-to-heroku.html'
           - doc_title: Scala on Heroku
             doc_url: 'ci/examples/test-scala-application.html'
-      - category_title: External repositories
-        category_url: 'ci/ci_cd_for_external_repos/'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-        docs:
-          - doc_title: Bitbucket Cloud
-            doc_url: 'ci/ci_cd_for_external_repos/bitbucket_integration.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-          - doc_title: GitHub
-            doc_url: 'ci/ci_cd_for_external_repos/github_integration.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-      - category_title: Incremental rollouts
-        category_url: 'ci/environments/incremental_rollouts.html'
-      - category_title: Interactive web terminals
-        category_url: 'ci/interactive_web_terminal/'
-      - category_title: Large repositories
-        category_url: 'ci/large_repositories/'
-      - category_title: Metrics reports
-        category_url: 'ci/metrics_reports.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-      - category_title: Pipelines
-        category_url: 'ci/pipelines/'
-        docs:
-          - doc_title: Architecture
-            doc_url: 'ci/pipelines/pipeline_architectures.html'
-          - doc_title: Pipeline efficiency
-            doc_url: 'ci/pipelines/pipeline_efficiency.html'
-          - doc_title: Directed acyclic graph
-            doc_url: 'ci/directed_acyclic_graph/'
-          - doc_title: Multi-project pipelines
-            doc_url: 'ci/multi_project_pipelines.html'
-          - doc_title: Parent-child pipelines
-            doc_url: 'ci/parent_child_pipelines.html'
-          - doc_title: Pipelines for merge requests
-            doc_url: 'ci/merge_request_pipelines/'
-          - doc_title: Pipelines for merged results
-            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-          - doc_title: Merge trains
-            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
-          - doc_title: Job artifacts
-            doc_url: 'ci/pipelines/job_artifacts.html'
-          - doc_title: Pipeline artifacts
-            doc_url: 'ci/pipelines/pipeline_artifacts.html'
-          - doc_title: Schedules
-            doc_url: 'ci/pipelines/schedules.html'
-          - doc_title: Settings
-            doc_url: 'ci/pipelines/settings.html'
-          - doc_title: Triggering pipelines
-            doc_url: 'ci/triggers/README.html'
-      - category_title: Review Apps
-        category_url: 'ci/review_apps/'
-      - category_title: Runners
-        category_url: 'ci/runners/README.html'
-      - category_title: Services examples
-        category_url: 'ci/services/README.html'
-        docs:
-          - doc_title: MySQL
-            doc_url: 'ci/services/mysql.html'
-          - doc_title: PostgreSQL
-            doc_url: 'ci/services/postgres.html'
-          - doc_title: Redis
-            doc_url: 'ci/services/redis.html'
-      - category_title: Troubleshooting
+      - category_title: Troubleshooting CI/CD
         category_url: 'ci/troubleshooting.html'
-        docs:
-          - doc_title: CI Lint
-            doc_url: 'ci/lint.html'
 
   - section_title: Packages & Registries
     section_url: 'user/packages/'
