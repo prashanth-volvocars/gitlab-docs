@@ -1360,6 +1360,10 @@ sections:
             ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Service templates
             doc_url: 'user/project/integrations/services_templates.html'
+          - doc_title: Sign-in restrictions
+            doc_url: 'user/admin_area/settings/sign_in_restrictions.html'
+          - doc_title: Sign-up restrictions
+            doc_url: 'user/admin_area/settings/sign_up_restrictions.html'
           - doc_title: System Hooks
             doc_url: 'system_hooks/system_hooks.html'
           - doc_title: Timezone
