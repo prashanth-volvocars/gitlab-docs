@@ -1,5 +1,5 @@
 ---
-version: 83
+version: 84
 ---
 
 @import "variables";
@@ -647,14 +647,14 @@ h6 {
       border: solid $gds-gray-700;
       border-width: 0 1px 1px 0;
       display: inline-block;
-      transform: rotate(-135deg);
+      transform: rotate(45deg);
       width: 7px;
       height: 7px;
     }
 
     &.collapsed {
       &::after {
-        transform: rotate(45deg);
+        transform: rotate(-50deg);
       }
     }
 
