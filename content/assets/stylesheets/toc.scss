@@ -1,5 +1,5 @@
 ---
-version: 17
+version: 18
 ---
 
 @import "variables";
@@ -9,14 +9,9 @@ $base-nav-link-padding: .75rem;
 $sm-nav-link-padding: .25rem;
 $nav-link-font-size: 14px;
 
-.clear {
-  clear: both;
-}
-
 // ToC styles
 .table-of-contents {
-  position: relative;
-  padding: 16px 8px;
+  padding: 16px 0;
   margin-top: 60px;
 
   li {
@@ -50,7 +45,13 @@ $nav-link-font-size: 14px;
 }
 
 .markdown-toc {
+  top: 0;
   padding-left: 16px;
+
+  @media(min-width: $md-width) {
+    overflow-y: scroll;
+    height: 100vh;
+  }
 }
 
 .nav-pills {
@@ -62,13 +63,16 @@ $nav-link-font-size: 14px;
 // than 10 anyways...
 @for $i from 0 to 10 {
   .nav-link.toc-level-#{$i} {
-    padding-left: $base-nav-link-padding * ($i + 1);
+    padding-left: $base-nav-link-padding * ($i + .75);
+    padding-top: .25rem;
+    line-height: 1.25rem;
   }
 }
 
 @media(max-width: $md-width) {
   .doc-nav {
-    padding: 50px 16px 0 66px;
+    margin-left: -20px;
+    margin-top: -55px;
   }
 
   .table-of-contents {
@@ -110,9 +114,6 @@ $nav-link-font-size: 14px;
   }
 
   .doc-nav {
-    @include sidebar-fixed;
-    margin-top: 55px;
-
     &.toc-no-breadcrumbs {
       padding-top: 6px;
     }

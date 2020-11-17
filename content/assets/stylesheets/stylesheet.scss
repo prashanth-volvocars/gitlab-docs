@@ -1,5 +1,5 @@
 ---
-version: 82
+version: 83
 ---
 
 @import "variables";
@@ -91,7 +91,7 @@ table {
     }
   }
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     display: block;
   }
 
@@ -163,7 +163,7 @@ pre {
       transition: opacity .3s ease-in;
     }
 
-    @media all and (max-width: $mobile-width) {
+    @media all and (max-width: $sm-width) {
       display: none;
     }
   }
@@ -212,7 +212,7 @@ h2, h3, h4, h5, h6 {
     background-color: $code-background-color;
   }
 
-  @media all and (min-width: $mobile-width) {
+  @media all and (min-width: $sm-width) {
     .anchor {
       opacity: 0;
       float: left;
@@ -239,7 +239,7 @@ h1 {
   margin-top: $h-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 26px;
   }
 }
@@ -250,7 +250,7 @@ h2 {
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 24px;
   }
 }
@@ -261,7 +261,7 @@ h3 {
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 22px;
   }
 }
@@ -272,40 +272,36 @@ h4 {
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 20px;
   }
 }
 
 h5 {
   font-size: 16px;
-  // color: $color-light-gray;
   font-weight: 600;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 18px;
   }
 }
 
 h6 {
   font-size: 15px;
-  // color: $color-light-gray;
   font-weight: 600;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
-  @media (max-width: $mobile-width) {
+  @media (max-width: $sm-width) {
     font-size: 16px;
   }
 }
 
 .main {
   padding: $page-header-height 40px 0;
-  max-width: $page-content-width;
   border-right: 1px solid $main-box-shadow;
-  border-left: 1px solid $main-box-shadow;
   background: $main-background-color;
   z-index: 1;
 
@@ -393,7 +389,6 @@ h6 {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    // box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
     border: 1px solid $gds-gray-200;
     margin-top: 26px;
     margin-bottom: 30px;
@@ -451,12 +446,8 @@ h6 {
     }
   }
 
-  @media(max-width: $md-width) {
-    padding: 0 16px 0 66px;
-  }
-
-  @media(max-width: $lg-width) and (min-width: $md-width)  {
-    width: 60%;
+  @media (max-width: $md-width) {
+    padding: 0 60px;
   }
 }
 
@@ -492,8 +483,7 @@ h6 {
   display: flex;
   flex-direction: column;
   position: sticky;
-  padding-top: $page-header-height;
-  max-width: $sidebar-width;
+  padding-top: 70px;
   width: 50px;
   height: 100vh;
   transition: all .3s;
@@ -503,8 +493,7 @@ h6 {
   top: 0;
 
   &.active {
-    @include sidebar-fixed;
-    min-width: $sidebar-width;
+    width: 100%;
 
     .nav-toggle {
 
@@ -797,9 +786,8 @@ a.global-nav-link {
   }
 
   @media(max-width: $md-width) {
-    padding: 10px 16px 0 66px;
+    padding: 10px 0;
     margin-top: 60px;
-    margin-bottom: -40px;
   }
 }
 
@@ -976,12 +964,12 @@ a.global-nav-link {
   .logo-container {
     margin-right: 32px;
 
-    @media (max-width: $medium-width) {
+    @media (max-width: $md-width) {
       margin-right: 16px;
     }
   }
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $md-width) {
     height: auto;
   }
 
@@ -998,7 +986,7 @@ a.global-nav-link {
   }
 
   .header-company-name {
-    @media (max-width: $medium-width) {
+    @media (max-width: $md-width) {
       display: none;
     }
   }
@@ -1007,7 +995,7 @@ a.global-nav-link {
     text-align: right;
     list-style-type: none;
 
-    @media all and (max-width: $mobile-width) {
+    @media all and (max-width: $md-width) {
       display: none;
     }
   }
@@ -1016,7 +1004,7 @@ a.global-nav-link {
     color: $header-font-color;
   }
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $md-width) {
     &.active {
       display: block;
 
@@ -1115,14 +1103,19 @@ a.global-nav-link {
     -webkit-appearance: none;
     border: 0;
     padding: 4px 12px;
-    width: 355px;
+    width: 260px;
     color: $search-input-font-color;
-    background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 355px 9px / 14px no-repeat;
+    background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 260px 9px / 14px no-repeat;
     outline: 0;
 
-    @media(max-width: $medium-width) {
+    @media(max-width: $md-width) {
       width: 210px;
       background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 210px 9px / 14px no-repeat;
+    }
+
+    @media(min-width: $lg-width) {
+      width: 355px;
+      background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 355px 9px / 14px no-repeat;
     }
   }
 
@@ -1146,7 +1139,7 @@ a.global-nav-link {
   .nav-toggle {
     display: none;
 
-    @media all and (max-width: $mobile-width) {
+    @media all and (max-width: $md-width) {
       display: flex;
       height: $page-header-height;
       align-items: center;
@@ -1161,8 +1154,8 @@ a.global-nav-link {
 
   .nav {
     > li {
-      margin: 0 10px;
-      padding: 0 10px;
+      margin: 0;
+      padding: 0 6px;
     }
 
     // Override bootstrap
@@ -1381,7 +1374,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     .badges-drop {
       padding-top: 5px;
     }
@@ -1484,7 +1477,7 @@ li {
 .half-width {
   width: 50%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
@@ -1492,7 +1485,7 @@ li {
 .width-60 {
   width: 60%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
@@ -1500,7 +1493,7 @@ li {
 .width-70 {
   width: 70%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
@@ -1508,7 +1501,7 @@ li {
 .width-75 {
   width: 75%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
@@ -1516,7 +1509,7 @@ li {
 .width-80 {
   width: 80%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
@@ -1524,7 +1517,7 @@ li {
 .width-90 {
   width: 90%;
 
-  @media all and (max-width: $mobile-width) {
+  @media all and (max-width: $sm-width) {
     width: 100%;
   }
 }
