@@ -89,6 +89,8 @@ sections:
         category_url: 'settings/dns.html'
       - category_title: Unicorn
         category_url: 'settings/unicorn.html'
+      - category_title: Image scaling
+        category_url: 'settings/image_scaling.html'
 
   - section_title: Release process
     section_url: 'release/README.html'
