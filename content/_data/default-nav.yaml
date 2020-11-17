@@ -772,12 +772,12 @@ sections:
             doc_url: 'user/packages/nuget_repository/'
           - doc_title: PyPI
             doc_url: 'user/packages/pypi_repository/'
+          - doc_title: Generic
+            doc_url: 'user/packages/generic_packages/'
       - category_title: Container Registry
         category_url: 'user/packages/container_registry/'
       - category_title: Dependency Proxy
         category_url: 'user/packages/dependency_proxy/'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
 
   - section_title: API
     section_url: 'api/README.html'
@@ -829,8 +829,6 @@ sections:
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Dependency Proxy
             doc_url: 'api/dependency_proxy.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Deploy keys
             doc_url: 'api/deploy_keys.html'
           - doc_title: Deployments
