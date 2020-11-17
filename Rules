@@ -161,4 +161,6 @@ passthrough '/favicon.ico'
 
 postprocess do
   system('nanoc frontend')
+
+  Gitlab::SymlinksConverter.run(config, items)
 end
