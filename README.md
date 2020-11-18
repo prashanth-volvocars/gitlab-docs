@@ -487,6 +487,26 @@ title "Email, Slack, and GitLab Groups and Aliases", search for `docsearch`,
 and add a comment with your email to be added to the alias that gets the weekly
 reports.
 
+## Survey banner
+
+In case there's a survey that needs to reach a big audience, the docs site has
+the ability to host a banner for that purpose. When it is enabled, it's shown
+at the top of every page of the docs site.
+
+To publish a survey:
+
+1. Edit [`layouts/banner.html`](/layouts/banner.html) and fill in the required
+   information like the description text and the survey link.
+1. Edit [`nanoc.yaml`](nanoc.yaml) and set `show_banner` to `true`.
+
+To unpublish a survey:
+
+1. Edit [`nanoc.yaml`](nanoc.yaml) and set `show_banner` to `false`.
+1. Edit [`layouts/banner.html`](/layouts/banner.html) remove the survey link.
+   This step is optional, but it's good to have the link removed so that it's
+   not exposed when no new survey answers are needed.
+
+
 ## CSP header
 
 The GitLab docs site uses a [Content Security Policy (CSP) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
