@@ -1,0 +1,57 @@
+############################
+#
+# Image that contains the dependencies to run the lints.
+# It downloads the gitlab-docs repository based on the
+# branch the Docker image is invoked from.
+# Based on Alpine.
+#
+############################
+
+# RUBY_VERSION and ALPINE_VERSION are defined in .gitlab-ci.yml
+ARG RUBY_VERSION
+ARG ALPINE_VERSION
+
+FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION}
+MAINTAINER GitLab Technical Writing team
+
+# Install dependencies
+RUN apk add --no-cache -U \
+    bash        \
+    build-base  \
+    curl        \
+    git         \
+    gnupg       \
+    gzip        \
+    grep        \
+    libcurl     \
+    libxslt     \
+    libxslt-dev \
+    nodejs      \
+    openssl     \
+    ruby-dev    \
+    tar         \
+    xz          \
+    xz-dev      \
+    yarn
+
+# Do not install rdoc to save some space
+RUN echo 'gem: --no-document' >> /etc/gemrc
+
+# Set up needed environment variables that are called with --build-arg when
+# the Docker image is built (see .gitlab-ci.yml).
+ARG CI_COMMIT_REF_NAME
+# If CI_COMMIT_REF_NAME is not set (local development), set it to master
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
+
+WORKDIR /tmp
+
+RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME/gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
+  && tar xvjf gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
+  && mv gitlab-docs-$CI_COMMIT_REF_NAME gitlab-docs \
+  && rm gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2
+
+RUN cd gitlab-docs \
+  && yarn install --frozen-lockfile \
+  && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+
+RUN yarn cache clean --all

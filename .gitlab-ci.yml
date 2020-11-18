@@ -460,6 +460,26 @@ image:docs-lint-markdown:
   environment:
     name: registry/docs-lint
 
+image:docs-lint-html:
+  extends:
+    - .rules_scheduled
+    - .docker_prepare
+  stage: build-images
+  variables:
+    RUBY_VERSION: '2.7.2'
+    ALPINE_VERSION: '3.12'
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION
+    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-html
+  script:
+    - docker build
+      --build-arg RUBY_VERSION=${RUBY_VERSION}
+      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
+      -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker push $IMAGE_NAME
+  environment:
+    name: registry/docs-lint
+
 #
 # GitLab docs image
 #
