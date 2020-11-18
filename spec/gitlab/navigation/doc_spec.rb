@@ -3,6 +3,7 @@ require 'gitlab/navigation/doc'
 
 describe Gitlab::Navigation::Doc do
   subject(:doc) { described_class.new(element) }
+
   let(:element) do
     {
       doc_title: title,
@@ -12,6 +13,7 @@ describe Gitlab::Navigation::Doc do
       ee_tier: ee_tier
     }
   end
+
   let(:title) { 'Title' }
   let(:external_url) { 'http://example.com' }
   let(:url) { 'README.html' }

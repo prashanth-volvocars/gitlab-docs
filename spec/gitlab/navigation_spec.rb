@@ -5,6 +5,7 @@ require 'gitlab/navigation/section'
 
 describe Gitlab::Navigation do
   subject(:navigation) { described_class.new(items, item) }
+
   let(:item) { double(path: '/omnibus/user/README.html', identifier: double(to_s: '/omnibus/user/README.md')) }
   let(:items) do
     {
@@ -37,6 +38,7 @@ describe Gitlab::Navigation do
 
   describe '#element_href' do
     subject { navigation.element_href(element) }
+
     let(:element) { Gitlab::Navigation::Section.new(section_url: url) }
     let(:url) { 'user/README.html' }
 
@@ -51,6 +53,7 @@ describe Gitlab::Navigation do
 
   describe '#show_element?' do
     subject { navigation.show_element?(element) }
+
     let(:element) { Gitlab::Navigation::Section.new(section_url: url) }
     let(:url) { 'user/README.html' }
 
@@ -65,6 +68,7 @@ describe Gitlab::Navigation do
 
   describe '#id_for' do
     subject { navigation.id_for(element) }
+
     let(:element) { Gitlab::Navigation::Section.new(section_title: 'Section Example') }
 
     it { is_expected.to eq 'SectionExample' }
@@ -72,6 +76,7 @@ describe Gitlab::Navigation do
 
   describe '#optional_ee_badge' do
     subject { navigation.optional_ee_badge(element) }
+
     let(:element) { Gitlab::Navigation::Section.new(ee_only: ee_only, ee_tier: ee_tier) }
     let(:ee_tier) { 'GitLab Starter' }
     let(:ee_only) { true }

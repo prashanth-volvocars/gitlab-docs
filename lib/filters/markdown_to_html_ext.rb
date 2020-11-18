@@ -3,7 +3,7 @@ module Nanoc::Filters
     identifier :md_to_html_ext
 
     # Convert internal URLs that link to `.md` files to instead link to
-    #{ }`.html` files since that's what Nanoc actually serves.
+    # { }`.html` files since that's what Nanoc actually serves.
     def run(content, params = {})
       content.gsub(/href="(\S*.md\S*)"/) do |result| # Fetch all links in the HTML Document
         if /^href="http/.match(result).nil? # Check if link is internal
