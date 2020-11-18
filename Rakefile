@@ -108,7 +108,7 @@ namespace :release do
     version = args.version.to_s
     source_dir = File.expand_path(__dir__)
 
-    raise 'You need to specify a version, like 10.1' unless version =~ /\A\d+\.\d+\z/
+    raise 'You need to specify a version, like 10.1' unless version.match?(/\A\d+\.\d+\z/)
 
     # Check if the chart version has been defined
     unless chart_version_added?(version)
@@ -117,9 +117,7 @@ namespace :release do
     end
 
     # Check if local branch exists
-    if local_branch_exist?(version)
-      abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.")
-    end
+    abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.") if local_branch_exist?(version)
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
