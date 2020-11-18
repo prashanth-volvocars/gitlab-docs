@@ -4,6 +4,7 @@ require 'gitlab/navigation/category'
 
 describe Gitlab::Navigation::Section do
   subject(:section) { described_class.new(element) }
+
   let(:element) do
     {
       section_title: title,
@@ -13,11 +14,12 @@ describe Gitlab::Navigation::Section do
       section_categories: categories
     }
   end
+
   let(:title) { 'Title' }
   let(:url) { 'README.html' }
   let(:ee_only) { true }
   let(:ee_tier) { 'GitLab Premium' }
-  let(:categories) { [ { category_title: 'Category Title' } ] }
+  let(:categories) { [{ category_title: 'Category Title' }] }
 
   describe '#title' do
     subject { section.title }

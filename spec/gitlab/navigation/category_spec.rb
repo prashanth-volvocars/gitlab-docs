@@ -4,6 +4,7 @@ require 'gitlab/navigation/doc'
 
 describe Gitlab::Navigation::Category do
   subject(:category) { described_class.new(element) }
+
   let(:element) do
     {
       category_title: title,
@@ -14,12 +15,13 @@ describe Gitlab::Navigation::Category do
       docs: docs
     }
   end
+
   let(:title) { 'Title' }
   let(:external_url) { 'http://example.com' }
   let(:url) { 'README.html' }
   let(:ee_only) { true }
   let(:ee_tier) { 'GitLab Premium' }
-  let(:docs) { [ { doc_title: 'Doc Title' } ] }
+  let(:docs) { [{ doc_title: 'Doc Title' }] }
 
   describe '#title' do
     subject { category.title }

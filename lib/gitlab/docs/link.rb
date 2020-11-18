@@ -25,7 +25,7 @@ module Gitlab
       end
 
       def internal?
-        @href.length > 0 && !@href.include?(':')
+        @href.length.positive? && !@href.include?(':')
       end
 
       def path

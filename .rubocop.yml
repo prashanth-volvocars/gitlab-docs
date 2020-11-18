@@ -11,5 +11,8 @@ Layout/LineLength:
 Rails/RakeEnvironment:
   Enabled: false
 
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
