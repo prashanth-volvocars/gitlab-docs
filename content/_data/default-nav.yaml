@@ -1003,6 +1003,8 @@ sections:
             doc_url: 'api/graphql/audit_report.html'
           - doc_title: Identify issue boards (example)
             doc_url: 'api/graphql/sample_issue_boards.html'
+          - doc_title: Removed items
+            doc_url: 'api/graphql/removed_items.html'
       - category_title: v3 to v4
         category_url: 'api/v3_to_v4.html'
       - category_title: Lint .gitlab-ci.yml
