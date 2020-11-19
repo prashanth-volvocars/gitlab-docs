@@ -51,8 +51,8 @@ sections:
         docs:
           - doc_title: DevOps Report
             doc_url: 'user/admin_area/analytics/dev_ops_report.html'
-          - doc_title: Instance Statistics
-            doc_url: 'user/admin_area/analytics/instance_statistics.html'
+          - doc_title: Usage Trends
+            doc_url: 'user/admin_area/analytics/usage_trends.html'
           - doc_title: User Cohorts
             doc_url: 'user/admin_area/analytics/user_cohorts.html'
       - category_title: Group-level
