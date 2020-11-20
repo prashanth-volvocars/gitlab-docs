@@ -1,5 +1,5 @@
 ---
-version: 84
+version: 85
 ---
 
 @import "variables";
@@ -1000,8 +1000,24 @@ a.global-nav-link {
     }
   }
 
-  .nav-item a {
-    color: $header-font-color;
+  .nav-item {
+    a {
+      color: $header-font-color;
+    }
+
+    .btn-nav-cta {
+      background-color: $button-cta-background;
+      color: $gds-white;
+      font-weight: 700;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .btn-nav-cta:hover {
+      background-color: $button-cta-background-hover;
+    }
   }
 
   @media all and (max-width: $md-width) {
@@ -1155,7 +1171,7 @@ a.global-nav-link {
   .nav {
     > li {
       margin: 0;
-      padding: 0 6px;
+      padding-right: 25px;
     }
 
     // Override bootstrap
