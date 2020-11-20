@@ -127,7 +127,7 @@ breadcrumbs: true
 
 # Whether to show the banner defined in layouts/banner.html.
 # Set to true or false.
-show_banner: true
+show_banner: false
 
 # Debug problems with the generation process by setting this config variable.
 debug: false
