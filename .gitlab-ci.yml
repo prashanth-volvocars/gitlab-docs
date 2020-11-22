@@ -458,7 +458,7 @@ image:docs-lint-markdown:
       -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
-    name: registry/docs-lint
+    name: registry/docs-lint-markdown
 
 image:docs-lint-html:
   extends:
@@ -478,7 +478,7 @@ image:docs-lint-html:
       -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
-    name: registry/docs-lint
+    name: registry/docs-lint-html
 
 #
 # GitLab docs image
