@@ -1,1 +1,2 @@
 *.html gitlab-language=erb
+/Rules gitlab-language=ruby
