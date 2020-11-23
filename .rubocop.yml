@@ -8,6 +8,9 @@ CodeReuse/ActiveRecord:
 Layout/LineLength:
   Enabled: false
 
+Naming/FileName:
+  Enabled: false
+
 Rails/RakeEnvironment:
   Enabled: false
 

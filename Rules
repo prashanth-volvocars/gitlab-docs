@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 TITLE_FILTER_REGEXP = /(#\s|#{BadgesFilter::BADGES_MARKDOWN_PATTERN})/.freeze
 
 preprocess do
