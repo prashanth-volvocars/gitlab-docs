@@ -80,7 +80,7 @@ sections:
           - doc_title: Insights
             doc_url: 'user/project/insights/'
           - doc_title: Issue
-            doc_url: 'user/group/issues_analytics/'
+            doc_url: 'user/analytics/issue_analytics.html'
           - doc_title: Merge Request
             doc_url: 'user/analytics/merge_request_analytics.html'
           - doc_title: Repository
