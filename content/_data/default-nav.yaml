@@ -644,7 +644,7 @@ sections:
         docs:
           - doc_title: Best practices for large repositories
             doc_url: 'ci/large_repositories/'
-      - category_title: Cache and Artifacts
+      - category_title: Cache and artifacts
         category_url: 'ci/caching/'
         docs:
           - doc_title: Job artifacts
