@@ -9,11 +9,11 @@ class AdmonitionFilter < Nanoc::Filter
     'danger' => 'danger'
   }.freeze
 
-  FONT_AWESOME_MAPPING = {
-    'note' => 'info-circle',
-    'tip' => 'pencil',
-    'caution' => 'exclamation-triangle',
-    'danger' => 'bolt'
+  GITLAB_SVGS_MAPPING = {
+    'tip' => 'bulb',
+    'note' => 'information-o',
+    'caution' => 'warning',
+    'danger' => 'warning'
   }.freeze
 
   def run(content, params = {})
@@ -22,9 +22,10 @@ class AdmonitionFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('p').each do |para|
       content = para.inner_html
-      next if content !~ /\A(TIP|NOTE|CAUTION|DANGER): (.*)\Z/m
+      match = content.match(/\A(?<type>TIP|NOTE|CAUTION|DANGER): (?<content>.*)\Z/m)
+      next unless match
 
-      new_content = generate($1.downcase, $2)
+      new_content = generate(match[:type].downcase, match[:content])
       para.replace(new_content)
     end
     doc.to_s
@@ -33,6 +34,6 @@ class AdmonitionFilter < Nanoc::Filter
   def generate(kind, content)
     %(<div class="admonition-wrapper #{kind}">) +
       %(<div class="admonition alert alert-#{BOOTSTRAP_MAPPING[kind]}">) +
-      %(<i class="fa fa-#{FONT_AWESOME_MAPPING[kind]} fa-fw" aria-hidden="true"></i>#{content}</div></div>)
+      %(#{icon(GITLAB_SVGS_MAPPING[kind])}#{content}</div></div>)
   end
 end
