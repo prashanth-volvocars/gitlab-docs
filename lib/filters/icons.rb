@@ -16,15 +16,15 @@ class IconsFilter < Nanoc::Filter
   identifier :icons
 
   ICON_PATTERN = /\{\s*([\w-]+)\s*(?:,\s*(\d+))?\s*(?:,\s*([\w-]+))?\s*\}/.freeze
-  ICON_HTML_PATTERN = /<strong>#{ICON_PATTERN}<\/strong>/.freeze
+  ICON_HTML_PATTERN = %r{<strong>#{ICON_PATTERN}</strong>}.freeze
   ICON_MARKDOWN_PATTERN = /\*\*#{ICON_PATTERN}\*\*/.freeze
 
   def run(content, params = {})
-    content.gsub(ICON_HTML_PATTERN) { generate($1, $2, $3) }
+    content.gsub(ICON_HTML_PATTERN) { generate(Regexp.last_match(1), Regexp.last_match(2), Regexp.last_match(3)) }
   end
 
   def run_from_markdown(content)
-    content.gsub(ICON_MARKDOWN_PATTERN) { generate($1, $2, $3) }
+    content.gsub(ICON_MARKDOWN_PATTERN) { generate(Regexp.last_match(1), Regexp.last_match(2), Regexp.last_match(3)) }
   end
 
   def generate(icon, size, css_class)
