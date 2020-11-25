@@ -1,2 +1,3 @@
 *.html gitlab-language=erb
 /Rules gitlab-language=ruby
+Dockerfile.* gitlab-language=docker
