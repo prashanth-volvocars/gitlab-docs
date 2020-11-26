@@ -664,12 +664,12 @@ sections:
       - category_title: '.gitlab-ci.yml reference'
         category_url: 'ci/yaml/README.html'
         docs:
-          - doc_title: CI Lint
+          - doc_title: Validate syntax
             doc_url: 'ci/lint.html'
+          - doc_title: Visualize configuration
+            doc_url: 'ci/yaml/visualization.html'
           - doc_title: Include examples
             doc_url: 'ci/yaml/includes.html'
-          - doc_title: Visualization
-            doc_url: 'ci/yaml/visualization.html'
       - category_title: Docker
         category_url: 'ci/docker/README.html'
         docs:
