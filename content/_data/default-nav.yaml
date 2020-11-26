@@ -661,9 +661,11 @@ sections:
             doc_url: 'ci/pipelines/job_artifacts.html'
           - doc_title: Pipeline artifacts
             doc_url: 'ci/pipelines/pipeline_artifacts.html'
-      - category_title: '.gitlab-ci.yml reference'
-        category_url: 'ci/yaml/README.html'
+      - category_title: '.gitlab-ci.yml'
+        category_url: 'ci/yaml/gitlab_ci_yaml.html'
         docs:
+          - doc_title: '.gitlab-ci.yml reference'
+            doc_url: 'ci/yaml/README.html'
           - doc_title: Validate syntax
             doc_url: 'ci/lint.html'
           - doc_title: Visualize configuration
