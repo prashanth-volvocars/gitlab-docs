@@ -63,9 +63,7 @@ variables:
 
 .rules_chores:
   rules:
-    - if: '$CI_PIPELINE_SOURCE != "schedule"'
-      when: never
-    - if: '$PIPELINE_SCHEDULE_TIMING == "hourly"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
       when: manual
       allow_failure: true
 
