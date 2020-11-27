@@ -42,6 +42,8 @@ variables:
 #
 .rules_scheduled:
   rules:
+    - if: $CHORES_PIPELINE == "true"
+      when: never
     - if: '$CI_PIPELINE_SOURCE != "schedule"'
       when: never
     - if: '$PIPELINE_SCHEDULE_TIMING == "weekly"'
@@ -54,6 +56,8 @@ variables:
 
 .rules_scheduled_manual:
   rules:
+    - if: $CHORES_PIPELINE == "true"
+      when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: manual
       allow_failure: true
@@ -69,6 +73,8 @@ variables:
 
 .rules_site_tests:
   rules:
+    - if: $CHORES_PIPELINE == "true"
+      when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
@@ -76,11 +82,15 @@ variables:
 
 .rules_prod:
   rules:
+    - if: $CHORES_PIPELINE == "true"
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 .rules_pages:
   rules:
+    - if: $CHORES_PIPELINE == "true"
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 .rules_dev:
