@@ -23,7 +23,7 @@
           <%= render '/versions_dropdown.*' %>
         </div>
       </li>
-      <% if is_production? %>
+      <% if production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <li class="nav-item">

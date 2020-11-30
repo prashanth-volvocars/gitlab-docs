@@ -1,7 +1,7 @@
 <footer class="pl-4 pr-3 border-top footer">
   <div class="row py-2">
     <div class="col-9">
-      <% if is_production? && ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
+      <% if production? && ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
       <%# Show Edit button only in production and on the default branch (hide archives) %>
         <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">Edit this page</span></a>
         <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">(<span class="text-decoration-underline">Web IDE</span>)</a>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-12 py-1">
       <ul class="list-unstyled list-inline my-0 d-flex flex-wrap">
-        <% if is_production? %>
+        <% if production? %>
           <% @config[:products].each do |name, product| %>
             <% if product[:expose] == true %>
               <li>

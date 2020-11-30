@@ -13,7 +13,7 @@
       <div class="js-article-content">
         <%= yield %>
       </div>
-      <% if is_production? && ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
+      <% if production? && ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
       <%# Show Edit button only in production and on the default branch (hide archives) %>
       <div class="edit-on">
         <a class="btn btn-tanuki btn-default" href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">Edit this page</a>
@@ -38,7 +38,7 @@
   <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
   <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   <%= render '/docsearch.*' %>
-  <% if is_production? %>
+  <% if production? %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
   <% end %>
