@@ -5,7 +5,7 @@ module Nanoc::Helpers
     #
     # Check if NANOC_ENV is set to production
     #
-    def is_production?
+    def production?
       ENV['NANOC_ENV'] == 'production'
     end
 

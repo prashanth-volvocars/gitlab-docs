@@ -28,7 +28,7 @@
       <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
       <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
       <script src="<%= @items['/frontend/search/index.*'].path %>"></script>
-      <% if is_production? %>
+      <% if production? %>
       <%# Add analytics only in production %>
         <%= render '/analytics.*' %>
       <% end %>

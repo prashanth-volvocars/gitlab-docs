@@ -24,7 +24,7 @@ Version
     <% if archives? %>
     Archives
     <% else %>
-      <% if is_production? %>
+      <% if production? %>
         <% if ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
           <%= dotcom %>
         <% else %>

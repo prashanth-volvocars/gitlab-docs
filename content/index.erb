@@ -6,7 +6,7 @@ title: GitLab Documentation
     <div class="list-group list-group-flush pt-5">
       <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
         <%= icon('home', nil, 'menu-icon') %><span class="pl-1">Home</span></a>
-      <% if is_production? %>
+      <% if production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
@@ -37,7 +37,7 @@ title: GitLab Documentation
       </div>
     </div>
     <div class="row px-4" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-      <% if is_production? %>
+      <% if production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
             <% if product[:short_name] == 'GitLab' %>
