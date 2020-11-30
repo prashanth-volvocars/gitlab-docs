@@ -1,5 +1,5 @@
 ---
-version: 86
+version: 87
 ---
 
 @import "variables";
@@ -1551,6 +1551,7 @@ li {
     &.s#{$size} {
       width: #{$size}px;
       height: #{$size}px;
+      vertical-align: text-bottom;
     }
   }
 }
