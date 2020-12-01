@@ -293,6 +293,29 @@ test_EOL_whitespace:
     - markdownlint --version
     - markdownlint -c .markdownlint.json **/*.md
 
+test_unlinked_images:
+  extends:
+    - .rules_chores
+  stage: test
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+  needs: []
+  before_script: []
+  dependencies: []
+  script:
+    - bundle exec rake setup_git default
+    - cp tasks/unlinked-images.sh tmp/ee/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/charts/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/omnibus/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/runner/unlinked-images.sh
+    - cd tmp/omnibus
+    - ./unlinked-images.sh doc
+    - cd ../charts
+    - ./unlinked-images.sh doc
+    - cd ../runner
+    - ./unlinked-images.sh docs
+    - cd ../ee
+    - ./unlinked-images.sh doc
+
 ###############################################
 #               Review Apps                   #
 ###############################################
