@@ -18,7 +18,7 @@ module Gitlab
         id = item.identifier
 
         if EXTENTIONS.include?(id.ext)
-          file_path = File.join(ENV['PWD'], config.fetch(:content_dir), id.to_s)
+          file_path = File.join(config.fetch(:content_dir), id.to_s)
           real_path = Pathname.new(file_path).realpath.to_s
           symlink = File.join(config.output_dir, id.to_s)
 
