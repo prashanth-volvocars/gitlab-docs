@@ -752,6 +752,8 @@ sections:
             doc_url: 'ci/examples/deploy_spring_boot_to_cloud_foundry/'
           - doc_title: Java with Maven
             doc_url: 'ci/examples/artifactory_and_gitlab/'
+          - doc_title: NPM with semantic-release
+            doc_url: 'ci/examples/semantic-release.html'
           - doc_title: PHP with PHPunit and atoum
             doc_url: 'ci/examples/php.html'
           - doc_title: PHP with NPM and SCP
