@@ -1160,6 +1160,10 @@ sections:
         category_url: 'integration/gitpod.html'
       - category_title: Jira Development Panel
         category_url: 'integration/jira_development_panel.html'
+      - category_title: Kroki diagrams
+        category_url: 'administration/integration/kroki.html'
+        ee_only: true
+        ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: PlantUML
         category_url: 'administration/integration/plantuml.html'
       - category_title: Project integration management
