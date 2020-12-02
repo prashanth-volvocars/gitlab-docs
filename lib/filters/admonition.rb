@@ -22,7 +22,7 @@ class AdmonitionFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('p').each do |para|
       content = para.inner_html
-      match = content.match(/\A(?<type>TIP|NOTE|CAUTION|DANGER): (?<content>.*)\Z/m)
+      match = content.match(/\A(?<type>TIP|NOTE|CAUTION|DANGER):\s?(?<content>.*)\Z/m)
       next unless match
 
       new_content = generate(match[:type].downcase, match[:content])
