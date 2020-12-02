@@ -69,7 +69,7 @@ sections:
           - doc_title: Repository
             doc_url: 'user/group/repositories_analytics/'
           - doc_title: Value Stream
-            doc_url: 'user/analytics/value_stream_analytics.html'
+            doc_url: 'user/group/value_stream_analytics/'
       - category_title: Project-level
         category_url: 'user/analytics/#project-level-analytics'
         docs:
