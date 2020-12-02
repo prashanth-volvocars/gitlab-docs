@@ -1,8 +1,10 @@
 require_relative '../helpers/generic'
+require_relative '../helpers/icons_helper'
 
 module Gitlab
   class Navigation
     include Nanoc::Helpers::Generic
+    include Nanoc::Helpers::IconsHelper
 
     def initialize(items, item)
       @items = items
@@ -30,7 +32,7 @@ module Gitlab
     def optional_ee_badge(element)
       return unless element.ee_only?
 
-      %[<span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in #{element.ee_tier}"><i class="fa fa-info-circle" aria-hidden="true"></i></span>]
+      %(<span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in #{element.ee_tier}">#{icon('information-o', 14)}</span>)
     end
 
     def children

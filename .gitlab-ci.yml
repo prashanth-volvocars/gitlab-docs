@@ -204,10 +204,11 @@ test_internal_links_and_anchors:
 rspec:
   extends:
     - .rules_site_tests
-    - .cache_gem
+    - .cache_gem_yarn
   needs: []
   stage: test
   script:
+    - yarn install --cache-folder .yarn-cache
     - bundle exec rspec
 
 #
