@@ -140,24 +140,9 @@ variables:
   script:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
+    - wget -O content/cars/index.md https://gitlab.com/gl-docsteam/topic-types/-/raw/master/README.md
+    - wget -O content/data/default-nav.yaml https://gitlab.com/gl-docsteam/topic-types/-/raw/master/default-nav.yaml
     - bundle exec nanoc compile -VV
-    # Symlink all README.html to index.html so that we can have clean URLs
-    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
-    # Remove CE dir and symlink EE to CE
-    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce && cd ../; fi
-    # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
-    - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
-    # Minify the assets of the resulting site
-    - ./scripts/minify-assets.sh ./ public/
-    - SIZE_AFTER_MINIFY=$(du -sh public/ | awk '{print $1}')
-    # Use gzip to compress static content for faster web serving
-    # https://docs.gitlab.com/ee/user/project/pages/introduction.html#serving-compressed-assets
-    - find public/ -type f \( -iname "*.html" -o -iname "*.js"  -o -iname "*.css"  -o -iname "*.svg" \) -exec gzip --keep --best --force --verbose {} \;
-    - SIZE_AFTER_GZIP=$(du -sh public/ | awk '{print $1}')
-    # Print size results
-    - echo "Minify and compress the static assets (HTML, CSS, JS)"
-    - echo
-    - echo -e "Size before minifying and gzipping ..... $SIZE_BEFORE\nSize after minifying ................... $SIZE_AFTER_MINIFY\nSize after adding gzipped versions ..... $SIZE_AFTER_GZIP"
   artifacts:
     paths:
       - public
