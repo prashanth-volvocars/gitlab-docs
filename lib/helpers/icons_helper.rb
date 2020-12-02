@@ -6,7 +6,7 @@ module Nanoc::Helpers
   module IconsHelper
     extend self
 
-    ICONS_SVG = '/assets/images/icons.svg'
+    ICONS_SVG = '/assets/images/icons.svg' unless const_defined?('ICONS_SVG')
 
     GITLAB_SVGS_MAPPING = {
       'bulb' => 'tip',

@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 (function() {
@@ -69,7 +69,7 @@ version: 2
     var smallBadgeTag = function(title) {
       return $('<span>', {
         class: 'badge-small',
-        html: '<i class="fa fa-info-circle" aria-hidden="true"></i>',
+        html: '<%= icon("information-o", 14) %>',
         'data-title': title,
       });
     };
