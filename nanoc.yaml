@@ -133,59 +133,17 @@ show_banner: false
 debug: false
 
 products:
-  ee:
-    full_name: 'GitLab'
-    short_name: 'GitLab'
-    slug: 'ee'
+  cars:
+    full_name: 'Cars'
+    short_name: 'Cars'
+    slug: 'cars'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
-    description: 'Administer and use self-managed GitLab and GitLab.com'
-    repo: 'https://gitlab.com/gitlab-org/gitlab.git'
+    description: 'Administer and use self-managed cars'
+    repo: 'https://gitlab.com/gl-docsteam/topic-types'
     dirs:
-      temp_dir: 'tmp/ee/'
-      dest_dir: 'content/ee'
+      temp_dir: 'tmp/cars/'
+      dest_dir: 'content/cars'
       doc_dir:  'doc'
     expose: true
     icon: 'tanuki'
-  runner:
-    full_name: 'GitLab Runner'
-    short_name: 'Runner'
-    slug: 'runner'
-    index_file: 'index.*'
-    img: '/assets/images/docs-runner.svg'
-    description: 'Install and configure software that runs your CI/CD jobs'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    dirs:
-      temp_dir: 'tmp/runner/'
-      dest_dir: 'content/runner'
-      doc_dir:  'docs'
-    expose: true
-    icon: 'status'
-  omnibus:
-    full_name: 'Install GitLab'
-    short_name: 'Install GitLab'
-    slug: 'omnibus'
-    index_file: 'README.*'
-    img: '/assets/images/docs-omnibus.svg'
-    description: 'Install and configure GitLab by using the Omnibus installer'
-    repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
-    dirs:
-      temp_dir: 'tmp/omnibus/'
-      dest_dir: 'content/omnibus'
-      doc_dir:  'doc'
-    expose: true
-    icon: 'car'
-  charts:
-    full_name: 'Deploy GitLab'
-    short_name: 'Deploy GitLab'
-    slug: 'charts'
-    index_file: 'index.*'
-    img: '/assets/images/docs-charts.svg'
-    description: 'Deploy GitLab to Kubernetes by using GitLab Helm Charts'
-    repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
-    dirs:
-      temp_dir: 'tmp/charts/'
-      dest_dir: 'content/charts'
-      doc_dir:  'doc'
-    expose: true
-    icon: 'chart'
