@@ -140,8 +140,8 @@ variables:
   script:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
-    - wget -O content/cars/index.md https://gitlab.com/gl-docsteam/topic-types/-/raw/master/README.md
-    - wget -O content/_data/default-nav.yaml https://gitlab.com/gl-docsteam/topic-types/-/raw/master/default-nav.yaml
+    - wget -O content/cars/README.md https://gitlab.com/gl-docsteam/topic-types/-/raw/master/README.md
+    - wget -O content/_data/cars-nav.yaml https://gitlab.com/gl-docsteam/topic-types/-/raw/master/default-nav.yaml
     - bundle exec nanoc compile -VV
   artifacts:
     paths:
