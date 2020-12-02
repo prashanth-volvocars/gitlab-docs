@@ -1,0 +1,21 @@
+
+sections:
+  - section_title: GitLab Automotive
+    section_url: 'README.html'
+   
+  - section_title: Topic types
+    section_url: 'templates/'
+
+  - section_title: Cars
+    section_url: 'cars/'
+    section_categories:
+       - category_title: 'Tires'
+         category_url: 'tires/'
+       - category_title: 'Engines'
+         category_url: 'engine/'
+       - category_title: 'Seats'
+         category_url: 'seats/'
+       - category_title: 'Fabric'
+         category_url: 'fabrics/'
+       - category_title: 'Tutorial: Build a car'
+         category_url: 'tutorial/build_a_car.html'

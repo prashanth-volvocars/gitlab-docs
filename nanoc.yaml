@@ -137,7 +137,7 @@ products:
     full_name: 'Cars'
     short_name: 'Cars'
     slug: 'cars'
-    index_file: 'index.*'
+    index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Administer and use self-managed cars'
     repo: 'https://gitlab.com/gl-docsteam/topic-types'
