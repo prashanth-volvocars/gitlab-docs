@@ -97,6 +97,7 @@ variables:
   rules:
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
 
 #
 # Caching keys
@@ -189,7 +190,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.12-ruby-2.7.2
   extends:
     - .rules_site_tests
     - .cache_gem
@@ -266,7 +267,7 @@ yaml_lint:
     - yamllint .gitlab-ci.yml content/_data
 
 #
-# Check for broken external links, weekly pipelines only
+# Check for broken external links
 #
 test_external_links:
   extends:
@@ -282,8 +283,9 @@ test_external_links:
 test_EOL_whitespace:
   extends:
     - .rules_chores
+    - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-markdown:alpine-3.12-vale-2.6.1-markdownlint-0.24.0
   needs: []
   before_script: []
   dependencies: []
@@ -297,8 +299,9 @@ test_EOL_whitespace:
 test_unlinked_images:
   extends:
     - .rules_chores
+    - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+  image: "registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.12-ruby-2.7.2"
   needs: []
   before_script: []
   dependencies: []
