@@ -83,7 +83,7 @@ sections:
       - category_title: Custom
         category_url: 'executors/custom.html'
         docs:
-          - doc_title: librvrt
+          - doc_title: libvirt
             doc_url: 'executors/custom_examples/libvirt.html'
           - doc_title: LXD
             doc_url: 'executors/custom_examples/lxd.html'
