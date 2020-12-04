@@ -21,7 +21,7 @@ sections:
   - section_title: GitLab Docs
     section_url: 'README.html'
 
-  - section_title: Install
+  - section_title: Installation
     section_url: 'install/README.html'
     section_categories:
       - category_title: Requirements
@@ -1247,7 +1247,7 @@ sections:
       - category_title: Trello
         category_url: 'integration/trello_power_up.html'
 
-  - section_title: Administrator
+  - section_title: Administration
     section_url: 'administration/'
     ee_only: true
     ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
@@ -1654,7 +1654,7 @@ sections:
       - category_title: CI/CD environment variables
         category_url: 'security/cicd_environment_variables.html'
 
-  - section_title: Contributor
+  - section_title: Contributions
     section_url: 'development/README.html'
     section_categories:
       - category_title: Contribute to GitLab
@@ -1896,7 +1896,7 @@ sections:
       - category_title: Working with Prometheus metrics
         category_url: 'development/prometheus_metrics.html'
 
-  - section_title: Customer
+  - section_title: Subscriptions
     section_url: 'subscriptions/'
     section_categories:
       - category_title: GitLab.com subscriptions
