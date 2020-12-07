@@ -6,7 +6,13 @@ module Nanoc::Helpers
   module IconsHelper
     extend self
 
-    ICONS_SVG = '/assets/images/icons.svg'.freeze
+    ICONS_SVG = '/assets/images/icons.svg' unless const_defined?('ICONS_SVG')
+
+    GITLAB_SVGS_MAPPING = {
+      'bulb' => 'tip',
+      'information-o' => 'note',
+      'warning' => 'caution'
+    }.freeze
 
     def icon(icon_name, size = nil, css_class = nil)
       unless known_sprites.include?(icon_name)
@@ -22,7 +28,8 @@ module Nanoc::Helpers
         *css_class
       ].join(' ')
 
-      %(<svg class="#{svg_class}"><use href="#{ICONS_SVG}##{icon_name}" /></svg>)
+      # https://css-tricks.com/svg-title-vs-html-title-attribute/
+      %(<svg role="img" aria-label="#{GITLAB_SVGS_MAPPING[icon_name]}" class="#{svg_class}"><use href="#{ICONS_SVG}##{icon_name}" /> <title> #{GITLAB_SVGS_MAPPING[icon_name]} </title> </svg>)
     end
 
     private

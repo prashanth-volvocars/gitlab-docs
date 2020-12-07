@@ -69,7 +69,7 @@ sections:
           - doc_title: Repository
             doc_url: 'user/group/repositories_analytics/'
           - doc_title: Value Stream
-            doc_url: 'user/analytics/value_stream_analytics.html'
+            doc_url: 'user/group/value_stream_analytics/'
       - category_title: Project-level
         category_url: 'user/analytics/#project-level-analytics'
         docs:
@@ -259,10 +259,8 @@ sections:
             doc_url: 'development/integrations/secure.html'
             ee_only: true
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
-          - doc_title: Secure and Defend Terminology
+          - doc_title: Secure and Protect Terminology
             doc_url: 'user/application_security/terminology/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Badges
         category_url: 'user/project/badges.html'
       - category_title: Bulk editing (project)
@@ -661,9 +659,11 @@ sections:
             doc_url: 'ci/pipelines/job_artifacts.html'
           - doc_title: Pipeline artifacts
             doc_url: 'ci/pipelines/pipeline_artifacts.html'
-      - category_title: '.gitlab-ci.yml reference'
-        category_url: 'ci/yaml/README.html'
+      - category_title: '.gitlab-ci.yml'
+        category_url: 'ci/yaml/gitlab_ci_yaml.html'
         docs:
+          - doc_title: '.gitlab-ci.yml reference'
+            doc_url: 'ci/yaml/README.html'
           - doc_title: Validate syntax
             doc_url: 'ci/lint.html'
           - doc_title: Visualize configuration

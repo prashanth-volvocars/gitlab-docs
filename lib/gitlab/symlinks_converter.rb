@@ -17,6 +17,8 @@ module Gitlab
       items.each do |item|
         id = item.identifier
 
+        next unless id.to_s.start_with?('/ee/')
+
         if EXTENTIONS.include?(id.ext)
           file_path = File.join(config.fetch(:content_dir), id.to_s)
           real_path = Pathname.new(file_path).realpath.to_s
