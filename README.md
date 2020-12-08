@@ -362,8 +362,7 @@ To avoid having to build and maintain a local environment for running the GitLab
 documentation site, use [Gitpod](https://www.gitpod.io) to deploy a
 pre-configured documentation site for your development use.
 
-**Note:**
-For additional information, see
+For additional information, see the
 [GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/howto/gitpod.md).
 
 ### Get started with Gitpod
@@ -372,23 +371,17 @@ To start developing with Gitpod:
 
 1. Create a [Gitpod](https://www.gitpod.io) account and connect it to your
    GitLab account.
-1. Enable the integration in your [profile preferences](https://gitlab.com/-/profile/preferences).
+1. Enable the integration in your GitLab [profile preferences](https://gitlab.com/-/profile/preferences).
 1. Open the GitLab documentation site in Gitpod:
 
-   **If you're a GitLab team member**, either:
+   - If you're a GitLab team member, open the
+     [GitLab documentation site environment](https://gitpod.io/#https://gitlab.com/gitlab-org/gitlab-docs/).
 
-   - Open the [GitLab documentation site environment](https://gitpod.io/#https://gitlab.com/gitlab-org/gitlab-docs/).
-   - Select **Gitpod** in the [GitLab Docs project](https://gitlab.com/gitlab-org/gitlab-docs/).
-     If you don't see **Gitpod**, open the **Web IDE** dropdown.
+   - If you're a community contributor:
 
-   **If you're a community contributor**:
-
-   1. Fork the [GitLab Docs repository](https://gitlab.com/gitlab-org/gitlab-docs/-/forks/new).
-   1. Select **Gitpod** in the repository view of your fork. If you don't see
-      **Gitpod**, open the **Web IDE** dropdown.
-
-After the setup process completes, the documentation site appears in the right
-sidebar.
+     1. Fork the [GitLab Docs repository](https://gitlab.com/gitlab-org/gitlab-docs/-/forks/new).
+     1. Select **Gitpod** in the repository view of your fork. If you don't see
+        **Gitpod**, open the **Web IDE** dropdown.
 
 ### Check out branches in Gitpod
 
