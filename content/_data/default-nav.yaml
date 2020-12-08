@@ -568,8 +568,6 @@ sections:
             ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Feature Flags
         category_url: 'operations/feature_flags.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
 
   - section_title: CI/CD
     section_url: 'ci/README.html'
