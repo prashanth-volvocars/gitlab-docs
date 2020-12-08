@@ -1,4 +1,8 @@
 topics:
+  - title: Release notes
+    description: Review recent changes, by version
+    icon: doc-changes
+    url: https://gitlab.com/gitlab-org/gitlab/-/releases
   - title: Two-factor authentication
     description: Improve the security of your GitLab account
     icon: key
