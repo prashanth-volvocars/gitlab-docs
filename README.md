@@ -54,8 +54,8 @@ here's what you will need to have:
 On Windows, the process described here would be different, but as most of
 contributors use Unix, we'll go over this process for macOS and Linux users.
 
-If you don't want to or cannot develop locally, you can skip all the installation
-instructions and use the [Gitpod integration](#gitpod-integration).
+Alternatively, you can use [Gitpod](#gitpod-integration) to access a
+cloud-based, pre-configured GitLab documentation site.
 
 ## Install dependencies
 
@@ -358,67 +358,62 @@ RAKE_FORCE_DELETE=true rake pull_repos
 
 ## Gitpod integration
 
-[Gitpod](https://www.gitpod.io) is an open source platform for automated and
-ready-to-code development environments. The main advantage of running the Docs site
-in Gitpod is that you don't have to worry about your local environment,
-installing dependencies, and keeping them up to date. With Gitpod, you can run a
-pre-configured Docs site in the cloud, which also makes it possible to contribute,
-no matter how powerful your machine is. You could even just use an iPad!
+To avoid having to build and maintain a local environment for running the GitLab
+documentation site, use [Gitpod](https://www.gitpod.io) to deploy a
+pre-configured documentation site for your development use.
 
 **Note:**
-You can also check the
-[GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/howto/gitpod.md)
-which this section was based on to also see some screenshots of how it all looks.
+For additional information, see
+[GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/howto/gitpod.md).
 
-### Getting started with Gitpod
+### Get started with Gitpod
 
 To start developing with Gitpod:
 
-1. Create a new [Gitpod](https://www.gitpod.io) account.
-1. Connect your Gitpod account to your GitLab account.
-1. Make sure the integration is enabled in your [profile preferences](https://gitlab.com/-/profile/preferences).
-1. Open the Docs site in Gitpod:
+1. Create a [Gitpod](https://www.gitpod.io) account and connect it to your
+   GitLab account.
+1. Enable the integration in your [profile preferences](https://gitlab.com/-/profile/preferences).
+1. Open the GitLab documentation site in Gitpod:
 
-   **If you are a GitLab team member**, either:
+   **If you're a GitLab team member**, either:
 
-   - Open [this link](https://gitpod.io/#https://gitlab.com/gitlab-org/gitlab-docs/).
-   - Click the **Gitpod** button in the [GitLab Docs project](https://gitlab.com/gitlab-org/gitlab-docs/).
-     If you don't see a "Gitpod" button, open the dropdown of the "Web IDE" split button.
+   - Open the [GitLab documentation site environment](https://gitpod.io/#https://gitlab.com/gitlab-org/gitlab-docs/).
+   - Select **Gitpod** in the [GitLab Docs project](https://gitlab.com/gitlab-org/gitlab-docs/).
+     If you don't see **Gitpod**, open the **Web IDE** dropdown.
 
-   **If you are a community contributor**:
+   **If you're a community contributor**:
 
-   1. Fork the [GitLab Docs repository](https://gitlab.com/gitlab-org/gitlab-docs/-/forks/new),
-   1. Click the **Gitpod** button in the repository view of your fork.
-      If you don't see a "Gitpod" button, open the dropdown of the "Web IDE" split button.
+   1. Fork the [GitLab Docs repository](https://gitlab.com/gitlab-org/gitlab-docs/-/forks/new).
+   1. Select **Gitpod** in the repository view of your fork. If you don't see
+      **Gitpod**, open the **Web IDE** dropdown.
 
-After that is done, you just wait 4-5 minutes for the entire setup to finish, and
-you see the Docs site pop up in the right sidebar.
+After the setup process completes, the documentation site appears in the right
+sidebar.
 
 ### Check out branches in Gitpod
 
-The easiest way to switch to another branch is to use the UI functionality:
+To switch to another branch:
 
-1. Click on the current branch name in the blue bottom bar.
-1. A context menu appears with a list of other branches where you can type in
-   the name of the branch you want to switch to and select it as soon as it appears in
-   the list. If you want to create a new branch, select the "Create new branch..."
-   option, give it a name, and press <kbd>Enter</kbd>.
+1. In the bottom blue bar, select the current branch name. GitLab displays a
+   context menu with a list of branches.
+1. Enter the name of the branch you want to switch to, and then select it from
+   the list.
+1. To create a new branch, select **Create new branch**, provide a name for the
+   branch, and then press <kbd>Enter</kbd>.
 
 ### Commit and push changes in Gitpod
 
-If you have made changes to any of the files and want to push and commit them:
+To commit and push changes:
 
-1. Navigate to the **Source Control: Git** tab in the left sidebar. There you also
-   see all files that have been changed.
-1. In this view, you can then decide which changes you want to add to the commit.
-   Usually that would be all files, so you can just stage all changes by clicking on
-   the "Plus" icon that appears on hover next to the **Changes** section.
-1. When that's done and you have also entered a commit message in the text area above,
-   you can commit by clicking the checkmark icon at the top of the **Source Control**
-   section.
-1. Push your changes by using the **Synchronize changes** action in the bottom
-   blue toolbar. If the Gitpod UI asks you which way you want to synchronize your
-   changes, you can just choose **Push and pull**.
+1. In the left sidebar, select the **Source Control: Git** tab.
+1. Review the displayed changes you want to add to the commit. To add all files,
+   select the **Plus** icon next to the **Changes** section.
+1. Enter a commit message in the text area.
+1. Select the checkmark icon at the top of the **Source Control** section to
+   commit your changes.
+1. Push your changes by selecting the **Synchronize changes** action in the
+   bottom blue toolbar. If Gitpod asks you how you want to synchronize your
+   changes, select **Push and pull**.
 
 ## Using YAML data files
 
