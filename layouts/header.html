@@ -45,7 +45,12 @@
         <% end %>
       <% end %>
       <li class="nav-item">
-        <%= render '/cta.*' %>
+        <!-- Check if the path is /omnibus and show a different CTA -->
+        <% if @item.identifier.to_s.split('/')[1] == 'omnibus' %>
+          <%= render '/cta_omnibus.*' %>
+        <% else %>
+          <%= render '/cta.*' %>
+        <% end %>
       </li>
     </ul>
   </div>
