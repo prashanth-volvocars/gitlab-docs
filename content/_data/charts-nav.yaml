@@ -29,6 +29,8 @@ sections:
       - category_title: Cloud cluster preparation
         category_url: 'installation/cloud/'
         docs:
+          - doc_title: AKS
+            doc_url: 'installation/cloud/aks.html'
           - doc_title: EKS
             doc_url: 'installation/cloud/eks.html'
           - doc_title: GKE
