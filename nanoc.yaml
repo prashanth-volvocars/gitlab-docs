@@ -133,17 +133,17 @@ show_banner: false
 debug: false
 
 products:
-  ee:
+  gitlab:
     full_name: 'GitLab'
     short_name: 'GitLab'
-    slug: 'ee'
+    slug: 'gitlab'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
     description: 'Administer and use self-managed GitLab and GitLab.com'
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
     dirs:
-      temp_dir: 'tmp/ee/'
-      dest_dir: 'content/ee'
+      temp_dir: 'tmp/gitlab/'
+      dest_dir: 'content/gitlab'
       doc_dir:  'doc'
     expose: true
     icon: 'tanuki'

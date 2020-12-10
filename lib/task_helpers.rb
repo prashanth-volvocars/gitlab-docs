@@ -1,6 +1,6 @@
 require 'yaml'
 
-PRODUCTS = %w[ee omnibus runner charts].freeze
+PRODUCTS = %w[gitlab omnibus runner charts].freeze
 VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/.freeze
 
 def config
@@ -26,7 +26,7 @@ def retrieve_branch(slug)
   elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
     case slug
     # EE has different branch name scheme
-    when 'ee'
+    when 'gitlab'
       "#{version[:major]}-#{version[:minor]}-stable-ee"
     when 'omnibus', 'runner'
       "#{version[:major]}-#{version[:minor]}-stable"

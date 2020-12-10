@@ -5,15 +5,14 @@ output/
 public/
 
 # Make sure the content directories aren't added to the git repo.
-content/ce
 content/ee
+content/gitlab
 content/omnibus
 content/runner
 content/charts
 content/debug
 content/doc
 content/docs
-content/charts
 
 # Temporary file directory
 tmp/
