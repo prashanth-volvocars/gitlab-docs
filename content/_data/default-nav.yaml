@@ -8,13 +8,6 @@
 # For more information, see https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html#urls
 #
 ### Options
-# - Use "ee_only: true" for categories and docs available only in EE.
-#   - When "ee_only: true", use `ee_tier:` to indicate the tiers the feature is available in:
-#     - For Ultimate: `ee_tier: 'GitLab Ultimate and GitLab.com Gold'`
-#     - For Premium: `ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'`
-#     - For Starter: `ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'`
-#     - For self-managed only: `ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'`
-#     - For GitLab.com only: `ee_tier: 'GitLab.com Silver only. Not available in GitLab self-managed instances'`
 # - Use "external_url: true" for external URLs in docs and categories
 
 sections:
@@ -104,16 +97,10 @@ sections:
         category_url: 'user/instance/clusters/'
       - category_title: Canary deployments
         category_url: 'user/project/canary_deployments.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Cluster environments
         category_url: 'user/clusters/environments.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Deploy boards
         category_url: 'user/project/deploy_boards.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: GitLab Managed Apps
         category_url: 'user/clusters/applications.html'
         docs:
@@ -142,56 +129,34 @@ sections:
     section_categories:
       - category_title: Bulk editing (group)
         category_url: 'user/group/bulk_editing/index.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Contribution analytics
         category_url: 'user/group/contribution_analytics/'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Custom group-level project templates
         category_url: 'user/group/custom_project_templates.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Epics
         category_url: 'user/group/epics/'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
         docs:
           - doc_title: Manage epics
             doc_url: 'user/group/epics/manage_epics.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Group Import/Export
         category_url: 'user/group/settings/import_export.html'
       - category_title: Insights
         category_url: 'user/group/insights/'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Issue analytics
         category_url: 'user/group/issues_analytics/'
-        ee_only: true
-        ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Iterations
         category_url: 'user/group/iterations/'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Public access
         category_url: 'public_access/public_access.html'
       - category_title: Roadmaps
         category_url: 'user/group/roadmap/'
-        ee_only: true
-        ee_tier: 'GitLab Premium and GitLab.com Silver'
       - category_title: Repositories Analytics
         category_url: 'user/group/repositories_analytics/'
       - category_title: SAML SSO for GitLab.com groups
         category_url: 'user/group/saml_sso/'
-        ee_only: true
-        ee_tier: 'GitLab.com Silver and higher tiers. Not available in self-managed instances.'
         docs:
           - doc_title: SCIM provisioning
             doc_url: 'user/group/saml_sso/scim_setup.html'
-            ee_only: true
-            ee_tier: 'GitLab.com Silver and higher tiers. Not available in self-managed instances.'
       - category_title: Subgroups
         category_url: 'user/group/subgroups/'
 
@@ -200,68 +165,39 @@ sections:
     section_categories:
       - category_title: Application security
         category_url: 'user/application_security/'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
         docs:
           - doc_title: Security Configuration
             doc_url: 'user/application_security/configuration/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Container Scanning
             doc_url: 'user/application_security/container_scanning/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Threat Monitoring
             doc_url: 'user/application_security/threat_monitoring/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Dependency Scanning
             doc_url: 'user/application_security/dependency_scanning/'
-            ee_only: true
           - doc_title: Dependency Scanning Analyzers
             doc_url: 'user/application_security/dependency_scanning/analyzers.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Dependency List
             doc_url: 'user/application_security/dependency_list/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Static Application Security Testing
             doc_url: 'user/application_security/sast/'
           - doc_title: SAST Analyzers
             doc_url: 'user/application_security/sast/analyzers.html'
           - doc_title: Secret Detection
             doc_url: 'user/application_security/secret_detection/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Dynamic Application Security Testing
             doc_url: 'user/application_security/dast/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: API Fuzzing
             doc_url: 'user/application_security/api_fuzzing/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Coverage Fuzzing
             doc_url: 'user/application_security/coverage_fuzzing/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Security Dashboard
             doc_url: 'user/application_security/security_dashboard/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Offline Environments
             doc_url: 'user/application_security/offline_deployments/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Vulnerability Pages
             doc_url: 'user/application_security/vulnerabilities/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Security scanner integration
             doc_url: 'development/integrations/secure.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Secure and Protect Terminology
             doc_url: 'user/application_security/terminology/'
       - category_title: Badges
@@ -270,21 +206,13 @@ sections:
         category_url: 'user/project/bulk_editing.html'
       - category_title: Code owners
         category_url: 'user/project/code_owners.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Compliance
         category_url: 'user/compliance/'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
         docs:
           - doc_title: License Compliance
             doc_url: 'user/compliance/license_compliance/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Compliance Dashboard
             doc_url: 'user/compliance/compliance_dashboard/'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Create a project
         category_url: 'gitlab-basics/create-project.html'
       - category_title: Description templates
@@ -316,8 +244,6 @@ sections:
             doc_url: 'user/project/pages/introduction.html'
       - category_title: Insights
         category_url: 'user/project/insights/'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Merge Requests
         category_url: 'user/project/merge_requests/'
         docs:
@@ -325,16 +251,12 @@ sections:
             doc_url: 'user/project/merge_requests/allow_collaboration.html'
           - doc_title: Approvals
             doc_url: 'user/project/merge_requests/merge_request_approvals.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Creating merge requests
             doc_url: 'user/project/merge_requests/creating_merge_requests.html'
           - doc_title: Cherry pick changes
             doc_url: 'user/project/merge_requests/cherry_pick_changes.html'
           - doc_title: Merge request dependencies
             doc_url: 'user/project/merge_requests/merge_request_dependencies.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Fast forward
             doc_url: 'user/project/merge_requests/fast_forward_merge.html'
           - doc_title: Merge when pipeline succeeds
@@ -370,8 +292,6 @@ sections:
             doc_url: 'user/project/import/fogbugz.html'
           - doc_title: Gemnasium
             doc_url: 'user/project/import/gemnasium.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: GitHub
             doc_url: 'user/project/import/github.html'
           - doc_title: GitLab.com
@@ -407,8 +327,6 @@ sections:
             doc_url: 'topics/git/lfs/'
           - doc_title: Locked files
             doc_url: 'user/project/file_lock.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: File Blame
             doc_url: 'user/project/repository/git_blame.html'
           - doc_title: File History
@@ -421,8 +339,6 @@ sections:
             doc_url: 'user/project/protected_tags.html'
           - doc_title: Push rules
             doc_url: 'push_rules/push_rules.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Reduce repository size
             doc_url: 'user/project/repository/reducing_the_repo_size_using_git.html'
           - doc_title: Signed Commits
@@ -435,8 +351,6 @@ sections:
             doc_url: 'user/project/web_ide/'
       - category_title: Requirements
         category_url: 'user/project/requirements/'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Settings
         category_url: 'user/project/settings/'
         docs:
@@ -444,8 +358,6 @@ sections:
             doc_url: 'user/project/settings/import_export.html'
           - doc_title: Project access tokens
             doc_url: 'user/project/settings/project_access_tokens.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: Share projects
         category_url: 'user/project/members/share_project_with_groups.html'
       - category_title: Snippets
@@ -485,12 +397,8 @@ sections:
         docs:
           - doc_title: Burndown and burnup charts
             doc_url: 'user/project/milestones/burndown_and_burnup_charts.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Multiple assignees
         category_url: 'user/project/issues/multiple_assignees_for_issues.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Related issues
         category_url: 'user/project/issues/related_issues.html'
       - category_title: Service Desk
@@ -499,8 +407,6 @@ sections:
         category_url: 'user/project/issues/sorting_issue_lists.html'
       - category_title: Weight
         category_url: 'user/project/issues/issue_weight.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Zoom meetings in issues
         category_url: 'user/project/issues/associate_zoom_meeting.html'
 
@@ -552,8 +458,6 @@ sections:
         category_url: 'operations/error_tracking.html'
       - category_title: Tracing
         category_url: 'operations/tracing.html'
-        ee_only: true
-        ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Incident management
         category_url: 'operations/incident_management/'
         docs:
@@ -567,8 +471,6 @@ sections:
             doc_url: 'operations/incident_management/incidents.html'
           - doc_title: Status page
             doc_url: 'operations/incident_management/status_page.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
       - category_title: Feature Flags
         category_url: 'operations/feature_flags.html'
 
@@ -609,12 +511,8 @@ sections:
             doc_url: 'ci/merge_request_pipelines/'
           - doc_title: Pipelines for merged results
             doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Merge trains
             doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: Jobs
         category_url: 'ci/jobs/'
         docs:
@@ -636,12 +534,8 @@ sections:
         docs:
           - doc_title: Environments Dashboard
             doc_url: 'ci/environments/environments_dashboard.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Protected environments
             doc_url: 'ci/environments/protected_environments.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Roll out an application incrementally
             doc_url: 'ci/environments/incremental_rollouts.html'
           - doc_title: Deploy to AWS
@@ -709,18 +603,12 @@ sections:
             doc_url: 'user/project/merge_requests/accessibility_testing.html'
           - doc_title: Browser performance testing
             doc_url: 'user/project/merge_requests/browser_performance_testing.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Code quality
             doc_url: 'user/project/merge_requests/code_quality.html'
           - doc_title: Load performance testing
             doc_url: 'user/project/merge_requests/load_performance_testing.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Metrics reports
             doc_url: 'ci/metrics_reports.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
       - category_title: External integrations
         category_url: 'ci/ci_cd_for_external_repos/'
         docs:
@@ -728,12 +616,8 @@ sections:
             doc_url: 'ci/ssh_keys/README.html'
           - doc_title: Bitbucket Cloud
             doc_url: 'ci/ci_cd_for_external_repos/bitbucket_integration.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: GitHub
             doc_url: 'ci/ci_cd_for_external_repos/github_integration.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Slack
             doc_url: 'ci/chatops/README.html'
       - category_title: CI/CD examples
@@ -843,8 +727,6 @@ sections:
             doc_url: 'api/metrics_dashboard_annotations.html'
           - doc_title: Dependencies
             doc_url: 'api/dependencies.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Dependency Proxy
             doc_url: 'api/dependency_proxy.html'
           - doc_title: Deploy keys
@@ -859,8 +741,6 @@ sections:
             doc_url: 'api/environments.html'
           - doc_title: Epics
             doc_url: 'api/epics.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Error tracking
             doc_url: 'api/error_tracking.html'
           - doc_title: Events
@@ -873,8 +753,6 @@ sections:
             doc_url: 'api/freeze_periods.html'
           - doc_title: Geo nodes
             doc_url: 'api/geo_nodes.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Group activity analytics
             doc_url: 'api/group_activity_analytics.html'
           - doc_title: Groups
@@ -889,18 +767,12 @@ sections:
             doc_url: 'api/issues.html'
           - doc_title: Issues (epic)
             doc_url: 'api/epic_issues.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Issues statistics
             doc_url: 'api/issues_statistics.html'
           - doc_title: Iterations (project)
             doc_url: 'api/iterations.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Iterations (group)
             doc_url: 'api/group_iterations.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Jobs
             doc_url: 'api/jobs.html'
           - doc_title: Job artifacts
@@ -917,30 +789,20 @@ sections:
             doc_url: 'api/templates/licenses.html'
           - doc_title: Links (issue)
             doc_url: 'api/issue_links.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Links (epic)
             doc_url: 'api/epic_links.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Managed licenses
             doc_url: 'api/managed_licenses.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Markdown
             doc_url: 'api/markdown.html'
           - doc_title: Members
             doc_url: 'api/members.html'
           - doc_title: Merge request approvals
             doc_url: 'api/merge_request_approvals.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Merge requests
             doc_url: 'api/merge_requests.html'
           - doc_title: Merge trains
             doc_url: 'api/merge_trains.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Milestones (project)
             doc_url: 'api/milestones.html'
           - doc_title: Milestones (group)
@@ -957,8 +819,6 @@ sections:
             doc_url: 'api/pages_domains.html'
           - doc_title: Personal access tokens
             doc_url: 'api/personal_access_tokens.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate, GitLab.com Gold tier'
           - doc_title: Pipelines schedules
             doc_url: 'api/pipeline_schedules.html'
           - doc_title: Pipeline triggers
@@ -967,14 +827,10 @@ sections:
             doc_url: 'api/pipelines.html'
           - doc_title: Project aliases
             doc_url: 'api/project_aliases.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Project import/export
             doc_url: 'api/project_import_export.html'
           - doc_title: Project repository storage moves
             doc_url: 'api/project_repository_storage_moves.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Project statistics
             doc_url: 'api/project_statistics.html'
           - doc_title: Project templates
@@ -997,8 +853,6 @@ sections:
             doc_url: 'api/repository_submodules.html'
           - doc_title: Resource iteration events
             doc_url: 'api/resource_iteration_events.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Resource label events
             doc_url: 'api/resource_label_events.html'
           - doc_title: Resource milestone events
@@ -1007,14 +861,10 @@ sections:
             doc_url: 'api/resource_state_events.html'
           - doc_title: Resource weight events
             doc_url: 'api/resource_weight_events.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Runners
             doc_url: 'api/runners.html'
           - doc_title: SCIM
             doc_url: 'api/scim.html'
-            ee_only: true
-            ee_tier: 'GitLab.com Silver and higher tiers. Not available in GitLab self-managed instances'
           - doc_title: Search
             doc_url: 'api/search.html'
           - doc_title: Services
@@ -1023,12 +873,8 @@ sections:
             doc_url: 'api/settings.html'
           - doc_title: Sidekiq metrics
             doc_url: 'api/sidekiq_metrics.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Sidekiq queues
             doc_url: 'api/admin_sidekiq_queues.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Snippets
             doc_url: 'api/snippets.html'
           - doc_title: Snippets (project)
@@ -1055,12 +901,8 @@ sections:
             doc_url: 'api/version.html'
           - doc_title: Vulnerabilities
             doc_url: 'api/vulnerabilities.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Vulnerability Findings
             doc_url: 'api/vulnerability_findings.html'
-            ee_only: true
-            ee_tier: 'GitLab Ultimate and GitLab.com Gold'
           - doc_title: Wikis
             doc_url: 'api/wikis.html'
       - category_title: GraphQL
@@ -1137,12 +979,8 @@ sections:
         docs:
           - doc_title: Advanced global search
             doc_url: 'user/search/advanced_global_search.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'
           - doc_title: Advanced search syntax
             doc_url: 'user/search/advanced_search_syntax.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'
       - category_title: SSH
         category_url: 'ssh/README.html'
       - category_title: Time tracking
@@ -1157,16 +995,12 @@ sections:
         category_url: 'integration/akismet.html'
       - category_title: Elasticsearch
         category_url: 'integration/elasticsearch.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'
       - category_title: GitPod
         category_url: 'integration/gitpod.html'
       - category_title: Jira Development Panel
         category_url: 'integration/jira_development_panel.html'
       - category_title: Kroki diagrams
         category_url: 'administration/integration/kroki.html'
-        ee_only: true
-        ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: PlantUML
         category_url: 'administration/integration/plantuml.html'
       - category_title: Project integration management
@@ -1184,8 +1018,6 @@ sections:
             doc_url: 'user/project/integrations/emails_on_push.html'
           - doc_title: GitHub
             doc_url: 'user/project/integrations/github.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium, GitLab.com Silver, and higher tiers'
           - doc_title: Hangouts Chat
             doc_url: 'user/project/integrations/hangouts_chat.html'
           - doc_title: HipChat
@@ -1210,12 +1042,8 @@ sections:
             doc_url: 'user/project/integrations/slack.html'
           - doc_title: Slack slash commands
             doc_url: 'user/project/integrations/slack_slash_commands.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
           - doc_title: Slack application
             doc_url: 'user/project/integrations/gitlab_slack_application.html'
-            ee_only: true
-            ee_tier: 'GitLab.com only. Not available in GitLab self-managed instances'
           - doc_title: Unify Circuit
             doc_url: 'user/project/integrations/unify_circuit.html'
           - doc_title: Webex Teams
@@ -1248,8 +1076,6 @@ sections:
 
   - section_title: Administration
     section_url: 'administration/'
-    ee_only: true
-    ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
     section_categories:
       - category_title: Reference Architectures
         category_url: 'administration/reference_architectures/'
@@ -1340,8 +1166,6 @@ sections:
             doc_url: 'user/admin_area/settings/continuous_integration.html'
           - doc_title: Custom instance-level project templates
             doc_url: 'user/admin_area/custom_project_templates.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Diff limits
             doc_url: 'user/admin_area/diff_limits.html'
           - doc_title: Email
@@ -1350,8 +1174,6 @@ sections:
             doc_url: 'administration/feature_flags.html'
           - doc_title: Geo nodes
             doc_url: 'user/admin_area/geo_nodes.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Git LFS administration
             doc_url: 'administration/lfs/'
           - doc_title: Gitaly timeouts
@@ -1380,8 +1202,6 @@ sections:
             doc_url: 'administration/repository_storage_types.html'
           - doc_title: Repository size
             doc_url: 'user/admin_area/settings/account_and_limit_settings.html'
-            ee_only: true
-            ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
           - doc_title: Service templates
             doc_url: 'user/project/integrations/services_templates.html'
           - doc_title: Sign-in restrictions
@@ -1402,31 +1222,21 @@ sections:
         category_url: 'user/admin_area/analytics/'
       - category_title: Audit events
         category_url: 'administration/audit_events.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter, GitLab.com Bronze, and higher tiers'
       - category_title: Block and unblock users
         category_url: 'user/admin_area/blocking_unblocking_users.html'
       - category_title: Broadcast messages
         category_url: 'user/admin_area/broadcast_messages.html'
       - category_title: Consul
         category_url: 'administration/consul.html'
-        ee_only: true
-        ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
       - category_title: Instance Review
         category_url: 'administration/instance_review.html'
-        ee_only: true
-        ee_tier: 'GitLab Core and higher tiers. Not available in GitLab.com'
       - category_title: PostgreSQL
         category_url: 'administration/postgresql/'
         docs:
           - doc_title: PgBouncer
             doc_url: 'administration/postgresql/pgbouncer.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: Replication and failover
             doc_url: 'administration/postgresql/replication_and_failover.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: External database service
             doc_url: 'administration/postgresql/external.html'
       - category_title: Load balancer
@@ -1442,8 +1252,6 @@ sections:
         docs:
           - doc_title: Gitaly Cluster
             doc_url: 'administration/gitaly/praefect.html'
-            ee_only: true
-            ee_tier: 'GitLab Core and higher tiers. However, technical support is limited to GitLab Premium and Ultimate customers only. Not available in GitLab.com'
           - doc_title: Gitaly reference
             doc_url: 'administration/gitaly/reference.html'
       - category_title: Metrics
@@ -1517,8 +1325,6 @@ sections:
             doc_url: 'administration/packages/dependency_proxy.html'
       - category_title: Geo
         category_url: 'administration/geo/'
-        ee_only: true
-        ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
         docs:
           - doc_title: Setting up Geo
             doc_url: 'administration/geo/setup/'
@@ -1556,8 +1362,6 @@ sections:
             doc_url: 'administration/geo/replication/geo_validation_tests.html'
       - category_title: Disaster recovery (Geo)
         category_url: 'administration/geo/disaster_recovery/'
-        ee_only: true
-        ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
         docs:
           - doc_title: Planned failover
             doc_url: 'administration/geo/disaster_recovery/planned_failover.html'
@@ -1578,8 +1382,6 @@ sections:
             doc_url: 'administration/raketasks/maintenance.html'
           - doc_title: Geo tasks
             doc_url: 'administration/raketasks/geo.html'
-            ee_only: true
-            ee_tier: 'GitLab Premium and higher tiers. Not available in GitLab.com'
           - doc_title: GitHub import
             doc_url: 'administration/raketasks/github_import.html'
           - doc_title: Import repositories
@@ -1900,13 +1702,7 @@ sections:
     section_categories:
       - category_title: GitLab.com subscriptions
         category_url: 'subscriptions/gitlab_com/'
-        ee_only: true
-        ee_tier: 'GitLab.com Bronze and higher tiers. Not available in GitLab self-managed instances'
       - category_title: Self-managed subscriptions
         category_url: 'subscriptions/self_managed/'
-        ee_only: true
-        ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'
       - category_title: Activate Enterprise Edition
         category_url: 'user/admin_area/license.html'
-        ee_only: true
-        ee_tier: 'GitLab Starter and higher tiers. Not available in GitLab.com'
