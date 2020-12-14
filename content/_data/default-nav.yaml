@@ -827,6 +827,8 @@ sections:
             doc_url: 'api/pipelines.html'
           - doc_title: Project aliases
             doc_url: 'api/project_aliases.html'
+          - doc_title: Project analytics
+            doc_url: 'api/project_analytics.html'
           - doc_title: Project import/export
             doc_url: 'api/project_import_export.html'
           - doc_title: Project repository storage moves
