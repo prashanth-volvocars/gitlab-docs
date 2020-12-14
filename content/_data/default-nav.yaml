@@ -1228,6 +1228,8 @@ sections:
         category_url: 'user/admin_area/broadcast_messages.html'
       - category_title: Consul
         category_url: 'administration/consul.html'
+      - category_title: Email from GitLab
+        category_url: 'tools/email.html'
       - category_title: Instance Review
         category_url: 'administration/instance_review.html'
       - category_title: PostgreSQL
