@@ -13,7 +13,7 @@ terms.
 
 ## Ownership
 
-The [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#static-site-editor-group)
+The [Static Site Editor](https://about.gitlab.com/handbook/product/categories/#editor-group)
 group within the DevOps Create stage is the team responsible for developing
 and maintaining this project with the Technical Writing team.
 
