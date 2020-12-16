@@ -676,6 +676,8 @@ sections:
             doc_url: 'user/packages/pypi_repository/'
           - doc_title: Generic
             doc_url: 'user/packages/generic_packages/'
+          - doc_title: Store all packages in one project
+            doc_url: 'user/packages/workflows/project_registry.html'
       - category_title: Container Registry
         category_url: 'user/packages/container_registry/'
       - category_title: Dependency Proxy
