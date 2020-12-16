@@ -240,6 +240,7 @@
 /ee/user/group/dependency_proxy/index.html /ee/user/packages/dependency_proxy/index.html 302
 /ee/user/group/security_dashboard/index.html /ee/user/application_security/security_dashboard/index.html 302
 /ee/user/incident_management/index.html /ee/operations/incident_management/index.html 302
+/ee/user/packages/workflows/monorepo.html /ee/user/packages/npm_registry/index.html 302
 /ee/user/profile/account/index.html /ee/user/profile/index.html#profile-settings 302
 /ee/user/project/builds/artifacts.html /ee/ci/pipelines/job_artifacts.html 302
 /ee/user/project/ci_cd_for_external_repo.html /ee/ci/ci_cd_for_external_repos/index.html 302
