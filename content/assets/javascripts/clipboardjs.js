@@ -1,9 +1,9 @@
 ---
-version: 1
+version: 2
 ---
 
-// add a copy button to every code // working
-$('pre').append($('<button class="clip-btn" title="Click to copy" data-selector="true"><i class="fa fa-clipboard" aria-hidden="true"></i></button>'));
+// Add a copy button to every fenced code block
+$('pre').append($('<button class="clip-btn" title="Click to copy" data-selector="true"><%= icon("copy-to-clipboard") %></button>'));
 
 // Tooltip
 $('button').tooltip({
