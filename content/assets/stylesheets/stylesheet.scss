@@ -1,5 +1,5 @@
 ---
-version: 88
+version: 89
 ---
 
 @import "variables";
@@ -153,14 +153,15 @@ pre {
     top: 0;
     cursor: pointer;
     position: absolute;
-    color: $white;
+    fill: $white;
     background-color: $pre-code-color;
     border: 0;
     outline: 0;
 
-    i {
+    svg {
       opacity: .5;
       transition: opacity .3s ease-in;
+      pointer-events: none;
     }
 
     @media all and (max-width: $sm-width) {
@@ -170,7 +171,7 @@ pre {
 
   &:hover {
     .clip-btn {
-      i {
+      svg {
         opacity: 1;
       }
     }
