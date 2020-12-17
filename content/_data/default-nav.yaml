@@ -110,6 +110,11 @@ sections:
         category_url: 'user/infrastructure/'
       - category_title: Kubernetes Agent
         category_url: 'user/clusters/agent/'
+        docs:
+          - doc_title: Kubernetes Agent configuration repository
+            doc_url: 'user/clusters/agent/repository.html'
+          - doc_title: Kubernetes Agent development
+            doc_url: 'development/agent/'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Pod logs
