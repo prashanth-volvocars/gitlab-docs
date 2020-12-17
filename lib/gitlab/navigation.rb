@@ -44,7 +44,7 @@ module Gitlab
     attr_reader :items, :item
 
     def disable_inactive_sections!
-      return unless is_omnibus?
+      return unless omnibus?
 
       children.each do |section|
         section.disable! unless has_active_element?([section])
