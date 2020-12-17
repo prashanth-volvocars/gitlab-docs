@@ -12,7 +12,7 @@ module Gitlab
     end
 
     def run
-      return unless Nanoc::Helpers::Generic.is_omnibus?
+      return unless Nanoc::Helpers::Generic.omnibus?
 
       items.each do |item|
         id = item.identifier
