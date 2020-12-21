@@ -4,7 +4,7 @@ require 'spec_helper'
 describe 'Content directory size' do
   subject { Dir.glob('content/**/*').sum { |f| File.size(f) } }
 
-  let(:megabyte) { 1024 ** 2 }
+  let(:megabyte) { 1024**2 }
 
   # This limit can be increased after checking that Omnibus package build does not fail
   let(:maximum_size) { 2 * megabyte }

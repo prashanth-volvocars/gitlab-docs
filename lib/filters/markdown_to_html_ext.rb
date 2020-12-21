@@ -9,6 +9,7 @@ module Nanoc::Filters
         if /^href="http/.match(result).nil? # Check if link is internal
           result.gsub!(/\.md/, '.html') # Replace the extension if link is internal
         end
+
         result
       end
     end
