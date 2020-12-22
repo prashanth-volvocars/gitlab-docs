@@ -127,7 +127,14 @@ sections:
           - doc_title: Deploying AWS Lambda functions
             doc_url: 'user/project/clusters/serverless/aws.html'
       - category_title: Securing your deployed applications
-        category_url: 'user/project/clusters/securing.html'
+        category_url: 'user/project/clusters/protect/index.html'
+        docs:
+          - doc_title: Web Application Firewall
+            doc_url: 'user/project/clusters/protect/web_application_firewall/index.html'
+          - doc_title: Container Network Security
+            doc_url: 'user/project/clusters/protect/container_network_security/index.html'
+          - doc_title: Container Host Security
+            doc_url: 'user/project/clusters/protect/container_host_security/index.html'
 
   - section_title: Groups
     section_url: 'user/group/'

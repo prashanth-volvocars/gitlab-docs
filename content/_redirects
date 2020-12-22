@@ -340,3 +340,6 @@
 /ee/workflow/web_editor.html /ee/user/project/repository/web_editor.html 302  # To be removed after 2021-11-01
 /ee/workflow/wip_merge_requests.html /ee/user/project/merge_requests/work_in_progress_merge_requests.html 302  # To be removed after 2021-11-01
 /ee/workflow/workflow.html /ee/gitlab-basics/feature_branch_workflow.html 302  # To be removed after 2021-11-01
+/ee/topics/web_application_firewall/index.html /ee/user/project/clusters/protect/web_application_firewall/index.html 302 # To be removed after 2022-01-01
+/ee/topics/web_application_firewall/quick_start_guide.html /ee/user/project/clusters/protect/web_application_firewall/quick_start_guide.html 302 # To be removed after 2022-01-01
+/ee/user/project/clusters/securing.html /ee/user/project/clusters/protect/index.html 302 # To be removed after 2022-01-01
