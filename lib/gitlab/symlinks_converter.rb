@@ -1,6 +1,6 @@
 module Gitlab
   class SymlinksConverter
-    EXTENTIONS = ['png', 'jpg', 'gif', 'svg']
+    EXTENTIONS = %w[png jpg gif svg].freeze
 
     def initialize(config, items)
       @config = config

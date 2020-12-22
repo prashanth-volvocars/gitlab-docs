@@ -5,6 +5,7 @@ module Nanoc::Helpers
       if @config[:debug]
         puts item
       end
+
       parent_array = []
       current_item = item
       # Until the current item has no parent, keep running.
