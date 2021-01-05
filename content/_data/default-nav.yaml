@@ -99,6 +99,8 @@ sections:
         category_url: 'user/project/canary_deployments.html'
       - category_title: Cluster environments
         category_url: 'user/clusters/environments.html'
+      - category_title: Cluster cost management
+        category_url: 'user/clusters/cost_management.html'
       - category_title: Deploy boards
         category_url: 'user/project/deploy_boards.html'
       - category_title: GitLab Managed Apps
@@ -108,13 +110,20 @@ sections:
             doc_url: 'user/clusters/crossplane.html'
       - category_title: Infrastructure as code
         category_url: 'user/infrastructure/'
+        docs:
+          - doc_title: GitLab managed Terraform state
+            doc_url: 'user/infrastructure/terraform_state.html'
+          - doc_title: Terraform integration in merge requests
+            doc_url: 'user/infrastructure/mr_integration.html'
       - category_title: Kubernetes Agent
         category_url: 'user/clusters/agent/'
         docs:
-          - doc_title: Kubernetes Agent configuration repository
+          - doc_title: Agent configuration repository
             doc_url: 'user/clusters/agent/repository.html'
-          - doc_title: Kubernetes Agent development
-            doc_url: 'development/agent/'
+          - doc_title: Kubernetes integration development
+            doc_url: 'development/kubernetes.html'
+          - doc_title: Install GitLab Runner with Agent
+            doc_url: 'user/clusters/agent/runner.html'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Pod logs
@@ -481,6 +490,8 @@ sections:
             doc_url: 'operations/incident_management/alert_notifications.html'
           - doc_title: Incidents
             doc_url: 'operations/incident_management/incidents.html'
+          - doc_title: Integrations
+            doc_url: 'operations/incident_management/integrations.html'
           - doc_title: Status page
             doc_url: 'operations/incident_management/status_page.html'
       - category_title: Feature Flags
@@ -1432,6 +1443,8 @@ sections:
         category_url: 'administration/server_hooks.html'
       - category_title: Static objects external storage
         category_url: 'administration/static_objects_external_storage.html'
+      - category_title: Terraform state
+        category_url: 'administration/terraform_state.html'
       - category_title: Update
         category_url: 'update/README.html'
         docs:
@@ -1503,6 +1516,8 @@ sections:
         docs:
           - doc_title: CI/CD template development
             doc_url: 'development/cicd/templates.html'
+          - doc_title: Auto DevOps development
+            doc_url: 'development/auto_devops.html'
       - category_title: Danger bot
         category_url: 'development/dangerbot.html'
       - category_title: Database development
@@ -1648,6 +1663,19 @@ sections:
         category_url: 'development/pipelines.html'
       - category_title: Instrumenting Ruby code
         category_url: 'development/instrumentation.html'
+      - category_title: Kubernetes Agent
+        category_url: 'development/agent/'
+        docs:
+          - doc_title: Routing kas requests
+            doc_url: 'development/agent/routing.html'
+          - doc_title: Identity and authentication
+            doc_url: 'development/agent/identity.html'
+          - doc_title: User stories
+            doc_url: 'development/agent/user_stories.html'
+          - doc_title: GitOps with the Kubernetes Agent
+            doc_url: 'development/agent/gitops.html'
+          - doc_title: Running locally
+            doc_url: 'development/agent/local.html'
       - category_title: Package development
         category_url: 'development/packages.html'
       - category_title: Product Analytics
