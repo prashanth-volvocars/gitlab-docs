@@ -120,8 +120,6 @@ sections:
         docs:
           - doc_title: Agent configuration repository
             doc_url: 'user/clusters/agent/repository.html'
-          - doc_title: Kubernetes integration development
-            doc_url: 'development/kubernetes.html'
           - doc_title: Install GitLab Runner with Agent
             doc_url: 'user/clusters/agent/runner.html'
       - category_title: Management project
@@ -1676,6 +1674,8 @@ sections:
             doc_url: 'development/agent/gitops.html'
           - doc_title: Running locally
             doc_url: 'development/agent/local.html'
+      - category_title: Kubernetes integration
+        category_url: 'development/kubernetes.html'
       - category_title: Package development
         category_url: 'development/packages.html'
       - category_title: Product Analytics
