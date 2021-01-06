@@ -3,19 +3,13 @@ class AdmonitionFilter < Nanoc::Filter
   identifier :admonition
 
   BOOTSTRAP_MAPPING = {
-    'tip' => 'success',
     'note' => 'info',
-    'caution' => 'warning',
     'warning' => 'warning',
-    'danger' => 'danger'
   }.freeze
 
   GITLAB_SVGS_MAPPING = {
-    'tip' => 'bulb',
     'note' => 'information-o',
-    'caution' => 'warning',
     'warning' => 'warning',
-    'danger' => 'warning'
   }.freeze
 
   def run(content, params = {})
@@ -24,7 +18,7 @@ class AdmonitionFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('p').each do |para|
       content = para.inner_html
-      match = content.match(/\A(?<type>TIP|NOTE|CAUTION|WARNING|DANGER):\s?(?<content>.*)\Z/m)
+      match = content.match(/\A(?<type>NOTE|WARNING):\s?(?<content>.*)\Z/m)
       next unless match
 
       new_content = generate(match[:type].downcase, match[:content])
