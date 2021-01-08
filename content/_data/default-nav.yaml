@@ -165,6 +165,8 @@ sections:
         category_url: 'user/group/issues_analytics/'
       - category_title: Iterations
         category_url: 'user/group/iterations/'
+      - category_title: Migrating groups
+        category_url: 'user/group/import/'
       - category_title: Public access
         category_url: 'public_access/public_access.html'
       - category_title: Roadmaps
