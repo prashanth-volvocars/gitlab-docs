@@ -44,9 +44,6 @@ RUN apk add --no-cache -U \
 # Do not install rdoc to save some space
 RUN echo 'gem: --no-document' >> /etc/gemrc
 
-# Update bundler
-RUN gem install bundler -v "1.17.3"
-
 # Install vale
 RUN curl -L https://github.com/errata-ai/vale/archive/v${VALE_VERSION}.tar.gz -o v${VALE_VERSION}.tar.gz && \
     tar -xvzf v${VALE_VERSION}.tar.gz && \
