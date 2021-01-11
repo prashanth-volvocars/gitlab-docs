@@ -98,7 +98,7 @@ To install Ruby using [rbenv](https://github.com/rbenv/rbenv):
 Check your:
 
 - Ruby version with `ruby --version`.
-- Bundler version with `bundle --version`. You need version 1.17.3.
+- Bundler version with `bundle --version`.
 
 #### Node.js
 
@@ -157,7 +157,7 @@ To install Ruby, Node.js, and Yarn using `asdf`:
 Check your:
 
 - Ruby version with `ruby --version`.
-- Bundler version with `bundle --version`. You need version 1.17.3.
+- Bundler version with `bundle --version`.
 - Node.js version with `node -v`.
 - Yarn version with `yarn -v`
 
