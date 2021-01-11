@@ -67,7 +67,7 @@ sections:
         category_url: 'user/analytics/#project-level-analytics'
         docs:
           - doc_title: CI/CD
-            doc_url: 'ci/pipelines/#pipeline-success-and-duration-charts'
+            doc_url: 'user/analytics/ci_cd_analytics.html'
           - doc_title: Code Review
             doc_url: 'user/analytics/code_review_analytics.html'
           - doc_title: Insights
