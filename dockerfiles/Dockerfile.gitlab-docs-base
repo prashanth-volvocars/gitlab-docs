@@ -29,6 +29,3 @@ RUN apk add --no-cache -U \
 
 # Do not install rdoc to save some space
 RUN echo 'gem: --no-document' >> /etc/gemrc
-
-# Update bundler
-RUN gem install bundler -v "1.17.3"
