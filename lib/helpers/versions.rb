@@ -56,5 +56,35 @@ module Nanoc::Helpers
     def stable_version?(version)
       version.match?(STABLE_VERSIONS_REGEX)
     end
+
+    def data_versions
+      @items['/_data/versions.yaml']
+    end
+
+    def next_version
+      latest_stable = data_versions[:online].first
+      next_major, next_minor = latest_stable.split('.')
+
+      "#{next_major}.#{next_minor.to_i + 1}"
+    end
+
+    def dotcom
+      "GitLab.com (#{next_version}-pre)"
+    end
+
+    def version_dropdown_title
+      return 'Archives' if archives?
+      return 'Versions' unless production?
+
+      if ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH']
+        dotcom
+      else
+        ENV['CI_COMMIT_REF_NAME']
+      end
+    end
+
+    def display_previous_versions?
+      !omnibus?
+    end
   end
 end

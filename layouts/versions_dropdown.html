@@ -1,14 +1,6 @@
-<%
-latest_stable = @items['/_data/versions.yaml'][:online].first
-next_major = latest_stable.split('.').first
-next_minor = "#{latest_stable.split('.').last.to_i + 1}"
-next_version = "#{next_major}.#{next_minor}"
-dotcom = "GitLab.com (#{next_version}-pre)"
-%>
 <!-- versions dropdown-->
-<div class="choose-version">
-Version
-</div>
+<div class="choose-version">Version</div>
+
 <div class="dropdown">
   <a role="button" class="btn btn-versions dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="versions" href="#">
     <!--
@@ -21,19 +13,8 @@ Version
         - The branch name otherwise.
       For local development and review apps, show "Versions".
     -->
-    <% if archives? %>
-    Archives
-    <% else %>
-      <% if production? %>
-        <% if ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
-          <%= dotcom %>
-        <% else %>
-          <%= ENV['CI_COMMIT_REF_NAME'] %>
-        <% end %>
-      <% else %>
-        Versions
-      <% end %>
-    <% end %>
+    <%= version_dropdown_title %>
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu versions-menu" aria-labelledby="versions">
@@ -42,56 +23,23 @@ Version
         <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
       </a>
     </li>
-    <!-- Start of online versions -->
-    <li class="dropdown-divider"></li>
-    <% @items['/_data/versions.yaml'][:online].each do |version| %>
-      <!--
-        If we are on the archives page, the link here is hardcoded to always
-        point to `/archives/`. If you visit https://docs.gitlab.com/archives/
-        and select a version from the dropdown, that version's archives page
-        will be shown. We want to always show the latest archives page as it
-        contains all current versions and offline archives.
-      -->
-      <% if archives? %>
-        <li>
-          <a href='/archives/'>
-            <%= version %>
-          </a>
-        </li>
-      <% else %>
-        <li>
-          <a<%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
-            <%= version %>
-          </a>
-        </li>
+
+    <% if display_previous_versions? %>
+      <!-- Start of online versions -->
+      <li class="dropdown-divider"></li>
+      <% data_versions[:online].each do |version| %>
+        <%= render '/partials/versions_list.*', version: version %>
       <% end %>
-    <% end %>
-    <!-- End of online versions -->
-    <!-- Start of last major versions -->
-    <li class="dropdown-divider"></li>
-    <% @items['/_data/versions.yaml'][:previous_majors].each do |version| %>
-      <!--
-        If we are on the archives page, the link here is hardcoded to always
-        point to `/archives/`. If you visit https://docs.gitlab.com/archives/
-        and select a version from the dropdown, that version's archives page
-        will be shown. We want to always show the latest archives page as it
-        contains all current versions and offline archives.
-      -->
-      <% if archives? %>
-        <li>
-          <a href='/archives/'>
-            <%= version %>
-          </a>
-        </li>
-      <% else %>
-        <li>
-          <a<%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
-            <%= version %>
-          </a>
-        </li>
+      <!-- End of online versions -->
+
+      <!-- Start of last major versions -->
+      <li class="dropdown-divider"></li>
+      <% data_versions[:previous_majors].each do |version| %>
+        <%= render '/partials/versions_list.*', version: version %>
       <% end %>
+      <!-- End of last major versions -->
     <% end %>
-    <!-- End of last major versions -->
+
     <li class="dropdown-divider"></li>
     <li><a<%= active_dropdown('archives') %> href='/archives/'>Archives</a></li>
   </ul>
