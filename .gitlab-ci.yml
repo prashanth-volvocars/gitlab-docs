@@ -452,8 +452,8 @@ image:docs-lint:
   variables:
     RUBY_VERSION: '2.7.2'
     ALPINE_VERSION: '3.12'
-    VALE_VERSION: '2.4.3'
-    MARKDOWNLINT_VERSION: '0.24.0'
+    VALE_VERSION: '2.8.0'
+    MARKDOWNLINT_VERSION: '0.26.0'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:ruby-$RUBY_VERSION-alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
