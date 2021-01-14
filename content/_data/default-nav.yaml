@@ -1678,15 +1678,6 @@ sections:
         category_url: 'development/kubernetes.html'
       - category_title: Package development
         category_url: 'development/packages.html'
-      - category_title: Product Analytics
-        category_url: 'development/product_analytics/'
-        docs:
-          - doc_title: Event dictionary
-            doc_url: 'development/product_analytics/event_dictionary.html'
-          - doc_title: Usage Ping guide
-            doc_url: 'development/product_analytics/usage_ping.html'
-          - doc_title: Snowplow guide
-            doc_url: 'development/product_analytics/snowplow.html'
       - category_title: Testing standards and styles
         category_url: 'development/testing_guide/'
         docs:
@@ -1738,6 +1729,10 @@ sections:
             doc_url: 'development/i18n/proofreader.html'
           - doc_title: Merging
             doc_url: 'development/i18n/merging_translations.html'
+      - category_title: Snowplow guide
+        category_url: 'development/snowplow.html'
+      - category_title: Usage Ping guide
+        category_url: 'development/usage_ping.html'
       - category_title: Value Stream Analytics
         category_url: 'development/value_stream_analytics.html'
       - category_title: Working with Prometheus metrics
