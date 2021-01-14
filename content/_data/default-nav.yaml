@@ -274,6 +274,8 @@ sections:
             doc_url: 'user/project/merge_requests/creating_merge_requests.html'
           - doc_title: Cherry pick changes
             doc_url: 'user/project/merge_requests/cherry_pick_changes.html'
+          - doc_title: Getting started
+            doc_url: 'user/project/merge_requests/getting_started.html'
           - doc_title: Merge request dependencies
             doc_url: 'user/project/merge_requests/merge_request_dependencies.html'
           - doc_title: Fast forward
