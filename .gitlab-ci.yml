@@ -444,33 +444,6 @@ pages:
 #
 # GitLab docs lint image containing all test tools
 #
-image:docs-lint:
-  extends:
-    - .rules_scheduled
-    - .docker_prepare
-  stage: build-images
-  variables:
-    RUBY_VERSION: '2.7.2'
-    ALPINE_VERSION: '3.12'
-    VALE_VERSION: '2.8.0'
-    MARKDOWNLINT_VERSION: '0.26.0'
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint:ruby-$RUBY_VERSION-alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
-    IMAGE_LATEST: $CI_REGISTRY_IMAGE/lint:latest
-    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint
-  script:
-    - docker build
-      --build-arg RUBY_VERSION=${RUBY_VERSION}
-      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      --build-arg VALE_VERSION=${VALE_VERSION}
-      --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
-      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
-      -t $IMAGE_NAME -f $DOCKERFILE .
-    - docker tag $IMAGE_NAME $IMAGE_LATEST
-    - docker push $IMAGE_NAME
-    - docker push $IMAGE_LATEST
-  environment:
-    name: registry/docs-lint
-
 image:docs-lint-markdown:
   extends:
     - .rules_scheduled
@@ -478,8 +451,8 @@ image:docs-lint-markdown:
   stage: build-images
   variables:
     ALPINE_VERSION: '3.12'
-    VALE_VERSION: '2.6.1'
-    MARKDOWNLINT_VERSION: '0.24.0'
+    VALE_VERSION: '2.8.0'
+    MARKDOWNLINT_VERSION: '0.26.0'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-markdown
   script:
