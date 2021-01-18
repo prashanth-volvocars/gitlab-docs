@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.11.0'
-gem 'adsf', '~> 1.4.3'
-gem 'adsf-live', '~> 1.4.3'
+gem 'nanoc', '~> 4.11.23'
+gem 'adsf', '~> 1.4.5'
+gem 'adsf-live', '~> 1.4.5'
 gem 'sassc', '~> 2.4.0'
 gem 'rouge', '~> 3.26.0'
-gem 'rake', '~> 13.0.1'
+gem 'rake', '~> 13.0.3'
 
 group :nanoc do
   gem 'guard-nanoc'
@@ -25,5 +25,5 @@ group :test, :development do
   gem 'highline', '~> 2.0.3'
   gem 'rspec', '~> 3.10.0'
   gem 'pry-byebug', '~> 3.9.0', require: false
-  gem 'gitlab-styles', '~> 5.3.0', require: false
+  gem 'gitlab-styles', '~> 6.0.0', require: false
 end
