@@ -1026,8 +1026,17 @@ sections:
         category_url: 'integration/elasticsearch.html'
       - category_title: GitPod
         category_url: 'integration/gitpod.html'
-      - category_title: Jira Development Panel
-        category_url: 'integration/jira_development_panel.html'
+      - category_title: Jira integrations
+        category_url: 'user/project/integrations/jira_integrations.html'
+        docs:
+          - doc_title: Jira
+            doc_url: 'user/project/integrations/jira.html'
+          - doc_title: Jira Development Panel
+            doc_url: 'integration/jira_development_panel.html'
+          - doc_title: Create Jira Server user
+            doc_url: 'user/project/integrations/jira_server_configuration.html'
+          - doc_title: Create Jira Cloud API token
+            doc_url: 'user/project/integrations/jira_cloud_configuration.html'
       - category_title: Kroki diagrams
         category_url: 'administration/integration/kroki.html'
       - category_title: PlantUML
@@ -1055,8 +1064,6 @@ sections:
             doc_url: 'user/project/integrations/irker.html'
           - doc_title: Jenkins
             doc_url: 'integration/jenkins.html'
-          - doc_title: Jira integrations
-            doc_url: 'user/project/integrations/jira_integrations.html'
           - doc_title: Mattermost notifications
             doc_url: 'user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
@@ -1088,8 +1095,6 @@ sections:
             doc_url: 'user/project/integrations/custom_issue_tracker.html'
           - doc_title: IBM Engineering Workflow Management
             doc_url: 'user/project/integrations/ewm.html'
-          - doc_title: Jira
-            doc_url: 'user/project/integrations/jira.html'
           - doc_title: Redmine
             doc_url: 'user/project/integrations/redmine.html'
           - doc_title: YouTrack
