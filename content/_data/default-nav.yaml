@@ -1675,6 +1675,8 @@ sections:
         docs:
           - doc_title: Routing kas requests
             doc_url: 'development/agent/routing.html'
+          - doc_title: Repository overview
+            doc_url: 'development/agent/repository_overview.html'
           - doc_title: Identity and authentication
             doc_url: 'development/agent/identity.html'
           - doc_title: User stories
