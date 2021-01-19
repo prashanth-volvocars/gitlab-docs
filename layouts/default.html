@@ -29,11 +29,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <% if @config[:show_banner] and production_and_default_branch? %>
-              <div class="d-lg-block">
-                <%= render '/banner.*' %>
-              </div>
-              <% end %>
+              <%= render '/banner.*' %>
             </div>
           </div>
           <div class="row">

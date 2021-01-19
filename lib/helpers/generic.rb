@@ -25,5 +25,17 @@ module Nanoc::Helpers
     def omnibus?
       ENV['NANOC_ENV'] == 'omnibus'
     end
+
+    #
+    # Find the current branch. If CI_COMMIT_BRANCH is not defined, that means
+    # we're working locally, and Git is used to find the branch.
+    #
+    def current_branch
+      if ENV['CI_COMMIT_REF_NAME'].nil?
+        `git branch --show-current`.tr("\n", '')
+      else
+        ENV['CI_COMMIT_REF_NAME']
+      end
+    end
   end
 end
