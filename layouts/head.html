@@ -10,7 +10,7 @@
   <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<% if @item[:noindex] %>
+<% if @item[:noindex] or !production_and_default_branch? %>
   <meta name="robots" content="noindex nofollow">
 <% end %>
 <!--https://community.algolia.com/docsearch/required-configuration.html#introduces-global-information-as-meta-tags-->

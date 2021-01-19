@@ -2,19 +2,18 @@
 is_hidden: true
 ---
 
-<% if ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
+<% if production_and_default_branch? %>
+# If on default branch and production env
 sitemap: https://docs.gitlab.com/sitemap.xml
 user-agent: *
 disallow: /ce/
 disallow: /debug/
-<% @items['/_data/versions.yaml'][:online].each do |version| %>
-disallow: /<%= version %>/
-<% end %>
-<% @items['/_data/versions.yaml'][:offline].each do |version| %>
-disallow: /<%= version %>/
-<% end %>
+<% elsif stable_version?(current_branch) %>
+# If on stables branches
+sitemap: https://docs.gitlab.com/<%= current_branch %>/sitemap.xml
+user-agent: *
 <% else %>
-# Ban all spiders from the entire site when not on master branch
+# Ban all spiders from the entire site when not on default or stable branches
 user-agent: *
 disallow: /
 <% end %>
