@@ -1024,7 +1024,7 @@ sections:
         category_url: 'integration/akismet.html'
       - category_title: Elasticsearch
         category_url: 'integration/elasticsearch.html'
-      - category_title: GitPod
+      - category_title: Gitpod
         category_url: 'integration/gitpod.html'
       - category_title: Jira integrations
         category_url: 'user/project/integrations/jira_integrations.html'
