@@ -1305,6 +1305,10 @@ sections:
             doc_url: 'api/discussions.html'
           - doc_title: Dockerfile (templates)
             doc_url: 'api/templates/dockerfiles.html'
+          - doc_title: DORA4 project analytics
+            doc_url: 'api/dora4_project_analytics.html'
+          - doc_title: DORA4 group analytics
+            doc_url: 'api/dora4_group_analytics.html'
           - doc_title: Environments
             doc_url: 'api/environments.html'
           - doc_title: Epics
@@ -1395,8 +1399,6 @@ sections:
             doc_url: 'api/pipelines.html'
           - doc_title: Project aliases
             doc_url: 'api/project_aliases.html'
-          - doc_title: Project analytics
-            doc_url: 'api/project_analytics.html'
           - doc_title: Project import/export
             doc_url: 'api/project_import_export.html'
           - doc_title: Project repository storage moves
