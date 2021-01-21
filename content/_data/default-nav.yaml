@@ -120,8 +120,6 @@ sections:
         docs:
           - doc_title: Agent configuration repository
             doc_url: 'user/clusters/agent/repository.html'
-          - doc_title: Install GitLab Runner with Agent
-            doc_url: 'user/clusters/agent/runner.html'
       - category_title: Management project
         category_url: 'user/clusters/management_project.html'
       - category_title: Pod logs
