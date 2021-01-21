@@ -586,8 +586,8 @@ sections:
             doc_url: 'ci/yaml/README.html'
           - doc_title: Validate syntax
             doc_url: 'ci/lint.html'
-          - doc_title: Visualize configuration
-            doc_url: 'ci/yaml/visualization.html'
+          - doc_title: Pipeline Editor
+            doc_url: 'ci/pipeline_editor/'
           - doc_title: Include examples
             doc_url: 'ci/yaml/includes.html'
       - category_title: Docker
@@ -652,16 +652,8 @@ sections:
             doc_url: 'ci/examples/test-clojure-application.html'
           - doc_title: Deployment with Dpl
             doc_url: 'ci/examples/deployment/README.html'
-          - doc_title: Elixir
-            doc_url: 'ci/examples/test_phoenix_app_with_gitlab_ci_cd/'
           - doc_title: End-to-end testing
             doc_url: 'ci/examples/end_to_end_testing_webdriverio/'
-          - doc_title: Game development
-            doc_url: 'ci/examples/devops_and_game_dev_with_gitlab_ci_cd/'
-          - doc_title: Java with Spring Boot
-            doc_url: 'ci/examples/deploy_spring_boot_to_cloud_foundry/'
-          - doc_title: Java with Maven
-            doc_url: 'ci/examples/artifactory_and_gitlab/'
           - doc_title: NPM with semantic-release
             doc_url: 'ci/examples/semantic-release.html'
           - doc_title: PHP with PHPunit and atoum
@@ -674,8 +666,6 @@ sections:
             doc_url: 'ci/examples/test-and-deploy-python-application-to-heroku.html'
           - doc_title: Ruby on Heroku
             doc_url: 'ci/examples/test-and-deploy-ruby-application-to-heroku.html'
-          - doc_title: Scala on Heroku
-            doc_url: 'ci/examples/test-scala-application.html'
       - category_title: Troubleshooting CI/CD
         category_url: 'ci/troubleshooting.html'
 
