@@ -485,7 +485,7 @@ sections:
           - doc_title: Alerts
             doc_url: 'operations/incident_management/alerts.html'
           - doc_title: Paging and notifications
-            doc_url: 'operations/incident_management/paging.html'
+            doc_url: 'operations/incident_management/alert_integrations.html'
           - doc_title: Incidents
             doc_url: 'operations/incident_management/incidents.html'
           - doc_title: Integrations
@@ -1661,8 +1661,6 @@ sections:
         docs:
           - doc_title: Routing kas requests
             doc_url: 'development/agent/routing.html'
-          - doc_title: Repository overview
-            doc_url: 'development/agent/repository_overview.html'
           - doc_title: Identity and authentication
             doc_url: 'development/agent/identity.html'
           - doc_title: User stories
