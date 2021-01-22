@@ -16,7 +16,7 @@ module Nanoc::Helpers
     # which they are considered production.
     #
     def production_and_default_branch?
-      ENV['NANOC_ENV'] == 'production' and ENV['CI_DEFAULT_BRANCH'] == ENV['CI_COMMIT_REF_NAME']
+      ENV['NANOC_ENV'] == 'production' && ENV['CI_DEFAULT_BRANCH'] == ENV['CI_COMMIT_REF_NAME']
     end
 
     #
