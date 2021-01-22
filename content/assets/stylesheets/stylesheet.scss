@@ -1,5 +1,5 @@
 ---
-version: 89
+version: 90
 ---
 
 @import "variables";
@@ -10,7 +10,6 @@ version: 89
 }
 
 body {
-  background: $body-background-color;
   margin: 0;
   padding: 0;
   line-height: 24px;
@@ -20,7 +19,6 @@ body {
 
   >.wrapper {
     min-height: 100vh;
-    background-color: $gds-gray-50;
 
     @media(max-width: $md-width) {
       flex-direction: column-reverse;
@@ -301,7 +299,7 @@ h6 {
 }
 
 .main {
-  padding: $page-header-height 40px 0;
+  padding: $page-header-height 40px 0 10%;
   border-right: 1px solid $main-box-shadow;
   background: $main-background-color;
   z-index: 1;
@@ -481,6 +479,7 @@ h6 {
 }
 
 .nav-wrapper {
+  background-color: $gds-white;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -488,7 +487,6 @@ h6 {
   width: 50px;
   height: 100vh;
   transition: all .3s;
-  background: $gds-gray-50;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
   top: 0;
@@ -947,6 +945,10 @@ a.global-nav-link {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  @media (max-width: $md-width) {
+    margin-top: 60px;
+  }
 }
 // End of banner alert box
 
@@ -1240,10 +1242,8 @@ a.global-nav-link {
   .sidebar-left {
     @include sidebar-fixed;
     border-right: 1px solid $help-gray-100;
-    background-color: $gds-gray-50;
     .list-group-item {
       line-height: 24px;
-      background-color: $gds-gray-50;
       color: $landing-sidebar-gray;
       padding-top: $sidebar-padding;
       padding-bottom: $sidebar-padding;
