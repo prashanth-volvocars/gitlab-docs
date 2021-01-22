@@ -4,12 +4,12 @@ class AdmonitionFilter < Nanoc::Filter
 
   BOOTSTRAP_MAPPING = {
     'note' => 'info',
-    'warning' => 'warning',
+    'warning' => 'warning'
   }.freeze
 
   GITLAB_SVGS_MAPPING = {
     'note' => 'information-o',
-    'warning' => 'warning',
+    'warning' => 'warning'
   }.freeze
 
   def run(content, params = {})
