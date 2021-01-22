@@ -23,6 +23,8 @@ sections:
         category_url: 'install/freebsd.html'
       - category_title: Kubernetes (Helm Chart)
         category_url: 'install/kubernetes.html'
+      - category_title: Kubernetes (Agent)
+        category_url: 'install/kubernetes-agent.html'
       - category_title: Linux
         category_url: 'install/linux-manually.html'
       - category_title: macOS
