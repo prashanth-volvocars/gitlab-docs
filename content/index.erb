@@ -22,7 +22,7 @@ title: GitLab Documentation
     </div>
   </nav>
   <main class="content">
-    <div class="row px-4 pt-4">
+    <div class="row px-5 ml-0 ml-md-5 pt-4">
       <div class="col-12">
         <%= render '/banner.*' %>
         <h1 class="landing-header-title border-bottom-0 font-weight-bold">Welcome to GitLab Docs</h1>
@@ -32,7 +32,7 @@ title: GitLab Documentation
         <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Select a product area</h2>
       </div>
     </div>
-    <div class="row px-4" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+    <div class="row px-5 ml-0 ml-md-5" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
       <% if production? %>
         <% @config[:products].each do |name, product| %>
           <% if product[:expose] == true %>
@@ -91,7 +91,7 @@ title: GitLab Documentation
         <% end %>
       <% end %>
     </div>
-      <div class="row px-4 mb-3">
+      <div class="row px-5 ml-0 ml-md-5 mb-3">
         <div class="col-12 pb-3">
           <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Popular topics</h2>
         </div>
@@ -113,7 +113,7 @@ title: GitLab Documentation
           <% end %>
         <% end %>
       </div>
-      <div class="row px-4">
+      <div class="row px-5 ml-0 ml-md-5">
         <div class="col">
           <%= render '/feedback.*' %>
         </div>
