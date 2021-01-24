@@ -34,7 +34,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <%= render '/breadcrumbs.*' %>
+              <div id="js-breadcrumbs" data-items="<%= ancestor_path_array(@item).reverse_each do |item| item[:title] end %>" ></div>
             </div>
           </div>
           <div class="row d-lg-none">
@@ -110,6 +110,7 @@
     <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
+    <script src="<%= @items['/frontend/breadcrumbs/index.*'].path %>"></script>
     <script src="<%= @items['/frontend/default/default.*'].path %>" data-cookieconsent="ignore"></script>  
   </body>
 </html>

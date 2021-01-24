@@ -1,7 +1,10 @@
 ---
-version: 90
+version: 91
 ---
 
+// These need to be replaced with a rollup loader: https://www.npmjs.com/package/rollup-plugin-postcss
+@import '../../../node_modules/@gitlab/ui/dist/index.css';
+@import '../../../node_modules/@gitlab/ui/dist/utility_classes.css';
 @import "variables";
 @import "utilities";
 
