@@ -1744,3 +1744,5 @@ sections:
         category_url: 'subscriptions/self_managed/'
       - category_title: Activate Enterprise Edition
         category_url: 'user/admin_area/license.html'
+      - category_title: Features available to Starter and Bronze subscribers
+        category_url: 'subscriptions/bronze_starter.html'
