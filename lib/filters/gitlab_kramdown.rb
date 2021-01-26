@@ -13,7 +13,9 @@ module Nanoc::Filters
 
     PATCH
 
-    PRODUCT_SUFFIX = /-(core|starter|premium|ultimate)(-only)?/.freeze
+    PRODUCT_TIERS = %w[core starter premium ultimate free bronze silver gold].freeze
+    PRODUCT_TYPES = %w[only saas self].freeze
+    PRODUCT_SUFFIX = /-(#{PRODUCT_TIERS.join('|')})(?:-(#{PRODUCT_TYPES.join('|')}))?\z/.freeze
 
     # Runs the content through [GitLab Kramdown](https://gitlab.com/brodock/gitlab_kramdown).
     # Parameters passed to this filter will be passed on to Kramdown.

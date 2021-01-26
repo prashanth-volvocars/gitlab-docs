@@ -1,55 +1,90 @@
 ---
-version: 3
+version: 4
 ---
 
 (function() {
-  var BADGES_TITLES = {
-    core: 'Available in GitLab Core, GitLab.com Free, and higher tiers',
-    starter: 'Available in GitLab Starter, GitLab.com Bronze, and higher tiers',
-    premium: 'Available in GitLab Premium, GitLab.com Silver, and higher tiers',
-    ultimate: 'Available in GitLab Ultimate and GitLab.com Gold',
-    'core-only':
-      'Available in GitLab Core and higher tiers. Not available in GitLab.com',
-    'starter-only':
-      'Available in GitLab Starter and higher tiers. Not available in GitLab.com',
-    'premium-only':
-      'Available in GitLab Premium and higher tiers. Not available in GitLab.com',
-    'ultimate-only':
-      'Available in GitLab Ultimate. Not available in GitLab.com',
+  const classes = ['core-only', 'core', 'starter-only', 'premium-only', 'ultimate-only', 'starter', 'premium', 'ultimate', 'free-only' , 'bronze-only', 'silver-only', 'gold-only', 'free', 'free-saas', 'free-self', 'premium-saas', 'premium-self', 'ultimate-saas', 'ultimate-self'];
+
+  const BADGES_TITLES = {
+    // Free
+    free: 'Available in GitLab Free self-managed, GitLab Free SaaS, and higher tiers.',
+    'free-self':
+      'Available in GitLab Free self-managed and higher tiers. Not available in GitLab SaaS.',
     'free-only':
-      'Available in GitLab Free and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Free SaaS and higher tiers. Not available in self-hosted instances.',
+    'free-saas':
+      'Available in GitLab Free SaaS and higher tiers. Not available in self-hosted instances.',
+    // Premium
+    premium: 'Available in GitLab Premium self-managed, GitLab Premium SaaS, and higher tiers.',
+    'premium-saas':
+      'Available in GitLab Premium SaaS and higher tiers. Not available in self-hosted instances.',
+    'silver-only':
+      'Available in GitLab Premium SaaS and higher tiers. Not available in self-hosted instances.',
+    'premium-only':
+      'Available in GitLab Premium self-managed and higher tiers. Not available in GitLab SaaS.',
+    'premium-self':
+      'Available in GitLab Premium self-managed and higher tiers. Not available in GitLab SaaS.',
+    // Ultimate
+    ultimate: 'Available in GitLab Ultimate self-managed and GitLab Ultimate SaaS.',
+    'ultimate-only':
+      'Available in GitLab Ultimate self-managed. Not available in GitLab SaaS.',
+    'ultimate-self':
+      'Available in GitLab Ultimate self-managed. Not available in GitLab SaaS.',
+    'ultimate-saas':
+      'Available in GitLab Ultimate SaaS. Not available in self-hosted instances.',
+    'gold-only':
+      'Available in GitLab Ultimate SaaS. Not available in self-hosted instances.',
+    // Deprecated badges
+    core: 'Available in GitLab Free self-managed, GitLab Free SaaS, and higher tiers',
+    'core-only':
+      'Available in GitLab Free self-managed and higher tiers. Not available in GitLab SaaS.',
+    starter: 'Available in GitLab Starter, GitLab.com Bronze, and higher tiers.',
+    'starter-only':
+      'Available in GitLab Starter and higher tiers. Not available in GitLab.com.',
     'bronze-only':
       'Available in GitLab Bronze and higher tiers. Not available in self-hosted instances.',
-    'silver-only':
-      'Available in GitLab Silver and higher tiers. Not available in self-hosted instances.',
-    'gold-only':
-      'Available in GitLab Gold. Not available in self-hosted instances.',
   };
 
-  var BADGES_MAPPING = {
-    core: ['core', 'free'],
+  const BADGES_MAPPING = {
+    // Free
+    core: ['free'],
+    free: ['free'],
+    'core-only': ['free', 'self-managed'],
+    'free-self': ['free', 'self-managed'],
+    'free-only': ['free', 'saas'],
+    'free-saas': ['free', 'saas'],
+    // Premium
+    premium: ['premium'],
+    'silver-only': ['premium', 'saas'],
+    'premium-only': ['premium', 'self-managed'],
+    'premium-self': ['premium', 'self-managed'],
+    'premium-saas': ['premium', 'saas'],
+    // Ultimate
+    ultimate: ['ultimate'],
+    'ultimate-only': ['ultimate', 'self-managed'],
+    'gold-only': ['ultimate', 'saas'],
+    'ultimate-self': ['ultimate', 'self-managed'],
+    'ultimate-saas': ['ultimate', 'saas'],
+    // Deprecated badges
     starter: ['starter', 'bronze'],
-    premium: ['premium', 'silver'],
-    ultimate: ['ultimate', 'gold'],
-    'core-only': ['core'],
     'starter-only': ['starter'],
-    'premium-only': ['premium'],
-    'ultimate-only': ['ultimate'],
-    'free-only': ['free'],
     'bronze-only': ['bronze'],
-    'silver-only': ['silver'],
-    'gold-only': ['gold'],
   };
 
-  var BADGES_CLASS = {
-    core: 'gitlab',
-    starter: 'gitlab',
-    premium: 'gitlab',
-    ultimate: 'gitlab',
-    free: 'gitlab-com',
-    bronze: 'gitlab-com',
-    silver: 'gitlab-com',
-    gold: 'gitlab-com',
+  const BADGES_CLASS = {
+    // Tier class
+    core: 'tier',
+    starter: 'tier',
+    premium: 'tier',
+    ultimate: 'tier',
+    free: 'tier',
+    // GitLab SaaS
+    bronze: 'saas',
+    silver: 'saas',
+    gold: 'saas',
+    saas: 'saas',
+    // GitLab self-managed
+    'self-managed': 'self-managed',
   };
 
   function init() {
@@ -110,12 +145,8 @@ version: 3
 
   // Get the badge type from a specific list of expected values in element class
   function retrieveBadgeType($badge) {
-    var match = $badge
-      .attr('class')
-      .match(
-        /core-only|core|starter-only|premium-only|ultimate-only|starter|premium|ultimate|free-only|bronze-only|silver-only|gold-only/
-      );
-
+    const classType = $badge.attr('class').split(' ');
+    const match = classes.filter(matchingClass => classType.includes(matchingClass));
     if (match) {
       return match.pop();
     }

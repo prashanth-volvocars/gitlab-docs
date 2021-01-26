@@ -1,5 +1,5 @@
 ---
-version: 90
+version: 91
 ---
 
 @import "variables";
@@ -1319,8 +1319,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 5px;
   transition: background-color .5s ease-in-out;
 
-  .badge-gitlab,
-  .badge-gitlab-com {
+  .badge-tier,
+  .badge-self-managed,
+  .badge-saas {
     &::after {
       content: "";
       display: block;
@@ -1331,21 +1332,28 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .badge-gitlab {
+  .badge-tier {
     &::after {
-      background: $badge-gitlab;
+      background: $badge-tier;
     }
   }
 
-  .badge-gitlab-com {
+  .badge-self-managed {
     &::after {
-      background: $badge-gitlab-com;
+      background: $badge-self-managed;
+    }
+  }
+
+  .badge-saas {
+    &::after {
+      background: $badge-saas;
     }
   }
 
   &:hover {
-    .badge-gitlab,
-    .badge-gitlab-com {
+    .badge-tier,
+    .badge-self-managed,
+    .badge-saas {
       &::after {
         width: 100%;
       }
@@ -1417,17 +1425,22 @@ li {
   line-height: 1.4;
 }
 
-.badge-gitlab {
-  color: $badge-gitlab;
+.badge-tier {
+  color: $badge-tier;
 }
 
-.badge-gitlab-com {
-  color: $badge-gitlab-com;
+.badge-self-managed {
+  color: $badge-self-managed;
+  padding-left: 5px;
+}
+
+.badge-saas {
+  color: $badge-saas;
   padding-left: 5px;
 }
 
 .badge-small {
-  color: $badge-gitlab;
+  color: $badge-self-managed;
   opacity: .6;
   transition: opacity .3s;
 
@@ -1453,7 +1466,7 @@ li {
 
 // scss-lint:disable ImportantRule
 .dotcom-false {
-  .badge-gitlab-com {
+  .badge-saas {
     display: none;
   }
 }
