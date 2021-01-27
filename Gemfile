@@ -11,10 +11,10 @@ group :nanoc do
   gem 'guard-nanoc'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.10.0'
+  gem 'gitlab_kramdown', '~> 0.11.0'
 
   # nanoc checks
-  gem 'nokogiri', '~> 1.10.10'
+  gem 'nokogiri', '~> 1.11.0'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.4'
