@@ -16,6 +16,7 @@ body {
   font-family: $sans-font-family;
   font-size: $body-font-size;
   color: $body-color;
+  font-weight: 400;
 
   >.wrapper {
     min-height: 100vh;
@@ -42,6 +43,10 @@ a, a:visited {
   }
 }
 
+b, strong {
+  font-weight: 700;
+}
+
 details {
   summary {
     display: list-item;
@@ -60,8 +65,12 @@ table {
     background: $thead-background-color;
   }
 
+  th {
+    font-weight: 600;
+  }
+
   tbody {
-    border-top: 3px solid $gds-gray-200;
+    border-top: 1px solid $gds-gray-200;
 
     &:first-child {
       border-top: 0;
@@ -79,8 +88,8 @@ table {
   td, th {
     text-align: left;
     padding: 8px;
-    border: 1px solid $table-border-color;
-    font-size: 14px;
+    border: .5px solid $table-border-color;
+    font-size: 16px;
 
     .badge-small {
       &:hover::after {
@@ -215,7 +224,7 @@ h2, h3, h4, h5, h6 {
     .anchor {
       opacity: 0;
       float: left;
-      margin-left: -30px;
+      margin-left: -50px;
       vertical-align: bottom;
       margin-top: 8px;
       height: 22px;
@@ -231,8 +240,8 @@ h2, h3, h4, h5, h6 {
 // p font size = $body-font-size: 15px;
 
 h1 {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 42px;
+  font-weight: 600;
   border-bottom: solid 2px $h1-border-bottom;
   padding-bottom: 10px;
   margin-top: $h-margin-top;
@@ -244,8 +253,8 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 500;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
@@ -255,8 +264,8 @@ h2 {
 }
 
 h3 {
-  font-size: 23px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 400;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
@@ -266,8 +275,8 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 400;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
@@ -277,8 +286,8 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
@@ -288,8 +297,8 @@ h5 {
 }
 
 h6 {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
 
@@ -422,6 +431,7 @@ h6 {
     word-break: normal;
     padding: 2px 4px;
     line-height: 22px;
+    font-weight: 300;
   }
 
   .input-group-text {
@@ -683,7 +693,7 @@ a.global-nav-link, .nav-link {
 
 a.global-nav-link {
   line-height: 1.25;
-  font-size: 14px;
+  font-size: 15px;
   width: 100%;
 }
 
@@ -1303,6 +1313,8 @@ a.global-nav-link {
 
 // https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
 h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  color: #232150;
   &[id]::before {
     display: block;
     content: " ";

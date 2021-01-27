@@ -12,10 +12,12 @@ $introduced-in-border-color: #e3e3e3;
 
 // Fonts
 $mono-font-family: "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
-$sans-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$body-font-size: 15px;
+$sans-font-family: 'Source Sans Pro', sans-serif;
+$heading-font-family: 'Lato', sans-serif;
+$body-font-size: 16px;
 $tooltip-font-size: 12px;
 $introduced-in-font-size: 13px;
+$font-weight-bolder: 700;
 
 // Margins
 $h-margin-top: 10px;
@@ -92,7 +94,7 @@ $gds-indigo-800: #393982;
 // Add here all the variables that already conform with GDS
 
 // Base colors
-$body-color: $gds-gray-950; //font color
+$body-color: #2f2a6b; //font color
 $body-background-color: $gds-white; //body background
 $main-background-color: $gds-white; // content background
 $header-background-color: $gds-purple-900;
@@ -109,7 +111,7 @@ $link-color-nav-hover: $gds-gray-900;
 // Global nav
 $global-nav-link-level0: $link-color-nav;
 $global-nav-link-level1: $link-color-nav;
-$global-nav-link-level2: $gds-gray-700;
+$global-nav-link-level2: $gds-gray-800;
 $global-nav-link-shadow: $gds-gray-200;
 
 // Table of contents
