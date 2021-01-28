@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     render(createElement) {
       return createElement(NavigationToggle, {
         props: {
-          targetSelector: '.nav-wrapper',
+          targetSelector: ['.nav-wrapper', '.main'],
         },
       });
     },

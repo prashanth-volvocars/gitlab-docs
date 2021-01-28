@@ -36,12 +36,15 @@
   function toggleSidebar() {
     const mediaQuery = window.matchMedia('(max-width: 1099px)');
     const navWrapper = document.querySelector('.nav-wrapper');
+    const main = document.querySelector('.main');
 
     if (mediaQuery.matches) {
       navWrapper.classList.remove('active');
+      main.classList.remove('active');
       return;
     }
 
     navWrapper.classList.add('active');
+    main.classList.add('active');
   }
 })();

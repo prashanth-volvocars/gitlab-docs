@@ -34,7 +34,10 @@
           </div>
           <div class="row">
             <div class="col">
+              <div class="mt-5 mb-4">
+              <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a>
               <%= render '/breadcrumbs.*' %>
+              </div>
             </div>
           </div>
           <div class="row d-lg-none">
@@ -107,6 +110,7 @@
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
     <% end %>
+    <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/tables.*'].path %>"></script>
