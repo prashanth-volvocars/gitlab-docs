@@ -7,6 +7,7 @@ const vue = require('rollup-plugin-vue');
 const babel = require('rollup-plugin-babel');
 const json = require('@rollup/plugin-json');
 const glob = require('glob');
+const svg = require('rollup-plugin-svg');
 
 function mapDirectory(file) {
   return file.replace('content/', 'public/');
@@ -22,12 +23,13 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
   plugins: [
     nodeResolve({ browser: true, preferBuiltins: true }),
     commonjs(),
+    vue(),
+    svg(),
     nodePolyfills(),
     babel({
       exclude: 'node_modules/**',
     }),
     json(),
-    vue(),
     importResolver({
       alias: {
         vue: './node_modules/vue/dist/vue.esm.browser.min.js',

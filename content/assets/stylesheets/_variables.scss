@@ -31,7 +31,7 @@ $page-header-height: 40px;
 $banner-height: 31px;
 
 // Width
-$sidebar-width: 16.666667%;
+$sidebar-width: 220px;
 $toc-width: 320px;
 $page-content-width: 980px;
 
@@ -93,6 +93,7 @@ $gds-indigo-800: #393982;
 
 // Base colors
 $body-color: $gds-gray-950; //font color
+$bg-overlay-color: rgba(0, 0, 0, .3); // body overlay
 $body-background-color: $gds-white; //body background
 $main-background-color: $gds-white; // content background
 $header-background-color: $gds-purple-900;

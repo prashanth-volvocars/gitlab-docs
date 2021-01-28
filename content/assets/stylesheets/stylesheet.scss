@@ -1,11 +1,13 @@
 ---
-version: 91
+version: 92
 ---
 
 @import "variables";
 @import "utilities";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -16,26 +18,24 @@ body {
   font-family: $sans-font-family;
   font-size: $body-font-size;
   color: $body-color;
-
   >.wrapper {
     min-height: 100vh;
-
     @media(max-width: $md-width) {
       flex-direction: column-reverse;
       background-color: $white;
     }
-
     // adds extra padding to the side-nav and main content if a banner is displayed.
-    &.show-banner .nav-wrapper, &.show-banner .main {
+    &.show-banner .nav-wrapper,
+    &.show-banner .main {
       padding-top: calc(#{$page-header-height} + #{$banner-height});
     }
   }
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: $link-color;
-
   &:hover {
     color: $link-color-hover;
     text-decoration: underline;
@@ -55,19 +55,15 @@ table {
   margin: 15px auto;
   word-wrap: break-word;
   clear: both;
-
   thead {
     background: $thead-background-color;
   }
-
   tbody {
     border-top: 3px solid $gds-gray-200;
-
     &:first-child {
       border-top: 0;
     }
-
-    tr > td {
+    tr>td {
       max-width: 100%;
       min-width: 100px;
     }
@@ -76,37 +72,34 @@ table {
     }
   }
 
-  td, th {
+  td,
+  th {
     text-align: left;
     padding: 8px;
     border: 1px solid $table-border-color;
     font-size: 14px;
-
     .badge-small {
       &:hover::after {
         padding: 5px;
       }
     }
   }
-
   @media all and (max-width: $sm-width) {
     display: block;
   }
-
   &.borderless-table {
     border: 0;
-
-    tr, td, th {
+    tr,
+    td,
+    th {
       border: 0;
     }
   }
-
   &.center {
     td {
       text-align: center;
     }
   }
-
   &.fixed-table {
     table-layout: fixed; // use this for columns with the same width
   }
@@ -120,22 +113,20 @@ blockquote {
   margin: 20px 0;
   padding: 10px 20px;
   font-size: $body-font-size;
-
   .highlight {
     background-color: $white;
   }
-
   // Override bootstrap
-  ol:last-child, p:last-child, ul:last-child {
+  ol:last-child,
+  p:last-child,
+  ul:last-child {
     margin: inherit;
   }
-
 }
 
 pre {
   background-color: $pre-background-color;
   position: relative;
-
   code {
     color: $code-color;
     background-color: $code-background-color;
@@ -143,7 +134,6 @@ pre {
     word-break: normal;
     white-space: pre;
   }
-
   .clip-btn {
     display: inline-block;
     padding: 10px 10px 10px 13px;
@@ -155,18 +145,15 @@ pre {
     background-color: $pre-code-color;
     border: 0;
     outline: 0;
-
     svg {
       opacity: .5;
       transition: opacity .3s ease-in;
       pointer-events: none;
     }
-
     @media all and (max-width: $sm-width) {
       display: none;
     }
   }
-
   &:hover {
     .clip-btn {
       svg {
@@ -182,16 +169,19 @@ pre {
   }
 }
 
-code, code span {
+code,
+code span {
   font-family: $mono-font-family;
 }
 
-p code, li code, table code {
+p code,
+li code,
+table code {
   color: $code-color;
   background-color: $code-background-color;
 }
 
-a > code {
+a>code {
   color: $link-code-color;
 }
 
@@ -202,15 +192,17 @@ hr {
 }
 
 // Make code in headers match the font size of the given header.
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.4;
   padding-bottom: 5px;
-
   code {
     color: $code-color;
     background-color: $code-background-color;
   }
-
   @media all and (min-width: $sm-width) {
     .anchor {
       opacity: 0;
@@ -220,7 +212,6 @@ h2, h3, h4, h5, h6 {
       margin-top: 8px;
       height: 22px;
     }
-
     &:hover .anchor {
       opacity: 1;
     }
@@ -229,7 +220,6 @@ h2, h3, h4, h5, h6 {
 
 // base fonts
 // p font size = $body-font-size: 15px;
-
 h1 {
   font-size: 34px;
   font-weight: 700;
@@ -237,7 +227,6 @@ h1 {
   padding-bottom: 10px;
   margin-top: $h-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 26px;
   }
@@ -248,7 +237,6 @@ h2 {
   font-weight: 700;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 24px;
   }
@@ -259,7 +247,6 @@ h3 {
   font-weight: 700;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 22px;
   }
@@ -270,7 +257,6 @@ h4 {
   font-weight: 700;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 20px;
   }
@@ -281,7 +267,6 @@ h5 {
   font-weight: 600;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 18px;
   }
@@ -292,7 +277,6 @@ h6 {
   font-weight: 600;
   margin-top: $h2-margin-top;
   margin-bottom: $h-margin-bottom;
-
   @media (max-width: $sm-width) {
     font-size: 16px;
   }
@@ -302,13 +286,11 @@ h6 {
   padding: $page-header-height 5%;
   background: $main-background-color;
   z-index: 1;
-
   &:not(.has-toc) {
-    > .doc-nav {
+    >.doc-nav {
       display: none;
     }
   }
-
   .edit-on {
     text-align: center;
     border-top: 1px solid $hr-border-color;
@@ -330,9 +312,9 @@ h6 {
       }
     }
   }
-
   // external link and footer social links
-  [href^="http://"], [href^="https://"] {
+  [href^="http://"],
+  [href^="https://"] {
     &:not([href*="gitlab.com"]):not(.gitlab-social) {
       &::after {
         content: "\f08e";
@@ -345,16 +327,13 @@ h6 {
       }
     }
   }
-
   p {
     margin: 0 0 1em;
   }
-
   ul {
     margin-top: -8px 0;
     margin-bottom: 0 0;
   }
-
   ol {
     margin-top: -8px 0;
     margin-bottom: 0 0;
@@ -365,87 +344,78 @@ h6 {
       }
     }
   }
-
   li {
-    line-height: 1.6em;
-    padding-bottom: 8px;
-
-    ul li:first-of-type {
-      padding-top: 12px;
-    }
-
-    ol li:first-of-type {
-      padding-top: 12px;
-    }
-    
-    > ul, > ol {
-      margin-top: 0;
-      margin-bottom: 0;
+    &:not(.gl-breadcrumb-item) {
+      line-height: 1.6em;
+      padding-bottom: 8px;
+      ul li:first-of-type {
+        padding-top: 12px;
+      }
+      ol li:first-of-type {
+        padding-top: 12px;
+      }
+      >ul,
+      >ol {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
-
   img {
-    max-width: calc(100% - 10px);
-    max-height: 100vh;
-    border: 1px solid $gds-gray-200;
-    margin-top: 26px;
-    margin-bottom: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
+    &:not(.gl-breadcrumb-avatar-tile) {
+      max-width: calc(100% - 10px);
+      max-height: 100vh;
+      border: 1px solid $gds-gray-200;
+      margin-top: 26px;
+      margin-bottom: 30px;
+      margin-right: auto;
+      margin-left: auto;
+      display: block;
+    }
   }
-
-  .breadcrumbs {
-    // Italics removed from breadcrumbs until the following Chromium issue is resolved.
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=1018581&q=BlinkMacSystemFont&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
-    // font-style: italic;
-  }
-
   // Override bootstrap defaults
-  .nav-tabs > li > a {
+  .nav-tabs>li>a {
     padding: 10px 15px;
     display: block;
     margin-right: 2px;
     border-radius: 4px 4px 0 0;
     text-decoration: none;
-
     &.active {
       background-color: $gds-white;
     }
   }
-
   .nav-link {
     padding: 0;
   }
-
   code {
     word-break: normal;
     padding: 2px 4px;
     line-height: 22px;
   }
-
   .input-group-text {
     background-color: transparent;
     display: flex;
   }
-
   .footer {
     margin-left: -40px;
     margin-right: -40px;
     max-width: unset;
-
     .row {
       padding-left: 20px;
       padding-right: 40px;
     }
-
     img {
       box-shadow: none;
     }
   }
-
   @media (max-width: $md-width) {
-    padding: 0 60px;
+    padding: 0 10px;
+
+    &.active {
+      background-color: $bg-overlay-color;
+      overflow: hidden;
+      position: fixed;
+    }
   }
 }
 
@@ -481,29 +451,23 @@ h6 {
   background-color: $gds-white;
   display: flex;
   flex-direction: column;
-  position: sticky;
-  padding-top: 70px;
+  position: fixed;
   width: 50px;
-  height: 100vh;
+  height: 100%;
   transition: all .3s;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
   top: 0;
-
   &.active {
-    width: 100%;
-
+    width: $sidebar-width;
     .nav-toggle {
-
       .arrow {
         left: 19px;
         transform: rotate(0);
-
         &:nth-child(2) {
           left: 25px;
         }
       }
-
       .label {
         display: block;
         pointer-events: none;
@@ -513,33 +477,27 @@ h6 {
         flex-shrink: 0;
       }
     }
-
     .global-nav {
       visibility: visible;
     }
   }
-
   .nav-toggle {
-    display: flex;
-    align-items: center;
     width: 100%;
     height: 50px;
     flex-shrink: 0;
     border-radius: 0;
-
     &:hover {
       background-color: $gds-gray-200;
     }
-
     &:focus {
       box-shadow: none;
     }
-
     .label {
       display: none;
     }
-
-    .arrow, .arrow::before, .arrow::after {
+    .arrow,
+    .arrow::before,
+    .arrow::after {
       cursor: pointer;
       pointer-events: none;
       border-radius: 1px;
@@ -550,35 +508,40 @@ h6 {
       display: block;
       content: "";
     }
-
     .arrow {
       transform: rotate(180deg);
       background-color: transparent;
-
       &:nth-child(2) {
         left: 19px;
       }
     }
-
     .arrow::before {
       top: 0;
       transform: rotate(45deg) translateY(4px);
     }
-
     .arrow::after {
       top: 0;
       bottom: -7px;
       transform: rotate(-45deg) translateY(-4px);
     }
   }
-
   @media(max-width: $md-width) {
     position: fixed;
     top: 0;
+    width: 0;
+    
+    .nav-toggle {
+      display: none;
+    }
 
     &.active {
       position: fixed;
       top: 0;
+      width: $sidebar-width;
+
+      .nav-toggle {
+        display: block;
+      }
     }
   }
 }
@@ -590,18 +553,15 @@ h6 {
   left: 0;
   overflow: auto;
   visibility: hidden;
-
   .global-nav-cat.active {
     a {
       color: $gds-indigo-800;
     }
   }
-
   .global-nav-content {
-    margin-top: 60px;
+    margin-top: 120px;
     margin-bottom: 70px;
   }
-
   a {
     display: flex;
     align-items: center;
@@ -609,27 +569,23 @@ h6 {
     padding-top: 7px;
     padding-bottom: 7px;
     padding-right: 7px;
-
     &.has-collapse.active {
       box-shadow: 0 0 0 0 inset;
     }
-
     &.active {
       background-color: $gds-gray-100;
       font-weight: 600;
       box-shadow: -4px 0 0 0 inset;
       color: $gds-indigo-800;
-
       &:hover {
         color: $gds-indigo-800;
       }
-
-      &.level-1, &.level-2 {
+      &.level-1,
+      &.level-2 {
         background-color: $gds-gray-200;
       }
     }
   }
-
   .collapse-toggle {
     cursor: pointer;
     float: right;
@@ -639,7 +595,6 @@ h6 {
     padding-right: 10px;
     align-items: center;
     justify-content: center;
-
     &::after {
       content: "";
       border: solid $gds-gray-700;
@@ -649,13 +604,11 @@ h6 {
       width: 7px;
       height: 7px;
     }
-
     &.collapsed {
       &::after {
         transform: rotate(-50deg);
       }
     }
-
     &.active {
       background-color: $gds-gray-200;
       box-shadow: -4px 0 0 0 inset;
@@ -673,9 +626,9 @@ h6 {
 }
 
 // scss-lint:disable QualifyingElement
-a.global-nav-link, .nav-link {
+a.global-nav-link,
+.nav-link {
   text-decoration: none;
-
   &:hover {
     color: $link-color-nav-hover;
   }
@@ -696,13 +649,12 @@ a.global-nav-link {
 .nav-link:hover {
   background-color: $link-color-bg-active;
 }
-// scss-lint:enable QualifyingElement
 
+// scss-lint:enable QualifyingElement
 .global-nav-block-top {
   font-weight: 600;
   margin-bottom: 3px;
   margin-top: 3px;
-
   a {
     text-decoration: none;
     text-shadow: 3px 3px 5px $link-color-bg-active;
@@ -713,7 +665,6 @@ a.global-nav-link {
 .level-0 {
   color: $global-nav-link-level0;
   padding-left: 18px;
-
   &:visited {
     color: $global-nav-link-level0;
   }
@@ -722,7 +673,6 @@ a.global-nav-link {
 .level-1 {
   color: $global-nav-link-level1;
   padding-left: 35px;
-
   &:visited {
     color: $global-nav-link-level1;
   }
@@ -731,7 +681,6 @@ a.global-nav-link {
 .level-2 {
   color: $global-nav-link-level2;
   padding-left: 53px;
-
   &:visited {
     color: $global-nav-link-level2;
   }
@@ -740,8 +689,8 @@ a.global-nav-link {
 .global-nav-badges {
   fill: $gds-gray-700;
 }
-//end of global-nav
 
+//end of global-nav
 .last-updated {
   color: $color-light-gray;
   font-size: 13px;
@@ -755,38 +704,77 @@ a.global-nav-link {
   }
 }
 
-// Styles for breadcrumbs navigation
-.breadcrumbs {
-  overflow-x: auto;
-  padding-top: 20px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  font-size: 14px;
+@media (min-width: $md-width) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
 
-  .breadcrumb {
-    text-overflow: ellipsis;
+.gl-breadcrumbs {
+  border-width: 0;
+  box-shadow: inset 0 -1px 0 0 $help-gray-200;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.gl-breadcrumb-list {
+  margin-top: .1rem;
+  background-color: transparent;
+  padding: 0;
+  align-items: center;
+  line-height: 1rem;
+  margin: 0;
+}
+
+@media (max-width: $xs-width) {
+  .gl-breadcrumb-list {
+    flex-wrap: wrap;
+  }
+}
+
+.gl-breadcrumb-separator>svg {
+  margin: auto .5rem;
+  width: .5rem;
+  color: $gds-gray-1000;
+  fill: currentColor;
+}
+
+.gl-breadcrumb-avatar-tile {
+  margin-right: .25rem;
+  margin-top: .1rem;
+  border: 1px solid $help-gray-200;
+  border-radius: 50%;
+}
+
+@media (max-width: $md-width) {
+  .gl-breadcrumb-avatar-tile {
+    margin-left: 2rem;
+  }
+}
+
+.gl-breadcrumb-item {
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
+.gl-breadcrumb-item>a {
+  color: $gds-gray-1000;
+}
+
+@media (max-width:575.98px) {
+  .gl-breadcrumb-item>a {
     display: inline-block;
-    overflow-x: hidden;
-    // Override bootstrap
-    padding: 0;
-    margin-bottom: 0;
-    background-color: transparent;
-    border-radius: 0;
-
-    &:not(:last-child)::after {
-      content: "›\00a0";
-    }
-
-    &::after {
-      padding: 0 4px 0 6px;
-    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    max-width: 8rem;
   }
+}
 
-  @media(max-width: $md-width) {
-    padding: 10px 0;
-    margin-top: 60px;
-  }
+.gl-breadcrumb-item:last-child {
+  color: $gds-gray-950;
+  font-weight: 600;
 }
 
 // Permalinks on header elements.
@@ -797,7 +785,6 @@ a.global-nav-link {
   max-height: 25px;
   vertical-align: middle;
   background: url("<%= @items['/assets/images/icon_anchor.svg'].path %>") center center / contain no-repeat;
-
   &:hover {
     text-decoration: none;
   }
@@ -807,16 +794,13 @@ a.global-nav-link {
 .introduced-in {
   font-size: $introduced-in-font-size;
   color: $gds-black;
-
   .introduced-in-content {
     margin-top: 8px;
-
     ul {
       margin: 0;
       padding-left: 26px;
     }
   }
-
   .collapsing {
     transition: none;
   }
@@ -831,13 +815,12 @@ a.global-nav-link {
   margin-bottom: 2px;
   width: 22px;
   height: 16px;
-
   &:hover {
     background-color: $text-expander-hover-color;
   }
 }
-// End of version history ("Introduced in") notes
 
+// End of version history ("Introduced in") notes
 // Articles layout
 .article-metadata {
   color: $article-metadata;
@@ -848,7 +831,7 @@ a.global-nav-link {
 }
 
 .article-content {
-  > h1:first-of-type {
+  >h1:first-of-type {
     display: none;
   }
 }
@@ -861,7 +844,6 @@ a.global-nav-link {
   padding-top: 0;
   margin: 20px 0;
   box-shadow: 5px 5px 10px $gds-gray-300;
-
   iframe,
   video {
     position: absolute;
@@ -883,13 +865,11 @@ a.global-nav-link {
   border: 0;
   border-radius: 0;
   opacity: .9;
-
   code {
     background-color: $alert-code-background-color;
     word-break: break-word;
     color: $code-color;
   }
-
   i {
     padding-right: 10px;
   }
@@ -931,26 +911,24 @@ a.global-nav-link {
   border: solid 1px $alert-gray-border;
   border-radius: 5px;
 }
-// End of Pajamas alerts
 
+// End of Pajamas alerts
 // Start of banner alert box
 // https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
 .alert-banner {
   background-color: $help-indigo-50;
   border-color: rgba($help-indigo-50, .3);
   margin-top: 20px;
-
   i {
     margin-left: 10px;
     margin-right: 10px;
   }
-
   @media (max-width: $md-width) {
     margin-top: 60px;
   }
 }
-// End of banner alert box
 
+// End of banner alert box
 .header {
   z-index: 10;
   background: $header-background-color;
@@ -962,51 +940,41 @@ a.global-nav-link {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
-
   .logo-container {
     margin-right: 32px;
-
     @media (max-width: $md-width) {
       margin-right: 16px;
     }
   }
-
   @media all and (max-width: $md-width) {
     height: auto;
   }
-
   img {
     height: 24px;
     margin-right: 10px;
   }
-
   p {
     font-size: 16px;
     color: $white;
     display: inline-block;
     margin: 0 0 0 4px;
   }
-
   .header-company-name {
     @media (max-width: $md-width) {
       display: none;
     }
   }
-
   ul {
     text-align: right;
     list-style-type: none;
-
     @media all and (max-width: $md-width) {
       display: none;
     }
   }
-
   .nav-item {
     a {
       color: $header-font-color;
     }
-
     .btn-nav-cta {
       background-color: $button-cta-background;
       color: $gds-white;
@@ -1016,23 +984,19 @@ a.global-nav-link {
       padding-top: 1px;
       padding-bottom: 1px;
     }
-
     .btn-nav-cta:hover {
       background-color: $button-cta-background-hover;
     }
   }
-
   @media all and (max-width: $md-width) {
     &.active {
       display: block;
-
       .nav {
         display: block;
         text-align: left;
         padding: 0;
         width: 100%;
       }
-
       .nav-item {
         margin: 10px;
       }
@@ -1041,22 +1005,18 @@ a.global-nav-link {
   &:not(.active) {
     height: $page-header-height;
   }
-
   .dropdown {
     display: flex;
     align-items: center;
   }
-
   .dropdown-menu {
     li {
       display: block;
     }
   }
-
   .choose-version {
     font-size: 14px;
   }
-
   .btn-versions {
     display: flex;
     align-items: center;
@@ -1066,55 +1026,45 @@ a.global-nav-link {
     color: $header-font-color;
     margin-left: 4px;
     border: 0;
-
     &:active {
       box-shadow: none;
     }
   }
-
   .versions-menu {
     padding: 0;
-
     li {
       display: block;
       margin: 5px 0;
       text-align: left;
-
       a {
         color: $versions-link-color;
         padding: 3px 20px;
         font-size: 14px;
         display: block;
         line-height: 1.4;
-
         &:hover {
           color: $versions-link-color-hover;
           background-color: $versions-link-color-bg-hover;
           text-decoration: none;
         }
-
         &.active {
           background-color: $versions-active-bg-color;
           font-weight: 600;
           color: $link-color-nav;
         }
       }
-
       &.divider {
         margin: 0;
       }
-
       i {
         padding-left: 5px;
         opacity: .5;
-
         &:hover {
           opacity: 1;
         }
       }
     }
   }
-
   input {
     box-sizing: content-box;
     border-radius: $border-radius;
@@ -1125,33 +1075,26 @@ a.global-nav-link {
     color: $search-input-font-color;
     background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 140px 9px / 14px no-repeat;
     outline: 0;
-
     @media(min-width: $lg-width) {
       width: 355px;
       background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 355px 9px / 14px no-repeat;
     }
   }
-
   input::placeholder {
     color: $search-placeholder-font-color;
   }
-
   input:focus {
     border: 0;
   }
-
   input:visited {
     outline: 0;
     border: 0;
   }
-
   .nav-container {
     margin: auto 0;
   }
-
   .nav-toggle {
     display: none;
-
     @media all and (max-width: $md-width) {
       display: flex;
       height: $page-header-height;
@@ -1164,27 +1107,24 @@ a.global-nav-link {
       color: $link-color-nav;
     }
   }
-
   .nav {
-    > li {
+    >li {
       margin: 0;
       padding-right: 10px;
-      
       @media(min-width: $lg-width) {
         padding-right: 25px;
       }
     }
-
     // Override bootstrap
-    > a {
+    >a {
       text-decoration: none;
       font-size: 14px;
       font-weight: bold;
       color: $header-font-color;
     }
-  
     // Override bootstrap
-    > a:focus, > a:hover {
+    >a:focus,
+    >a:hover {
       text-decoration: none;
       background-color: transparent;
       opacity: .8;
@@ -1192,24 +1132,20 @@ a.global-nav-link {
   }
 }
 
-
 // Home page styles
 .landing {
   p {
     color: $help-gray-900;
   }
-
   .landing-header-title {
     line-height: 52px;
     font-size: 45px;
   }
-
   .landing-header-subtitle {
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 0;
   }
-
   .popular-topics-title {
     color: $gds-indigo-700;
     font-size: larger;
@@ -1217,9 +1153,9 @@ a.global-nav-link {
       fill: $help-indigo-500;
     }
   }
-
   .header {
-    a:hover, a:visited:hover {
+    a:hover,
+    a:visited:hover {
       &:not(.dropdown-menu a) {
         color: $header-font-color;
       }
@@ -1228,16 +1164,13 @@ a.global-nav-link {
       color: $white;
     }
   }
-
   .container-fluid {
     padding-top: 40px;
     background-color: $white;
   }
-
   .content {
     max-width: $page-content-width;
   }
-
   .sidebar-left {
     @include sidebar-fixed;
     border-right: 1px solid $help-gray-100;
@@ -1247,62 +1180,54 @@ a.global-nav-link {
       padding-top: $sidebar-padding;
       padding-bottom: $sidebar-padding;
       padding-right: $sidebar-padding;
-
       &:hover {
         background-color: $landing-sidebar-gray-light;
       }
-
       .gl-icon {
         fill: $landing-sidebar-gray-500;
       }
-
       &.active {
         background-color: $landing-sidebar-gray-light;
         font-weight: 600;
         box-shadow: inset -4px 0 0 $landing-gl-indigo;
-
         .gl-icon {
           fill: $help-indigo-500;
         }
-
         &:hover {
           color: $gds-indigo-800;
         }
       }
     }
   }
-
   .card {
     border-color: $help-gray-100;
     font-size: 1.1em;
-
     &:hover {
       background-color: $landing-sidebar-gray-light;
     }
-
     .card-title {
       color: $gds-indigo-700;
       font-size: larger;
     }
-
     .product-img {
       width: 55px;
     }
-
   }
-
   .footer {
     .social-icons {
       padding-right: 25px;
     }
   }
-
 }
 
 // End of landing wrapper
-
 // https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   &[id]::before {
     display: block;
     content: " ";
@@ -1349,7 +1274,6 @@ h1, h2, h3, h4, h5, h6 {
       background: $badge-saas;
     }
   }
-
   &:hover {
     .badge-tier,
     .badge-self-managed,
@@ -1361,20 +1285,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   .badge-display {
     font-size: 11px;
   }
 }
 
-h5, h6 {
+h5,
+h6 {
   .badge-display {
     font-size: 10px;
     padding: 2px 4px;
   }
 }
 
-p, li {
+p,
+li {
   .badge-display {
     font-size: 9px;
     padding: 1px;
@@ -1390,7 +1319,12 @@ p {
 
 // scss-lint:disable MergeableSelector
 // skipping scss-lint rule: keeping all the badges styles together
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   .badges-drop {
     float: none;
   }
@@ -1410,8 +1344,8 @@ li {
     margin-right: 3px;
   }
 }
-// scss-lint:enable MergeableSelector
 
+// scss-lint:enable MergeableSelector
 .badge-display {
   text-transform: uppercase;
   text-align: center;
@@ -1443,10 +1377,8 @@ li {
   color: $badge-self-managed;
   opacity: .6;
   transition: opacity .3s;
-
   &:hover {
     opacity: 1;
-
     &::after {
       content: attr(data-title);
       text-transform: uppercase;
@@ -1472,13 +1404,6 @@ li {
 }
 // scss-lint:enable ImportantRule
 
-.doc-nav,
-.breadcrumb {
-  .badge-trigger {
-    display: none;
-  }
-}
-
 //
 // Algolia search override
 // https://community.algolia.com/docsearch/styling.html
@@ -1491,8 +1416,8 @@ li {
     overflow-x: hidden;
   }
 }
-// Algolia search override end
 
+// Algolia search override end
 //in-page styles
 .youtube {
   color: $youtube;
@@ -1504,7 +1429,6 @@ li {
 
 .half-width {
   width: 50%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
@@ -1512,7 +1436,6 @@ li {
 
 .width-60 {
   width: 60%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
@@ -1520,7 +1443,6 @@ li {
 
 .width-70 {
   width: 70%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
@@ -1528,7 +1450,6 @@ li {
 
 .width-75 {
   width: 75%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
@@ -1536,7 +1457,6 @@ li {
 
 .width-80 {
   width: 80%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
@@ -1544,7 +1464,6 @@ li {
 
 .width-90 {
   width: 90%;
-
   @media all and (max-width: $sm-width) {
     width: 100%;
   }
