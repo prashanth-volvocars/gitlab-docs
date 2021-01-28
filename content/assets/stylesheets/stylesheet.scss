@@ -1,5 +1,5 @@
 ---
-version: 92
+version: 93
 ---
 
 @import "variables";
@@ -730,13 +730,6 @@ a.global-nav-link {
   .gl-breadcrumb-list {
     flex-wrap: wrap;
   }
-}
-
-.gl-breadcrumb-separator>svg {
-  margin: auto .5rem;
-  width: .5rem;
-  color: $gds-gray-1000;
-  fill: currentColor;
 }
 
 .gl-breadcrumb-avatar-tile {
