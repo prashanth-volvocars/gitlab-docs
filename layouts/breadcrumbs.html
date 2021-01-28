@@ -1,7 +1,7 @@
 <% if @config[:breadcrumbs] %>
   <% ancestor_array = ancestor_path_array(@item) unless ancestor_path_array(@item).empty? %>
     <% if ancestor_array %>
-    <div class="gl-breadcrumbs d-flex w-100 mt-4">
+    <div class="gl-breadcrumbs d-flex w-100">
       <img src="https://assets.gitlab-static.net/uploads/-/system/group/avatar/9970/logo-extra-whitespace.png?width=15" class="gl-breadcrumb-avatar-tile" width="15" height="15">
       <ol class="breadcrumb gl-breadcrumb-list ml-1">
         <% ancestor_array.reverse_each do |item| %>
@@ -12,7 +12,7 @@
       </ol>
     </div>
     <% else %>
-    <div class="gl-breadcrumbs d-flex w-100 mt-4">
+    <div class="gl-breadcrumbs d-flex w-100">
       <img src="https://assets.gitlab-static.net/uploads/-/system/group/avatar/9970/logo-extra-whitespace.png?width=15" class="gl-breadcrumb-avatar-tile" width="15" height="15">
       <ol class="breadcrumb gl-breadcrumb-list ml-1">
         <li class="gl-breadcrumb-item"><%= @item.key?(:title) ? "#{@item[:title]}" : "Current page" %></li>
