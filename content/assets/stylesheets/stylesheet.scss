@@ -1,5 +1,5 @@
 ---
-version: 94
+version: 95
 ---
 
 @import "variables";
@@ -712,8 +712,14 @@ a.global-nav-link {
 
 .gl-breadcrumbs {
   border-width: 0;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
+}
+
+@media (min-width: $md-width) {
+  .gl-breadcrumbs {
+  padding-top: 2rem;
+  }
 }
 
 .gl-breadcrumb-list {
