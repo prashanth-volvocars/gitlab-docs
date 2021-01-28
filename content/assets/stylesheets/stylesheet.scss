@@ -1,5 +1,5 @@
 ---
-version: 94
+version: 96
 ---
 
 @import "variables";
@@ -741,6 +741,7 @@ a.global-nav-link {
 .gl-breadcrumb-avatar-tile {
   margin-right: .25rem;
   margin-top: .1rem;
+  margin-bottom: .2rem;
   border: 1px solid $help-gray-200;
   border-radius: 50%;
 }
