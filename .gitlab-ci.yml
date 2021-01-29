@@ -2,4 +2,5 @@ test-job:
   rules:
     - if: $CI
   script:
+    - export
     - echo "Did it work?"
