@@ -1,5 +1,5 @@
 ---
-version: 94
+version: 95
 ---
 
 @import "variables";
@@ -712,8 +712,14 @@ a.global-nav-link {
 
 .gl-breadcrumbs {
   border-width: 0;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
+}
+
+@media (max-width: $md-width) {
+  .gl-breadcrumbs {
+    padding-top: 1rem;
+  }
 }
 
 .gl-breadcrumb-list {
@@ -731,6 +737,10 @@ a.global-nav-link {
   }
 }
 
+.gl-breadcrumb-separator {
+  margin-top: -.2rem;
+}
+
 .gl-breadcrumb-separator>svg {
   margin: auto .5rem;
   width: .5rem;
@@ -741,6 +751,7 @@ a.global-nav-link {
 .gl-breadcrumb-avatar-tile {
   margin-right: .25rem;
   margin-top: .1rem;
+  margin-bottom: .2rem;
   border: 1px solid $help-gray-200;
   border-radius: 50%;
 }
@@ -941,11 +952,11 @@ a.global-nav-link {
   white-space: nowrap;
   .logo-container {
     margin-right: 32px;
-    @media (max-width: $md-width) {
+    @media (max-width: $lg-width) {
       margin-right: 16px;
     }
   }
-  @media all and (max-width: $md-width) {
+  @media all and (max-width: $lg-width) {
     height: auto;
   }
   img {
@@ -959,14 +970,14 @@ a.global-nav-link {
     margin: 0 0 0 4px;
   }
   .header-company-name {
-    @media (max-width: $md-width) {
+    @media (max-width: $lg-width) {
       display: none;
     }
   }
   ul {
     text-align: right;
     list-style-type: none;
-    @media all and (max-width: $md-width) {
+    @media all and (max-width: $lg-width) {
       display: none;
     }
   }
@@ -987,7 +998,7 @@ a.global-nav-link {
       background-color: $button-cta-background-hover;
     }
   }
-  @media all and (max-width: $md-width) {
+  @media all and (max-width: $lg-width) {
     &.active {
       display: block;
       .nav {
@@ -1094,7 +1105,7 @@ a.global-nav-link {
   }
   .nav-toggle {
     display: none;
-    @media all and (max-width: $md-width) {
+    @media all and (max-width: $lg-width) {
       display: flex;
       height: $page-header-height;
       align-items: center;
