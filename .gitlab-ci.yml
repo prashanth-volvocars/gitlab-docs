@@ -1,5 +1,5 @@
 test-job:
   rules:
-    if: $CI
+    - if: $CI
   script:
     - echo "Did it work?"
