@@ -1,9 +1,5 @@
-workflow:
-  rules:
-    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
-      when: never
-    - when: always
-
 test-job:
+  rules:
+    if: $CI
   script:
     - echo "Did it work?"
