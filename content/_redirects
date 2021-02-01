@@ -13,6 +13,9 @@
 /ee/administration/custom_hooks.html /ee/administration/server_hooks.html 302
 /ee/administration/dependency_proxy.html /ee/administration/packages/dependency_proxy.html 302
 /ee/administration/external_database.html /ee/administration/postgresql/external.html 302
+/ee/administration/geo/disaster_recovery/promotion_runbook.html /ee/administration/geo/disaster_recovery/runbooks/planned_failover_single_node.html 302
+/ee/administration/geo/replication/database /ee/administration/geo/setup/database.html 302
+/ee/administration/geo/replication/external_database /ee/administration/geo/setup/external_database.html 302
 /ee/administration/geo/replication/high_availability.html /ee/administration/geo/replication/multiple_servers.html 302
 /ee/administration/geo/replication/index.html /ee/administration/geo/index.html 302
 /ee/administration/geo/replication/ /ee/administration/geo/index.html 302
