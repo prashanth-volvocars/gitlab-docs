@@ -64,7 +64,7 @@ sections:
         category_url: 'settings/logs.html'
       - category_title: NGINX
         category_url: 'settings/nginx.html'
-      - category_title: Praefect
+      - category_title: Gitaly Cluster
         category_url: 'settings/praefect.html'
       - category_title: Prometheus
         category_url: 'settings/prometheus.html'
