@@ -966,10 +966,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@gitlab/eslint-plugin@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-7.0.0.tgz#3c46d88dde2f7aa0be2a7df5af8e593006becea9"
-  integrity sha512-XqISaNqQwJ12jTanESvAFNVAniqFN/UFKj068ESiNumlsxnQA36V945wZ6LnwI7WgSCGQCUfHi9MEgyjUvuvdg==
+"@gitlab/eslint-plugin@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-7.0.2.tgz#cb2ca7a54ed1f8c274829e050de720dbd0fc36d4"
+  integrity sha512-ypFd4b5PL6mPFQHL9APU/Sq8KBa7GbPGgwnQgGEce9iioiriXFazBsoNgyBIHapCS0DIkYq+kC+pdIB+5s+ypA==
   dependencies:
     babel-eslint "^10.0.3"
     eslint-config-airbnb-base "^14.0.0"
@@ -979,18 +979,18 @@
     eslint-plugin-import "^2.20.1"
     eslint-plugin-jest "^23.8.2"
     eslint-plugin-promise "^4.2.1"
-    eslint-plugin-vue "^7.4.1"
+    eslint-plugin-vue "^7.5.0"
     vue-eslint-parser "^7.0.0"
 
-"@gitlab/svgs@^1.179.0":
-  version "1.179.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-1.179.0.tgz#c90032bf5aa611c53d1bfc0cdc0c23d74792b470"
-  integrity sha512-GspNQY1BuAn0VxvJnKA4jssLiqGstodHLxoc70y9ev3kiApMJzn6lHdiV+ecBZ/gD8Xo+8JeqyfxrToVbwuxtQ==
+"@gitlab/svgs@^1.180.0":
+  version "1.180.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-1.180.0.tgz#55dbdb867a4c5ab10341e43ecaca24509fc3261f"
+  integrity sha512-lFLhNOS98z6aOAui6PCH5JL1XLN2y4qxPI1U8GrxGIb8peiDjoOJr+VEA/V4a6lT48iyGHuzB4fNdrQCDMEC6w==
 
-"@gitlab/ui@^27.1.1":
-  version "27.1.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-27.1.1.tgz#6db50a2655381623bf3025c711afd6c4685b57b1"
-  integrity sha512-lDI2GeFJiS16k/0s6CQR5dCj/wvz4Uqc3ewPU6cj5nTdO1rS7mR300hodSgBgyr0JxAPZCTbV7axTVRZfTNcKA==
+"@gitlab/ui@^27.1.4":
+  version "27.1.4"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-27.1.4.tgz#9ae9002b8a8ca766f2e75b645435d3632fd1662a"
+  integrity sha512-yY3ewsTmk186Y5cAGOY4koJHLBAWMeIRH3ModfK/ZmHphBOF0v774M3XzBMIH+cClYdtuHA3xT0Unesm4BFP6g==
   dependencies:
     "@babel/standalone" "^7.0.0"
     "@gitlab/vue-toasted" "^1.3.0"
@@ -2791,7 +2791,7 @@ eslint-plugin-promise@^4.2.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
   integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
 
-eslint-plugin-vue@^7.4.1:
+eslint-plugin-vue@^7.5.0:
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-7.5.0.tgz#cc6d983eb22781fa2440a7573cf39af439bb5725"
   integrity sha512-QnMMTcyV8PLxBz7QQNAwISSEs6LYk2LJvGlxalXvpCtfKnqo7qcY0aZTIxPe8QOnHd7WCwiMZLOJzg6A03T0Gw==
@@ -2831,10 +2831,10 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
 
-eslint@^7.18.0:
-  version "7.18.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.18.0.tgz#7fdcd2f3715a41fe6295a16234bd69aed2c75e67"
-  integrity sha512-fbgTiE8BfUJZuBeq2Yi7J3RB3WGUQ9PNuNbmgi6jt9Iv8qrkxfy19Ds3OpL1Pm7zg3BtTVhvcUZbIRQ0wmSjAQ==
+eslint@^7.19.0:
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.19.0.tgz#6719621b196b5fad72e43387981314e5d0dc3f41"
+  integrity sha512-CGlMgJY56JZ9ZSYhJuhow61lMPPjUzWmChFya71Z/jilVos7mR/jPgaEfVGgMBY5DshbKdG8Ezb8FDCHcoMEMg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@eslint/eslintrc" "^0.3.0"
@@ -4127,11 +4127,6 @@ jest-snapshot@^26.6.2:
     natural-compare "^1.4.0"
     pretty-format "^26.6.2"
     semver "^7.3.2"
-
-jest-svg-transformer@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-svg-transformer/-/jest-svg-transformer-1.0.0.tgz#e38884ca4cd8b2295cdfa2a0b24667920c3a8a6d"
-  integrity sha1-44iEykzYsilc36KgskZnkgw6im0=
 
 jest-util@^26.6.2:
   version "26.6.2"
@@ -5680,10 +5675,10 @@ rollup-pluginutils@^2.8.1, rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.38.0:
-  version "2.38.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.38.0.tgz#57942d5a10826cb12ed1f19c261f774efa502d2d"
-  integrity sha512-ay9zDiNitZK/LNE/EM2+v5CZ7drkB2xyDljvb1fQJCGnq43ZWRkhxN145oV8GmoW1YNi4sA/1Jdkr2LfawJoXw==
+rollup@^2.38.2:
+  version "2.38.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.38.2.tgz#ac5feef9e3b5f1c4386a0578f3add52b8b66759f"
+  integrity sha512-3Sg65zfgqsnI2LUFsOmhJDvTWXwio+taySq/dsyvel8+GW+AxeW9V6YZG8BpVGQk/TS4uvGLARRH5T3ygDyyNQ==
   optionalDependencies:
     fsevents "~2.1.2"
 
