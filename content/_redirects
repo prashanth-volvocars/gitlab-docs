@@ -200,7 +200,7 @@
 /ee/monitoring/performance/influxdb_schema.html /ee/administration/monitoring/performance/prometheus.html 302
 /ee/monitoring/performance/introduction.html /ee/administration/monitoring/performance/index.html 302
 /ee/operations/incident_management/alert_details.html /ee/administration/operations/incident_management/alerts.html 302
-/ee/operations/incident_management/generic_alerts.html /ee/administration/operations/incident_management/alert_integrations.html 302
+/ee/operations/incident_management/generic_alerts.html /ee/administration/operations/incident_management/integrations.html 302
 /ee/operations/cleaning_up_redis_sessions.html /ee/administration/operations/cleaning_up_redis_sessions.html 302
 /ee/operations/moving_repositories.html /ee/administration/operations/moving_repositories.html 302
 /ee/operations/sidekiq_memory_killer.html /ee/administration/operations/sidekiq_memory_killer.html 302
@@ -278,7 +278,7 @@
 /ee/user/project/gpg_signed_commits/index.html /ee/user/project/repository/gpg_signed_commits/index.html 302
 /ee/user/project/gpg_signed_commits/ /ee/user/project/repository/gpg_signed_commits/index.html 302
 /ee/user/project/import/tfs.html /ee/user/project/import/tfvc.html 302
-/ee/user/project/integrations/generic_alerts.html /ee/operations/incident_management/generic_alerts.html 302
+/ee/user/project/integrations/generic_alerts.html /ee/operations/incident_management/integrations.html 302
 /ee/user/project/integrations/kubernetes.html /ee/user/project/clusters/index.html 302
 /ee/user/project/integrations/prometheus_library/metrics.html /ee/user/project/integrations/prometheus_library/index.html 302
 /ee/user/project/integrations/prometheus_units.html /ee/operations/metrics/dashboards/yaml_number_format.html 302
@@ -377,3 +377,4 @@
 /ee/topics/web_application_firewall/quick_start_guide.html /ee/user/project/clusters/protect/web_application_firewall/quick_start_guide.html 302
 /ee/user/project/clusters/securing.html /ee/user/project/clusters/protect/index.html 302
 /ee/operations/incident_management/alert_notifications.html /ee/operations/incident_management/paging.html 302
+/ee/operations/incident_management/alert_integrations.html /ee/administration/operations/incident_management/integrations.html 302
