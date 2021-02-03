@@ -113,7 +113,7 @@
   dependencies:
     "@babel/highlight" "^7.10.4"
 
-"@babel/compat-data@^7.12.5", "@babel/compat-data@^7.12.7", "@babel/compat-data@^7.8.0":
+"@babel/compat-data@^7.12.5", "@babel/compat-data@^7.12.7":
   version "7.12.7"
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.12.7.tgz#9329b4782a7d6bbd7eef57e11addf91ee3ef1e41"
   integrity sha512-YaxPMGs/XIWtYqrdEOZOCPsVWfEoriXopnsz3/i7apYPXQ3698UFhS6dVT1KN5qOsWmVgw/FOrmQgpRaZayGsw==
@@ -1257,14 +1257,13 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tnir/instantsearch.js@4.8.1-q":
-  version "4.8.1-q"
-  resolved "https://registry.yarnpkg.com/@tnir/instantsearch.js/-/instantsearch.js-4.8.1-q.tgz#811b6c607f5514b1ae70b926e8731bcefc538e75"
-  integrity sha512-U5qcA18P8ug0JC9dumoh7Wf8uLm7ZuBVkC027WHDdNgJDuhE0k155MolbPboWyI7KpdCdTQQ06kd+LhGGCHUyQ==
+"@tnir/instantsearch.js@4.13.2-q.1":
+  version "4.13.2-q.1"
+  resolved "https://registry.yarnpkg.com/@tnir/instantsearch.js/-/instantsearch.js-4.13.2-q.1.tgz#20957453c828e7a410754b678d2a4c2b96e233fb"
+  integrity sha512-yciFmzaqjXLNEeZN5i1D+3t96N8k6Q8xZXco/7sLpD9ZA0DvxQlAc8OiNqyxNME7rzqjoMF8VUZgxdEIM7URDw==
   dependencies:
-    "@babel/compat-data" "^7.8.0"
     "@types/googlemaps" "^3.39.6"
-    algoliasearch-helper "^3.2.2"
+    algoliasearch-helper "^3.3.4"
     classnames "^2.2.5"
     events "^1.1.0"
     hogan.js "^3.0.2"
@@ -1546,10 +1545,10 @@ ajv@^7.0.2:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.2.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.3.2.tgz#7ba2b233fb8ce216f35a55a21fa0faadeca3f21a"
-  integrity sha512-7NCTXL256Bnh0aVBP/FNba9orkpCJVjj98lYyrvFe0hs8lvrP8sVowznqntjeF5BNYqSgI5pEmTaq3iwXSK9jg==
+algoliasearch-helper@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.3.4.tgz#4a3c56d42a2a81589d5722b73653b2deaf3e7064"
+  integrity sha512-1Ts2XcgGdjGlDrp3v6zbY8VW+X9+jJ5rBmtPBmXOQLd4b5t/LpJlaBdxoAnlMfVFjywP7KSAdmyFUNNYVHDyRQ==
   dependencies:
     events "^1.1.1"
 
