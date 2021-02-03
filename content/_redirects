@@ -123,8 +123,6 @@
 /ee/development/event_tracking/frontend.html /ee/development/telemetry/index.html 302
 /ee/development/event_tracking/index.html /ee/development/telemetry/index.html 302
 /ee/development/event_tracking/ /ee/development/telemetry/index.html 302
-/ee/development/fe_guide/components.html https://design.gitlab.com/components/status/ 302
-/ee/development/fe_guide/dropdowns.html https://design.gitlab.com/components/dropdowns/ 302
 /ee/development/fe_guide/event_tracking.html /ee/development/telemetry/index.html 302
 /ee/development/fe_guide/style_guide_js.html /ee/development/fe_guide/style/javascript.html 302
 /ee/development/fe_guide/style_guide_scss.html /ee/development/fe_guide/style/scss.html 302
@@ -142,20 +140,6 @@
 /ee/development/rolling_out_changes_using_feature_flags.html /ee/development/feature_flags/index.html 302
 /ee/development/sidekiq_debugging.html /ee/administration/troubleshooting/sidekiq.html
 /ee/development/testing.html /ee/development/testing_guide/index.html 302
-/ee/development/ui_guide.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/animation.html https://design.gitlab.com/product-foundations/motion/ 302
-/ee/development/ux_guide/basics.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/components.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/copy.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/features.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/illustrations.html https://design.gitlab.com/product-foundations/illustration/ 302
-/ee/development/ux_guide/index.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/ https://design.gitlab.com/ 302
-/ee/development/ux_guide/principles.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/resources.html https://design.gitlab.com/resources/design-resources/ 302
-/ee/development/ux_guide/surfaces.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/tips.html https://design.gitlab.com/ 302
-/ee/development/ux_guide/users.html https://about.gitlab.com/handbook/marketing/product-marketing/roles-personas/ 302
 /ee/development/writing_documentation.html /ee/development/documentation/index.html 302
 /ee/getting-started/subscription.html /ee/subscriptions/index.html 302
 /ee/git_hooks/git_hooks.html /ee/push_rules/push_rules.html 302
