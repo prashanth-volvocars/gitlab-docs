@@ -1,3 +1,7 @@
+include:
+  - project: gitlab-org/frontend/untamper-my-lockfile
+    file: .gitlab-ci-template.yml
+
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
   tags:
