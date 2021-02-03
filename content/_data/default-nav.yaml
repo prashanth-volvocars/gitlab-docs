@@ -1,39 +1,48 @@
-## READ BEFORE EDITING THIS FILE ##
+# Global navigation file for GitLab Docs
 #
-### Rules
-# - Do not start the URL with "/"
-# - Do not add anchors to the links
-# - If the URL ends with index.html, leave it empty (e.g. section_url: 'dir/index.html' --> section_url: 'dir/')
-# - If you're referring to a section within index.html, include only the anchor (e.g. section_url:`dir/#some-anchor`)
-# For more information, see https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html#urls
+# For each entry:
 #
-### Options
+# - Do not start the URL with "/".
+# - URLs must be relative to root. For example, a page at https://docs.gitlab.com/runner/install/osx.html
+#   has the entry `runner/install/osx.html`.
+# - If the URL ends with index.html, leave it empty. For example:
+#   - Do not: section_url: 'ee/dir/index.html'.
+#   - Do: section_url: 'ee/dir/').
+# - If you're referring to a section within index.html, include only the anchor. For example, section_url:`dir/#some-anchor`.
+#
+# For more information, see:
+# - Docs Site architecture: https://docs.gitlab.com/ee/development/documentation/site_architecture/index.html
+# - Global Navigation: https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html
+#
+# Options:
+#
 # - Use "external_url: true" for external URLs in docs and categories
 
 sections:
+  # Documentation from https://gitlab.com/gitlab-org/gitlab
   - section_title: GitLab Docs
-    section_url: 'README.html'
+    section_url: 'ee/README.html'
 
   - section_title: Subscriptions
-    section_url: 'subscriptions/'
+    section_url: 'ee/subscriptions/'
     section_categories:
       - category_title: GitLab.com subscriptions
-        category_url: 'subscriptions/gitlab_com/'
+        category_url: 'ee/subscriptions/gitlab_com/'
         docs:
           - doc_title: Storage usage quota
-            doc_url: 'user/usage_quotas.html'
+            doc_url: 'ee/user/usage_quotas.html'
       - category_title: Self-managed subscriptions
-        category_url: 'subscriptions/self_managed/'
+        category_url: 'ee/subscriptions/self_managed/'
       - category_title: Activate Enterprise Edition
-        category_url: 'user/admin_area/license.html'
+        category_url: 'ee/user/admin_area/license.html'
       - category_title: Features available to Starter and Bronze subscribers
-        category_url: 'subscriptions/bronze_starter.html'
+        category_url: 'ee/subscriptions/bronze_starter.html'
 
   - section_title: Installation
-    section_url: 'install/'
+    section_url: 'ee/install/'
     section_categories:
       - category_title: Requirements
-        category_url: 'install/requirements.html'
+        category_url: 'ee/install/requirements.html'
       - category_title: Omnibus packages
         category_url: 'https://about.gitlab.com/install/'
         external_url: true
@@ -41,1856 +50,2240 @@ sections:
         category_url: 'https://docs.gitlab.com/charts/'
         external_url: true
       - category_title: Docker
-        category_url: 'install/docker.html'
+        category_url: 'ee/install/docker.html'
       - category_title: From source
-        category_url: 'install/installation.html'
+        category_url: 'ee/install/installation.html'
       - category_title: Azure
-        category_url: 'install/azure/'
+        category_url: 'ee/install/azure/'
       - category_title: Google Cloud Platform (GCP)
-        category_url: 'install/google_cloud_platform/'
+        category_url: 'ee/install/google_cloud_platform/'
       - category_title: Amazon Web Services (AWS)
-        category_url: 'install/aws/'
+        category_url: 'ee/install/aws/'
 
   - section_title: Administration
-    section_url: 'administration/'
+    section_url: 'ee/administration/'
     section_categories:
       - category_title: Reference Architectures
-        category_url: 'administration/reference_architectures/'
+        category_url: 'ee/administration/reference_architectures/'
         docs:
           - doc_title: Up to 1,000 users
-            doc_url: 'administration/reference_architectures/1k_users.html'
+            doc_url: 'ee/administration/reference_architectures/1k_users.html'
           - doc_title: Up to 2,000 users
-            doc_url: 'administration/reference_architectures/2k_users.html'
+            doc_url: 'ee/administration/reference_architectures/2k_users.html'
           - doc_title: Up to 3,000 users
-            doc_url: 'administration/reference_architectures/3k_users.html'
+            doc_url: 'ee/administration/reference_architectures/3k_users.html'
           - doc_title: Up to 5,000 users
-            doc_url: 'administration/reference_architectures/5k_users.html'
+            doc_url: 'ee/administration/reference_architectures/5k_users.html'
           - doc_title: Up to 10,000 users
-            doc_url: 'administration/reference_architectures/10k_users.html'
+            doc_url: 'ee/administration/reference_architectures/10k_users.html'
           - doc_title: Up to 25,000 users
-            doc_url: 'administration/reference_architectures/25k_users.html'
+            doc_url: 'ee/administration/reference_architectures/25k_users.html'
           - doc_title: Up to 50,000 users
-            doc_url: 'administration/reference_architectures/50k_users.html'
+            doc_url: 'ee/administration/reference_architectures/50k_users.html'
           - doc_title: Troubleshooting
-            doc_url: 'administration/reference_architectures/troubleshooting.html'
+            doc_url: 'ee/administration/reference_architectures/troubleshooting.html'
       - category_title: Authentication and authorization
-        category_url: 'administration/auth/README.html'
+        category_url: 'ee/administration/auth/README.html'
         docs:
           - doc_title: Atlassian Crowd
-            doc_url: 'administration/auth/crowd.html'
+            doc_url: 'ee/administration/auth/crowd.html'
           - doc_title: Atlassian
-            doc_url: 'administration/auth/atlassian.html'
+            doc_url: 'ee/administration/auth/atlassian.html'
           - doc_title: Auth0
-            doc_url: 'integration/auth0.html'
+            doc_url: 'ee/integration/auth0.html'
           - doc_title: Authentiq
-            doc_url: 'administration/auth/authentiq.html'
+            doc_url: 'ee/administration/auth/authentiq.html'
           - doc_title: AWS Cognito
-            doc_url: 'administration/auth/cognito.html'
+            doc_url: 'ee/administration/auth/cognito.html'
           - doc_title: Azure
-            doc_url: 'integration/azure.html'
+            doc_url: 'ee/integration/azure.html'
           - doc_title: Bitbucket Cloud
-            doc_url: 'integration/bitbucket.html'
+            doc_url: 'ee/integration/bitbucket.html'
           - doc_title: CAS
-            doc_url: 'integration/cas.html'
+            doc_url: 'ee/integration/cas.html'
           - doc_title: Facebook
-            doc_url: 'integration/facebook.html'
+            doc_url: 'ee/integration/facebook.html'
           - doc_title: Generic OAuth2
-            doc_url: 'integration/oauth2_generic.html'
+            doc_url: 'ee/integration/oauth2_generic.html'
           - doc_title: GitHub
-            doc_url: 'integration/github.html'
+            doc_url: 'ee/integration/github.html'
           - doc_title: GitLab.com
-            doc_url: 'integration/gitlab.html'
+            doc_url: 'ee/integration/gitlab.html'
           - doc_title: Google
-            doc_url: 'integration/google.html'
+            doc_url: 'ee/integration/google.html'
           - doc_title: JWT
-            doc_url: 'administration/auth/jwt.html'
+            doc_url: 'ee/administration/auth/jwt.html'
           - doc_title: Kerberos
-            doc_url: 'integration/kerberos.html'
+            doc_url: 'ee/integration/kerberos.html'
           - doc_title: LDAP
-            doc_url: 'administration/auth/ldap/'
+            doc_url: 'ee/administration/auth/ldap/'
           - doc_title: LDAP (Google Secure)
-            doc_url: 'administration/auth/ldap/google_secure_ldap.html'
+            doc_url: 'ee/administration/auth/ldap/google_secure_ldap.html'
           - doc_title: LDAP Troubleshooting
-            doc_url: 'administration/auth/ldap/ldap-troubleshooting.html'
+            doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
           - doc_title: OAuth service provider
-            doc_url: 'integration/oauth_provider.html'
+            doc_url: 'ee/integration/oauth_provider.html'
           - doc_title: Okta
-            doc_url: 'administration/auth/okta.html'
+            doc_url: 'ee/administration/auth/okta.html'
           - doc_title: OmniAuth
-            doc_url: 'integration/omniauth.html'
+            doc_url: 'ee/integration/omniauth.html'
           - doc_title: OpenID Connect OmniAuth
-            doc_url: 'administration/auth/oidc.html'
+            doc_url: 'ee/administration/auth/oidc.html'
           - doc_title: OpenID Connect identity
-            doc_url: 'integration/openid_connect_provider.html'
+            doc_url: 'ee/integration/openid_connect_provider.html'
           - doc_title: Salesforce
-            doc_url: 'integration/salesforce.html'
+            doc_url: 'ee/integration/salesforce.html'
           - doc_title: SAML
-            doc_url: 'integration/saml.html'
+            doc_url: 'ee/integration/saml.html'
           - doc_title: Smartcard
-            doc_url: 'administration/auth/smartcard.html'
+            doc_url: 'ee/administration/auth/smartcard.html'
           - doc_title: Twitter
-            doc_url: 'integration/twitter.html'
+            doc_url: 'ee/integration/twitter.html'
           - doc_title: Vault
-            doc_url: 'integration/vault.html'
+            doc_url: 'ee/integration/vault.html'
       - category_title: Configuration and Admin Area
-        category_url: 'user/admin_area/'
+        category_url: 'ee/user/admin_area/'
         docs:
           - doc_title: Admin Area settings
-            doc_url: 'user/admin_area/settings/'
+            doc_url: 'ee/user/admin_area/settings/'
           - doc_title: Appearance
-            doc_url: 'user/admin_area/appearance.html'
+            doc_url: 'ee/user/admin_area/appearance.html'
           - doc_title: Authentication
-            doc_url: 'topics/authentication/'
+            doc_url: 'ee/topics/authentication/'
           - doc_title: CI/CD
-            doc_url: 'user/admin_area/settings/continuous_integration.html'
+            doc_url: 'ee/user/admin_area/settings/continuous_integration.html'
           - doc_title: Custom instance-level project templates
-            doc_url: 'user/admin_area/custom_project_templates.html'
+            doc_url: 'ee/user/admin_area/custom_project_templates.html'
           - doc_title: Diff limits
-            doc_url: 'user/admin_area/diff_limits.html'
+            doc_url: 'ee/user/admin_area/diff_limits.html'
           - doc_title: Email
-            doc_url: 'user/admin_area/settings/email.html'
+            doc_url: 'ee/user/admin_area/settings/email.html'
           - doc_title: External pipeline validation
-            doc_url: 'administration/external_pipeline_validation.html'
+            doc_url: 'ee/administration/external_pipeline_validation.html'
           - doc_title: Feature flags
-            doc_url: 'administration/feature_flags.html'
+            doc_url: 'ee/administration/feature_flags.html'
           - doc_title: Geo nodes
-            doc_url: 'user/admin_area/geo_nodes.html'
+            doc_url: 'ee/user/admin_area/geo_nodes.html'
           - doc_title: Git LFS administration
-            doc_url: 'administration/lfs/'
+            doc_url: 'ee/administration/lfs/'
           - doc_title: GitLab Pages
-            doc_url: 'administration/pages/'
+            doc_url: 'ee/administration/pages/'
           - doc_title: Health Check
-            doc_url: 'user/admin_area/monitoring/health_check.html'
+            doc_url: 'ee/user/admin_area/monitoring/health_check.html'
           - doc_title: Incoming email
-            doc_url: 'administration/incoming_email.html'
+            doc_url: 'ee/administration/incoming_email.html'
           - doc_title: Job artifacts
-            doc_url: 'administration/job_artifacts.html'
+            doc_url: 'ee/administration/job_artifacts.html'
           - doc_title: Job logs
-            doc_url: 'administration/job_logs.html'
+            doc_url: 'ee/administration/job_logs.html'
           - doc_title: Labels
-            doc_url: 'user/admin_area/labels.html'
+            doc_url: 'ee/user/admin_area/labels.html'
           - doc_title: Log system
-            doc_url: 'administration/logs.html'
+            doc_url: 'ee/administration/logs.html'
           - doc_title: Maintenance Mode
-            doc_url: 'administration/maintenance_mode/'
+            doc_url: 'ee/administration/maintenance_mode/'
           - doc_title: Rate limits on issue creation
-            doc_url: 'user/admin_area/settings/rate_limit_on_issues_creation.html'
+            doc_url: 'ee/user/admin_area/settings/rate_limit_on_issues_creation.html'
           - doc_title: Reply by email
-            doc_url: 'administration/reply_by_email.html'
+            doc_url: 'ee/administration/reply_by_email.html'
           - doc_title: Repository checks
-            doc_url: 'administration/repository_checks.html'
+            doc_url: 'ee/administration/repository_checks.html'
           - doc_title: Repository size
-            doc_url: 'user/admin_area/settings/account_and_limit_settings.html'
+            doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
           - doc_title: Sign-in restrictions
-            doc_url: 'user/admin_area/settings/sign_in_restrictions.html'
+            doc_url: 'ee/user/admin_area/settings/sign_in_restrictions.html'
           - doc_title: Sign-up restrictions
-            doc_url: 'user/admin_area/settings/sign_up_restrictions.html'
+            doc_url: 'ee/user/admin_area/settings/sign_up_restrictions.html'
           - doc_title: System Hooks
-            doc_url: 'system_hooks/system_hooks.html'
+            doc_url: 'ee/system_hooks/system_hooks.html'
           - doc_title: Timezone
-            doc_url: 'administration/timezone.html'
+            doc_url: 'ee/administration/timezone.html'
           - doc_title: Uploads
-            doc_url: 'administration/uploads.html'
+            doc_url: 'ee/administration/uploads.html'
           - doc_title: User Cohorts
-            doc_url: 'user/admin_area/user_cohorts.html'
+            doc_url: 'ee/user/admin_area/user_cohorts.html'
       - category_title: Security
-        category_url: 'security/README.html'
+        category_url: 'ee/security/README.html'
         docs:
           - doc_title: Password storage
-            doc_url: 'security/password_storage.html'
+            doc_url: 'ee/security/password_storage.html'
           - doc_title: Custom password length limits
-            doc_url: 'security/password_length_limits.html'
+            doc_url: 'ee/security/password_length_limits.html'
           - doc_title: Generated passwords and integrated authentication
-            doc_url: 'security/passwords_for_integrated_authentication_methods.html'
+            doc_url: 'ee/security/passwords_for_integrated_authentication_methods.html'
           - doc_title: Credentials inventory
-            doc_url: 'user/admin_area/credentials_inventory.html'
+            doc_url: 'ee/user/admin_area/credentials_inventory.html'
           - doc_title: Limits on SSH keys
-            doc_url: 'security/ssh_keys_restrictions.html'
+            doc_url: 'ee/security/ssh_keys_restrictions.html'
           - doc_title: Rate limits
-            doc_url: 'security/rate_limits.html'
+            doc_url: 'ee/security/rate_limits.html'
           - doc_title: Webhooks
-            doc_url: 'security/webhooks.html'
+            doc_url: 'ee/security/webhooks.html'
           - doc_title: Information exclusivity
-            doc_url: 'security/information_exclusivity.html'
+            doc_url: 'ee/security/information_exclusivity.html'
           - doc_title: Reset user password
-            doc_url: 'security/reset_user_password.html'
+            doc_url: 'ee/security/reset_user_password.html'
           - doc_title: Unlock a user
-            doc_url: 'security/unlock_user.html'
+            doc_url: 'ee/security/unlock_user.html'
           - doc_title: Unknown sign-ins, email notification
-            doc_url: 'user/profile/unknown_sign_in_notification.html'
+            doc_url: 'ee/user/profile/unknown_sign_in_notification.html'
           - doc_title: Users pending approval
-            doc_url: 'user/admin_area/approving_users.html'
+            doc_url: 'ee/user/admin_area/approving_users.html'
           - doc_title: User file uploads
-            doc_url: 'security/user_file_uploads.html'
+            doc_url: 'ee/security/user_file_uploads.html'
           - doc_title: Manage the CRIME vulnerability
-            doc_url: 'security/crime_vulnerability.html'
+            doc_url: 'ee/security/crime_vulnerability.html'
           - doc_title: Enforce two-factor authentication (2FA)
-            doc_url: 'security/two_factor_authentication.html'
+            doc_url: 'ee/security/two_factor_authentication.html'
           - doc_title: User email confirmation
-            doc_url: 'security/user_email_confirmation.html'
+            doc_url: 'ee/security/user_email_confirmation.html'
           - doc_title: Security of running jobs
             doc_url: 'https://docs.gitlab.com/runner/security/'
             external_url: true
           - doc_title: Proxying assets
-            doc_url: 'security/asset_proxy.html'
+            doc_url: 'ee/security/asset_proxy.html'
           - doc_title: CI/CD variables
-            doc_url: 'security/cicd_environment_variables.html'
+            doc_url: 'ee/security/cicd_environment_variables.html'
           - doc_title: Token overview
-            doc_url: 'security/token_overview.html'
+            doc_url: 'ee/security/token_overview.html'
       - category_title: Abuse reports
-        category_url: 'user/admin_area/abuse_reports.html'
+        category_url: 'ee/user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
-        category_url: 'user/admin_area/activating_deactivating_users.html'
+        category_url: 'ee/user/admin_area/activating_deactivating_users.html'
       - category_title: Create users
-        category_url: 'user/profile/account/create_accounts.html'
+        category_url: 'ee/user/profile/account/create_accounts.html'
       - category_title: Analytics
-        category_url: 'user/admin_area/analytics/'
+        category_url: 'ee/user/admin_area/analytics/'
       - category_title: Audit events
-        category_url: 'administration/audit_events.html'
+        category_url: 'ee/administration/audit_events.html'
       - category_title: Audit reports
-        category_url: 'administration/audit_reports.html'
+        category_url: 'ee/administration/audit_reports.html'
       - category_title: Block and unblock users
-        category_url: 'user/admin_area/blocking_unblocking_users.html'
+        category_url: 'ee/user/admin_area/blocking_unblocking_users.html'
       - category_title: Broadcast messages
-        category_url: 'user/admin_area/broadcast_messages.html'
+        category_url: 'ee/user/admin_area/broadcast_messages.html'
       - category_title: Consul
-        category_url: 'administration/consul.html'
+        category_url: 'ee/administration/consul.html'
       - category_title: Compliance features
-        category_url: 'administration/compliance.html'
+        category_url: 'ee/administration/compliance.html'
       - category_title: Email from GitLab
-        category_url: 'tools/email.html'
+        category_url: 'ee/tools/email.html'
       - category_title: Global user settings
-        category_url: 'administration/user_settings.html'
+        category_url: 'ee/administration/user_settings.html'
       - category_title: Instance Review
-        category_url: 'administration/instance_review.html'
+        category_url: 'ee/administration/instance_review.html'
       - category_title: PostgreSQL
-        category_url: 'administration/postgresql/'
+        category_url: 'ee/administration/postgresql/'
         docs:
           - doc_title: PgBouncer
-            doc_url: 'administration/postgresql/pgbouncer.html'
+            doc_url: 'ee/administration/postgresql/pgbouncer.html'
           - doc_title: Replication and failover
-            doc_url: 'administration/postgresql/replication_and_failover.html'
+            doc_url: 'ee/administration/postgresql/replication_and_failover.html'
           - doc_title: External database service
-            doc_url: 'administration/postgresql/external.html'
+            doc_url: 'ee/administration/postgresql/external.html'
       - category_title: Load balancer
-        category_url: 'administration/load_balancer.html'
+        category_url: 'ee/administration/load_balancer.html'
       - category_title: NFS
-        category_url: 'administration/nfs.html'
+        category_url: 'ee/administration/nfs.html'
       - category_title: Redis
-        category_url: 'administration/redis/'
+        category_url: 'ee/administration/redis/'
       - category_title: Sidekiq
-        category_url: 'administration/sidekiq.html'
+        category_url: 'ee/administration/sidekiq.html'
       - category_title: Repository storage
-        category_url: 'administration/repository_storage_paths.html'
+        category_url: 'ee/administration/repository_storage_paths.html'
         docs:
           - doc_title: Repository storage types
-            doc_url: 'administration/repository_storage_types.html'
+            doc_url: 'ee/administration/repository_storage_types.html'
           - doc_title: Gitaly and Gitaly Cluster
-            doc_url: 'administration/gitaly/'
+            doc_url: 'ee/administration/gitaly/'
             docs:
               - doc_title: Configure Gitaly
-                doc_url: 'administration/gitaly/configure_gitaly.html'
+                doc_url: 'ee/administration/gitaly/configure_gitaly.html'
               - doc_title: Configure Gitaly Cluster
-                doc_url: 'administration/gitaly/praefect.html'
+                doc_url: 'ee/administration/gitaly/praefect.html'
           - doc_title: Gitaly reference
-            doc_url: 'administration/gitaly/reference.html'
+            doc_url: 'ee/administration/gitaly/reference.html'
           - doc_title: Gitaly timeouts
-            doc_url: 'user/admin_area/settings/gitaly_timeouts.html'
+            doc_url: 'ee/user/admin_area/settings/gitaly_timeouts.html'
       - category_title: Metrics
-        category_url: 'administration/monitoring/'
+        category_url: 'ee/administration/monitoring/'
         docs:
           - doc_title: Configure GitLab
-            doc_url: 'administration/monitoring/performance/gitlab_configuration.html'
+            doc_url: 'ee/administration/monitoring/performance/gitlab_configuration.html'
           - doc_title: Configure Grafana
-            doc_url: 'administration/monitoring/performance/grafana_configuration.html'
+            doc_url: 'ee/administration/monitoring/performance/grafana_configuration.html'
           - doc_title: GitHub imports
-            doc_url: 'administration/monitoring/github_imports.html'
+            doc_url: 'ee/administration/monitoring/github_imports.html'
           - doc_title: GitLab exporter
-            doc_url: 'administration/monitoring/prometheus/gitlab_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/gitlab_exporter.html'
           - doc_title: GitLab Prometheus metrics
-            doc_url: 'administration/monitoring/prometheus/gitlab_metrics.html'
+            doc_url: 'ee/administration/monitoring/prometheus/gitlab_metrics.html'
           - doc_title: GitLab self monitoring project
-            doc_url: 'administration/monitoring/gitlab_self_monitoring_project/'
+            doc_url: 'ee/administration/monitoring/gitlab_self_monitoring_project/'
           - doc_title: IP allowlist endpoints
-            doc_url: 'administration/monitoring/ip_whitelist.html'
+            doc_url: 'ee/administration/monitoring/ip_whitelist.html'
           - doc_title: Node exporter
-            doc_url: 'administration/monitoring/prometheus/node_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/node_exporter.html'
           - doc_title: PGBouncer exporter
-            doc_url: 'administration/monitoring/prometheus/pgbouncer_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/pgbouncer_exporter.html'
           - doc_title: PostgreSQL server exporter
-            doc_url: 'administration/monitoring/prometheus/postgres_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/postgres_exporter.html'
           - doc_title: Prometheus
-            doc_url: 'administration/monitoring/prometheus/'
+            doc_url: 'ee/administration/monitoring/prometheus/'
           - doc_title: Performance bar
-            doc_url: 'administration/monitoring/performance/performance_bar.html'
+            doc_url: 'ee/administration/monitoring/performance/performance_bar.html'
           - doc_title: Performance monitoring
-            doc_url: 'administration/monitoring/performance/'
+            doc_url: 'ee/administration/monitoring/performance/'
           - doc_title: Redis exporter
-            doc_url: 'administration/monitoring/prometheus/redis_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
           - doc_title: Registry exporter
-            doc_url: 'administration/monitoring/prometheus/registry_exporter.html'
+            doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
           - doc_title: Request profiling
-            doc_url: 'administration/monitoring/performance/request_profiling.html'
+            doc_url: 'ee/administration/monitoring/performance/request_profiling.html'
           - doc_title: Usage statistics
-            doc_url: 'user/admin_area/settings/usage_statistics.html'
+            doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
       - category_title: Object storage
-        category_url: 'administration/object_storage.html'
+        category_url: 'ee/administration/object_storage.html'
       - category_title: Operations
-        category_url: 'administration/operations/'
+        category_url: 'ee/administration/operations/'
         docs:
           - doc_title: Clean up Redis sessions
-            doc_url: 'administration/operations/cleaning_up_redis_sessions.html'
+            doc_url: 'ee/administration/operations/cleaning_up_redis_sessions.html'
           - doc_title: Fast SSH key lookup
-            doc_url: 'administration/operations/fast_ssh_key_lookup.html'
+            doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
-            doc_url: 'administration/operations/filesystem_benchmarking.html'
+            doc_url: 'ee/administration/operations/filesystem_benchmarking.html'
           - doc_title: Move repositories
-            doc_url: 'administration/operations/moving_repositories.html'
+            doc_url: 'ee/administration/operations/moving_repositories.html'
           - doc_title: Multiple Sidekiq processes
-            doc_url: 'administration/operations/extra_sidekiq_processes.html'
+            doc_url: 'ee/administration/operations/extra_sidekiq_processes.html'
           - doc_title: Rails console
-            doc_url: 'administration/operations/rails_console.html'
+            doc_url: 'ee/administration/operations/rails_console.html'
           - doc_title: Sidekiq MemoryKiller
-            doc_url: 'administration/operations/sidekiq_memory_killer.html'
+            doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
           - doc_title: Switch to Puma
-            doc_url: 'administration/operations/puma.html'
+            doc_url: 'ee/administration/operations/puma.html'
           - doc_title: Unicorn
-            doc_url: 'administration/operations/unicorn.html'
+            doc_url: 'ee/administration/operations/unicorn.html'
           - doc_title: Use SSH certificates
-            doc_url: 'administration/operations/ssh_certificates.html'
+            doc_url: 'ee/administration/operations/ssh_certificates.html'
       - category_title: Packages
-        category_url: 'administration/packages/'
+        category_url: 'ee/administration/packages/'
         docs:
           - doc_title: Container Registry
-            doc_url: 'administration/packages/container_registry.html'
+            doc_url: 'ee/administration/packages/container_registry.html'
           - doc_title: Dependency Proxy
-            doc_url: 'administration/packages/dependency_proxy.html'
+            doc_url: 'ee/administration/packages/dependency_proxy.html'
       - category_title: Geo
-        category_url: 'administration/geo/'
+        category_url: 'ee/administration/geo/'
         docs:
           - doc_title: Setting up Geo
-            doc_url: 'administration/geo/setup/'
+            doc_url: 'ee/administration/geo/setup/'
           - doc_title: Database replication
-            doc_url: 'administration/geo/setup/database.html'
+            doc_url: 'ee/administration/geo/setup/database.html'
           - doc_title: External PostgreSQL instances
-            doc_url: 'administration/geo/setup/external_database.html'
+            doc_url: 'ee/administration/geo/setup/external_database.html'
           - doc_title: Configuration
-            doc_url: 'administration/geo/replication/configuration.html'
+            doc_url: 'ee/administration/geo/replication/configuration.html'
           - doc_title: Using a Geo site
-            doc_url: 'administration/geo/replication/usage.html'
+            doc_url: 'ee/administration/geo/replication/usage.html'
           - doc_title: Updating Geo nodes
-            doc_url: 'administration/geo/replication/updating_the_geo_nodes.html'
+            doc_url: 'ee/administration/geo/replication/updating_the_geo_nodes.html'
           - doc_title: Using object storage
-            doc_url: 'administration/geo/replication/object_storage.html'
+            doc_url: 'ee/administration/geo/replication/object_storage.html'
           - doc_title: Using Docker Registry
-            doc_url: 'administration/geo/replication/docker_registry.html'
+            doc_url: 'ee/administration/geo/replication/docker_registry.html'
           - doc_title: Geo for multiple servers
-            doc_url: 'administration/geo/replication/multiple_servers.html'
+            doc_url: 'ee/administration/geo/replication/multiple_servers.html'
           - doc_title: Geo security review
-            doc_url: 'administration/geo/replication/security_review.html'
+            doc_url: 'ee/administration/geo/replication/security_review.html'
           - doc_title: Location-aware Git remote URLs
-            doc_url: 'administration/geo/replication/location_aware_git_url.html'
+            doc_url: 'ee/administration/geo/replication/location_aware_git_url.html'
           - doc_title: Tuning Geo
-            doc_url: 'administration/geo/replication/tuning.html'
+            doc_url: 'ee/administration/geo/replication/tuning.html'
           - doc_title: Disable Geo
-            doc_url: 'administration/geo/replication/disable_geo.html'
+            doc_url: 'ee/administration/geo/replication/disable_geo.html'
           - doc_title: Removing a Geo site
-            doc_url: 'administration/geo/replication/remove_geo_site.html'
+            doc_url: 'ee/administration/geo/replication/remove_geo_site.html'
           - doc_title: Supported data types
-            doc_url: 'administration/geo/replication/datatypes.html'
+            doc_url: 'ee/administration/geo/replication/datatypes.html'
           - doc_title: Frequently asked questions
-            doc_url: 'administration/geo/replication/faq.html'
+            doc_url: 'ee/administration/geo/replication/faq.html'
           - doc_title: Troubleshooting
-            doc_url: 'administration/geo/replication/troubleshooting.html'
+            doc_url: 'ee/administration/geo/replication/troubleshooting.html'
           - doc_title: Validation tests
-            doc_url: 'administration/geo/replication/geo_validation_tests.html'
+            doc_url: 'ee/administration/geo/replication/geo_validation_tests.html'
           - doc_title: Geo Glossary
-            doc_url: 'administration/geo/glossary.html'
+            doc_url: 'ee/administration/geo/glossary.html'
       - category_title: Disaster recovery (Geo)
-        category_url: 'administration/geo/disaster_recovery/'
+        category_url: 'ee/administration/geo/disaster_recovery/'
         docs:
           - doc_title: Planned failover
-            doc_url: 'administration/geo/disaster_recovery/planned_failover.html'
+            doc_url: 'ee/administration/geo/disaster_recovery/planned_failover.html'
           - doc_title: Bring primary back
-            doc_url: 'administration/geo/disaster_recovery/bring_primary_back.html'
+            doc_url: 'ee/administration/geo/disaster_recovery/bring_primary_back.html'
           - doc_title: Automatic background verification
-            doc_url: 'administration/geo/disaster_recovery/background_verification.html'
+            doc_url: 'ee/administration/geo/disaster_recovery/background_verification.html'
       - category_title: Rake tasks
-        category_url: 'raketasks/'
+        category_url: 'ee/raketasks/'
         docs:
           - doc_title: Backup and restore
-            doc_url: 'raketasks/backup_restore.html'
+            doc_url: 'ee/raketasks/backup_restore.html'
           - doc_title: Clean up
-            doc_url: 'raketasks/cleanup.html'
+            doc_url: 'ee/raketasks/cleanup.html'
           - doc_title: Enable namespaces
-            doc_url: 'raketasks/features.html'
+            doc_url: 'ee/raketasks/features.html'
           - doc_title: General maintenance
-            doc_url: 'administration/raketasks/maintenance.html'
+            doc_url: 'ee/administration/raketasks/maintenance.html'
           - doc_title: Geo tasks
-            doc_url: 'administration/raketasks/geo.html'
+            doc_url: 'ee/administration/raketasks/geo.html'
           - doc_title: GitHub import
-            doc_url: 'administration/raketasks/github_import.html'
+            doc_url: 'ee/administration/raketasks/github_import.html'
           - doc_title: Import repositories
-            doc_url: 'raketasks/import.html'
+            doc_url: 'ee/raketasks/import.html'
           - doc_title: Integrity check
-            doc_url: 'administration/raketasks/check.html'
+            doc_url: 'ee/administration/raketasks/check.html'
           - doc_title: LDAP maintenance
-            doc_url: 'administration/raketasks/ldap.html'
+            doc_url: 'ee/administration/raketasks/ldap.html'
           - doc_title: List repositories
-            doc_url: 'raketasks/list_repos.html'
+            doc_url: 'ee/raketasks/list_repos.html'
           - doc_title: Praefect tasks
-            doc_url: 'administration/raketasks/praefect.html'
+            doc_url: 'ee/administration/raketasks/praefect.html'
           - doc_title: Project import and export
-            doc_url: 'administration/raketasks/project_import_export.html'
+            doc_url: 'ee/administration/raketasks/project_import_export.html'
           - doc_title: Repository storage
-            doc_url: 'administration/raketasks/storage.html'
+            doc_url: 'ee/administration/raketasks/storage.html'
           - doc_title: Sample Prometheus data
-            doc_url: 'raketasks/generate_sample_prometheus_data.html'
+            doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
           - doc_title: Uploads migration
-            doc_url: 'administration/raketasks/uploads/migrate.html'
+            doc_url: 'ee/administration/raketasks/uploads/migrate.html'
           - doc_title: Uploads sanitization
-            doc_url: 'administration/raketasks/uploads/sanitize.html'
+            doc_url: 'ee/administration/raketasks/uploads/sanitize.html'
           - doc_title: User management
-            doc_url: 'raketasks/user_management.html'
+            doc_url: 'ee/raketasks/user_management.html'
           - doc_title: Webhooks administration
-            doc_url: 'raketasks/web_hooks.html'
+            doc_url: 'ee/raketasks/web_hooks.html'
           - doc_title: X509 signatures
-            doc_url: 'raketasks/x509_signatures.html'
+            doc_url: 'ee/raketasks/x509_signatures.html'
       - category_title: Server hooks
-        category_url: 'administration/server_hooks.html'
+        category_url: 'ee/administration/server_hooks.html'
       - category_title: Static objects external storage
-        category_url: 'administration/static_objects_external_storage.html'
+        category_url: 'ee/administration/static_objects_external_storage.html'
       - category_title: Terraform state
-        category_url: 'administration/terraform_state.html'
+        category_url: 'ee/administration/terraform_state.html'
       - category_title: Update
-        category_url: 'update/'
+        category_url: 'ee/update/'
         docs:
           - doc_title: Releases and maintenance
-            doc_url: 'policy/maintenance.html'
+            doc_url: 'ee/policy/maintenance.html'
 
   - section_title: Analytics
-    section_url: 'user/analytics/'
+    section_url: 'ee/user/analytics/'
     section_categories:
       - category_title: Instance-level
-        category_url: 'user/analytics/#instance-level-analytics'
+        category_url: 'ee/user/analytics/#instance-level-analytics'
         docs:
           - doc_title: DevOps Report
-            doc_url: 'user/admin_area/analytics/dev_ops_report.html'
+            doc_url: 'ee/user/admin_area/analytics/dev_ops_report.html'
           - doc_title: Usage Trends
-            doc_url: 'user/admin_area/analytics/usage_trends.html'
+            doc_url: 'ee/user/admin_area/analytics/usage_trends.html'
       - category_title: Group-level
-        category_url: 'user/analytics/#group-level-analytics'
+        category_url: 'ee/user/analytics/#group-level-analytics'
         docs:
           - doc_title: Contribution
-            doc_url: 'user/group/contribution_analytics/'
+            doc_url: 'ee/user/group/contribution_analytics/'
           - doc_title: Insights
-            doc_url: 'user/group/insights/'
+            doc_url: 'ee/user/group/insights/'
           - doc_title: Issue
-            doc_url: 'user/group/issues_analytics/'
+            doc_url: 'ee/user/group/issues_analytics/'
           - doc_title: Productivity
-            doc_url: 'user/analytics/productivity_analytics.html'
+            doc_url: 'ee/user/analytics/productivity_analytics.html'
           - doc_title: Repository
-            doc_url: 'user/group/repositories_analytics/'
+            doc_url: 'ee/user/group/repositories_analytics/'
           - doc_title: Value Stream
-            doc_url: 'user/group/value_stream_analytics/'
+            doc_url: 'ee/user/group/value_stream_analytics/'
       - category_title: Project-level
-        category_url: 'user/analytics/#project-level-analytics'
+        category_url: 'ee/user/analytics/#project-level-analytics'
         docs:
           - doc_title: CI/CD
-            doc_url: 'user/analytics/ci_cd_analytics.html'
+            doc_url: 'ee/user/analytics/ci_cd_analytics.html'
           - doc_title: Code Review
-            doc_url: 'user/analytics/code_review_analytics.html'
+            doc_url: 'ee/user/analytics/code_review_analytics.html'
           - doc_title: Insights
-            doc_url: 'user/project/insights/'
+            doc_url: 'ee/user/project/insights/'
           - doc_title: Issue
-            doc_url: 'user/analytics/issue_analytics.html'
+            doc_url: 'ee/user/analytics/issue_analytics.html'
           - doc_title: Merge Request
-            doc_url: 'user/analytics/merge_request_analytics.html'
+            doc_url: 'ee/user/analytics/merge_request_analytics.html'
           - doc_title: Repository
-            doc_url: 'user/analytics/repository_analytics.html'
+            doc_url: 'ee/user/analytics/repository_analytics.html'
           - doc_title: Value Stream
-            doc_url: 'user/analytics/value_stream_analytics.html'
+            doc_url: 'ee/user/analytics/value_stream_analytics.html'
 
   - section_title: Projects
-    section_url: 'user/project/'
+    section_url: 'ee/user/project/'
     section_categories:
       - category_title: Working with projects
-        category_url: 'user/project/working_with_projects.html'
+        category_url: 'ee/user/project/working_with_projects.html'
       - category_title: Badges
-        category_url: 'user/project/badges.html'
+        category_url: 'ee/user/project/badges.html'
       - category_title: Bulk editing (project)
-        category_url: 'user/project/bulk_editing.html'
+        category_url: 'ee/user/project/bulk_editing.html'
       - category_title: Code owners
-        category_url: 'user/project/code_owners.html'
+        category_url: 'ee/user/project/code_owners.html'
       - category_title: Compliance
-        category_url: 'user/compliance/'
+        category_url: 'ee/user/compliance/'
         docs:
           - doc_title: License Compliance
-            doc_url: 'user/compliance/license_compliance/'
+            doc_url: 'ee/user/compliance/license_compliance/'
           - doc_title: Compliance Dashboard
-            doc_url: 'user/compliance/compliance_dashboard/'
+            doc_url: 'ee/user/compliance/compliance_dashboard/'
       - category_title: Description templates
-        category_url: 'user/project/description_templates.html'
+        category_url: 'ee/user/project/description_templates.html'
       - category_title: Deploy keys
-        category_url: 'user/project/deploy_keys/'
+        category_url: 'ee/user/project/deploy_keys/'
       - category_title: Deploy tokens
-        category_url: 'user/project/deploy_tokens/'
+        category_url: 'ee/user/project/deploy_tokens/'
       - category_title: File finder
-        category_url: 'user/project/repository/file_finder.html'
+        category_url: 'ee/user/project/repository/file_finder.html'
       - category_title: GitLab Pages
-        category_url: 'user/project/pages/'
+        category_url: 'ee/user/project/pages/'
         docs:
           - doc_title: Getting started
-            doc_url: 'user/project/pages/#getting-started'
+            doc_url: 'ee/user/project/pages/#getting-started'
           - doc_title: Default domains, URLs, and baseurls
-            doc_url: 'user/project/pages/getting_started_part_one.html'
+            doc_url: 'ee/user/project/pages/getting_started_part_one.html'
           - doc_title: CI/CD for GitLab Pages
-            doc_url: 'user/project/pages/getting_started/pages_from_scratch.html'
+            doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
           - doc_title: Custom domains and SSL/TLS certificates
-            doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/'
+            doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/'
           - doc_title: Let's Encrypt integration
-            doc_url: 'user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
+            doc_url: 'ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html'
           - doc_title: Access control
-            doc_url: 'user/project/pages/pages_access_control.html'
+            doc_url: 'ee/user/project/pages/pages_access_control.html'
           - doc_title: Redirects
-            doc_url: 'user/project/pages/redirects.html'
+            doc_url: 'ee/user/project/pages/redirects.html'
           - doc_title: Exploring GitLab Pages
-            doc_url: 'user/project/pages/introduction.html'
+            doc_url: 'ee/user/project/pages/introduction.html'
       - category_title: Insights
-        category_url: 'user/project/insights/'
+        category_url: 'ee/user/project/insights/'
       - category_title: Members
-        category_url: 'user/project/members/'
+        category_url: 'ee/user/project/members/'
       - category_title: Migrating projects
-        category_url: 'user/project/import/'
+        category_url: 'ee/user/project/import/'
         docs:
           - doc_title: Bitbucket Cloud
-            doc_url: 'user/project/import/bitbucket.html'
+            doc_url: 'ee/user/project/import/bitbucket.html'
           - doc_title: Bitbucket Server
-            doc_url: 'user/project/import/bitbucket_server.html'
+            doc_url: 'ee/user/project/import/bitbucket_server.html'
           - doc_title: ClearCase
-            doc_url: 'user/project/import/clearcase.html'
+            doc_url: 'ee/user/project/import/clearcase.html'
           - doc_title: CVS
-            doc_url: 'user/project/import/cvs.html'
+            doc_url: 'ee/user/project/import/cvs.html'
           - doc_title: FogBugz
-            doc_url: 'user/project/import/fogbugz.html'
+            doc_url: 'ee/user/project/import/fogbugz.html'
           - doc_title: Gemnasium
-            doc_url: 'user/project/import/gemnasium.html'
+            doc_url: 'ee/user/project/import/gemnasium.html'
           - doc_title: GitHub
-            doc_url: 'user/project/import/github.html'
+            doc_url: 'ee/user/project/import/github.html'
           - doc_title: GitLab.com
-            doc_url: 'user/project/import/gitlab_com.html'
+            doc_url: 'ee/user/project/import/gitlab_com.html'
           - doc_title: Gitea
-            doc_url: 'user/project/import/gitea.html'
+            doc_url: 'ee/user/project/import/gitea.html'
           - doc_title: Jira
-            doc_url: 'user/project/import/jira.html'
+            doc_url: 'ee/user/project/import/jira.html'
           - doc_title: Perforce Helix
-            doc_url: 'user/project/import/perforce.html'
+            doc_url: 'ee/user/project/import/perforce.html'
           - doc_title: Phabricator
-            doc_url: 'user/project/import/phabricator.html'
+            doc_url: 'ee/user/project/import/phabricator.html'
           - doc_title: Repo by manifest file
-            doc_url: 'user/project/import/manifest.html'
+            doc_url: 'ee/user/project/import/manifest.html'
           - doc_title: Repo by URL
-            doc_url: 'user/project/import/repo_by_url.html'
+            doc_url: 'ee/user/project/import/repo_by_url.html'
           - doc_title: SVN
-            doc_url: 'user/project/import/svn.html'
+            doc_url: 'ee/user/project/import/svn.html'
           - doc_title: TFVC
-            doc_url: 'user/project/import/tfvc.html'
+            doc_url: 'ee/user/project/import/tfvc.html'
       - category_title: Push options
-        category_url: 'user/project/push_options.html'
+        category_url: 'ee/user/project/push_options.html'
       - category_title: Releases
-        category_url: 'user/project/releases/'
+        category_url: 'ee/user/project/releases/'
       - category_title: Repositories
-        category_url: 'user/project/repository/'
+        category_url: 'ee/user/project/repository/'
         docs:
           - doc_title: Branches
-            doc_url: 'user/project/repository/branches/'
+            doc_url: 'ee/user/project/repository/branches/'
           - doc_title: Default branch
-            doc_url: 'user/project/repository/branches/default.html'
+            doc_url: 'ee/user/project/repository/branches/default.html'
           - doc_title: Git attributes
-            doc_url: 'user/project/git_attributes.html'
+            doc_url: 'ee/user/project/git_attributes.html'
           - doc_title: Git LFS
-            doc_url: 'topics/git/lfs/'
+            doc_url: 'ee/topics/git/lfs/'
           - doc_title: Locked files
-            doc_url: 'user/project/file_lock.html'
+            doc_url: 'ee/user/project/file_lock.html'
           - doc_title: File Blame
-            doc_url: 'user/project/repository/git_blame.html'
+            doc_url: 'ee/user/project/repository/git_blame.html'
           - doc_title: File History
-            doc_url: 'user/project/repository/git_history.html'
+            doc_url: 'ee/user/project/repository/git_history.html'
           - doc_title: Mirroring
-            doc_url: 'user/project/repository/repository_mirroring.html'
+            doc_url: 'ee/user/project/repository/repository_mirroring.html'
           - doc_title: Protected branches
-            doc_url: 'user/project/protected_branches.html'
+            doc_url: 'ee/user/project/protected_branches.html'
           - doc_title: Protected tags
-            doc_url: 'user/project/protected_tags.html'
+            doc_url: 'ee/user/project/protected_tags.html'
           - doc_title: Push rules
-            doc_url: 'push_rules/push_rules.html'
+            doc_url: 'ee/push_rules/push_rules.html'
           - doc_title: Reduce repository size
-            doc_url: 'user/project/repository/reducing_the_repo_size_using_git.html'
+            doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
           - doc_title: Signed Commits
-            doc_url: 'user/project/repository/gpg_signed_commits/'
+            doc_url: 'ee/user/project/repository/gpg_signed_commits/'
           - doc_title: Syntax highlighting
-            doc_url: 'user/project/highlighting.html'
+            doc_url: 'ee/user/project/highlighting.html'
           - doc_title: Web Editor
-            doc_url: 'user/project/repository/web_editor.html'
+            doc_url: 'ee/user/project/repository/web_editor.html'
           - doc_title: Web IDE
-            doc_url: 'user/project/web_ide/'
+            doc_url: 'ee/user/project/web_ide/'
       - category_title: Requirements
-        category_url: 'user/project/requirements/'
+        category_url: 'ee/user/project/requirements/'
       - category_title: Settings
-        category_url: 'user/project/settings/'
+        category_url: 'ee/user/project/settings/'
         docs:
           - doc_title: Project Import/Export
-            doc_url: 'user/project/settings/import_export.html'
+            doc_url: 'ee/user/project/settings/import_export.html'
           - doc_title: Project/Group Import/Export rate limits
-            doc_url: 'user/admin_area/settings/import_export_rate_limits.html'
+            doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
           - doc_title: Project access tokens
-            doc_url: 'user/project/settings/project_access_tokens.html'
+            doc_url: 'ee/user/project/settings/project_access_tokens.html'
       - category_title: Share projects
-        category_url: 'user/project/members/share_project_with_groups.html'
+        category_url: 'ee/user/project/members/share_project_with_groups.html'
       - category_title: Snippets
-        category_url: 'user/snippets.html'
+        category_url: 'ee/user/snippets.html'
       - category_title: Static Site Editor
-        category_url: 'user/project/static_site_editor/'
+        category_url: 'ee/user/project/static_site_editor/'
       - category_title: Wikis
-        category_url: 'user/project/wiki/'
+        category_url: 'ee/user/project/wiki/'
 
   - section_title: Groups
-    section_url: 'user/group/'
+    section_url: 'ee/user/group/'
     section_categories:
       - category_title: Bulk editing (group)
-        category_url: 'user/group/bulk_editing/'
+        category_url: 'ee/user/group/bulk_editing/'
       - category_title: Contribution analytics
-        category_url: 'user/group/contribution_analytics/'
+        category_url: 'ee/user/group/contribution_analytics/'
       - category_title: Custom group-level project templates
-        category_url: 'user/group/custom_project_templates.html'
+        category_url: 'ee/user/group/custom_project_templates.html'
       - category_title: Epics
-        category_url: 'user/group/epics/'
+        category_url: 'ee/user/group/epics/'
         docs:
           - doc_title: Epic boards
-            doc_url: 'user/group/epics/epic_boards.html'
+            doc_url: 'ee/user/group/epics/epic_boards.html'
           - doc_title: Manage epics
-            doc_url: 'user/group/epics/manage_epics.html'
+            doc_url: 'ee/user/group/epics/manage_epics.html'
       - category_title: Group Import/Export
-        category_url: 'user/group/settings/import_export.html'
+        category_url: 'ee/user/group/settings/import_export.html'
       - category_title: Insights
-        category_url: 'user/group/insights/'
+        category_url: 'ee/user/group/insights/'
       - category_title: Issue analytics
-        category_url: 'user/group/issues_analytics/'
+        category_url: 'ee/user/group/issues_analytics/'
       - category_title: Iterations
-        category_url: 'user/group/iterations/'
+        category_url: 'ee/user/group/iterations/'
       - category_title: Migrating groups
-        category_url: 'user/group/import/'
+        category_url: 'ee/user/group/import/'
       - category_title: Public access
-        category_url: 'public_access/public_access.html'
+        category_url: 'ee/public_access/public_access.html'
       - category_title: Roadmaps
-        category_url: 'user/group/roadmap/'
+        category_url: 'ee/user/group/roadmap/'
       - category_title: Repositories Analytics
-        category_url: 'user/group/repositories_analytics/'
+        category_url: 'ee/user/group/repositories_analytics/'
       - category_title: SAML SSO for GitLab.com groups
-        category_url: 'user/group/saml_sso/'
+        category_url: 'ee/user/group/saml_sso/'
         docs:
           - doc_title: Group Managed Accounts (Closed Beta)
-            doc_url: 'user/group/saml_sso/group_managed_accounts.html'
+            doc_url: 'ee/user/group/saml_sso/group_managed_accounts.html'
           - doc_title: SCIM provisioning
-            doc_url: 'user/group/saml_sso/scim_setup.html'
+            doc_url: 'ee/user/group/saml_sso/scim_setup.html'
           - doc_title: Troubleshooting Group SAML and SCIM
-            doc_url: 'administration/troubleshooting/group_saml_scim.html'
+            doc_url: 'ee/administration/troubleshooting/group_saml_scim.html'
       - category_title: Subgroups
-        category_url: 'user/group/subgroups/'
+        category_url: 'ee/user/group/subgroups/'
 
   - section_title: User
-    section_url: 'user/'
+    section_url: 'ee/user/'
     section_categories:
       - category_title: Abuse reports
-        category_url: 'user/abuse_reports.html'
+        category_url: 'ee/user/abuse_reports.html'
       - category_title: Account
-        category_url: 'user/profile/'
+        category_url: 'ee/user/profile/'
         docs:
           - doc_title: Active sessions
-            doc_url: 'user/profile/active_sessions.html'
+            doc_url: 'ee/user/profile/active_sessions.html'
           - doc_title: Delete account
-            doc_url: 'user/profile/account/delete_account.html'
+            doc_url: 'ee/user/profile/account/delete_account.html'
           - doc_title: Permissions
-            doc_url: 'user/permissions.html'
+            doc_url: 'ee/user/permissions.html'
           - doc_title: Personal access tokens
-            doc_url: 'user/profile/personal_access_tokens.html'
+            doc_url: 'ee/user/profile/personal_access_tokens.html'
           - doc_title: Profile preferences
-            doc_url: 'user/profile/preferences.html'
+            doc_url: 'ee/user/profile/preferences.html'
           - doc_title: "Two-factor authentication"
-            doc_url: 'user/profile/account/two_factor_authentication.html'
+            doc_url: 'ee/user/profile/account/two_factor_authentication.html'
       - category_title: Discussions
-        category_url: 'user/discussions/'
+        category_url: 'ee/user/discussions/'
       - category_title: Git
-        category_url: 'topics/git/'
+        category_url: 'ee/topics/git/'
         docs:
           - doc_title: Partial clone
-            doc_url: 'topics/git/partial_clone.html'
+            doc_url: 'ee/topics/git/partial_clone.html'
           - doc_title: Troubleshooting Git
-            doc_url: 'topics/git/troubleshooting_git.html'
+            doc_url: 'ee/topics/git/troubleshooting_git.html'
           - doc_title: Useful commands
-            doc_url: 'topics/git/useful_git_commands.html'
+            doc_url: 'ee/topics/git/useful_git_commands.html'
       - category_title: GitLab.com settings
-        category_url: 'user/gitlab_com/'
+        category_url: 'ee/user/gitlab_com/'
       - category_title: Keyboard shortcuts
-        category_url: 'user/shortcuts.html'
+        category_url: 'ee/user/shortcuts.html'
       - category_title: Markdown
-        category_url: 'user/markdown.html'
+        category_url: 'ee/user/markdown.html'
         docs:
           - doc_title: AsciiDoc
-            doc_url: 'user/asciidoc.html'
+            doc_url: 'ee/user/asciidoc.html'
       - category_title: Notification emails
-        category_url: 'user/profile/notifications.html'
+        category_url: 'ee/user/profile/notifications.html'
       - category_title: Quick actions
-        category_url: 'user/project/quick_actions.html'
+        category_url: 'ee/user/project/quick_actions.html'
         docs:
           - doc_title: Autocomplete characters
-            doc_url: 'user/project/autocomplete_characters.html'
+            doc_url: 'ee/user/project/autocomplete_characters.html'
       - category_title: Reserved project and group names
-        category_url: 'user/reserved_names.html'
+        category_url: 'ee/user/reserved_names.html'
       - category_title: Search
-        category_url: 'user/search/'
+        category_url: 'ee/user/search/'
         docs:
           - doc_title: Advanced Search
-            doc_url: 'user/search/advanced_search.html'
+            doc_url: 'ee/user/search/advanced_search.html'
       - category_title: SSH
-        category_url: 'ssh/README.html'
+        category_url: 'ee/ssh/README.html'
       - category_title: Time tracking
-        category_url: 'user/project/time_tracking.html'
+        category_url: 'ee/user/project/time_tracking.html'
       - category_title: To-Do lists
-        category_url: 'user/todos.html'
+        category_url: 'ee/user/todos.html'
 
   - section_title: Issues
-    section_url: 'user/project/issues/'
+    section_url: 'ee/user/project/issues/'
     section_categories:
       - category_title: Award emoji
-        category_url: 'user/award_emojis.html'
+        category_url: 'ee/user/award_emojis.html'
       - category_title: Confidential issues
-        category_url: 'user/project/issues/confidential_issues.html'
+        category_url: 'ee/user/project/issues/confidential_issues.html'
       - category_title: Crosslinking issues
-        category_url: 'user/project/issues/crosslinking_issues.html'
+        category_url: 'ee/user/project/issues/crosslinking_issues.html'
       - category_title: CSV export
-        category_url: 'user/project/issues/csv_export.html'
+        category_url: 'ee/user/project/issues/csv_export.html'
       - category_title: CSV import
-        category_url: 'user/project/issues/csv_import.html'
+        category_url: 'ee/user/project/issues/csv_import.html'
       - category_title: Design management
-        category_url: 'user/project/issues/design_management.html'
+        category_url: 'ee/user/project/issues/design_management.html'
       - category_title: Due dates
-        category_url: 'user/project/issues/due_dates.html'
+        category_url: 'ee/user/project/issues/due_dates.html'
       - category_title: Issue Boards
-        category_url: 'user/project/issue_board.html'
+        category_url: 'ee/user/project/issue_board.html'
       - category_title: Issue data and actions
-        category_url: 'user/project/issues/issue_data_and_actions.html'
+        category_url: 'ee/user/project/issues/issue_data_and_actions.html'
       - category_title: Labels
-        category_url: 'user/project/labels.html'
+        category_url: 'ee/user/project/labels.html'
       - category_title: Managing issues
-        category_url: 'user/project/issues/managing_issues.html'
+        category_url: 'ee/user/project/issues/managing_issues.html'
       - category_title: Milestones
-        category_url: 'user/project/milestones/'
+        category_url: 'ee/user/project/milestones/'
         docs:
           - doc_title: Burndown and burnup charts
-            doc_url: 'user/project/milestones/burndown_and_burnup_charts.html'
+            doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
       - category_title: Multiple assignees
-        category_url: 'user/project/issues/multiple_assignees_for_issues.html'
+        category_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
       - category_title: Related issues
-        category_url: 'user/project/issues/related_issues.html'
+        category_url: 'ee/user/project/issues/related_issues.html'
       - category_title: Service Desk
-        category_url: 'user/project/service_desk.html'
+        category_url: 'ee/user/project/service_desk.html'
       - category_title: Sorting and ordering issue lists
-        category_url: 'user/project/issues/sorting_issue_lists.html'
+        category_url: 'ee/user/project/issues/sorting_issue_lists.html'
       - category_title: Weight
-        category_url: 'user/project/issues/issue_weight.html'
+        category_url: 'ee/user/project/issues/issue_weight.html'
       - category_title: Zoom meetings in issues
-        category_url: 'user/project/issues/associate_zoom_meeting.html'
+        category_url: 'ee/user/project/issues/associate_zoom_meeting.html'
 
   - section_title: Merge requests
-    section_url: 'user/project/merge_requests/'
+    section_url: 'ee/user/project/merge_requests/'
     section_categories:
       - category_title: Allow collaboration
-        category_url: 'user/project/merge_requests/allow_collaboration.html'
+        category_url: 'ee/user/project/merge_requests/allow_collaboration.html'
       - category_title: Approvals
-        category_url: 'user/project/merge_requests/merge_request_approvals.html'
+        category_url: 'ee/user/project/merge_requests/merge_request_approvals.html'
       - category_title: Creating merge requests
-        category_url: 'user/project/merge_requests/creating_merge_requests.html'
+        category_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
       - category_title: Cherry pick changes
-        category_url: 'user/project/merge_requests/cherry_pick_changes.html'
+        category_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
       - category_title: Export Merge Requests to CSV
-        category_url: 'user/project/merge_requests/csv_export.html'
+        category_url: 'ee/user/project/merge_requests/csv_export.html'
       - category_title: Getting started
-        category_url: 'user/project/merge_requests/getting_started.html'
+        category_url: 'ee/user/project/merge_requests/getting_started.html'
       - category_title: Merge request dependencies
-        category_url: 'user/project/merge_requests/merge_request_dependencies.html'
+        category_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
       - category_title: Fast forward
-        category_url: 'user/project/merge_requests/fast_forward_merge.html'
+        category_url: 'ee/user/project/merge_requests/fast_forward_merge.html'
       - category_title: Merge when pipeline succeeds
-        category_url: 'user/project/merge_requests/merge_when_pipeline_succeeds.html'
+        category_url: 'ee/user/project/merge_requests/merge_when_pipeline_succeeds.html'
       - category_title: Resolve conflicts
-        category_url: 'user/project/merge_requests/resolve_conflicts.html'
+        category_url: 'ee/user/project/merge_requests/resolve_conflicts.html'
       - category_title: Reverting changes
-        category_url: 'user/project/merge_requests/revert_changes.html'
+        category_url: 'ee/user/project/merge_requests/revert_changes.html'
       - category_title: Reviewing and managing merge requests
-        category_url: 'user/project/merge_requests/reviewing_and_managing_merge_requests.html'
+        category_url: 'ee/user/project/merge_requests/reviewing_and_managing_merge_requests.html'
       - category_title: Squash and merge
-        category_url: 'user/project/merge_requests/squash_and_merge.html'
+        category_url: 'ee/user/project/merge_requests/squash_and_merge.html'
       - category_title: Versions
-        category_url: 'user/project/merge_requests/versions.html'
+        category_url: 'ee/user/project/merge_requests/versions.html'
       - category_title: Workflows
-        category_url: 'user/project/merge_requests/authorization_for_merge_requests.html'
+        category_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
       - category_title: Draft merge requests
-        category_url: 'user/project/merge_requests/drafts.html'
+        category_url: 'ee/user/project/merge_requests/drafts.html'
 
   - section_title: Operations
-    section_url: 'operations/'
+    section_url: 'ee/operations/'
     section_categories:
       - category_title: Metrics dashboard
-        category_url: 'operations/metrics/'
+        category_url: 'ee/operations/metrics/'
         docs:
           - doc_title: Set up alerts for metrics
-            doc_url: 'operations/metrics/alerts.html'
+            doc_url: 'ee/operations/metrics/alerts.html'
           - doc_title: Embedding metrics in Markdown
-            doc_url: 'operations/metrics/embed.html'
+            doc_url: 'ee/operations/metrics/embed.html'
           - doc_title: Embedding metrics in Grafana
-            doc_url: 'operations/metrics/embed_grafana.html'
+            doc_url: 'ee/operations/metrics/embed_grafana.html'
       - category_title: Custom dashboards
-        category_url: 'operations/metrics/dashboards/'
+        category_url: 'ee/operations/metrics/dashboards/'
         docs:
           - doc_title: GitLab-defined metrics dashboards
-            doc_url: 'operations/metrics/dashboards/default.html'
+            doc_url: 'ee/operations/metrics/dashboards/default.html'
           - doc_title: Dashboard YAML properties
-            doc_url: 'operations/metrics/dashboards/yaml.html'
+            doc_url: 'ee/operations/metrics/dashboards/yaml.html'
           - doc_title: Dashboard settings
-            doc_url: 'operations/metrics/dashboards/settings.html'
+            doc_url: 'ee/operations/metrics/dashboards/settings.html'
           - doc_title: Panel types for dashboards
-            doc_url: 'operations/metrics/dashboards/panel_types.html'
+            doc_url: 'ee/operations/metrics/dashboards/panel_types.html'
           - doc_title: Using variables
-            doc_url: 'operations/metrics/dashboards/variables.html'
+            doc_url: 'ee/operations/metrics/dashboards/variables.html'
           - doc_title: Templates for custom dashboards
-            doc_url: 'operations/metrics/dashboards/develop.html'
+            doc_url: 'ee/operations/metrics/dashboards/develop.html'
           - doc_title: Templating variables for dashboards
-            doc_url: 'operations/metrics/dashboards/templating_variables.html'
+            doc_url: 'ee/operations/metrics/dashboards/templating_variables.html'
       - category_title: Metrics library
-        category_url: 'user/project/integrations/prometheus_library/'
+        category_url: 'ee/user/project/integrations/prometheus_library/'
         docs:
           - doc_title: Monitoring AWS resources
-            doc_url: 'user/project/integrations/prometheus_library/cloudwatch.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/cloudwatch.html'
           - doc_title: HAProxy
-            doc_url: 'user/project/integrations/prometheus_library/haproxy.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/haproxy.html'
           - doc_title: Kubernetes
-            doc_url: 'user/project/integrations/prometheus_library/kubernetes.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/kubernetes.html'
           - doc_title: NGINX
-            doc_url: 'user/project/integrations/prometheus_library/nginx.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/nginx.html'
           - doc_title: NGINX Ingress
-            doc_url: 'user/project/integrations/prometheus_library/nginx_ingress.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/nginx_ingress.html'
           - doc_title: NGINX Ingress VTS
-            doc_url: 'user/project/integrations/prometheus_library/nginx_ingress_vts.html'
+            doc_url: 'ee/user/project/integrations/prometheus_library/nginx_ingress_vts.html'
       - category_title: Error Tracking
-        category_url: 'operations/error_tracking.html'
+        category_url: 'ee/operations/error_tracking.html'
       - category_title: Tracing
-        category_url: 'operations/tracing.html'
+        category_url: 'ee/operations/tracing.html'
       - category_title: Incident management
-        category_url: 'operations/incident_management/'
+        category_url: 'ee/operations/incident_management/'
         docs:
           - doc_title: Alerts
-            doc_url: 'operations/incident_management/alerts.html'
+            doc_url: 'ee/operations/incident_management/alerts.html'
           - doc_title: Paging and notifications
-            doc_url: 'operations/incident_management/paging.html'
+            doc_url: 'ee/operations/incident_management/paging.html'
           - doc_title: Incidents
-            doc_url: 'operations/incident_management/incidents.html'
+            doc_url: 'ee/operations/incident_management/incidents.html'
           - doc_title: Integrations
-            doc_url: 'operations/incident_management/integrations.html'
+            doc_url: 'ee/operations/incident_management/integrations.html'
           - doc_title: Status page
-            doc_url: 'operations/incident_management/status_page.html'
+            doc_url: 'ee/operations/incident_management/status_page.html'
           - doc_title: On-call schedules
-            doc_url: 'operations/incident_management/oncall_schedules.html'
+            doc_url: 'ee/operations/incident_management/oncall_schedules.html'
       - category_title: Feature Flags
-        category_url: 'operations/feature_flags.html'
+        category_url: 'ee/operations/feature_flags.html'
       - category_title: Product analytics
-        category_url: 'operations/product_analytics.html'
+        category_url: 'ee/operations/product_analytics.html'
 
   - section_title: CI/CD
-    section_url: 'ci/README.html'
+    section_url: 'ee/ci/README.html'
     section_categories:
       - category_title: Get started
-        category_url: 'ci/quick_start/'
+        category_url: 'ee/ci/quick_start/'
         docs:
           - doc_title: CI/CD concepts
-            doc_url: 'ci/introduction/'
+            doc_url: 'ee/ci/introduction/'
           - doc_title: Migrate from CircleCI
-            doc_url: 'ci/migration/circleci.html'
+            doc_url: 'ee/ci/migration/circleci.html'
           - doc_title: Migrate from Jenkins
-            doc_url: 'ci/migration/jenkins.html'
+            doc_url: 'ee/ci/migration/jenkins.html'
           - doc_title: Enable or disable CI/CD
-            doc_url: 'ci/enable_or_disable_ci.html'
+            doc_url: 'ee/ci/enable_or_disable_ci.html'
       - category_title: Pipelines
-        category_url: 'ci/pipelines/'
+        category_url: 'ee/ci/pipelines/'
         docs:
           - doc_title: Schedule a pipeline
-            doc_url: 'ci/pipelines/schedules.html'
+            doc_url: 'ee/ci/pipelines/schedules.html'
           - doc_title: Trigger a pipeline
-            doc_url: 'ci/triggers/README.html'
+            doc_url: 'ee/ci/triggers/README.html'
           - doc_title: Pipeline settings
-            doc_url: 'ci/pipelines/settings.html'
+            doc_url: 'ee/ci/pipelines/settings.html'
           - doc_title: Pipeline architectures
-            doc_url: 'ci/pipelines/pipeline_architectures.html'
+            doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
           - doc_title: Pipeline efficiency
-            doc_url: 'ci/pipelines/pipeline_efficiency.html'
+            doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
           - doc_title: Directed acyclic graph (DAG)
-            doc_url: 'ci/directed_acyclic_graph/'
+            doc_url: 'ee/ci/directed_acyclic_graph/'
           - doc_title: Multi-project pipelines
-            doc_url: 'ci/multi_project_pipelines.html'
+            doc_url: 'ee/ci/multi_project_pipelines.html'
           - doc_title: Parent-child pipelines
-            doc_url: 'ci/parent_child_pipelines.html'
+            doc_url: 'ee/ci/parent_child_pipelines.html'
           - doc_title: Pipelines for merge requests
-            doc_url: 'ci/merge_request_pipelines/'
+            doc_url: 'ee/ci/merge_request_pipelines/'
           - doc_title: Pipelines for merged results
-            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/'
+            doc_url: 'ee/ci/merge_request_pipelines/pipelines_for_merged_results/'
           - doc_title: Merge trains
-            doc_url: 'ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
+            doc_url: 'ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
       - category_title: Jobs
-        category_url: 'ci/jobs/'
+        category_url: 'ee/ci/jobs/'
         docs:
           - doc_title: Access a terminal for a running job
-            doc_url: 'ci/interactive_web_terminal/'
+            doc_url: 'ee/ci/interactive_web_terminal/'
           - doc_title: Format scripts and job logs
-            doc_url: 'ci/yaml/script.html'
+            doc_url: 'ee/ci/yaml/script.html'
           - doc_title: Git submodules
-            doc_url: 'ci/git_submodules.html'
+            doc_url: 'ee/ci/git_submodules.html'
       - category_title: Variables
-        category_url: 'ci/variables/README.html'
+        category_url: 'ee/ci/variables/README.html'
         docs:
           - doc_title: Predefined variables
-            doc_url: 'ci/variables/predefined_variables.html'
+            doc_url: 'ee/ci/variables/predefined_variables.html'
           - doc_title: Where variables can be used
-            doc_url: 'ci/variables/where_variables_can_be_used.html'
+            doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
       - category_title: Environments and deployments
-        category_url: 'ci/environments/'
+        category_url: 'ee/ci/environments/'
         docs:
           - doc_title: Environments Dashboard
-            doc_url: 'ci/environments/environments_dashboard.html'
+            doc_url: 'ee/ci/environments/environments_dashboard.html'
           - doc_title: Protected environments
-            doc_url: 'ci/environments/protected_environments.html'
+            doc_url: 'ee/ci/environments/protected_environments.html'
           - doc_title: Deployment safety
-            doc_url: 'ci/environments/deployment_safety.html'
+            doc_url: 'ee/ci/environments/deployment_safety.html'
           - doc_title: Roll out an application incrementally
-            doc_url: 'ci/environments/incremental_rollouts.html'
+            doc_url: 'ee/ci/environments/incremental_rollouts.html'
           - doc_title: Deploy to AWS
-            doc_url: 'ci/cloud_deployment/'
+            doc_url: 'ee/ci/cloud_deployment/'
           - doc_title: Review Apps
-            doc_url: 'ci/review_apps/'
+            doc_url: 'ee/ci/review_apps/'
       - category_title: Runners
-        category_url: 'ci/runners/README.html'
+        category_url: 'ee/ci/runners/README.html'
         docs:
           - doc_title: Best practices for large repositories
-            doc_url: 'ci/large_repositories/'
+            doc_url: 'ee/ci/large_repositories/'
       - category_title: Cache and artifacts
-        category_url: 'ci/caching/'
+        category_url: 'ee/ci/caching/'
         docs:
           - doc_title: Job artifacts
-            doc_url: 'ci/pipelines/job_artifacts.html'
+            doc_url: 'ee/ci/pipelines/job_artifacts.html'
           - doc_title: Pipeline artifacts
-            doc_url: 'ci/pipelines/pipeline_artifacts.html'
+            doc_url: 'ee/ci/pipelines/pipeline_artifacts.html'
       - category_title: '.gitlab-ci.yml'
-        category_url: 'ci/yaml/gitlab_ci_yaml.html'
+        category_url: 'ee/ci/yaml/gitlab_ci_yaml.html'
         docs:
           - doc_title: '.gitlab-ci.yml reference'
-            doc_url: 'ci/yaml/README.html'
+            doc_url: 'ee/ci/yaml/README.html'
           - doc_title: Validate syntax
-            doc_url: 'ci/lint.html'
+            doc_url: 'ee/ci/lint.html'
           - doc_title: Pipeline Editor
-            doc_url: 'ci/pipeline_editor/'
+            doc_url: 'ee/ci/pipeline_editor/'
           - doc_title: Include examples
-            doc_url: 'ci/yaml/includes.html'
+            doc_url: 'ee/ci/yaml/includes.html'
       - category_title: Docker
-        category_url: 'ci/docker/'
+        category_url: 'ee/ci/docker/'
         docs:
           - doc_title: Run CI/CD jobs in Docker containers
-            doc_url: 'ci/docker/using_docker_images.html'
+            doc_url: 'ee/ci/docker/using_docker_images.html'
           - doc_title: Use Docker to build Docker images
-            doc_url: 'ci/docker/using_docker_build.html'
+            doc_url: 'ee/ci/docker/using_docker_build.html'
           - doc_title: Use kaniko to build Docker images
-            doc_url: 'ci/docker/using_kaniko.html'
+            doc_url: 'ee/ci/docker/using_kaniko.html'
       - category_title: Services
-        category_url: 'ci/services/'
+        category_url: 'ee/ci/services/'
         docs:
           - doc_title: MySQL Service
-            doc_url: 'ci/services/mysql.html'
+            doc_url: 'ee/ci/services/mysql.html'
           - doc_title: PostgreSQL Service
-            doc_url: 'ci/services/postgres.html'
+            doc_url: 'ee/ci/services/postgres.html'
           - doc_title: Redis Service
-            doc_url: 'ci/services/redis.html'
+            doc_url: 'ee/ci/services/redis.html'
       - category_title: Auto DevOps
-        category_url: 'topics/autodevops/'
+        category_url: 'ee/topics/autodevops/'
         docs:
           - doc_title: Get started
-            doc_url: 'topics/autodevops/quick_start_guide.html'
+            doc_url: 'ee/topics/autodevops/quick_start_guide.html'
           - doc_title: Requirements
-            doc_url: 'topics/autodevops/requirements.html'
+            doc_url: 'ee/topics/autodevops/requirements.html'
           - doc_title: Stages
-            doc_url: 'topics/autodevops/stages.html'
+            doc_url: 'ee/topics/autodevops/stages.html'
           - doc_title: Customize
-            doc_url: 'topics/autodevops/customize.html'
+            doc_url: 'ee/topics/autodevops/customize.html'
           - doc_title: Upgrade PostgreSQL
-            doc_url: 'topics/autodevops/upgrading_postgresql.html'
+            doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
           - doc_title: Upgrade Auto Deploy dependencies
-            doc_url: 'topics/autodevops/upgrading_auto_deploy_dependencies.html'
+            doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
           - doc_title: Troubleshooting
-            doc_url: 'topics/autodevops/troubleshooting.html'
+            doc_url: 'ee/topics/autodevops/troubleshooting.html'
       - category_title: Testing
-        category_url: 'ci/unit_test_reports.html'
+        category_url: 'ee/ci/unit_test_reports.html'
         docs:
           - doc_title: Accessibility testing
-            doc_url: 'user/project/merge_requests/accessibility_testing.html'
+            doc_url: 'ee/user/project/merge_requests/accessibility_testing.html'
           - doc_title: Browser performance testing
-            doc_url: 'user/project/merge_requests/browser_performance_testing.html'
+            doc_url: 'ee/user/project/merge_requests/browser_performance_testing.html'
           - doc_title: Code quality
-            doc_url: 'user/project/merge_requests/code_quality.html'
+            doc_url: 'ee/user/project/merge_requests/code_quality.html'
           - doc_title: Load performance testing
-            doc_url: 'user/project/merge_requests/load_performance_testing.html'
+            doc_url: 'ee/user/project/merge_requests/load_performance_testing.html'
           - doc_title: Metrics reports
-            doc_url: 'ci/metrics_reports.html'
+            doc_url: 'ee/ci/metrics_reports.html'
           - doc_title: Test cases
-            doc_url: 'ci/test_cases/'
+            doc_url: 'ee/ci/test_cases/'
       - category_title: External integrations
-        category_url: 'ci/ci_cd_for_external_repos/'
+        category_url: 'ee/ci/ci_cd_for_external_repos/'
         docs:
           - doc_title: SSH keys
-            doc_url: 'ci/ssh_keys/'
+            doc_url: 'ee/ci/ssh_keys/'
           - doc_title: Bitbucket Cloud
-            doc_url: 'ci/ci_cd_for_external_repos/bitbucket_integration.html'
+            doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
           - doc_title: GitHub
-            doc_url: 'ci/ci_cd_for_external_repos/github_integration.html'
+            doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
           - doc_title: Slack
-            doc_url: 'ci/chatops/'
+            doc_url: 'ee/ci/chatops/'
       - category_title: CI/CD examples
-        category_url: 'ci/examples/README.html'
+        category_url: 'ee/ci/examples/README.html'
         docs:
           - doc_title: Deployment with Dpl
-            doc_url: 'ci/examples/deployment/README.html'
+            doc_url: 'ee/ci/examples/deployment/README.html'
           - doc_title: End-to-end testing
-            doc_url: 'ci/examples/end_to_end_testing_webdriverio/'
+            doc_url: 'ee/ci/examples/end_to_end_testing_webdriverio/'
           - doc_title: NPM with semantic-release
-            doc_url: 'ci/examples/semantic-release.html'
+            doc_url: 'ee/ci/examples/semantic-release.html'
           - doc_title: PHP with PHPunit and atoum
-            doc_url: 'ci/examples/php.html'
+            doc_url: 'ee/ci/examples/php.html'
           - doc_title: PHP with NPM and SCP
-            doc_url: 'ci/examples/deployment/composer-npm-deploy.html'
+            doc_url: 'ee/ci/examples/deployment/composer-npm-deploy.html'
           - doc_title: PHP with Laravel and Envoy
-            doc_url: 'ci/examples/laravel_with_gitlab_and_envoy/'
+            doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
       - category_title: Troubleshooting CI/CD
-        category_url: 'ci/troubleshooting.html'
+        category_url: 'ee/ci/troubleshooting.html'
 
   - section_title: Application security
-    section_url: 'user/application_security/'
+    section_url: 'ee/user/application_security/'
     section_categories:
       - category_title: Security Configuration
-        category_url: 'user/application_security/configuration/'
+        category_url: 'ee/user/application_security/configuration/'
       - category_title: Container Scanning
-        category_url: 'user/application_security/container_scanning/'
+        category_url: 'ee/user/application_security/container_scanning/'
       - category_title: Threat Monitoring
-        category_url: 'user/application_security/threat_monitoring/'
+        category_url: 'ee/user/application_security/threat_monitoring/'
       - category_title: Dependency Scanning
-        category_url: 'user/application_security/dependency_scanning/'
+        category_url: 'ee/user/application_security/dependency_scanning/'
       - category_title: Dependency Scanning Analyzers
-        category_url: 'user/application_security/dependency_scanning/analyzers.html'
+        category_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
       - category_title: Dependency List
-        category_url: 'user/application_security/dependency_list/'
+        category_url: 'ee/user/application_security/dependency_list/'
       - category_title: Static Application Security Testing
-        category_url: 'user/application_security/sast/'
+        category_url: 'ee/user/application_security/sast/'
       - category_title: SAST Analyzers
-        category_url: 'user/application_security/sast/analyzers.html'
+        category_url: 'ee/user/application_security/sast/analyzers.html'
       - category_title: Secret Detection
-        category_url: 'user/application_security/secret_detection/'
+        category_url: 'ee/user/application_security/secret_detection/'
       - category_title: Dynamic Application Security Testing (DAST)
-        category_url: 'user/application_security/dast/'
+        category_url: 'ee/user/application_security/dast/'
       - category_title: DAST Troubleshooting
-        category_url: 'user/application_security/dast/dast_troubleshooting.html'
+        category_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
       - category_title: API Fuzzing
-        category_url: 'user/application_security/api_fuzzing/'
+        category_url: 'ee/user/application_security/api_fuzzing/'
       - category_title: Coverage Fuzzing
-        category_url: 'user/application_security/coverage_fuzzing/'
+        category_url: 'ee/user/application_security/coverage_fuzzing/'
       - category_title: Security Dashboard
-        category_url: 'user/application_security/security_dashboard/'
+        category_url: 'ee/user/application_security/security_dashboard/'
       - category_title: Offline Environments
-        category_url: 'user/application_security/offline_deployments/'
+        category_url: 'ee/user/application_security/offline_deployments/'
       - category_title: Vulnerability Reports
-        category_url: 'user/application_security/vulnerability_report/'
+        category_url: 'ee/user/application_security/vulnerability_report/'
       - category_title: Vulnerability Pages
-        category_url: 'user/application_security/vulnerabilities/'
+        category_url: 'ee/user/application_security/vulnerabilities/'
       - category_title: Scan Policies
-        category_url: 'user/application_security/policies/'
+        category_url: 'ee/user/application_security/policies/'
       - category_title: Security scanner integration
-        category_url: 'development/integrations/secure.html'
+        category_url: 'ee/development/integrations/secure.html'
       - category_title: Secure and Protect Terminology
-        category_url: 'user/application_security/terminology/'
+        category_url: 'ee/user/application_security/terminology/'
 
   - section_title: Packages & Registries
-    section_url: 'user/packages/'
+    section_url: 'ee/user/packages/'
     section_categories:
       - category_title: Package Registry
-        category_url: 'user/packages/package_registry/'
+        category_url: 'ee/user/packages/package_registry/'
         docs:
           - doc_title: Composer
-            doc_url: 'user/packages/composer_repository/'
+            doc_url: 'ee/user/packages/composer_repository/'
           - doc_title: Conan
-            doc_url: 'user/packages/conan_repository/'
+            doc_url: 'ee/user/packages/conan_repository/'
           - doc_title: Go Proxy
-            doc_url: 'user/packages/go_proxy/'
+            doc_url: 'ee/user/packages/go_proxy/'
           - doc_title: Maven
-            doc_url: 'user/packages/maven_repository/'
+            doc_url: 'ee/user/packages/maven_repository/'
           - doc_title: npm
-            doc_url: 'user/packages/npm_registry/'
+            doc_url: 'ee/user/packages/npm_registry/'
           - doc_title: NuGet
-            doc_url: 'user/packages/nuget_repository/'
+            doc_url: 'ee/user/packages/nuget_repository/'
           - doc_title: PyPI
-            doc_url: 'user/packages/pypi_repository/'
+            doc_url: 'ee/user/packages/pypi_repository/'
           - doc_title: Generic
-            doc_url: 'user/packages/generic_packages/'
+            doc_url: 'ee/user/packages/generic_packages/'
           - doc_title: Store all packages in one project
-            doc_url: 'user/packages/workflows/project_registry.html'
+            doc_url: 'ee/user/packages/workflows/project_registry.html'
       - category_title: Container Registry
-        category_url: 'user/packages/container_registry/'
+        category_url: 'ee/user/packages/container_registry/'
       - category_title: Dependency Proxy
-        category_url: 'user/packages/dependency_proxy/'
+        category_url: 'ee/user/packages/dependency_proxy/'
 
   - section_title: Infrastructure
-    section_url: 'user/project/clusters/'
+    section_url: 'ee/user/project/clusters/'
     section_categories:
       - category_title: Adding and removing clusters
-        category_url: 'user/project/clusters/add_remove_clusters.html'
+        category_url: 'ee/user/project/clusters/add_remove_clusters.html'
         docs:
           - doc_title: Add EKS clusters
-            doc_url: 'user/project/clusters/add_eks_clusters.html'
+            doc_url: 'ee/user/project/clusters/add_eks_clusters.html'
           - doc_title: Add GKE clusters
-            doc_url: 'user/project/clusters/add_gke_clusters.html'
+            doc_url: 'ee/user/project/clusters/add_gke_clusters.html'
       - category_title: Group-level clusters
-        category_url: 'user/group/clusters/'
+        category_url: 'ee/user/group/clusters/'
       - category_title: Instance-level clusters
-        category_url: 'user/instance/clusters/'
+        category_url: 'ee/user/instance/clusters/'
       - category_title: Canary deployments
-        category_url: 'user/project/canary_deployments.html'
+        category_url: 'ee/user/project/canary_deployments.html'
       - category_title: Cluster environments
-        category_url: 'user/clusters/environments.html'
+        category_url: 'ee/user/clusters/environments.html'
       - category_title: Cluster cost management
-        category_url: 'user/clusters/cost_management.html'
+        category_url: 'ee/user/clusters/cost_management.html'
       - category_title: Deploy boards
-        category_url: 'user/project/deploy_boards.html'
+        category_url: 'ee/user/project/deploy_boards.html'
       - category_title: GitLab Managed Apps
-        category_url: 'user/clusters/applications.html'
+        category_url: 'ee/user/clusters/applications.html'
         docs:
           - doc_title: Configuring Crossplane
-            doc_url: 'user/clusters/crossplane.html'
+            doc_url: 'ee/user/clusters/crossplane.html'
       - category_title: Infrastructure as code
-        category_url: 'user/infrastructure/'
+        category_url: 'ee/user/infrastructure/'
         docs:
           - doc_title: GitLab managed Terraform state
-            doc_url: 'user/infrastructure/terraform_state.html'
+            doc_url: 'ee/user/infrastructure/terraform_state.html'
           - doc_title: Terraform integration in merge requests
-            doc_url: 'user/infrastructure/mr_integration.html'
+            doc_url: 'ee/user/infrastructure/mr_integration.html'
       - category_title: Kubernetes Agent
-        category_url: 'user/clusters/agent/'
+        category_url: 'ee/user/clusters/agent/'
         docs:
           - doc_title: Agent configuration repository
-            doc_url: 'user/clusters/agent/repository.html'
+            doc_url: 'ee/user/clusters/agent/repository.html'
       - category_title: Management project
-        category_url: 'user/clusters/management_project.html'
+        category_url: 'ee/user/clusters/management_project.html'
       - category_title: Pod logs
-        category_url: 'user/project/clusters/kubernetes_pod_logs.html'
+        category_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
       - category_title: Runbooks
-        category_url: 'user/project/clusters/runbooks/'
+        category_url: 'ee/user/project/clusters/runbooks/'
       - category_title: Serverless
-        category_url: 'user/project/clusters/serverless/'
+        category_url: 'ee/user/project/clusters/serverless/'
         docs:
           - doc_title: Deploying AWS Lambda functions
-            doc_url: 'user/project/clusters/serverless/aws.html'
+            doc_url: 'ee/user/project/clusters/serverless/aws.html'
       - category_title: Securing your deployed applications
-        category_url: 'user/project/clusters/protect/'
+        category_url: 'ee/user/project/clusters/protect/'
         docs:
           - doc_title: Web Application Firewall
-            doc_url: 'user/project/clusters/protect/web_application_firewall/'
+            doc_url: 'ee/user/project/clusters/protect/web_application_firewall/'
           - doc_title: Container Network Security
-            doc_url: 'user/project/clusters/protect/container_network_security/'
+            doc_url: 'ee/user/project/clusters/protect/container_network_security/'
           - doc_title: Container Host Security
-            doc_url: 'user/project/clusters/protect/container_host_security/'
+            doc_url: 'ee/user/project/clusters/protect/container_host_security/'
 
   - section_title: Integrations
-    section_url: 'integration/README.html'
+    section_url: 'ee/integration/README.html'
     section_categories:
       - category_title: Akismet
-        category_url: 'integration/akismet.html'
+        category_url: 'ee/integration/akismet.html'
       - category_title: Elasticsearch
-        category_url: 'integration/elasticsearch.html'
+        category_url: 'ee/integration/elasticsearch.html'
       - category_title: Gitpod
-        category_url: 'integration/gitpod.html'
+        category_url: 'ee/integration/gitpod.html'
       - category_title: Jira integrations
-        category_url: 'user/project/integrations/jira_integrations.html'
+        category_url: 'ee/user/project/integrations/jira_integrations.html'
         docs:
           - doc_title: Jira
-            doc_url: 'user/project/integrations/jira.html'
+            doc_url: 'ee/user/project/integrations/jira.html'
           - doc_title: GitLab for Jira app
-            doc_url: 'integration/jira/connect-app.html'
+            doc_url: 'ee/integration/jira/connect-app.html'
           - doc_title: Jira DVCS connector
-            doc_url: 'integration/jira/dvcs.html'
+            doc_url: 'ee/integration/jira/dvcs.html'
           - doc_title: Jira Development Panel
-            doc_url: 'integration/jira/index.html'
+            doc_url: 'ee/integration/jira/index.html'
           - doc_title: Create Jira Server user
-            doc_url: 'integration/jira/jira_server_configuration.html'
+            doc_url: 'ee/integration/jira/jira_server_configuration.html'
           - doc_title: Create Jira Cloud API token
-            doc_url: 'integration/jira/jira_cloud_configuration.html'
+            doc_url: 'ee/integration/jira/jira_cloud_configuration.html'
       - category_title: Kroki diagrams
-        category_url: 'administration/integration/kroki.html'
+        category_url: 'ee/administration/integration/kroki.html'
       - category_title: PlantUML
-        category_url: 'administration/integration/plantuml.html'
+        category_url: 'ee/administration/integration/plantuml.html'
       - category_title: Project integration management
-        category_url: 'user/admin_area/settings/project_integration_management.html'
+        category_url: 'ee/user/admin_area/settings/project_integration_management.html'
       - category_title: Project integrations
-        category_url: 'user/project/integrations/'
+        category_url: 'ee/user/project/integrations/'
         docs:
           - doc_title: Overview
-            doc_url: 'user/project/integrations/overview.html'
+            doc_url: 'ee/user/project/integrations/overview.html'
           - doc_title: Asana
-            doc_url: 'user/project/integrations/asana.html'
+            doc_url: 'ee/user/project/integrations/asana.html'
           - doc_title: Bamboo CI
-            doc_url: 'user/project/integrations/bamboo.html'
+            doc_url: 'ee/user/project/integrations/bamboo.html'
           - doc_title: Discord
-            doc_url: 'user/project/integrations/discord_notifications.html'
+            doc_url: 'ee/user/project/integrations/discord_notifications.html'
           - doc_title: Emails on push
-            doc_url: 'user/project/integrations/emails_on_push.html'
+            doc_url: 'ee/user/project/integrations/emails_on_push.html'
           - doc_title: GitHub
-            doc_url: 'user/project/integrations/github.html'
+            doc_url: 'ee/user/project/integrations/github.html'
           - doc_title: Hangouts Chat
-            doc_url: 'user/project/integrations/hangouts_chat.html'
+            doc_url: 'ee/user/project/integrations/hangouts_chat.html'
           - doc_title: Irker
-            doc_url: 'user/project/integrations/irker.html'
+            doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
-            doc_url: 'integration/jenkins.html'
+            doc_url: 'ee/integration/jenkins.html'
           - doc_title: Mattermost notifications
-            doc_url: 'user/project/integrations/mattermost.html'
+            doc_url: 'ee/user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
-            doc_url: 'user/project/integrations/mattermost_slash_commands.html'
+            doc_url: 'ee/user/project/integrations/mattermost_slash_commands.html'
           - doc_title: Microsoft Teams
-            doc_url: 'user/project/integrations/microsoft_teams.html'
+            doc_url: 'ee/user/project/integrations/microsoft_teams.html'
           - doc_title: Mock CI
-            doc_url: 'user/project/integrations/mock_ci.html'
+            doc_url: 'ee/user/project/integrations/mock_ci.html'
           - doc_title: Prometheus
-            doc_url: 'user/project/integrations/prometheus.html'
+            doc_url: 'ee/user/project/integrations/prometheus.html'
           - doc_title: Service templates
-            doc_url: 'user/project/integrations/services_templates.html'
+            doc_url: 'ee/user/project/integrations/services_templates.html'
           - doc_title: Slack notifications
-            doc_url: 'user/project/integrations/slack.html'
+            doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
-            doc_url: 'user/project/integrations/slack_slash_commands.html'
+            doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
           - doc_title: Slack application
-            doc_url: 'user/project/integrations/gitlab_slack_application.html'
+            doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
           - doc_title: Unify Circuit
-            doc_url: 'user/project/integrations/unify_circuit.html'
+            doc_url: 'ee/user/project/integrations/unify_circuit.html'
           - doc_title: Webex Teams
-            doc_url: 'user/project/integrations/webex_teams.html'
+            doc_url: 'ee/user/project/integrations/webex_teams.html'
           - doc_title: Webhooks
-            doc_url: 'user/project/integrations/webhooks.html'
+            doc_url: 'ee/user/project/integrations/webhooks.html'
       - category_title: External issue tracker
-        category_url: 'integration/external-issue-tracker.html'
+        category_url: 'ee/integration/external-issue-tracker.html'
         docs:
           - doc_title: Bugzilla
-            doc_url: 'user/project/integrations/bugzilla.html'
+            doc_url: 'ee/user/project/integrations/bugzilla.html'
           - doc_title: Custom issue tracker
-            doc_url: 'user/project/integrations/custom_issue_tracker.html'
+            doc_url: 'ee/user/project/integrations/custom_issue_tracker.html'
           - doc_title: IBM Engineering Workflow Management
-            doc_url: 'user/project/integrations/ewm.html'
+            doc_url: 'ee/user/project/integrations/ewm.html'
           - doc_title: Redmine
-            doc_url: 'user/project/integrations/redmine.html'
+            doc_url: 'ee/user/project/integrations/redmine.html'
           - doc_title: YouTrack
-            doc_url: 'user/project/integrations/youtrack.html'
+            doc_url: 'ee/user/project/integrations/youtrack.html'
       - category_title: Gmail actions buttons
-        category_url: 'integration/gmail_action_buttons_for_gitlab.html'
+        category_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
       - category_title: reCAPTCHA
-        category_url: 'integration/recaptcha.html'
+        category_url: 'ee/integration/recaptcha.html'
       - category_title: Security partners
-        category_url: 'integration/security_partners/'
+        category_url: 'ee/integration/security_partners/'
       - category_title: Sourcegraph
-        category_url: 'integration/sourcegraph.html'
+        category_url: 'ee/integration/sourcegraph.html'
       - category_title: Trello
-        category_url: 'integration/trello_power_up.html'
+        category_url: 'ee/integration/trello_power_up.html'
 
   - section_title: API
-    section_url: 'api/README.html'
+    section_url: 'ee/api/README.html'
     section_categories:
       - category_title: Resources
-        category_url: 'api/api_resources.html'
+        category_url: 'ee/api/api_resources.html'
         docs:
           - doc_title: .gitignore (templates)
-            doc_url: 'api/templates/gitignores.html'
+            doc_url: 'ee/api/templates/gitignores.html'
           - doc_title: .gitlab-ci.yml (templates)
-            doc_url: 'api/templates/gitlab_ci_ymls.html'
+            doc_url: 'ee/api/templates/gitlab_ci_ymls.html'
           - doc_title: Access requests
-            doc_url: 'api/access_requests.html'
+            doc_url: 'ee/api/access_requests.html'
           - doc_title: Appearance (application)
-            doc_url: 'api/appearance.html'
+            doc_url: 'ee/api/appearance.html'
           - doc_title: Applications
-            doc_url: 'api/applications.html'
+            doc_url: 'ee/api/applications.html'
           - doc_title: Audit events
-            doc_url: 'api/audit_events.html'
+            doc_url: 'ee/api/audit_events.html'
           - doc_title: Avatar
-            doc_url: 'api/avatar.html'
+            doc_url: 'ee/api/avatar.html'
           - doc_title: Award emoji
-            doc_url: 'api/award_emoji.html'
+            doc_url: 'ee/api/award_emoji.html'
           - doc_title: Badges (project)
-            doc_url: 'api/project_badges.html'
+            doc_url: 'ee/api/project_badges.html'
           - doc_title: Badges (group)
-            doc_url: 'api/group_badges.html'
+            doc_url: 'ee/api/group_badges.html'
           - doc_title: Branches
-            doc_url: 'api/branches.html'
+            doc_url: 'ee/api/branches.html'
           - doc_title: Broadcast messages
-            doc_url: 'api/broadcast_messages.html'
+            doc_url: 'ee/api/broadcast_messages.html'
           - doc_title: Clusters (project)
-            doc_url: 'api/project_clusters.html'
+            doc_url: 'ee/api/project_clusters.html'
           - doc_title: Clusters (group)
-            doc_url: 'api/group_clusters.html'
+            doc_url: 'ee/api/group_clusters.html'
           - doc_title: Clusters (instance)
-            doc_url: 'api/instance_clusters.html'
+            doc_url: 'ee/api/instance_clusters.html'
           - doc_title: Commits
-            doc_url: 'api/commits.html'
+            doc_url: 'ee/api/commits.html'
           - doc_title: Composer
-            doc_url: 'api/packages/composer.html'
+            doc_url: 'ee/api/packages/composer.html'
           - doc_title: Conan
-            doc_url: 'api/packages/conan.html'
+            doc_url: 'ee/api/packages/conan.html'
           - doc_title: Container Registry
-            doc_url: 'api/container_registry.html'
+            doc_url: 'ee/api/container_registry.html'
           - doc_title: Custom attributes
-            doc_url: 'api/custom_attributes.html'
+            doc_url: 'ee/api/custom_attributes.html'
           - doc_title: Dashboard annotations
-            doc_url: 'api/metrics_dashboard_annotations.html'
+            doc_url: 'ee/api/metrics_dashboard_annotations.html'
           - doc_title: Dependencies
-            doc_url: 'api/dependencies.html'
+            doc_url: 'ee/api/dependencies.html'
           - doc_title: Dependency Proxy
-            doc_url: 'api/dependency_proxy.html'
+            doc_url: 'ee/api/dependency_proxy.html'
           - doc_title: Deploy keys
-            doc_url: 'api/deploy_keys.html'
+            doc_url: 'ee/api/deploy_keys.html'
           - doc_title: Deploy tokens
-            doc_url: 'api/deploy_tokens.html'
+            doc_url: 'ee/api/deploy_tokens.html'
           - doc_title: Deployments
-            doc_url: 'api/deployments.html'
+            doc_url: 'ee/api/deployments.html'
           - doc_title: Discussions
-            doc_url: 'api/discussions.html'
+            doc_url: 'ee/api/discussions.html'
           - doc_title: Dockerfile (templates)
-            doc_url: 'api/templates/dockerfiles.html'
+            doc_url: 'ee/api/templates/dockerfiles.html'
           - doc_title: DORA4 metrics
-            doc_url: 'api/dora/metrics.html'
+            doc_url: 'ee/api/dora/metrics.html'
           - doc_title: DORA4 project analytics
-            doc_url: 'api/dora4_project_analytics.html'
+            doc_url: 'ee/api/dora4_project_analytics.html'
           - doc_title: DORA4 group analytics
-            doc_url: 'api/dora4_group_analytics.html'
+            doc_url: 'ee/api/dora4_group_analytics.html'
           - doc_title: Environments
-            doc_url: 'api/environments.html'
+            doc_url: 'ee/api/environments.html'
           - doc_title: Epics
-            doc_url: 'api/epics.html'
+            doc_url: 'ee/api/epics.html'
           - doc_title: Error tracking
-            doc_url: 'api/error_tracking.html'
+            doc_url: 'ee/api/error_tracking.html'
           - doc_title: Events
-            doc_url: 'api/events.html'
+            doc_url: 'ee/api/events.html'
           - doc_title: Experiments
-            doc_url: 'api/experiments.html'
+            doc_url: 'ee/api/experiments.html'
           - doc_title: Features flags
-            doc_url: 'api/feature_flags.html'
+            doc_url: 'ee/api/feature_flags.html'
           - doc_title: Feature flag user lists
-            doc_url: 'api/feature_flag_user_lists.html'
+            doc_url: 'ee/api/feature_flag_user_lists.html'
           - doc_title: Freeze periods
-            doc_url: 'api/freeze_periods.html'
+            doc_url: 'ee/api/freeze_periods.html'
           - doc_title: Geo nodes
-            doc_url: 'api/geo_nodes.html'
+            doc_url: 'ee/api/geo_nodes.html'
           - doc_title: GitLab Pages
-            doc_url: 'api/pages.html'
+            doc_url: 'ee/api/pages.html'
           - doc_title: Group activity analytics
-            doc_url: 'api/group_activity_analytics.html'
+            doc_url: 'ee/api/group_activity_analytics.html'
           - doc_title: Group Import/Export
-            doc_url: 'api/group_import_export.html'
+            doc_url: 'ee/api/group_import_export.html'
           - doc_title: Group repository storage moves
-            doc_url: 'api/group_repository_storage_moves.html'
+            doc_url: 'ee/api/group_repository_storage_moves.html'
           - doc_title: Group wikis
-            doc_url: 'api/group_wikis.html'
+            doc_url: 'ee/api/group_wikis.html'
           - doc_title: Groups
-            doc_url: 'api/groups.html'
+            doc_url: 'ee/api/groups.html'
           - doc_title: Import
-            doc_url: 'api/import.html'
+            doc_url: 'ee/api/import.html'
           - doc_title: Instance-level CI/CD variables
-            doc_url: 'api/instance_level_ci_variables.html'
+            doc_url: 'ee/api/instance_level_ci_variables.html'
           - doc_title: Invitations
-            doc_url: 'api/invitations.html'
+            doc_url: 'ee/api/invitations.html'
           - doc_title: Issue boards (project)
-            doc_url: 'api/boards.html'
+            doc_url: 'ee/api/boards.html'
           - doc_title: Issue boards (group)
-            doc_url: 'api/group_boards.html'
+            doc_url: 'ee/api/group_boards.html'
           - doc_title: Issues
-            doc_url: 'api/issues.html'
+            doc_url: 'ee/api/issues.html'
           - doc_title: Issues (epic)
-            doc_url: 'api/epic_issues.html'
+            doc_url: 'ee/api/epic_issues.html'
           - doc_title: Issues statistics
-            doc_url: 'api/issues_statistics.html'
+            doc_url: 'ee/api/issues_statistics.html'
           - doc_title: Iterations (project)
-            doc_url: 'api/iterations.html'
+            doc_url: 'ee/api/iterations.html'
           - doc_title: Iterations (group)
-            doc_url: 'api/group_iterations.html'
+            doc_url: 'ee/api/group_iterations.html'
           - doc_title: Jobs
-            doc_url: 'api/jobs.html'
+            doc_url: 'ee/api/jobs.html'
           - doc_title: Job artifacts
-            doc_url: 'api/job_artifacts.html'
+            doc_url: 'ee/api/job_artifacts.html'
           - doc_title: Keys
-            doc_url: 'api/keys.html'
+            doc_url: 'ee/api/keys.html'
           - doc_title: Labels (project)
-            doc_url: 'api/labels.html'
+            doc_url: 'ee/api/labels.html'
           - doc_title: Labels (group)
-            doc_url: 'api/group_labels.html'
+            doc_url: 'ee/api/group_labels.html'
           - doc_title: License
-            doc_url: 'api/license.html'
+            doc_url: 'ee/api/license.html'
           - doc_title: Licenses (templates)
-            doc_url: 'api/templates/licenses.html'
+            doc_url: 'ee/api/templates/licenses.html'
           - doc_title: Links (issue)
-            doc_url: 'api/issue_links.html'
+            doc_url: 'ee/api/issue_links.html'
           - doc_title: Links (epic)
-            doc_url: 'api/epic_links.html'
+            doc_url: 'ee/api/epic_links.html'
           - doc_title: Managed licenses
-            doc_url: 'api/managed_licenses.html'
+            doc_url: 'ee/api/managed_licenses.html'
           - doc_title: Markdown
-            doc_url: 'api/markdown.html'
+            doc_url: 'ee/api/markdown.html'
           - doc_title: Maven
-            doc_url: 'api/packages/maven.html'
+            doc_url: 'ee/api/packages/maven.html'
           - doc_title: Members
-            doc_url: 'api/members.html'
+            doc_url: 'ee/api/members.html'
           - doc_title: Merge request approvals
-            doc_url: 'api/merge_request_approvals.html'
+            doc_url: 'ee/api/merge_request_approvals.html'
           - doc_title: Merge request context commits
-            doc_url: 'api/merge_request_context_commits.html'
+            doc_url: 'ee/api/merge_request_context_commits.html'
           - doc_title: Merge requests
-            doc_url: 'api/merge_requests.html'
+            doc_url: 'ee/api/merge_requests.html'
           - doc_title: Merge trains
-            doc_url: 'api/merge_trains.html'
+            doc_url: 'ee/api/merge_trains.html'
           - doc_title: Milestones (project)
-            doc_url: 'api/milestones.html'
+            doc_url: 'ee/api/milestones.html'
           - doc_title: Milestones (group)
-            doc_url: 'api/group_milestones.html'
+            doc_url: 'ee/api/group_milestones.html'
           - doc_title: Namespaces
-            doc_url: 'api/namespaces.html'
+            doc_url: 'ee/api/namespaces.html'
           - doc_title: Notes (comments)
-            doc_url: 'api/notes.html'
+            doc_url: 'ee/api/notes.html'
           - doc_title: Notification settings
-            doc_url: 'api/notification_settings.html'
+            doc_url: 'ee/api/notification_settings.html'
           - doc_title: NuGet
-            doc_url: 'api/packages/nuget.html'
+            doc_url: 'ee/api/packages/nuget.html'
           - doc_title: Packages
-            doc_url: 'api/packages.html'
+            doc_url: 'ee/api/packages.html'
           - doc_title: Pages domains
-            doc_url: 'api/pages_domains.html'
+            doc_url: 'ee/api/pages_domains.html'
           - doc_title: Personal access tokens
-            doc_url: 'api/personal_access_tokens.html'
+            doc_url: 'ee/api/personal_access_tokens.html'
           - doc_title: Pipelines schedules
-            doc_url: 'api/pipeline_schedules.html'
+            doc_url: 'ee/api/pipeline_schedules.html'
           - doc_title: Pipeline triggers
-            doc_url: 'api/pipeline_triggers.html'
+            doc_url: 'ee/api/pipeline_triggers.html'
           - doc_title: Pipelines
-            doc_url: 'api/pipelines.html'
+            doc_url: 'ee/api/pipelines.html'
           - doc_title: Plan limits
-            doc_url: 'api/plan_limits.html'
+            doc_url: 'ee/api/plan_limits.html'
           - doc_title: Project access tokens
-            doc_url: 'api/resource_access_tokens.html'
+            doc_url: 'ee/api/resource_access_tokens.html'
           - doc_title: Project aliases
-            doc_url: 'api/project_aliases.html'
+            doc_url: 'ee/api/project_aliases.html'
           - doc_title: Project import/export
-            doc_url: 'api/project_import_export.html'
+            doc_url: 'ee/api/project_import_export.html'
           - doc_title: Project remote mirrors
-            doc_url: 'api/remote_mirrors.html'
+            doc_url: 'ee/api/remote_mirrors.html'
           - doc_title: Project repository storage moves
-            doc_url: 'api/project_repository_storage_moves.html'
+            doc_url: 'ee/api/project_repository_storage_moves.html'
           - doc_title: Project statistics
-            doc_url: 'api/project_statistics.html'
+            doc_url: 'ee/api/project_statistics.html'
           - doc_title: Project templates
-            doc_url: 'api/project_templates.html'
+            doc_url: 'ee/api/project_templates.html'
           - doc_title: Project vulnerabilities
-            doc_url: 'api/project_vulnerabilities.html'
+            doc_url: 'ee/api/project_vulnerabilities.html'
           - doc_title: Projects
-            doc_url: 'api/projects.html'
+            doc_url: 'ee/api/projects.html'
           - doc_title: Protected branches
-            doc_url: 'api/protected_branches.html'
+            doc_url: 'ee/api/protected_branches.html'
           - doc_title: Protected environments
-            doc_url: 'api/protected_environments.html'
+            doc_url: 'ee/api/protected_environments.html'
           - doc_title: Protected tags
-            doc_url: 'api/protected_tags.html'
+            doc_url: 'ee/api/protected_tags.html'
           - doc_title: PyPI
-            doc_url: 'api/packages/pypi.html'
+            doc_url: 'ee/api/packages/pypi.html'
           - doc_title: Releases
-            doc_url: 'api/releases/'
+            doc_url: 'ee/api/releases/'
           - doc_title: Release links
-            doc_url: 'api/releases/links.html'
+            doc_url: 'ee/api/releases/links.html'
           - doc_title: Repositories
-            doc_url: 'api/repositories.html'
+            doc_url: 'ee/api/repositories.html'
           - doc_title: Repository files
-            doc_url: 'api/repository_files.html'
+            doc_url: 'ee/api/repository_files.html'
           - doc_title: Repository submodules
-            doc_url: 'api/repository_submodules.html'
+            doc_url: 'ee/api/repository_submodules.html'
           - doc_title: Resource iteration events
-            doc_url: 'api/resource_iteration_events.html'
+            doc_url: 'ee/api/resource_iteration_events.html'
           - doc_title: Resource label events
-            doc_url: 'api/resource_label_events.html'
+            doc_url: 'ee/api/resource_label_events.html'
           - doc_title: Resource milestone events
-            doc_url: 'api/resource_milestone_events.html'
+            doc_url: 'ee/api/resource_milestone_events.html'
           - doc_title: Resource state events
-            doc_url: 'api/resource_state_events.html'
+            doc_url: 'ee/api/resource_state_events.html'
           - doc_title: Resource weight events
-            doc_url: 'api/resource_weight_events.html'
+            doc_url: 'ee/api/resource_weight_events.html'
           - doc_title: Runners
-            doc_url: 'api/runners.html'
+            doc_url: 'ee/api/runners.html'
           - doc_title: SCIM
-            doc_url: 'api/scim.html'
+            doc_url: 'ee/api/scim.html'
           - doc_title: Search
-            doc_url: 'api/search.html'
+            doc_url: 'ee/api/search.html'
           - doc_title: Services
-            doc_url: 'api/services.html'
+            doc_url: 'ee/api/services.html'
           - doc_title: Settings (application)
-            doc_url: 'api/settings.html'
+            doc_url: 'ee/api/settings.html'
           - doc_title: Sidekiq metrics
-            doc_url: 'api/sidekiq_metrics.html'
+            doc_url: 'ee/api/sidekiq_metrics.html'
           - doc_title: Sidekiq queues
-            doc_url: 'api/admin_sidekiq_queues.html'
+            doc_url: 'ee/api/admin_sidekiq_queues.html'
           - doc_title: Snippet repository storage moves
-            doc_url: 'api/snippet_repository_storage_moves.html'
+            doc_url: 'ee/api/snippet_repository_storage_moves.html'
           - doc_title: Snippets
-            doc_url: 'api/snippets.html'
+            doc_url: 'ee/api/snippets.html'
           - doc_title: Snippets (project)
-            doc_url: 'api/project_snippets.html'
+            doc_url: 'ee/api/project_snippets.html'
           - doc_title: Statistics (application)
-            doc_url: 'api/statistics.html'
+            doc_url: 'ee/api/statistics.html'
           - doc_title: Suggestions
-            doc_url: 'api/suggestions.html'
+            doc_url: 'ee/api/suggestions.html'
           - doc_title: System hooks
-            doc_url: 'api/system_hooks.html'
+            doc_url: 'ee/api/system_hooks.html'
           - doc_title: Tags
-            doc_url: 'api/tags.html'
+            doc_url: 'ee/api/tags.html'
           - doc_title: To-Do lists
-            doc_url: 'api/todos.html'
+            doc_url: 'ee/api/todos.html'
           - doc_title: Users
-            doc_url: 'api/users.html'
+            doc_url: 'ee/api/users.html'
           - doc_title: User-starred metrics dashboards
-            doc_url: 'api/metrics_user_starred_dashboards.html'
+            doc_url: 'ee/api/metrics_user_starred_dashboards.html'
           - doc_title: Variables (project)
-            doc_url: 'api/project_level_variables.html'
+            doc_url: 'ee/api/project_level_variables.html'
           - doc_title: Variables (group)
-            doc_url: 'api/group_level_variables.html'
+            doc_url: 'ee/api/group_level_variables.html'
           - doc_title: Version
-            doc_url: 'api/version.html'
+            doc_url: 'ee/api/version.html'
           - doc_title: Visual Review discussions
-            doc_url: 'api/visual_review_discussions.html'
+            doc_url: 'ee/api/visual_review_discussions.html'
           - doc_title: Vulnerabilities
-            doc_url: 'api/vulnerabilities.html'
+            doc_url: 'ee/api/vulnerabilities.html'
           - doc_title: Vulnerability export
-            doc_url: 'api/vulnerability_exports.html'
+            doc_url: 'ee/api/vulnerability_exports.html'
           - doc_title: Vulnerability Findings
-            doc_url: 'api/vulnerability_findings.html'
+            doc_url: 'ee/api/vulnerability_findings.html'
           - doc_title: Wikis
-            doc_url: 'api/wikis.html'
+            doc_url: 'ee/api/wikis.html'
       - category_title: GraphQL
-        category_url: 'api/graphql/'
+        category_url: 'ee/api/graphql/'
         docs:
           - doc_title: Getting started
-            doc_url: 'api/graphql/getting_started.html'
+            doc_url: 'ee/api/graphql/getting_started.html'
           - doc_title: GraphQL reference
-            doc_url: 'api/graphql/reference/'
+            doc_url: 'ee/api/graphql/reference/'
           - doc_title: Create audit report (example)
-            doc_url: 'api/graphql/audit_report.html'
+            doc_url: 'ee/api/graphql/audit_report.html'
           - doc_title: Identify issue boards (example)
-            doc_url: 'api/graphql/sample_issue_boards.html'
+            doc_url: 'ee/api/graphql/sample_issue_boards.html'
           - doc_title: Removed items
-            doc_url: 'api/graphql/removed_items.html'
+            doc_url: 'ee/api/graphql/removed_items.html'
       - category_title: v3 to v4
-        category_url: 'api/v3_to_v4.html'
+        category_url: 'ee/api/v3_to_v4.html'
       - category_title: Lint .gitlab-ci.yml
-        category_url: 'api/lint.html'
+        category_url: 'ee/api/lint.html'
       - category_title: GitLab as an OAuth2 provider
-        category_url: 'api/oauth2.html'
+        category_url: 'ee/api/oauth2.html'
 
   - section_title: Contributions
-    section_url: 'development/README.html'
+    section_url: 'ee/development/README.html'
     section_categories:
       - category_title: Contribute to GitLab
-        category_url: 'development/contributing/'
+        category_url: 'ee/development/contributing/'
         docs:
           - doc_title: Changelog entries
-            doc_url: 'development/changelog.html'
+            doc_url: 'ee/development/changelog.html'
           - doc_title: Community roles
-            doc_url: 'development/contributing/community_roles.html'
+            doc_url: 'ee/development/contributing/community_roles.html'
           - doc_title: Design and UI
-            doc_url: 'development/contributing/design.html'
+            doc_url: 'ee/development/contributing/design.html'
           - doc_title: GitLab Development Kit
             doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
             external_url: true
           - doc_title: Issues workflow
-            doc_url: 'development/contributing/issue_workflow.html'
+            doc_url: 'ee/development/contributing/issue_workflow.html'
           - doc_title: Merge request workflow
-            doc_url: 'development/contributing/merge_request_workflow.html'
+            doc_url: 'ee/development/contributing/merge_request_workflow.html'
           - doc_title: Code review guidelines
-            doc_url: 'development/code_review.html'
+            doc_url: 'ee/development/code_review.html'
           - doc_title: Style guides
-            doc_url: 'development/contributing/style_guides.html'
+            doc_url: 'ee/development/contributing/style_guides.html'
       - category_title: Architecture
-        category_url: 'development/architecture.html'
+        category_url: 'ee/development/architecture.html'
       - category_title: CI/CD development
-        category_url: 'development/cicd/'
+        category_url: 'ee/development/cicd/'
         docs:
           - doc_title: CI/CD template development
-            doc_url: 'development/cicd/templates.html'
+            doc_url: 'ee/development/cicd/templates.html'
           - doc_title: Auto DevOps development
-            doc_url: 'development/auto_devops.html'
+            doc_url: 'ee/development/auto_devops.html'
       - category_title: Danger bot
-        category_url: 'development/dangerbot.html'
+        category_url: 'ee/development/dangerbot.html'
       - category_title: Database development
-        category_url: 'development/database/'
+        category_url: 'ee/development/database/'
         docs:
           - doc_title: Case study - filtering by label
-            doc_url: 'development/filtering_by_label.html'
+            doc_url: 'ee/development/filtering_by_label.html'
           - doc_title: Case study - namespaces storage statistics
-            doc_url: 'development/namespaces_storage_statistics.html'
+            doc_url: 'ee/development/namespaces_storage_statistics.html'
           - doc_title: Database review guidelines
-            doc_url: 'development/database_review.html'
+            doc_url: 'ee/development/database_review.html'
           - doc_title: Migrations style guide
-            doc_url: 'development/migration_style_guide.html'
+            doc_url: 'ee/development/migration_style_guide.html'
           - doc_title: SQL guidelines
-            doc_url: 'development/sql.html'
+            doc_url: 'ee/development/sql.html'
           - doc_title: Understanding EXPLAIN plans
-            doc_url: 'development/understanding_explain_plans.html'
+            doc_url: 'ee/development/understanding_explain_plans.html'
           - doc_title: What requires downtime
-            doc_url: 'development/what_requires_downtime.html'
+            doc_url: 'ee/development/what_requires_downtime.html'
       - category_title: Developer guide to logging
-        category_url: 'development/logging.html'
+        category_url: 'ee/development/logging.html'
       - category_title: Development Rake tasks
-        category_url: 'development/rake_tasks.html'
+        category_url: 'ee/development/rake_tasks.html'
         docs:
           - doc_title: Mass insert Rails models
-            doc_url: 'development/mass_insert.html'
+            doc_url: 'ee/development/mass_insert.html'
       - category_title: Documentation
-        category_url: 'development/documentation/'
+        category_url: 'ee/development/documentation/'
         docs:
           - doc_title: Style guide
-            doc_url: 'development/documentation/styleguide/'
+            doc_url: 'ee/development/documentation/styleguide/'
           - doc_title: GraphQL style guide
-            doc_url: 'development/documentation/graphql_styleguide.html'
+            doc_url: 'ee/development/documentation/graphql_styleguide.html'
           - doc_title: RESTful API style guide
-            doc_url: 'development/documentation/restful_api_styleguide.html'
+            doc_url: 'ee/development/documentation/restful_api_styleguide.html'
           - doc_title: Topic types
-            doc_url: 'development/documentation/structure.html'
+            doc_url: 'ee/development/documentation/structure.html'
           - doc_title: Process
-            doc_url: 'development/documentation/workflow.html'
+            doc_url: 'ee/development/documentation/workflow.html'
           - doc_title: Testing
-            doc_url: 'development/documentation/testing.html'
+            doc_url: 'ee/development/documentation/testing.html'
           - doc_title: Site architecture
-            doc_url: 'development/documentation/site_architecture/'
+            doc_url: 'ee/development/documentation/site_architecture/'
           - doc_title: Global navigation
-            doc_url: 'development/documentation/site_architecture/global_nav.html'
+            doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
           - doc_title: Deployment process
-            doc_url: 'development/documentation/site_architecture/deployment_process.html'
+            doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
           - doc_title: Release process
-            doc_url: 'development/documentation/site_architecture/release_process.html'
+            doc_url: 'ee/development/documentation/site_architecture/release_process.html'
       - category_title: Distributed tracing
-        category_url: 'development/distributed_tracing.html'
+        category_url: 'ee/development/distributed_tracing.html'
       - category_title: Experiments
-        category_url: 'development/experiment_guide/'
+        category_url: 'ee/development/experiment_guide/'
         docs:
           - doc_title: Experimentation module
-            doc_url: 'development/experiment_guide/experimentation.html'
+            doc_url: 'ee/development/experiment_guide/experimentation.html'
           - doc_title: GLEX
-            doc_url: 'development/experiment_guide/gitlab_experiment.html'
+            doc_url: 'ee/development/experiment_guide/gitlab_experiment.html'
       - category_title: Feature flags for GitLab development
-        category_url: 'development/feature_flags/'
+        category_url: 'ee/development/feature_flags/'
         docs:
           - doc_title: Controlling feature flags
-            doc_url: 'development/feature_flags/controls.html'
+            doc_url: 'ee/development/feature_flags/controls.html'
           - doc_title: Documenting feature flags
-            doc_url: 'development/documentation/feature_flags.html'
+            doc_url: 'ee/development/documentation/feature_flags.html'
       - category_title: Framework - DeclarativePolicy
-        category_url: 'development/policies.html'
+        category_url: 'ee/development/policies.html'
       - category_title: Frontend development
-        category_url: 'development/fe_guide/'
+        category_url: 'ee/development/fe_guide/'
         docs:
           - doc_title: Accessibility
-            doc_url: 'development/fe_guide/accessibility.html'
+            doc_url: 'ee/development/fe_guide/accessibility.html'
           - doc_title: Architecture
-            doc_url: 'development/fe_guide/architecture.html'
+            doc_url: 'ee/development/fe_guide/architecture.html'
           - doc_title: Axios
-            doc_url: 'development/fe_guide/axios.html'
+            doc_url: 'ee/development/fe_guide/axios.html'
           - doc_title: Dark mode
-            doc_url: 'development/fe_guide/dark_mode.html'
+            doc_url: 'ee/development/fe_guide/dark_mode.html'
           - doc_title: Design patterns
-            doc_url: 'development/fe_guide/design_patterns.html'
+            doc_url: 'ee/development/fe_guide/design_patterns.html'
           - doc_title: Development process
-            doc_url: 'development/fe_guide/development_process.html'
+            doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Droplab
-            doc_url: 'development/fe_guide/droplab/droplab.html'
+            doc_url: 'ee/development/fe_guide/droplab/droplab.html'
           - doc_title: Emojis
-            doc_url: 'development/fe_guide/emojis.html'
+            doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Filter
-            doc_url: 'development/fe_guide/droplab/plugins/filter.html'
+            doc_url: 'ee/development/fe_guide/droplab/plugins/filter.html'
           - doc_title: Frontend FAQ
-            doc_url: 'development/fe_guide/frontend_faq.html'
+            doc_url: 'ee/development/fe_guide/frontend_faq.html'
           - doc_title: GraphQL
-            doc_url: 'development/fe_guide/graphql.html'
+            doc_url: 'ee/development/fe_guide/graphql.html'
           - doc_title: Icons and SVG illustrations
-            doc_url: 'development/fe_guide/icons.html'
+            doc_url: 'ee/development/fe_guide/icons.html'
           - doc_title: InputSetter
-            doc_url: 'development/fe_guide/droplab/plugins/input_setter.html'
+            doc_url: 'ee/development/fe_guide/droplab/plugins/input_setter.html'
           - doc_title: Performance
-            doc_url: 'development/fe_guide/performance.html'
+            doc_url: 'ee/development/fe_guide/performance.html'
           - doc_title: Principles
-            doc_url: 'development/fe_guide/principles.html'
+            doc_url: 'ee/development/fe_guide/principles.html'
           - doc_title: Security
-            doc_url: 'development/fe_guide/security.html'
+            doc_url: 'ee/development/fe_guide/security.html'
           - doc_title: Tooling
-            doc_url: 'development/fe_guide/tooling.html'
+            doc_url: 'ee/development/fe_guide/tooling.html'
           - doc_title: Vuex
-            doc_url: 'development/fe_guide/vuex.html'
+            doc_url: 'ee/development/fe_guide/vuex.html'
           - doc_title: Vue
-            doc_url: 'development/fe_guide/vue.html'
+            doc_url: 'ee/development/fe_guide/vue.html'
           - doc_title: Widgets
-            doc_url: 'development/fe_guide/widgets.html'
+            doc_url: 'ee/development/fe_guide/widgets.html'
       - category_title: GitLab Pages development
         category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/pages.md'
         external_url: true
       - category_title: Geo development
-        category_url: 'development/geo.html'
+        category_url: 'ee/development/geo.html'
         docs:
           - doc_title: Geo framework
-            doc_url: 'development/geo/framework.html'
+            doc_url: 'ee/development/geo/framework.html'
       - category_title: Gitaly development
-        category_url: 'development/gitaly.html'
+        category_url: 'ee/development/gitaly.html'
       - category_title: GitLab Design System
         category_url: 'https://design.gitlab.com'
         external_url: true
       - category_title: GitLab development style guides
-        category_url: 'development/fe_guide/style/'
+        category_url: 'ee/development/fe_guide/style/'
         docs:
           - doc_title: API style guide
-            doc_url: 'development/api_styleguide.html'
+            doc_url: 'ee/development/api_styleguide.html'
           - doc_title: Go standards and style guidelines
-            doc_url: 'development/go_guide/'
+            doc_url: 'ee/development/go_guide/'
           - doc_title: GraphQL API style guide
-            doc_url: 'development/api_graphql_styleguide.html'
+            doc_url: 'ee/development/api_graphql_styleguide.html'
           - doc_title: Guidelines for shell commands
-            doc_url: 'development/shell_commands.html'
+            doc_url: 'ee/development/shell_commands.html'
           - doc_title: HTML style guide
-            doc_url: 'development/fe_guide/style/html.html'
+            doc_url: 'ee/development/fe_guide/style/html.html'
           - doc_title: JavaScript style guide
-            doc_url: 'development/fe_guide/style/javascript.html'
+            doc_url: 'ee/development/fe_guide/style/javascript.html'
           - doc_title: Newlines style guide
-            doc_url: 'development/newlines_styleguide.html'
+            doc_url: 'ee/development/newlines_styleguide.html'
           - doc_title: Python development guidelines
-            doc_url: 'development/python_guide/'
+            doc_url: 'ee/development/python_guide/'
           - doc_title: SCSS style guide
-            doc_url: 'development/fe_guide/style/scss.html'
+            doc_url: 'ee/development/fe_guide/style/scss.html'
           - doc_title: Shell scripting standards and style guidelines
-            doc_url: 'development/shell_scripting_guide/'
+            doc_url: 'ee/development/shell_scripting_guide/'
           - doc_title: Sidekiq debugging
-            doc_url: 'administration/troubleshooting/sidekiq.html'
+            doc_url: 'ee/administration/troubleshooting/sidekiq.html'
           - doc_title: Sidekiq style guide
-            doc_url: 'development/sidekiq_style_guide.html'
+            doc_url: 'ee/development/sidekiq_style_guide.html'
           - doc_title: Vue style guide
-            doc_url: 'development/fe_guide/style/vue.html'
+            doc_url: 'ee/development/fe_guide/style/vue.html'
       - category_title: GitLab group migration
-        category_url: 'development/bulk_import.html'
+        category_url: 'ee/development/bulk_import.html'
       - category_title: GitLab project pipelines
-        category_url: 'development/pipelines.html'
+        category_url: 'ee/development/pipelines.html'
       - category_title: GraphQL development
-        category_url: 'development/graphql_guide/'
+        category_url: 'ee/development/graphql_guide/'
         docs:
           - doc_title: GraphQL BatchLoader
-            doc_url: 'development/graphql_guide/batchloader.html'
+            doc_url: 'ee/development/graphql_guide/batchloader.html'
           - doc_title: GraphQL pagination
-            doc_url: 'development/graphql_guide/pagination.html'
+            doc_url: 'ee/development/graphql_guide/pagination.html'
           - doc_title: GraphQL Pro
-            doc_url: 'development/graphql_guide/graphql_pro.html'
+            doc_url: 'ee/development/graphql_guide/graphql_pro.html'
       - category_title: Import/Export
-        category_url: 'development/import_export.html'
+        category_url: 'ee/development/import_export.html'
       - category_title: Instrumenting Ruby code
-        category_url: 'development/instrumentation.html'
+        category_url: 'ee/development/instrumentation.html'
       - category_title: Issuable-like Rails models utilities
-        category_url: 'development/issuable-like-models.html'
+        category_url: 'ee/development/issuable-like-models.html'
       - category_title: Issue types
-        category_url: 'development/issue_types.html'
+        category_url: 'ee/development/issue_types.html'
       - category_title: Kubernetes Agent
-        category_url: 'development/agent/'
+        category_url: 'ee/development/agent/'
         docs:
           - doc_title: Routing kas requests
-            doc_url: 'development/agent/routing.html'
+            doc_url: 'ee/development/agent/routing.html'
           - doc_title: Repository overview
-            doc_url: 'development/agent/repository_overview.html'
+            doc_url: 'ee/development/agent/repository_overview.html'
           - doc_title: Identity and authentication
-            doc_url: 'development/agent/identity.html'
+            doc_url: 'ee/development/agent/identity.html'
           - doc_title: User stories
-            doc_url: 'development/agent/user_stories.html'
+            doc_url: 'ee/development/agent/user_stories.html'
           - doc_title: GitOps with the Kubernetes Agent
-            doc_url: 'development/agent/gitops.html'
+            doc_url: 'ee/development/agent/gitops.html'
           - doc_title: Running locally
-            doc_url: 'development/agent/local.html'
+            doc_url: 'ee/development/agent/local.html'
       - category_title: Kubernetes integration
-        category_url: 'development/kubernetes.html'
+        category_url: 'ee/development/kubernetes.html'
       - category_title: Package development
-        category_url: 'development/packages.html'
+        category_url: 'ee/development/packages.html'
       - category_title: Permissions guide
-        category_url: 'development/permissions.html'
+        category_url: 'ee/development/permissions.html'
       - category_title: Testing standards and styles
-        category_url: 'development/testing_guide/'
+        category_url: 'ee/development/testing_guide/'
         docs:
           - doc_title: Flaky tests
-            doc_url: 'development/testing_guide/flaky_tests.html'
+            doc_url: 'ee/development/testing_guide/flaky_tests.html'
           - doc_title: Frontend testing standards and style guidelines
-            doc_url: 'development/testing_guide/frontend_testing.html'
+            doc_url: 'ee/development/testing_guide/frontend_testing.html'
           - doc_title: GitLab tests in CI context
-            doc_url: 'development/testing_guide/ci.html'
+            doc_url: 'ee/development/testing_guide/ci.html'
           - doc_title: Review apps
-            doc_url: 'development/testing_guide/review_apps.html'
+            doc_url: 'ee/development/testing_guide/review_apps.html'
           - doc_title: Smoke tests
-            doc_url: 'development/testing_guide/smoke.html'
+            doc_url: 'ee/development/testing_guide/smoke.html'
           - doc_title: Testing best practices
-            doc_url: 'development/testing_guide/best_practices.html'
+            doc_url: 'ee/development/testing_guide/best_practices.html'
           - doc_title: Testing levels
-            doc_url: 'development/testing_guide/testing_levels.html'
+            doc_url: 'ee/development/testing_guide/testing_levels.html'
           - doc_title: Testing Rails migrations
-            doc_url: 'development/testing_guide/testing_migrations_guide.html'
+            doc_url: 'ee/development/testing_guide/testing_migrations_guide.html'
           - doc_title: Testing Rake tasks
-            doc_url: 'development/testing_guide/testing_rake_tasks.html'
+            doc_url: 'ee/development/testing_guide/testing_rake_tasks.html'
       - category_title: Testing (end to end)
-        category_url: 'development/testing_guide/end_to_end/'
+        category_url: 'ee/development/testing_guide/end_to_end/'
         docs:
           - doc_title: Beginner's guide to writing end-to-end tests
-            doc_url: 'development/testing_guide/end_to_end/beginners_guide.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/beginners_guide.html'
           - doc_title: Best practices when writing end-to-end tests
-            doc_url: 'development/testing_guide/end_to_end/best_practices.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/best_practices.html'
           - doc_title: Dynamic element validation
-            doc_url: 'development/testing_guide/end_to_end/dynamic_element_validation.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/dynamic_element_validation.html'
           - doc_title: Flows in GitLab QA
-            doc_url: 'development/testing_guide/end_to_end/flows.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/flows.html'
           - doc_title: Page objects in GitLab QA
-            doc_url: 'development/testing_guide/end_to_end/page_objects.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/page_objects.html'
           - doc_title: Resource class in GitLab QA
-            doc_url: 'development/testing_guide/end_to_end/resources.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/resources.html'
           - doc_title: Style guide for writing end-to-end tests
-            doc_url: 'development/testing_guide/end_to_end/style_guide.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/style_guide.html'
           - doc_title: Testing with feature flags
-            doc_url: 'development/testing_guide/end_to_end/feature_flags.html'
+            doc_url: 'ee/development/testing_guide/end_to_end/feature_flags.html'
       - category_title: Translate GitLab
-        category_url: 'development/i18n/'
+        category_url: 'ee/development/i18n/'
         docs:
           - doc_title: Externalization
-            doc_url: 'development/i18n/externalization.html'
+            doc_url: 'ee/development/i18n/externalization.html'
           - doc_title: Translation
-            doc_url: 'development/i18n/translation.html'
+            doc_url: 'ee/development/i18n/translation.html'
           - doc_title: Proofreading
-            doc_url: 'development/i18n/proofreader.html'
+            doc_url: 'ee/development/i18n/proofreader.html'
           - doc_title: Merging
-            doc_url: 'development/i18n/merging_translations.html'
+            doc_url: 'ee/development/i18n/merging_translations.html'
       - category_title: Snowplow guide
-        category_url: 'development/snowplow.html'
+        category_url: 'ee/development/snowplow.html'
       - category_title: Usage Ping guide
-        category_url: 'development/usage_ping/'
+        category_url: 'ee/development/usage_ping/'
         docs:
           - doc_title: Metrics dictionary guide
-            doc_url: 'development/usage_ping/metrics_dictionary.html'
+            doc_url: 'ee/development/usage_ping/metrics_dictionary.html'
           - doc_title: Metrics dictionary
-            doc_url: 'development/usage_ping/dictionary.html'
+            doc_url: 'ee/development/usage_ping/dictionary.html'
       - category_title: Value Stream Analytics
-        category_url: 'development/value_stream_analytics.html'
+        category_url: 'ee/development/value_stream_analytics.html'
       - category_title: Working with Prometheus metrics
-        category_url: 'development/prometheus_metrics.html'
+        category_url: 'ee/development/prometheus_metrics.html'
+  # End of documentation from https://gitlab.com/gitlab-org/gitlab
+
+  # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+  - section_title: Omnibus GitLab Docs
+    section_url: 'omnibus/README.html'
+    section_categories:
+      - category_title: Architecture
+        category_url: 'omnibus/architecture/README.html'
+        docs:
+          - doc_title: Omnibus packages and images
+            doc_url: 'omnibus/package-information/omnibus_packages.html'
+          - doc_title: Package information
+            doc_url: 'omnibus/package-information/README.html'
+          - doc_title: Package defaults
+            doc_url: 'omnibus/package-information/defaults.html'
+          - doc_title: Package licensing
+            doc_url: 'omnibus/package-information/licensing.html'
+          - doc_title: Package signatures
+            doc_url: 'omnibus/package-information/signed_packages.html'
+
+      - category_title: Installation
+        category_url: 'omnibus/installation/'
+        docs:
+          - doc_title: Container Registry
+            doc_url: 'omnibus/architecture/registry/README.html'
+          - doc_title: Deprecation policy
+            doc_url: 'omnibus/package-information/deprecation_policy.html'
+          - doc_title: Deprecated OSes
+            doc_url: 'omnibus/package-information/deprecated_os.html'
+          - doc_title: Docker images
+            doc_url: 'omnibus/docker/README.html'
+          - doc_title: Manual installation
+            doc_url: 'omnibus/manual_install.html'
+          - doc_title: Install JiHu Edition
+            doc_url: 'omnibus/jihu_edition.html'
+
+      - category_title: Configure
+        category_url: 'omnibus/settings/README.html'
+        docs:
+          - doc_title: Custom environment variables
+            doc_url: 'omnibus/settings/environment-variables.html'
+          - doc_title: Backups
+            doc_url: 'omnibus/settings/backups.html'
+          - doc_title: Database
+            doc_url: 'omnibus/settings/database.html'
+          - doc_title: GitLab Mattermost
+            doc_url: 'omnibus/gitlab-mattermost/README.html'
+          - doc_title: Grafana
+            doc_url: 'omnibus/settings/grafana.html'
+          - doc_title: High availability roles
+            doc_url: 'omnibus/roles/README.html'
+          - doc_title: LDAP
+            doc_url: 'https://docs.gitlab.com/ee/administration/auth/ldap/index.html'
+            external_url: true
+          - doc_title: Logs
+            doc_url: 'omnibus/settings/logs.html'
+          - doc_title: NGINX
+            doc_url: 'omnibus/settings/nginx.html'
+          - doc_title: Gitaly Cluster
+            doc_url: 'omnibus/settings/praefect.html'
+          - doc_title: Prometheus
+            doc_url: 'omnibus/settings/prometheus.html'
+          - doc_title: Puma
+            doc_url: 'omnibus/settings/puma.html'
+          - doc_title: Raspberry Pi
+            doc_url: 'omnibus/settings/rpi.html'
+          - doc_title: Redis
+            doc_url: 'omnibus/settings/redis.html'
+          - doc_title: SMTP
+            doc_url: 'omnibus/settings/smtp.html'
+          - doc_title: SSL
+            doc_url: 'omnibus/settings/ssl.html'
+          - doc_title: DNS
+            doc_url: 'omnibus/settings/dns.html'
+          - doc_title: Unicorn
+            doc_url: 'omnibus/settings/unicorn.html'
+          - doc_title: Image scaling
+            doc_url: 'omnibus/settings/image_scaling.html'
+          - doc_title: Memory-constrained environments
+            doc_url: 'omnibus/settings/memory_constrained_envs.html'
+
+      - category_title: Release process
+        category_url: 'omnibus/release/README.html'
+        docs:
+          - doc_title: OpenShift release process
+            doc_url: 'omnibus/release/openshift.html'
+
+      - category_title: Update
+        category_url: 'omnibus/update/README.html'
+        docs:
+          - doc_title: Convert to Omnibus
+            doc_url: 'omnibus/update/convert_to_omnibus.html'
+          - doc_title: Package signatures
+            doc_url: 'omnibus/update/package_signatures.html'
+          - doc_title: GitLab 13 changes
+            doc_url: 'omnibus/update/gitlab_13_changes.html'
+          - doc_title: GitLab 12 changes
+            doc_url: 'omnibus/update/gitlab_12_changes.html'
+          - doc_title: GitLab 11 changes
+            doc_url: 'omnibus/update/gitlab_11_changes.html'
+          - doc_title: GitLab 10 changes
+            doc_url: 'omnibus/update/gitlab_10_changes.html'
+
+      - category_title: Maintain
+        category_url: 'omnibus/maintenance/README.html'
+
+      - category_title: Troubleshoot
+        category_url: 'omnibus/common_installation_problems/README.html'
+
+      - category_title: Development
+        category_url: 'omnibus/development/README.html'
+        docs:
+          - doc_title: Documentation
+            docs_url: 'https://docs.gitlab.com/ee/development/documentation/'
+            external_url: true
+          - doc_title: Build locally
+            docs_url: 'omnibus/build/README.html'
+            docs:
+              - doc_title: Build Omnibus GitLab package
+                doc_url: 'omnibus/build/build_package.html'
+              - doc_title: Build all-in-one Docker image
+                doc_url: 'omnibus/build/build_docker_image.html'
+              - doc_title: Information for GitLab team members
+                doc_url: 'omnibus/build/team_member_docs.html'
+          - doc_title: Set up a development environment
+            doc_url: 'omnibus/development/setup.html'
+          - doc_title: Config options
+            doc_url: 'omnibus/settings/configuration.html'
+          - doc_title: Changing YAML config options
+            doc_url: 'omnibus/settings/gitlab.yml.html'
+          - doc_title: Adding deprecation messages
+            doc_url: 'omnibus/development/adding-deprecation-messages.html'
+          - doc_title: Adding new gitlab-ctl commands
+            doc_url: 'omnibus/development/gitlab-ctl-commands.html'
+          - doc_title: Adding new services
+            doc_url: 'omnibus/development/new-services.html'
+          - doc_title: Adding new software definitions
+            doc_url: 'omnibus/development/new-software-definition.html'
+          - doc_title: Creating patches
+            doc_url: 'omnibus/development/creating-patches.html'
+          - doc_title: Installing OpenShift
+            doc_url: 'omnibus/development/openshift/README.html'
+          - doc_title: Managing PostgreSQL versions
+            doc_url: 'omnibus/development/managing-postgresql-versions.html'
+          - doc_title: Working with public_attributes.json
+            doc_url: 'omnibus/development/public-attributes.html'
+  # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+
+  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
+  - section_title: Runner Docs
+    section_url: 'runner/'
+    section_categories:
+      - category_title: Install
+        category_url: 'runner/install/'
+        docs:
+          - doc_title: Docker
+            doc_url: 'runner/install/docker.html'
+          - doc_title: FreeBSD
+            doc_url: 'runner/install/freebsd.html'
+          - doc_title: Kubernetes (Helm Chart)
+            doc_url: 'runner/install/kubernetes.html'
+          - doc_title: Kubernetes (Agent)
+            doc_url: 'runner/install/kubernetes-agent.html'
+          - doc_title: Linux
+            doc_url: 'runner/install/linux-manually.html'
+          - doc_title: macOS
+            doc_url: 'runner/install/osx.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/install/openshift.html'
+          - doc_title: Windows
+            doc_url: 'runner/install/windows.html'
+          - doc_title: Bleeding edge releases
+            doc_url: 'runner/install/bleeding-edge.html'
+          - doc_title: Official Linux packages
+            doc_url: 'runner/install/linux-repository.html'
+          - doc_title: Old GitLab Runner URLs
+            doc_url: 'runner/install/old.html'
+
+      - category_title: Configure
+        category_url: 'runner/configuration/'
+        docs:
+          - doc_title: Advanced config
+            doc_url: 'runner/configuration/advanced-configuration.html'
+          - doc_title: Autoscale config
+            doc_url: 'runner/configuration/autoscale.html'
+          - doc_title: Autoscale on AWS EC2
+            doc_url: 'runner/configuration/runner_autoscale_aws/'
+          - doc_title: Autoscale on AWS Fargate
+            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
+          - doc_title: Commands
+            doc_url: 'runner/commands/README.html'
+          - doc_title: Feature flags
+            doc_url: 'runner/configuration/feature-flags.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/configuration/configuring_runner_openshift.html'
+          - doc_title: Running behind a proxy
+            doc_url: 'runner/configuration/proxy.html'
+          - doc_title: Rate limited requests
+            doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
+          - doc_title: Self-signed certificates
+            doc_url: 'runner/configuration/tls-self-signed.html'
+          - doc_title: System services
+            doc_url: 'runner/configuration/init.html'
+          - doc_title: Speed up job execution
+            doc_url: 'runner/configuration/speed_up_job_execution.html'
+
+      - category_title: Register
+        category_url: 'runner/register/'
+        docs:
+          - doc_title: Examples
+            doc_url: 'runner/examples/gitlab.html'
+
+      - category_title: Executors
+        category_url: 'runner/executors/README.html'
+        docs:
+          - doc_title: Custom
+            doc_url: 'runner/executors/custom.html'
+            docs:
+              - doc_title: libvirt
+                doc_url: 'runner/executors/custom_examples/libvirt.html'
+              - doc_title: LXD
+                doc_url: 'runner/executors/custom_examples/lxd.html'
+          - doc_title: Docker
+            doc_url: 'runner/executors/docker.html'
+          - doc_title: Docker Machine
+            doc_url: 'runner/executors/docker_machine.html'
+          - doc_title: Kubernetes
+            doc_url: 'runner/executors/kubernetes.html'
+          - doc_title: Shell
+            doc_url: 'runner/executors/shell.html'
+          - doc_title: SSH
+            doc_url: 'runner/executors/ssh.html'
+          - doc_title: Parallels
+            doc_url: 'runner/executors/parallels.html'
+          - doc_title: Virtual Box
+            doc_url: 'runner/executors/virtualbox.html'
+
+      - category_title: Monitor
+        category_url: 'runner/monitoring/README.html'
+
+      - category_title: Security
+        category_url: 'runner/security/'
+
+      - category_title: Shells
+        category_url: 'runner/shells/'
+
+      - category_title: Troubleshoot
+        category_url: 'runner/faq/README.html'
+
+      - category_title: Contribute
+        category_url: 'runner/development/README.html'
+        docs:
+          - doc_title: Documentation
+            doc_url: 'https://docs.gitlab.com/ee/development/documentation/'
+            external_url: true
+          - doc_title: Reviewing GitLab Runner
+            doc_url: 'runner/development/reviewing-gitlab-runner.html'
+
+      - category_title: Best Practices
+        category_url: 'runner/best_practice/'
+  # End of documentation from https://gitlab.com/gitlab-org/gitlab-runner
+
+  # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
+  - section_title: GitLab Helm Charts Docs
+    section_url: 'charts/'
+    section_categories:
+      - category_title: Install
+        category_url: 'charts/installation/'
+        docs:
+          - doc_title: Required tools
+            doc_url: 'charts/installation/tools.html'
+          - doc_title: Cloud cluster preparation
+            doc_url: 'charts/installation/cloud/'
+            docs:
+              - doc_title: AKS
+                doc_url: 'charts/installation/cloud/aks.html'
+              - doc_title: EKS
+                doc_url: 'charts/installation/cloud/eks.html'
+              - doc_title: GKE
+                doc_url: 'charts/installation/cloud/gke.html'
+              - doc_title: OpenShift
+                doc_url: 'charts/installation/cloud/openshift.html'
+          - doc_title: Deploy
+            doc_url: 'charts/installation/deployment.html'
+          - doc_title: Upgrade
+            doc_url: 'charts/installation/upgrade.html'
+          - doc_title: Backup and Restore
+            doc_url: 'charts/backup-restore/'
+            docs:
+              - doc_title: Backup
+                doc_url: 'charts/backup-restore/backup.html'
+              - doc_title: Restore
+                doc_url: 'charts/backup-restore/restore.html'
+          - doc_title: Migrate from Omnibus
+            doc_url: 'charts/installation/migration/'
+          - doc_title: Version mappings
+            doc_url: 'charts/installation/version_mappings.html'
+
+      - category_title: Configure
+        category_url: 'charts/charts/'
+        docs:
+          - doc_title: Globals
+            doc_url: 'charts/charts/globals.html'
+          - doc_title: GitLab sub-charts
+            doc_url: 'charts/charts/gitlab/'
+            docs:
+              - doc_title: Gitaly chart
+                doc_url: 'charts/charts/gitlab/gitaly/'
+              - doc_title: GitLab Exporter chart
+                doc_url: 'charts/charts/gitlab/gitlab-exporter/'
+              - doc_title: GitLab Grafana chart
+                doc_url: 'charts/charts/gitlab/gitlab-grafana/'
+              - doc_title: GitLab Pages chart
+                doc_url: 'charts/charts/gitlab/gitlab-pages/'
+              - doc_title: GitLab Runner chart
+                doc_url: 'charts/charts/gitlab/gitlab-runner/'
+              - doc_title: GitLab Shell chart
+                doc_url: 'charts/charts/gitlab/gitlab-shell/'
+              - doc_title: KAS chart
+                doc_url: 'charts/charts/gitlab/kas/'
+              - doc_title: Migrations chart
+                doc_url: 'charts/charts/gitlab/migrations/'
+              - doc_title: Praefect chart
+                doc_url: 'charts/charts/gitlab/praefect/'
+              - doc_title: Sidekiq chart
+                doc_url: 'charts/charts/gitlab/sidekiq/'
+              - doc_title: Task Runner chart
+                doc_url: 'charts/charts/gitlab/task-runner/'
+              - doc_title: Webservice chart
+                doc_url: 'charts/charts/gitlab/webservice/'
+          - doc_title: Minio chart
+            doc_url: 'charts/charts/minio/'
+          - doc_title: Nginx chart
+            doc_url: 'charts/charts/nginx/'
+          - doc_title: Redis chart
+            doc_url: 'charts/installation/deployment.html#redis'
+          - doc_title: Redis HA chart
+            doc_url: 'charts/installation/deployment.html#redis'
+          - doc_title: Registry chart
+            doc_url: 'charts/charts/registry/'
+          - doc_title: Advanced
+            doc_url: 'charts/advanced/'
+            docs:
+              - doc_title: External database
+                doc_url: 'charts/advanced/external-db/'
+              - doc_title: External Gitaly
+                doc_url: 'charts/advanced/external-gitaly/'
+              - doc_title: External Mattermost
+                doc_url: 'charts/advanced/external-mattermost/'
+              - doc_title: External Nginx
+                doc_url: 'charts/advanced/external-nginx/'
+              - doc_title: External object storage
+                doc_url: 'charts/advanced/external-object-storage/'
+              - doc_title: External Redis
+                doc_url: 'charts/advanced/external-redis/'
+              - doc_title: Persistent volumes
+                doc_url: 'charts/advanced/persistent-volumes/'
+
+      - category_title: Troubleshoot
+        category_url: 'charts/troubleshooting/'
+
+      - category_title: Contribute
+        category_url: 'charts/development/'
+        docs:
+          - doc_title: Architecture of Cloud native GitLab Helm charts
+            doc_url: 'charts/architecture/'
+            docs:
+              - doc_title: Backup and Restore
+                doc_url: 'charts/architecture/backup-restore.html'
+              - doc_title: Goals
+                doc_url: 'charts/architecture/goals.html'
+              - doc_title: Architecture
+                doc_url: 'charts/architecture/architecture.html'
+              - doc_title: Design Decisions
+                doc_url: 'charts/architecture/decisions.html'
+              - doc_title: Resource Usage
+                doc_url: 'charts/architecture/resource-usage.html'
+          - doc_title: Environment setup
+            doc_url: 'charts/development/environment_setup.html'
+          - doc_title: Style guide
+            doc_url: 'charts/development/style_guide.html'
+          - doc_title: Versioning and release
+            doc_url: 'charts/development/release.html'
+# End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
