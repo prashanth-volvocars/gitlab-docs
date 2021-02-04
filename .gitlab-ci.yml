@@ -147,7 +147,7 @@ variables:
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
     # Symlink all README.html to index.html so that we can have clean URLs
-    - for i in `find public -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+    - for i in `cat scripts/readmes.txt`; do ln -sf README.html $(dirname $i)/index.html; done
     # Remove CE dir and symlink EE to CE
     - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce && cd ../; fi
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
