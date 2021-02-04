@@ -1,11 +1,6 @@
 <footer class="pl-4 pr-3 border-top footer">
   <div class="row py-2">
     <div class="col-9">
-      <% if production? && ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
-      <%# Show Edit button only in production and on the default branch (hide archives) %>
-        <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">Edit this page</span></a>
-        <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">(<span class="text-decoration-underline">Web IDE</span>)</a>
-      <% end %>
     </div>
     <div class="col-3 p-0 m-0">
       <div class="d-none d-md-flex justify-content-end">
@@ -27,30 +22,6 @@
     </div>
   </div>
   <div class="row py-2">
-    <div class="col-12 py-3">
-      <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" class="m-0" width="24" height="24" />
-    </div>
-    <div class="col-12 py-1">
-      <ul class="list-unstyled list-inline my-0 d-flex flex-wrap">
-        <% if production? %>
-          <% @config[:products].each do |name, product| %>
-            <% if product[:expose] == true %>
-              <li>
-                <a href='<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>' target='_blank' class="text-dark font-weight-bold text-decoration-none <% if product[:short_name] == 'GitLab' %> pr-2 <% else %> px-2 <% end %>"><%= product[:short_name] %></a>
-              </li>
-             <% end %>
-            <% end %>
-        <% else %>
-          <% @config[:products].each do |name, product| %>
-            <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-              <li>
-                <a href='<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>' target='_blank' class="text-dark font-weight-bold text-decoration-none <% if product[:short_name] == 'GitLab' %> pr-2 <% else %> px-2 <% end %>"><%= product[:short_name] %></a>
-              </li>
-            <% end %>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
     <div class="col-12 py-1">
       <ul class="list-unstyled list-group list-group-horizontal flex-wrap">
         <li class="pr-3">
@@ -77,12 +48,11 @@
   <div class="row py-2">
     <div class="col d-block">
       <div class="d-block d-sm-inline-flex">
-        <i class="fa fa-creative-commons fa-lg pr-1" aria-hidden="true"></i>
-        <i class="fa fa-user-circle-o fa-lg pr-1" aria-hidden="true"></i>
-        <i class="fa fa-copyright fa-lg pr-1" aria-hidden="true"></i>
-      </div>
-      <div class="d-block d-sm-inline-flex">
-        <p class="text-muted"> Created with <a href='https://nanoc.ws/' target='_blank'><span class="text-decoration-underline">Nanoc</span></a>, hosted on <a href='https://about.gitlab.com/stages-devops-lifecycle/pages/' target='_blank'><span class="text-decoration-underline">GitLab Pages</span></a></p>
+        <p class="text-muted">
+          View <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">page source</span></a> -
+          Edit in <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">Web IDE</span></a>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
+        </p>
       </div>
     </div>
   </div>
