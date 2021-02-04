@@ -106,7 +106,10 @@ title: GitLab Documentation
           <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
           <div class="col-12 col-lg-4">
             <a class="text-decoration-none" href="<%= topic[:url] %>">
-              <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= icon("#{topic[:icon]}", nil, 'menu-icon') %> <%= topic[:title] %></h3>
+              <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break d-flex align-items-center">
+                <%= icon("#{topic[:icon]}", nil, 'menu-icon') %>
+                <span class="ml-1"><%= topic[:title] %></span>
+              </h3>
               <p class="pl-4 ml-1 mt-1 text-break"><%= topic[:description] %></p>
             </a>
           </div>
