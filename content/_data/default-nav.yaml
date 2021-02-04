@@ -1062,6 +1062,8 @@ sections:
             doc_url: 'user/project/integrations/mock_ci.html'
           - doc_title: Prometheus
             doc_url: 'user/project/integrations/prometheus.html'
+          - doc_title: Service templates
+            doc_url: 'user/project/integrations/services_templates.html'
           - doc_title: Slack notifications
             doc_url: 'user/project/integrations/slack.html'
           - doc_title: Slack slash commands
@@ -1220,8 +1222,6 @@ sections:
             doc_url: 'administration/repository_checks.html'
           - doc_title: Repository size
             doc_url: 'user/admin_area/settings/account_and_limit_settings.html'
-          - doc_title: Service templates
-            doc_url: 'user/project/integrations/services_templates.html'
           - doc_title: Sign-in restrictions
             doc_url: 'user/admin_area/settings/sign_in_restrictions.html'
           - doc_title: Sign-up restrictions
