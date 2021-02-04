@@ -1091,6 +1091,8 @@ sections:
         category_url: 'integration/gmail_action_buttons_for_gitlab.html'
       - category_title: reCAPTCHA
         category_url: 'integration/recaptcha.html'
+      - category_title: Security partners
+        category_url: 'integration/security_partners/'
       - category_title: Sourcegraph
         category_url: 'integration/sourcegraph.html'
       - category_title: Trello
