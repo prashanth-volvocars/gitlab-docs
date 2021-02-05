@@ -9,7 +9,7 @@ import {
   poweredBy,
   configure,
 } from '@tnir/instantsearch.js/es/widgets';
-import { singleIndex } from '@tnir/instantsearch.js/es/lib/stateMappings';
+import { singleIndexQ } from '@tnir/instantsearch.js/es/lib/stateMappings';
 
 document.addEventListener('DOMContentLoaded', () => {
   const search = instantsearch({
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       filters: 'tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>',
     },
     routing: {
-      stateMapping: singleIndex('gitlab'),
+      stateMapping: singleIndexQ('gitlab'),
     },
     searchFunction: (helper) => {
       if (helper.state.query === '') {
