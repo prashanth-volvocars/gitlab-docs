@@ -1386,6 +1386,8 @@ sections:
             doc_url: 'administration/geo/replication/troubleshooting.html'
           - doc_title: Validation tests
             doc_url: 'administration/geo/replication/geo_validation_tests.html'
+          - doc_title: Geo Glossary
+            doc_url: 'administration/geo/glossary.html'
       - category_title: Disaster recovery (Geo)
         category_url: 'administration/geo/disaster_recovery/'
         docs:
