@@ -42,5 +42,8 @@
     "pikaday": "^1.8.2",
     "popper.js": "1.16.1-lts",
     "vue": "^2.6.12"
+  },
+  "resolutions": {
+    "chokidar": "^3.4.0"
   }
 }
