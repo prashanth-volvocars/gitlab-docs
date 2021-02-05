@@ -378,3 +378,4 @@
 /ee/user/project/clusters/securing.html /ee/user/project/clusters/protect/index.html 302
 /ee/operations/incident_management/alert_notifications.html /ee/operations/incident_management/paging.html 302
 /ee/operations/incident_management/alert_integrations.html /ee/administration/operations/incident_management/integrations.html 302
+/ee/gitlab-basics/create-your-ssh-keys.html /ee/ssh/README.html 302 # To be removed after 2021-07-04
