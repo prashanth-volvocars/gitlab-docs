@@ -1,5 +1,6 @@
 include:
   - project: gitlab-org/frontend/untamper-my-lockfile
+    ref: maybe-this-works
     file: .gitlab-ci-template.yml
 
 default:
