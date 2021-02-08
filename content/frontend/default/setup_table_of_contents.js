@@ -1,7 +1,7 @@
 import Vue from 'vue';
+import { parseTOC } from '../shared/toc/parse_toc';
 import TableOfContents from './components/table_of_contents.vue';
 import { StickToFooter } from './directives/stick_to_footer';
-import { parseTOC } from '../shared/toc/parse_toc';
 
 const SIDEBAR_SELECTOR = '.doc-nav';
 const MARKDOWN_TOC_ID = 'markdown-toc';
