@@ -1,5 +1,5 @@
 ---
-version: 95
+version: 96
 ---
 
 @import "variables";
@@ -18,6 +18,7 @@ body {
   font-family: $sans-font-family;
   font-size: $body-font-size;
   color: $body-color;
+  overflow-x: hidden;
   >.wrapper {
     min-height: 100vh;
     @media(max-width: $md-width) {
@@ -283,7 +284,7 @@ h6 {
 }
 
 .main {
-  padding: $page-header-height 5%;
+  padding: 0 5%;
   background: $main-background-color;
   z-index: 1;
   &:not(.has-toc) {
@@ -453,11 +454,10 @@ h6 {
   flex-direction: column;
   position: fixed;
   width: 50px;
-  height: 100%;
+  height: calc(100% - 46px);
   transition: all .3s;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
-  top: 0;
   &.active {
     width: $sidebar-width;
     .nav-toggle {
@@ -526,8 +526,6 @@ h6 {
     }
   }
   @media(max-width: $md-width) {
-    position: fixed;
-    top: 0;
     width: 0;
     
     .nav-toggle {
@@ -535,8 +533,6 @@ h6 {
     }
 
     &.active {
-      position: fixed;
-      top: 0;
       width: $sidebar-mobile-width;
 
       .nav-toggle {
@@ -559,7 +555,7 @@ h6 {
     }
   }
   .global-nav-content {
-    margin-top: 120px;
+    margin-top: 85px;
     margin-bottom: 70px;
   }
   a {
@@ -618,85 +614,82 @@ h6 {
       }
     }
   }
-}
 
-.global-nav-block {
-  font-weight: 600;
-  padding-left: 10px;
-}
-
-// scss-lint:disable QualifyingElement
-a.global-nav-link,
-.nav-link {
-  text-decoration: none;
-  &:hover {
-    color: $link-color-nav-hover;
+  .global-nav-block {
+    font-weight: 600;
+    padding-left: 10px;
   }
-}
 
-a.global-nav-link {
-  line-height: 1.25;
-  font-size: 14px;
-  width: 100%;
-}
-
-.nav-link {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-link:hover {
-  background-color: $link-color-bg-active;
-}
-
-// scss-lint:enable QualifyingElement
-.global-nav-block-top {
-  font-weight: 600;
-  margin-bottom: 3px;
-  margin-top: 3px;
-  a {
+  .global-nav-link,
+  .nav-link {
     text-decoration: none;
-    text-shadow: 3px 3px 5px $link-color-bg-active;
+    &:hover {
+      color: $link-color-nav-hover;
+    }
   }
-}
 
-// use these classes to add color and padding-left to the nav links
-.level-0 {
-  color: $global-nav-link-level0;
-  padding-left: 18px;
-  &:visited {
+  .global-nav-link {
+    line-height: 1.25;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-link:hover {
+    background-color: $link-color-bg-active;
+  }
+
+  .global-nav-block-top {
+    font-weight: 600;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    a {
+      text-decoration: none;
+      text-shadow: 3px 3px 5px $link-color-bg-active;
+    }
+  }
+
+  .level-0 {
     color: $global-nav-link-level0;
+    padding-left: 18px;
+    &:visited {
+      color: $global-nav-link-level0;
+    }
   }
-}
 
-.level-1 {
-  color: $global-nav-link-level1;
-  padding-left: 35px;
-  &:visited {
+  .level-1 {
     color: $global-nav-link-level1;
+    padding-left: 35px;
+    &:visited {
+      color: $global-nav-link-level1;
+    }
   }
-}
 
-.level-2 {
-  color: $global-nav-link-level2;
-  padding-left: 53px;
-  &:visited {
+  .level-2 {
     color: $global-nav-link-level2;
+    padding-left: 53px;
+    &:visited {
+      color: $global-nav-link-level2;
+    }
+  }
+
+  .global-nav-badges {
+    fill: $gds-gray-700;
+  }
+
+  .last-updated {
+    color: $color-light-gray;
+    font-size: 13px;
+    padding-bottom: 10px;
+    text-align: right;
   }
 }
 
-.global-nav-badges {
-  fill: $gds-gray-700;
-}
-
-//end of global-nav
-.last-updated {
-  color: $color-light-gray;
-  font-size: 13px;
-  padding-bottom: 10px;
-  text-align: right;
-}
 
 .btn-tanuki {
   &:hover {
@@ -938,206 +931,48 @@ a.global-nav-link {
   }
 }
 
-// End of banner alert box
-.header {
-  z-index: 10;
-  background: $header-background-color;
-  color: $header-font-color;
-  position: fixed;
-  width: 100%;
-  height: $page-header-height;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
-  .logo-container {
-    margin-right: 32px;
-    @media (max-width: $lg-width) {
-      margin-right: 16px;
+// Main header CSS
+.navbar {
+  min-height: $header-height;
+  background-color: $header-background-color;
+  
+  .navbar-brand {
+    font-size: 1.25rem;
+    
+    strong {
+      font-size: 1.15rem;
     }
   }
-  @media all and (max-width: $lg-width) {
-    height: auto;
+
+  .btn {
+    line-height: 1rem;
+    font-size: .875rem;
   }
-  img {
-    height: 24px;
-    margin-right: 10px;
+
+  .nav-link {
+    color: $gds-indigo-100;
   }
-  p {
-    font-size: 16px;
-    color: $white;
-    display: inline-block;
-    margin: 0 0 0 4px;
-  }
-  .header-company-name {
-    @media (max-width: $lg-width) {
-      display: none;
+
+  .form-inline {
+    .fa-search {
+      z-index: 1;
+    }
+  
+    .docsearch {
+      font-size: 1rem;
+      height: 28px;
+      min-width: 320px;
+      text-indent: 1rem;
     }
   }
-  ul {
-    text-align: right;
-    list-style-type: none;
-    @media all and (max-width: $lg-width) {
-      display: none;
-    }
+
+  .dropdown-toggle {
+    background-color: $help-indigo-500;
   }
-  .nav-item {
-    a {
-      color: $header-font-color;
-    }
-    .btn-nav-cta {
-      background-color: $button-cta-background;
-      color: $gds-white;
-      font-weight: 700;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 1px;
-      padding-bottom: 1px;
-    }
-    .btn-nav-cta:hover {
-      background-color: $button-cta-background-hover;
-    }
-  }
-  @media all and (max-width: $lg-width) {
-    &.active {
-      display: block;
-      .nav {
-        display: block;
-        text-align: left;
-        padding: 0;
-        width: 100%;
-      }
-      .nav-item {
-        margin: 10px;
-      }
-    }
-  }
-  &:not(.active) {
-    height: $page-header-height;
-  }
-  .dropdown {
-    display: flex;
-    align-items: center;
-  }
-  .dropdown-menu {
-    li {
-      display: block;
-    }
-  }
-  .choose-version {
-    font-size: 14px;
-  }
-  .btn-versions {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: inherit;
-    color: $header-font-color;
-    margin-left: 4px;
-    border: 0;
-    &:active {
-      box-shadow: none;
-    }
-  }
-  .versions-menu {
-    padding: 0;
-    li {
-      display: block;
-      margin: 5px 0;
-      text-align: left;
-      a {
-        color: $versions-link-color;
-        padding: 3px 20px;
-        font-size: 14px;
-        display: block;
-        line-height: 1.4;
-        &:hover {
-          color: $versions-link-color-hover;
-          background-color: $versions-link-color-bg-hover;
-          text-decoration: none;
-        }
-        &.active {
-          background-color: $versions-active-bg-color;
-          font-weight: 600;
-          color: $link-color-nav;
-        }
-      }
-      &.divider {
-        margin: 0;
-      }
-      i {
-        padding-left: 5px;
-        opacity: .5;
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
-  }
-  input {
-    box-sizing: content-box;
-    border-radius: $border-radius;
-    -webkit-appearance: none;
-    border: 0;
-    padding: 4px 12px;
-    width: 140px;
-    color: $search-input-font-color;
-    background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 140px 9px / 14px no-repeat;
-    outline: 0;
-    @media(min-width: $lg-width) {
-      width: 355px;
-      background: $search-background-color url("<%= @items['/assets/images/icon_search_white.svg'].path %>") 355px 9px / 14px no-repeat;
-    }
-  }
-  input::placeholder {
-    color: $search-placeholder-font-color;
-  }
-  input:focus {
-    border: 0;
-  }
-  input:visited {
-    outline: 0;
-    border: 0;
-  }
-  .nav-container {
-    margin: auto 0;
-  }
-  .nav-toggle {
-    display: none;
-    @media all and (max-width: $lg-width) {
-      display: flex;
-      height: $page-header-height;
-      align-items: center;
-      position: absolute;
-      padding: 0 15px;
-      cursor: pointer;
-      top: 0;
-      right: 0;
-      color: $link-color-nav;
-    }
-  }
-  .nav {
-    >li {
-      margin: 0;
-      padding-right: 10px;
-      @media(min-width: $lg-width) {
-        padding-right: 25px;
-      }
-    }
-    // Override bootstrap
-    >a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      color: $header-font-color;
-    }
-    // Override bootstrap
-    >a:focus,
-    >a:hover {
-      text-decoration: none;
-      background-color: transparent;
-      opacity: .8;
+
+  @media all and (max-width: $md-width) {
+    .btn {
+      width: 100%;
     }
   }
 }
@@ -1162,21 +997,6 @@ a.global-nav-link {
     .gl-icon {
       fill: $help-indigo-500;
     }
-  }
-  .header {
-    a:hover,
-    a:visited:hover {
-      &:not(.dropdown-menu a) {
-        color: $header-font-color;
-      }
-    }
-    p {
-      color: $white;
-    }
-  }
-  .container-fluid {
-    padding-top: 40px;
-    background-color: $white;
   }
   .content {
     max-width: $page-content-width;
