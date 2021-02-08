@@ -1658,6 +1658,8 @@ sections:
             doc_url: 'development/sidekiq_style_guide.html'
           - doc_title: Vue style guide
             doc_url: 'development/fe_guide/style/vue.html'
+      - category_title: GitLab group migration
+        category_url: 'development/bulk_import.html'
       - category_title: GitLab project pipelines
         category_url: 'development/pipelines.html'
       - category_title: Instrumenting Ruby code
