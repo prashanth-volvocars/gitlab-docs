@@ -6,11 +6,15 @@
      contains all current versions and offline archives.
 -->
 <% if archives? %>
-  <a class="dropdown-item" href='/archives/'>
+<li>
+  <a href='/archives/'>
     <%= version %>
   </a>
+</li>
 <% else %>
-  <a class="dropdown-item" <%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
+<li>
+  <a<%= active_dropdown(version) %> href='/<%= version %><%= @item.identifier.without_ext + '.html' %>'>
     <%= version %>
   </a>
+</li>
 <% end %>

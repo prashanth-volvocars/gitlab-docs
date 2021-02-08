@@ -1,5 +1,5 @@
 ---
-version: 19
+version: 18
 ---
 
 @import "variables";
@@ -12,7 +12,7 @@ $nav-link-font-size: 14px;
 // ToC styles
 .table-of-contents {
   padding: 16px 0;
-  margin-top: 35px;
+  margin-top: 60px;
 
   li {
     list-style: none;
@@ -64,8 +64,8 @@ $nav-link-font-size: 14px;
 @for $i from 0 to 10 {
   .nav-link.toc-level-#{$i} {
     padding-left: $base-nav-link-padding * ($i + .75);
-    padding-top: 0;
-    line-height: 1rem;
+    padding-top: .25rem;
+    line-height: 1.25rem;
   }
 }
 
