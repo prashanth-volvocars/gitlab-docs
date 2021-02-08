@@ -1,53 +1,57 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-0">
-  <a class="navbar-brand d-flex align-items-center justify-content-center" href="/">
-    <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" alt="GitLab logo" class="logo" />
-    <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <form class="form-inline my-2 my-lg-0">
-          <span class="fa fa-search form-control-feedback position-absolute ml-2 text-muted"></span>
-          <input class="form-control mr-sm-2 docsearch" type="search" placeholder="Search the docs..." aria-label="Search">
-        </form>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-0 mr-lg-3 my-2 my-lg-0">
-      <li class="nav-item dropdown">
-        <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= version_dropdown_title %>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" <%= active_dropdown(ENV['CI_DEFAULT_BRANCH']) %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip"><%= dotcom %>
-            <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
-          </a>
-          <% if display_previous_versions? %>
-          <!-- Start of online versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:online].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of online versions -->
-    
-          <!-- Start of last major versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:previous_majors].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of last major versions -->
-        <% end %>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" <%= active_dropdown('archives') %> href='/archives/'>Archives</a>
-        </div>
-      </li>
-    </ul>
-    <% if @item.identifier.to_s.split('/')[1] == 'omnibus' %>
-    <%= render '/cta_omnibus.*' %>
-    <% else %>
-      <%= render '/cta.*' %>
+<div class="header align-items-center px-3">
+  <div class="d-flex align-items-center py-1">
+    <a class="header-link logo-container d-flex justify-content-center align-items-center" href="/">
+      <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" alt="GitLab logo" class="logo" />
+      <p><span class="header-company-name">GitLab </span><strong>Docs</strong></p>
+    </a>
+    <% if @item[:searchbar].nil? %>
+      <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+      <form id="search-form" action="/search/" method="get">
+        <input type="text" name="query" class="docsearch" placeholder="Search our docs" required/>
+        <input type="submit" style="visibility: hidden; position:absolute;" />
+      </form>
+      <% end %>
     <% end %>
   </div>
-</nav>
+  <div class="nav-container w-100 ml-4">
+    <a class="nav-toggle" id="docs-nav-toggle">
+      <i class="fa fa-bars text-white" aria-hidden="true"></i>
+    </a>
+    <ul class="nav align-items-center">
+      <li class="nav-item flex-grow-1">
+        <div class="d-flex align-items-center">
+          <%= render '/versions_dropdown.*' %>
+        </div>
+      </li>
+      <% if production? %>
+        <% @config[:products].each do |name, product| %>
+          <% if product[:expose] == true %>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% @config[:products].each do |name, product| %>
+          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
+            <li class="nav-item">
+              <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>">
+                <%= product[:short_name] %>
+              </a>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+      <li class="nav-item">
+        <!-- Check if the path is /omnibus and show a different CTA -->
+        <% if @item.identifier.to_s.split('/')[1] == 'omnibus' %>
+          <%= render '/cta_omnibus.*' %>
+        <% else %>
+          <%= render '/cta.*' %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
