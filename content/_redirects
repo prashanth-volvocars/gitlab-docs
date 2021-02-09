@@ -14,8 +14,10 @@
 /ee/administration/dependency_proxy.html /ee/administration/packages/dependency_proxy.html 302
 /ee/administration/external_database.html /ee/administration/postgresql/external.html 302
 /ee/administration/geo/disaster_recovery/promotion_runbook.html /ee/administration/geo/disaster_recovery/runbooks/planned_failover_single_node.html 302
-/ee/administration/geo/replication/database /ee/administration/geo/setup/database.html 302
-/ee/administration/geo/replication/external_database /ee/administration/geo/setup/external_database.html 302
+/ee/administration/geo/replication/database/index.html /ee/administration/geo/setup/database.html 302
+/ee/administration/geo/replication/database/ /ee/administration/geo/setup/database.html 302
+/ee/administration/geo/replication/external_database/index.html /ee/administration/geo/setup/external_database.html 302
+/ee/administration/geo/replication/external_database/ /ee/administration/geo/setup/external_database.html 302
 /ee/administration/geo/replication/high_availability.html /ee/administration/geo/replication/multiple_servers.html 302
 /ee/administration/geo/replication/index.html /ee/administration/geo/index.html 302
 /ee/administration/geo/replication/ /ee/administration/geo/index.html 302
@@ -138,7 +140,7 @@
 /ee/development/product_analytics/snowplow.html /ee/development/snowplow.html 302
 /ee/development/product_analytics/usage_ping.html /ee/development/usage_ping.html 302
 /ee/development/rolling_out_changes_using_feature_flags.html /ee/development/feature_flags/index.html 302
-/ee/development/sidekiq_debugging.html /ee/administration/troubleshooting/sidekiq.html
+/ee/development/sidekiq_debugging.html /ee/administration/troubleshooting/sidekiq.html 302
 /ee/development/testing.html /ee/development/testing_guide/index.html 302
 /ee/development/writing_documentation.html /ee/development/documentation/index.html 302
 /ee/getting-started/subscription.html /ee/subscriptions/index.html 302
@@ -378,4 +380,4 @@
 /ee/user/project/clusters/securing.html /ee/user/project/clusters/protect/index.html 302
 /ee/operations/incident_management/alert_notifications.html /ee/operations/incident_management/paging.html 302
 /ee/operations/incident_management/alert_integrations.html /ee/administration/operations/incident_management/integrations.html 302
-/ee/gitlab-basics/create-your-ssh-keys.html /ee/ssh/README.html 302 # To be removed after 2021-07-04
+/ee/gitlab-basics/create-your-ssh-keys.html /ee/ssh/README.html 302

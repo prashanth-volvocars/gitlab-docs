@@ -254,3 +254,18 @@ task :symlink_readmes do
   end
 end
 
+desc 'Create the _redirects file'
+task :redirects do
+  redirects_yaml = YAML.load_file('content/_data/redirects.yaml')
+  redirects_file = 'content/_redirects'
+
+  # Remove _redirects before populating it
+  File.delete(redirects_file) if File.exists?(redirects_file)
+
+  # Iterate over each entry and append to _redirects
+  redirects_yaml.fetch('redirects').each do |redirect|
+    File.open(redirects_file, 'a') do |f|
+      f.puts "#{redirect.fetch('from')} #{redirect.fetch('to')} 302"
+    end
+  end
+end
