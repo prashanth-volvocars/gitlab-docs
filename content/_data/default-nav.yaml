@@ -182,6 +182,8 @@ sections:
   - section_title: Projects
     section_url: 'user/project/'
     section_categories:
+      - category_title: Working with projects
+        category_url: 'user/project/working_with_projects.html'
       - category_title: Application security
         category_url: 'user/application_security/'
         docs:
@@ -234,8 +236,6 @@ sections:
             doc_url: 'user/compliance/license_compliance/'
           - doc_title: Compliance Dashboard
             doc_url: 'user/compliance/compliance_dashboard/'
-      - category_title: Create a project
-        category_url: 'gitlab-basics/create-project.html'
       - category_title: Description templates
         category_url: 'user/project/description_templates.html'
       - category_title: Deploy keys

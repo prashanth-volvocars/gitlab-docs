@@ -1148,3 +1148,9 @@ redirects:
   - from: /ee/gitlab-basics/create-your-ssh-keys.html
     to: /ee/ssh/README.html
     remove_date: 2022-02-01
+  - from: /ee/gitlab-basics/create-project.html
+    to: /ee/user/project/working_with_projects.html
+    remove_date: 2021-05-04
+  - from: /ee/gitlab-basics/fork-project.html
+    to: /ee/user/project/working_with_projects.html
+    remove_date: 2021-05-04
