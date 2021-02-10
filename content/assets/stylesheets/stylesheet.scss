@@ -1,5 +1,5 @@
 ---
-version: 97
+version: 98
 ---
 
 @import "variables";
@@ -356,17 +356,15 @@ h6 {
       }
     }
   }
-  img {
-    &:not(.gl-breadcrumb-avatar-tile) {
-      max-width: calc(100% - 10px);
-      max-height: 100vh;
-      border: 1px solid $gds-gray-200;
-      margin-top: 26px;
-      margin-bottom: 30px;
-      margin-right: auto;
-      margin-left: auto;
-      display: block;
-    }
+  main img {
+    max-width: calc(100% - 10px);
+    max-height: 100vh;
+    border: 1px solid $gds-gray-200;
+    margin-top: 26px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
   }
   // Override bootstrap defaults
   .nav-tabs>li>a {
@@ -398,9 +396,6 @@ h6 {
     .row {
       padding-left: 20px;
       padding-right: 40px;
-    }
-    img {
-      box-shadow: none;
     }
   }
   @media (max-width: $md-width) {
