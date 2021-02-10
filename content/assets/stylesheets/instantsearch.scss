@@ -167,9 +167,8 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 //scss-lint:disable SelectorFormat
 .ais-InfiniteHits {
   .ais-InfiniteHits-item {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    // https://github.com/algolia/instantsearch-specs/blob/v7.4.4/src/scss/themes/algolia.scss#L277-L305
+    width: calc(100% - 1rem);
     border: 0;
     box-shadow: none;
   }
