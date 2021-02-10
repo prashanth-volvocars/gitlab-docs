@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 (function() {
@@ -47,12 +47,12 @@ version: 4
 
   const BADGES_MAPPING = {
     // Free
-    core: ['free'],
-    free: ['free'],
-    'core-only': ['free', 'self-managed'],
-    'free-self': ['free', 'self-managed'],
-    'free-only': ['free', 'saas'],
-    'free-saas': ['free', 'saas'],
+    core: ['all tiers'],
+    free: ['all tiers'],
+    'core-only': ['all tiers', 'self-managed'],
+    'free-self': ['all tiers', 'self-managed'],
+    'free-only': ['all tiers', 'saas'],
+    'free-saas': ['all tiers', 'saas'],
     // Premium
     premium: ['premium'],
     'silver-only': ['premium', 'saas'],
@@ -77,7 +77,7 @@ version: 4
     starter: 'tier',
     premium: 'tier',
     ultimate: 'tier',
-    free: 'tier',
+    'all tiers': 'tier',
     // GitLab SaaS
     bronze: 'saas',
     silver: 'saas',
