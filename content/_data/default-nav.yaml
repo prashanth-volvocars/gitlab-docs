@@ -15,7 +15,7 @@ sections:
     section_url: 'README.html'
 
   - section_title: Installation
-    section_url: 'install/README.html'
+    section_url: 'install/'
     section_categories:
       - category_title: Requirements
         category_url: 'install/requirements.html'
@@ -1398,7 +1398,7 @@ sections:
           - doc_title: Automatic background verification
             doc_url: 'administration/geo/disaster_recovery/background_verification.html'
       - category_title: Rake tasks
-        category_url: 'raketasks/README.html'
+        category_url: 'raketasks/'
         docs:
           - doc_title: Backup and restore
             doc_url: 'raketasks/backup_restore.html'
@@ -1445,7 +1445,7 @@ sections:
       - category_title: Terraform state
         category_url: 'administration/terraform_state.html'
       - category_title: Update
-        category_url: 'update/README.html'
+        category_url: 'update/'
         docs:
           - doc_title: Releases and maintenance
             doc_url: 'policy/maintenance.html'
