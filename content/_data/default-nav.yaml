@@ -504,7 +504,7 @@ sections:
         category_url: 'ci/introduction/'
         docs:
           - doc_title: Get started
-            doc_url: 'ci/quick_start/README.html'
+            doc_url: 'ci/quick_start/'
           - doc_title: Migrate from CircleCI
             doc_url: 'ci/migration/circleci.html'
           - doc_title: Migrate from Jenkins
@@ -598,7 +598,7 @@ sections:
           - doc_title: kaniko
             doc_url: 'ci/docker/using_kaniko.html'
       - category_title: Integrate a database
-        category_url: 'ci/services/README.html'
+        category_url: 'ci/services/'
         docs:
           - doc_title: MySQL Service
             doc_url: 'ci/services/mysql.html'
@@ -636,13 +636,13 @@ sections:
         category_url: 'ci/ci_cd_for_external_repos/'
         docs:
           - doc_title: SSH keys
-            doc_url: 'ci/ssh_keys/README.html'
+            doc_url: 'ci/ssh_keys/'
           - doc_title: Bitbucket Cloud
             doc_url: 'ci/ci_cd_for_external_repos/bitbucket_integration.html'
           - doc_title: GitHub
             doc_url: 'ci/ci_cd_for_external_repos/github_integration.html'
           - doc_title: Slack
-            doc_url: 'ci/chatops/README.html'
+            doc_url: 'ci/chatops/'
       - category_title: CI/CD examples
         category_url: 'ci/examples/README.html'
         docs:
