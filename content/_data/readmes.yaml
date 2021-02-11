@@ -23,7 +23,6 @@ omnibus:
   - public/omnibus/architecture/README.html
   - public/omnibus/README.html
 ee:
-  - public/ee/downgrade_ee_to_ce/README.html
   - public/ee/security/README.html
   - public/ee/university/README.html
   - public/ee/intro/README.html
@@ -32,7 +31,6 @@ ee:
   - public/ee/integration/README.html
   - public/ee/administration/auth/README.html
   - public/ee/legal/README.html
-  - public/ee/install/README.html
   - public/ee/ci/examples/deployment/README.html
   - public/ee/ci/examples/README.html
   - public/ee/ci/yaml/README.html
@@ -40,9 +38,7 @@ ee:
   - public/ee/ci/triggers/README.html
   - public/ee/ci/variables/README.html
   - public/ee/ci/README.html
-  - public/ee/raketasks/README.html
   - public/ee/migrate_ci_to_ce/README.html
-  - public/ee/update/README.html
   - public/ee/gitlab-basics/README.html
   - public/ee/README.html
   - public/ee/ssh/README.html
