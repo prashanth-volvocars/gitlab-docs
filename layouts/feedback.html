@@ -118,7 +118,7 @@
 
 <div id="disqus_thread" class="disqus-comments-gitlab"></div>
 
-<script src="<%= @items['/assets/javascripts/disqus.*'].path %>"></script>
+<%= render '/comments.*' %>
 <script src="<%= @items['/frontend/feedback/feedback.*'].path %>"></script>
 <noscript
   >Please enable JavaScript to view the
