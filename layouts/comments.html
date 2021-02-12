@@ -1,4 +1,5 @@
 <% if production_and_default_branch? %>
+<script type="text/javascript">
 var disqus_config = function () {
   this.page.url = '<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>';
   this.page.title = '<%= @item.key?(:title) ? "#{item[:title]} - GitLab Documentation" : "GitLab Documentation" %>';
@@ -21,4 +22,5 @@ window.loadDisqus = function() {
     (d.head || d.body).appendChild(s);
   }
 };
+</script>
 <% end %>
