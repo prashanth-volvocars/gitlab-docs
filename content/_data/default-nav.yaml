@@ -900,11 +900,11 @@ sections:
   - section_title: CI/CD
     section_url: 'ci/README.html'
     section_categories:
-      - category_title: Introduction
-        category_url: 'ci/introduction/'
+      - category_title: Get started
+        category_url: 'ci/quick_start/'
         docs:
-          - doc_title: Get started
-            doc_url: 'ci/quick_start/'
+          - doc_title: CI/CD concepts
+            doc_url: 'ci/introduction/'
           - doc_title: Migrate from CircleCI
             doc_url: 'ci/migration/circleci.html'
           - doc_title: Migrate from Jenkins
