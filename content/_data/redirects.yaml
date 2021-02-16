@@ -1154,3 +1154,6 @@ redirects:
   - from: /ee/gitlab-basics/fork-project.html
     to: /ee/user/project/working_with_projects.html
     remove_date: 2021-05-04
+  - from: /ee/api/project_analytics.html
+    to: /ee/api/dora4_project_analytics.html
+    remove_date: 2022-01-25
