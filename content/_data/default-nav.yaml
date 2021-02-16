@@ -1598,6 +1598,8 @@ sections:
             doc_url: 'development/fe_guide/architecture.html'
           - doc_title: Axios
             doc_url: 'development/fe_guide/axios.html'
+          - doc_title: Dark mode
+            doc_url: 'development/fe_guide/dark_mode.html'
           - doc_title: Design patterns
             doc_url: 'development/fe_guide/design_patterns.html'
           - doc_title: Development process
