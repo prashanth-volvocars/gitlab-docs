@@ -21,7 +21,7 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
     name: file,
   },
   plugins: [
-    nodeResolve({ browser: true, preferBuiltins: true }),
+    nodeResolve({ browser: true, preferBuiltins: false }),
     commonjs(),
     vue(),
     svg(),
