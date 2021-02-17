@@ -45,42 +45,44 @@
               <div class="doc-nav"></div>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <% if @item[:title] %>
-                <h1 class="article-title" itemprop="name">
-                  <%= @item[:title] %><%= @item[:title_badge] %>
-                </h1>
-              <% end %>      
-              <div class="article-metadata">
-                <% if @item[:author] and @item[:author_gitlab] %>
-                Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
-                &#8226;
-                <% end %>
-                <% if @item[:date] %>
-                on <%= @item[:date] %>
-                &#8226;
-                <% end %>
-                <% if @item[:article_type] %>
-                Type: <%= @item[:article_type] %>
-                <% end %>
-                <% if @item[:level] %>
-                Level: <%= @item[:level] %>
-                &#8226;
-                <% end %>
-                <% if @item[:last_updated] %>
-                Last updated: <%= @item[:last_updated] %>
-                &#8226;
-                <% end %>
-                <% if @item[:reading_time] %>
-                <%= reading_time(item.raw_content.split.size) %> to read
-                <% end %>
-              </div>
-              <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
-                <%= yield %>
+          <main>
+            <div class="row">
+              <div class="col">
+                <% if @item[:title] %>
+                  <h1 class="article-title" itemprop="name">
+                    <%= @item[:title] %><%= @item[:title_badge] %>
+                  </h1>
+                <% end %>      
+                <div class="article-metadata">
+                  <% if @item[:author] and @item[:author_gitlab] %>
+                  Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
+                  &#8226;
+                  <% end %>
+                  <% if @item[:date] %>
+                  on <%= @item[:date] %>
+                  &#8226;
+                  <% end %>
+                  <% if @item[:article_type] %>
+                  Type: <%= @item[:article_type] %>
+                  <% end %>
+                  <% if @item[:level] %>
+                  Level: <%= @item[:level] %>
+                  &#8226;
+                  <% end %>
+                  <% if @item[:last_updated] %>
+                  Last updated: <%= @item[:last_updated] %>
+                  &#8226;
+                  <% end %>
+                  <% if @item[:reading_time] %>
+                  <%= reading_time(item.raw_content.split.size) %> to read
+                  <% end %>
+                </div>
+                <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
+                  <%= yield %>
+                </div>
               </div>
             </div>
-          </div>
+          </main>
           <div class="row px-4">
             <div class="col">
               <%= render '/feedback.*' %>
