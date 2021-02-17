@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 var search = docsearch({
@@ -14,6 +14,8 @@ var search = docsearch({
   },
   debug: false, // Set debug to true if you want to inspect the dropdown
   autocompleteOptions: {
-      'autoselect': false
-    }
+    autoselect: false
+  }
 });
+
+search.autocomplete.parent()[0].style.display = 'inherit';

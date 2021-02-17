@@ -3,7 +3,7 @@
     <img src="<%= @items['/assets/images/gitlab-logo.svg'].path %>" alt="GitLab documentation home" class="logo" />
     <span class="d-none d-lg-block px-2">GitLab</span> <strong class="pl-2 pl-lg-0 pt-0">Docs</strong>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -12,8 +12,7 @@
         <% if @item[:searchbar].nil? %>
           <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
             <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/" method="get">
-              <span class="fa fa-search form-control-feedback position-absolute ml-3 text-muted"></span>
-              <input class="form-control mr-sm-2 docsearch border-0"  name="query" type="search" placeholder="Search the docs..." aria-label="Search">
+              <input class="form-control mr-sm-2 px-3 py-0 docsearch border-0"  name="query" type="search" placeholder="Search the docs..." aria-label="Search">
               <input type="submit" style="visibility: hidden; position:absolute;" />
             </form>
           <% end %>
