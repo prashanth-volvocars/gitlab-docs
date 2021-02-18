@@ -42,6 +42,22 @@ variables:
   retry: 2
 
 #
+# workflow:rules to prevent duplicate pipelines when pushing to a branch with an open MR.
+#
+workflow:
+  rules:
+    # Prevent branch pipelines if an MR is open on the branch.
+    - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    # Allow merge request and scheduled pipelines.
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+
+#
 # Rules to determine which pipelines jobs will run in.
 #
 .rules_scheduled:
