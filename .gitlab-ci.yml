@@ -458,7 +458,7 @@ pages:
   tags:
     - gitlab-org-docker
   services:
-    - docker:19.03.5-dind
+    - docker:20.10.3-dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
