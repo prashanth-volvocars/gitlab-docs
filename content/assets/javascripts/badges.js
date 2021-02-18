@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 (function() {
@@ -11,15 +11,15 @@ version: 5
     'free-self':
       'Available in GitLab Free self-managed and higher tiers. Not available in GitLab SaaS.',
     'free-only':
-      'Available in GitLab Free SaaS and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Free SaaS and higher tiers. Not available in self-managed instances.',
     'free-saas':
-      'Available in GitLab Free SaaS and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Free SaaS and higher tiers. Not available in self-managed instances.',
     // Premium
     premium: 'Available in GitLab Premium self-managed, GitLab Premium SaaS, and higher tiers.',
     'premium-saas':
-      'Available in GitLab Premium SaaS and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Premium SaaS and higher tiers. Not available in self-managed instances.',
     'silver-only':
-      'Available in GitLab Premium SaaS and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Premium SaaS and higher tiers. Not available in self-managed instances.',
     'premium-only':
       'Available in GitLab Premium self-managed and higher tiers. Not available in GitLab SaaS.',
     'premium-self':
@@ -31,9 +31,9 @@ version: 5
     'ultimate-self':
       'Available in GitLab Ultimate self-managed. Not available in GitLab SaaS.',
     'ultimate-saas':
-      'Available in GitLab Ultimate SaaS. Not available in self-hosted instances.',
+      'Available in GitLab Ultimate SaaS. Not available in self-managed instances.',
     'gold-only':
-      'Available in GitLab Ultimate SaaS. Not available in self-hosted instances.',
+      'Available in GitLab Ultimate SaaS. Not available in self-managed instances.',
     // Deprecated badges
     core: 'Available in GitLab Free self-managed, GitLab Free SaaS, and higher tiers',
     'core-only':
@@ -42,7 +42,7 @@ version: 5
     'starter-only':
       'Available in GitLab Starter and higher tiers. Not available in GitLab.com.',
     'bronze-only':
-      'Available in GitLab Bronze and higher tiers. Not available in self-hosted instances.',
+      'Available in GitLab Bronze and higher tiers. Not available in self-managed instances.',
   };
 
   const BADGES_MAPPING = {
