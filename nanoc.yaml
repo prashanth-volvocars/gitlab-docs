@@ -101,7 +101,7 @@ checks:
       - 'https:\/\/contributors\.gitlab\.com\/'
       - 'https:\/\/downloads\.raspberrypi\.org\/raspbian\/images\/'
       - 'https:\/\/wiki\.jenkins\.io\/display\/JENKINS\/'
-      - 'https:\/\/www\.twitter\.com\/gitlab'
+      - 'https:\/\/twitter\.com\/gitlab'
       # Redirected links to ignore
       - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
       # Don't check links matching the following patterns
