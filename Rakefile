@@ -67,6 +67,10 @@ task :pull_repos do
       # Print the latest commit so that we can compare it to the branch we're
       # pulling from, should we need to debug anything.
       puts "Latest commit: #{`git log --oneline -n 1`}"
+
+      # Generate the Usage Ping Dictionary
+      `bundle install`
+      `bundle exec rake gitlab:usage_data:generate_metrics_dictionary`
     end
   end
 end
