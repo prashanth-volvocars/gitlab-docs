@@ -70,12 +70,12 @@ task :pull_repos do
 
       # Generate the Usage Ping Dictionary
       if product['slug'] == 'ee'
-        Dir.chdir('gitlab') do
-          puts Dir.pwd
+
+          puts Dir.entries(Dir.pwd)
 
           system("bundle install")
           system("bundle exec rake gitlab:usage_data:generate_metrics_dictionary")
-        end
+
       end
     end
   end
