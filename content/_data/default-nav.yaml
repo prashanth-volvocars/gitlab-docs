@@ -1017,6 +1017,8 @@ sections:
             doc_url: 'topics/autodevops/upgrading_postgresql.html'
           - doc_title: Stages
             doc_url: 'topics/autodevops/stages.html'
+          - doc_title: Troubleshooting
+            doc_url: 'topics/autodevops/troubleshooting.html'
       - category_title: Testing
         category_url: 'ci/unit_test_reports.html'
         docs:
