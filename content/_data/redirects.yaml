@@ -1157,3 +1157,9 @@ redirects:
   - from: /ee/api/project_analytics.html
     to: /ee/api/dora4_project_analytics.html
     remove_date: 2022-01-25
+  - from: /ee/development/prometheus.html
+    to: /ee/user/project/integrations/prometheus.html
+    remove_date: 2021-11-19
+  - from: /ee/user/project/milestones/burndown_charts.html
+    to: /ee/user/project/milestones/burndown_and_burnup_charts.html
+    remove_date: 2021-11-19
