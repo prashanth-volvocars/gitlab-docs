@@ -55,7 +55,6 @@ task :pull_repos do
 
     # Enter the temporary directory and return after block is completed.
     Dir.chdir(product['dirs']['temp_dir']) do
-      puts Dir.pwd
       `git fetch origin #{branch} --depth 1`
 
       # Stash modified and untracked files so we have "clean" environment
@@ -71,11 +70,12 @@ task :pull_repos do
 
       # Generate the Usage Ping Dictionary
       if product['slug'] == 'ee'
-        puts Dir.pwd
-        puts product['dirs']['temp_dir']
+        Dir.chdir('gitlab') do
+          puts Dir.pwd
 
-        system("bundle install")
-        system("bundle exec rake gitlab:usage_data:generate_metrics_dictionary")
+          system("bundle install")
+          system("bundle exec rake gitlab:usage_data:generate_metrics_dictionary")
+        end
       end
     end
   end
