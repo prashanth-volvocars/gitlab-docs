@@ -69,8 +69,12 @@ task :pull_repos do
       puts "Latest commit: #{`git log --oneline -n 1`}"
 
       # Generate the Usage Ping Dictionary
-      `bundle install`
-      `bundle exec rake gitlab:usage_data:generate_metrics_dictionary`
+      if product['slug'] == 'ee'
+        puts product['dirs']['temp_dir']
+
+        system("bundle install")
+        system("bundle exec rake gitlab:usage_data:generate_metrics_dictionary")
+      end
     end
   end
 end
