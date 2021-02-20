@@ -1,5 +1,5 @@
 ---
-version: 98
+version: 99
 ---
 
 @import "variables";
@@ -111,17 +111,27 @@ blockquote {
   color: $blockquote-txt-color;
   border: solid 1px $blockquote-border-color;
   border-radius: 5px;
-  margin: 20px 0;
-  padding: 10px 20px;
+  margin: 1rem 0;
+  padding: 0 1rem;
   font-size: $body-font-size;
   .highlight {
     background-color: $white;
   }
+
+  p:first-child {
+    margin-top: 1rem;
+  }
+
   // Override bootstrap
   ol:last-child,
   p:last-child,
   ul:last-child {
     margin: inherit;
+
+    li {
+      line-height: 1rem;
+      padding-top: .5rem;
+    }
   }
 }
 
@@ -342,7 +352,7 @@ h6 {
   li {
     &:not(.gl-breadcrumb-item) {
       line-height: 1.6em;
-      padding-bottom: 8px;
+      padding-bottom: .5rem;
       ul li:first-of-type {
         padding-top: 12px;
       }
