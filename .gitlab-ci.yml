@@ -34,6 +34,10 @@ variables:
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
+  ALPINE_VERSION: '3.12'
+  VALE_VERSION: '2.8.0'
+  MARKDOWNLINT_VERSION: '0.26.0'
+  RUBY_VERSION: '2.7.2'
 
 #
 # Retry a job automatically if it fails (2 times)
@@ -307,8 +311,6 @@ test_EOL_whitespace:
     - .rules_chores
     - .cache_gem
   stage: test
-  variables:
-    MARKDOWNLINT_VERSION: '0.26.0'
   image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.12-ruby-2.7.2
   needs: []
   before_script: []
@@ -475,9 +477,6 @@ image:docs-lint-markdown:
     - .docker_prepare
   stage: build-images
   variables:
-    ALPINE_VERSION: '3.12'
-    VALE_VERSION: '2.8.0'
-    MARKDOWNLINT_VERSION: '0.26.0'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-markdown
   script:
@@ -497,8 +496,6 @@ image:docs-lint-html:
     - .docker_prepare
   stage: build-images
   variables:
-    RUBY_VERSION: '2.7.2'
-    ALPINE_VERSION: '3.12'
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-html
   script:
