@@ -180,6 +180,8 @@ sections:
             doc_url: 'administration/timezone.html'
           - doc_title: Uploads
             doc_url: 'administration/uploads.html'
+          - doc_title: User Cohorts
+            doc_url: 'user/admin_area/user_cohorts.html'
       - category_title: Abuse reports
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
@@ -443,8 +445,6 @@ sections:
             doc_url: 'user/admin_area/analytics/dev_ops_report.html'
           - doc_title: Usage Trends
             doc_url: 'user/admin_area/analytics/usage_trends.html'
-          - doc_title: User Cohorts
-            doc_url: 'user/admin_area/analytics/user_cohorts.html'
       - category_title: Group-level
         category_url: 'user/analytics/#group-level-analytics'
         docs:
