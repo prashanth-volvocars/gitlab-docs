@@ -596,7 +596,7 @@ sections:
           - doc_title: Workflows
             doc_url: 'user/project/merge_requests/authorization_for_merge_requests.html'
           - doc_title: Work in progress
-            doc_url: 'user/project/merge_requests/work_in_progress_merge_requests.html'
+            doc_url: 'user/project/merge_requests/drafts.html'
       - category_title: Members
         category_url: 'user/project/members/'
       - category_title: Migrating projects
