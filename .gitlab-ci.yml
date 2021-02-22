@@ -307,11 +307,14 @@ test_EOL_whitespace:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+  variables:
+    MARKDOWNLINT_VERSION: '0.26.0'
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.12-ruby-2.7.2
   needs: []
   before_script: []
   dependencies: []
   script:
+    - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
     - bundle exec rake setup_git default
     - mv tasks/whitespace_task.json tmp/.markdownlint.json
     - cd tmp
