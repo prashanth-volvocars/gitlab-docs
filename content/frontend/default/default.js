@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { setupTableOfContents } from './setup_table_of_contents';
 import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
+import { setupTableOfContents } from './setup_table_of_contents';
 
 document.addEventListener('DOMContentLoaded', () => {
   const versionBanner = document.querySelector('#js-version-banner');

@@ -1,6 +1,5 @@
 import instantsearch from '@tnir/instantsearch.js';
-import algoliasearch from 'algoliasearch';
-
+import { singleIndexQ } from '@tnir/instantsearch.js/es/lib/stateMappings';
 import {
   searchBox,
   refinementList,
@@ -9,7 +8,7 @@ import {
   poweredBy,
   configure,
 } from '@tnir/instantsearch.js/es/widgets';
-import { singleIndexQ } from '@tnir/instantsearch.js/es/lib/stateMappings';
+import algoliasearch from 'algoliasearch';
 
 document.addEventListener('DOMContentLoaded', () => {
   const search = instantsearch({
