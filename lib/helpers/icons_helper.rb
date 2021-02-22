@@ -8,11 +8,13 @@ module Nanoc::Helpers
 
     ICONS_SVG = '/assets/images/icons.svg' unless const_defined?('ICONS_SVG')
 
-    GITLAB_SVGS_MAPPING = {
-      'bulb' => 'tip',
-      'information-o' => 'note',
-      'warning' => 'caution'
-    }.freeze
+    unless const_defined?('GITLAB_SVGS_MAPPING')
+      GITLAB_SVGS_MAPPING = {
+        'bulb' => 'tip',
+        'information-o' => 'note',
+        'warning' => 'caution'
+      }.freeze
+    end
 
     def icon(icon_name, size = nil, css_class = nil)
       unless known_sprites.include?(icon_name)
