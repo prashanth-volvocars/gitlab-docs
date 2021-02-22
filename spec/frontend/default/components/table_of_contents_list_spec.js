@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
-import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
 import TableOfContentsList from '../../../../content/frontend/default/components/table_of_contents_list.vue';
+import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
 import { createExampleToc } from '../../shared/toc_helper';
 
 describe('frontend/default/components/table_of_contents_list', () => {

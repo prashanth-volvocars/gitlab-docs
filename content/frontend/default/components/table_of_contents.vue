@@ -1,7 +1,7 @@
 <script>
 import { flattenItems } from '../../shared/toc/flatten_items';
-import TableOfContentsList from './table_of_contents_list.vue';
 import CollapsibleContainer from './collapsible_container.vue';
+import TableOfContentsList from './table_of_contents_list.vue';
 
 export default {
   name: 'TableOfContents',
