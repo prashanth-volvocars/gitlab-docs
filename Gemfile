@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.11.23'
+gem 'nanoc', '~> 4.12.0'
 gem 'adsf', '~> 1.4.5'
 gem 'adsf-live', '~> 1.4.5'
 gem 'sassc', '~> 2.4.0'
