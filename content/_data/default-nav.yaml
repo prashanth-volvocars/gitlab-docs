@@ -181,7 +181,7 @@ sections:
           - doc_title: Uploads
             doc_url: 'administration/uploads.html'
           - doc_title: User Cohorts
-            doc_url: 'user/admin_area/user_cohorts.html'
+            doc_url: 'user/admin_area/analytics/user_cohorts.html'
       - category_title: Abuse reports
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
@@ -596,7 +596,7 @@ sections:
           - doc_title: Workflows
             doc_url: 'user/project/merge_requests/authorization_for_merge_requests.html'
           - doc_title: Work in progress
-            doc_url: 'user/project/merge_requests/drafts.html'
+            doc_url: 'user/project/merge_requests/work_in_progress_merge_requests.html'
       - category_title: Members
         category_url: 'user/project/members/'
       - category_title: Migrating projects
@@ -1017,8 +1017,6 @@ sections:
             doc_url: 'topics/autodevops/upgrading_postgresql.html'
           - doc_title: Stages
             doc_url: 'topics/autodevops/stages.html'
-          - doc_title: Troubleshooting
-            doc_url: 'topics/autodevops/troubleshooting.html'
       - category_title: Testing
         category_url: 'ci/unit_test_reports.html'
         docs:
