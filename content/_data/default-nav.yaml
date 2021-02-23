@@ -1081,7 +1081,7 @@ sections:
             doc_url: 'user/packages/go_proxy/'
           - doc_title: Maven
             doc_url: 'user/packages/maven_repository/'
-          - doc_title: NPM
+          - doc_title: npm
             doc_url: 'user/packages/npm_registry/'
           - doc_title: NuGet
             doc_url: 'user/packages/nuget_repository/'
