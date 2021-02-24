@@ -990,11 +990,11 @@ sections:
       - category_title: Docker
         category_url: 'ci/docker/'
         docs:
-          - doc_title: Docker build
-            doc_url: 'ci/docker/using_docker_build.html'
-          - doc_title: Docker images
+          - doc_title: Run CI/CD jobs in Docker containers
             doc_url: 'ci/docker/using_docker_images.html'
-          - doc_title: kaniko
+          - doc_title: Use Docker to build Docker images
+            doc_url: 'ci/docker/using_docker_build.html'
+          - doc_title: Use kaniko to build Docker images
             doc_url: 'ci/docker/using_kaniko.html'
       - category_title: Integrate a database
         category_url: 'ci/services/'
