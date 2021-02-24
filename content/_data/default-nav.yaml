@@ -831,7 +831,7 @@ sections:
         category_url: 'user/project/merge_requests/versions.html'
       - category_title: Workflows
         category_url: 'user/project/merge_requests/authorization_for_merge_requests.html'
-      - category_title: Work in progress
+      - category_title: Draft merge requests
         category_url: 'user/project/merge_requests/drafts.html'
 
   - section_title: Operations
