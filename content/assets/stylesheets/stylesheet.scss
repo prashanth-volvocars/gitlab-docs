@@ -1,5 +1,5 @@
 ---
-version: 99
+version: 100
 ---
 
 @import "variables";
@@ -135,15 +135,15 @@ blockquote {
   }
 }
 
+kbd {
+  @include code-styles;
+}
+
 pre {
   background-color: $pre-background-color;
   position: relative;
   code {
-    color: $code-color;
-    background-color: $code-background-color;
-    word-wrap: normal;
-    word-break: normal;
-    white-space: pre;
+    @include code-styles;
   }
   .clip-btn {
     display: inline-block;
@@ -182,8 +182,7 @@ code span {
 p code,
 li code,
 table code {
-  color: $code-color;
-  background-color: $code-background-color;
+  @include code-color;
 }
 
 a>code {
@@ -205,8 +204,7 @@ h6 {
   line-height: 1.4;
   padding-bottom: 5px;
   code {
-    color: $code-color;
-    background-color: $code-background-color;
+    @include code-color;
   }
   @media all and (min-width: $sm-width) {
     .anchor {
@@ -234,6 +232,13 @@ h1 {
   margin-bottom: $h-margin-bottom;
   @media (max-width: $sm-width) {
     font-size: 26px;
+  }
+  code {
+    @include code-color;
+  }
+
+  .anchor {
+    display: none;
   }
 }
 
@@ -758,6 +763,9 @@ h6 {
 
 .gl-breadcrumb-item>a {
   color: $gds-gray-1000;
+  code {
+    @include code-color;
+  }
 }
 
 @media (max-width:575.98px) {
@@ -827,12 +835,6 @@ h6 {
   order: -1;
   font-style: italic;
   margin-bottom: 15px;
-}
-
-.article-content {
-  >h1:first-of-type {
-    display: none;
-  }
 }
 
 // Embedded video

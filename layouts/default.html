@@ -47,12 +47,7 @@
           </div>
           <main>
             <div class="row">
-              <div class="col">
-                <% if @item[:title] %>
-                  <h1 class="article-title" itemprop="name">
-                    <%= @item[:title] %><%= @item[:title_badge] %>
-                  </h1>
-                <% end %>      
+              <div class="col">     
                 <div class="article-metadata">
                   <% if @item[:author] and @item[:author_gitlab] %>
                   Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>

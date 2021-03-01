@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 @import "variables";
@@ -10,6 +10,18 @@ version: 5
   top: 0;
   height: 100vh;
   min-width: $sidebar-width;
+}
+
+@mixin code-color {
+  color: $code-color;
+  background-color: $code-background-color;
+}
+
+@mixin code-styles {
+  @include code-color;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
 }
 
 .text-decoration-underline {
