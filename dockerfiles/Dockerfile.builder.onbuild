@@ -17,6 +17,10 @@ ONBUILD RUN yarn install
 ONBUILD RUN bundle exec rake setup_git default
 ONBUILD RUN yarn install
 ONBUILD RUN bundle exec nanoc compile -VV
+## For 13.9 and later, there's a raketask that is run instead of the
+## manual READMEs symlinking that is defined in scripts/normalize-links.sh.
+## If the raketask is present, run it.
+ONBUILD RUN [ -f /scripts/check_symlinks.sh ] && /scripts/check_symlinks.sh || "/scripts/check_symlinks.sh not found"
 
 # Move generated HTML to /site
 ONBUILD RUN mkdir /site

@@ -85,9 +85,15 @@ find ${TARGET}/$VER -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#doc
 ## In order to have clean URLs, we symlink README.html to index.html.
 ## That way, visiting https://docs.gitlab.com/ee/ would be the same as
 ## visiting https://docs.gitlab.com/ee/{README.html,index.html}
+## For 13.9 and later, there's a raketask that is run instead of the
+## command below. If the raketask is present, skip the command.
 ##
-echo "Symlink all README.html to index.html"
-for i in `find ${TARGET}/${VER} -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+bundle exec rake -T | grep symlink_readmes
+if [ $? -eq 1 ]
+then
+  echo "Symlink all README.html to index.html"
+  for i in `find ${TARGET}/${VER} -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
+fi
 
 ##
 ## Don't deploy the CE docs since they are identical to the EE ones.
