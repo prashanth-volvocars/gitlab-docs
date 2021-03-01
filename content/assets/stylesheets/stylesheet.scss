@@ -1,5 +1,5 @@
 ---
-version: 100
+version: 101
 ---
 
 @import "variables";
@@ -196,6 +196,7 @@ hr {
 }
 
 // Make code in headers match the font size of the given header.
+// https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
 h2,
 h3,
 h4,
@@ -205,6 +206,13 @@ h6 {
   padding-bottom: 5px;
   code {
     @include code-color;
+  }
+  &[id]::before {
+    display: block;
+    content: " ";
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden;
   }
   @media all and (min-width: $sm-width) {
     .anchor {
@@ -1045,23 +1053,6 @@ h6 {
     .social-icons {
       padding-right: 25px;
     }
-  }
-}
-
-// End of landing wrapper
-// https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  &[id]::before {
-    display: block;
-    content: " ";
-    margin-top: -75px;
-    height: 75px;
-    visibility: hidden;
   }
 }
 
