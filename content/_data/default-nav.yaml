@@ -1402,6 +1402,8 @@ sections:
             doc_url: 'api/pipeline_triggers.html'
           - doc_title: Pipelines
             doc_url: 'api/pipelines.html'
+          - doc_title: Plan limits
+            doc_url: 'api/plan_limits.html'
           - doc_title: Project aliases
             doc_url: 'api/project_aliases.html'
           - doc_title: Project import/export
