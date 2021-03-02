@@ -1,5 +1,5 @@
 ---
-version: 101
+version: 102
 ---
 
 @import "variables";
@@ -931,9 +931,6 @@ h6 {
   i {
     margin-left: 10px;
     margin-right: 10px;
-  }
-  @media (max-width: $md-width) {
-    margin-top: 60px;
   }
 }
 
