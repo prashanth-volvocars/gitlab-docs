@@ -958,6 +958,8 @@ sections:
             doc_url: 'ci/environments/environments_dashboard.html'
           - doc_title: Protected environments
             doc_url: 'ci/environments/protected_environments.html'
+          - doc_title: Deployment safety
+            doc_url: 'ci/environments/deployment_safety.html'
           - doc_title: Roll out an application incrementally
             doc_url: 'ci/environments/incremental_rollouts.html'
           - doc_title: Deploy to AWS
