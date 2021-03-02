@@ -257,7 +257,7 @@ end
 desc 'Create the _redirects file'
 task :redirects do
   redirects_yaml = YAML.load_file('content/_data/redirects.yaml')
-  redirects_file = 'content/_redirects'
+  redirects_file = 'public/_redirects'
 
   # Remove _redirects before populating it
   File.delete(redirects_file) if File.exists?(redirects_file)
