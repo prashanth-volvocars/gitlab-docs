@@ -746,10 +746,8 @@ sections:
       - category_title: Search
         category_url: 'user/search/'
         docs:
-          - doc_title: Advanced global search
-            doc_url: 'user/search/advanced_global_search.html'
-          - doc_title: Advanced search syntax
-            doc_url: 'user/search/advanced_search_syntax.html'
+          - doc_title: Advanced Search
+            doc_url: 'user/search/advanced_search.html'
       - category_title: SSH
         category_url: 'ssh/README.html'
       - category_title: Time tracking
