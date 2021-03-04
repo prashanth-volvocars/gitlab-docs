@@ -1012,12 +1012,14 @@ sections:
             doc_url: 'topics/autodevops/quick_start_guide.html'
           - doc_title: Requirements
             doc_url: 'topics/autodevops/requirements.html'
+          - doc_title: Stages
+            doc_url: 'topics/autodevops/stages.html'
           - doc_title: Customize
             doc_url: 'topics/autodevops/customize.html'
           - doc_title: Upgrade PostgreSQL
             doc_url: 'topics/autodevops/upgrading_postgresql.html'
-          - doc_title: Stages
-            doc_url: 'topics/autodevops/stages.html'
+          - doc_title: Upgrade Auto Deploy dependencies
+            doc_url: 'topics/autodevops/upgrading_auto_deploy_dependencies.html'
           - doc_title: Troubleshooting
             doc_url: 'topics/autodevops/troubleshooting.html'
       - category_title: Testing
