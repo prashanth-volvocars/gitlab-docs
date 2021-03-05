@@ -210,11 +210,11 @@ namespace :release do
       mr_title = "Update #{version} dropdown to match that of #{current_version}"
       branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
 
-      puts "=> Create a new branch off of the online version"
-      `git checkout -b #{branch_name} #{version}`
-
-      puts "=> Fetch version origin and reset to current"
+      puts "=> Fetch #{version} stable branch"
       `git fetch origin #{version}`
+
+      puts "=> Create a new branch off of the online version"
+      `git checkout -b #{branch_name} origin/#{version}`
       `git reset --hard origin/#{version}`
 
       puts "=> Copy the versions.yaml content from the release-#{current_version} branch"
