@@ -1570,7 +1570,7 @@ sections:
             doc_url: 'development/documentation/graphql_styleguide.html'
           - doc_title: RESTful API style guide
             doc_url: 'development/documentation/restful_api_styleguide.html'
-          - doc_title: Structure and template
+          - doc_title: Topic types
             doc_url: 'development/documentation/structure.html'
           - doc_title: Process
             doc_url: 'development/documentation/workflow.html'
