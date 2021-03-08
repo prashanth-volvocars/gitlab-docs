@@ -90,7 +90,7 @@ checks:
     # A list of patterns, specified as regular expressions, to exclude from the check.
     # If an external link matches this pattern, the validity check will be skipped.
     exclude:
-      # Valid links incorrectly reported as broken
+      # Valid links incorrectly reported as broken.
       - 'https:\/\/gitlab.com\/api\/v4\/.*'
       - 'https:\/\/www\.linkedin\.com\/company\/gitlab-com'
       - 'https:\/\/auth0\.com\/auth\/login'
@@ -102,19 +102,20 @@ checks:
       - 'https:\/\/downloads\.raspberrypi\.org\/raspbian\/images\/'
       - 'https:\/\/wiki\.jenkins\.io\/display\/JENKINS\/'
       - 'https:\/\/twitter\.com\/gitlab'
-      # Redirected links to ignore
+      # Redirected links to ignore.
       - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
-      # Don't check links matching the following patterns
+      # Don't check links matching the following patterns.
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
       - 'https?:\/\/127.0.0.1.*'
-      # Don't check gitlab.com links due to cloudflare thinking the link test is a dos attack
-      # Temporary solution to enable external link checker
+      # Don't check gitlab.com links. Cloudflare thinks the link test is a DOS attack.
+      # The temporary solution is to exclude them from link testing.
       - 'https:\/\/gitlab.com.*'
-      # Don't check github.com links due to GitHub rate limiting causing 429 errors
-      # Temporary solution to enable external link checker
+      # Some sites rate limit requests, causing 429 errors.
+      # The temporary solution is to exclude them from link testing.
       - 'https:\/\/github.com\/.*'
-
+      - 'https:\/\/www.youtube.com\/.*'
+      - 'https:\/\/youtu.be\/.*'
 
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.
