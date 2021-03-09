@@ -20,10 +20,6 @@ module Gitlab
         @href ||= self.class.decode(attribute('href'))
       end
 
-      def id
-        @id ||= attribute('id')&.downcase
-      end
-
       def self.decode(name)
         return if name.to_s.empty?
 
