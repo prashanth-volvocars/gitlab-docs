@@ -1036,6 +1036,8 @@ sections:
             doc_url: 'user/project/merge_requests/load_performance_testing.html'
           - doc_title: Metrics reports
             doc_url: 'ci/metrics_reports.html'
+          - doc_title: Test cases
+            doc_url: 'ci/test_cases/'
       - category_title: External integrations
         category_url: 'ci/ci_cd_for_external_repos/'
         docs:
@@ -1544,16 +1546,20 @@ sections:
       - category_title: Database development
         category_url: 'development/database/'
         docs:
+          - doc_title: Case study - filtering by label
+            doc_url: 'development/filtering_by_label.html'
+          - doc_title: Case study - namespaces storage statistics
+            doc_url: 'development/namespaces_storage_statistics.html'
           - doc_title: Database review guidelines
             doc_url: 'development/database_review.html'
-          - doc_title: SQL guidelines
-            doc_url: 'development/sql.html'
           - doc_title: Migrations style guide
             doc_url: 'development/migration_style_guide.html'
-          - doc_title: What requires downtime
-            doc_url: 'development/what_requires_downtime.html'
+          - doc_title: SQL guidelines
+            doc_url: 'development/sql.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'development/understanding_explain_plans.html'
+          - doc_title: What requires downtime
+            doc_url: 'development/what_requires_downtime.html'
       - category_title: Developer guide to logging
         category_url: 'development/logging.html'
       - category_title: Development Rake tasks
@@ -1688,8 +1694,21 @@ sections:
         category_url: 'development/bulk_import.html'
       - category_title: GitLab project pipelines
         category_url: 'development/pipelines.html'
+      - category_title: GraphQL development
+        category_url: 'development/graphql_guide/'
+        docs:
+          - doc_title: GraphQL BatchLoader
+            doc_url: 'development/graphql_guide/batchloader.html'
+          - doc_title: GraphQL pagination
+            doc_url: 'development/graphql_guide/pagination.html'
+          - doc_title: GraphQL Pro
+            doc_url: 'development/graphql_guide/graphql_pro.html'
       - category_title: Instrumenting Ruby code
         category_url: 'development/instrumentation.html'
+      - category_title: Issuable-like Rails models utilities
+        category_url: 'development/issuable-like-models.html'
+      - category_title: Issue types
+        category_url: 'development/issue_types.html'
       - category_title: Kubernetes Agent
         category_url: 'development/agent/'
         docs:
