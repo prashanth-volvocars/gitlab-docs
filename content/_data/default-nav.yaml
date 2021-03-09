@@ -1050,8 +1050,6 @@ sections:
       - category_title: CI/CD examples
         category_url: 'ci/examples/README.html'
         docs:
-          - doc_title: Clojure
-            doc_url: 'ci/examples/test-clojure-application.html'
           - doc_title: Deployment with Dpl
             doc_url: 'ci/examples/deployment/README.html'
           - doc_title: End-to-end testing
@@ -1064,10 +1062,6 @@ sections:
             doc_url: 'ci/examples/deployment/composer-npm-deploy.html'
           - doc_title: PHP with Laravel and Envoy
             doc_url: 'ci/examples/laravel_with_gitlab_and_envoy/'
-          - doc_title: Python on Heroku
-            doc_url: 'ci/examples/test-and-deploy-python-application-to-heroku.html'
-          - doc_title: Ruby on Heroku
-            doc_url: 'ci/examples/test-and-deploy-ruby-application-to-heroku.html'
       - category_title: Troubleshooting CI/CD
         category_url: 'ci/troubleshooting.html'
 
