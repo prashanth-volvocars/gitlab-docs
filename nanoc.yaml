@@ -116,6 +116,8 @@ checks:
       - 'https:\/\/github.com\/.*'
       - 'https:\/\/www.youtube.com\/.*'
       - 'https:\/\/youtu.be\/.*'
+      # Some links require authentication, but we want to keep them in development docs
+      - 'https:\/\/dashboards.gitlab.com\/.*'
 
     # A list of file patterns, specified as regular expressions, to exclude from the check.
     # If a file matches this pattern, the links from this file will not be checked.
