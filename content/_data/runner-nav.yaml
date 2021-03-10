@@ -65,6 +65,8 @@ sections:
         category_url: 'configuration/init.html'
       - category_title: Speed up job execution
         category_url: 'configuration/speed_up_job_execution.html'
+      - category_title: Use GPUs
+        category_url: 'configuration/gpus.html'
 
   - section_title: Register
     section_url: 'register/'
