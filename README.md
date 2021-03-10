@@ -182,7 +182,7 @@ the same time. To contribute to the appearance of the documentation site, see
 Before diving into writing, here's a few links that will come in handy:
 
 - [Writing documentation](https://docs.gitlab.com/ee/development/documentation/index.html)
-- [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
+- [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide/index.html)
 
 ### Clone the repositories
 

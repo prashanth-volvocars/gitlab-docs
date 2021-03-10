@@ -360,8 +360,14 @@ redirects:
     to: /ee/development/value_stream_analytics.html
     remove_date: 2021-11-01
   - from: /ee/development/doc_styleguide.html
-    to: /ee/development/documentation/styleguide.html
+    to: /ee/development/documentation/styleguide/index.html
     remove_date: 2021-11-01
+  - from: /ee/development/documentation/styleguide.html
+    to: /ee/development/documentation/styleguide/index.html
+    remove_date: 2021-12-01
+  - from: /ee/development/documentation/styleguide.html
+    to: /ee/development/documentation/styleguide/
+    remove_date: 2021-12-01
   - from: /ee/development/documentation/feature-change-workflow.html
     to: /ee/development/documentation/workflow.html
     remove_date: 2021-11-01
@@ -761,6 +767,9 @@ redirects:
   - from: /ee/user/admin_area/analytics/convdev.html
     to: /ee/user/admin_area/analytics/dev_ops_report.html
     remove_date: 2021-11-01
+  - from: /ee/user/admin_area/analytics/instance_statistics.html
+    to: /ee/user/admin_area/analytics/usage_trends.html
+    remove_date: 2022-01-01
   - from: /ee/user/admin_area/monitoring/convdev.html
     to: /ee/user/admin_area/analytics/dev_ops_report.html
     remove_date: 2021-11-01
@@ -992,6 +1001,12 @@ redirects:
   - from: /ee/user/project/status_page/
     to: /ee/operations/incident_management/status_page.html
     remove_date: 2021-11-01
+  - from: /ee/user/search/advanced_global_search.html
+    to: /ee/user/search/advanced_search.html
+    remove_date: 2021-12-01
+  - from: /ee/user/search/advanced_search_syntax.html
+    to: /ee/user/search/advanced_search.html
+    remove_date: 2021-12-01
   - from: /ee/web_hooks/web_hooks.html
     to: /ee/user/project/integrations/webhooks.html
     remove_date: 2021-11-01
