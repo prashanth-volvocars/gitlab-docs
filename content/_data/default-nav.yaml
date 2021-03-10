@@ -224,6 +224,8 @@ sections:
             doc_url: 'administration/repository_storage_types.html'
           - doc_title: Gitaly
             doc_url: 'administration/gitaly/'
+          - doc_title: Configure Gitaly
+            doc_url: 'administration/gitaly/configure_gitaly.html'
           - doc_title: Gitaly Cluster
             doc_url: 'administration/gitaly/praefect.html'
           - doc_title: Gitaly reference
