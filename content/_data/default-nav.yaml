@@ -485,45 +485,6 @@ sections:
     section_categories:
       - category_title: Working with projects
         category_url: 'user/project/working_with_projects.html'
-      - category_title: Application security
-        category_url: 'user/application_security/'
-        docs:
-          - doc_title: Security Configuration
-            doc_url: 'user/application_security/configuration/'
-          - doc_title: Container Scanning
-            doc_url: 'user/application_security/container_scanning/'
-          - doc_title: Threat Monitoring
-            doc_url: 'user/application_security/threat_monitoring/'
-          - doc_title: Dependency Scanning
-            doc_url: 'user/application_security/dependency_scanning/'
-          - doc_title: Dependency Scanning Analyzers
-            doc_url: 'user/application_security/dependency_scanning/analyzers.html'
-          - doc_title: Dependency List
-            doc_url: 'user/application_security/dependency_list/'
-          - doc_title: Static Application Security Testing
-            doc_url: 'user/application_security/sast/'
-          - doc_title: SAST Analyzers
-            doc_url: 'user/application_security/sast/analyzers.html'
-          - doc_title: Secret Detection
-            doc_url: 'user/application_security/secret_detection/'
-          - doc_title: Dynamic Application Security Testing
-            doc_url: 'user/application_security/dast/'
-          - doc_title: API Fuzzing
-            doc_url: 'user/application_security/api_fuzzing/'
-          - doc_title: Coverage Fuzzing
-            doc_url: 'user/application_security/coverage_fuzzing/'
-          - doc_title: Security Dashboard
-            doc_url: 'user/application_security/security_dashboard/'
-          - doc_title: Offline Environments
-            doc_url: 'user/application_security/offline_deployments/'
-          - doc_title: Vulnerability Reports
-            doc_url: 'user/application_security/vulnerability_report/'
-          - doc_title: Vulnerability Pages
-            doc_url: 'user/application_security/vulnerabilities/'
-          - doc_title: Security scanner integration
-            doc_url: 'development/integrations/secure.html'
-          - doc_title: Secure and Protect Terminology
-            doc_url: 'user/application_security/terminology/'
       - category_title: Badges
         category_url: 'user/project/badges.html'
       - category_title: Bulk editing (project)
@@ -1068,6 +1029,46 @@ sections:
             doc_url: 'ci/examples/laravel_with_gitlab_and_envoy/'
       - category_title: Troubleshooting CI/CD
         category_url: 'ci/troubleshooting.html'
+
+  - section_title: Application security
+    section_url: 'user/application_security/'
+    section_categories:
+      - category_title: Security Configuration
+        category_url: 'user/application_security/configuration/'
+      - category_title: Container Scanning
+        category_url: 'user/application_security/container_scanning/'
+      - category_title: Threat Monitoring
+        category_url: 'user/application_security/threat_monitoring/'
+      - category_title: Dependency Scanning
+        category_url: 'user/application_security/dependency_scanning/'
+      - category_title: Dependency Scanning Analyzers
+        category_url: 'user/application_security/dependency_scanning/analyzers.html'
+      - category_title: Dependency List
+        category_url: 'user/application_security/dependency_list/'
+      - category_title: Static Application Security Testing
+        category_url: 'user/application_security/sast/'
+      - category_title: SAST Analyzers
+        category_url: 'user/application_security/sast/analyzers.html'
+      - category_title: Secret Detection
+        category_url: 'user/application_security/secret_detection/'
+      - category_title: Dynamic Application Security Testing
+        category_url: 'user/application_security/dast/'
+      - category_title: API Fuzzing
+        category_url: 'user/application_security/api_fuzzing/'
+      - category_title: Coverage Fuzzing
+        category_url: 'user/application_security/coverage_fuzzing/'
+      - category_title: Security Dashboard
+        category_url: 'user/application_security/security_dashboard/'
+      - category_title: Offline Environments
+        category_url: 'user/application_security/offline_deployments/'
+      - category_title: Vulnerability Reports
+        category_url: 'user/application_security/vulnerability_report/'
+      - category_title: Vulnerability Pages
+        category_url: 'user/application_security/vulnerabilities/'
+      - category_title: Security scanner integration
+        category_url: 'development/integrations/secure.html'
+      - category_title: Secure and Protect Terminology
+        category_url: 'user/application_security/terminology/'
 
   - section_title: Packages & Registries
     section_url: 'user/packages/'
