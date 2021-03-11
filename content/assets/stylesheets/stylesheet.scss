@@ -1,5 +1,5 @@
 ---
-version: 102
+version: 103
 ---
 
 @import "variables";
@@ -102,7 +102,12 @@ table {
     }
   }
   &.fixed-table {
-    table-layout: fixed; // use this for columns with the same width
+    table-layout: fixed; // use this for columns with the same width 
+    thead th {
+      top: $header-height;
+      position: sticky;
+      background-color: $thead-background-color;
+    }
   }
 }
 
