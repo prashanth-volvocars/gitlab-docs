@@ -11,10 +11,10 @@
 # - Use "external_url: true" for external URLs in docs and categories
 
 sections:
-  - section_title: Runner Docs
+  - section_title: GitLab Runner
     section_url: ''
 
-  - section_title: Install
+  - section_title: Install GitLab Runner
     section_url: 'install/'
     section_categories:
       - category_title: Docker
@@ -39,42 +39,26 @@ sections:
         category_url: 'install/linux-repository.html'
       - category_title: Old GitLab Runner URLs
         category_url: 'install/old.html'
+      - category_title: Advanced installations
+        category_url: 'install/advanced_installs.md'
+        docs:
+          - doc_title: Use self-signed certificates
+            doc_url: 'configuration/tls-self-signed.html'
+          - doc_title: Run behind a proxy
+            doc_url: 'configuration/proxy.html'
+          - doc_title: Handle rate limited requests
+            doc_url: 'configuration/proxy.html#handling-rate-limited-requests'
+      - category_title: Autoscaled installations
+        category_url: 'configuration/autoscale_index.html'
+        docs:
+          - doc_title: Autoscale with Docker Machine
+            doc_url: 'configuration/autoscale.html'
+          - doc_title: Autoscale on AWS EC2
+            doc_url: 'configuration/runner_autoscale_aws/'
+          - doc_title: Autoscale on AWS Fargate
+            doc_url: 'configuration/runner_autoscale_aws_fargate/'
 
-  - section_title: Configure
-    section_url: 'configuration/'
-    section_categories:
-      - category_title: Advanced config
-        category_url: 'configuration/advanced-configuration.html'
-      - category_title: Autoscale config
-        category_url: 'configuration/autoscale.html'
-      - category_title: Autoscale on AWS EC2
-        category_url: 'configuration/runner_autoscale_aws/'
-      - category_title: Autoscale on AWS Fargate
-        category_url: 'configuration/runner_autoscale_aws_fargate/'
-      - category_title: Commands
-        category_url: 'commands/README.html'
-      - category_title: Feature flags
-        category_url: 'configuration/feature-flags.html'
-      - category_title: Running behind a proxy
-        category_url: 'configuration/proxy.html'
-      - category_title: Rate limited requests
-        category_url: 'configuration/proxy.html#handling-rate-limited-requests'
-      - category_title: Self-signed certificates
-        category_url: 'configuration/tls-self-signed.html'
-      - category_title: System services
-        category_url: 'configuration/init.html'
-      - category_title: Speed up job execution
-        category_url: 'configuration/speed_up_job_execution.html'
-      - category_title: Use GPUs
-        category_url: 'configuration/gpus.html'
-
-  - section_title: Register
-    section_url: 'register/'
-    section_categories:
-      - category_title: Examples
-        category_url: 'examples/gitlab.html'
-
-  - section_title: Executors
+  - section_title: Choose an executor
     section_url: 'executors/README.html'
     section_categories:
       - category_title: Custom
@@ -99,14 +83,35 @@ sections:
       - category_title: Virtual Box
         category_url: 'executors/virtualbox.html'
 
-  - section_title: Monitor
+  - section_title: Register a runner
+    section_url: 'register/'
+    section_categories:
+      - category_title: Examples
+        category_url: 'examples/gitlab.html'
+      - category_title: Shells
+        category_url: 'shells/'
+
+  - section_title: Administer your runners
+    section_url: 'configuration/'
+    section_categories:
+      - category_title: Advanced configuration options
+        category_url: 'configuration/advanced-configuration.html'
+      - category_title: gitlab-runner command reference
+        category_url: 'commands/README.html'
+      - category_title: Use GPUs to execute jobs
+        category_url: 'configuration/gpus.html'
+      - category_title: Speed up job execution
+        category_url: 'configuration/speed_up_job_execution.html'
+      - category_title: Best practices
+        category_url: 'best_practice/'
+      - category_title: Feature flags
+        category_url: 'configuration/feature-flags.html'
+
+  - section_title: Monitor runner performance
     section_url: 'monitoring/README.html'
 
-  - section_title: Security
+  - section_title: Secure your jobs
     section_url: 'security/'
-
-  - section_title: Shells
-    section_url: 'shells/'
 
   - section_title: Troubleshoot
     section_url: 'faq/README.html'
@@ -119,6 +124,5 @@ sections:
         external_url: true
       - category_title: Reviewing GitLab Runner
         category_url: 'development/reviewing-gitlab-runner.html'
-
-  - section_title: Best Practices
-    section_url: 'best_practice/'
+      - category_title: System services
+        category_url: 'configuration/init.html'
