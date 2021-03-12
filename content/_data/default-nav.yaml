@@ -1591,6 +1591,11 @@ sections:
         category_url: 'development/distributed_tracing.html'
       - category_title: Experiments
         category_url: 'development/experiment_guide/'
+        docs:
+          - doc_title: Experimentation module
+            doc_url: 'development/experiment_guide/experimentation.html'
+          - doc_title: GLEX
+            doc_url: 'development/experiment_guide/gitlab_experiment.html'
       - category_title: Feature flags for GitLab development
         category_url: 'development/feature_flags/'
         docs:
