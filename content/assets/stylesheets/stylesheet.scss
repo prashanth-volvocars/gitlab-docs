@@ -1,5 +1,5 @@
 ---
-version: 103
+version: 104
 ---
 
 @import "variables";
@@ -107,6 +107,7 @@ table {
       top: $header-height;
       position: sticky;
       background-color: $thead-background-color;
+      z-index: 3;
     }
   }
 }
