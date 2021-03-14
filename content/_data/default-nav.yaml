@@ -1099,7 +1099,7 @@ sections:
       - category_title: Dependency Proxy
         category_url: 'user/packages/dependency_proxy/'
 
-  - section_title: Manage your project's infrastructure
+  - section_title: Manage your application's infrastructure
     section_url: 'user/project/clusters/'
     section_categories:
       - category_title: Adding and removing clusters
