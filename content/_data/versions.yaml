@@ -7,13 +7,14 @@ previous_majors:
 # The first online version should always point to the
 # current stable version.
 online:
+  - "13.10"
   - "13.9"
   - "13.8"
-  - "13.7"
 
 # Versions not appearing in the dropdown, but available as Docker images
 # https://docs.gitlab.com/archives/#offline-archives
 offline:
+  - "13.7"
   - "13.6"
   - "13.5"
   - "13.4"
