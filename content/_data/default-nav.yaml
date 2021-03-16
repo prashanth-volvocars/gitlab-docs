@@ -182,6 +182,40 @@ sections:
             doc_url: 'administration/uploads.html'
           - doc_title: User Cohorts
             doc_url: 'user/admin_area/user_cohorts.html'
+      - category_title: Security
+        category_url: 'security/README.html'
+        docs:
+          - doc_title: Password storage
+            doc_url: 'security/password_storage.html'
+          - doc_title: Custom password length limits
+            doc_url: 'security/password_length_limits.html'
+          - doc_title: Limits on SSH keys
+            doc_url: 'security/ssh_keys_restrictions.html'
+          - doc_title: Rate limits
+            doc_url: 'security/rate_limits.html'
+          - doc_title: Webhooks
+            doc_url: 'security/webhooks.html'
+          - doc_title: Information exclusivity
+            doc_url: 'security/information_exclusivity.html'
+          - doc_title: Reset user password
+            doc_url: 'security/reset_user_password.html'
+          - doc_title: Unlock a user
+            doc_url: 'security/unlock_user.html'
+          - doc_title: User file uploads
+            doc_url: 'security/user_file_uploads.html'
+          - doc_title: Manage the CRIME vulnerability
+            doc_url: 'security/crime_vulnerability.html'
+          - doc_title: Enforce two-factor authentication (2FA)
+            doc_url: 'security/two_factor_authentication.html'
+          - doc_title: User email confirmation
+            doc_url: 'security/user_email_confirmation.html'
+          - doc_title: Security of running jobs
+            doc_url: 'https://docs.gitlab.com/runner/security/'
+            external_url: true
+          - doc_title: Proxying assets
+            doc_url: 'security/asset_proxy.html'
+          - doc_title: CI/CD variables
+            doc_url: 'security/cicd_environment_variables.html'
       - category_title: Abuse reports
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
@@ -401,41 +435,6 @@ sections:
         docs:
           - doc_title: Releases and maintenance
             doc_url: 'policy/maintenance.html'
-
-  - section_title: Security
-    section_url: 'security/README.html'
-    section_categories:
-      - category_title: Password storage
-        category_url: 'security/password_storage.html'
-      - category_title: Custom password length limits
-        category_url: 'security/password_length_limits.html'
-      - category_title: Limits on SSH keys
-        category_url: 'security/ssh_keys_restrictions.html'
-      - category_title: Rate limits
-        category_url: 'security/rate_limits.html'
-      - category_title: Webhooks
-        category_url: 'security/webhooks.html'
-      - category_title: Information exclusivity
-        category_url: 'security/information_exclusivity.html'
-      - category_title: Reset user password
-        category_url: 'security/reset_user_password.html'
-      - category_title: Unlock a user
-        category_url: 'security/unlock_user.html'
-      - category_title: User file uploads
-        category_url: 'security/user_file_uploads.html'
-      - category_title: Manage the CRIME vulnerability
-        category_url: 'security/crime_vulnerability.html'
-      - category_title: Enforce two-factor authentication (2FA)
-        category_url: 'security/two_factor_authentication.html'
-      - category_title: User email confirmation
-        category_url: 'security/user_email_confirmation.html'
-      - category_title: Security of running jobs
-        category_url: 'https://docs.gitlab.com/runner/security/'
-        external_url: true
-      - category_title: Proxying assets
-        category_url: 'security/asset_proxy.html'
-      - category_title: CI/CD environment variables
-        category_url: 'security/cicd_environment_variables.html'
 
   - section_title: Analytics
     section_url: 'user/analytics/'
