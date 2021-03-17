@@ -182,6 +182,40 @@ sections:
             doc_url: 'administration/uploads.html'
           - doc_title: User Cohorts
             doc_url: 'user/admin_area/user_cohorts.html'
+      - category_title: Security
+        category_url: 'security/README.html'
+        docs:
+          - doc_title: Password storage
+            doc_url: 'security/password_storage.html'
+          - doc_title: Custom password length limits
+            doc_url: 'security/password_length_limits.html'
+          - doc_title: Limits on SSH keys
+            doc_url: 'security/ssh_keys_restrictions.html'
+          - doc_title: Rate limits
+            doc_url: 'security/rate_limits.html'
+          - doc_title: Webhooks
+            doc_url: 'security/webhooks.html'
+          - doc_title: Information exclusivity
+            doc_url: 'security/information_exclusivity.html'
+          - doc_title: Reset user password
+            doc_url: 'security/reset_user_password.html'
+          - doc_title: Unlock a user
+            doc_url: 'security/unlock_user.html'
+          - doc_title: User file uploads
+            doc_url: 'security/user_file_uploads.html'
+          - doc_title: Manage the CRIME vulnerability
+            doc_url: 'security/crime_vulnerability.html'
+          - doc_title: Enforce two-factor authentication (2FA)
+            doc_url: 'security/two_factor_authentication.html'
+          - doc_title: User email confirmation
+            doc_url: 'security/user_email_confirmation.html'
+          - doc_title: Security of running jobs
+            doc_url: 'https://docs.gitlab.com/runner/security/'
+            external_url: true
+          - doc_title: Proxying assets
+            doc_url: 'security/asset_proxy.html'
+          - doc_title: CI/CD variables
+            doc_url: 'security/cicd_environment_variables.html'
       - category_title: Abuse reports
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
@@ -224,6 +258,8 @@ sections:
             doc_url: 'administration/repository_storage_types.html'
           - doc_title: Gitaly
             doc_url: 'administration/gitaly/'
+          - doc_title: Configure Gitaly
+            doc_url: 'administration/gitaly/configure_gitaly.html'
           - doc_title: Gitaly Cluster
             doc_url: 'administration/gitaly/praefect.html'
           - doc_title: Gitaly reference
@@ -400,41 +436,6 @@ sections:
           - doc_title: Releases and maintenance
             doc_url: 'policy/maintenance.html'
 
-  - section_title: Security
-    section_url: 'security/README.html'
-    section_categories:
-      - category_title: Password storage
-        category_url: 'security/password_storage.html'
-      - category_title: Custom password length limits
-        category_url: 'security/password_length_limits.html'
-      - category_title: Limits on SSH keys
-        category_url: 'security/ssh_keys_restrictions.html'
-      - category_title: Rate limits
-        category_url: 'security/rate_limits.html'
-      - category_title: Webhooks
-        category_url: 'security/webhooks.html'
-      - category_title: Information exclusivity
-        category_url: 'security/information_exclusivity.html'
-      - category_title: Reset user password
-        category_url: 'security/reset_user_password.html'
-      - category_title: Unlock a user
-        category_url: 'security/unlock_user.html'
-      - category_title: User file uploads
-        category_url: 'security/user_file_uploads.html'
-      - category_title: Manage the CRIME vulnerability
-        category_url: 'security/crime_vulnerability.html'
-      - category_title: Enforce two-factor authentication (2FA)
-        category_url: 'security/two_factor_authentication.html'
-      - category_title: User email confirmation
-        category_url: 'security/user_email_confirmation.html'
-      - category_title: Security of running jobs
-        category_url: 'https://docs.gitlab.com/runner/security/'
-        external_url: true
-      - category_title: Proxying assets
-        category_url: 'security/asset_proxy.html'
-      - category_title: CI/CD environment variables
-        category_url: 'security/cicd_environment_variables.html'
-
   - section_title: Analytics
     section_url: 'user/analytics/'
     section_categories:
@@ -483,45 +484,6 @@ sections:
     section_categories:
       - category_title: Working with projects
         category_url: 'user/project/working_with_projects.html'
-      - category_title: Application security
-        category_url: 'user/application_security/'
-        docs:
-          - doc_title: Security Configuration
-            doc_url: 'user/application_security/configuration/'
-          - doc_title: Container Scanning
-            doc_url: 'user/application_security/container_scanning/'
-          - doc_title: Threat Monitoring
-            doc_url: 'user/application_security/threat_monitoring/'
-          - doc_title: Dependency Scanning
-            doc_url: 'user/application_security/dependency_scanning/'
-          - doc_title: Dependency Scanning Analyzers
-            doc_url: 'user/application_security/dependency_scanning/analyzers.html'
-          - doc_title: Dependency List
-            doc_url: 'user/application_security/dependency_list/'
-          - doc_title: Static Application Security Testing
-            doc_url: 'user/application_security/sast/'
-          - doc_title: SAST Analyzers
-            doc_url: 'user/application_security/sast/analyzers.html'
-          - doc_title: Secret Detection
-            doc_url: 'user/application_security/secret_detection/'
-          - doc_title: Dynamic Application Security Testing
-            doc_url: 'user/application_security/dast/'
-          - doc_title: API Fuzzing
-            doc_url: 'user/application_security/api_fuzzing/'
-          - doc_title: Coverage Fuzzing
-            doc_url: 'user/application_security/coverage_fuzzing/'
-          - doc_title: Security Dashboard
-            doc_url: 'user/application_security/security_dashboard/'
-          - doc_title: Offline Environments
-            doc_url: 'user/application_security/offline_deployments/'
-          - doc_title: Vulnerability Reports
-            doc_url: 'user/application_security/vulnerability_report/'
-          - doc_title: Vulnerability Pages
-            doc_url: 'user/application_security/vulnerabilities/'
-          - doc_title: Security scanner integration
-            doc_url: 'development/integrations/secure.html'
-          - doc_title: Secure and Protect Terminology
-            doc_url: 'user/application_security/terminology/'
       - category_title: Badges
         category_url: 'user/project/badges.html'
       - category_title: Bulk editing (project)
@@ -668,6 +630,8 @@ sections:
       - category_title: Epics
         category_url: 'user/group/epics/'
         docs:
+          - doc_title: Epic boards
+            doc_url: 'user/group/epics/epic_boards.html'
           - doc_title: Manage epics
             doc_url: 'user/group/epics/manage_epics.html'
       - category_title: Group Import/Export
@@ -893,6 +857,8 @@ sections:
             doc_url: 'operations/incident_management/integrations.html'
           - doc_title: Status page
             doc_url: 'operations/incident_management/status_page.html'
+          - doc_title: On-call schedules
+            doc_url: 'operations/incident_management/oncall_schedules.html'
       - category_title: Feature Flags
         category_url: 'operations/feature_flags.html'
       - category_title: Product analytics
@@ -1066,6 +1032,46 @@ sections:
             doc_url: 'ci/examples/laravel_with_gitlab_and_envoy/'
       - category_title: Troubleshooting CI/CD
         category_url: 'ci/troubleshooting.html'
+
+  - section_title: Application security
+    section_url: 'user/application_security/'
+    section_categories:
+      - category_title: Security Configuration
+        category_url: 'user/application_security/configuration/'
+      - category_title: Container Scanning
+        category_url: 'user/application_security/container_scanning/'
+      - category_title: Threat Monitoring
+        category_url: 'user/application_security/threat_monitoring/'
+      - category_title: Dependency Scanning
+        category_url: 'user/application_security/dependency_scanning/'
+      - category_title: Dependency Scanning Analyzers
+        category_url: 'user/application_security/dependency_scanning/analyzers.html'
+      - category_title: Dependency List
+        category_url: 'user/application_security/dependency_list/'
+      - category_title: Static Application Security Testing
+        category_url: 'user/application_security/sast/'
+      - category_title: SAST Analyzers
+        category_url: 'user/application_security/sast/analyzers.html'
+      - category_title: Secret Detection
+        category_url: 'user/application_security/secret_detection/'
+      - category_title: Dynamic Application Security Testing
+        category_url: 'user/application_security/dast/'
+      - category_title: API Fuzzing
+        category_url: 'user/application_security/api_fuzzing/'
+      - category_title: Coverage Fuzzing
+        category_url: 'user/application_security/coverage_fuzzing/'
+      - category_title: Security Dashboard
+        category_url: 'user/application_security/security_dashboard/'
+      - category_title: Offline Environments
+        category_url: 'user/application_security/offline_deployments/'
+      - category_title: Vulnerability Reports
+        category_url: 'user/application_security/vulnerability_report/'
+      - category_title: Vulnerability Pages
+        category_url: 'user/application_security/vulnerabilities/'
+      - category_title: Security scanner integration
+        category_url: 'development/integrations/secure.html'
+      - category_title: Secure and Protect Terminology
+        category_url: 'user/application_security/terminology/'
 
   - section_title: Packages & Registries
     section_url: 'user/packages/'
@@ -1588,13 +1594,14 @@ sections:
         category_url: 'development/distributed_tracing.html'
       - category_title: Experiments
         category_url: 'development/experiment_guide/'
+        docs:
+          - doc_title: Experimentation module
+            doc_url: 'development/experiment_guide/experimentation.html'
+          - doc_title: GLEX
+            doc_url: 'development/experiment_guide/gitlab_experiment.html'
       - category_title: Feature flags for GitLab development
         category_url: 'development/feature_flags/'
         docs:
-          - doc_title: Using feature flags
-            doc_url: 'development/feature_flags/process.html'
-          - doc_title: Developing with feature flags
-            doc_url: 'development/feature_flags/development.html'
           - doc_title: Controlling feature flags
             doc_url: 'development/feature_flags/controls.html'
           - doc_title: Documenting feature flags

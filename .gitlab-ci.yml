@@ -56,6 +56,7 @@ workflow:
     # Allow merge request and scheduled pipelines.
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
     # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
@@ -108,6 +109,9 @@ workflow:
   rules:
     - if: $CHORES_PIPELINE == "true"
       when: never
+    # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
@@ -115,12 +119,16 @@ workflow:
   rules:
     - if: $CHORES_PIPELINE == "true"
       when: never
+    # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 .rules_dev:
   rules:
     - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
 
 #
@@ -366,19 +374,20 @@ review:
   cache: {}
   script:
     # Rsync to the Pages dir
-    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
+    - rsync -av --delete public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     # Remove public directory so that the next review app can run in a
     # clean environment (limitation of the shell executor).
     - rm -rf public
   environment:
-    name: review/$CI_COMMIT_REF_SLUG
-    url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
+    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
+    url: http://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.$APPS_DOMAIN
     on_stop: review_stop
   rules:
     - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
   tags:
     - nginx
     - review-apps
@@ -397,14 +406,18 @@ review_stop:
   before_script: []
   cache: {}
   script:
-    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG
+    - rm -rf public /srv/nginx/pages/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
   environment:
-    name: review/$CI_COMMIT_REF_SLUG
+    name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     action: stop
   rules:
     - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
-    - if: '$CI_MERGE_REQUEST_ID || $CI_COMMIT_BRANCH =~ /docs-preview/'
+    - if: '$CI_MERGE_REQUEST_ID || $CI_PIPELINE_SOURCE == "pipeline"'
+      allow_failure: true
+      when: manual
+    # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
   tags:
