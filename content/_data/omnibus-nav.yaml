@@ -86,6 +86,8 @@ sections:
         category_url: 'settings/unicorn.html'
       - category_title: Image scaling
         category_url: 'settings/image_scaling.html'
+      - category_title: Memory-constrained environments
+        category_url: 'settings/memory_constrained_envs.html'
 
   - section_title: Release process
     section_url: 'release/README.html'
