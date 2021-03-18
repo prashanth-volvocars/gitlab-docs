@@ -1070,6 +1070,8 @@ sections:
         category_url: 'user/application_security/vulnerability_report/'
       - category_title: Vulnerability Pages
         category_url: 'user/application_security/vulnerabilities/'
+      - category_title: Scan Policies
+        category_url: 'user/application_security/policies/'
       - category_title: Security scanner integration
         category_url: 'development/integrations/secure.html'
       - category_title: Secure and Protect Terminology
