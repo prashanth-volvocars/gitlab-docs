@@ -1,58 +1,95 @@
 <% navigation = Gitlab::Navigation.new(@items, @item) %>
 <nav class="global-nav-content">
-  <!-- nav sections -->
-  <% navigation.children.each do |sec| %>
-    <% sec_uuid = SecureRandom.uuid %>
-    <div class="global-nav-section">
-      <span class="global-nav-block-top nav-link">
-        <a class="global-nav-link level-0 <%= sec.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(sec) ? 'active' : '' %>" href="<%= navigation.element_href(sec) %>">
-          <%= sec.title %>
-          <%= navigation.optional_ee_badge(sec) %>
-        </a>
-        <div class="section-title <%= sec.has_children? ? 'collapse-toggle': '' %> <%= navigation.show_element?(sec) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#sec_<%= sec_uuid %>"></div>
-      </span>
-
-      <!-- nav categories -->
-      <% if sec.has_children? && sec.enabled  %>
-      <div class="collapse <%= navigation.show_element?(sec) ? 'show' : '' %>" id="sec_<%= sec_uuid %>">
-        <% sec.children.each do |cat| %>
-          <% cat_uuid = SecureRandom.uuid %>
-        <span class="global-nav-cat nav-link">
-          <% if cat.external_url %>
-          <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %>" href="<%= cat.url %>" target="_blank">
-            <%= cat.title %>
-          </a>
-          <% else %>
-          <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(cat) ? 'active' : '' %>" href="<%= navigation.element_href(cat) %>">
-                <%= cat.title %>
-                <%= navigation.optional_ee_badge(cat) %>
-              </a>
-            <% end %><!-- end of if cat[:external_url] -->
-            <div class="<%= cat.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(cat) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#cat_<%= cat_uuid %>"></div>
-          </span>
-
-          <!-- nav docs -->
-          <% if cat.has_children? %>
-            <div class="collapse <%= navigation.show_element?(cat) ? 'show' : '' %>" id="cat_<%= cat_uuid %>">
-            <% cat.children.each do |doc| %>
-              <span class="nav-link">
-                <% if doc.external_url %>
-                  <a class="global-nav-link level-2" href="<%= doc.url %>" target="_blank">
-                    <%= doc.title %>
-                  </a>
-                <% else%>
-                  <a class="global-nav-link level-2 <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
-                    <%= doc.title %>
-                    <%= navigation.optional_ee_badge(doc) %>
-                  </a>
-                <% end %><!-- end of if doc[:external_url] -->
-              </span>
-            <% end %><!-- end of cat[:docs] -->
-            </div>
-          <% end %><!-- end of if cat[:docs].nil? -->
-        <% end %><!-- end of sec[:section_categories] -->
-      </div><!-- end of div class="collapse" -->
-      <% end %><!-- end of if sec[:section_categories].nil? -->
-    </div><!-- end of div class="global-nav-section" -->
-  <% end %><!-- end of nav_items[:sections] -->
+    <ul class="level-1">
+      <% navigation.children.each do |sec| %>
+        <% sec_uuid = SecureRandom.uuid %>
+        <% if !sec.has_children? %>
+          <li>
+            <a href="<%= navigation.element_href(sec) %>" class="<%= navigation.show_element?(sec) ? 'active' : '' %>">
+              <%= sec.title %><%= navigation.optional_ee_badge(sec) %>
+            </a>
+          </li>
+        <% end %>
+        <% if sec.has_children? && sec.enabled  %>
+          <li class="parent">
+            <a href="#">
+              <%= sec.title %>
+              <%= navigation.optional_ee_badge(sec) %>
+            </a>
+            <ul class="level-2 <%= navigation.show_element?(sec) ? 'active' : '' %>">
+              <li class="back">
+                <a href="#">
+                  Back
+                </a>
+              </li>
+              <li>
+                <a href="<%= navigation.element_href(sec) %>" class="<%= navigation.show_element?(sec) ? 'active' : '' %>">
+                  <strong>
+                    <%= sec.title %>
+                    <%= navigation.optional_ee_badge(sec) %>
+                  </strong>
+                </a>
+              </li>
+              <% sec.children.each do |cat| %>
+                <% cat_uuid = SecureRandom.uuid %>
+                <% if cat.external_url %>
+                  <li>
+                    <a href="<%= cat.url %>" target="_blank">
+                      <%= cat.title %>
+                    </a>
+                <% else %>
+                  <% if !cat.has_children? %>
+                    <li>
+                      <a href="<%= navigation.element_href(cat) %>" class="<%= navigation.show_element?(cat) ? 'active' : '' %>">
+                        <%= cat.title %>
+                        <%= navigation.optional_ee_badge(cat) %>
+                      </a>
+                    </li>
+                  <% end %>
+                  <% if cat.has_children? %>
+                    <li class="parent">
+                      <a href="#">
+                        <%= cat.title %>
+                        <%= navigation.optional_ee_badge(cat) %>
+                      </a>
+                      <ul class="level-3 <%= navigation.show_element?(cat) ? 'active' : '' %>">
+                        <li class="back">
+                          <a href="#">
+                            Back
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<%= navigation.element_href(cat) %>" class="<%= navigation.show_element?(cat) ? 'active' : '' %>">
+                            <strong>
+                              <%= cat.title %>
+                              <%= navigation.optional_ee_badge(cat) %>
+                            </strong>
+                          </a>
+                        </li>
+                          <% cat.children.each do |doc| %>
+                            <% if doc.external_url %>
+                              <li>
+                                <a href="<%= doc.url %>" target="_blank">
+                                  <%= doc.title %>
+                                </a>
+                              </li>
+                            <% else%>
+                              <li>
+                                <a href="<%= navigation.element_href(doc) %>" class="<%= navigation.show_element?(doc) ? 'active' : '' %>">
+                                  <%= doc.title %>
+                                  <%= navigation.optional_ee_badge(doc) %>
+                                </a>
+                              </li>
+                            <% end %>
+                        <% end %>
+                      </ul>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
 </nav>

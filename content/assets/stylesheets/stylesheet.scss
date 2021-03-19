@@ -1,5 +1,5 @@
 ---
-version: 104
+version: 105
 ---
 
 @import "variables";
@@ -431,9 +431,25 @@ h6 {
     padding: 0 10px;
 
     &.active {
-      background-color: $bg-overlay-color;
       overflow: hidden;
       position: fixed;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: $bg-overlay-color;
+  z-index: 1;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+  @media (max-width: $md-width) {
+    &.active {
+      display: block;
+      opacity: 1;
     }
   }
 }
@@ -499,6 +515,130 @@ h6 {
       visibility: visible;
     }
   }
+  .global-nav {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    visibility: hidden;
+    nav {
+      position: relative;
+      height: 100%;
+      margin-top: 5.75rem;
+      ul {
+        list-style: none;
+        position: absolute;
+        padding: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        transition: all 1s cubic-bezier(.645, .045, .355, 1);
+        ul { 
+          right: calc(200% + 10px);
+          left: calc(100% + 10px);
+          &.active {
+            left: - calc(100% + 10px);
+            right: - calc(100% + 10px);
+          }
+        }
+        li {
+          &.parent > a {
+            &:after {
+              content: " >";
+            }
+          }
+          &.back {
+            a {
+              color: $global-nav-link-level1;
+              &:before {
+                content: "< ";
+              }
+              &:focus,
+              &:hover {
+                color: $global-nav-link-level1;
+              }
+            }
+          }
+          a {
+            line-height: 1rem;
+            font-size: .875rem;
+            text-shadow: 3px 3px 5px $link-color-bg-active;
+            padding: .75rem;
+            display: block;
+            position: relative;
+            border-radius: .25rem;
+            text-decoration: none;
+            transition: all 1s;
+            &:focus,
+            &:hover {
+              background-color: $link-color-bg-active;
+              color: $link-color-nav-hover;
+            }
+
+            &.active {
+              background-color: $gds-gray-100;
+              box-shadow: -4px 0 0 0 inset;
+              color: $gds-indigo-800;
+              &:hover {
+                color: $gds-indigo-800;
+                &.level-2,
+                &.level-3 {
+                  background-color: $gds-gray-200;
+                }
+              }
+            }
+          }
+        }
+        .active {
+          left: 0;
+          right: 0;
+          > li {
+            > a {
+              opacity: 1;
+            }
+          }
+        }
+        &.hidden {
+          >li > a {
+            opacity: 0;
+          }	
+        }
+      }
+    }
+    .level-1 {
+      a {
+        color: $global-nav-link-level1;
+        &:visited {
+          color: $global-nav-link-level1;
+        }
+      }
+    }
+    .level-2 {
+      a {
+        color: $global-nav-link-level2;
+        &:visited {
+          color: $global-nav-link-level2;
+        }
+      }
+    }
+    .level-3 {
+      a {
+        color: $global-nav-link-level3;
+        &:visited {
+          color: $global-nav-link-level3;
+        }
+      }
+    }
+    .global-nav-badges {
+      fill: $gds-gray-700;
+    }
+  
+    .last-updated {
+      color: $color-light-gray;
+      font-size: 13px;
+      padding-bottom: 10px;
+      text-align: right;
+    }
+  }
   .nav-toggle {
     width: 100%;
     height: 50px;
@@ -557,151 +697,6 @@ h6 {
         display: block;
       }
     }
-  }
-}
-
-.global-nav {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  visibility: hidden;
-  .global-nav-cat.active {
-    a {
-      color: $gds-indigo-800;
-    }
-  }
-  .global-nav-content {
-    margin-top: 85px;
-    margin-bottom: 70px;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-right: 7px;
-    &.has-collapse.active {
-      box-shadow: 0 0 0 0 inset;
-    }
-    &.active {
-      background-color: $gds-gray-100;
-      font-weight: 600;
-      box-shadow: -4px 0 0 0 inset;
-      color: $gds-indigo-800;
-      &:hover {
-        color: $gds-indigo-800;
-      }
-      &.level-1,
-      &.level-2 {
-        background-color: $gds-gray-200;
-      }
-    }
-  }
-  .collapse-toggle {
-    cursor: pointer;
-    display: flex;
-    padding-right: 1rem;
-    align-items: center;
-    justify-content: center;
-    &::after {
-      content: "";
-      border: solid $gds-gray-700;
-      border-width: 0 1px 1px 0;
-      display: inline-block;
-      transform: rotate(45deg);
-      width: 7px;
-      height: 7px;
-    }
-    &.collapsed {
-      &::after {
-        transform: rotate(-50deg);
-      }
-    }
-    &.active {
-      background-color: $gds-gray-200;
-      box-shadow: -4px 0 0 0 inset;
-      color: $gds-indigo-800;
-      &.section-title {
-        background-color: $gds-gray-100;
-      }
-    }
-  }
-
-  .global-nav-block {
-    font-weight: 600;
-    padding-left: 10px;
-  }
-
-  .global-nav-link,
-  .nav-link {
-    text-decoration: none;
-    &:hover {
-      color: $link-color-nav-hover;
-    }
-  }
-
-  .global-nav-link {
-    line-height: 1rem;
-    font-size: .875rem;
-    width: 100%;
-  }
-
-  .nav-link {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-link:hover {
-    background-color: $link-color-bg-active;
-  }
-
-  .global-nav-block-top {
-    font-weight: 600;
-    margin-bottom: 3px;
-    margin-top: 3px;
-    a {
-      text-decoration: none;
-      text-shadow: 3px 3px 5px $link-color-bg-active;
-    }
-  }
-
-  .level-0 {
-    color: $global-nav-link-level0;
-    padding-left: 18px;
-    &:visited {
-      color: $global-nav-link-level0;
-    }
-  }
-
-  .level-1 {
-    color: $global-nav-link-level1;
-    padding-left: 35px;
-    &:visited {
-      color: $global-nav-link-level1;
-    }
-  }
-
-  .level-2 {
-    color: $global-nav-link-level2;
-    padding-left: 53px;
-    &:visited {
-      color: $global-nav-link-level2;
-    }
-  }
-
-  .global-nav-badges {
-    fill: $gds-gray-700;
-  }
-
-  .last-updated {
-    color: $color-light-gray;
-    font-size: 13px;
-    padding-bottom: 10px;
-    text-align: right;
   }
 }
 
