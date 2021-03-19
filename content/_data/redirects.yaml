@@ -1,4 +1,6 @@
 redirects:
+  - from: /cookies-policy/
+    to: /cookies/
   - from: /ee/administration/auth/google_secure_ldap.html
     to: /ee/administration/auth/ldap/google_secure_ldap.html
     remove_date: 2021-11-01
