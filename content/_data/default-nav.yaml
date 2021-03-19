@@ -1183,9 +1183,9 @@ sections:
           - doc_title: Jira Development Panel
             doc_url: 'integration/jira_development_panel.html'
           - doc_title: Create Jira Server user
-            doc_url: 'user/project/integrations/jira_server_configuration.html'
+            doc_url: 'integration/jira/jira_server_configuration.html'
           - doc_title: Create Jira Cloud API token
-            doc_url: 'user/project/integrations/jira_cloud_configuration.html'
+            doc_url: 'integration/jira/jira_cloud_configuration.html'
       - category_title: Kroki diagrams
         category_url: 'administration/integration/kroki.html'
       - category_title: PlantUML
