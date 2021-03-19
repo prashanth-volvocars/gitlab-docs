@@ -346,8 +346,8 @@ sections:
             doc_url: 'administration/geo/setup/external_database.html'
           - doc_title: Configuration
             doc_url: 'administration/geo/replication/configuration.html'
-          - doc_title: Using a Geo server
-            doc_url: 'administration/geo/replication/using_a_geo_server.html'
+          - doc_title: Using a Geo site
+            doc_url: 'administration/geo/replication/usage.html'
           - doc_title: Updating Geo nodes
             doc_url: 'administration/geo/replication/updating_the_geo_nodes.html'
           - doc_title: Using object storage
