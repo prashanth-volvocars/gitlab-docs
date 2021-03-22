@@ -362,8 +362,10 @@ sections:
             doc_url: 'administration/geo/replication/location_aware_git_url.html'
           - doc_title: Tuning Geo
             doc_url: 'administration/geo/replication/tuning.html'
-          - doc_title: Removing a node
-            doc_url: 'administration/geo/replication/remove_geo_node.html'
+          - doc_title: Disable Geo
+            doc_url: 'administration/geo/replication/disable_geo.html'
+          - doc_title: Removing a Geo site
+            doc_url: 'administration/geo/replication/remove_geo_site.html'
           - doc_title: Supported data types
             doc_url: 'administration/geo/replication/datatypes.html'
           - doc_title: Frequently asked questions
