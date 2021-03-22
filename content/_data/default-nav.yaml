@@ -630,8 +630,6 @@ sections:
       - category_title: Epics
         category_url: 'user/group/epics/'
         docs:
-          - doc_title: Epic boards
-            doc_url: 'user/group/epics/epic_boards.html'
           - doc_title: Manage epics
             doc_url: 'user/group/epics/manage_epics.html'
       - category_title: Group Import/Export
@@ -857,8 +855,6 @@ sections:
             doc_url: 'operations/incident_management/integrations.html'
           - doc_title: Status page
             doc_url: 'operations/incident_management/status_page.html'
-          - doc_title: On-call schedules
-            doc_url: 'operations/incident_management/oncall_schedules.html'
       - category_title: Feature Flags
         category_url: 'operations/feature_flags.html'
       - category_title: Product analytics
