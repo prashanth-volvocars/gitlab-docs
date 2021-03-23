@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'nanoc', '~> 4.12.0'
-gem 'adsf', '~> 1.4.5'
-gem 'adsf-live', '~> 1.4.5'
 gem 'sassc', '~> 2.4.0'
 gem 'rouge', '~> 3.26.0'
 gem 'rake', '~> 13.0.3'
 
 group :nanoc do
-  gem 'guard-nanoc'
+  gem 'nanoc-live'
 
   # custom kramdown dialect
   gem 'gitlab_kramdown', '~> 0.11.0'
