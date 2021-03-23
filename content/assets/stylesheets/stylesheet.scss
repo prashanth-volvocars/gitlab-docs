@@ -1,5 +1,5 @@
 ---
-version: 104
+version: 105
 ---
 
 @import "variables";
@@ -154,7 +154,7 @@ pre {
   .clip-btn {
     display: inline-block;
     padding: 10px 10px 10px 13px;
-    right: 0;
+    right: -.25rem;
     top: 0;
     cursor: pointer;
     position: absolute;
