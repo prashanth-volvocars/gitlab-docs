@@ -1319,6 +1319,8 @@ sections:
             doc_url: 'api/discussions.html'
           - doc_title: Dockerfile (templates)
             doc_url: 'api/templates/dockerfiles.html'
+          - doc_title: DORA4 metrics
+            doc_url: 'api/dora/metrics.html'
           - doc_title: DORA4 project analytics
             doc_url: 'api/dora4_project_analytics.html'
           - doc_title: DORA4 group analytics
