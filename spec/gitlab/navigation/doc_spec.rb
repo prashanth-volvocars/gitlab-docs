@@ -10,7 +10,8 @@ describe Gitlab::Navigation::Doc do
       external_url: external_url,
       doc_url: url,
       ee_only: ee_only,
-      ee_tier: ee_tier
+      ee_tier: ee_tier,
+      docs: docs
     }
   end
 
@@ -19,6 +20,7 @@ describe Gitlab::Navigation::Doc do
   let(:url) { 'README.html' }
   let(:ee_only) { true }
   let(:ee_tier) { 'GitLab Premium' }
+  let(:docs) { [{ doc_title: 'Doc Title' }] }
 
   describe '#title' do
     subject { doc.title }
@@ -50,9 +52,31 @@ describe Gitlab::Navigation::Doc do
     it { is_expected.to eq(ee_tier) }
   end
 
+  describe '#has_children?' do
+    subject { doc.has_children? }
+
+    it { is_expected.to be_truthy }
+
+    context 'when docs are empty' do
+      let(:docs) { [] }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
   describe '#children' do
     subject { doc.children }
 
-    it { is_expected.to eq([]) }
+    it 'returns a list of children' do
+      children = subject
+
+      expect(children.first.title).to eq('Doc Title')
+    end
+
+    context 'when docs are empty' do
+      let(:docs) { [] }
+
+      it { is_expected.to eq([]) }
+    end
   end
 end

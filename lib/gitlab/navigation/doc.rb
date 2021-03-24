@@ -25,8 +25,12 @@ module Gitlab
         doc[:ee_tier]
       end
 
+      def has_children?
+        !children.empty?
+      end
+
       def children
-        []
+        @children ||= doc.fetch(:docs, []).map { |doc| Doc.new(doc) }
       end
 
       private
