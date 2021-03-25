@@ -162,6 +162,8 @@ sections:
             doc_url: 'user/admin_area/labels.html'
           - doc_title: Log system
             doc_url: 'administration/logs.html'
+          - doc_title: Maintenance Mode
+            doc_url: 'administration/maintenance_mode.html'
           - doc_title: Rate limits on issue creation
             doc_url: 'user/admin_area/settings/rate_limit_on_issues_creation.html'
           - doc_title: Reply by email
