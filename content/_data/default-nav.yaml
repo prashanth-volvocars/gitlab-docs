@@ -1305,6 +1305,8 @@ sections:
             doc_url: 'api/instance_clusters.html'
           - doc_title: Commits
             doc_url: 'api/commits.html'
+          - doc_title: Conan
+            doc_url: 'api/packages/conan.html'
           - doc_title: Container Registry
             doc_url: 'api/container_registry.html'
           - doc_title: Custom attributes
@@ -1403,6 +1405,8 @@ sections:
             doc_url: 'api/managed_licenses.html'
           - doc_title: Markdown
             doc_url: 'api/markdown.html'
+          - doc_title: Maven
+            doc_url: 'api/packages/maven.html'
           - doc_title: Members
             doc_url: 'api/members.html'
           - doc_title: Merge request approvals
@@ -1461,6 +1465,8 @@ sections:
             doc_url: 'api/protected_environments.html'
           - doc_title: Protected tags
             doc_url: 'api/protected_tags.html'
+          - doc_title: PyPI
+            doc_url: 'api/packages/pypi.html'
           - doc_title: Releases
             doc_url: 'api/releases/'
           - doc_title: Release links
