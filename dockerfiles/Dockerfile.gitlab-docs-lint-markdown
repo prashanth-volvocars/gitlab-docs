@@ -24,8 +24,6 @@ RUN apk add --no-cache -U \
     grep         \
     libc6-compat \
     libcurl      \
-    libxslt      \
-    libxslt-dev  \
     nodejs       \
     openssl      \
     pngquant     \
