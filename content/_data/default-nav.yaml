@@ -19,6 +19,9 @@ sections:
     section_categories:
       - category_title: GitLab.com subscriptions
         category_url: 'subscriptions/gitlab_com/'
+        docs:
+          - doc_title: Storage usage quota
+            doc_url: 'user/usage_quotas.html'
       - category_title: Self-managed subscriptions
         category_url: 'subscriptions/self_managed/'
       - category_title: Activate Enterprise Edition
