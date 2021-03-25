@@ -616,25 +616,6 @@ image:docs-single:
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 #
-# Final Docker image containing all the archives
-#
-image:docs-archives:
-  extends:
-    - .rules_scheduled
-    - .docker_prepare
-  stage: pre-deploy
-  artifacts: {}
-  cache: {}
-  dependencies: []
-  variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:archives
-  environment:
-    name: registry/archives
-  script:
-    - docker build -t $IMAGE_NAME -f dockerfiles/Dockerfile.archives .
-    - docker push $IMAGE_NAME
-
-#
 # Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
