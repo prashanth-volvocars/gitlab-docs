@@ -1186,8 +1186,12 @@ sections:
         docs:
           - doc_title: Jira
             doc_url: 'user/project/integrations/jira.html'
+          - doc_title: GitLab for Jira app
+            doc_url: 'integration/jira/connect-app.html'
+          - doc_title: Jira DVCS connector
+            doc_url: 'integration/jira/dvcs.html'
           - doc_title: Jira Development Panel
-            doc_url: 'integration/jira_development_panel.html'
+            doc_url: 'integration/jira/index.html'
           - doc_title: Create Jira Server user
             doc_url: 'integration/jira/jira_server_configuration.html'
           - doc_title: Create Jira Cloud API token
