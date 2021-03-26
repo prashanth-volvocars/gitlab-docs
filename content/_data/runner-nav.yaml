@@ -55,6 +55,8 @@ sections:
         category_url: 'commands/README.html'
       - category_title: Feature flags
         category_url: 'configuration/feature-flags.html'
+      - category_title: OpenShift
+        category_url: 'configuration/configuring_runner_openshift.html'
       - category_title: Running behind a proxy
         category_url: 'configuration/proxy.html'
       - category_title: Rate limited requests
