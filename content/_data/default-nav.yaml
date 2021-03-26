@@ -1312,6 +1312,8 @@ sections:
             doc_url: 'api/instance_clusters.html'
           - doc_title: Commits
             doc_url: 'api/commits.html'
+          - doc_title: Composer
+            doc_url: 'api/packages/composer.html'
           - doc_title: Conan
             doc_url: 'api/packages/conan.html'
           - doc_title: Container Registry
@@ -1434,6 +1436,8 @@ sections:
             doc_url: 'api/notes.html'
           - doc_title: Notification settings
             doc_url: 'api/notification_settings.html'
+          - doc_title: NuGet
+            doc_url: 'api/packages/nuget.html'
           - doc_title: Packages
             doc_url: 'api/packages.html'
           - doc_title: Pages domains
