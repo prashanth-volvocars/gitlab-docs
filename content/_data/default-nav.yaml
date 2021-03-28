@@ -261,12 +261,13 @@ sections:
         docs:
           - doc_title: Repository storage types
             doc_url: 'administration/repository_storage_types.html'
-          - doc_title: Gitaly
+          - doc_title: Gitaly and Gitaly Cluster
             doc_url: 'administration/gitaly/'
-          - doc_title: Configure Gitaly
-            doc_url: 'administration/gitaly/configure_gitaly.html'
-          - doc_title: Gitaly Cluster
-            doc_url: 'administration/gitaly/praefect.html'
+            docs:
+              - doc_title: Configure Gitaly
+                doc_url: 'administration/gitaly/configure_gitaly.html'
+              - doc_title: Configure Gitaly Cluster
+                doc_url: 'administration/gitaly/praefect.html'
           - doc_title: Gitaly reference
             doc_url: 'administration/gitaly/reference.html'
           - doc_title: Gitaly timeouts
