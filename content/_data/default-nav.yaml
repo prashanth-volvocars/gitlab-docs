@@ -1211,6 +1211,8 @@ sections:
         docs:
           - doc_title: Overview
             doc_url: 'user/project/integrations/overview.html'
+          - doc_title: Asana
+            doc_url: 'user/project/integrations/asana.html'
           - doc_title: Bamboo CI
             doc_url: 'user/project/integrations/bamboo.html'
           - doc_title: Discord
