@@ -1223,8 +1223,6 @@ sections:
             doc_url: 'user/project/integrations/github.html'
           - doc_title: Hangouts Chat
             doc_url: 'user/project/integrations/hangouts_chat.html'
-          - doc_title: HipChat
-            doc_url: 'user/project/integrations/hipchat.html'
           - doc_title: Irker
             doc_url: 'user/project/integrations/irker.html'
           - doc_title: Jenkins
