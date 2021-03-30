@@ -208,6 +208,7 @@ namespace :release do
     versions['online'].each do |version|
       # Set the commit title
       mr_title = "Update #{version} dropdown to match that of #{current_version}"
+      mr_description = "Update version dropdown of #{version} release for the #{current_version} release."
       branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
 
       puts "=> Fetch #{version} stable branch"
@@ -222,7 +223,7 @@ namespace :release do
 
       puts "=> Commit and push to create a merge request"
       `git commit -m "Update dropdown to #{current_version}"`
-      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds -o merge_request.title="#{mr_title}" -o merge_request.label="release"`
+      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
   end
 end
