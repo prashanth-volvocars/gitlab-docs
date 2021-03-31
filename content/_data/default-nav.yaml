@@ -975,7 +975,7 @@ sections:
             doc_url: 'ci/docker/using_docker_build.html'
           - doc_title: Use kaniko to build Docker images
             doc_url: 'ci/docker/using_kaniko.html'
-      - category_title: Integrate a database
+      - category_title: Services
         category_url: 'ci/services/'
         docs:
           - doc_title: MySQL Service
