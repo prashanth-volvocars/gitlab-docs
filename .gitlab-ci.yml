@@ -57,6 +57,7 @@ workflow:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "trigger"'
     # Allow branch pipelines for the default branch, stable branches named XX.X, and review app branches.
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
@@ -110,7 +111,7 @@ workflow:
     - if: $CHORES_PIPELINE == "true"
       when: never
     # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
@@ -120,14 +121,14 @@ workflow:
     - if: $CHORES_PIPELINE == "true"
       when: never
     # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 .rules_dev:
   rules:
     - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
 
@@ -386,7 +387,7 @@ review:
     - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
   tags:
     - nginx
@@ -413,7 +414,7 @@ review_stop:
   rules:
     - if: '$CI_PROJECT_PATH != "gitlab-org/gitlab-docs"'
       when: never
-    - if: '$CI_MERGE_REQUEST_ID || $CI_PIPELINE_SOURCE == "pipeline"'
+    - if: '$CI_MERGE_REQUEST_ID || $CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
       allow_failure: true
       when: manual
     # TODO: Remove once no projects create such branch
