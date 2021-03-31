@@ -221,6 +221,8 @@ sections:
             doc_url: 'security/asset_proxy.html'
           - doc_title: CI/CD variables
             doc_url: 'security/cicd_environment_variables.html'
+          - doc_title: Token overview
+            doc_url: 'security/token_overview.html'
       - category_title: Abuse reports
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
