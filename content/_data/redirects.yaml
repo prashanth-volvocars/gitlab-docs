@@ -671,7 +671,7 @@ redirects:
     to: /ee/user/project/integrations/emails_on_push.html
     remove_date: 2021-11-01
   - from: /ee/project_services/hipchat.html
-    to: /ee/user/project/integrations/hipchat.html
+    to: /ee/user/project/integrations/index.html
     remove_date: 2021-11-01
   - from: /ee/project_services/irker.html
     to: /ee/user/project/integrations/irker.html
