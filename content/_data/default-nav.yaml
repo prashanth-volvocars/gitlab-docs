@@ -147,6 +147,8 @@ sections:
             doc_url: 'user/admin_area/diff_limits.html'
           - doc_title: Email
             doc_url: 'user/admin_area/settings/email.html'
+          - doc_title: External pipeline validation
+            doc_url: 'administration/external_pipeline_validation.html'
           - doc_title: Feature flags
             doc_url: 'administration/feature_flags.html'
           - doc_title: Geo nodes
@@ -159,6 +161,8 @@ sections:
             doc_url: 'user/admin_area/monitoring/health_check.html'
           - doc_title: Incoming email
             doc_url: 'administration/incoming_email.html'
+          - doc_title: Job artifacts
+            doc_url: 'administration/job_artifacts.html'
           - doc_title: Job logs
             doc_url: 'administration/job_logs.html'
           - doc_title: Labels
@@ -875,6 +879,7 @@ sections:
         category_url: 'operations/feature_flags.html'
       - category_title: Product analytics
         category_url: 'operations/product_analytics.html'
+
   - section_title: CI/CD
     section_url: 'ci/README.html'
     section_categories:
@@ -921,6 +926,8 @@ sections:
             doc_url: 'ci/interactive_web_terminal/'
           - doc_title: Format scripts and job logs
             doc_url: 'ci/yaml/script.html'
+          - doc_title: Git submodules
+            doc_url: 'ci/git_submodules.html'
       - category_title: Variables
         category_url: 'ci/variables/README.html'
         docs:
