@@ -110,6 +110,8 @@ sections:
             doc_url: 'administration/auth/ldap/'
           - doc_title: LDAP (Google Secure)
             doc_url: 'administration/auth/ldap/google_secure_ldap.html'
+          - doc_title: LDAP Troubleshooting
+            doc_url: 'administration/auth/ldap/ldap-troubleshooting.html'
           - doc_title: OAuth service provider
             doc_url: 'integration/oauth_provider.html'
           - doc_title: Okta
@@ -198,6 +200,10 @@ sections:
             doc_url: 'security/password_storage.html'
           - doc_title: Custom password length limits
             doc_url: 'security/password_length_limits.html'
+          - doc_title: Generated passwords and integrated authentication
+            doc_url: 'security/passwords_for_integrated_authentication_methods.html'
+          - doc_title: Credentials inventory
+            doc_url: 'user/admin_area/credentials_inventory.html'
           - doc_title: Limits on SSH keys
             doc_url: 'security/ssh_keys_restrictions.html'
           - doc_title: Rate limits
@@ -210,6 +216,10 @@ sections:
             doc_url: 'security/reset_user_password.html'
           - doc_title: Unlock a user
             doc_url: 'security/unlock_user.html'
+          - doc_title: Unknown sign-ins, email notification
+            doc_url: 'user/profile/unknown_sign_in_notification.html'
+          - doc_title: Users pending approval
+            doc_url: 'user/admin_area/approving_users.html'
           - doc_title: User file uploads
             doc_url: 'security/user_file_uploads.html'
           - doc_title: Manage the CRIME vulnerability
@@ -231,18 +241,26 @@ sections:
         category_url: 'user/admin_area/abuse_reports.html'
       - category_title: Activate and deactivate users
         category_url: 'user/admin_area/activating_deactivating_users.html'
+      - category_title: Create users
+        category_url: 'user/profile/account/create_accounts.html'
       - category_title: Analytics
         category_url: 'user/admin_area/analytics/'
       - category_title: Audit events
         category_url: 'administration/audit_events.html'
+      - category_title: Audit reports
+        category_url: 'administration/audit_reports.html'
       - category_title: Block and unblock users
         category_url: 'user/admin_area/blocking_unblocking_users.html'
       - category_title: Broadcast messages
         category_url: 'user/admin_area/broadcast_messages.html'
       - category_title: Consul
         category_url: 'administration/consul.html'
+      - category_title: Compliance features
+        category_url: 'administration/compliance.html'
       - category_title: Email from GitLab
         category_url: 'tools/email.html'
+      - category_title: Global user settings
+        category_url: 'administration/user_settings.html'
       - category_title: Instance Review
         category_url: 'administration/instance_review.html'
       - category_title: PostgreSQL
@@ -623,6 +641,8 @@ sections:
         docs:
           - doc_title: Project Import/Export
             doc_url: 'user/project/settings/import_export.html'
+          - doc_title: Project/Group Import/Export rate limits
+            doc_url: 'user/admin_area/settings/import_export_rate_limits.html'
           - doc_title: Project access tokens
             doc_url: 'user/project/settings/project_access_tokens.html'
       - category_title: Share projects
@@ -669,8 +689,12 @@ sections:
       - category_title: SAML SSO for GitLab.com groups
         category_url: 'user/group/saml_sso/'
         docs:
+          - doc_title: Group Managed Accounts (Closed Beta)
+            doc_url: 'user/group/saml_sso/group_managed_accounts.html'
           - doc_title: SCIM provisioning
             doc_url: 'user/group/saml_sso/scim_setup.html'
+          - doc_title: Troubleshooting Group SAML and SCIM
+            doc_url: 'administration/troubleshooting/group_saml_scim.html'
       - category_title: Subgroups
         category_url: 'user/group/subgroups/'
 
@@ -789,6 +813,8 @@ sections:
         category_url: 'user/project/merge_requests/creating_merge_requests.html'
       - category_title: Cherry pick changes
         category_url: 'user/project/merge_requests/cherry_pick_changes.html'
+      - category_title: Export Merge Requests to CSV
+        category_url: 'user/project/merge_requests/csv_export.html'
       - category_title: Getting started
         category_url: 'user/project/merge_requests/getting_started.html'
       - category_title: Merge request dependencies
@@ -1675,6 +1701,8 @@ sections:
             doc_url: 'development/feature_flags/controls.html'
           - doc_title: Documenting feature flags
             doc_url: 'development/documentation/feature_flags.html'
+      - category_title: Framework - DeclarativePolicy
+        category_url: 'development/policies.html'
       - category_title: Frontend development
         category_url: 'development/fe_guide/'
         docs:
@@ -1773,6 +1801,8 @@ sections:
             doc_url: 'development/graphql_guide/pagination.html'
           - doc_title: GraphQL Pro
             doc_url: 'development/graphql_guide/graphql_pro.html'
+      - category_title: Import/Export
+        category_url: 'development/import_export.html'
       - category_title: Instrumenting Ruby code
         category_url: 'development/instrumentation.html'
       - category_title: Issuable-like Rails models utilities
@@ -1798,6 +1828,8 @@ sections:
         category_url: 'development/kubernetes.html'
       - category_title: Package development
         category_url: 'development/packages.html'
+      - category_title: Permissions guide
+        category_url: 'development/permissions.html'
       - category_title: Testing standards and styles
         category_url: 'development/testing_guide/'
         docs:
