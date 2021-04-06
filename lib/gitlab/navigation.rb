@@ -15,7 +15,7 @@ module Gitlab
     end
 
     def nav_items
-      @nav_items ||= items["/_data/default-nav.yaml"]
+      @nav_items ||= items["/_data/navigation.yaml"]
     end
 
     def element_href(element)
