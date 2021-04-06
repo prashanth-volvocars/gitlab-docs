@@ -11,28 +11,23 @@ module Gitlab
       @item = item
 
       disable_inactive_sections!
+      omnibus_only_items!
     end
 
     def nav_items
-      @nav_items ||= nav_items_exists ? items[nav_items_dir] : items["/_data/default-nav.yaml"]
+      @nav_items ||= items["/_data/default-nav.yaml"]
     end
 
     def element_href(element)
-      is_ee_prefixed ? "/ee/#{element.url}" : "/#{dir}/#{element.url}"
+      "/#{element.url}"
     end
 
     def show_element?(element)
-      item.path == "/#{dir}/#{element.url}"
+      item.path == "/#{element.url}"
     end
 
     def id_for(element)
       element.title.gsub(/[\s\/\(\)]/, '')
-    end
-
-    def optional_ee_badge(element)
-      return unless element.ee_only?
-
-      %(<span class="badges-drop global-nav-badges" data-toggle="tooltip" data-placement="top" title="Available in #{element.ee_tier}">#{icon('information-o', 14)}</span>)
     end
 
     def children
@@ -51,6 +46,22 @@ module Gitlab
       end
     end
 
+    # Remove sections and categories menu items missing in Omnibus
+    def omnibus_only_items!
+      return unless omnibus?
+
+      children.filter! do |section|
+        if allowed_link?(section.url)
+          section.children.filter! { |category| allowed_link?(category.url) }
+          true
+        end
+      end
+    end
+
+    def allowed_link?(link)
+      link.start_with?('ee/') || link.start_with?('http')
+    end
+
     def has_active_element?(collection)
       return false unless collection
 
@@ -61,16 +72,5 @@ module Gitlab
       @dir ||= item.identifier.to_s[%r{(?<=/)[^/]+}]
     end
 
-    def nav_items_dir
-      @nav_items_dir ||= "/_data/#{dir}-nav.yaml"
-    end
-
-    def nav_items_exists
-      !items[nav_items_dir].nil?
-    end
-
-    def is_ee_prefixed
-      !nav_items_exists && dir != 'ce'
-    end
   end
 end

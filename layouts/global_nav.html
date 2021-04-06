@@ -7,7 +7,6 @@
       <span class="global-nav-block-top nav-link">
         <a class="global-nav-link level-0 <%= sec.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(sec) ? 'active' : '' %>" href="<%= navigation.element_href(sec) %>">
           <%= sec.title %>
-          <%= navigation.optional_ee_badge(sec) %>
         </a>
         <div class="section-title <%= sec.has_children? ? 'collapse-toggle': '' %> <%= navigation.show_element?(sec) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#sec_<%= sec_uuid %>"></div>
       </span>
@@ -25,7 +24,6 @@
                 <% else %>
                   <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(cat) ? 'active' : '' %>" href="<%= navigation.element_href(cat) %>">
                     <%= cat.title %>
-                    <%= navigation.optional_ee_badge(cat) %>
                   </a>
                 <% end %><!-- end of if cat[:external_url] -->
                 <div class="<%= cat.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(cat) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#cat_<%= cat_uuid %>"></div>
@@ -44,7 +42,6 @@
                         <% else%>
                           <a class="global-nav-link level-2 <%= doc.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
                             <%= doc.title %>
-                            <%= navigation.optional_ee_badge(doc) %>
                           </a>
                         <% end %><!-- end of if doc[:external_url] -->
                         <div class="<%= doc.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
@@ -63,7 +60,6 @@
                             <% else%>
                               <a class="global-nav-link level-3 <%= doc.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
                                 <%= doc.title %>
-                                <%= navigation.optional_ee_badge(doc) %>
                               </a>
                             <% end %><!-- end of if doc[:external_url] -->
                             <div class="<%= doc.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
@@ -81,7 +77,6 @@
                                 <% else%>
                                   <a class="global-nav-link level-4 <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
                                     <%= doc.title %>
-                                    <%= navigation.optional_ee_badge(doc) %>
                                   </a>
                                 <% end %><!-- end of if doc[:external_url] -->
                               </span>
