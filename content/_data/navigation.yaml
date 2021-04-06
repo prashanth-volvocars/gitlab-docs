@@ -496,6 +496,8 @@ sections:
         docs:
           - doc_title: Contribution
             doc_url: 'ee/user/group/contribution_analytics/'
+          - doc_title: DevOps Adoption
+            doc_url: 'ee/user/group/devops_adoption/'
           - doc_title: Insights
             doc_url: 'ee/user/group/insights/'
           - doc_title: Issue
@@ -731,7 +733,7 @@ sections:
             doc_url: 'ee/user/profile/personal_access_tokens.html'
           - doc_title: Profile preferences
             doc_url: 'ee/user/profile/preferences.html'
-          - doc_title: "Two-factor authentication"
+          - doc_title: 'Two-factor authentication'
             doc_url: 'ee/user/profile/account/two_factor_authentication.html'
       - category_title: Discussions
         category_url: 'ee/user/discussions/'
