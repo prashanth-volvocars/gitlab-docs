@@ -800,7 +800,7 @@ sections:
             doc_url: 'ee/user/project/milestones/burndown_and_burnup_charts.html'
       - category_title: Multiple assignees
         category_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
-      - category_title: Related issues
+      - category_title: Linked issues
         category_url: 'ee/user/project/issues/related_issues.html'
       - category_title: Service Desk
         category_url: 'ee/user/project/service_desk.html'
