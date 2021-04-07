@@ -2028,10 +2028,10 @@ sections:
         category_url: 'omnibus/development/README.html'
         docs:
           - doc_title: Documentation
-            docs_url: 'https://docs.gitlab.com/ee/development/documentation/'
+            doc_url: 'https://docs.gitlab.com/ee/development/documentation/'
             external_url: true
           - doc_title: Build locally
-            docs_url: 'omnibus/build/README.html'
+            doc_url: 'omnibus/build/README.html'
             docs:
               - doc_title: Build Omnibus GitLab package
                 doc_url: 'omnibus/build/build_package.html'
