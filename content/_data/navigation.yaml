@@ -1674,8 +1674,8 @@ sections:
             doc_url: 'ee/development/sql.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'ee/development/understanding_explain_plans.html'
-          - doc_title: What requires downtime
-            doc_url: 'ee/development/what_requires_downtime.html'
+          - doc_title: Avoiding downtime in migrations
+            doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
       - category_title: Developer guide to logging
         category_url: 'ee/development/logging.html'
       - category_title: Development Rake tasks
