@@ -101,6 +101,9 @@ workflow:
   rules:
     - if: $CHORES_PIPELINE == "true"
       when: never
+    # Don't run site tests for review apps.
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
+      when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
@@ -110,7 +113,7 @@ workflow:
   rules:
     - if: $CHORES_PIPELINE == "true"
       when: never
-    # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
+    # Don't deploy to production for trigerred pipelines (usually review apps)
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
@@ -120,7 +123,7 @@ workflow:
   rules:
     - if: $CHORES_PIPELINE == "true"
       when: never
-    # Don't deploy to production for trigerred pipelines (usually from `gitlab-org/gitlab`)
+    # Don't deploy to production for trigerred pipelines (usually review apps)
     - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
