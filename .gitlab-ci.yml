@@ -234,7 +234,6 @@ test_internal_links_and_anchors:
     - .cache_gem
   stage: test
   script:
-    - apk add parallel
     - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
 
 #
