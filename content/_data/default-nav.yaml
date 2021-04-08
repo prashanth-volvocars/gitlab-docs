@@ -630,6 +630,8 @@ sections:
       - category_title: Epics
         category_url: 'user/group/epics/'
         docs:
+          - doc_title: Epic boards
+            doc_url: 'user/group/epics/epic_boards.html'
           - doc_title: Manage epics
             doc_url: 'user/group/epics/manage_epics.html'
       - category_title: Group Import/Export
