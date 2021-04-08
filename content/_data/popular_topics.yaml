@@ -1,6 +1,6 @@
 topics:
   - title: Release notes
-    description: Review recent changes, by version
+    description: Review recent changes by version
     icon: doc-changes
     url: https://gitlab.com/gitlab-org/gitlab/-/releases
   - title: Two-factor authentication
@@ -8,35 +8,35 @@ topics:
     icon: key
     url: /ee/user/profile/account/two_factor_authentication.html
   - title: Back up and restore GitLab
-    description: Back up and restore self-managed GitLab instances
+    description: Back up and restore your self-managed GitLab instance
     icon: archive
     url: /ee/raketasks/backup_restore.html
   - title: GitLab groups
-    description: Manage projects together
+    description: Manage multiple projects at the same time
     icon: group
     url: /ee/user/group/index.html
   - title: GitLab CI/CD reference
-    description: GitLab CI/CD pipeline configuration reference
+    description: Configure GitLab CI/CD in the .gitlab-ci.yml file
     icon: rocket
     url: /ee/ci/yaml/README.html
   - title: Database settings
-    description: Database settings for Omnibus GitLab self-managed instances
+    description: Configure database settings for your Omnibus GitLab self-managed instance
     icon: table
     url: /omnibus/settings/database.html
   - title: Elasticsearch integration
-    description: Integrate Elasticsearch with GitLab to enable advanced searching
+    description: Enable advanced search by integrating Elasticsearch with GitLab
     icon: search
     url: /ee/integration/elasticsearch.html
   - title: GitLab policies
-    description: Policies for version naming and cadence, and also upgrade recommendations
+    description: Review release and maintenance policies, and upgrade recommendations
     icon: documents
     url: /ee/policy/maintenance.html
   - title: NGINX settings
-    description: NGINX settings for Omnibus GitLab self-managed instances
+    description: NGINX settings for your Omnibus GitLab self-managed instance
     icon: monitor-lines
     url: /omnibus/settings/nginx.html
   - title: SSL configuration
-    description: SSL settings for Omnibus GitLab self-managed instances
+    description: SSL settings for your Omnibus GitLab self-managed instance
     icon: lock
     url: /omnibus/settings/ssl.html
   - title: Activate GitLab EE
@@ -45,12 +45,12 @@ topics:
     url: /ee/user/admin_area/license.html
   - title: GitLab.com settings
     description: |
-      Information about the settings that are used on GitLab.com, like SSH keys
-      fingerprints, and shared Runners configuration
+      Learn about the settings on GitLab.com, like IP ranges,
+      shared runners, and SSH keys fingerprints
     icon: settings
     url: /ee/user/gitlab_com/index.html
   - title: Reference architectures
     description: |
-      Recommended configurations to scale your GitLab installation for your number of users
+      Scale your GitLab installation for your number of users
     icon: tachometer
     url: /ee/administration/reference_architectures/index.html
