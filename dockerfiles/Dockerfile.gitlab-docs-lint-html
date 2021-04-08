@@ -21,13 +21,14 @@ RUN apk add --no-cache -U \
     curl        \
     git         \
     gnupg       \
-    gzip        \
     grep        \
+    gzip        \
     libcurl     \
     libxslt     \
     libxslt-dev \
     nodejs      \
     openssl     \
+    parallel    \
     ruby-dev    \
     tar         \
     xz          \
