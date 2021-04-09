@@ -1165,6 +1165,8 @@ sections:
             doc_url: 'ee/user/packages/nuget_repository/'
           - doc_title: PyPI
             doc_url: 'ee/user/packages/pypi_repository/'
+          - doc_title: Ruby gems
+            doc_url: 'ee/user/packages/rubygems_registry/'
           - doc_title: Generic
             doc_url: 'ee/user/packages/generic_packages/'
           - doc_title: Store all packages in one project
@@ -1557,6 +1559,8 @@ sections:
             doc_url: 'ee/api/resource_state_events.html'
           - doc_title: Resource weight events
             doc_url: 'ee/api/resource_weight_events.html'
+          - doc_title: Ruby gems
+            doc_url: 'ee/api/packages/rubygems.html'
           - doc_title: Runners
             doc_url: 'ee/api/runners.html'
           - doc_title: SCIM
