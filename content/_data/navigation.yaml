@@ -1622,11 +1622,333 @@ sections:
         category_url: 'ee/api/lint.html'
       - category_title: GitLab as an OAuth2 provider
         category_url: 'ee/api/oauth2.html'
+  # End of documentation from https://gitlab.com/gitlab-org/gitlab
 
-  - section_title: Contributions
+  # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+  - section_title: Omnibus GitLab
+    section_url: 'omnibus/README.html'
+    section_categories:
+      - category_title: Architecture
+        category_url: 'omnibus/architecture/README.html'
+        docs:
+          - doc_title: Omnibus packages and images
+            doc_url: 'omnibus/package-information/omnibus_packages.html'
+          - doc_title: Package information
+            doc_url: 'omnibus/package-information/README.html'
+          - doc_title: Package defaults
+            doc_url: 'omnibus/package-information/defaults.html'
+          - doc_title: Package licensing
+            doc_url: 'omnibus/package-information/licensing.html'
+          - doc_title: Package signatures
+            doc_url: 'omnibus/package-information/signed_packages.html'
+
+      - category_title: Installation
+        category_url: 'omnibus/installation/'
+        docs:
+          - doc_title: Container Registry
+            doc_url: 'omnibus/architecture/registry/README.html'
+          - doc_title: Deprecation policy
+            doc_url: 'omnibus/package-information/deprecation_policy.html'
+          - doc_title: Deprecated OSes
+            doc_url: 'omnibus/package-information/deprecated_os.html'
+          - doc_title: Docker images
+            doc_url: 'omnibus/docker/README.html'
+          - doc_title: Manual installation
+            doc_url: 'omnibus/manual_install.html'
+          - doc_title: Install JiHu Edition
+            doc_url: 'omnibus/jihu_edition.html'
+
+      - category_title: Configure
+        category_url: 'omnibus/settings/README.html'
+        docs:
+          - doc_title: Custom environment variables
+            doc_url: 'omnibus/settings/environment-variables.html'
+          - doc_title: Backups
+            doc_url: 'omnibus/settings/backups.html'
+          - doc_title: Database
+            doc_url: 'omnibus/settings/database.html'
+          - doc_title: GitLab Mattermost
+            doc_url: 'omnibus/gitlab-mattermost/README.html'
+          - doc_title: Grafana
+            doc_url: 'omnibus/settings/grafana.html'
+          - doc_title: High availability roles
+            doc_url: 'omnibus/roles/README.html'
+          - doc_title: LDAP
+            doc_url: 'https://docs.gitlab.com/ee/administration/auth/ldap/index.html'
+            external_url: true
+          - doc_title: Logs
+            doc_url: 'omnibus/settings/logs.html'
+          - doc_title: NGINX
+            doc_url: 'omnibus/settings/nginx.html'
+          - doc_title: Gitaly Cluster
+            doc_url: 'omnibus/settings/praefect.html'
+          - doc_title: Prometheus
+            doc_url: 'omnibus/settings/prometheus.html'
+          - doc_title: Puma
+            doc_url: 'omnibus/settings/puma.html'
+          - doc_title: Raspberry Pi
+            doc_url: 'omnibus/settings/rpi.html'
+          - doc_title: Redis
+            doc_url: 'omnibus/settings/redis.html'
+          - doc_title: SMTP
+            doc_url: 'omnibus/settings/smtp.html'
+          - doc_title: SSL
+            doc_url: 'omnibus/settings/ssl.html'
+          - doc_title: DNS
+            doc_url: 'omnibus/settings/dns.html'
+          - doc_title: Unicorn
+            doc_url: 'omnibus/settings/unicorn.html'
+          - doc_title: Image scaling
+            doc_url: 'omnibus/settings/image_scaling.html'
+          - doc_title: Memory-constrained environments
+            doc_url: 'omnibus/settings/memory_constrained_envs.html'
+
+      - category_title: Release process
+        category_url: 'omnibus/release/README.html'
+        docs:
+          - doc_title: OpenShift release process
+            doc_url: 'omnibus/release/openshift.html'
+
+      - category_title: Update
+        category_url: 'omnibus/update/README.html'
+        docs:
+          - doc_title: Convert to Omnibus
+            doc_url: 'omnibus/update/convert_to_omnibus.html'
+          - doc_title: Package signatures
+            doc_url: 'omnibus/update/package_signatures.html'
+          - doc_title: GitLab 13 changes
+            doc_url: 'omnibus/update/gitlab_13_changes.html'
+          - doc_title: GitLab 12 changes
+            doc_url: 'omnibus/update/gitlab_12_changes.html'
+          - doc_title: GitLab 11 changes
+            doc_url: 'omnibus/update/gitlab_11_changes.html'
+          - doc_title: GitLab 10 changes
+            doc_url: 'omnibus/update/gitlab_10_changes.html'
+
+      - category_title: Maintain
+        category_url: 'omnibus/maintenance/README.html'
+
+      - category_title: Troubleshoot
+        category_url: 'omnibus/common_installation_problems/README.html'
+  # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+
+  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
+  - section_title: GitLab Runner
+    section_url: 'runner/'
+    section_categories:
+      - category_title: Install
+        category_url: 'runner/install/'
+        docs:
+          - doc_title: Docker
+            doc_url: 'runner/install/docker.html'
+          - doc_title: FreeBSD
+            doc_url: 'runner/install/freebsd.html'
+          - doc_title: Kubernetes (Helm Chart)
+            doc_url: 'runner/install/kubernetes.html'
+          - doc_title: Kubernetes (Agent)
+            doc_url: 'runner/install/kubernetes-agent.html'
+          - doc_title: Linux
+            doc_url: 'runner/install/linux-manually.html'
+          - doc_title: macOS
+            doc_url: 'runner/install/osx.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/install/openshift.html'
+          - doc_title: Windows
+            doc_url: 'runner/install/windows.html'
+          - doc_title: Bleeding edge releases
+            doc_url: 'runner/install/bleeding-edge.html'
+          - doc_title: Official Linux packages
+            doc_url: 'runner/install/linux-repository.html'
+          - doc_title: Old GitLab Runner URLs
+            doc_url: 'runner/install/old.html'
+
+      - category_title: Configure
+        category_url: 'runner/configuration/'
+        docs:
+          - doc_title: Advanced config
+            doc_url: 'runner/configuration/advanced-configuration.html'
+          - doc_title: Autoscale config
+            doc_url: 'runner/configuration/autoscale.html'
+          - doc_title: Autoscale on AWS EC2
+            doc_url: 'runner/configuration/runner_autoscale_aws/'
+          - doc_title: Autoscale on AWS Fargate
+            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
+          - doc_title: Commands
+            doc_url: 'runner/commands/README.html'
+          - doc_title: Feature flags
+            doc_url: 'runner/configuration/feature-flags.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/configuration/configuring_runner_openshift.html'
+          - doc_title: Running behind a proxy
+            doc_url: 'runner/configuration/proxy.html'
+          - doc_title: Rate limited requests
+            doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
+          - doc_title: Self-signed certificates
+            doc_url: 'runner/configuration/tls-self-signed.html'
+          - doc_title: System services
+            doc_url: 'runner/configuration/init.html'
+          - doc_title: Speed up job execution
+            doc_url: 'runner/configuration/speed_up_job_execution.html'
+
+      - category_title: Register
+        category_url: 'runner/register/'
+        docs:
+          - doc_title: Examples
+            doc_url: 'runner/examples/gitlab.html'
+
+      - category_title: Executors
+        category_url: 'runner/executors/README.html'
+        docs:
+          - doc_title: Custom
+            doc_url: 'runner/executors/custom.html'
+            docs:
+              - doc_title: libvirt
+                doc_url: 'runner/executors/custom_examples/libvirt.html'
+              - doc_title: LXD
+                doc_url: 'runner/executors/custom_examples/lxd.html'
+          - doc_title: Docker
+            doc_url: 'runner/executors/docker.html'
+          - doc_title: Docker Machine
+            doc_url: 'runner/executors/docker_machine.html'
+          - doc_title: Kubernetes
+            doc_url: 'runner/executors/kubernetes.html'
+          - doc_title: Shell
+            doc_url: 'runner/executors/shell.html'
+          - doc_title: SSH
+            doc_url: 'runner/executors/ssh.html'
+          - doc_title: Parallels
+            doc_url: 'runner/executors/parallels.html'
+          - doc_title: Virtual Box
+            doc_url: 'runner/executors/virtualbox.html'
+
+      - category_title: Monitor
+        category_url: 'runner/monitoring/README.html'
+
+      - category_title: Security
+        category_url: 'runner/security/'
+
+      - category_title: Shells
+        category_url: 'runner/shells/'
+
+      - category_title: Troubleshoot
+        category_url: 'runner/faq/README.html'
+
+      - category_title: Best Practices
+        category_url: 'runner/best_practice/'
+  # End of documentation from https://gitlab.com/gitlab-org/gitlab-runner
+
+  # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
+  - section_title: GitLab Helm Charts
+    section_url: 'charts/'
+    section_categories:
+      - category_title: Install
+        category_url: 'charts/installation/'
+        docs:
+          - doc_title: Required tools
+            doc_url: 'charts/installation/tools.html'
+          - doc_title: Cloud cluster preparation
+            doc_url: 'charts/installation/cloud/'
+            docs:
+              - doc_title: AKS
+                doc_url: 'charts/installation/cloud/aks.html'
+              - doc_title: EKS
+                doc_url: 'charts/installation/cloud/eks.html'
+              - doc_title: GKE
+                doc_url: 'charts/installation/cloud/gke.html'
+              - doc_title: OpenShift
+                doc_url: 'charts/installation/cloud/openshift.html'
+          - doc_title: Deploy
+            doc_url: 'charts/installation/deployment.html'
+          - doc_title: Upgrade
+            doc_url: 'charts/installation/upgrade.html'
+          - doc_title: Backup and Restore
+            doc_url: 'charts/backup-restore/'
+            docs:
+              - doc_title: Backup
+                doc_url: 'charts/backup-restore/backup.html'
+              - doc_title: Restore
+                doc_url: 'charts/backup-restore/restore.html'
+          - doc_title: Migrate from Omnibus
+            doc_url: 'charts/installation/migration/'
+          - doc_title: Version mappings
+            doc_url: 'charts/installation/version_mappings.html'
+
+      - category_title: Configure
+        category_url: 'charts/charts/'
+        docs:
+          - doc_title: Globals
+            doc_url: 'charts/charts/globals.html'
+          - doc_title: GitLab sub-charts
+            doc_url: 'charts/charts/gitlab/'
+            docs:
+              - doc_title: Gitaly chart
+                doc_url: 'charts/charts/gitlab/gitaly/'
+              - doc_title: GitLab Exporter chart
+                doc_url: 'charts/charts/gitlab/gitlab-exporter/'
+              - doc_title: GitLab Grafana chart
+                doc_url: 'charts/charts/gitlab/gitlab-grafana/'
+              - doc_title: GitLab Pages chart
+                doc_url: 'charts/charts/gitlab/gitlab-pages/'
+              - doc_title: GitLab Runner chart
+                doc_url: 'charts/charts/gitlab/gitlab-runner/'
+              - doc_title: GitLab Shell chart
+                doc_url: 'charts/charts/gitlab/gitlab-shell/'
+              - doc_title: KAS chart
+                doc_url: 'charts/charts/gitlab/kas/'
+              - doc_title: Migrations chart
+                doc_url: 'charts/charts/gitlab/migrations/'
+              - doc_title: Praefect chart
+                doc_url: 'charts/charts/gitlab/praefect/'
+              - doc_title: Sidekiq chart
+                doc_url: 'charts/charts/gitlab/sidekiq/'
+              - doc_title: Task Runner chart
+                doc_url: 'charts/charts/gitlab/task-runner/'
+              - doc_title: Webservice chart
+                doc_url: 'charts/charts/gitlab/webservice/'
+          - doc_title: Minio chart
+            doc_url: 'charts/charts/minio/'
+          - doc_title: Nginx chart
+            doc_url: 'charts/charts/nginx/'
+          - doc_title: Redis chart
+            doc_url: 'charts/installation/deployment.html#redis'
+          - doc_title: Redis HA chart
+            doc_url: 'charts/installation/deployment.html#redis'
+          - doc_title: Registry chart
+            doc_url: 'charts/charts/registry/'
+          - doc_title: Advanced
+            doc_url: 'charts/advanced/'
+            docs:
+              - doc_title: External database
+                doc_url: 'charts/advanced/external-db/'
+              - doc_title: External Gitaly
+                doc_url: 'charts/advanced/external-gitaly/'
+              - doc_title: External Mattermost
+                doc_url: 'charts/advanced/external-mattermost/'
+              - doc_title: External Nginx
+                doc_url: 'charts/advanced/external-nginx/'
+              - doc_title: External object storage
+                doc_url: 'charts/advanced/external-object-storage/'
+              - doc_title: External Redis
+                doc_url: 'charts/advanced/external-redis/'
+              - doc_title: Persistent volumes
+                doc_url: 'charts/advanced/persistent-volumes/'
+
+      - category_title: Troubleshoot
+        category_url: 'charts/troubleshooting/'
+  # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
+
+  # Development documentation from:
+  #
+  # - https://gitlab.com/gitlab-org/gitlab
+  # - https://gitlab.com/gitlab-org/omnibus-gitlab
+  # - https://gitlab.com/gitlab-org/gitlab-runner
+  # - https://gitlab.com/gitlab-org/charts/gitlab
+  #
+  # GitLab
+  - section_title: Contribute to GitLab
     section_url: 'ee/development/README.html'
     section_categories:
-      - category_title: Contribute to GitLab
+      - category_title: Get started
         category_url: 'ee/development/contributing/'
         docs:
           - doc_title: Changelog entries
@@ -1813,6 +2135,17 @@ sections:
         category_url: 'ee/development/bulk_import.html'
       - category_title: GitLab project pipelines
         category_url: 'ee/development/pipelines.html'
+
+      # GitLab Runner development documentation
+      - category_title: GitLab Runner
+        category_url: 'runner/development/README.html'
+        docs:
+          - doc_title: Review GitLab Runner
+            doc_url: 'runner/development/reviewing-gitlab-runner.html'
+          - doc_title: Add new Windows version support for Docker executor
+            doc_url: 'runner/development/add-windows-version.html'
+      # End GitLab Runner development documentation
+
       - category_title: GraphQL development
         category_url: 'ee/development/graphql_guide/'
         docs:
@@ -1822,6 +2155,32 @@ sections:
             doc_url: 'ee/development/graphql_guide/pagination.html'
           - doc_title: GraphQL Pro
             doc_url: 'ee/development/graphql_guide/graphql_pro.html'
+
+      # GitLab Helm Charts development documentation
+      - category_title: Helm Charts
+        category_url: 'charts/development/'
+        docs:
+          - doc_title: Architecture of Cloud native GitLab Helm charts
+            doc_url: 'charts/architecture/'
+            docs:
+              - doc_title: Backup and Restore
+                doc_url: 'charts/architecture/backup-restore.html'
+              - doc_title: Goals
+                doc_url: 'charts/architecture/goals.html'
+              - doc_title: Architecture
+                doc_url: 'charts/architecture/architecture.html'
+              - doc_title: Design Decisions
+                doc_url: 'charts/architecture/decisions.html'
+              - doc_title: Resource Usage
+                doc_url: 'charts/architecture/resource-usage.html'
+          - doc_title: Environment setup
+            doc_url: 'charts/development/environment_setup.html'
+          - doc_title: Style guide
+            doc_url: 'charts/development/style_guide.html'
+          - doc_title: Versioning and release
+            doc_url: 'charts/development/release.html'
+      # End GitLab Helm Charts development documentation
+
       - category_title: Import/Export
         category_url: 'ee/development/import_export.html'
       - category_title: Instrumenting Ruby code
@@ -1847,6 +2206,44 @@ sections:
             doc_url: 'ee/development/agent/local.html'
       - category_title: Kubernetes integration
         category_url: 'ee/development/kubernetes.html'
+
+      # Omnibus GitLab development documentation
+      - category_title: Omnibus GitLab
+        category_url: 'omnibus/development/README.html'
+        docs:
+          - doc_title: Build locally
+            docs_url: 'omnibus/build/README.html'
+            docs:
+              - doc_title: Build Omnibus GitLab package
+                doc_url: 'omnibus/build/build_package.html'
+              - doc_title: Build all-in-one Docker image
+                doc_url: 'omnibus/build/build_docker_image.html'
+              - doc_title: Information for GitLab team members
+                doc_url: 'omnibus/build/team_member_docs.html'
+          - doc_title: Set up a development environment
+            doc_url: 'omnibus/development/setup.html'
+          - doc_title: Config options
+            doc_url: 'omnibus/settings/configuration.html'
+          - doc_title: Changing YAML config options
+            doc_url: 'omnibus/settings/gitlab.yml.html'
+          - doc_title: Adding deprecation messages
+            doc_url: 'omnibus/development/adding-deprecation-messages.html'
+          - doc_title: Adding new gitlab-ctl commands
+            doc_url: 'omnibus/development/gitlab-ctl-commands.html'
+          - doc_title: Adding new services
+            doc_url: 'omnibus/development/new-services.html'
+          - doc_title: Adding new software definitions
+            doc_url: 'omnibus/development/new-software-definition.html'
+          - doc_title: Creating patches
+            doc_url: 'omnibus/development/creating-patches.html'
+          - doc_title: Installing OpenShift
+            doc_url: 'omnibus/development/openshift/README.html'
+          - doc_title: Managing PostgreSQL versions
+            doc_url: 'omnibus/development/managing-postgresql-versions.html'
+          - doc_title: Working with public_attributes.json
+            doc_url: 'omnibus/development/public-attributes.html'
+      # End Omnibus GitLab development documentation
+
       - category_title: Package development
         category_url: 'ee/development/packages.html'
       - category_title: Permissions guide
@@ -1915,387 +2312,4 @@ sections:
         category_url: 'ee/development/value_stream_analytics.html'
       - category_title: Working with Prometheus metrics
         category_url: 'ee/development/prometheus_metrics.html'
-  # End of documentation from https://gitlab.com/gitlab-org/gitlab
-
-  # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
-  - section_title: Omnibus GitLab Docs
-    section_url: 'omnibus/README.html'
-    section_categories:
-      - category_title: Architecture
-        category_url: 'omnibus/architecture/README.html'
-        docs:
-          - doc_title: Omnibus packages and images
-            doc_url: 'omnibus/package-information/omnibus_packages.html'
-          - doc_title: Package information
-            doc_url: 'omnibus/package-information/README.html'
-          - doc_title: Package defaults
-            doc_url: 'omnibus/package-information/defaults.html'
-          - doc_title: Package licensing
-            doc_url: 'omnibus/package-information/licensing.html'
-          - doc_title: Package signatures
-            doc_url: 'omnibus/package-information/signed_packages.html'
-
-      - category_title: Installation
-        category_url: 'omnibus/installation/'
-        docs:
-          - doc_title: Container Registry
-            doc_url: 'omnibus/architecture/registry/README.html'
-          - doc_title: Deprecation policy
-            doc_url: 'omnibus/package-information/deprecation_policy.html'
-          - doc_title: Deprecated OSes
-            doc_url: 'omnibus/package-information/deprecated_os.html'
-          - doc_title: Docker images
-            doc_url: 'omnibus/docker/README.html'
-          - doc_title: Manual installation
-            doc_url: 'omnibus/manual_install.html'
-          - doc_title: Install JiHu Edition
-            doc_url: 'omnibus/jihu_edition.html'
-
-      - category_title: Configure
-        category_url: 'omnibus/settings/README.html'
-        docs:
-          - doc_title: Custom environment variables
-            doc_url: 'omnibus/settings/environment-variables.html'
-          - doc_title: Backups
-            doc_url: 'omnibus/settings/backups.html'
-          - doc_title: Database
-            doc_url: 'omnibus/settings/database.html'
-          - doc_title: GitLab Mattermost
-            doc_url: 'omnibus/gitlab-mattermost/README.html'
-          - doc_title: Grafana
-            doc_url: 'omnibus/settings/grafana.html'
-          - doc_title: High availability roles
-            doc_url: 'omnibus/roles/README.html'
-          - doc_title: LDAP
-            doc_url: 'https://docs.gitlab.com/ee/administration/auth/ldap/index.html'
-            external_url: true
-          - doc_title: Logs
-            doc_url: 'omnibus/settings/logs.html'
-          - doc_title: NGINX
-            doc_url: 'omnibus/settings/nginx.html'
-          - doc_title: Gitaly Cluster
-            doc_url: 'omnibus/settings/praefect.html'
-          - doc_title: Prometheus
-            doc_url: 'omnibus/settings/prometheus.html'
-          - doc_title: Puma
-            doc_url: 'omnibus/settings/puma.html'
-          - doc_title: Raspberry Pi
-            doc_url: 'omnibus/settings/rpi.html'
-          - doc_title: Redis
-            doc_url: 'omnibus/settings/redis.html'
-          - doc_title: SMTP
-            doc_url: 'omnibus/settings/smtp.html'
-          - doc_title: SSL
-            doc_url: 'omnibus/settings/ssl.html'
-          - doc_title: DNS
-            doc_url: 'omnibus/settings/dns.html'
-          - doc_title: Unicorn
-            doc_url: 'omnibus/settings/unicorn.html'
-          - doc_title: Image scaling
-            doc_url: 'omnibus/settings/image_scaling.html'
-          - doc_title: Memory-constrained environments
-            doc_url: 'omnibus/settings/memory_constrained_envs.html'
-
-      - category_title: Release process
-        category_url: 'omnibus/release/README.html'
-        docs:
-          - doc_title: OpenShift release process
-            doc_url: 'omnibus/release/openshift.html'
-
-      - category_title: Update
-        category_url: 'omnibus/update/README.html'
-        docs:
-          - doc_title: Convert to Omnibus
-            doc_url: 'omnibus/update/convert_to_omnibus.html'
-          - doc_title: Package signatures
-            doc_url: 'omnibus/update/package_signatures.html'
-          - doc_title: GitLab 13 changes
-            doc_url: 'omnibus/update/gitlab_13_changes.html'
-          - doc_title: GitLab 12 changes
-            doc_url: 'omnibus/update/gitlab_12_changes.html'
-          - doc_title: GitLab 11 changes
-            doc_url: 'omnibus/update/gitlab_11_changes.html'
-          - doc_title: GitLab 10 changes
-            doc_url: 'omnibus/update/gitlab_10_changes.html'
-
-      - category_title: Maintain
-        category_url: 'omnibus/maintenance/README.html'
-
-      - category_title: Troubleshoot
-        category_url: 'omnibus/common_installation_problems/README.html'
-
-      - category_title: Development
-        category_url: 'omnibus/development/README.html'
-        docs:
-          - doc_title: Documentation
-            docs_url: 'https://docs.gitlab.com/ee/development/documentation/'
-            external_url: true
-          - doc_title: Build locally
-            docs_url: 'omnibus/build/README.html'
-            docs:
-              - doc_title: Build Omnibus GitLab package
-                doc_url: 'omnibus/build/build_package.html'
-              - doc_title: Build all-in-one Docker image
-                doc_url: 'omnibus/build/build_docker_image.html'
-              - doc_title: Information for GitLab team members
-                doc_url: 'omnibus/build/team_member_docs.html'
-          - doc_title: Set up a development environment
-            doc_url: 'omnibus/development/setup.html'
-          - doc_title: Config options
-            doc_url: 'omnibus/settings/configuration.html'
-          - doc_title: Changing YAML config options
-            doc_url: 'omnibus/settings/gitlab.yml.html'
-          - doc_title: Adding deprecation messages
-            doc_url: 'omnibus/development/adding-deprecation-messages.html'
-          - doc_title: Adding new gitlab-ctl commands
-            doc_url: 'omnibus/development/gitlab-ctl-commands.html'
-          - doc_title: Adding new services
-            doc_url: 'omnibus/development/new-services.html'
-          - doc_title: Adding new software definitions
-            doc_url: 'omnibus/development/new-software-definition.html'
-          - doc_title: Creating patches
-            doc_url: 'omnibus/development/creating-patches.html'
-          - doc_title: Installing OpenShift
-            doc_url: 'omnibus/development/openshift/README.html'
-          - doc_title: Managing PostgreSQL versions
-            doc_url: 'omnibus/development/managing-postgresql-versions.html'
-          - doc_title: Working with public_attributes.json
-            doc_url: 'omnibus/development/public-attributes.html'
-  # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
-
-  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
-  - section_title: Runner Docs
-    section_url: 'runner/'
-    section_categories:
-      - category_title: Install
-        category_url: 'runner/install/'
-        docs:
-          - doc_title: Docker
-            doc_url: 'runner/install/docker.html'
-          - doc_title: FreeBSD
-            doc_url: 'runner/install/freebsd.html'
-          - doc_title: Kubernetes (Helm Chart)
-            doc_url: 'runner/install/kubernetes.html'
-          - doc_title: Kubernetes (Agent)
-            doc_url: 'runner/install/kubernetes-agent.html'
-          - doc_title: Linux
-            doc_url: 'runner/install/linux-manually.html'
-          - doc_title: macOS
-            doc_url: 'runner/install/osx.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/install/openshift.html'
-          - doc_title: Windows
-            doc_url: 'runner/install/windows.html'
-          - doc_title: Bleeding edge releases
-            doc_url: 'runner/install/bleeding-edge.html'
-          - doc_title: Official Linux packages
-            doc_url: 'runner/install/linux-repository.html'
-          - doc_title: Old GitLab Runner URLs
-            doc_url: 'runner/install/old.html'
-
-      - category_title: Configure
-        category_url: 'runner/configuration/'
-        docs:
-          - doc_title: Advanced config
-            doc_url: 'runner/configuration/advanced-configuration.html'
-          - doc_title: Autoscale config
-            doc_url: 'runner/configuration/autoscale.html'
-          - doc_title: Autoscale on AWS EC2
-            doc_url: 'runner/configuration/runner_autoscale_aws/'
-          - doc_title: Autoscale on AWS Fargate
-            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
-          - doc_title: Commands
-            doc_url: 'runner/commands/README.html'
-          - doc_title: Feature flags
-            doc_url: 'runner/configuration/feature-flags.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/configuration/configuring_runner_openshift.html'
-          - doc_title: Running behind a proxy
-            doc_url: 'runner/configuration/proxy.html'
-          - doc_title: Rate limited requests
-            doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
-          - doc_title: Self-signed certificates
-            doc_url: 'runner/configuration/tls-self-signed.html'
-          - doc_title: System services
-            doc_url: 'runner/configuration/init.html'
-          - doc_title: Speed up job execution
-            doc_url: 'runner/configuration/speed_up_job_execution.html'
-
-      - category_title: Register
-        category_url: 'runner/register/'
-        docs:
-          - doc_title: Examples
-            doc_url: 'runner/examples/gitlab.html'
-
-      - category_title: Executors
-        category_url: 'runner/executors/README.html'
-        docs:
-          - doc_title: Custom
-            doc_url: 'runner/executors/custom.html'
-            docs:
-              - doc_title: libvirt
-                doc_url: 'runner/executors/custom_examples/libvirt.html'
-              - doc_title: LXD
-                doc_url: 'runner/executors/custom_examples/lxd.html'
-          - doc_title: Docker
-            doc_url: 'runner/executors/docker.html'
-          - doc_title: Docker Machine
-            doc_url: 'runner/executors/docker_machine.html'
-          - doc_title: Kubernetes
-            doc_url: 'runner/executors/kubernetes.html'
-          - doc_title: Shell
-            doc_url: 'runner/executors/shell.html'
-          - doc_title: SSH
-            doc_url: 'runner/executors/ssh.html'
-          - doc_title: Parallels
-            doc_url: 'runner/executors/parallels.html'
-          - doc_title: Virtual Box
-            doc_url: 'runner/executors/virtualbox.html'
-
-      - category_title: Monitor
-        category_url: 'runner/monitoring/README.html'
-
-      - category_title: Security
-        category_url: 'runner/security/'
-
-      - category_title: Shells
-        category_url: 'runner/shells/'
-
-      - category_title: Troubleshoot
-        category_url: 'runner/faq/README.html'
-
-      - category_title: Contribute
-        category_url: 'runner/development/README.html'
-        docs:
-          - doc_title: Documentation
-            doc_url: 'https://docs.gitlab.com/ee/development/documentation/'
-            external_url: true
-          - doc_title: Reviewing GitLab Runner
-            doc_url: 'runner/development/reviewing-gitlab-runner.html'
-
-      - category_title: Best Practices
-        category_url: 'runner/best_practice/'
-  # End of documentation from https://gitlab.com/gitlab-org/gitlab-runner
-
-  # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
-  - section_title: GitLab Helm Charts Docs
-    section_url: 'charts/'
-    section_categories:
-      - category_title: Install
-        category_url: 'charts/installation/'
-        docs:
-          - doc_title: Required tools
-            doc_url: 'charts/installation/tools.html'
-          - doc_title: Cloud cluster preparation
-            doc_url: 'charts/installation/cloud/'
-            docs:
-              - doc_title: AKS
-                doc_url: 'charts/installation/cloud/aks.html'
-              - doc_title: EKS
-                doc_url: 'charts/installation/cloud/eks.html'
-              - doc_title: GKE
-                doc_url: 'charts/installation/cloud/gke.html'
-              - doc_title: OpenShift
-                doc_url: 'charts/installation/cloud/openshift.html'
-          - doc_title: Deploy
-            doc_url: 'charts/installation/deployment.html'
-          - doc_title: Upgrade
-            doc_url: 'charts/installation/upgrade.html'
-          - doc_title: Backup and Restore
-            doc_url: 'charts/backup-restore/'
-            docs:
-              - doc_title: Backup
-                doc_url: 'charts/backup-restore/backup.html'
-              - doc_title: Restore
-                doc_url: 'charts/backup-restore/restore.html'
-          - doc_title: Migrate from Omnibus
-            doc_url: 'charts/installation/migration/'
-          - doc_title: Version mappings
-            doc_url: 'charts/installation/version_mappings.html'
-
-      - category_title: Configure
-        category_url: 'charts/charts/'
-        docs:
-          - doc_title: Globals
-            doc_url: 'charts/charts/globals.html'
-          - doc_title: GitLab sub-charts
-            doc_url: 'charts/charts/gitlab/'
-            docs:
-              - doc_title: Gitaly chart
-                doc_url: 'charts/charts/gitlab/gitaly/'
-              - doc_title: GitLab Exporter chart
-                doc_url: 'charts/charts/gitlab/gitlab-exporter/'
-              - doc_title: GitLab Grafana chart
-                doc_url: 'charts/charts/gitlab/gitlab-grafana/'
-              - doc_title: GitLab Pages chart
-                doc_url: 'charts/charts/gitlab/gitlab-pages/'
-              - doc_title: GitLab Runner chart
-                doc_url: 'charts/charts/gitlab/gitlab-runner/'
-              - doc_title: GitLab Shell chart
-                doc_url: 'charts/charts/gitlab/gitlab-shell/'
-              - doc_title: KAS chart
-                doc_url: 'charts/charts/gitlab/kas/'
-              - doc_title: Migrations chart
-                doc_url: 'charts/charts/gitlab/migrations/'
-              - doc_title: Praefect chart
-                doc_url: 'charts/charts/gitlab/praefect/'
-              - doc_title: Sidekiq chart
-                doc_url: 'charts/charts/gitlab/sidekiq/'
-              - doc_title: Task Runner chart
-                doc_url: 'charts/charts/gitlab/task-runner/'
-              - doc_title: Webservice chart
-                doc_url: 'charts/charts/gitlab/webservice/'
-          - doc_title: Minio chart
-            doc_url: 'charts/charts/minio/'
-          - doc_title: Nginx chart
-            doc_url: 'charts/charts/nginx/'
-          - doc_title: Redis chart
-            doc_url: 'charts/installation/deployment.html#redis'
-          - doc_title: Redis HA chart
-            doc_url: 'charts/installation/deployment.html#redis'
-          - doc_title: Registry chart
-            doc_url: 'charts/charts/registry/'
-          - doc_title: Advanced
-            doc_url: 'charts/advanced/'
-            docs:
-              - doc_title: External database
-                doc_url: 'charts/advanced/external-db/'
-              - doc_title: External Gitaly
-                doc_url: 'charts/advanced/external-gitaly/'
-              - doc_title: External Mattermost
-                doc_url: 'charts/advanced/external-mattermost/'
-              - doc_title: External Nginx
-                doc_url: 'charts/advanced/external-nginx/'
-              - doc_title: External object storage
-                doc_url: 'charts/advanced/external-object-storage/'
-              - doc_title: External Redis
-                doc_url: 'charts/advanced/external-redis/'
-              - doc_title: Persistent volumes
-                doc_url: 'charts/advanced/persistent-volumes/'
-
-      - category_title: Troubleshoot
-        category_url: 'charts/troubleshooting/'
-
-      - category_title: Contribute
-        category_url: 'charts/development/'
-        docs:
-          - doc_title: Architecture of Cloud native GitLab Helm charts
-            doc_url: 'charts/architecture/'
-            docs:
-              - doc_title: Backup and Restore
-                doc_url: 'charts/architecture/backup-restore.html'
-              - doc_title: Goals
-                doc_url: 'charts/architecture/goals.html'
-              - doc_title: Architecture
-                doc_url: 'charts/architecture/architecture.html'
-              - doc_title: Design Decisions
-                doc_url: 'charts/architecture/decisions.html'
-              - doc_title: Resource Usage
-                doc_url: 'charts/architecture/resource-usage.html'
-          - doc_title: Environment setup
-            doc_url: 'charts/development/environment_setup.html'
-          - doc_title: Style guide
-            doc_url: 'charts/development/style_guide.html'
-          - doc_title: Versioning and release
-            doc_url: 'charts/development/release.html'
-# End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
+# End of development documentation
