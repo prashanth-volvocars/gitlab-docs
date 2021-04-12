@@ -484,6 +484,8 @@ sections:
         docs:
           - doc_title: Releases and maintenance
             doc_url: 'ee/policy/maintenance.html'
+      - category_title: Web terminals
+        category_url: 'ee/administration/integration/terminal.html'
 
   - section_title: Analytics
     section_url: 'ee/user/analytics/'
@@ -1297,6 +1299,8 @@ sections:
             doc_url: 'ee/user/project/integrations/irker.html'
           - doc_title: Jenkins
             doc_url: 'ee/integration/jenkins.html'
+          - doc_title: Jenkins (deprecated)
+            doc_url: 'ee/integration/jenkins_deprecated.html'
           - doc_title: Mattermost notifications
             doc_url: 'ee/user/project/integrations/mattermost.html'
           - doc_title: Mattermost slash commands
@@ -1307,8 +1311,12 @@ sections:
             doc_url: 'ee/user/project/integrations/mock_ci.html'
           - doc_title: Prometheus
             doc_url: 'ee/user/project/integrations/prometheus.html'
+          - doc_title: ServiceNow
+            doc_url: 'ee/user/project/integrations/servicenow.html'
           - doc_title: Service templates
             doc_url: 'ee/user/project/integrations/services_templates.html'
+          - doc_title: Shibboleth
+            doc_url: 'ee/integration/shibboleth.html'
           - doc_title: Slack notifications
             doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
@@ -2207,6 +2215,10 @@ sections:
         category_url: 'ee/development/issuable-like-models.html'
       - category_title: Issue types
         category_url: 'ee/development/issue_types.html'
+      - category_title: Jenkins in local environments
+        category_url: 'ee/development/integrations/jenkins.html'
+      - category_title: Jira development environment
+        category_url: 'ee/development/integrations/jira_connect.html'
       - category_title: Kubernetes Agent
         category_url: 'ee/development/agent/'
         docs:
