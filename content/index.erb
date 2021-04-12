@@ -1,131 +1,507 @@
 ---
 title: GitLab Documentation
 ---
-<section class="container-fluid d-flex">
-  <nav class="sidebar-left d-none d-md-block border-right px-0 pt-5">
-    <div class="list-group list-group-flush pt-5">
-      <a href="/" class="list-group-item list-group-item-action active border-bottom-0 border-top-0 d-flex align-items-center text-decoration-none">
-        <%= icon('home', nil, 'menu-icon') %><span class="pl-1">Home</span></a>
-      <% if production? %>
-        <% @config[:products].each do |name, product| %>
-          <% if product[:expose] == true %>
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
-          <% end %>
-        <% end %>
-      <% else %>
-        <% @config[:products].each do |name, product| %>
-          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-            <a href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="list-group-item list-group-item-action border-bottom-0 border-top-0 d-flex align-items-center"><%= icon(product[:icon], nil, 'menu-icon') %><span class="pl-1"><%= product[:short_name] %></span></a>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </nav>
-  <main class="content pt-5">
-    <div class="row px-md-5 ml-lg-5 pt-4">
-      <div class="col-12">
-        <%= render '/banner.*' %>
-        <h1 class="landing-header-title border-bottom-0 font-weight-bold">Welcome to GitLab Docs</h1>
-        <p class="text-break">Here you can access the complete documentation for GitLab, the single application for the <span class="text-decoration-underline"><a href="https://docs.gitlab.com/ee/README.html#the-entire-devops-lifecycle">entire DevOps lifecycle</a></span>.</p>
-      </div>
-      <div class="col-12 pb-3">
-        <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Select a product area</h2>
-      </div>
-    </div>
-    <div class="row px-md-5 ml-lg-5" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-      <% if production? %>
-        <% @config[:products].each do |name, product| %>
-          <% if product[:expose] == true %>
-            <% if product[:short_name] == 'GitLab' %>
-              <div class="col-md-12 mb-3 gitlab-product-card">
-            <% else %>
-              <div class="col-12 col-lg-4 mb-3">
-            <% end %>
-                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
-                  <div class="card h-100">
-                    <div class="flex-nowrap w-100">
-                      <div class="col-12 d-flex flex-md-row">
-                        <div>
-                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                        </div>
-                        <div>
-                          <div class="card-body">
-                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
-                            <p class="card-text text-break"><%= product[:description] %></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+<!-- Hero-->
+<section class="hero text-center pt-5 mt-3">
+  <div class="container py-5 mb-2">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="card search mt-3 pb-4">
+          <div class="card-body">
+            <h5 class="card-title pb-3 mb-2">Search the docs</h5>
+            <% if @item[:searchbar].nil? %>
+              <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+                <form class="mb-3" id="search-form" action="/search" method="get">
+                  <div class="form-group">
+                    <img class="search-icon" src="/assets/images/search.svg" alt="search">
+                    <input class="form-control docsearch-landing w-100"  name="query" type="search" placeholder="Search the complete docs..." aria-label="Search">
+                    <input type="submit" style="visibility: hidden; position:absolute;" />
                   </div>
-                </a>
-              </div>
-      <% end %>
-      <% end %>
-      <% else %>
-        <% @config[:products].each do |name, product| %>
-          <% if Dir.exist?("#{@config[:content_dir]}/#{product[:slug]}")%>
-            <% if product[:short_name] == 'GitLab' %>
-              <div class="col-md-12 mb-3 gitlab-product-card">
-            <% else %>
-              <div class="col-12 col-lg-4 mb-3">
+                </form>
+              <% end %>
             <% end %>
-                <a itemprop="url" href="<%= @items["/#{product[:slug]}/#{product[:index_file]}"].path %>" class="text-decoration-none">
-                  <div class="card h-100">
-                    <div class="flex-nowrap w-100">
-                      <div class="col-12 d-flex flex-md-row">
-                        <div>
-                          <img class="product-img py-4" src="<%= product[:img] %>" alt="<%= product[:short_name] %> line logo">
-                        </div>
-                        <div>
-                          <div class="card-body">
-                            <p class="card-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break"><%= product[:short_name] %></p>
-                            <p class="card-text text-break"><%= product[:description] %></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-      <div class="row px-md-5 ml-lg-5 mb-3">
-        <div class="col-12 pb-3">
-          <h2 class="landing-header-subtitle border-bottom-0 font-weight-bold">Popular topics</h2>
-        </div>
-        <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
-          <!--
-            The first item of the URL is the product slug
-          -->
-          <% product = topic[:url].split('/')[1] %>
-          <!--
-            Check if content/{slug} is present and hide the topic otherwise
-          -->
-          <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
-          <div class="col-12 col-lg-4">
-            <a class="text-decoration-none" href="<%= topic[:url] %>">
-              <h3 class="popular-topics-title border-bottom-0 font-weight-bold pb-0 mb-0 text-break d-flex align-items-center">
-                <%= icon("#{topic[:icon]}", nil, 'menu-icon') %>
-                <span class="ml-1"><%= topic[:title] %></span>
-              </h3>
-              <p class="pl-4 ml-1 mt-1 text-break"><%= topic[:description] %></p>
+            <a href="/ee/README.html" class="card-link">
+              Explore all topics
             </a>
           </div>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="row px-md-5 ml-lg-5">
-        <div class="col">
-          <%= render '/feedback.*' %>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <%= render '/footer.*' %>
+    </div>
+    <div class="row pb-2">
+      <div class="col">
+        <h2>
+          Get started with...
+        </h2>
       </div>
     </div>
-  </main>
-  <aside class="sidebar-right d-none d-lg-block"></aside>
+    <!-- Topics Cards-->
+    <div class="oval"></div>
+    <div class="row text-left">
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/agile.svg" alt="agile">
+            <h5 class="card-title py-2 m-0">Agile with GitLab</h5>
+            <p class="card-text mb-2">Manage your work with built-in agile features.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/user/project/issues" class="card-link">Issues</a>
+              </li>
+              <li>            
+                <a href="/ee/user/project/issue_board.html" class="card-link">Issue boards</a>
+              </li>
+              <li>
+                <a href="/ee/user/project/labels.html" class="card-link">Labels</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/continuous-delivery.svg" alt="continuous-delivery">
+            <h5 class="card-title py-2 m-0">CI/CD</h5>
+            <p class="card-text mb-2">Build, test, and deploy applications using Continuous Integration and Delivery.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/ci/README.html" class="card-link">GitLab CI/CD</a>
+              </li>
+              <li>            
+                <a href="/runner" class="card-link">GitLab Runner</a>
+              </li>
+              <li>
+                <a href="/ee/topics/autodevops" class="card-link">Auto DevOps</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/collaberation.svg" alt="collaberation">
+            <h5 class="card-title py-2 m-0">Collaboration</h5>
+            <p class="card-text mb-2">Configure and develop your applications.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/user/project" class="card-link">Projects</a>
+              </li>
+              <li>            
+                <a href="/ee/user/project/repository" class="card-link">Repositories</a>
+              </li>
+              <li>
+                <a href="/ee/user/project/merge_requests" class="card-link">Merge requests</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/locked.svg" alt="locked">
+            <h5 class="card-title py-2 m-0">Security</h5>
+            <p class="card-text mb-2">Obtain security vulnerability reports for your projects, pipelines, and groups.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/user/application_security/sast" class="card-link">SAST</a>
+              </li>
+              <li>            
+                <a href="/ee/user/application_security/dast" class="card-link">DAST</a>
+              </li>
+              <li>
+                <a href="/ee/user/application_security/dependency_scanning" class="card-link">Dependency scanning</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/increase.svg" alt="increase">
+            <h5 class="card-title py-2 m-0">Analytics</h5>
+            <p class="card-text mb-2">View reports and analysis of your team's work.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/development/value_stream_analytics.html" class="card-link">Value stream analytics</a>
+              </li>
+              <li>            
+                <a href="/ee/user/group/issues_analytics" class="card-link">Issue analytics</a>
+              </li>
+              <li>
+                <a href="/ee/user/admin_area/analytics/usage_trends.html" class="card-link">Usage trends</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 pb-4">
+        <div class="card topic h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/visibility.svg" alt="visibility">
+            <h5 class="card-title py-2 m-0">Administration</h5>
+            <p class="card-text mb-2">Customize and configure your self-managed installation.</p>
+            <ul class="pl-0">
+              <li>
+                <a href="/ee/user/admin_area/settings" class="card-link">Admin area settings</a>
+              </li>
+              <li>            
+                <a href="/ee/administration/auth/ldap" class="card-link">Set up LDAP</a>
+              </li>
+              <li>
+                <a href="/ee/administration/pages" class="card-link">GitLab Pages</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topics CTA-->
+    <div class="row pt-4">
+      <div class="col">
+        <a href="/ee/README.html" class="btn">
+          Explore all topics
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Popular Topics-->
+<section class="popular text-center">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col">
+        <h2 class="m-0 pb-4">
+          Popular topics
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <h5 class="align-top mt-0 text-left">
+          Developer
+        </h5>
+      </div>
+      <div class="col-md-9 col-12">
+        <ul class="text-left">
+          <li class="d-flex">
+            <span>
+              <a href="/ee/api/README.html">
+                <strong>API:</strong> Use the API to develop against GitLab
+              </a>
+            </span>
+          </li>
+          <li class="d-flex">
+            <span>
+              <a href="/ee/development/README.html">
+                <strong>Contributing:</strong> Learn the processes and technical information you need to contribute to GitLab
+              </a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <h5 class="align-top mt-0 text-left">
+          Omnibus
+        </h5>
+      </div>
+      <div class="col-md-9 col-12">
+        <ul class="text-left">
+          <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
+            <% product = topic[:url].split('/')[1] %>
+            <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
+            <% if topic[:description].include? "Omnibus" %>
+              <li class="d-flex">
+                <span>
+                  <a href="<%= topic[:url] %>">
+                    <strong><%= topic[:title] %>: </strong>
+                    <%= topic[:description] %>
+                  </a>
+                </span>
+              </li>
+            <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row pb-5">
+      <div class="col-md-3 col-12">
+        <h5 class="align-top mt-0 text-left">
+          General <br class="d-none d-md-block">topics
+        </h5>
+      </div>
+      <div class="col-md-9 col-12">
+        <ul class="text-left">
+          <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
+            <% product = topic[:url].split('/')[1] %>
+            <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
+            <% if !topic[:description].include? "Omnibus" %>
+              <li class="d-flex">
+                <span>
+                  <a href="<%= topic[:url] %>">
+                    <strong><%= topic[:title] %>: </strong>
+                    <%= topic[:description] %>
+                  </a>
+                </span>
+              </li>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Self Managed-->
+<section class="self-managed text-center pb-4 pt-1 mb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>Install self-managed GitLab</h2>
+      </div>
+      <div class="col-12 options">
+        <p>You’ve got options. <a href="/ee/install">See them all <img src="/assets/images/collapse.svg" alt="collapse" /></a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-12 py-3">
+        <div class="card card-large h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="docs-omnibus" />
+            <h5 class="card-title mb-0 pb-1">Install on Linux</h5>
+            <p class="card-text">The Omnibus package includes services and tools to install GitLab without laborious configuration.</p>
+            <a href="https://about.gitlab.com/install" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" alt="collapse" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 py-3">
+        <div class="card card-large h-100">
+          <div class="card-body">
+            <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="docs-charts" />
+            <h5 class="card-title mb-0 pb-1">Install on Kubernetes</h5> 
+            <p class="card-text">If you're using cluster management, we recommend the Helm Chart for installing cloud-native GitLab.</p>
+            <a href="https://docs.gitlab.com/charts" class="card-link">Use the Helm Chart <img src="/assets/images/collapse.svg" alt="collapse" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-12 py-3">
+        <div class="card transparent text-left h-100">
+          <div class="card-body">
+            <h5 class="card-title my-2">
+              <img src="/assets/images/download.svg" class="mr-3" alt="download" />
+              <a href="https://docs.gitlab.com/omnibus/docker">Install with Docker</a>
+            </h5>
+            <p class="card-text pl-5">
+              GitLab maintains a set of official Docker images based on the Omnibus GitLab package.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-12 py-3">
+        <div class="card transparent text-left h-100">
+          <div class="card-body">
+            <h5 class="card-title my-2">
+              <img src="/assets/images/download.svg" class="mr-3" alt="download" />
+              <a href="/ee/install/installation.html">Compile from source</a>
+            </h5>
+            <p class="card-text pl-5">
+              If the Omnibus GitLab package isn’t available for your distribution, you can install GitLab from source.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-12 py-3">
+        <div class="card transparent text-left h-100">
+          <div class="card-body">
+            <h5 class="card-title my-2">
+              <img src="/assets/images/download.svg" class="mr-3" alt="download" />
+              <a href="/ee/install/#install-gitlab-on-cloud-providers">Install from cloud provider</a>
+            </h5>
+            <p class="card-text pl-5">
+              Install directly from platforms like AWS, Azure, GCP, OpenShift, and DigitalOcean.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col related">
+        <p>
+          <strong>Related topic:</strong> <a href="https://docs.gitlab.com/runner/">Install GitLab Runner,</a> an application that works with GitLab CI/CD to run jobs in a pipeline.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reference -->
+<section class="reference text-center pb-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-white pt-2 pb-0">
+          Reference architectures
+        </h2>
+      </div>
+      <div class="col-12 pb-2">
+        <p>
+          Scale your GitLab installation by using the recommended configurations.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/1k_users.html">
+            <span class="d-block title pt-5">1,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/2k_users.html">
+            <span class="d-block title pt-5">2,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/3k_users.html">
+            <span class="d-block title pt-5">3,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/5k_users.html">
+            <span class="d-block title pt-5">5,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-md-4 pb-5">
+      <div class="col-md-4 col-6 d-flex align-items-center justify-content-center justify-content-md-end py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/10k_users.html">
+            <span class="d-block title pt-5">10,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-6 d-flex align-items-center justify-content-center py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/25k_users.html">
+            <span class="d-block title pt-5">25,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 d-flex align-items-center justify-content-center justify-content-md-start py-2 my-1 py-md-0 my-md-0">
+        <div class="circle rounded-circle">
+          <a class="text-white text-decoration-none" href="/ee/administration/reference_architectures/50k_users.html">
+            <span class="d-block title pt-5">50,000</span>
+            <span class="d-block sub-title">users</span>
+            <span class="d-block">
+              <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Support-->
+<section class="support py-5">
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="card text-center h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              Get support
+            </h5>
+            <p class="card-text mb-4 pb-2">
+              If you need additional help and you're on a paid tier, you can request support.
+            </p>
+            <a href="https://about.gitlab.com/support" class="btn btn-outline-primary">
+              Request support
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer-->
+<footer class="d-flex align-items-center">
+  <div class="container">
+      <div class="row">
+          <!-- Footer Items-->
+          <div class="col d-none d-sm-flex align-items-center justify-content-center">
+              <a href="https://about.gitlab.com/company">About GitLab</a>
+              <div class="dot mx-3"></div>
+              <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
+              <div class="dot mx-3"></div>
+              <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
+              <div class="dot mx-3"></div>
+              <a href="https://about.gitlab.com/community/contribute">Please contribute</a>
+              <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" class="ml-3"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
+          </div>
+
+          <!-- Footer Mobile Items-->
+          <div class="col d-sm-none text-center">
+            <ul class="px-0 py-3">
+              <li>
+                <a href="https://about.gitlab.com/company">About GitLab</a>
+                <div class="dot mx-3"></div>
+                <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer">View page source</a>
+              </li>
+              <li>
+                <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer">Edit in Web IDE</a>
+              <div class="dot mx-3"></div>
+                <a href="https://about.gitlab.com/community/contribute">Please contribute</a>
+              </li>
+              <li class="pt-3">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </div>
+</footer>
