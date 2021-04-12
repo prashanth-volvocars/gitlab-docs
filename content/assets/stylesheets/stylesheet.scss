@@ -1,9 +1,10 @@
 ---
-version: 106
+version: 107
 ---
 
 @import "variables";
 @import "utilities";
+@import "landing";
 
 *,
 *::before,
@@ -964,10 +965,11 @@ h6 {
   background-color: $header-background-color;
   
   .navbar-brand {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     
     strong {
-      font-size: 1.15rem;
+      line-height: 20px;
+      font-size: 1rem;
     }
   }
 
@@ -987,9 +989,10 @@ h6 {
   
     .docsearch {
       font-size: 1rem;
-      height: 28px;
+      height: 32px;
       min-width: 320px;
       text-indent: 1rem;
+      padding: 12px 8px;
     }
   }
 
@@ -1000,79 +1003,6 @@ h6 {
   @media all and (max-width: $md-width) {
     .btn {
       width: 100%;
-    }
-  }
-}
-
-// Home page styles
-.landing {
-  p {
-    color: $help-gray-900;
-  }
-  .landing-header-title {
-    line-height: 52px;
-    font-size: 45px;
-  }
-  .landing-header-subtitle {
-    font-size: 32px;
-    line-height: 36px;
-    margin-bottom: 0;
-  }
-  .popular-topics-title {
-    color: $gds-indigo-700;
-    font-size: larger;
-    .gl-icon {
-      fill: $help-indigo-500;
-    }
-  }
-  .content {
-    max-width: $page-content-width;
-  }
-  .sidebar-left {
-    @include sidebar-fixed;
-    border-right: 1px solid $help-gray-100;
-    .list-group-item {
-      line-height: 24px;
-      color: $landing-sidebar-gray;
-      padding-top: $sidebar-padding;
-      padding-bottom: $sidebar-padding;
-      padding-right: $sidebar-padding;
-      &:hover {
-        background-color: $landing-sidebar-gray-light;
-      }
-      .gl-icon {
-        fill: $landing-sidebar-gray-500;
-      }
-      &.active {
-        background-color: $landing-sidebar-gray-light;
-        font-weight: 600;
-        box-shadow: inset -4px 0 0 $landing-gl-indigo;
-        .gl-icon {
-          fill: $help-indigo-500;
-        }
-        &:hover {
-          color: $gds-indigo-800;
-        }
-      }
-    }
-  }
-  .card {
-    border-color: $help-gray-100;
-    font-size: 1.1em;
-    &:hover {
-      background-color: $landing-sidebar-gray-light;
-    }
-    .card-title {
-      color: $gds-indigo-700;
-      font-size: larger;
-    }
-    .product-img {
-      width: 55px;
-    }
-  }
-  .footer {
-    .social-icons {
-      padding-right: 25px;
     }
   }
 }
@@ -1284,4 +1214,8 @@ li {
       vertical-align: text-bottom;
     }
   }
+}
+
+.btn-cta {
+  background-color: $header-free-trial-button-color;
 }
