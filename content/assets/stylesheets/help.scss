@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import "variables";
@@ -11,16 +11,16 @@ version: 3
   margin-top: 2rem;
   color: $help-gray-900;
   font-size: $body-font-size;
-  line-height: 20px;
+  line-height: 1.333rem;
 
   .right-col {
-    @media all and (min-width: 768px) {
-      border-left: 1px solid $help-gray-100;
+    @media all and (min-width: $sm-width) {
+      border-left: .067 solid $help-gray-100;
     }
   }
 
   .help-subsection {
-    @media all and (max-width: 767px) {
+    @media all and (max-width: $sm-width) {
       margin-top: 1rem;
     }
   }
@@ -80,7 +80,7 @@ version: 3
   }
 
   .help-and-feedback-title {
-    font-size: 16px;
+    font-size: 1.067rem;
     font-weight: 700;
   }
 
@@ -110,11 +110,11 @@ version: 3
 
 .disqus-comments-gitlab {
   iframe {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1.067rem;
+    padding-right: 1.067rem;
     background-color: $color-white;
-    border-radius: 5px;
-    box-shadow: 2px 2px 7px $search-border;
-    margin-top: 25px;
+    border-radius: .333rem;
+    box-shadow: .133rem .133rem .467rem $search-border;
+    margin-top: 1.667rem;
   }
 }
