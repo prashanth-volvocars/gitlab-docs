@@ -278,6 +278,8 @@ sections:
         category_url: 'ee/administration/invalidate_markdown_cache.html'
       - category_title: Issue closing pattern
         category_url: 'ee/administration/issue_closing_pattern.html'
+      - category_title: Merge request diffs storage
+        category_url: 'ee/administration/merge_request_diffs.html'
       - category_title: PostgreSQL
         category_url: 'ee/administration/postgresql/'
         docs:
@@ -295,6 +297,8 @@ sections:
         category_url: 'ee/administration/redis/'
       - category_title: Sidekiq
         category_url: 'ee/administration/sidekiq.html'
+      - category_title: Snippets
+        category_url: 'ee/administration/snippets/'
       - category_title: Kubernetes Agent Server
         category_url: 'ee/administration/clusters/kas.html'
       - category_title: Repository storage
@@ -455,6 +459,8 @@ sections:
             doc_url: 'ee/administration/raketasks/ldap.html'
           - doc_title: List repositories
             doc_url: 'ee/raketasks/list_repos.html'
+          - doc_title: Migrate snippets
+            doc_url: 'ee/raketasks/migrate_snippets.html'
           - doc_title: Praefect tasks
             doc_url: 'ee/administration/raketasks/praefect.html'
           - doc_title: Project import and export
@@ -486,6 +492,8 @@ sections:
             doc_url: 'ee/policy/maintenance.html'
       - category_title: Web terminals
         category_url: 'ee/administration/integration/terminal.html'
+      - category_title: Wikis
+        category_url: 'ee/administration/wikis/'
 
   - section_title: Analytics
     section_url: 'ee/user/analytics/'
@@ -1631,6 +1639,9 @@ sections:
             doc_url: 'ee/api/vulnerability_findings.html'
           - doc_title: Wikis
             doc_url: 'ee/api/wikis.html'
+            docs:
+              - doc_title: Wikis (group)
+                doc_url: 'ee/api/group_wikis.html'
       - category_title: GraphQL
         category_url: 'ee/api/graphql/'
         docs:
@@ -1702,8 +1713,7 @@ sections:
           - doc_title: High availability roles
             doc_url: 'omnibus/roles/README.html'
           - doc_title: LDAP
-            doc_url: 'https://docs.gitlab.com/ee/administration/auth/ldap/index.html'
-            external_url: true
+            doc_url: 'ee/administration/auth/ldap/'
           - doc_title: Logs
             doc_url: 'omnibus/settings/logs.html'
           - doc_title: NGINX
@@ -2091,6 +2101,8 @@ sections:
             doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Droplab
             doc_url: 'ee/development/fe_guide/droplab/droplab.html'
+          - doc_title: Editor lite
+            doc_url: 'ee/development/fe_guide/editor_lite.html'
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Filter
@@ -2342,6 +2354,8 @@ sections:
             doc_url: 'ee/development/usage_ping/dictionary.html'
       - category_title: Value Stream Analytics
         category_url: 'ee/development/value_stream_analytics.html'
+      - category_title: Wikis
+        category_url: 'ee/development/wikis.html'
       - category_title: Working with Prometheus metrics
         category_url: 'ee/development/prometheus_metrics.html'
 # End of development documentation
