@@ -172,6 +172,8 @@ sections:
             doc_url: 'ee/user/admin_area/monitoring/health_check.html'
           - doc_title: Incoming email
             doc_url: 'ee/administration/incoming_email.html'
+          - doc_title: Instance template repository
+            doc_url: 'ee/user/admin_area/settings/instance_template_repository.html'
           - doc_title: Job artifacts
             doc_url: 'ee/administration/job_artifacts.html'
           - doc_title: Job logs
@@ -182,6 +184,10 @@ sections:
             doc_url: 'ee/administration/logs.html'
           - doc_title: Maintenance Mode
             doc_url: 'ee/administration/maintenance_mode/'
+          - doc_title: Merge request approvals
+            doc_url: 'ee/user/admin_area/merge_requests_approvals.html'
+          - doc_title: Push event activities limit
+            doc_url: 'ee/user/admin_area/settings/push_event_activities_limit.html'
           - doc_title: Rate limits on issue creation
             doc_url: 'ee/user/admin_area/settings/rate_limit_on_issues_creation.html'
           - doc_title: Rate limits on note creation
@@ -204,6 +210,8 @@ sections:
             doc_url: 'ee/administration/uploads.html'
           - doc_title: User Cohorts
             doc_url: 'ee/user/admin_area/user_cohorts.html'
+          - doc_title: Visibility and access controls
+            doc_url: 'ee/user/admin_area/settings/visibility_and_access_controls.html'
       - category_title: Security
         category_url: 'ee/security/README.html'
         docs:
@@ -270,6 +278,10 @@ sections:
         category_url: 'ee/administration/compliance.html'
       - category_title: Email from GitLab
         category_url: 'ee/tools/email.html'
+      - category_title: File hooks
+        category_url: 'ee/administration/file_hooks.html'
+      - category_title: Git protocol v2
+        category_url: 'ee/administration/git_protocol.html'
       - category_title: Global user settings
         category_url: 'ee/administration/user_settings.html'
       - category_title: Instance Review
@@ -647,10 +659,14 @@ sections:
             doc_url: 'ee/user/project/repository/branches/'
           - doc_title: Default branch
             doc_url: 'ee/user/project/repository/branches/default.html'
+          - doc_title: Forking workflow
+            doc_url: 'ee/user/project/repository/forking_workflow.html'
           - doc_title: Git attributes
             doc_url: 'ee/user/project/git_attributes.html'
           - doc_title: Git LFS
             doc_url: 'ee/topics/git/lfs/'
+          - doc_title: Jupyter notebook files
+            doc_url: 'ee/user/project/repository/jupyter_notebooks/'
           - doc_title: Locked files
             doc_url: 'ee/user/project/file_lock.html'
           - doc_title: File Blame
@@ -669,6 +685,8 @@ sections:
             doc_url: 'ee/user/project/repository/reducing_the_repo_size_using_git.html'
           - doc_title: Signed Commits
             doc_url: 'ee/user/project/repository/gpg_signed_commits/'
+          - doc_title: Signing commits and tags with X.509
+            doc_url: 'ee/user/project/repository/x509_signed_commits/'
           - doc_title: Syntax highlighting
             doc_url: 'ee/user/project/highlighting.html'
           - doc_title: Web Editor
@@ -2008,6 +2026,8 @@ sections:
             doc_url: 'ee/development/code_review.html'
           - doc_title: Style guides
             doc_url: 'ee/development/contributing/style_guides.html'
+      - category_title: Approval rules development guide
+        category_url: 'ee/development/approval_rules.html'
       - category_title: Architecture
         category_url: 'ee/development/architecture.html'
       - category_title: CI/CD development
@@ -2139,6 +2159,8 @@ sections:
         docs:
           - doc_title: Geo framework
             doc_url: 'ee/development/geo/framework.html'
+      - category_title: Git LFS
+        category_url: 'ee/development/lfs.html'
       - category_title: Gitaly development
         category_url: 'ee/development/gitaly.html'
       - category_title: GitLab Design System
@@ -2227,6 +2249,8 @@ sections:
         category_url: 'ee/development/import_export.html'
       - category_title: Instrumenting Ruby code
         category_url: 'ee/development/instrumentation.html'
+      - category_title: Internal API
+        category_url: 'ee/development/internal_api.html'
       - category_title: Issuable-like Rails models utilities
         category_url: 'ee/development/issuable-like-models.html'
       - category_title: Issue types
