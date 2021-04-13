@@ -1611,6 +1611,8 @@ sections:
             doc_url: 'ee/api/tags.html'
           - doc_title: To-Do lists
             doc_url: 'ee/api/todos.html'
+          - doc_title: Usage Data
+            doc_url: 'ee/api/usage_data.html'
           - doc_title: Users
             doc_url: 'ee/api/users.html'
           - doc_title: User-starred metrics dashboards
