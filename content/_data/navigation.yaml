@@ -760,6 +760,8 @@ sections:
   - section_title: User
     section_url: 'ee/user/'
     section_categories:
+      - category_title: Get started
+        category_url: 'ee/intro/'
       - category_title: Abuse reports
         category_url: 'ee/user/abuse_reports.html'
       - category_title: Account
@@ -782,12 +784,41 @@ sections:
       - category_title: Git
         category_url: 'ee/topics/git/'
         docs:
+          - doc_title: Get started
+            doc_url: 'ee/gitlab-basics/start-using-git.html'
+          - doc_title: Installing Git
+            doc_url: 'ee/topics/git/how_to_install_git/'
+          - doc_title: Create branch
+            doc_url: 'ee/gitlab-basics/create-branch.html'
+          - doc_title: File editing
+            doc_url: 'ee/gitlab-basics/command-line-commands.html'
           - doc_title: Partial clone
             doc_url: 'ee/topics/git/partial_clone.html'
+          - doc_title: Rebase, force-push, merge conflicts
+            doc_url: 'ee/topics/git/git_rebase.html'
+          - doc_title: Tags
+            doc_url: 'ee/topics/git/tags.html'
           - doc_title: Troubleshooting Git
             doc_url: 'ee/topics/git/troubleshooting_git.html'
+          - doc_title: Undo with Git
+            doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/index.html'
           - doc_title: Useful commands
             doc_url: 'ee/topics/git/useful_git_commands.html'
+      - category_title: GitLab basics
+        category_url: 'ee/gitlab-basics/'
+        docs:
+          - doc_title: Add file to repository
+            doc_url: 'ee/gitlab-basics/add-file.html'
+          - doc_title: Feature branch workflow
+            doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
+          - doc_title: Feature branch development
+            doc_url: 'ee/topics/git/feature_branch_development.html'
+          - doc_title: Git annex
+            doc_url: 'ee/administration/git_annex.html'
+          - doc_title: Git LFS to Git annex migration
+            doc_url: 'ee/topics/git/lfs/migrate_from_git_annex_to_git_lfs.html'
+          - doc_title: GitLab Flow
+            doc_url: 'ee/topics/gitlab_flow.html'
       - category_title: GitLab.com settings
         category_url: 'ee/user/gitlab_com/'
       - category_title: Keyboard shortcuts
@@ -2137,6 +2168,8 @@ sections:
             doc_url: 'ee/development/fe_guide/icons.html'
           - doc_title: InputSetter
             doc_url: 'ee/development/fe_guide/droplab/plugins/input_setter.html'
+          - doc_title: Merge request widget extensions
+            doc_url: 'ee/development/new_fe_guide/modules/widget_extensions.html'
           - doc_title: Performance
             doc_url: 'ee/development/fe_guide/performance.html'
           - doc_title: Principles
