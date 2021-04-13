@@ -2344,7 +2344,7 @@ sections:
           - doc_title: Merging
             doc_url: 'ee/development/i18n/merging_translations.html'
       - category_title: Snowplow guide
-        category_url: 'ee/development/snowplow.html'
+        category_url: 'ee/development/snowplow/'
       - category_title: Usage Ping guide
         category_url: 'ee/development/usage_ping/'
         docs:
