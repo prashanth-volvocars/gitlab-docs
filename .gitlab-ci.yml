@@ -334,7 +334,7 @@ test_EOL_whitespace:
     - markdownlint --version
     - markdownlint -c .markdownlint.json **/*.md
 
-test_unlinked_files:
+test_unlinked_images:
   extends:
     - .rules_chores
     - .cache_gem
@@ -345,18 +345,18 @@ test_unlinked_files:
   dependencies: []
   script:
     - bundle exec rake setup_git default
-    - cp tasks/unlinked-files.sh tmp/ee/unlinked-files.sh
-    - cp tasks/unlinked-files.sh tmp/charts/unlinked-files.sh
-    - cp tasks/unlinked-files.sh tmp/omnibus/unlinked-files.sh
-    - cp tasks/unlinked-files.sh tmp/runner/unlinked-files.sh
+    - cp tasks/unlinked-images.sh tmp/ee/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/charts/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/omnibus/unlinked-images.sh
+    - cp tasks/unlinked-images.sh tmp/runner/unlinked-images.sh
     - cd tmp/omnibus
-    - ./unlinked-files.sh doc
+    - ./unlinked-images.sh doc
     - cd ../charts
-    - ./unlinked-files.sh doc
+    - ./unlinked-images.sh doc
     - cd ../runner
-    - ./unlinked-files.sh docs
+    - ./unlinked-images.sh docs
     - cd ../ee
-    - ./unlinked-files.sh doc
+    - ./unlinked-images.sh doc
 
 ###############################################
 #               Review Apps                   #
