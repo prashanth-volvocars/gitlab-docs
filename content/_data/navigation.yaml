@@ -1315,10 +1315,8 @@ sections:
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
       - category_title: Jira integrations
-        category_url: 'ee/user/project/integrations/jira_integrations.html'
+        category_url: 'ee/integration/jira/'
         docs:
-          - doc_title: Jira
-            doc_url: 'ee/user/project/integrations/jira.html'
           - doc_title: GitLab for Jira app
             doc_url: 'ee/integration/jira/connect-app.html'
           - doc_title: Jira DVCS connector
