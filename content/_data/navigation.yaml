@@ -1103,12 +1103,14 @@ sections:
       - category_title: Services
         category_url: 'ee/ci/services/'
         docs:
-          - doc_title: MySQL Service
+          - doc_title: MySQL service
             doc_url: 'ee/ci/services/mysql.html'
-          - doc_title: PostgreSQL Service
+          - doc_title: PostgreSQL service
             doc_url: 'ee/ci/services/postgres.html'
-          - doc_title: Redis Service
+          - doc_title: Redis service
             doc_url: 'ee/ci/services/redis.html'
+          - doc_title: GitLab as a service
+            doc_url: 'ee/ci/services/gitlab.html'
       - category_title: Auto DevOps
         category_url: 'ee/topics/autodevops/'
         docs:
