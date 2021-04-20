@@ -14,7 +14,8 @@
         <div class="col-0 col-lg-2 pl-0">
           <div class="nav-wrapper active">
             <aside id="global-nav" class="global-nav">
-            <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
+            <!-- Render the global nav only if CI_PROJECT_NAME is gitlab-docs or is not set -->
+            <% if gitlab_docs_or_local? %>
               <%= render '/global_nav.*' %>
             <% end %>
             </aside>
