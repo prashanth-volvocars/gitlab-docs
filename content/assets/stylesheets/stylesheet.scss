@@ -1,5 +1,5 @@
 ---
-version: 107
+version: 108
 ---
 
 @import "variables";
@@ -77,6 +77,7 @@ table {
   td,
   th {
     text-align: left;
+    vertical-align: top;
     padding: 8px;
     border: 1px solid $table-border-color;
     font-size: 14px;
@@ -103,7 +104,7 @@ table {
     }
   }
   &.fixed-table {
-    table-layout: fixed; // use this for columns with the same width 
+    table-layout: fixed; // use this for columns with the same width
     thead th {
       top: $header-height;
       position: sticky;
@@ -546,7 +547,7 @@ h6 {
   }
   @media(max-width: $md-width) {
     width: 0;
-    
+
     .nav-toggle {
       display: none;
     }
@@ -963,10 +964,10 @@ h6 {
 .navbar {
   min-height: $header-height;
   background-color: $header-background-color;
-  
+
   .navbar-brand {
     font-size: 1.15rem;
-    
+
     strong {
       line-height: 20px;
       font-size: 1rem;
@@ -986,7 +987,7 @@ h6 {
     .fa-search {
       z-index: 1;
     }
-  
+
     .docsearch {
       font-size: 1rem;
       height: 32px;
