@@ -6,8 +6,8 @@ This project hosts the repository used to generate the GitLab documentation
 website and deployed to [https://docs.gitlab.com](https://docs.gitlab.com). It
 uses the [Nanoc](http://nanoc.ws) static site generator.
 
-You will not find any GitLab docs content here. All documentation files are
-hosted in the respective repository of [each product](#projects-we-pull-from).
+There is no GitLab docs content here. All documentation files are hosted in the respective
+repository of [each product](#projects-we-pull-from).
 
 The [deployment process](#deployment-process) happens automatically every four hours.
 
@@ -29,7 +29,7 @@ There are currently 4 products that are pulled and generate the docs website:
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 - [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
 
-**Note:**
+NOTE:
 Although GitLab Community Edition is generated, it is hidden from the website
 as it's the same as the Enterprise Edition. We generate it for consistency,
 until [better redirects](https://gitlab.com/gitlab-org/gitlab-pages/issues/24)
@@ -37,8 +37,7 @@ are implemented.
 
 ## Requirements
 
-In order to be able to preview any changes you make to GitLab's documentation,
-here's what you will need to have:
+To preview any changes you make to GitLab documentation, you need:
 
 - Environment: Unix/Linux or macOS.
 - Ruby, at version specified in:
@@ -50,9 +49,9 @@ here's what you will need to have:
   - Run `xcode-select --install` to install the command line tools only.
   - Or download and install the entire package using the macOS's App Store.
 
-**Note:**
-On Windows, the process described here would be different, but as most of
-contributors use Unix, we'll go over this process for macOS and Linux users.
+NOTE:
+On Windows, the process described here would be different, but as most
+contributors use Unix, we go over this process for macOS and Linux users.
 
 Alternatively, you can use [Gitpod](#gitpod-integration) to access a
 cloud-based, pre-configured GitLab documentation site.
@@ -80,9 +79,9 @@ In the instructions below, you:
 
 #### Ruby
 
-To install Ruby using [rbenv](https://github.com/rbenv/rbenv):
+To install Ruby using [`rbenv`](https://github.com/rbenv/rbenv):
 
-1. [Install rbenv](https://github.com/rbenv/rbenv#installation).
+1. [Install `rbenv`](https://github.com/rbenv/rbenv#installation).
 1. Install the supported version of Ruby:
 
    ```shell
@@ -102,9 +101,9 @@ Check your:
 
 #### Node.js
 
-To install Node.js using [nvm](https://github.com/nvm-sh/nvm):
+To install Node.js using [`nvm`](https://github.com/nvm-sh/nvm):
 
-1. [Install nvm](https://github.com/nvm-sh/nvm#installation-and-update).
+1. [Install `nvm`](https://github.com/nvm-sh/nvm#installation-and-update).
 1. Install the latest Node.js:
 
    ```shell
@@ -174,26 +173,28 @@ The project depends on many Ruby and Node.js libraries. To install these:
 
 ## Development when contributing to GitLab documentation
 
-This section is about contributing to one of GitLab's
+This section is about contributing to one of the GitLab
 [projects' documentation](#projects-we-pull-from), and preview your changes at
-the same time. To contribute to the appearance of the documentation site, see
-[contributing to the docs site](#contributing-to-the-docs-website-itself).
+the same time.
 
-Before diving into writing, here's a few links that will come in handy:
+Before diving into writing, here are two handy links:
 
 - [Writing documentation](https://docs.gitlab.com/ee/development/documentation/index.html)
 - [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide/index.html)
 
+As an alternative to the instructions below, you can
+[use GDK for documentation development](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md).
+
 ### Clone the repositories
 
-Since this process will clone a few repositories, it might be a good idea to
+Since this process clones a few repositories, it might be a good idea to
 create a separate directory to have them all together. For example, to store all
 local checkouts in a `dev` directory:
 
 1. Open a terminal and run:
 
    ```shell
-   mkdir -p ~/dev/
+   mkdir -p ~/dev
    ```
 
 1. Navigate to the directory you'd like the repositories to be cloned:
@@ -212,7 +213,9 @@ local checkouts in a `dev` directory:
    git clone https://gitlab.com/gitlab-org/gitlab-docs.git
    ```
 
-1. Clone the repositories you wish to contribute documentation changes to. For:
+1. Clone the repositories you wish to contribute documentation changes to. Clone these projects
+   **in the same directory** as the `gitlab-docs` project. For example, `~/dev`:
+
    - **GitLab contributors** that don't have Developer access to the projects,
      fork the ones you want and then clone them by using your forked version:
 
@@ -221,51 +224,27 @@ local checkouts in a `dev` directory:
      git clone https://gitlab.com/<username>/gitlab.git
      git clone https://gitlab.com/<username>/gitlab-runner.git
      git clone https://gitlab.com/<username>/omnibus-gitlab.git
-     git clone https://gitlab.com/<username>/gitlab.git charts
+     git clone https://gitlab.com/<username>/charts/gitlab.git charts-gitlab
      ```
 
    - For members that have Developer access (usually the
-     **GitLab Team members**), clone the required repos using SSH:
+     **GitLab Team members**), clone the required repositories using SSH:
 
      ```shell
      ## Using SSH (for members that have Developer access)
      git clone git@gitlab.com:gitlab-org/gitlab.git
      git clone git@gitlab.com:gitlab-org/gitlab-runner.git
      git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
-     git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts
+     git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts-gitlab
      ```
 
-### Create the content symlinks
+If you cloned the projects into `~/dev`, you should now have the following projects:
 
-Nanoc expects the Markdown files to be under `content/<slug>`, where `<slug>`
-is the slug of each product as defined in [`.nanoc.yaml`](nanoc.yaml).
-
-If you have already cloned the repository (or repositories) you want to
-contribute to, you can easily satisfy Nanoc's requirement by symlinking only
-the directory that holds the documentation content.
-
-1. Open a terminal and navigate to the directory where `gitlab-docs` was cloned.
-1. For each one of the products, create the symlink:
-
-   ```shell
-   ln -s ~/dev/gitlab/doc ~/dev/gitlab-docs/content/ee
-   ln -s ~/dev/omnibus-gitlab/doc ~/dev/gitlab-docs/content/omnibus
-   ln -s ~/dev/gitlab-runner/docs ~/dev/gitlab-docs/content/runner
-   ln -s ~/dev/charts/doc ~/dev/gitlab-docs/content/charts
-   ```
-
-1. Check if the symlinks were successfully created:
-
-   ```shell
-   cd dev/gitlab-docs
-   ls -la content/
-   ```
-
-If they're there, we're almost good to go!
-
-**Note:** You can use the `pwd` command when in the terminal to check the
-directory path you are currently in and use that output to use with the symlinks
-commands above.
+- `~/dev/gitlab-docs`
+- `~/dev/gitlab`
+- `~/dev/gitlab-runner`
+- `~/dev/omnibus-gitlab`
+- `~/dev/charts-gitlab`
 
 ## Preview the documentation website
 
@@ -276,8 +255,7 @@ web server up:
 bundle exec nanoc && bundle exec nanoc live
 ```
 
-This will generate and the site and you will be able to view it in your browser
-at <http://localhost:3000>.
+This generates the site and you can view it in your browser at <http://localhost:3000>.
 
 To preview the site on another port, use:
 
@@ -285,21 +263,7 @@ To preview the site on another port, use:
 bundle exec nanoc live -p 3004
 ```
 
-This will generate and the site and you will be able to view it in your browser
-at <http://localhost:3004>.
-
-### Recompile documentation changes
-
-Due to a [bug on **macOS**](https://gitlab.com/gitlab-org/gitlab-docs/-/issues/81),
-every time you change a file in the documentation (in one
-of the repos: GitLab, Omnibus, Runner, or Charts), you'll need to recompile the site
-to preview your changes:
-
-```shell
-bundle exec nanoc && bundle exec nanoc live
-```
-
-It recompiles incrementally, only updating the recently changed files.
+This generates the site and you can view it in your browser at <http://localhost:3004>.
 
 ### Preview on mobile
 
@@ -329,32 +293,6 @@ bundle exec nanoc live -o 192.168.0.105
 Now, open your mobile's browser and type `http://192.168.0.105:3000`, and you should
 be able to navigate through the docs site. This process applies to previewing the
 docs site on every device connected to your network.
-
-### Preview on the GitLab Development Kit
-
-Alternatively, you can preview changes using the GitLab Development Kit (GDK).
-For more information, see [Setting up GitLab Docs](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/gitlab_docs.md)
-in the GDK repository.
-
-## Contributing to the docs website itself
-
-If you want to just contribute to the docs website, and not the content, you
-can use the following command to automatically pull the documentation content
-to have something to preview:
-
-```shell
-bundle exec rake pull_repos
-```
-
-This will download all the documentation content under the `tmp/` directory and
-copy it in `content/`. You can then [preview the website](#preview-the-docs-website).
-
-If you want to force-delete the `tmp/` and `content/` folders so the task will
-run without manual intervention, run:
-
-```shell
-RAKE_FORCE_DELETE=true rake pull_repos
-```
 
 ## Gitpod integration
 
@@ -449,13 +387,13 @@ We've [recently introduced](https://gitlab.com/gitlab-org/gitlab-docs/merge_requ
 the ability to write modern JavaScript. All modern JavaScript should be added to
 the [content/frontend/](/content/frontend) directory.
 
-### Adding a new bundle
+### Add a new bundle
 
 When adding a new bundle, the layout name (`html`) and bundle name (`js`) should
 match to make it easier to find:
 
 1. Add the new bundle to `content/frontend/<bundle-name>/<bundle-name>.js`.
-1. Import the bundle in the html file `layouts/<bundle-name>.html`:
+1. Import the bundle in the HTML file `layouts/<bundle-name>.html`:
 
    ```html
    <script src="<%= @items['/frontend/<bundle-name>/<bundle-name>.*'].path %>"></script>
@@ -467,8 +405,8 @@ bundle.
 ## Bumping versions of CSS and JavaScript
 
 Whenever the custom CSS and JavaScript files under `content/assets/` change,
-make sure to bump their version in the frontmatter. This method guarantees that
-your changes will take effect by clearing the cache of previous files.
+make sure to bump their version in the front matter. This method guarantees that
+your changes take effect by clearing the cache of previous files.
 
 Always use Nanoc's way of including those files, do not hardcode them in the
 layouts. For example use:
@@ -485,7 +423,7 @@ The links pointing to the files should be similar to:
 <%= @items['/path/to/assets/file.*'].path %>
 ```
 
-Nanoc will then build and render those links correctly according with what's
+Nanoc then builds and renders those links correctly according with what's
 defined in [`Rules`](/Rules).
 
 ## Linking to source files
@@ -577,7 +515,7 @@ the `DISABLE_CSP` environment variable:
 DISABLE_CSP=1 bundle exec nanoc compile
 ```
 
-### Adding or updating domains in the CSP header
+### Add or update domains in the CSP header
 
 The CSP header and the allowed domains can be found in the [`csp.html`](/layouts/csp.html)
 layout. Every time a new font or Javascript file is added, or maybe updated in
@@ -610,7 +548,7 @@ it with:
 <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
 ```
 
-### Testing the CSP header for conformity
+### Test the CSP header for conformity
 
 To test that the CSP header works as expected, you can visit
 <https://cspvalidator.org/> and paste the URL that you want tested.
@@ -620,21 +558,20 @@ To test that the CSP header works as expected, you can visit
 The [feature flag tables](https://docs.gitlab.com/ee/user/feature_flags.html) are generated
 dynamically when GitLab Docs are published.
 
-To generate these tables locally:
+To generate these tables locally, generate `content/_data/feature_flags.yaml`:
 
-1. Link the relevant GitLab directories to your checkout of `gitlab-docs` project:
+```shell
+bundle exec rake generate_feature_flags
+```
 
-   ```shell
-   ln -s <path_to_gitlab>/config/feature_flags tmp/feature_flags
-   ln -s <path_to_gitlab>/ee/config/feature_flags tmp/feature_flags-ee
-   ```
-
-1. Generate `content/_data/feature_flags.yaml`:
-
-   ```shell
-   bundle exec rake generate_feature_flags
-   ```
-
-   Do this any time you want fresh data from your GitLab checkout.
+Do this any time you want fresh data from your GitLab checkout.
 
 Any time you rebuild the site using `nanoc`, the feature flags tables are populated with data.
+
+## Troubleshooting
+
+If you see a `Nanoc::Core::Site::DuplicateIdentifierError` error, confirm you have no symlinks
+in the `content` directory.
+
+This is usually caused in local instances of GitLab Docs where symlinks were used to link
+to documentation projects for content.
