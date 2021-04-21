@@ -190,21 +190,15 @@ version: 1
     }
 
     ul {
-      list-style: none;
       li {
         line-height: 1.313rem;
         margin: .5rem;
-
-        &::before {
-          content: "\25aa"; 
-          color: $landing-gl-purple-700;
-          padding-right: .5rem;
-        }
+        color: $landing-gl-purple-700;
       }
 
       a {
+        list-style-type: square;
         font-size: .875rem;
-        color: $landing-gl-purple-700;
       }
     }
   }
