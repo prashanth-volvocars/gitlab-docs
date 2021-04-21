@@ -25,7 +25,6 @@ version: 4
     }
   }
 
-  // scss-lint:disable QualifyingElement
   h4,
   h5 {
     border-bottom: 0;
@@ -47,7 +46,6 @@ version: 4
     margin-bottom: 0;
     color: $help-gray-900;
   }
-  // scss-lint:enable QualifyingElement
 
   .help-icon,
   .toggle-icon {
@@ -55,11 +53,9 @@ version: 4
     vertical-align: text-top;
   }
 
-  // scss-lint:disable ImportantRule
   .help-icon {
     margin-left: 0 !important;
   }
-  // scss-lint:enable ImportantRule
 
   .toggle-icon {
     float: right;

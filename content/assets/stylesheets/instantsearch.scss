@@ -24,12 +24,11 @@ $color11: transparent;
 $color12: rgba(32, 139, 196, 0.2); //link color lighter
 
 
-//scss-lint:disable ImportantRule SelectorFormat
+/* stylelint-disable-next-line selector-class-pattern */
 .ais-SearchBox {
   width: 100%;
   max-width: 100% !important; // was 300px
 }
-//scss-lint:enable ImportantRule SelectorFormat
 
 .search-input {
   border-radius: 2px;
@@ -41,7 +40,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   }
 }
 
-//scss-lint:disable SelectorFormat
+/* stylelint-disable-next-line selector-class-pattern */
 .ais-PoweredBy {
   font-family: $sans-font-family;
   font-size: $body-font-size;
@@ -50,7 +49,6 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
     display: inline;
   }
 }
-//scss-lint:enable SelectorFormat
 
 .hit-content {
   border-top: 1px solid $color0;
@@ -77,11 +75,9 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
     color: $black;
   }
 
-  //scss-lint:disable ImportantRule
   .lvl1 {
     font-size: 18px !important;
   }
-  //scss-lint:enable ImportantRule
 
   .lvl2 {
     font-size: 14px;
@@ -143,13 +139,12 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   }
 }
 
-//scss-lint:disable IdSelector
 #hits {
+  /* stylelint-disable-next-line selector-list-comma-newline-after */
   > h1, h2, h3, h4, h5, h6 {
     border: 0;
   }
 }
-//scss-lint:enable IdSelector
 
 //overrides padding for the searchbox
 .main.class {
@@ -164,7 +159,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   background-color: $color3;
 }
 
-//scss-lint:disable SelectorFormat
+/* stylelint-disable selector-class-pattern */
 .ais-InfiniteHits {
   .ais-InfiniteHits-item {
     // https://github.com/algolia/instantsearch-specs/blob/v7.4.4/src/scss/themes/algolia.scss#L277-L305
@@ -197,7 +192,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   text-transform: uppercase;
   color: $link-color;
 }
-//scss-lint:enable SelectorFormat
+/* stylelint-enable selector-class-pattern */
 
 .search-results {
   min-height: 50vh;

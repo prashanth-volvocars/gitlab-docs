@@ -1,7 +1,6 @@
 ---
 version: 19
 ---
-
 @import 'variables';
 @import 'utilities';
 
@@ -36,6 +35,7 @@ $nav-link-font-size: 14px;
       background-color: transparent;
       border-color: $gds-indigo-800;
 
+      /* stylelint-disable-next-line selector-list-comma-newline-after */
       &:hover, &:only-child {
         color: $link-color-nav-hover;
         background-color: transparent;
