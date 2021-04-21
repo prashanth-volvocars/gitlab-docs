@@ -3,7 +3,7 @@ Nanoc::Check.define(:internal_anchors) do
     Gitlab::Docs::Page.new(file).links.each do |link|
       next unless link.internal?
       next unless link.to_anchor?
-      next if link.anchor_name == 'markdown-toc'
+      next if link.anchor_name == 'markdown-toc' || link.anchor_name == 'content-body'
 
       if link.destination_page_not_found?
         add_issue <<~ERROR
