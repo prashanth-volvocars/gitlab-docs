@@ -266,7 +266,7 @@ task :redirects do
   # Iterate over each entry and append to _redirects
   redirects_yaml.fetch('redirects').each do |redirect|
     File.open(redirects_file, 'a') do |f|
-      f.puts "#{redirect.fetch('from')} #{redirect.fetch('to')} 302"
+      f.puts "#{redirect.fetch('from')} #{redirect.fetch('to')} 301"
     end
   end
 end
