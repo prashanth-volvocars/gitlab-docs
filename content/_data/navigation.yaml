@@ -1324,7 +1324,7 @@ sections:
           - doc_title: Jira DVCS connector
             doc_url: 'ee/integration/jira/dvcs.html'
           - doc_title: Jira Development Panel
-            doc_url: 'ee/integration/jira/index.html'
+            doc_url: 'ee/integration/jira/development_panel.html'
           - doc_title: Create Jira Server user
             doc_url: 'ee/integration/jira/jira_server_configuration.html'
           - doc_title: Create Jira Cloud API token
