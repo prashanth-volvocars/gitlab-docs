@@ -779,7 +779,7 @@ sections:
             doc_url: 'ee/user/profile/preferences.html'
           - doc_title: 'Two-factor authentication'
             doc_url: 'ee/user/profile/account/two_factor_authentication.html'
-      - category_title: Discussions
+      - category_title: Threads
         category_url: 'ee/user/discussions/'
       - category_title: Git
         category_url: 'ee/topics/git/'
