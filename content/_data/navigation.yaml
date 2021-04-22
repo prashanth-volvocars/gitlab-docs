@@ -813,10 +813,6 @@ sections:
             doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
           - doc_title: Feature branch development
             doc_url: 'ee/topics/git/feature_branch_development.html'
-          - doc_title: Git annex
-            doc_url: 'ee/administration/git_annex.html'
-          - doc_title: Git LFS to Git annex migration
-            doc_url: 'ee/topics/git/lfs/migrate_from_git_annex_to_git_lfs.html'
           - doc_title: GitLab Flow
             doc_url: 'ee/topics/gitlab_flow.html'
       - category_title: GitLab.com settings
