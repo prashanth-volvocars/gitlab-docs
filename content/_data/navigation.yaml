@@ -502,6 +502,8 @@ sections:
         docs:
           - doc_title: Releases and maintenance
             doc_url: 'ee/policy/maintenance.html'
+      - category_title: What's new
+        category_url: 'ee/administration/whats-new.html'
       - category_title: Web terminals
         category_url: 'ee/administration/integration/terminal.html'
       - category_title: Wikis
