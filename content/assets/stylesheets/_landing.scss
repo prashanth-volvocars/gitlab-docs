@@ -10,7 +10,7 @@ version: 1
 
   // buttons, text and utilities
   .btn-outline-primary {
-    transition: .3s all;
+    transition: 0.3s all;
     border-color: $landing-gl-purple-500;
     color: $landing-gl-purple-500;
 
@@ -22,8 +22,8 @@ version: 1
 
   // cards
   .card {
-    box-shadow: 0 .5rem 1.5rem -.75rem $landing-gl-blue-1000;
-    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1.5rem -0.75rem $landing-gl-blue-1000;
+    border-radius: 0.25rem;
 
     &.transparent {
       box-shadow: none;
@@ -50,8 +50,8 @@ version: 1
 
     .search {
       background: $gds-white;
-      box-shadow: 0 0 .125rem $landing-gl-black-50, 0 .5rem 1.5rem $landing-gl-blue-950;
-      border-radius: .25rem;
+      box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.5rem 1.5rem $landing-gl-blue-950;
+      border-radius: 0.25rem;
       width: 65%;
 
       @media (max-width: $md-width) {
@@ -83,7 +83,7 @@ version: 1
         background: $gds-white;
         border: 1px solid $landing-gl-purple-550;
         box-sizing: border-box;
-        box-shadow: 0 0 0 .25rem $landing-gl-blue-200;
+        box-shadow: 0 0 0 0.25rem $landing-gl-blue-200;
         border-radius: 1.5rem;
         padding-left: 2.5rem;
       }
@@ -105,7 +105,7 @@ version: 1
       height: 29rem;
       background: $landing-gl-purple-50;
       mix-blend-mode: multiply;
-      opacity: .24;
+      opacity: 0.24;
       filter: blur(10.25rem);
     }
 
@@ -137,11 +137,11 @@ version: 1
       }
 
       li {
-        margin: .5rem 0 0;
+        margin: 0.5rem 0 0;
       }
 
       a {
-        font-size: .875rem;
+        font-size: 0.875rem;
         line-height: 1.5rem;
         color: $landing-gl-purple-500;
       }
@@ -193,17 +193,17 @@ version: 1
       list-style: none;
       li {
         line-height: 1.313rem;
-        margin: .5rem;
+        margin: 0.5rem;
 
         &::before {
           content: "\25aa"; 
           color: $landing-gl-purple-700;
-          padding-right: .5rem;
+          padding-right: 0.5rem;
         }
       }
 
       a {
-        font-size: .875rem;
+        font-size: 0.875rem;
         color: $landing-gl-purple-700;
       }
     }
@@ -272,7 +272,7 @@ version: 1
       .card-text {
         font-style: normal;
         font-weight: normal;
-        font-size: .875rem;
+        font-size: 0.875rem;
         line-height: 1.25rem;
         color: $landing-gl-gray-500;
       }
@@ -353,8 +353,8 @@ version: 1
 
     .card {
       width: 65%;
-      box-shadow: 0 0 .125rem $landing-gl-black-50, 0 .5rem 1.5rem $landing-gl-blue-950;
-      border-radius: .25rem;
+      box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.5rem 1.5rem $landing-gl-blue-950;
+      border-radius: 0.25rem;
 
       @media (max-width: $md-width) {
         width: 100%;
@@ -391,7 +391,7 @@ version: 1
     a {
       font-style: normal;
       font-weight: normal;
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1rem;
       text-align: center;
       color: $gds-white;
@@ -402,8 +402,8 @@ version: 1
     }
 
     .dot {
-      height: .313rem;
-      width: .313rem;
+      height: 0.313rem;
+      width: 0.313rem;
       background-color: $gds-white;
       border-radius: 50%;
       display: inline-block; 

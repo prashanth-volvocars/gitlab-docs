@@ -23,6 +23,9 @@ linters:
     severity: error
   ImportantRule:
     severity: error
+  LeadingZero:
+    enabled: true
+    style: include_zero
   MergeableSelector:
     severity: error
   NestingDepth:
