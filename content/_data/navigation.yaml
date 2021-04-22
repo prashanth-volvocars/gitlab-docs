@@ -256,8 +256,8 @@ sections:
             doc_url: 'ee/security/cicd_environment_variables.html'
           - doc_title: Token overview
             doc_url: 'ee/security/token_overview.html'
-      - category_title: Abuse reports
-        category_url: 'ee/user/admin_area/abuse_reports.html'
+      - category_title: Review abuse reports
+        category_url: 'ee/user/admin_area/review_abuse_reports.html'
       - category_title: Activate and deactivate users
         category_url: 'ee/user/admin_area/activating_deactivating_users.html'
       - category_title: Create users
@@ -762,8 +762,8 @@ sections:
     section_categories:
       - category_title: Get started
         category_url: 'ee/intro/'
-      - category_title: Abuse reports
-        category_url: 'ee/user/abuse_reports.html'
+      - category_title: Report abuse
+        category_url: 'ee/user/report_abuse.html'
       - category_title: Account
         category_url: 'ee/user/profile/'
         docs:
