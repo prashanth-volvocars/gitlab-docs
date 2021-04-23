@@ -1348,7 +1348,7 @@ sections:
             doc_url: 'ee/user/project/integrations/emails_on_push.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/integrations/github.html'
-          - doc_title: Hangouts Chat
+          - doc_title: Google Chat
             doc_url: 'ee/user/project/integrations/hangouts_chat.html'
           - doc_title: Irker
             doc_url: 'ee/user/project/integrations/irker.html'
