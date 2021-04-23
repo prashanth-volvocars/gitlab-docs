@@ -2,9 +2,9 @@
 version: 108
 ---
 
-@import "variables";
-@import "utilities";
-@import "landing";
+@import 'variables';
+@import 'utilities';
+@import 'landing';
 
 *,
 *::before,
@@ -217,7 +217,7 @@ h6 {
   }
   &[id]::before {
     display: block;
-    content: " ";
+    content: ' ';
     margin-top: -75px;
     height: 75px;
     visibility: hidden;
@@ -325,7 +325,7 @@ h6 {
     a {
       color: $h1-border-bottom;
       &::before {
-        content: "\f126";
+        content: '\f126';
         font-family: FontAwesome;
         font-size: 14px;
         font-style: normal;
@@ -339,11 +339,11 @@ h6 {
     }
   }
   // external link and footer social links
-  [href^="http://"],
-  [href^="https://"] {
-    &:not([href*="gitlab.com"]):not(.gitlab-social) {
+  [href^='http://'],
+  [href^='https://'] {
+    &:not([href*='gitlab.com']):not(.gitlab-social) {
       &::after {
-        content: "\f08e";
+        content: '\f08e';
         font-family: FontAwesome;
         font-size: 14px;
         font-style: normal;
@@ -526,7 +526,7 @@ h6 {
       background: $gds-gray-700;
       position: absolute;
       display: block;
-      content: "";
+      content: '';
     }
     .arrow {
       transform: rotate(180deg);
@@ -611,7 +611,7 @@ h6 {
     align-items: center;
     justify-content: center;
     &::after {
-      content: "";
+      content: '';
       border: solid $gds-gray-700;
       border-width: 0 1px 1px 0;
       display: inline-block;
@@ -825,13 +825,13 @@ h6 {
   height: 1em;
   max-height: 25px;
   vertical-align: middle;
-  background: url("<%= @items['/assets/images/icon_anchor.svg'].path %>") center center / contain no-repeat;
+  background: url('<%= @items['/assets/images/icon_anchor.svg'].path %>') center center / contain no-repeat;
   &:hover {
     text-decoration: none;
   }
 }
 
-// Version history ("Introduced in") notes
+// Version history ('Introduced in') notes
 .introduced-in {
   font-size: $introduced-in-font-size;
   color: $gds-black;
@@ -848,7 +848,7 @@ h6 {
 }
 
 .text-expander {
-  background: url("<%= @items['/assets/images/ellipsis_h.svg'].path %>") center center / 12px no-repeat;
+  background: url('<%= @items['/assets/images/ellipsis_h.svg'].path %>') center center / 12px no-repeat;
   vertical-align: middle;
   border: 1px solid $introduced-in-border-color;
   border-radius: 4px;
@@ -861,7 +861,7 @@ h6 {
   }
 }
 
-// End of version history ("Introduced in") notes
+// End of version history ('Introduced in') notes
 // Articles layout
 .article-metadata {
   color: $article-metadata;
@@ -1019,7 +1019,7 @@ h6 {
   .badge-self-managed,
   .badge-saas {
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 0;
       height: 2px;
