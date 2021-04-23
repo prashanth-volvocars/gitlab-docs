@@ -2,7 +2,7 @@
 version: 1
 ---
 
-@import "variables";
+@import 'variables';
 
 .landing {
   font-size: $landing-body-font-size;
@@ -37,14 +37,14 @@ version: 1
 
   // sections
   .hero {
-    background-image: url("/assets/images/hero-bg.svg");
+    background-image: url('/assets/images/hero-bg.svg');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position: 50% 8%;
 
 
     @media (max-width: $xs-width) {
-      background-image: url("/assets/images/hero-bg-mobile.svg");
+      background-image: url('/assets/images/hero-bg-mobile.svg');
       background-position: 50% 4%;
     }
 
@@ -196,7 +196,7 @@ version: 1
         margin: 0.5rem;
 
         &::before {
-          content: "\25aa"; 
+          content: '\25aa'; 
           color: $landing-gl-purple-700;
           padding-right: 0.5rem;
         }
@@ -342,13 +342,13 @@ version: 1
 
   .support {
     background: linear-gradient(180deg, $gds-white 0%, $landing-gl-white-500 100%);
-    background-image: url("/assets/images/support-bg.svg"), linear-gradient(180deg, $gds-white 0%, $landing-gl-white-500 100%);
+    background-image: url('/assets/images/support-bg.svg'), linear-gradient(180deg, $gds-white 0%, $landing-gl-white-500 100%);
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-position: 50% 60%;
 
     @media (max-width: $md-width) {
-      background-image: url("/assets/images/hero-bg-mobile.svg");
+      background-image: url('/assets/images/hero-bg-mobile.svg');
     }
 
     .card {
