@@ -160,8 +160,10 @@ sections:
             doc_url: 'ee/user/admin_area/settings/email.html'
           - doc_title: External pipeline validation
             doc_url: 'ee/administration/external_pipeline_validation.html'
-          - doc_title: Feature flags
+          - doc_title: Enable features with feature flags
             doc_url: 'ee/administration/feature_flags.html'
+          - doc_title: Available GitLab feature flags
+            doc_url: 'ee/user/feature_flags.html'
           - doc_title: Geo nodes
             doc_url: 'ee/user/admin_area/geo_nodes.html'
           - doc_title: Git LFS administration
@@ -991,7 +993,7 @@ sections:
             doc_url: 'ee/operations/incident_management/status_page.html'
           - doc_title: On-call schedules
             doc_url: 'ee/operations/incident_management/oncall_schedules.html'
-      - category_title: Feature Flags
+      - category_title: Feature flags for your application
         category_url: 'ee/operations/feature_flags.html'
       - category_title: Product analytics
         category_url: 'ee/operations/product_analytics.html'

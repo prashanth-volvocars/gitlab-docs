@@ -100,12 +100,16 @@ products:
     slug: 'ee'
     index_file: 'README.*'
     img: '/assets/images/docs-gitlab.svg'
-    description: 'Administer and use self-managed GitLab and GitLab.com'
+    description: 'Administer and use GitLab self-managed and GitLab SaaS'
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
-    dirs:
-      temp_dir: 'tmp/ee/'
-      dest_dir: 'content/ee'
-      doc_dir: 'doc'
+    temp_dir: 'tmp/ee/'
+    content_dirs:
+      - dest_dir: 'content/ee'
+        doc_dir: 'doc'
+      - dest_dir: 'tmp/feature_flags'
+        doc_dir: 'config/feature_flags'
+      - dest_dir: 'tmp/feature_flags-ee'
+        doc_dir: 'ee/config/feature_flags'
     expose: true
     icon: 'tanuki'
   runner:
@@ -116,10 +120,10 @@ products:
     img: '/assets/images/docs-runner.svg'
     description: 'Install and configure software that runs your CI/CD jobs'
     repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    dirs:
-      temp_dir: 'tmp/runner/'
-      dest_dir: 'content/runner'
-      doc_dir: 'docs'
+    temp_dir: 'tmp/runner/'
+    content_dirs:
+      - dest_dir: 'content/runner'
+        doc_dir: 'docs'
     expose: true
     icon: 'status'
   omnibus:
@@ -130,10 +134,10 @@ products:
     img: '/assets/images/docs-omnibus.svg'
     description: 'Install and configure GitLab by using the Omnibus installer'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
-    dirs:
-      temp_dir: 'tmp/omnibus/'
-      dest_dir: 'content/omnibus'
-      doc_dir: 'doc'
+    temp_dir: 'tmp/omnibus/'
+    content_dirs:
+      - dest_dir: 'content/omnibus'
+        doc_dir: 'doc'
     expose: true
     icon: 'car'
   charts:
@@ -144,9 +148,9 @@ products:
     img: '/assets/images/docs-charts.svg'
     description: 'Deploy GitLab to Kubernetes by using GitLab Helm Charts'
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
-    dirs:
-      temp_dir: 'tmp/charts/'
-      dest_dir: 'content/charts'
-      doc_dir: 'doc'
+    temp_dir: 'tmp/charts/'
+    content_dirs:
+      - dest_dir: 'content/charts'
+        doc_dir: 'doc'
     expose: true
     icon: 'chart'

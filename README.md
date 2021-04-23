@@ -561,7 +561,6 @@ To unpublish a survey:
    This step is optional, but it's good to have the link removed so that it's
    not exposed when no new survey answers are needed.
 
-
 ## CSP header
 
 The GitLab docs site uses a [Content Security Policy (CSP) header](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
@@ -615,3 +614,27 @@ it with:
 
 To test that the CSP header works as expected, you can visit
 <https://cspvalidator.org/> and paste the URL that you want tested.
+
+## Generate the feature flag tables
+
+The [feature flag tables](https://docs.gitlab.com/ee/user/feature_flags.html) are generated
+dynamically when GitLab Docs are published.
+
+To generate these tables locally:
+
+1. Link the relevant GitLab directories to your checkout of `gitlab-docs` project:
+
+   ```shell
+   ln -s <path_to_gitlab>/config/feature_flags tmp/feature_flags
+   ln -s <path_to_gitlab>/ee/config/feature_flags tmp/feature_flags-ee
+   ```
+
+1. Generate `content/_data/feature_flags.yaml`:
+
+   ```shell
+   bundle exec rake generate_feature_flags
+   ```
+
+   Do this any time you want fresh data from your GitLab checkout.
+
+Any time you rebuild the site using `nanoc`, the feature flags tables are populated with data.
