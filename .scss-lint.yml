@@ -42,6 +42,8 @@ linters:
     severity: error
   TrailingWhitespace:
     enabled: false
+  TrailingZero:
+    enabled: true
   UrlFormat:
     enabled: false
   QualifyingElement:
