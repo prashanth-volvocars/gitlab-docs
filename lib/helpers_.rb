@@ -7,3 +7,4 @@ include Nanoc::Helpers::VersionsDropdown
 include Nanoc::Helpers::IconsHelper
 include Nanoc::Helpers::ReadingTimeHelper
 include Nanoc::Helpers::Generic
+include Nanoc::Helpers::GitLabKramdown

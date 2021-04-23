@@ -54,3 +54,8 @@ topics:
       Scale your GitLab installation for your number of users
     icon: tachometer
     url: /ee/administration/reference_architectures/index.html
+  - title: Feature availability
+    description: |
+      See what features are available with feature flags
+    icon: flag
+    url: /ee/user/feature_flags.html

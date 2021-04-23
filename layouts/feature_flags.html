@@ -1,0 +1,4 @@
+<% render '/default.*' do %>
+  <%= yield %>
+  <%= markdown(render('/feature_flags_table.*')) %>
+<% end %>

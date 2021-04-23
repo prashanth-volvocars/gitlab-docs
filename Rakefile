@@ -1,7 +1,7 @@
 require './lib/task_helpers'
 require 'fileutils'
 
-task default: [:setup_repos, :pull_repos, :setup_content_dirs]
+task default: [:setup_repos, :pull_repos, :setup_content_dirs, :generate_feature_flags]
 
 task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
@@ -23,17 +23,22 @@ task :setup_repos do
     # project.
     next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    next if File.exist?(product['dirs']['temp_dir'])
+    next if File.exist?(product['temp_dir'])
 
-    puts "\n=> Setting up repository #{product['repo']} into #{product['dirs']['temp_dir']}\n"
-    `git init #{product['dirs']['temp_dir']}`
+    puts "\n=> Setting up repository #{product['repo']} into #{product['temp_dir']}\n"
+    `git init #{product['temp_dir']}`
 
-    Dir.chdir(product['dirs']['temp_dir']) do
+    Dir.chdir(product['temp_dir']) do
       `git remote add origin #{product['repo']}`
 
       # Configure repository for sparse-checkout
       `git config core.sparsecheckout true`
-      File.open('.git/info/sparse-checkout', 'w') { |f| f.write("/#{product['dirs']['doc_dir']}/*") }
+
+      File.open('.git/info/sparse-checkout', 'w') do |file|
+        product['content_dirs'].each do |content_dir|
+          file.puts("/#{content_dir['doc_dir']}/*")
+        end
+      end
     end
   end
 end
@@ -54,7 +59,7 @@ task :pull_repos do
     puts "\n=> Pulling #{branch} of #{product['repo']}\n"
 
     # Enter the temporary directory and return after block is completed.
-    Dir.chdir(product['dirs']['temp_dir']) do
+    Dir.chdir(product['temp_dir']) do
       `git fetch origin #{branch} --depth 1`
 
       # Stash modified and untracked files so we have "clean" environment
@@ -74,31 +79,57 @@ end
 desc 'Setup content directories by symlinking to the repositories documentation folder'
 task :setup_content_dirs do
   products.each_value do |product|
-    next unless File.exist?(product['dirs']['temp_dir'])
+    next unless File.exist?(product['temp_dir'])
 
-    source = File.join('../', product['dirs']['temp_dir'], product['dirs']['doc_dir'])
-    target = product['dirs']['dest_dir']
+    product['content_dirs'].each do |content_dir|
+      source = File.join('../', product['temp_dir'], content_dir['doc_dir'])
+      target = content_dir['dest_dir']
 
-    next if File.symlink?(target)
+      next if File.symlink?(target)
 
-    puts "\n=> Setting up content directory for #{product['repo']}\n"
+      puts "\n=> Setting up content directory for #{product['repo']}\n"
 
-    `ln -s #{source} #{target}`
+      `ln -s #{source} #{target}`
+    end
   end
 end
 
 desc 'Clean temp directories and symlinks'
 task :clean_dirs do
   products.each_value do |product|
-    temp_dir = product['dirs']['temp_dir']
-    dest_dir = product['dirs']['dest_dir']
+    temp_dir = product['temp_dir']
+    product['content_dirs'].each do |content_dir|
+      dest_dir = content_dir['dest_dir']
 
-    FileUtils.rm_rf(temp_dir)
-    puts "Removed #{temp_dir}"
+      FileUtils.rm_rf(temp_dir)
+      puts "Removed #{temp_dir}"
 
-    FileUtils.rm_rf(dest_dir)
-    puts "Removed #{dest_dir}"
+      FileUtils.rm_rf(dest_dir)
+      puts "Removed #{dest_dir}"
+    end
   end
+end
+
+desc 'Generates _data/feature_flags.yaml'
+task :generate_feature_flags do
+  paths = {
+    'GitLab Community Edition and Enterprise Edition' => File.join('tmp', 'feature_flags', '**', '*.yml'),
+    'GitLab Enterprise Edition only' => File.join('tmp', 'feature_flags-ee', '**', '*.yml')
+  }
+
+  feature_flags = {
+    products: {}
+  }
+
+  paths.each do |key, path|
+    feature_flags[:products][key] = []
+
+    Dir.glob(path).each do |feature_flag_yaml|
+      feature_flags[:products][key] << YAML.safe_load(File.read(feature_flag_yaml))
+    end
+  end
+
+  File.write(File.join('content', '_data', 'feature_flags.yaml'), feature_flags.to_yaml)
 end
 
 namespace :release do

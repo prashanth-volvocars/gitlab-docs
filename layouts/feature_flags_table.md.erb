@@ -1,0 +1,68 @@
+<%
+feature_flags_yaml = @items["/_data/feature_flags.yaml"]
+
+def enabled_state(ff)
+  ff[:default_enabled] ? 'Enabled' : 'Disabled'
+end
+
+def enabled_count(ffs)
+  ffs.count { |ff| ff[:default_enabled] }
+end
+
+def disabled_count(ffs)
+  ffs.count { |ff| !ff[:default_enabled] }
+end
+%>
+## Available feature flags
+
+The feature flags available to you depend on:
+
+- Whether you use the GitLab Community Edition or GitLab Enterprise Edition [software distribution](https://about.gitlab.com/install/ce-or-ee/).
+- The version of GitLab you use.
+- Whether the feature is enabled or disabled on your GitLab self-managed instance or GitLab
+  SaaS.
+
+The following sections describe the **default** state of each feature flag.
+
+<% feature_flags_yaml[:products].each do |product, ffs| %>
+### <%= product %>
+
+<%= ffs.count %> feature flags are available in <%= product %>.
+
+<% sorted_ff = ffs.sort_by { |ff| ff[:name] } %>
+
+| Name | Group  | Milestone | Default state | Rollout issue |
+|------|--------|-----------|---------------|---------------|
+<% sorted_ff.each do |ff| %>| <%= ff[:introduced_by_url] ? "[`#{ff[:name]}`](#{ff[:introduced_by_url]})" : "`#{ff[:name]}`" %> | `<%= ff[:group] || 'Not defined' %>` | <%= ff[:milestone] || 'Not defined' %> | <%= enabled_state(ff) %> | <%= ff[:rollout_issue_url] ? "<#{ff[:rollout_issue_url]}>" : 'Not defined' %> |
+<% end %>
+
+<% end %>
+
+## Ownership by group
+
+GitLab features are developed by
+[engineering groups](https://about.gitlab.com/handbook/product/categories/) that implement features
+using feature flags.
+
+<% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
+<% ff_groups = all_ffs.group_by { |ff| ff[:group] || 'Not defined' }.sort_by { |group, _| group } %>
+
+| Group | Count | Enabled | Disabled |
+|-------|-------|---------|----------|
+<% ff_groups.each do |group, ffs| %> | `<%= group %>` | <%= ffs.count %> | <%= enabled_count(ffs) %> | <%= disabled_count(ffs) %> |
+<% end %>
+
+## Count by milestone
+
+GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/releases/):
+
+- Continuously for GitLab SaaS.
+- On the 22nd of every month according to specific milestones for GitLab self-managed.
+
+<% all_ffs = feature_flags_yaml[:products].map { |_, ffs| ffs }.flatten %>
+<% ff_milestones = all_ffs.group_by { |ff| ff[:milestone].to_s || 'Not defined' }.sort_by { |milestone, _| milestone } %>
+
+| Milestone | Count | Enabled | Disabled |
+|-----------|-------|---------|----------|
+<% ff_milestones.each do |milestone, ffs| %> | <%= milestone %> | <%= ffs.count %> | <%= enabled_count(ffs) %> | <%= disabled_count(ffs) %> |
+<% end %>
