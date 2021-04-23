@@ -6,7 +6,7 @@ version: 4
 
 .help-and-feedback-section {
   background-color: $help-indigo-50;
-  border-radius: .267rem;
+  border-radius: 0.267rem;
   padding: 1rem;
   margin-top: 2rem;
   color: $help-gray-900;
@@ -15,7 +15,7 @@ version: 4
 
   .right-col {
     @media all and (min-width: $sm-width) {
-      border-left: .067 solid $help-gray-100;
+      border-left: 0.067 solid $help-gray-100;
     }
   }
 
@@ -63,7 +63,7 @@ version: 4
 
   .toggle-icon {
     float: right;
-    transition: .35s ease-in-out;
+    transition: 0.35s ease-in-out;
   }
 
   .help-and-feedback-toggle {
@@ -88,7 +88,7 @@ version: 4
     color: $gds-gray-950;
     font-size: $body-font-size;
     font-weight: 700;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
 
   .help-and-feedback-link {
@@ -113,8 +113,8 @@ version: 4
     padding-left: 1.067rem;
     padding-right: 1.067rem;
     background-color: $color-white;
-    border-radius: .333rem;
-    box-shadow: .133rem .133rem .467rem $search-border;
+    border-radius: 0.333rem;
+    box-shadow: 0.133rem 0.133rem 0.467rem $search-border;
     margin-top: 1.667rem;
   }
 }

@@ -36,7 +36,7 @@ $page-content-width: 980px;
 $color-tanuki-dark: rgb(226, 67, 41);
 $color-tanuki-medium: rgb(252, 109, 38);
 $color-tanuki-light: rgb(252, 163, 38);
-$color-btn-tanuki: rgba(252, 163, 38, .1);
+$color-btn-tanuki: rgba(252, 163, 38, 0.1);
 
 //// GitLab Design System's (GDS) colors ////
 // https://design.gitlab.com/#/foundations/colors
@@ -58,10 +58,10 @@ $gds-black: #000;
 $gds-gray-1000: #666;
 
 // Transparency
-$gds-t-gray-a2: rgba($gds-black, .02);
-$gds-t-gray-a4: rgba($gds-black, .04);
-$gds-t-gray-a6: rgba($gds-black, .06);
-$gds-t-gray-a8: rgba($gds-black, .08);
+$gds-t-gray-a2: rgba($gds-black, 0.02);
+$gds-t-gray-a4: rgba($gds-black, 0.04);
+$gds-t-gray-a6: rgba($gds-black, 0.06);
+$gds-t-gray-a8: rgba($gds-black, 0.08);
 
 // Blue palette
 $gds-blue-100: #e4f0fb;
@@ -89,7 +89,7 @@ $gds-indigo-800: #393982;
 
 // Base colors
 $body-color: $gds-gray-950; //font color
-$bg-overlay-color: rgba(0, 0, 0, .3); // body overlay
+$bg-overlay-color: rgba(0, 0, 0, 0.3); // body overlay
 $body-background-color: $gds-white; //body background
 $main-background-color: $gds-white; // content background
 $header-background-color: $gds-purple-900;
@@ -100,7 +100,7 @@ $header-free-trial-button-color: #cb4e18;
 $link-color: $gds-blue-600;
 $link-color-hover: $gds-blue-800;
 $link-code-color: $gds-blue-600;
-$link-color-bg-active: rgba($gds-gray-900, .06);
+$link-color-bg-active: rgba($gds-gray-900, 0.06);
 $link-color-nav: $gds-gray-800;
 $link-color-nav-hover: $gds-gray-900;
 
@@ -118,15 +118,15 @@ $toc-border: $gds-gray-600;
 $toc-link-color: $global-nav-link-level2;
 
 // Help and feedback section
-$feedback-bg: rgba($gds-gray-50, .4);
-$inactive-tabs: rgba($gds-gray-100, .6);
+$feedback-bg: rgba($gds-gray-50, 0.4);
+$inactive-tabs: rgba($gds-gray-100, 0.6);
 $buttons-bg: $body-background-color;
 $tabs-border: $gds-gray-200;
 
 // Versions menu
 $versions-link-color: $global-nav-link-level1;
 $versions-link-color-hover: $link-color-nav-hover;
-$versions-link-color-bg-hover: rgba($gds-gray-200, .6);
+$versions-link-color-bg-hover: rgba($gds-gray-200, 0.6);
 $versions-active-bg-color: $versions-link-color-bg-hover;
 
 /// Elements
@@ -179,11 +179,11 @@ $alert-banner-text: #e14329 !important;
 
 // Badges
 $badge-tier: $color-tanuki-dark;
-$badge-tier-transparent: rgba(252, 163, 38, .1);
+$badge-tier-transparent: rgba(252, 163, 38, 0.1);
 $badge-self-managed: $color-tanuki-medium;
-$badge-self-managed-transparent: rgba(252, 109, 38, .1);
+$badge-self-managed-transparent: rgba(252, 109, 38, 0.1);
 $badge-saas: $color-tanuki-light;
-$badge-saas-transparent: rgba(252, 163, 38, .1);
+$badge-saas-transparent: rgba(252, 163, 38, 0.1);
 
 //Icons
 $gl-icon-sizes: 8 10 12 14 16 18 24 32 48 72;
@@ -209,12 +209,12 @@ $landing-gl-white-500: #ebe5f7;
 $landing-gl-gray-500: #666;
 $landing-gl-gray-600: #5e5e5e;
 $landing-gl-black-0: rgba(255, 255, 255, 0);
-$landing-gl-black-50: rgba(0, 0, 0, .24);
-$landing-gl-black-100: rgba(255, 255, 255, .16);
-$landing-gl-blue-200: rgba(102, 102, 196, .24);
+$landing-gl-black-50: rgba(0, 0, 0, 0.24);
+$landing-gl-black-100: rgba(255, 255, 255, 0.16);
+$landing-gl-blue-200: rgba(102, 102, 196, 0.24);
 $landing-gl-blue-600: #171537;
-$landing-gl-blue-950: rgba(36, 34, 66, .24);
-$landing-gl-blue-1000: rgba(36, 34, 66, .25);
+$landing-gl-blue-950: rgba(36, 34, 66, 0.24);
+$landing-gl-blue-1000: rgba(36, 34, 66, 0.25);
 
 // Footer colors
 $footer-gray-400: #868686;
@@ -230,11 +230,11 @@ $help-gray-900: #303030;
 
 // Other colors
 $hr-border-color: $border-color;
-$pre-background-color: rgba(238, 238, 238, .35);
-$search-border: rgba(0, 0, 0, .25);
-$search-border-dark: rgba(0, 0, 0, .50);
-$main-box-shadow: rgba(0, 0, 0, .1);
-$secondary-box-shadow: rgba(0, 0, 0, .1);
+$pre-background-color: rgba(238, 238, 238, 0.35);
+$search-border: rgba(0, 0, 0, 0.25);
+$search-border-dark: rgba(0, 0, 0, 0.50);
+$main-box-shadow: rgba(0, 0, 0, 0.1);
+$secondary-box-shadow: rgba(0, 0, 0, 0.1);
 $text-expander-hover-color: #e1e1e1;
 $white: #fff;
 $black: #333;

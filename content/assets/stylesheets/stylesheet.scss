@@ -138,7 +138,7 @@ blockquote {
 
     li {
       line-height: 1rem;
-      padding-top: .5rem;
+      padding-top: 0.5rem;
     }
   }
 }
@@ -156,7 +156,7 @@ pre {
   .clip-btn {
     display: inline-block;
     padding: 10px 10px 10px 13px;
-    right: -.25rem;
+    right: -0.25rem;
     top: 0;
     cursor: pointer;
     position: absolute;
@@ -165,8 +165,8 @@ pre {
     border: 0;
     outline: 0;
     svg {
-      opacity: .5;
-      transition: opacity .3s ease-in;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in;
       pointer-events: none;
     }
     @media all and (max-width: $sm-width) {
@@ -373,7 +373,7 @@ h6 {
   li {
     &:not(.gl-breadcrumb-item) {
       line-height: 1.6em;
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
       ul li:first-of-type {
         padding-top: 12px;
       }
@@ -475,7 +475,7 @@ h6 {
   position: fixed;
   width: 50px;
   height: calc(100% - 46px);
-  transition: all .3s;
+  transition: all 0.3s;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
   &.active {
@@ -649,7 +649,7 @@ h6 {
 
   .global-nav-link {
     line-height: 1rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
     width: 100%;
   }
 
@@ -751,7 +751,7 @@ h6 {
 }
 
 .gl-breadcrumb-list {
-  margin-top: .1rem;
+  margin-top: 0.1rem;
   background-color: transparent;
   padding: 0;
   align-items: center;
@@ -766,20 +766,20 @@ h6 {
 }
 
 .gl-breadcrumb-separator {
-  margin-top: -.2rem;
+  margin-top: -0.2rem;
 }
 
 .gl-breadcrumb-separator>svg {
-  margin: auto .5rem;
-  width: .5rem;
+  margin: auto 0.5rem;
+  width: 0.5rem;
   color: $gds-gray-1000;
   fill: currentColor;
 }
 
 .gl-breadcrumb-avatar-tile {
-  margin-right: .25rem;
-  margin-top: .1rem;
-  margin-bottom: .2rem;
+  margin-right: 0.25rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.2rem;
   border: 1px solid $help-gray-200;
   border-radius: 50%;
 }
@@ -791,7 +791,7 @@ h6 {
 }
 
 .gl-breadcrumb-item {
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
 }
 
@@ -899,7 +899,7 @@ h6 {
   color: inherit;
   border: 0;
   border-radius: 0;
-  opacity: .9;
+  opacity: 0.9;
   code {
     background-color: $alert-code-background-color;
     word-break: break-word;
@@ -952,7 +952,7 @@ h6 {
 // https://about.gitlab.com/handbook/markdown-guide/#gitlab-webcast-alert-box
 .alert-banner {
   background-color: $help-indigo-50;
-  border-color: rgba($help-indigo-50, .3);
+  border-color: rgba($help-indigo-50, 0.3);
   margin-top: 20px;
   i {
     margin-left: 10px;
@@ -976,7 +976,7 @@ h6 {
 
   .btn {
     line-height: 1rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 
   .nav-link {
@@ -1013,7 +1013,7 @@ h6 {
   display: inline-block;
   cursor: pointer;
   padding-left: 5px;
-  transition: background-color .5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 
   .badge-tier,
   .badge-self-managed,
@@ -1023,8 +1023,8 @@ h6 {
       display: block;
       width: 0;
       height: 2px;
-      transition: width .3s;
-      opacity: .5;
+      transition: width 0.3s;
+      opacity: 0.5;
     }
   }
 
@@ -1126,7 +1126,7 @@ li {
   border-radius: 2px;
   font-size: 1em;
   font-weight: 700;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
   line-height: 1.4;
 }
 
@@ -1146,15 +1146,15 @@ li {
 
 .badge-small {
   color: $badge-self-managed;
-  opacity: .6;
-  transition: opacity .3s;
+  opacity: 0.6;
+  transition: opacity 0.3s;
   &:hover {
     opacity: 1;
     &::after {
       content: attr(data-title);
       text-transform: uppercase;
       font-weight: 700;
-      font-size: .7em;
+      font-size: 0.7em;
       display: inline;
       position: absolute;
       padding: 1px 5px;

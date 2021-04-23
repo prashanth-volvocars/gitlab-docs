@@ -5,8 +5,8 @@ version: 19
 @import "variables";
 @import "utilities";
 
-$base-nav-link-padding: .75rem;
-$sm-nav-link-padding: .25rem;
+$base-nav-link-padding: 0.75rem;
+$sm-nav-link-padding: 0.25rem;
 $nav-link-font-size: 14px;
 
 // ToC styles
@@ -63,7 +63,7 @@ $nav-link-font-size: 14px;
 // than 10 anyways...
 @for $i from 0 to 10 {
   .nav-link.toc-level-#{$i} {
-    padding-left: $base-nav-link-padding * ($i + .75);
+    padding-left: $base-nav-link-padding * ($i + 0.75);
     padding-top: 0;
     line-height: 1rem;
   }
@@ -90,7 +90,7 @@ $nav-link-font-size: 14px;
   .sm-collapsing {
     height: 0;
     overflow: hidden;
-    transition: height .2s ease;
+    transition: height 0.2s ease;
   }
 
   .sm-collapsed {
