@@ -37,5 +37,14 @@ module Nanoc::Helpers
         ENV['CI_COMMIT_REF_NAME']
       end
     end
+
+    #
+    # Check if CI_PROJECT_NAME is 'gitlab-docs', or nil which implies
+    # local development. This can be used to skip portions that we
+    # don't want to render in one of the upstream products.
+    #
+    def gitlab_docs_or_local?
+      ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil?
+    end
   end
 end

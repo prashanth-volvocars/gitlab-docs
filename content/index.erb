@@ -2,7 +2,7 @@
 title: GitLab Documentation
 ---
 <!-- Render the front page only if CI_PROJECT_NAME is gitlab-docs or is not set -->
-<% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
+<% if gitlab_docs_or_local? %>
 <!-- Hero-->
 <section class="hero text-center pt-5 mt-3">
   <%= render '/banner.*' %>
