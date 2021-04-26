@@ -13,6 +13,7 @@ def disabled_count(ffs)
   ffs.count { |ff| !ff[:default_enabled] }
 end
 %>
+<% if File.exist?(feature_flags_yaml.to_s) %>
 ## Available feature flags
 
 The feature flags available to you depend on:
@@ -65,4 +66,5 @@ GitLab features [are delivered](https://about.gitlab.com/handbook/engineering/re
 | Milestone | Count | Enabled | Disabled |
 |-----------|-------|---------|----------|
 <% ff_milestones.each do |milestone, ffs| %> | <%= milestone %> | <%= ffs.count %> | <%= enabled_count(ffs) %> | <%= disabled_count(ffs) %> |
+<% end %>
 <% end %>
