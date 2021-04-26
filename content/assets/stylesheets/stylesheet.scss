@@ -441,15 +441,6 @@ h6 {
 }
 
 // Override Bootstraps default button (for GDS colors)
-.btn-default {
-  border-color: $gds-gray-300;
-  -webkit-appearance: none;
-}
-
-.btn-default:hover {
-  background-color: $button-default-bg-hover;
-}
-
 .btn-primary {
   background-color: $button-primary;
 }
