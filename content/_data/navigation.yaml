@@ -900,7 +900,12 @@ sections:
       - category_title: Allow collaboration
         category_url: 'ee/user/project/merge_requests/allow_collaboration.html'
       - category_title: Approvals
-        category_url: 'ee/user/project/merge_requests/merge_request_approvals.html'
+        category_url: 'ee/user/project/merge_requests/approvals/'
+        docs:
+          - doc_title: Approval rules
+            doc_url: 'ee/user/project/merge_requests/approvals/rules.html'
+          - doc_title: Approval settings
+            doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
       - category_title: Creating merge requests
         category_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
       - category_title: Cherry pick changes
