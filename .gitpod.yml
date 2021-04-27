@@ -1,4 +1,5 @@
-image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+image:
+  file: .gitpod.Dockerfile
 
 ports:
   - port: 3004
@@ -6,8 +7,7 @@ ports:
 
 tasks:
   - init: |
-      bundle install
-      yarn install --frozen-lockfile
-      bundle exec rake
-      bundle exec nanoc compile
+      yarn global add markdownlint-cli
+      yarn install
+      bundle install -j $(nproc)
     command: bundle exec nanoc live --port=3004
