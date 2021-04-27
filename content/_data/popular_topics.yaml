@@ -59,3 +59,12 @@ topics:
       See what features are available with feature flags
     icon: flag
     url: /ee/user/feature_flags.html
+developer:
+  - title: Developer
+    links:
+      - title: API
+        description: Use the API to develop against GitLab
+        url: /ee/api/README.html
+      - title: Contributing
+        description: Learn the processes and technical information you need to contribute to GitLab
+        url: /ee/development/README.html

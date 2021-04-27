@@ -1,0 +1,96 @@
+heros:
+  - title: Agile with GitLab
+    description: Manage your work with built-in agile features.
+    img: /assets/images/agile.svg
+    alt: agile
+    links:
+      - title: Issues
+        url: '/ee/user/project/issues/'
+      - title: Issue boards
+        url: '/ee/user/project/issues/'
+      - title: Labels
+        url: '/ee/user/project/labels.html'
+  - title: CI/CD
+    description: Build, test, and deploy applications using Continuous Integration and Delivery.
+    img: /assets/images/continuous-delivery.svg
+    alt: continuous-delivery
+    links:
+      - title: GitLab CI/CD
+        url: '/ee/ci/README.html'
+      - title: GitLab Runner
+        url: '/runner/'
+      - title: Auto DevOps
+        url: '/ee/user/project/labels.html'
+  - title: Collaboration
+    description: Configure and develop your applications.
+    img: /assets/images/collaberation.svg
+    alt: collaboration
+    links:
+      - title: Projects
+        url: '/ee/user/project/'
+      - title: Repositories
+        url: '/ee/user/project/repository/'
+      - title: Merge requests
+        url: '/ee/user/project/merge_requests/'
+  - title: Security
+    description: Scan your CI pipeline and streamline vulnerability management.
+    img: /assets/images/locked.svg
+    alt: locked
+    links:
+      - title: Security scans
+        url: '/ee/user/application_security/#security-scanning-tools'
+      - title: Vulnerability management
+        url: '/ee/user/application_security/vulnerability_report/'
+      - title: Offline environments
+        url: '/ee/user/application_security/offline_deployments/'
+  - title: Analytics
+    description: View reports and analysis of your team's work.
+    img: /assets/images/increase.svg
+    alt: increase
+    links:
+      - title: Value stream analytics
+        url: '/ee/development/value_stream_analytics.html'
+      - title: Issue analytics
+        url: '/ee/user/group/issues_analytics/'
+      - title: Usage trends
+        url: '/ee/user/admin_area/analytics/usage_trends.html'
+  - title: Administration
+    description: Customize and configure your self-managed installation.
+    img: /assets/images/visibility.svg
+    alt: visibility
+    links:
+      - title: Admin area settings
+        url: '/ee/user/admin_area/settings/'
+      - title: Set up LDAP
+        url: '/ee/administration/auth/ldap/'
+      - title: GitLab Pages
+        url: '/ee/administration/pages/'
+referenceSmall:
+  - title: '1,000'
+    url: '/ee/administration/reference_architectures/1k_users.html'
+  - title: '2,000'
+    url: '/ee/administration/reference_architectures/2k_users.html'
+  - title: '3,000'
+    url: '/ee/administration/reference_architectures/3k_users.html'
+  - title: '5,000'
+    url: '/ee/administration/reference_architectures/5k_users.html'
+referenceLarge:
+  - title: '10,000'
+    class: ' justify-content-md-end'
+    url: '/ee/administration/reference_architectures/10k_users.html'
+  - title: '25,000'
+    class: ''
+    url: '/ee/administration/reference_architectures/25k_users.html'
+  - title: '50,000'
+    class: 'justify-content-md-start'
+    url: '/ee/administration/reference_architectures/50k_users.html'
+cards:
+  - title: Install with Docker
+    url: '/omnibus/docker/'
+    description: GitLab maintains a set of official Docker images based on the Omnibus GitLab package.
+  - title: Compile from source
+    url: '/ee/install/installation.html'
+    description: If the Omnibus GitLab package isn't available for your distribution, you can install GitLab from source.
+  - title: Install from cloud provider
+    url: '/ee/install/#install-gitlab-on-cloud-providers/'
+    description: Install directly from platforms like AWS, Azure, GCP, OpenShift, and DigitalOcean.
