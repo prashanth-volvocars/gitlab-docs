@@ -112,6 +112,20 @@ end
 
 desc 'Generates _data/feature_flags.yaml'
 task :generate_feature_flags do
+
+  feature_flags_dir = File.join('tmp', 'feature_flags')
+  feature_flags_ee_dir = File.join('tmp', 'feature_flags-ee')
+
+  unless Dir.exist?(feature_flags_dir)
+   abort('The feature flags directory does not exist.
+   See https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/README.md#generate-the-feature-flag-tables')
+  end
+
+  unless Dir.exist?(feature_flags_ee_dir)
+   abort('The feature flags EE directory does not exist.
+   See https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/README.md#generate-the-feature-flag-tables')
+  end
+
   paths = {
     'GitLab Community Edition and Enterprise Edition' => File.join('tmp', 'feature_flags', '**', '*.yml'),
     'GitLab Enterprise Edition only' => File.join('tmp', 'feature_flags-ee', '**', '*.yml')
@@ -129,7 +143,10 @@ task :generate_feature_flags do
     end
   end
 
-  File.write(File.join('content', '_data', 'feature_flags.yaml'), feature_flags.to_yaml)
+  feature_flags_yaml = File.join('content', '_data', 'feature_flags.yaml')
+
+  puts "Generating #{feature_flags_yaml}"
+  File.write(feature_flags_yaml, feature_flags.to_yaml)
 end
 
 namespace :release do
