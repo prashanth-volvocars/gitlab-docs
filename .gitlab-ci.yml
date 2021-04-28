@@ -216,6 +216,9 @@ compile_prod:
 # Compile on all branches except the default branch
 #
 compile_dev:
+  tags:
+    - gitlab-org
+    - high-cpu
   extends:
     - .rules_dev
     - .build_base
