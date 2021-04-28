@@ -19,8 +19,8 @@ title: GitLab Documentation
                 <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
                   <form class="mb-3" id="search-form" action="/search" method="get">
                     <div class="form-group">
-                      <img class="search-icon" src="/assets/images/search.svg" alt="search">
-                      <input class="form-control docsearch-landing w-100"  name="query" type="search" placeholder="Search the complete docs..." aria-label="Search">
+                      <img class="search-icon" src="/assets/images/search.svg" alt="Search" aria-hidden="true" role="img">
+                      <input class="form-control docsearch-landing w-100"  name="query" type="search" placeholder="Search the complete docs...">
                       <input type="submit" style="visibility: hidden; position:absolute;" />
                     </div>
                   </form>
@@ -47,7 +47,7 @@ title: GitLab Documentation
           <div class="col-md-4 col-12 pb-4">
             <div class="card topic h-100">
               <div class="card-body">
-                <img class="card-img-top" src="<%= hero[:img] %>" alt="<%= hero[:alt] %>">
+                <img class="card-img-top" src="<%= hero[:img] %>" alt="<%= hero[:alt] %>" aria-hidden="true" role="img">
                 <h5 class="card-title py-2 m-0"><%= hero[:title] %></h5>
                 <p class="card-text mb-2"><%= hero[:description] %></p>
                 <ul class="pl-0">
@@ -167,7 +167,7 @@ title: GitLab Documentation
           <h2>Install self-managed GitLab</h2>
         </div>
         <div class="col-12 options">
-          <p>You’ve got options. <a href="/ee/install/">See them all <img src="/assets/images/collapse.svg" alt="collapse" /></a></p>
+          <p>You’ve got options. <a href="/ee/install/">See them all <img src="/assets/images/collapse.svg" alt="" role="img" /></a></p>
         </div>
       </div>
 
@@ -175,20 +175,20 @@ title: GitLab Documentation
         <div class="col-md-6 col-12 py-3">
           <div class="card card-large h-100">
             <div class="card-body">
-              <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="docs-omnibus" />
+              <img class="card-img-top" src="/assets/images/docs-omnibus.svg" alt="" role="img" />
               <h5 class="card-title mb-0 pb-1">Install on Linux</h5>
               <p class="card-text">The Omnibus package includes services and tools to install GitLab without laborious configuration.</p>
-              <a href="https://about.gitlab.com/install/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" alt="collapse" /></a>
+              <a href="https://about.gitlab.com/install/" class="card-link">Use the Omnibus package <img src="/assets/images/collapse.svg" alt="" role="img" /></a>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-12 py-3">
           <div class="card card-large h-100">
             <div class="card-body">
-              <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="docs-charts" />
-              <h5 class="card-title mb-0 pb-1">Install on Kubernetes</h5> 
+              <img class="card-img-top" src="/assets/images/docs-charts.svg" alt="" role="img" />
+              <h5 class="card-title mb-0 pb-1">Install on Kubernetes</h5>
               <p class="card-text">If you're using cluster management, we recommend the Helm Chart for installing cloud-native GitLab.</p>
-              <a href="/charts/" class="card-link">Use the Helm Chart <img src="/assets/images/collapse.svg" alt="collapse" /></a>
+              <a href="/charts/" class="card-link">Use the Helm Chart <img src="/assets/images/collapse.svg" alt="" role="img" /></a>
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@ title: GitLab Documentation
             <div class="card transparent text-left h-100">
               <div class="card-body">
                 <h5 class="card-title my-2">
-                  <img src="/assets/images/download.svg" class="mr-3" alt="download" />
+                  <img src="/assets/images/download.svg" class="mr-3" alt="" role="img" />
                   <a href="<%= card[:urk] %>"><%= card[:title] %></a>
                 </h5>
                 <p class="card-text pl-5">
@@ -245,7 +245,7 @@ title: GitLab Documentation
                 <span class="d-block title pt-5"><%= ref[:title] %></span>
                 <span class="d-block sub-title">users</span>
                 <span class="d-block">
-                  <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+                  <img src="/assets/images/arrow-right.svg" alt="" class="pt-4" role="img" />
                 </span>
               </a>
             </div>
@@ -260,7 +260,7 @@ title: GitLab Documentation
                 <span class="d-block title pt-5"><%= ref[:title] %></span>
                 <span class="d-block sub-title">users</span>
                 <span class="d-block">
-                  <img src="/assets/images/arrow-right.svg" alt="arrow" class="pt-4" />
+                  <img src="/assets/images/arrow-right.svg" alt="" class="pt-4" role="img" />
                 </span>
               </a>
             </div>
