@@ -16,10 +16,12 @@ group :nanoc do
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.0'
+
+  # Needed to compile SCSS
+  gem 'sass', '3.7.4'
 end
 
 group :test, :development do
-  gem 'scss_lint', '~> 0.59.0', require: false
   gem 'highline', '~> 2.0.0'
   gem 'rspec', '~> 3.10.0'
   gem 'pry-byebug', '~> 3.9.0', require: false

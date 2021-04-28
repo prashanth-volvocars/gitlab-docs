@@ -1079,8 +1079,6 @@ p {
   }
 }
 
-// scss-lint:disable MergeableSelector
-// skipping scss-lint rule: keeping all the badges styles together
 h1,
 h2,
 h3,
@@ -1107,7 +1105,6 @@ li {
   }
 }
 
-// scss-lint:enable MergeableSelector
 .badge-display {
   text-transform: uppercase;
   text-align: center;
@@ -1158,13 +1155,11 @@ li {
   }
 }
 
-// scss-lint:disable ImportantRule
 .dotcom-false {
   .badge-saas {
     display: none;
   }
 }
-// scss-lint:enable ImportantRule
 
 //
 // Algolia search override

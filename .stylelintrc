@@ -1,0 +1,12 @@
+{
+  "extends": "@gitlab/stylelint-config",
+  "ignoreFiles": [
+    "content/assets/stylesheets/highlight.scss"
+  ],
+  "rules": {
+    "declaration-block-semicolon-newline-after": null,
+    "max-nesting-depth": 4,
+    "rule-empty-line-before": null,
+    "selector-max-compound-selectors": 4
+  }
+}
