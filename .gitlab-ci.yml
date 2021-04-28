@@ -233,6 +233,9 @@ test_internal_links_and_anchors:
     - .rules_site_tests
     - .cache_gem
   stage: test
+  tags:
+    - gitlab-org
+    - high-cpu
   script:
     - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
 
