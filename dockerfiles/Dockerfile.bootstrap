@@ -5,11 +5,7 @@
 # Build minifier utility
 # Adapted from https://github.com/docker/docker.github.io/blob/publish-tools/Dockerfile.builder
 #
-FROM golang:1.13-alpine AS minifier
-RUN apk add --no-cache git
-RUN export GO111MODULE=on \
-  && go get -d github.com/tdewolff/minify/v2@latest \
-  && go build -v -o /minify github.com/tdewolff/minify/cmd/minify
+FROM tdewolff/minify AS minifier
 
 #
 # Image that contains all needed dependencies
@@ -28,7 +24,7 @@ RUN yarn install
 
 # Copy scripts used for static HTML post-processing
 COPY scripts /scripts/
-COPY --from=minifier /minify /usr/local/bin/minify
+COPY --from=minifier /bin/minify /usr/local/bin/minify
 
 MAINTAINER GitLab Documentation Team
 
