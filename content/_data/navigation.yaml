@@ -1711,8 +1711,6 @@ sections:
             doc_url: 'ee/api/graphql/sample_issue_boards.html'
           - doc_title: Removed items
             doc_url: 'ee/api/graphql/removed_items.html'
-      - category_title: v3 to v4
-        category_url: 'ee/api/v3_to_v4.html'
       - category_title: Lint .gitlab-ci.yml
         category_url: 'ee/api/lint.html'
       - category_title: GitLab as an OAuth2 provider
