@@ -1315,7 +1315,7 @@ sections:
             doc_url: 'ee/user/project/clusters/protect/container_host_security/'
 
   - section_title: Integrations
-    section_url: 'ee/integration/README.html'
+    section_url: 'ee/integration/'
     section_categories:
       - category_title: Akismet
         category_url: 'ee/integration/akismet.html'
