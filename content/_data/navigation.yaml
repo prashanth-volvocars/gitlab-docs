@@ -2344,8 +2344,6 @@ sections:
             doc_url: 'omnibus/development/new-software-definition.html'
           - doc_title: Creating patches
             doc_url: 'omnibus/development/creating-patches.html'
-          - doc_title: Installing OpenShift
-            doc_url: 'omnibus/development/openshift/README.html'
           - doc_title: Managing PostgreSQL versions
             doc_url: 'omnibus/development/managing-postgresql-versions.html'
           - doc_title: Working with public_attributes.json
