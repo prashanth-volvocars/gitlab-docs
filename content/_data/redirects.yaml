@@ -1180,3 +1180,66 @@ redirects:
   - from: /ee/user/project/milestones/burndown_charts.html
     to: /ee/user/project/milestones/burndown_and_burnup_charts.html
     remove_date: 2021-11-19
+  - from: /ee/administration/geo/replication/remove_geo_node.html
+    to: /ee/administration/geo/replication/remove_geo_site.html
+    remove_date: 2022-01-01
+  - from: /ee/administration/geo/replication/using_a_geo_server.html
+    to: /ee/administration/geo/replication/usage.html
+    remove_date: 2022-01-01
+  - from: /ee/api/project_analytics.html
+    to: /ee/api/dora4_project_analytics.html
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/artifactory_and_gitlab/index.html
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/artifactory_and_gitlab/
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/deploy_spring_boot_to_cloud_foundry/index.html
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/deploy_spring_boot_to_cloud_foundry/
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/devops_and_game_dev_with_gitlab_ci_cd/index.html
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/devops_and_game_dev_with_gitlab_ci_cd/
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/test_phoenix_app_with_gitlab_ci_cd/index.html
+    to: /ee/ci/README.md
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/test_phoenix_app_with_gitlab_ci_cd/
+    to: /ee/ci/README.md
+    remove_date: 2022-01-01
+  - from: /ee/ci/examples/test-scala-application.html
+    to: /ee/ci/examples/README.md#contributed-examples
+    remove_date: 2022-01-01
+  - from: /ee/ci/variables/deprecated_variables.html
+    to: /ee/ci/variables/README.html
+    remove_date: 2022-01-01
+  - from: /ee/ci/yaml/visualization.html
+    to: /ee/ci/pipeline_editor/index.html#visualize-ci-configuration
+    remove_date: 2022-01-01
+  - from: /ee/development/product_analytics/snowplow.html
+    to: /ee/development/snowplow/index.html
+    remove_date: 2022-01-01
+  - from: /ee/development/product_analytics/usage_ping.html
+    to: /ee/development/usage_ping/index.html
+    remove_date: 2022-01-01
+  - from: /ee/operations/incident_management/alert_notifications.html
+    to: /ee/operations/incident_management/paging.html
+    remove_date: 2022-01-01
+  - from: /ee/topics/web_application_firewall/index.html
+    to: /ee/user/project/clusters/protect/web_application_firewall/index.html
+    remove_date: 2022-01-01
+  - from: /ee/topics/web_application_firewall/
+    to: /ee/user/project/clusters/protect/web_application_firewall/index.html
+    remove_date: 2022-01-01
+  - from: /ee/topics/web_application_firewall/quick_start_guide.html
+    to: /ee/user/project/clusters/protect/web_application_firewall/quick_start_guide.html
+    remove_date: 2022-01-01
+  - from: /ee/user/project/clusters/securing.html
+    to: /ee/user/project/clusters/protect/index.html
+    remove_date: 2022-01-01
