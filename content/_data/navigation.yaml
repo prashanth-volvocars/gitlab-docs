@@ -1483,8 +1483,6 @@ sections:
             doc_url: 'ee/api/dora/metrics.html'
           - doc_title: DORA4 project analytics
             doc_url: 'ee/api/dora4_project_analytics.html'
-          - doc_title: DORA4 group analytics
-            doc_url: 'ee/api/dora4_group_analytics.html'
           - doc_title: Environments
             doc_url: 'ee/api/environments.html'
           - doc_title: Epics
