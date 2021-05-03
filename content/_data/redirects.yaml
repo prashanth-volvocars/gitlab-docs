@@ -1243,3 +1243,6 @@ redirects:
   - from: /ee/user/project/clusters/securing.html
     to: /ee/user/project/clusters/protect/index.html
     remove_date: 2022-01-01
+  - from: /ee/user/project/import/gemnasium.html
+    to: /ee/user/project/import/index.html
+    remove_date: 2022-05-01
