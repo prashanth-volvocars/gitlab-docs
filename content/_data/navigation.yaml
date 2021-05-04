@@ -638,8 +638,6 @@ sections:
             doc_url: 'ee/user/project/import/cvs.html'
           - doc_title: FogBugz
             doc_url: 'ee/user/project/import/fogbugz.html'
-          - doc_title: Gemnasium
-            doc_url: 'ee/user/project/import/gemnasium.html'
           - doc_title: GitHub
             doc_url: 'ee/user/project/import/github.html'
           - doc_title: GitLab.com
