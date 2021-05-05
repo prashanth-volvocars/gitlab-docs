@@ -595,8 +595,6 @@ sections:
       - category_title: GitLab Pages
         category_url: 'ee/user/project/pages/'
         docs:
-          - doc_title: Getting started
-            doc_url: 'ee/user/project/pages/#getting-started'
           - doc_title: Create from scratch
             doc_url: 'ee/user/project/pages/getting_started/pages_from_scratch.html'
           - doc_title: Create using a CI/CD template
