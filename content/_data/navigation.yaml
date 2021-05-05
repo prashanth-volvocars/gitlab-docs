@@ -557,7 +557,7 @@ sections:
             doc_url: 'ee/user/project/insights/'
           - doc_title: Issue
             doc_url: 'ee/user/analytics/issue_analytics.html'
-          - doc_title: Merge Request
+          - doc_title: Merge request
             doc_url: 'ee/user/analytics/merge_request_analytics.html'
           - doc_title: Repository
             doc_url: 'ee/user/analytics/repository_analytics.html'
@@ -901,6 +901,8 @@ sections:
   - section_title: Merge requests
     section_url: 'ee/user/project/merge_requests/'
     section_categories:
+      - category_title: Get started
+        category_url: 'ee/user/project/merge_requests/getting_started.html'
       - category_title: Allow collaboration
         category_url: 'ee/user/project/merge_requests/allow_collaboration.html'
       - category_title: Approvals
@@ -916,10 +918,8 @@ sections:
         category_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
       - category_title: Drafts
         category_url: 'ee/user/project/merge_requests/drafts.html'
-      - category_title: Export Merge Requests to CSV
+      - category_title: Export merge requests to CSV
         category_url: 'ee/user/project/merge_requests/csv_export.html'
-      - category_title: Getting started
-        category_url: 'ee/user/project/merge_requests/getting_started.html'
       - category_title: Merge request dependencies
         category_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
       - category_title: Fast forward
@@ -1708,7 +1708,7 @@ sections:
       - category_title: GraphQL
         category_url: 'ee/api/graphql/'
         docs:
-          - doc_title: Getting started
+          - doc_title: Get started
             doc_url: 'ee/api/graphql/getting_started.html'
           - doc_title: GraphQL reference
             doc_url: 'ee/api/graphql/reference/'
