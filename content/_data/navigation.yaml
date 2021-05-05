@@ -914,7 +914,7 @@ sections:
         category_url: 'ee/user/project/merge_requests/creating_merge_requests.html'
       - category_title: Cherry pick changes
         category_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
-      - category_title: Drafts
+      - category_title: Draft merge requests
         category_url: 'ee/user/project/merge_requests/drafts.html'
       - category_title: Export Merge Requests to CSV
         category_url: 'ee/user/project/merge_requests/csv_export.html'
@@ -941,8 +941,6 @@ sections:
         category_url: 'ee/user/project/merge_requests/versions.html'
       - category_title: Workflows
         category_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
-      - category_title: Draft merge requests
-        category_url: 'ee/user/project/merge_requests/drafts.html'
 
   - section_title: Operations
     section_url: 'ee/operations/'
