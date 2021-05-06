@@ -26,7 +26,6 @@ ee:
   - public/ee/security/README.html
   - public/ee/development/README.html
   - public/ee/api/README.html
-  - public/ee/integration/README.html
   - public/ee/administration/auth/README.html
   - public/ee/ci/examples/deployment/README.html
   - public/ee/ci/examples/README.html
