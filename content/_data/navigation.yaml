@@ -1512,6 +1512,8 @@ sections:
             doc_url: 'ee/api/group_activity_analytics.html'
           - doc_title: Group Import/Export
             doc_url: 'ee/api/group_import_export.html'
+          - doc_title: Group relations export
+            doc_url: 'ee/api/group_relations_export.html'
           - doc_title: Group repository storage moves
             doc_url: 'ee/api/group_repository_storage_moves.html'
           - doc_title: Group wikis
