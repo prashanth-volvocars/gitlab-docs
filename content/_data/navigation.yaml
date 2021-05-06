@@ -809,7 +809,7 @@ sections:
           - doc_title: Troubleshooting Git
             doc_url: 'ee/topics/git/troubleshooting_git.html'
           - doc_title: Undo with Git
-            doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/index.html'
+            doc_url: 'ee/topics/git/numerous_undo_possibilities_in_git/'
           - doc_title: Useful commands
             doc_url: 'ee/topics/git/useful_git_commands.html'
       - category_title: GitLab basics
