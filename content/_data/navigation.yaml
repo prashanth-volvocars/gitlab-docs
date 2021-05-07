@@ -152,6 +152,8 @@ sections:
         docs:
           - doc_title: Admin Area settings
             doc_url: 'ee/user/admin_area/settings/'
+          - doc_title: Account and limit settings
+            doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
           - doc_title: Appearance
             doc_url: 'ee/user/admin_area/appearance.html'
           - doc_title: Authentication
@@ -206,8 +208,6 @@ sections:
             doc_url: 'ee/administration/reply_by_email.html'
           - doc_title: Repository checks
             doc_url: 'ee/administration/repository_checks.html'
-          - doc_title: Repository size
-            doc_url: 'ee/user/admin_area/settings/account_and_limit_settings.html'
           - doc_title: Sign-in restrictions
             doc_url: 'ee/user/admin_area/settings/sign_in_restrictions.html'
           - doc_title: Sign-up restrictions
