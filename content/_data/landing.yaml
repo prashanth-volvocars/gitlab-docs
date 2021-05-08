@@ -20,7 +20,7 @@ heros:
       - title: GitLab Runner
         url: '/runner/'
       - title: Auto DevOps
-        url: '/ee/user/project/labels.html'
+        url: '/ee/topics/autodevops/'
   - title: Collaboration
     description: Configure and develop your applications.
     img: /assets/images/collaberation.svg
