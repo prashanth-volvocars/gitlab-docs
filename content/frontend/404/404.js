@@ -2,9 +2,8 @@ import Vue from 'vue';
 import ErrorMessage from './components/error_message.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const { environment, offlineVersions, archivesPath } = document.getElementById(
-    'offline-versions',
-  ).dataset;
+  const { environment, offlineVersions, archivesPath } =
+    document.getElementById('offline-versions').dataset;
   const location = window.location.href;
   const isOffline = offlineVersions.split(',').find((version) => location.includes(version));
 
