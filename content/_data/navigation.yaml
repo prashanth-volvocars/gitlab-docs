@@ -2419,6 +2419,8 @@ sections:
       - category_title: Usage Ping guide
         category_url: 'ee/development/usage_ping/'
         docs:
+          - doc_title: Metrics instrumentation
+            doc_url: 'ee/development/usage_ping/metrics_instrumentation.html'
           - doc_title: Metrics dictionary guide
             doc_url: 'ee/development/usage_ping/metrics_dictionary.html'
           - doc_title: Metrics dictionary
