@@ -6,7 +6,7 @@
     <%= render '/head.*' %>
     <%= render '/canonical_urls.*' %>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
+  <body class="gl-markdown" itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
     <%= render '/gtm.*' %>
     <%= render '/header.*' %>
     <section class="container-fluid pt-5">
@@ -36,7 +36,7 @@
           <div class="row">
             <div class="col">
               <div class="my-3 my-lg-0">
-              <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a>
+              <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none border-bottom-0 mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a>
               <%= render '/breadcrumbs.*' %>
               </div>
             </div>

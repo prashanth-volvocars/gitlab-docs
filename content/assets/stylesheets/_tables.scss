@@ -1,0 +1,66 @@
+---
+version: 1
+---
+
+@import 'variables';
+@import 'mixins/breakpoints';
+
+// Tables
+table {
+  margin-top: 1rem;
+  font-weight: normal;
+  letter-spacing: normal;
+  margin-bottom: 1.5em;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+
+  @include breakpoint(md) {
+    table-layout: fixed;
+  }
+
+  @include breakpoint($max: $bp-md) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  tr {
+    border-top: 1px solid $gray-100;
+
+
+    &:nth-child(even) {
+      background-color: $gray-10;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $gray-100;
+    }
+  }
+
+  th,
+  td {
+    padding: 1em;
+  }
+
+  th {
+    background-color: $gray-50;
+    color: $gray-900;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  td {
+    vertical-align: top;
+
+    a {
+      /* stylelint-disable declaration-no-important */
+      border-bottom: 0 !important;
+      /* stylelint-enable declaration-no-important */
+    }
+
+    .badge-drop {
+      display: none;
+    }
+  }
+}

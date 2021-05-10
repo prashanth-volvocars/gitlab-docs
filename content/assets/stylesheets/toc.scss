@@ -1,16 +1,16 @@
 ---
-version: 19
+version: 20
 ---
 @import 'variables';
 @import 'utilities';
 
 $base-nav-link-padding: 0.75rem;
 $sm-nav-link-padding: 0.25rem;
-$nav-link-font-size: 14px;
+$nav-link-font-size: 0.875rem;
 
 // ToC styles
 .table-of-contents {
-  padding: 16px 0;
+  padding: 1rem 1rem 0;
   margin-top: 35px;
 
   li {
@@ -22,12 +22,14 @@ $nav-link-font-size: 14px;
     color: $toc-link-color;
     border-radius: 0;
     border-left: 3px solid $gds-indigo-100;
+    border-bottom: 0;
 
     &:hover {
       color: $link-color-nav-hover;
       text-decoration: underline;
       background-color: transparent;
       box-shadow: none;
+      border-bottom: 0;
     }
 
     &.active {
@@ -46,9 +48,10 @@ $nav-link-font-size: 14px;
 
 .markdown-toc {
   top: 0;
-  padding-left: 16px;
 
-  @media(min-width: $md-width) {
+  @media(min-width: $bp-lg) {
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
     overflow-y: scroll;
     height: 100vh;
   }
@@ -69,14 +72,16 @@ $nav-link-font-size: 14px;
   }
 }
 
-@media(max-width: $md-width) {
+@media(max-width: $bp-lg) {
   .doc-nav {
     margin-left: -20px;
     margin-top: -55px;
   }
 
   .table-of-contents {
-    margin-top: 10px;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+
     .nav-link {
       border-left: 0;
       padding: $sm-nav-link-padding;
@@ -107,7 +112,7 @@ $nav-link-font-size: 14px;
 }
 
 // wide enough to show toc but not quick nav
-@media(min-width: $md-width) {
+@media(min-width: $bp-lg) {
   .header {
     top: 0;
     left: 0;

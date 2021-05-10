@@ -29,7 +29,7 @@ export default {
 </script>
 <template>
   <ul class="nav nav-pills flex-column">
-    <li v-for="(item, index) in allItems" :key="`${item.text}_${index}`">
+    <li v-for="(item, index) in allItems" :key="`${item.text}_${index}`" class="mb-0">
       <a :id="item.id" class="nav-link d-block" :href="item.href" :class="item.levelClass">{{
         item.text
       }}</a>

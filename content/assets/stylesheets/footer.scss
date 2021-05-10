@@ -1,15 +1,18 @@
 ---
-version: 9
+version: 10
 ---
 
 @import 'variables';
 
 .footer {
   border-color: $gds-gray-100;
-  max-width: $page-content-width;
-  font-size: $body-font-size;
   a {
     color: $footer-gray-500;
+    border-bottom: 0;
+
+    &:hover {
+      border-bottom: 0;
+    }
   }
 
   .fa {

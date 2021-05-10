@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 @import 'variables';
@@ -14,13 +14,13 @@ version: 4
   line-height: 1.333rem;
 
   .right-col {
-    @media all and (min-width: $sm-width) {
+    @media all and (min-width: $bp-sm) {
       border-left: 0.067 solid $help-gray-100;
     }
   }
 
   .help-subsection {
-    @media all and (max-width: $sm-width) {
+    @media all and (max-width: $bp-sm) {
       margin-top: 1rem;
     }
   }
