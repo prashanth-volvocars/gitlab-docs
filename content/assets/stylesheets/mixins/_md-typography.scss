@@ -1,0 +1,178 @@
+---
+version: 1
+---
+
+/**
+* Font family utility
+*
+* naming convention: gl-font-{family-name}
+* Notes:
+* - Strictly based on design system typography specs
+*/
+@mixin gl-font-monospace {
+  font-family: $gl-monospace-font;
+}
+
+@mixin gl-font-regular {
+  font-family: $gl-regular-font;
+}
+
+/**
+* Font style utility
+*
+* naming convention: gl-font-style-{family-name}
+*/
+@mixin gl-font-style-italic {
+  font-style: italic;
+}
+
+/**
+* Font size utility
+*
+* naming convention: gl-font-{type-scale-size}
+* Notes:
+* - Strictly based on design system type scale. See
+* $gl-type-scale for further references.
+*/
+@mixin gl-font-sm {
+  font-size: $gl-font-size-sm;
+}
+
+@mixin gl-font-base {
+  font-size: $gl-font-size;
+}
+
+@mixin gl-font-lg {
+  font-size: $gl-font-size-lg;
+}
+
+@mixin gl-font-size-h-display {
+  font-size: $gl-font-size-h-display;
+}
+
+@mixin gl-font-size-h1 {
+  font-size: $gl-font-size-h1;
+}
+
+@mixin gl-font-size-h2 {
+  font-size: $gl-font-size-h2;
+}
+
+@mixin gl-font-size-h-display-xl {
+  font-size: $gl-font-size-h-display-xl;
+}
+
+@mixin gl-font-size-h1-xl {
+  font-size: $gl-font-size-h1-xl;
+}
+
+@mixin gl-font-size-h2-xl {
+  font-size: $gl-font-size-h2-xl;
+}
+
+@mixin gl-font-size-monospace {
+  font-size: $gl-font-size-monospace;
+}
+
+@mixin gl-font-size-monospace-sm {
+  font-size: $gl-font-size-monospace-sm;
+}
+
+@mixin gl-font-size-monospace-lg {
+  font-size: $gl-font-size-monospace-lg;
+}
+
+@mixin gl-font-icon-size {
+  font-size: $default-icon-size;
+}
+
+@mixin gl-font-size-markdown-sm {
+  font-size: $gl-font-size-markdown-sm;
+}
+
+@mixin gl-font-size-markdown {
+  font-size: $gl-font-size-markdown;
+}
+
+@mixin gl-font-size-markdown-h1 {
+  font-size: $gl-font-size-markdown-h1;
+}
+
+@mixin gl-font-size-markdown-h2 {
+  font-size: $gl-font-size-markdown-h2;
+}
+
+@mixin gl-font-size-markdown-h3 {
+  font-size: $gl-font-size-markdown-h3;
+}
+
+@mixin gl-font-size-compact-markdown-h1 {
+  font-size: $gl-font-size-compact-markdown-h1;
+}
+
+/**
+* Font-weight utilities.
+*
+* naming convention: gl-font-weight-[bold|normal|number]
+*/
+
+@mixin gl-font-weight-100 {
+  font-weight: 100;
+}
+
+@mixin gl-font-weight-normal {
+  font-weight: $gl-font-weight-normal;
+}
+
+@mixin gl-font-weight-bold {
+  font-weight: $gl-font-weight-bold;
+}
+
+@mixin gl-sm-font-weight-bold {
+  @media (min-width: $breakpoint-sm) {
+    @include gl-font-weight-bold;
+  }
+}
+
+/**
+* Line height utilities.
+*
+* naming convention: gl-line-height-{line-height-in-pixels}
+* notes:
+* - Strictly based in gl-line-height-{n} variables
+*/
+@mixin gl-line-height-0 {
+  line-height: 0;
+}
+
+@mixin gl-line-height-normal {
+  line-height: $gl-line-height-16;
+}
+
+@mixin gl-line-height-20 {
+  line-height: $gl-line-height-20;
+}
+
+@mixin gl-line-height-24 {
+  line-height: $gl-line-height-24;
+}
+
+@mixin gl-line-height-28 {
+  line-height: $gl-line-height-28;
+}
+
+@mixin gl-line-height-32 {
+  line-height: $gl-line-height-32;
+}
+
+@mixin gl-line-height-36 {
+  line-height: $gl-line-height-36;
+}
+
+@mixin gl-line-height-52 {
+  line-height: $gl-line-height-52;
+}
+
+@mixin gl-reset-line-height {
+  line-height: inherit;
+}

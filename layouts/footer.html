@@ -1,6 +1,7 @@
-<footer class="pl-4 pr-3 border-top footer">
+<footer class="px-3 border-top footer">
   <div class="row py-2">
     <div class="col-9">
+      <img src="/assets/images/gitlab-logo.svg" alt="" aria-hidden="true" role="img">
     </div>
     <div class="col-3 p-0 m-0">
       <div class="d-none d-md-flex justify-content-end">
@@ -51,7 +52,7 @@
         <p class="text-muted">
           View <a href="<%= edit_on_gitlab(@item) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">page source</span></a> -
           Edit in <a href="<%= edit_on_gitlab(@item, editor: :webide) %>" target="_blank" rel="noopener noreferrer"><span class="text-decoration-underline">Web IDE</span></a>
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer"><img src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license noopener noreferrer"><img class="d-inline pl-3" src="<%= @items['/assets/images/by-sa.svg'].path %>" alt="Creative Commons License"></a>
         </p>
       </div>
     </div>

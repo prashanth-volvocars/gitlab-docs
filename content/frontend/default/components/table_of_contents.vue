@@ -66,7 +66,7 @@ export default {
     <div class="table-of-contents">
       <h4 class="border-0 toc-sm d-lg-none">
         <a
-          class="d-flex text-decoration-none"
+          class="d-flex text-decoration-none border-bottom-0"
           href="#"
           role="button"
           :aria-expanded="!isCollapsed"

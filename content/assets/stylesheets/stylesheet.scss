@@ -1,317 +1,41 @@
 ---
-version: 108
+version: 109
 ---
 
-@import 'variables';
+// @import 'variables';
 @import 'utilities';
 @import 'landing';
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import 'normalize';
+@import 'mixins';
+@import 'variables';
+@import 'base';
+@import 'typography';
+@import 'tables';
+@import 'breadcrumbs';
+@import 'sidebar';
 
 body {
-  margin: 0;
-  padding: 0;
-  line-height: 24px;
-  font-family: $sans-font-family;
-  font-size: $body-font-size;
-  color: $body-color;
   overflow-x: hidden;
   >.wrapper {
     min-height: 100vh;
-    @media(max-width: $md-width) {
+    @media(max-width: $bp-md) {
       flex-direction: column-reverse;
       background-color: $white;
     }
-    // adds extra padding to the side-nav and main content if a banner is displayed.
-    &.show-banner .nav-wrapper,
-    &.show-banner .main {
-      padding-top: calc(#{$page-header-height} + #{$banner-height});
-    }
   }
 }
 
-a,
-a:visited {
-  text-decoration: none;
-  color: $link-color;
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: underline;
-  }
-}
-
-details {
-  summary {
-    display: list-item;
-  }
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  overflow-x: auto;
-  margin: 15px auto;
-  word-wrap: break-word;
-  clear: both;
-  thead {
-    background: $thead-background-color;
-  }
-  tbody {
-    border-top: 3px solid $gds-gray-200;
-    &:first-child {
-      border-top: 0;
-    }
-    tr>td {
-      max-width: 100%;
-      min-width: 100px;
-    }
-    code {
-      word-wrap: break-word;
-    }
-  }
-
-  td,
-  th {
-    text-align: left;
-    vertical-align: top;
-    padding: 8px;
-    border: 1px solid $table-border-color;
-    font-size: 14px;
-    .badge-small {
-      &:hover::after {
-        padding: 5px;
-      }
-    }
-  }
-  @media all and (max-width: $sm-width) {
-    display: block;
-  }
-  &.borderless-table {
-    border: 0;
-    tr,
-    td,
-    th {
-      border: 0;
-    }
-  }
-  &.center {
-    td {
-      text-align: center;
-    }
-  }
-  &.fixed-table {
-    table-layout: fixed; // use this for columns with the same width
-    thead th {
-      top: $header-height;
-      position: sticky;
-      background-color: $thead-background-color;
-      z-index: 3;
-    }
-  }
-}
-
-blockquote {
-  background-color: $blockquote-background-color;
-  color: $blockquote-txt-color;
-  border: solid 1px $blockquote-border-color;
-  border-radius: 5px;
-  margin: 1rem 0;
-  padding: 0 1rem;
-  font-size: $body-font-size;
-  .highlight {
-    background-color: $white;
-  }
-
-  p:first-child {
-    margin-top: 1rem;
-  }
-
-  // Override bootstrap
-  ol:last-child,
-  p:last-child,
-  ul:last-child {
-    margin: inherit;
-
-    li {
-      line-height: 1rem;
-      padding-top: 0.5rem;
-    }
-  }
-}
-
-kbd {
-  @include code-styles;
-}
-
-pre {
-  background-color: $pre-background-color;
-  position: relative;
-  code {
-    @include code-styles;
-  }
-  .clip-btn {
-    display: inline-block;
-    padding: 10px 10px 10px 13px;
-    right: -0.25rem;
-    top: 0;
-    cursor: pointer;
-    position: absolute;
-    fill: $white;
-    background-color: $pre-code-color;
-    border: 0;
-    outline: 0;
-    svg {
-      opacity: 0.5;
-      transition: opacity 0.3s ease-in;
-      pointer-events: none;
-    }
-    @media all and (max-width: $sm-width) {
-      display: none;
-    }
-  }
-  &:hover {
-    .clip-btn {
-      svg {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-code,
-code span {
-  font-family: $mono-font-family;
-}
-
-p code,
-li code,
-table code {
-  @include code-color;
-}
-
-a>code {
-  color: $link-code-color;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid $hr-border-color;
-  width: 100%;
-}
-
-// Make code in headers match the font size of the given header.
-// https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.4;
-  padding-bottom: 5px;
-  code {
-    @include code-color;
-  }
-  &[id]::before {
-    display: block;
-    content: ' ';
-    margin-top: -75px;
-    height: 75px;
-    visibility: hidden;
-  }
-  @media all and (min-width: $sm-width) {
-    .anchor {
-      opacity: 0;
-      float: left;
-      margin-left: -30px;
-      vertical-align: bottom;
-      margin-top: 8px;
-      height: 22px;
-    }
-    &:hover .anchor {
-      opacity: 1;
-    }
-  }
-}
-
-// base fonts
-// p font size = $body-font-size: 15px;
 h1 {
-  font-size: 34px;
-  font-weight: 700;
-  border-bottom: solid 2px $h1-border-bottom;
-  padding-bottom: 10px;
-  margin-top: $h-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 26px;
-  }
-  code {
-    @include code-color;
-  }
-
   .anchor {
     display: none;
   }
 }
 
-h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: $h2-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 24px;
-  }
-}
-
-h3 {
-  font-size: 23px;
-  font-weight: 700;
-  margin-top: $h2-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 22px;
-  }
-}
-
-h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: $h2-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 20px;
-  }
-}
-
-h5 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: $h2-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 18px;
-  }
-}
-
-h6 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-top: $h2-margin-top;
-  margin-bottom: $h-margin-bottom;
-  @media (max-width: $sm-width) {
-    font-size: 16px;
-  }
-}
-
 .main {
-  padding: 0 5%;
-  background: $main-background-color;
+  padding: 0 1rem 0 3rem;
   z-index: 1;
+
   &:not(.has-toc) {
     >.doc-nav {
       display: none;
@@ -327,7 +51,7 @@ h6 {
       &::before {
         content: '\f126';
         font-family: FontAwesome;
-        font-size: 14px;
+        font-size: 0.875rem;
         font-style: normal;
         font-weight: normal;
         padding-right: 5px;
@@ -338,125 +62,13 @@ h6 {
       }
     }
   }
-  // external link and footer social links
-  [href^='http://'],
-  [href^='https://'] {
-    &:not([href*='gitlab.com']):not(.gitlab-social) {
-      &::after {
-        content: '\f08e';
-        font-family: FontAwesome;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: normal;
-        padding-left: 5px;
-        line-height: 10px;
-      }
-    }
-  }
-  p {
-    margin: 0 0 1em;
-  }
-  ul {
-    margin-top: -8px 0;
-    margin-bottom: 0 0;
-  }
-  ol {
-    margin-top: -8px 0;
-    margin-bottom: 0 0;
-    ol {
-      list-style-type: lower-alpha;
-      ol {
-        list-style-type: lower-roman;
-      }
-    }
-  }
-  li {
-    &:not(.gl-breadcrumb-item) {
-      line-height: 1.6em;
-      padding-bottom: 0.5rem;
-      ul li:first-of-type {
-        padding-top: 12px;
-      }
-      ol li:first-of-type {
-        padding-top: 12px;
-      }
-      >ul,
-      >ol {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  }
-  main img {
-    max-width: calc(100% - 10px);
-    max-height: 100vh;
-    border: 1px solid $gds-gray-200;
-    margin-top: 26px;
-    margin-bottom: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-  }
-  // Override bootstrap defaults
-  .nav-tabs>li>a {
-    padding: 10px 15px;
-    display: block;
-    margin-right: 2px;
-    border-radius: 4px 4px 0 0;
-    text-decoration: none;
-    &.active {
-      background-color: $gds-white;
-    }
-  }
-  .nav-link {
-    padding: 0;
-  }
-  code {
-    word-break: normal;
-    padding: 2px 4px;
-    line-height: 22px;
-  }
-  .input-group-text {
-    background-color: transparent;
-    display: flex;
-  }
-  .footer {
-    margin-left: -40px;
-    margin-right: -40px;
-    max-width: unset;
-    .row {
-      padding-left: 20px;
-      padding-right: 40px;
-    }
-  }
-  @media (max-width: $md-width) {
-    padding: 0 10px;
-
+  @media (max-width: $bp-md) {
     &.active {
       background-color: $bg-overlay-color;
       overflow: hidden;
       position: fixed;
     }
   }
-}
-
-// Override Bootstraps default button (for GDS colors)
-.btn-primary {
-  background-color: $button-primary;
-}
-
-.btn-warning {
-  background-color: $button-warning;
-  color: $gds-white;
-}
-
-.btn-close {
-  padding: 0 4px;
-}
-
-// Override Bootstrap tooltip
-.tooltip .tooltip-inner {
-  font-size: $tooltip-font-size;
 }
 
 .nav-wrapper {
@@ -482,7 +94,7 @@ h6 {
       .label {
         display: block;
         pointer-events: none;
-        font-size: 14px;
+        font-size: 0.875rem;
         color: $gds-gray-700;
         margin-left: 30px;
         flex-shrink: 0;
@@ -536,7 +148,7 @@ h6 {
       transform: rotate(-45deg) translateY(-4px);
     }
   }
-  @media(max-width: $md-width) {
+  @media(max-width: $bp-lg) {
     width: 0;
 
     .nav-toggle {
@@ -551,338 +163,6 @@ h6 {
       }
     }
   }
-}
-
-.global-nav {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: auto;
-  visibility: hidden;
-  .global-nav-cat.active {
-    a {
-      color: $gds-indigo-800;
-    }
-  }
-  .global-nav-content {
-    margin-top: 85px;
-    margin-bottom: 70px;
-  }
-  a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-right: 7px;
-    &.has-collapse.active {
-      box-shadow: 0 0 0 0 inset;
-    }
-    &.active {
-      background-color: $gds-gray-100;
-      font-weight: 600;
-      box-shadow: -4px 0 0 0 inset;
-      color: $gds-indigo-800;
-      &:hover {
-        color: $gds-indigo-800;
-      }
-      &.level-1,
-      &.level-2,
-      &.level-3,
-      &.level-4 {
-        background-color: $gds-gray-200;
-      }
-    }
-  }
-  .collapse-toggle {
-    cursor: pointer;
-    display: flex;
-    padding-right: 1rem;
-    align-items: center;
-    justify-content: center;
-    &::after {
-      content: '';
-      border: solid $gds-gray-700;
-      border-width: 0 1px 1px 0;
-      display: inline-block;
-      transform: rotate(45deg);
-      width: 7px;
-      height: 7px;
-    }
-    &.collapsed {
-      &::after {
-        transform: rotate(-50deg);
-      }
-    }
-    &.active {
-      background-color: $gds-gray-200;
-      box-shadow: -4px 0 0 0 inset;
-      color: $gds-indigo-800;
-      &.section-title {
-        background-color: $gds-gray-100;
-      }
-    }
-  }
-
-  .global-nav-block {
-    font-weight: 600;
-    padding-left: 10px;
-  }
-
-  .global-nav-link,
-  .nav-link {
-    text-decoration: none;
-    &:hover {
-      color: $link-color-nav-hover;
-    }
-  }
-
-  .global-nav-link {
-    line-height: 1rem;
-    font-size: 0.875rem;
-    width: 100%;
-  }
-
-  .nav-link {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-link:hover {
-    background-color: $link-color-bg-active;
-  }
-
-  .global-nav-block-top {
-    font-weight: 600;
-    margin-bottom: 3px;
-    margin-top: 3px;
-    a {
-      text-decoration: none;
-      text-shadow: 3px 3px 5px $link-color-bg-active;
-    }
-  }
-
-  .level-0 {
-    color: $global-nav-link-level0;
-    padding-left: 1.2rem;
-    &:visited {
-      color: $global-nav-link-level0;
-    }
-  }
-
-  .level-1 {
-    color: $global-nav-link-level1;
-    padding-left: 2.333rem;
-    &:visited {
-      color: $global-nav-link-level1;
-    }
-  }
-
-  .level-2 {
-    color: $global-nav-link-level2;
-    padding-left: 3.533rem;
-    &:visited {
-      color: $global-nav-link-level2;
-    }
-  }
-
-  .level-3 {
-    color: $global-nav-link-level3;
-    padding-left: 4.733rem;
-    &:visited {
-      color: $global-nav-link-level3;
-    }
-  }
-
-  .level-4 {
-    color: $global-nav-link-level4;
-    padding-left: 5.933rem;
-    &:visited {
-      color: $global-nav-link-level4;
-    }
-  }
-
-  .global-nav-badges {
-    fill: $gds-gray-700;
-  }
-
-  .last-updated {
-    color: $color-light-gray;
-    font-size: 13px;
-    padding-bottom: 10px;
-    text-align: right;
-  }
-}
-
-
-.btn-tanuki {
-  &:hover {
-    background-color: $color-btn-tanuki;
-  }
-}
-
-@media (min-width: $md-width) {
-  .mobile-nav-toggle {
-    display: none;
-  }
-}
-
-.gl-breadcrumbs {
-  border-width: 0;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-}
-
-@media (max-width: $md-width) {
-  .gl-breadcrumbs {
-    padding-top: 1rem;
-  }
-}
-
-.gl-breadcrumb-list {
-  margin-top: 0.1rem;
-  background-color: transparent;
-  padding: 0;
-  align-items: center;
-  line-height: 1rem;
-  margin: 0;
-}
-
-@media (max-width: $xs-width) {
-  .gl-breadcrumb-list {
-    flex-wrap: wrap;
-  }
-}
-
-.gl-breadcrumb-separator {
-  margin-top: -0.2rem;
-}
-
-.gl-breadcrumb-separator>svg {
-  margin: auto 0.5rem;
-  width: 0.5rem;
-  color: $gds-gray-1000;
-  fill: currentColor;
-}
-
-.gl-breadcrumb-avatar-tile {
-  margin-right: 0.25rem;
-  margin-top: 0.1rem;
-  margin-bottom: 0.2rem;
-  border: 1px solid $help-gray-200;
-  border-radius: 50%;
-}
-
-@media (max-width: $md-width) {
-  .gl-breadcrumb-avatar-tile {
-    margin-left: 2rem;
-  }
-}
-
-.gl-breadcrumb-item {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.gl-breadcrumb-item>a {
-  color: $gds-gray-1000;
-  code {
-    @include code-color;
-  }
-}
-
-@media (max-width:575.98px) {
-  .gl-breadcrumb-item>a {
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: top;
-    white-space: nowrap;
-    max-width: 8rem;
-  }
-}
-
-.gl-breadcrumb-item:last-child {
-  color: $gds-gray-950;
-  font-weight: 600;
-}
-
-// Permalinks on header elements.
-.anchor {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  max-height: 25px;
-  vertical-align: middle;
-  background: url('<%= @items['/assets/images/icon_anchor.svg'].path %>') center center / contain no-repeat;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-// Version history ('Introduced in') notes
-.introduced-in {
-  font-size: $introduced-in-font-size;
-  color: $gds-black;
-  .introduced-in-content {
-    margin-top: 8px;
-    ul {
-      margin: 0;
-      padding-left: 26px;
-    }
-  }
-  .collapsing {
-    transition: none;
-  }
-}
-
-.text-expander {
-  background: url('<%= @items['/assets/images/ellipsis_h.svg'].path %>') center center / 12px no-repeat;
-  vertical-align: middle;
-  border: 1px solid $introduced-in-border-color;
-  border-radius: 4px;
-  margin-left: 8px;
-  margin-bottom: 2px;
-  width: 22px;
-  height: 16px;
-  &:hover {
-    background-color: $text-expander-hover-color;
-  }
-}
-
-// End of version history ('Introduced in') notes
-// Articles layout
-.article-metadata {
-  color: $article-metadata;
-  display: block;
-  order: -1;
-  font-style: italic;
-  margin-bottom: 15px;
-}
-
-// Embedded video
-.video-container {
-  width: 560px;
-  height: 315px;
-  position: relative;
-  padding-top: 0;
-  margin: 20px 0;
-  box-shadow: 5px 5px 10px $gds-gray-300;
-  iframe,
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-// Embedded video fallback for GitLab's /help
-.video-fallback {
-  display: none;
 }
 
 // Override bootstrap's alert color
@@ -970,6 +250,24 @@ h6 {
     font-size: 0.875rem;
   }
 
+  .navbar-nav {
+    margin-top: 0;
+
+    .dropdown-menu {
+      a {
+        border-bottom: 0;
+
+        &:hover {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    margin-bottom: 0;
+  }
+
   .nav-link {
     color: $gds-indigo-100;
   }
@@ -979,12 +277,23 @@ h6 {
       z-index: 1;
     }
 
+    .algolia-autocomplete {
+      @media all and (max-width: $bp-lg) {
+        width: 100%;
+        margin: 0 2.5rem 0 0.5rem;
+      }
+    }
+
     .docsearch {
       font-size: 1rem;
-      height: 32px;
-      min-width: 320px;
-      text-indent: 1rem;
-      padding: 12px 8px;
+      height: 2rem;
+      min-width: 20rem;
+      text-indent: 1.25rem;
+      padding: 0 1rem;
+
+      @media all and (max-width: $bp-sm) {
+        min-width: 100%;
+      }
     }
   }
 
@@ -992,7 +301,7 @@ h6 {
     background-color: $help-indigo-500;
   }
 
-  @media all and (max-width: $md-width) {
+  @media all and (max-width: $bp-md) {
     .btn {
       width: 100%;
     }
@@ -1003,8 +312,14 @@ h6 {
 .badges-drop {
   display: inline-block;
   cursor: pointer;
-  padding-left: 5px;
   transition: background-color 0.5s ease-in-out;
+  /* stylelint-disable declaration-no-important */
+  border-bottom: 0 !important;
+  /* stylelint-enable declaration-no-important */
+
+  &:hover {
+    border-bottom: 0;
+  }
 
   .badge-tier,
   .badge-self-managed,
@@ -1013,7 +328,7 @@ h6 {
       content: '';
       display: block;
       width: 0;
-      height: 2px;
+      height: 1px;
       transition: width 0.3s;
       opacity: 0.5;
     }
@@ -1045,77 +360,6 @@ h6 {
       }
     }
   }
-}
-
-h1,
-h2,
-h3,
-h4 {
-  .badge-display {
-    font-size: 11px;
-  }
-}
-
-h5,
-h6 {
-  .badge-display {
-    font-size: 10px;
-    padding: 2px 4px;
-  }
-}
-
-p,
-li {
-  .badge-display {
-    font-size: 9px;
-    padding: 1px;
-  }
-}
-
-p {
-  .badges-drop {
-    margin-left: 3px;
-    margin-right: 0;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  .badges-drop {
-    float: none;
-  }
-}
-
-h1 {
-  @media all and (max-width: $sm-width) {
-    .badges-drop {
-      padding-top: 5px;
-    }
-  }
-}
-
-li {
-  .badges-drop {
-    margin-left: 0;
-    margin-right: 3px;
-  }
-}
-
-.badge-display {
-  text-transform: uppercase;
-  text-align: center;
-  display: inline-block;
-  color: $white;
-  margin-left: 2px;
-  border-radius: 2px;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
 }
 
 .badge-tier {
@@ -1155,16 +399,21 @@ li {
   }
 }
 
-.dotcom-false {
-  .badge-saas {
-    display: none;
-  }
+.badge-display {
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  margin-left: 2px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
 }
 
 //
 // Algolia search override
 // https://community.algolia.com/docsearch/styling.html
-//
 .algolia-autocomplete {
   // Scrollable search results box
   // https://gitlab.com/gitlab-org/gitlab-docs/issues/362
@@ -1173,8 +422,8 @@ li {
     overflow-x: hidden;
   }
 }
-
 // Algolia search override end
+
 //in-page styles
 .youtube {
   color: $youtube;
@@ -1205,4 +454,69 @@ li {
 
 .btn-cta {
   background-color: $header-free-trial-button-color;
+}
+
+h2[id]::before,
+h3[id]::before,
+h4[id]::before,
+h5[id]::before,
+h6[id]::before {
+  display: block;
+  content: ' ';
+  margin-top: -4.688rem;
+  height: 4.688rem;
+  visibility: hidden;
+}
+
+// Embedded video
+.video-container {
+  width: 35rem;
+  height: 19.688rem;
+  position: relative;
+  padding-top: 0;
+  margin: 1.25rem 0;
+  box-shadow: 0.313rem 0.313rem 0.625rem $gds-gray-300;
+  iframe,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Embedded video fallback for GitLab's /help
+.video-fallback {
+  display: none;
+}
+
+.text-expander {
+  background: url('/assets/images/ellipsis_h.svg') center center / 12px no-repeat;
+  vertical-align: middle;
+  border: 1px solid $gray-100;
+  border-radius: 4px;
+  margin-left: 8px;
+  margin-bottom: 2px;
+  width: 22px;
+  height: 1rem;
+  &:hover {
+    background-color: $gray-200;
+  }
+}
+
+// external link and footer social links
+[href^='http://'],
+[href^='https://'] {
+  &:not([href*='gitlab.com']):not(.gitlab-social) {
+    &::after {
+      content: '\f08e';
+      font-family: FontAwesome, sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: normal;
+      padding-left: 5px;
+      line-height: 10px;
+    }
+  }
 }

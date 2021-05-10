@@ -1,0 +1,98 @@
+---
+version: 1
+---
+
+@import 'variables';
+@import 'mixins/breakpoints';
+
+.gl-breadcrumbs {
+  font-size: 0.75rem;
+  grid-area: breadcrumbs;
+
+  @media all and (max-width: $bp-xl) {
+    border-bottom: 0;
+    margin: 1rem 0;
+    padding: 0;
+  }
+
+  @media all and (max-width: $bp-lg) {
+    padding-top: 1rem;
+  }
+
+  img {
+    display: inline;
+    height: 0.938rem;
+    width: 0.938rem;
+  }
+
+  border-width: 0;
+  padding: 2rem 0 1rem;
+}
+
+.gl-breadcrumb-list {
+  background-color: transparent;
+  padding: 0;
+  align-items: center;
+  line-height: 1rem;
+  margin: 0;
+}
+
+@media (max-width: $bp-xs) {
+  .gl-breadcrumb-list {
+    flex-wrap: wrap;
+  }
+}
+
+.gl-breadcrumb-separator {
+  margin-top: -0.6rem;
+}
+
+.gl-breadcrumb-separator>svg {
+  margin: auto 0.5rem;
+  width: 0.5rem;
+  color: $gds-gray-1000;
+  fill: currentColor;
+}
+
+.gl-breadcrumb-avatar-tile {
+  margin-right: 0.25rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid $help-gray-200;
+  border-radius: 50%;
+}
+
+@media (max-width: $bp-md) {
+  .gl-breadcrumb-avatar-tile {
+    margin-left: 2rem;
+  }
+}
+
+.gl-breadcrumb-item {
+  font-size: 0.75rem;
+  line-height: 1rem;
+
+  a {
+    border-bottom: 0;
+  }
+}
+
+.gl-breadcrumb-item>a {
+  color: $gds-gray-1000;
+}
+
+@media (max-width: 575.98px) {
+  .gl-breadcrumb-item>a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    max-width: 8rem;
+  }
+}
+
+.gl-breadcrumb-item:last-child {
+  color: $gds-gray-950;
+  font-weight: 600;
+}

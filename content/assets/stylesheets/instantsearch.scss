@@ -1,5 +1,5 @@
 ---
-version: 12
+version: 13
 ---
 
 @import 'variables';
@@ -35,7 +35,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
 }
 
 .instantsearch-input {
-  @media all and (max-width: $sm-width) {
+  @media all and (max-width: $bp-sm) {
     margin-top: 40px;
   }
 }
@@ -72,7 +72,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   }
 
   .lvl0 {
-    color: $black;
+    color: $gds-black;
   }
 
   .lvl1 {
@@ -80,7 +80,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   }
 
   .lvl2 {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: $color7;
   }
 
@@ -126,7 +126,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
     color: $link-color;
   }
 
-  @media all and (max-width: $sm-width) {
+  @media all and (max-width: $bp-sm) {
     .hit-tag {
       width: 60px;
       height: 23px;
@@ -150,7 +150,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
 .main.class {
   padding-top: 90px;
 
-  @media (max-width: $sm-width) {
+  @media (max-width: $bp-sm) {
     padding-top: 20px;
   }
 }
