@@ -390,6 +390,7 @@ review:
     on_stop: review_stop
   rules:
     - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
+      when: manual
     - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
