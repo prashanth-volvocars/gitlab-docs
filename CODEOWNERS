@@ -10,6 +10,6 @@ dockerfiles/*       @axil @eread @marcel.amirault
 
 spec                @cwoolley-gitlab @vyaklushin @doregan @mikegreiling
 
-package.json        @derek-knox @ealcantara @jerasmus
-yarn.lock           @derek-knox @ealcantara @jerasmus
-jest.config.js      @derek-knox @ealcantara @jerasmus
+package.json        @oregand @ealcantara @jerasmus
+yarn.lock           @oregand @ealcantara @jerasmus
+jest.config.js      @oregand @ealcantara @jerasmus
