@@ -389,6 +389,7 @@ review:
     url: http://$CI_COMMIT_REF_SLUG$REVIEW_SLUG.$APPS_DOMAIN
     on_stop: review_stop
   rules:
+    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
     - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
@@ -417,6 +418,9 @@ review_stop:
     name: review/$CI_COMMIT_REF_SLUG$REVIEW_SLUG
     action: stop
   rules:
+    - if: '$CI_PROJECT_PATH == "gitlab-renovate-forks/gitlab-docs"'
+      allow_failure: true
+      when: manual
     - if: '$CI_PROJECT_PATH !~ /^gitlab-org/'
       when: never
     - if: '$CI_MERGE_REQUEST_ID || $CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
