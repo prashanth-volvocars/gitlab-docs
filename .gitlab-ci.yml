@@ -182,8 +182,6 @@ workflow:
     - bundle exec rake symlink_readmes
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
-    # Remove CE dir and symlink EE to CE
-    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce && cd ../; fi
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
     - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
@@ -197,6 +195,8 @@ workflow:
     - echo "Minify and compress the static assets (HTML, CSS, JS)"
     - echo
     - echo -e "Size before minifying and gzipping ..... $SIZE_BEFORE\nSize after minifying ................... $SIZE_AFTER_MINIFY\nSize after adding gzipped versions ..... $SIZE_AFTER_GZIP"
+    # Remove CE dir and symlink EE to CE
+    - if [ $CI_PIPELINE_SOURCE != 'pipeline' ]; then cd public && rm -rf ce && ln -s ee ce && cd ../; fi
   artifacts:
     paths:
       - public
