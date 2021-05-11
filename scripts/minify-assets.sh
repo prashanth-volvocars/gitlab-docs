@@ -15,25 +15,23 @@ if ! [ -d "$TARGET" ]; then
   exit 1
 fi
 
-# Check if minify is in the PATH
-which minify > /dev/null 2>&1
-# Check if the previous command has a 0 exit status
-if [ $? -eq 0 ]
+# Backwards compatibility
+if [ -f /scripts/minify ]
+then
+  MINIFY_BIN=/scripts/minify
+elif hash minify 2>/dev/null
 then
   MINIFY_BIN=$(which minify)
+elif hash docker 2>/dev/null
+then
+  MINIFY_BIN="docker run -t -v ${PWD}:/gitlab -w /gitlab --rm tdewolff/minify minify"
 else
-  # Backwards compatibility
-  if [ -f /scripts/minify ]
-  then
-    MINIFY_BIN=/scripts/minify
-  else
-    echo "minify binary not found in PATH. Exiting."
-    exit 1
-  fi
+  echo "  ✖ ERROR: 'minify' not found. Install 'minify' or Docker to proceed." >&2
+  exit 1
 fi
 
 # Minify assets
-printf "Optimizing assets..."
+printf "Optimizing assets...\n"
 
 printf "HTML..."; $MINIFY_BIN $MINIFY_FLAGS --type=html --match=\.html -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
 printf "CSS..." ; $MINIFY_BIN $MINIFY_FLAGS --type=css  --match=\.css  -o ${TARGET}/${VER}/ ${TARGET}/${VER} || true
