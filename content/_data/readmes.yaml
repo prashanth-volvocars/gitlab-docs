@@ -14,7 +14,6 @@ omnibus:
   - public/omnibus/release/README.html
   - public/omnibus/settings/README.html
   - public/omnibus/common_installation_problems/README.html
-  - public/omnibus/gitlab-ci/README.html
   - public/omnibus/build/README.html
   - public/omnibus/update/README.html
   - public/omnibus/maintenance/README.html
