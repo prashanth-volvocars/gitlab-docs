@@ -1,13 +1,15 @@
 <meta charset="utf-8">
 <% if @item.identifier.to_s.split('/').count == 2 %>
   <title><%= @item[:title] %></title>
+  <meta property="og:title" content="<%= @item[:title] %>">
 <% else %>
   <title><%= @item.key?(:title) ? "#{item[:title]} | GitLab" : "GitLab Documentation" %></title>
+  <meta property="og:title" content='<%= @item.key?(:title) ? "#{item[:title]} | GitLab" : "GitLab Documentation" %>'>
 <% end %>
 <% if @item[:description] %>
-  <meta name="description" content="<%= @item[:description] %>">
+  <meta name="description" property="og:description" content="<%= @item[:description] %>">
 <% else %>
-  <meta name="description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
+  <meta name="description" property="og:description" content="Documentation for GitLab Community Edition, GitLab Enterprise Edition, Omnibus GitLab, and GitLab Runner.">
 <% end %>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <% if @item[:noindex] or !production_and_default_branch? %>
