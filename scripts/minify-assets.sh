@@ -2,7 +2,7 @@
 
 TARGET="$1"
 VER="$2"
-MINIFY_FLAGS="--html-keep-document-tags --html-keep-whitespace --recursive"
+MINIFY_FLAGS="--html-keep-document-tags --html-keep-whitespace --recursive --verbose"
 
 if [ -z "$TARGET" -o -z "$VER" ]; then
   echo "Usage: $0 <target> <ver>"
