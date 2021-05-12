@@ -571,8 +571,6 @@ sections:
         category_url: 'ee/user/project/working_with_projects.html'
       - category_title: Badges
         category_url: 'ee/user/project/badges.html'
-      - category_title: Bulk editing (project)
-        category_url: 'ee/user/project/bulk_editing.html'
       - category_title: Code intelligence
         category_url: 'ee/user/project/code_intelligence.html'
       - category_title: Code owners

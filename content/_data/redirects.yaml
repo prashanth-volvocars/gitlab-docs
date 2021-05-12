@@ -1246,3 +1246,6 @@ redirects:
   - from: /ee/user/project/import/gemnasium.html
     to: /ee/user/project/import/index.html
     remove_date: 2022-05-01
+  - from: /ee/user/project/bulk_editing.html
+    to: /ee/user/project/issues/managing_issues.html
+    remove_date: 2021-08-12
