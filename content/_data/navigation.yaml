@@ -2072,6 +2072,8 @@ sections:
         category_url: 'ee/development/approval_rules.html'
       - category_title: Architecture
         category_url: 'ee/development/architecture.html'
+      - category_title: Audit Event development guide
+        category_url: 'ee/development/audit_event_guide/'
       - category_title: CI/CD development
         category_url: 'ee/development/cicd/'
         docs:
