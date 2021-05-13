@@ -1203,6 +1203,8 @@ sections:
         category_url: 'ee/user/application_security/secret_detection/'
       - category_title: Dynamic Application Security Testing (DAST)
         category_url: 'ee/user/application_security/dast/'
+      - category_title: DAST API
+        category_url: 'ee/user/application_security/dast_api/'
       - category_title: DAST Troubleshooting
         category_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
       - category_title: API Fuzzing
