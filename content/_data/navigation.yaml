@@ -1203,6 +1203,9 @@ sections:
         category_url: 'ee/user/application_security/secret_detection/'
       - category_title: Dynamic Application Security Testing (DAST)
         category_url: 'ee/user/application_security/dast/'
+        docs:
+          - doc_title: DAST browser-based crawler
+            doc_url: 'ee/user/application_security/dast/browser_based.html'
       - category_title: DAST API
         category_url: 'ee/user/application_security/dast_api/'
       - category_title: DAST Troubleshooting
