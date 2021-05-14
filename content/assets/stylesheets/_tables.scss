@@ -16,7 +16,7 @@ table {
   max-width: 100%;
 
   @include breakpoint(md) {
-    table-layout: fixed;
+    table-layout: auto;
   }
 
   @include breakpoint($max: $bp-md) {
