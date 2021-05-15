@@ -1,554 +1,556 @@
-//---
-//version: 2
-//---
+---
+version: 2
+---
 
 @import 'variables';
 @import 'mixins/breakpoints';
 @import 'mixins/md-typography';
 @import 'mixins/spacing';
 
-p,
-ul,
-ol,
-pre,
-blockquote {
-  font-size: 1rem;
-  font-weight: normal;
-  letter-spacing: normal;
-  margin-top: 0;
-  margin-bottom: 1.5em;
-}
+.gl-docs {
+  p,
+  ul,
+  ol,
+  pre,
+  blockquote {
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: normal;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
 
-blockquote {
-  background-color: $gds-gray-50;
-  color: $gds-black;
-  border: solid 1px $gray-100;
-  border-radius: 0.313rem;
-  margin: 1rem 0;
-  padding: 1rem;
+  blockquote {
+    background-color: $gds-gray-50;
+    color: $gds-black;
+    border: solid 1px $gray-100;
+    border-radius: 0.313rem;
+    margin: 1rem 0;
+    padding: 1rem;
 
-  ul {
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    padding-left: 1em;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  ol {
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-top: 0.5rem;
     margin-bottom: 0;
   }
-}
 
-ul,
-ol {
-  margin-top: 0.5rem;
-  margin-left: 0;
-  padding-left: 1em;
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-}
-
-ol {
-  ol {
-    list-style-type: lower-alpha;
-    ol {
-      list-style-type: lower-roman;
-    }
-  }
-}
-
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-b,
-strong,
-em,
-small {
-  line-height: 1;
-}
-
-sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-// Keyboard input
-
-kbd {
-  background-color: $gray-700;
-  border-radius: 4px;
-  color: $white;
-  line-height: 1;
-  overflow-wrap: break-word;
-  padding: 2px 4px;
-}
-
-// Highlighted text
-
-mark {
-  background-color: $blue-100;
-}
-
-// Code
-
-*:not(pre) > code {
-  background-color: $gray-50;
-  border-radius: 4px;
-  line-height: 1;
-  overflow-wrap: break-word;
-  padding: 2px 4px;
-  transition: background-color 0.15s linear;
-}
-
-pre {
-  background-color: desaturate($theme-indigo-950, 20%);
-  border-radius: 4px;
-  color: $white;
-  padding: 1rem;
-}
-
-.clip-btn {
-  fill: $white;
-  background-color: $pre-code-color;
-  border: 0;
-  svg {
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in;
-    pointer-events: none;
-  }
-  @media all and (max-width: $bp-sm) {
-    display: none;
+  b,
+  strong,
+  em,
+  small {
+    line-height: 1;
   }
 
-  &:hover {
+  sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  // Keyboard input
+
+  kbd {
+    background-color: $gray-700;
+    border-radius: 4px;
+    color: $white;
+    line-height: 1;
+    overflow-wrap: break-word;
+    padding: 2px 4px;
+  }
+
+  // Highlighted text
+
+  mark {
+    background-color: $blue-100;
+  }
+
+  // Code
+
+  *:not(pre) > code {
+    background-color: $gray-50;
+    border-radius: 4px;
+    line-height: 1;
+    overflow-wrap: break-word;
+    padding: 2px 4px;
+    transition: background-color 0.15s linear;
+  }
+
+  pre {
+    background-color: desaturate($theme-indigo-950, 20%);
+    border-radius: 4px;
+    color: $white;
+    padding: 1rem;
+  }
+
+  .clip-btn {
+    fill: $white;
+    background-color: $pre-code-color;
+    border: 0;
     svg {
-      opacity: 1;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in;
+      pointer-events: none;
+    }
+    @media all and (max-width: $bp-sm) {
+      display: none;
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
     }
   }
-}
 
-// Badge tier
+  // Badge tier
 
-.badge-tier {
-  color: $red-500;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  .badge-tier {
+    color: $red-500;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
 
-  &:hover {
-    border-bottom-color: $red-700;
-    color: $red-700;
-  }
-}
-
-.introduced-in {
-  border-left: 4px solid $theme-indigo-200;
-  padding-left: 0.75rem;
-  margin-bottom: 1.5rem;
-
-  p {
-    font-size: 0.875rem;
-  }
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid rgba($theme-indigo-900, 0.16);
-  height: 0;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  @include breakpoint(md) {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@include gl-font-size-markdown;
-@include gl-line-height-24;
-@include gl-font-regular;
-@include gl-font-weight-normal;
-
--webkit-font-smoothing: auto;
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.gl-h1,
-.gl-h2,
-.gl-h3,
-.gl-h4,
-.gl-h5,
-.gl-h6 {
-  @include gl-font-weight-bold;
-  @include gl-mb-3;
-
-  // Permalinks on header elements.
-  .anchor {
-    transition: all 0.3s;
-    background: url('/assets/images/icon_anchor.svg') center center / contain no-repeat;
-    opacity: 0;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    max-height: 2rem;
-    vertical-align: middle;
-    border-bottom: 0;
-    margin-left: 0.25rem;
-    margin-top: -0.25rem;
-    border-bottom: 0;
-  }
-
-  &:hover {
-    .anchor {
-      border-bottom: 0;
-      opacity: 1;
+    &:hover {
+      border-bottom-color: $red-700;
+      color: $red-700;
     }
   }
-}
 
-h3,
-h4,
-h5,
-h6,
-.gl-h3,
-.gl-h4,
-.gl-h5,
-.gl-h6 {
-  @include gl-mt-6;
-  @include gl-mb-3;
-}
+  .introduced-in {
+    border-left: 4px solid $theme-indigo-200;
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
 
-h1,
-.gl-h1 {
-  @include gl-font-size-markdown-h1;
-  @include gl-line-height-32;
-  @include gl-fluid-font-size(
-    $min: $gl-font-size-markdown-h1-md,
-    $max: $gl-font-size-markdown-h1-xl
-  );
-  @include gl-fluid-line-height($min: $gl-line-height-36, $max: $gl-line-height-52);
-  @include gl-mt-0;
-}
+    p {
+      font-size: 0.875rem;
+    }
+  }
 
-h2,
-.gl-h2 {
-  @include gl-font-size-markdown-h2;
-  @include gl-line-height-28;
-  @include gl-fluid-font-size(
-    $min: $gl-font-size-markdown-h2-md,
-    $max: $gl-font-size-markdown-h2-xl
-  );
-  @include gl-fluid-line-height($min: $gl-line-height-28, $max: $gl-line-height-36);
-  @include gl-mt-6;
-}
+  hr {
+    border: 0;
+    border-top: 1px solid rgba($theme-indigo-900, 0.16);
+    height: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
-h3,
-.gl-h3 {
-  @include gl-font-size-markdown-h3;
-  @include gl-line-height-24;
-  @include gl-fluid-font-size(
-    $min: $gl-font-size-markdown-h3-md,
-    $max: $gl-font-size-markdown-h3-xl
-  );
-  @include gl-fluid-line-height($min: $gl-line-height-24, $max: $gl-line-height-28);
-}
+    @include breakpoint(md) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
 
-h4,
-.gl-h4 {
   @include gl-font-size-markdown;
-  @include gl-line-height-20;
-}
+  @include gl-line-height-24;
+  @include gl-font-regular;
+  @include gl-font-weight-normal;
 
-h5,
-.gl-h5,
-h6,
-.gl-h6 {
-  @include gl-font-size-markdown-sm;
-  @include gl-line-height-20;
-}
+  -webkit-font-smoothing: auto;
 
-h6,
-.gl-h6 {
-  @include gl-text-gray-700;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .gl-h1,
+  .gl-h2,
+  .gl-h3,
+  .gl-h4,
+  .gl-h5,
+  .gl-h6 {
+    @include gl-font-weight-bold;
+    @include gl-mb-3;
 
-p,
-.gl-paragraph {
-  @include gl-mt-0;
-  @include gl-mb-0;
+    // Permalinks on header elements.
+    .anchor {
+      transition: all 0.3s;
+      background: url('/assets/images/icon_anchor.svg') center center / contain no-repeat;
+      opacity: 0;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      max-height: 2rem;
+      vertical-align: middle;
+      border-bottom: 0;
+      margin-left: 0.25rem;
+      margin-top: -0.25rem;
+      border-bottom: 0;
+    }
 
-  + p,
-  + .gl-paragraph {
-    @include gl-mt-5;
+    &:hover {
+      .anchor {
+        border-bottom: 0;
+        opacity: 1;
+      }
+    }
   }
 
-  &.sm {
+  h3,
+  h4,
+  h5,
+  h6,
+  .gl-h3,
+  .gl-h4,
+  .gl-h5,
+  .gl-h6 {
+    @include gl-mt-6;
+    @include gl-mb-3;
+  }
+
+  h1,
+  .gl-h1 {
+    @include gl-font-size-markdown-h1;
+    @include gl-line-height-32;
+    @include gl-fluid-font-size(
+      $min: $gl-font-size-markdown-h1-md,
+      $max: $gl-font-size-markdown-h1-xl
+    );
+    @include gl-fluid-line-height($min: $gl-line-height-36, $max: $gl-line-height-52);
+    @include gl-mt-0;
+  }
+
+  h2,
+  .gl-h2 {
+    @include gl-font-size-markdown-h2;
+    @include gl-line-height-28;
+    @include gl-fluid-font-size(
+      $min: $gl-font-size-markdown-h2-md,
+      $max: $gl-font-size-markdown-h2-xl
+    );
+    @include gl-fluid-line-height($min: $gl-line-height-28, $max: $gl-line-height-36);
+    @include gl-mt-6;
+  }
+
+  h3,
+  .gl-h3 {
+    @include gl-font-size-markdown-h3;
+    @include gl-line-height-24;
+    @include gl-fluid-font-size(
+      $min: $gl-font-size-markdown-h3-md,
+      $max: $gl-font-size-markdown-h3-xl
+    );
+    @include gl-fluid-line-height($min: $gl-line-height-24, $max: $gl-line-height-28);
+  }
+
+  h4,
+  .gl-h4 {
+    @include gl-font-size-markdown;
+    @include gl-line-height-20;
+  }
+
+  h5,
+  .gl-h5,
+  h6,
+  .gl-h6 {
     @include gl-font-size-markdown-sm;
     @include gl-line-height-20;
   }
-}
 
-.sm {
-  @include gl-font-size-markdown-sm;
-  @include gl-line-height-20;
-}
-
-.monospace {
-  @include gl-font-monospace;
-  @include gl-font-size-monospace-lg;
-  @include gl-line-height-24;
-
-  &.sm {
-    @include gl-font-size-monospace;
-    @include gl-line-height-20;
+  h6,
+  .gl-h6 {
+    @include gl-text-gray-700;
   }
-}
 
-// Links
+  p,
+  .gl-paragraph {
+    @include gl-mt-0;
+    @include gl-mb-0;
 
-a {
-  border-bottom: 1px solid rgba($purple-700, 0.24);
-  color: $purple-700;
-  text-decoration: none;
-  transition: color 0.15s linear, border-bottom-color 0.15s linear;
+    + p,
+    + .gl-paragraph {
+      @include gl-mt-5;
+    }
 
-  &:hover {
-    border-bottom: 1px solid $purple-900;
-    color: $purple-900;
-
-    code {
-      background-color: $theme-indigo-100;
+    &.sm {
+      @include gl-font-size-markdown-sm;
+      @include gl-line-height-20;
     }
   }
-}
 
-// Responsive Headers
+  .sm {
+    @include gl-font-size-markdown-sm;
+    @include gl-line-height-20;
+  }
 
-/* stylelint-disable max-nesting-depth */
-@mixin responsive-headers($settings) {
-  @each $property, $attribute in $settings {
-    @if type-of($attribute) == 'map' { // property is a breakpoint
-      $breakpoint: $property;
-      @if $breakpoint == $bp-xs {
-        @each $key, $value in $attribute {
-          #{$key}: #{$value};
-        }
-      } @else {
-        @media screen and (min-width: $breakpoint) {
+  .monospace {
+    @include gl-font-monospace;
+    @include gl-font-size-monospace-lg;
+    @include gl-line-height-24;
+
+    &.sm {
+      @include gl-font-size-monospace;
+      @include gl-line-height-20;
+    }
+  }
+
+  // Links
+
+  a {
+    border-bottom: 1px solid rgba($purple-700, 0.24);
+    color: $purple-700;
+    text-decoration: none;
+    transition: color 0.15s linear, border-bottom-color 0.15s linear;
+
+    &:hover {
+      border-bottom: 1px solid $purple-900;
+      color: $purple-900;
+
+      code {
+        background-color: $theme-indigo-100;
+      }
+    }
+  }
+
+  // Responsive Headers
+
+  /* stylelint-disable max-nesting-depth */
+  @mixin responsive-headers($settings) {
+    @each $property, $attribute in $settings {
+      @if type-of($attribute) == 'map' { // property is a breakpoint
+        $breakpoint: $property;
+        @if $breakpoint == $bp-xs {
           @each $key, $value in $attribute {
             #{$key}: #{$value};
           }
+        } @else {
+          @media screen and (min-width: $breakpoint) {
+            @each $key, $value in $attribute {
+              #{$key}: #{$value};
+            }
+          }
         }
+      } @else {
+        #{$property}: #{$attribute};
       }
-    } @else {
-      #{$property}: #{$attribute};
     }
   }
-}
-/* stylelint-enable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
 
-// Headings
-// For the system of .h1-.h6 classes to properly overwrite the base tag, you must include all properties transformed
-// at every breakpoint, even if those properties are the default or assigned at an earlier breakpoint.
+  // Headings
+  // For the system of .h1-.h6 classes to properly overwrite the base tag, you must include all properties transformed
+  // at every breakpoint, even if those properties are the default or assigned at an earlier breakpoint.
 
-// Close to a 1.2 (minor third) scale at the LG breakpoint
-$h1-properties: (
-  color: $theme-indigo-900,
-  font-weight: 600,
-  margin-top: 0,
-  text-transform: none,
-  $bp-xs : (
-    font-size : 2rem,         // 32px
-    line-height : 1,          // 32px
-    margin-bottom: 1.5rem,    // 24px
-  ),
-    $bp-sm: (
+  // Close to a 1.2 (minor third) scale at the LG breakpoint
+  $h1-properties: (
+    color: $theme-indigo-900,
+    font-weight: 600,
+    margin-top: 0,
+    text-transform: none,
+    $bp-xs : (
       font-size : 2rem,         // 32px
       line-height : 1,          // 32px
       margin-bottom: 1.5rem,    // 24px
     ),
-      $bp-md : (
-        font-size : 2.5rem,       // 40px
-        line-height : 1,          // 40px
-        margin-bottom: 1.5rem,    // 24px
-      ),
-        $bp-lg : (
-          font-size : 2.5rem,       // 40px
-          line-height : 1,          // 40px
-          margin-bottom: 1.5rem,    // 24px
-        )
-        ) !default;
-
-$h2-properties: (
-  color: $theme-indigo-900,
-  font-weight: 600,
-  $bp-xs : (
-    font-size : 1.5rem,       // 24px
-    line-height : 1.25,       // 30px
-    margin-bottom: 1.5rem,    // 24px
-  ),
-    $bp-sm : (
-      font-size : 1.5rem,       // 24px
-      line-height : 1.25,       // 30px
-      margin-bottom: 1.5rem,    // 24px
-    ),
-      $bp-md : (
+      $bp-sm: (
         font-size : 2rem,         // 32px
         line-height : 1,          // 32px
         margin-bottom: 1.5rem,    // 24px
       ),
-        $bp-lg : (
+        $bp-md : (
+          font-size : 2.5rem,       // 40px
+          line-height : 1,          // 40px
+          margin-bottom: 1.5rem,    // 24px
+        ),
+          $bp-lg : (
+            font-size : 2.5rem,       // 40px
+            line-height : 1,          // 40px
+            margin-bottom: 1.5rem,    // 24px
+          )
+          ) !default;
+
+  $h2-properties: (
+    color: $theme-indigo-900,
+    font-weight: 600,
+    $bp-xs : (
+      font-size : 1.5rem,       // 24px
+      line-height : 1.25,       // 30px
+      margin-bottom: 1.5rem,    // 24px
+    ),
+      $bp-sm : (
+        font-size : 1.5rem,       // 24px
+        line-height : 1.25,       // 30px
+        margin-bottom: 1.5rem,    // 24px
+      ),
+        $bp-md : (
           font-size : 2rem,         // 32px
           line-height : 1,          // 32px
           margin-bottom: 1.5rem,    // 24px
-        )
-        ) !default;
+        ),
+          $bp-lg : (
+            font-size : 2rem,         // 32px
+            line-height : 1,          // 32px
+            margin-bottom: 1.5rem,    // 24px
+          )
+          ) !default;
 
-$h3-properties: (
-  color: $theme-indigo-900,
-  font-weight: 600,
-  text-transform: none,
-  $bp-xs : (
-    font-size : 1.25rem,      // 20px
-    line-height : 1.4,        // 28px
-    margin-bottom: 1rem,   // 20px
-  ),
-    $bp-sm : (
+  $h3-properties: (
+    color: $theme-indigo-900,
+    font-weight: 600,
+    text-transform: none,
+    $bp-xs : (
       font-size : 1.25rem,      // 20px
       line-height : 1.4,        // 28px
       margin-bottom: 1rem,   // 20px
     ),
-      $bp-md : (
-        font-size : 1.5rem,       // 24px
-        line-height : 1.273,      // 28px
+      $bp-sm : (
+        font-size : 1.25rem,      // 20px
+        line-height : 1.4,        // 28px
         margin-bottom: 1rem,   // 20px
       ),
-        $bp-lg : (
+        $bp-md : (
           font-size : 1.5rem,       // 24px
           line-height : 1.273,      // 28px
-          margin-bottom: 1rem,      // 16px
-        )
-        ) !default;
+          margin-bottom: 1rem,   // 20px
+        ),
+          $bp-lg : (
+            font-size : 1.5rem,       // 24px
+            line-height : 1.273,      // 28px
+            margin-bottom: 1rem,      // 16px
+          )
+          ) !default;
 
-$h4-properties: (
-  color: $theme-indigo-900,
-  text-transform: none,
-  $bp-xs : (
-    font-size : 1rem,         // 16px
-    line-height : 1.5,        // 24px
-    margin-bottom: 0.75rem,      // 12px
-  ),
-    $bp-sm : (
+  $h4-properties: (
+    color: $theme-indigo-900,
+    text-transform: none,
+    $bp-xs : (
       font-size : 1rem,         // 16px
       line-height : 1.5,        // 24px
       margin-bottom: 0.75rem,      // 12px
     ),
-      $bp-md : (
-        font-size : 1.125rem,     // 18px
-        line-height : 1.375,      // 22px
+      $bp-sm : (
+        font-size : 1rem,         // 16px
+        line-height : 1.5,        // 24px
         margin-bottom: 0.75rem,      // 12px
       ),
-        $bp-lg : (
+        $bp-md : (
           font-size : 1.125rem,     // 18px
           line-height : 1.375,      // 22px
           margin-bottom: 0.75rem,      // 12px
-        )
-        ) !default;
+        ),
+          $bp-lg : (
+            font-size : 1.125rem,     // 18px
+            line-height : 1.375,      // 22px
+            margin-bottom: 0.75rem,      // 12px
+          )
+          ) !default;
 
-$h5-properties: (
-  color: $theme-indigo-900,
-  font-weight: 700,
-  text-transform: none,
-  $bp-xs : (
-    font-size : 0.875rem,     // 14px
-    line-height : 1.429,      // 20px
-    margin-bottom: 0.5rem,      // 8px
-  ),
-    $bp-sm : (
+  $h5-properties: (
+    color: $theme-indigo-900,
+    font-weight: 700,
+    text-transform: none,
+    $bp-xs : (
       font-size : 0.875rem,     // 14px
       line-height : 1.429,      // 20px
       margin-bottom: 0.5rem,      // 8px
     ),
-      $bp-md : (
-        font-size : 1rem,         // 16px
-        line-height : 1.5,        // 24px
+      $bp-sm : (
+        font-size : 0.875rem,     // 14px
+        line-height : 1.429,      // 20px
         margin-bottom: 0.5rem,      // 8px
       ),
-        $bp-lg : (
+        $bp-md : (
           font-size : 1rem,         // 16px
           line-height : 1.5,        // 24px
           margin-bottom: 0.5rem,      // 8px
-        )
-        ) !default;
+        ),
+          $bp-lg : (
+            font-size : 1rem,         // 16px
+            line-height : 1.5,        // 24px
+            margin-bottom: 0.5rem,      // 8px
+          )
+          ) !default;
 
-$h6-properties: (
-  color: $theme-indigo-900,
-  text-transform: none,
-  $bp-xs : (
-    font-size : 0.875rem,     // 14px
-    line-height : 1.25,       // 17.5px
-    margin-bottom : 0.25rem,  // 4px
-  ),
-    $bp-sm : (
+  $h6-properties: (
+    color: $theme-indigo-900,
+    text-transform: none,
+    $bp-xs : (
       font-size : 0.875rem,     // 14px
       line-height : 1.25,       // 17.5px
       margin-bottom : 0.25rem,  // 4px
     ),
-      $bp-md : (
+      $bp-sm : (
         font-size : 0.875rem,     // 14px
         line-height : 1.25,       // 17.5px
         margin-bottom : 0.25rem,  // 4px
       ),
-        $bp-lg : (
+        $bp-md : (
           font-size : 0.875rem,     // 14px
           line-height : 1.25,       // 17.5px
           margin-bottom : 0.25rem,  // 4px
-        )
-        ) !default;
+        ),
+          $bp-lg : (
+            font-size : 0.875rem,     // 14px
+            line-height : 1.25,       // 17.5px
+            margin-bottom : 0.25rem,  // 4px
+          )
+          ) !default;
 
-// 	Headings
+  // 	Headings
 
-// See the headings section in _variables.scss for the responsive properties.
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  margin-top: 2.5rem;
-  text-rendering: optimizelegibility;
+  // See the headings section in _variables.scss for the responsive properties.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    margin-top: 2.5rem;
+    text-rendering: optimizelegibility;
+  }
+
+  h1 { @include responsive-headers($h1-properties);}
+  h2 { @include responsive-headers($h2-properties);}
+  h3 { @include responsive-headers($h3-properties);}
+  h4 { @include responsive-headers($h4-properties);}
+  h5 { @include responsive-headers($h5-properties);}
+  h6 { @include responsive-headers($h6-properties);}
+
+  // These declarations are kept separate from and placed after
+  // the previous tag-based declarations so that the classes beat the tags in
+  // the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
+  .h1 { @include responsive-headers($h1-properties);}
+  .h2 { @include responsive-headers($h2-properties);}
+  .h3 { @include responsive-headers($h3-properties);}
+  .h4 { @include responsive-headers($h4-properties);}
+  .h5 { @include responsive-headers($h5-properties);}
+  .h6 { @include responsive-headers($h6-properties);}
 }
-
-h1 { @include responsive-headers($h1-properties);}
-h2 { @include responsive-headers($h2-properties);}
-h3 { @include responsive-headers($h3-properties);}
-h4 { @include responsive-headers($h4-properties);}
-h5 { @include responsive-headers($h5-properties);}
-h6 { @include responsive-headers($h6-properties);}
-
-// These declarations are kept separate from and placed after
-// the previous tag-based declarations so that the classes beat the tags in
-// the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
-.h1 { @include responsive-headers($h1-properties);}
-.h2 { @include responsive-headers($h2-properties);}
-.h3 { @include responsive-headers($h3-properties);}
-.h4 { @include responsive-headers($h4-properties);}
-.h5 { @include responsive-headers($h5-properties);}
-.h6 { @include responsive-headers($h6-properties);}
