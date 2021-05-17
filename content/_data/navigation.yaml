@@ -268,8 +268,6 @@ sections:
             doc_url: 'ee/security/token_overview.html'
       - category_title: Review abuse reports
         category_url: 'ee/user/admin_area/review_abuse_reports.html'
-      - category_title: Activate and deactivate users
-        category_url: 'ee/user/admin_area/activating_deactivating_users.html'
       - category_title: Create users
         category_url: 'ee/user/profile/account/create_accounts.html'
       - category_title: Analytics
@@ -278,8 +276,6 @@ sections:
         category_url: 'ee/administration/audit_events.html'
       - category_title: Audit reports
         category_url: 'ee/administration/audit_reports.html'
-      - category_title: Block and unblock users
-        category_url: 'ee/user/admin_area/blocking_unblocking_users.html'
       - category_title: Broadcast messages
         category_url: 'ee/user/admin_area/broadcast_messages.html'
       - category_title: Consul
@@ -302,6 +298,8 @@ sections:
         category_url: 'ee/administration/issue_closing_pattern.html'
       - category_title: Merge request diffs storage
         category_url: 'ee/administration/merge_request_diffs.html'
+      - category_title: Moderate users
+        category_url: 'ee/user/admin_area/moderate_users.html'
       - category_title: PostgreSQL
         category_url: 'ee/administration/postgresql/'
         docs:
