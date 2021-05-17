@@ -497,7 +497,7 @@ pages:
 #
 image:docs-lint-markdown:
   extends:
-    - .rules_scheduled
+    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
@@ -516,7 +516,7 @@ image:docs-lint-markdown:
 
 image:docs-lint-html:
   extends:
-    - .rules_scheduled
+    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
@@ -555,7 +555,7 @@ image:gitlab-docs-base:
 #
 image:bootstrap:
   extends:
-    - .rules_scheduled
+    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
@@ -631,7 +631,7 @@ image:docs-single:
 #
 image:docs-latest:
   extends:
-    - .rules_scheduled
+    - .rules_scheduled_manual
     - .docker_prepare
   stage: pre-deploy
   artifacts: {}
