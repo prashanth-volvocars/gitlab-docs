@@ -1,14 +1,12 @@
 ---
-version: 110
+version: 111
 ---
 
-// @import 'variables';
+@import 'variables';
 @import 'utilities';
 @import 'landing';
-
 @import 'normalize';
 @import 'mixins';
-@import 'variables';
 @import 'base';
 @import 'typography';
 @import 'tables';

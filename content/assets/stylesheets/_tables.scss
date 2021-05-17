@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import 'variables';
@@ -14,6 +14,8 @@ table {
   border-collapse: collapse;
   width: 100%;
   max-width: 100%;
+  overflow-x: auto;
+  display: block;
 
   @include breakpoint(md) {
     table-layout: auto;
