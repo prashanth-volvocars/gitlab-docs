@@ -1,17 +1,13 @@
 ---
-version: 1
+version: 2
 ---
-
-// Typography
 
 @import 'variables';
 @import 'mixins/breakpoints';
 @import 'mixins/md-typography';
 @import 'mixins/spacing';
 
-// Documentation Markdown typescale
-
-.gl-markdown {
+.gl-docs {
   p,
   ul,
   ol,

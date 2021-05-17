@@ -317,9 +317,9 @@ $gl-font-weights: (
   'bold': $gl-font-weight-bold,
 );
 
-$gl-font-size-monospace: px-to-rem(13px);
-$gl-font-size-monospace-lg: px-to-rem(15px);
-$gl-font-size-monospace-sm: px-to-rem(11px);
+$gl-font-size-monospace: 0.813rem;
+$gl-font-size-monospace-lg: 0.938rem;
+$gl-font-size-monospace-sm: 0.688rem;
 
 // Misc mixins
 
@@ -373,20 +373,20 @@ $gl-font-size-monospace-sm: px-to-rem(11px);
 $gl-border-size-1: 1px;
 
 // Responsive breakpoints
-$breakpoint-sm: px-to-rem(576px);
-$breakpoint-md: px-to-rem(768px);
-$breakpoint-lg: px-to-rem(992px);
-$breakpoint-xl: px-to-rem(1200px);
+$breakpoint-sm: 36rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 62rem;
+$breakpoint-xl: 75rem;
 
 // Line height
-$gl-line-height-16: px-to-rem(16px);
-$gl-line-height-20: px-to-rem(20px);
-$gl-line-height-24: px-to-rem(24px);
-$gl-line-height-28: px-to-rem(28px);
-$gl-line-height-32: px-to-rem(32px);
-$gl-line-height-36: px-to-rem(36px);
-$gl-line-height-44: px-to-rem(44px);
-$gl-line-height-52: px-to-rem(52px);
+$gl-line-height-16: 1rem;
+$gl-line-height-20: 1.25rem;
+$gl-line-height-24: 1.5rem;
+$gl-line-height-28: 1.75rem;
+$gl-line-height-32: 2rem;
+$gl-line-height-36: 2.25rem;
+$gl-line-height-44: 2.75rem;
+$gl-line-height-52: 3.25rem;
 
 // Layout
 $grid-size: 0.5rem;
@@ -410,19 +410,19 @@ $gl-spacing-scale-20: 20 * $grid-size;
 // Markdown typescale
 
 // default (min-width: 0)
-$gl-font-size-markdown: px-to-rem(16px);
-$gl-font-size-markdown-sm: px-to-rem(14px);
+$gl-font-size-markdown: 1rem;
+$gl-font-size-markdown-sm: 0.875rem;
 
-$gl-font-size-markdown-h1: px-to-rem(28px);
-$gl-font-size-markdown-h2: px-to-rem(23px);
-$gl-font-size-markdown-h3: px-to-rem(19px);
+$gl-font-size-markdown-h1: 1.75rem;
+$gl-font-size-markdown-h2: 1.438rem;
+$gl-font-size-markdown-h3: 1.188rem;
 
 // breakpoint (min-width: 768px)
-$gl-font-size-markdown-h1-md: px-to-rem(31px);
-$gl-font-size-markdown-h2-md: px-to-rem(25px);
-$gl-font-size-markdown-h3-md: px-to-rem(20px);
+$gl-font-size-markdown-h1-md: 1.938rem;
+$gl-font-size-markdown-h2-md: 1.563rem;
+$gl-font-size-markdown-h3-md: 1.25rem;
 
 // breakpoint (min-width: 1200px)
-$gl-font-size-markdown-h1-xl: px-to-rem(45px);
-$gl-font-size-markdown-h2-xl: px-to-rem(32px);
-$gl-font-size-markdown-h3-xl: px-to-rem(23px);
+$gl-font-size-markdown-h1-xl: 2.813rem;
+$gl-font-size-markdown-h2-xl: 2rem;
+$gl-font-size-markdown-h3-xl: 1.438rem;

@@ -1,10 +1,9 @@
 ---
-version: 1
+version: 2
 ---
 
 // Mixins
 
-@import 'mixins/functions';
 @import 'mixins/breakpoints';
 @import 'mixins/screen-reader';
 @import 'mixins/md-typography';
