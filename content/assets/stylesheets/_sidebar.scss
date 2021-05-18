@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import 'variables';
@@ -93,6 +93,10 @@ version: 1
     line-height: 1rem;
     font-size: 0.875rem;
     width: 100%;
+
+    &:hover {
+      border-bottom: 0;
+    }
   }
 
   .nav-link {

@@ -351,6 +351,7 @@ $gl-font-size-monospace-sm: 0.688rem;
   @include gl-responsive-property('line-height', $min, $max);
 }
 
+/* stylelint-disable */
 @mixin gl-responsive-property(
   $property,
   $property-min,
@@ -358,17 +359,24 @@ $gl-font-size-monospace-sm: 0.688rem;
   $breakpoint-min: $breakpoint-md,
   $breakpoint-max: $breakpoint-xl
 ) {
+  @debug "responsive headers property: #{$breakpoint-max} #{$breakpoint-min}, #{$property-max}, #{$property-min}";
   $breakpoint-range: ($breakpoint-max - $breakpoint-min) / 1rem;
   $property-range: ($property-max - $property-min) / 1rem;
 
+  @debug "responsive headers property $breakpoint-range: #{($breakpoint-max - $breakpoint-min) / 1rem}";
+  @debug "responsive headers property $property-range: #{($property-max - $property-min) / 1rem}";
+
   @media (min-width: $breakpoint-min) {
+    @debug "responsive headers property $breakpoint-min: #{calc(#{$property-min} + #{$property-range} * ((100vw - #{$breakpoint-min}) / #{$breakpoint-range}))}";
     #{$property}: calc(#{$property-min} + #{$property-range} * ((100vw - #{$breakpoint-min}) / #{$breakpoint-range}));
   }
 
   @media (min-width: $breakpoint-max) {
+    @debug "responsive headers property $breakpoint-min: #{$property}: #{$property-max}";
     #{$property}: $property-max;
   }
 }
+/* stylelint-enable */
 
 $gl-border-size-1: 1px;
 
@@ -406,8 +414,6 @@ $gl-spacing-scale-12: 10 * $grid-size;
 $gl-spacing-scale-13: 12 * $grid-size;
 $gl-spacing-scale-15: 15 * $grid-size;
 $gl-spacing-scale-20: 20 * $grid-size;
-
-// Markdown typescale
 
 // default (min-width: 0)
 $gl-font-size-markdown: 1rem;

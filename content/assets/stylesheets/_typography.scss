@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 @import 'variables';
@@ -336,28 +336,32 @@ version: 2
 
   // Responsive Headers
 
-  /* stylelint-disable max-nesting-depth */
+  /* stylelint-disable */
   @mixin responsive-headers($settings) {
     @each $property, $attribute in $settings {
+      @debug "responsive headers attribute type: #{type-of($attribute)}";
       @if type-of($attribute) == 'map' { // property is a breakpoint
         $breakpoint: $property;
         @if $breakpoint == $bp-xs {
           @each $key, $value in $attribute {
+            @debug "responsive headers key-val 1: #{$key}: #{$value}";
             #{$key}: #{$value};
           }
         } @else {
           @media screen and (min-width: $breakpoint) {
             @each $key, $value in $attribute {
+              @debug "responsive headers key-val 2: #{$key}: #{$value}";
               #{$key}: #{$value};
             }
           }
         }
       } @else {
+        @debug "responsive headers $property-$attribute 3: #{$property}: #{$attribute}";
         #{$property}: #{$attribute};
       }
     }
   }
-  /* stylelint-enable max-nesting-depth */
+  /* stylelint-enable */
 
   // Headings
   // For the system of .h1-.h6 classes to properly overwrite the base tag, you must include all properties transformed

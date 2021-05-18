@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import 'variables';
@@ -12,18 +12,18 @@ version: 3
   }
 
   h1 {
-    font-size: 65px;
+    font-size: 4.063rem;
     border-bottom-color: $color-gray-medium;
   }
 
   h2 {
     border-bottom: 0;
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   .back-button {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 1.875rem;
+    margin-bottom: 1.875rem;
   }
 
   .gray {
