@@ -1590,6 +1590,8 @@ sections:
             doc_url: 'ee/api/notes.html'
           - doc_title: Notification settings
             doc_url: 'ee/api/notification_settings.html'
+          - doc_title: npm
+            doc_url: 'ee/api/packages/npm.html'
           - doc_title: NuGet
             doc_url: 'ee/api/packages/nuget.html'
           - doc_title: Packages
