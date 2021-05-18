@@ -8,10 +8,10 @@ version: 111
 @import 'normalize';
 @import 'mixins';
 @import 'base';
-@import 'typography';
 @import 'tables';
 @import 'breadcrumbs';
 @import 'sidebar';
+@import 'typography';
 
 body {
   overflow-x: hidden;
