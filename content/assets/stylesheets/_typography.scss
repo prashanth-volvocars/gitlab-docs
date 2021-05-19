@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import 'variables';
@@ -154,7 +154,9 @@ version: 3
     padding-left: 0.75rem;
     margin-bottom: 1.5rem;
 
-    p {
+    p,
+    li,
+    a {
       font-size: 0.875rem;
     }
   }
