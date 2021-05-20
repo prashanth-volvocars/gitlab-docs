@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 @import 'variables';
@@ -336,195 +336,9 @@ version: 4
     }
   }
 
-  // Responsive Headers
-
-  /* stylelint-disable */
-  @mixin responsive-headers($settings) {
-    @each $property, $attribute in $settings {
-      @debug "responsive headers attribute type: #{type-of($attribute)}";
-      @if type-of($attribute) == 'map' { // property is a breakpoint
-        $breakpoint: $property;
-        @if $breakpoint == $bp-xs {
-          @each $key, $value in $attribute {
-            @debug "responsive headers key-val 1: #{$key}: #{$value}";
-            #{$key}: #{$value};
-          }
-        } @else {
-          @media screen and (min-width: $breakpoint) {
-            @each $key, $value in $attribute {
-              @debug "responsive headers key-val 2: #{$key}: #{$value}";
-              #{$key}: #{$value};
-            }
-          }
-        }
-      } @else {
-        @debug "responsive headers $property-$attribute 3: #{$property}: #{$attribute}";
-        #{$property}: #{$attribute};
-      }
-    }
-  }
-  /* stylelint-enable */
-
-  // Headings
+  // 	Headings
   // For the system of .h1-.h6 classes to properly overwrite the base tag, you must include all properties transformed
   // at every breakpoint, even if those properties are the default or assigned at an earlier breakpoint.
-
-  // Close to a 1.2 (minor third) scale at the LG breakpoint
-  $h1-properties: (
-    color: $theme-indigo-900,
-    font-weight: 600,
-    margin-top: 0,
-    text-transform: none,
-    $bp-xs : (
-      font-size : 2rem,         // 32px
-      line-height : 1,          // 32px
-      margin-bottom: 1.5rem,    // 24px
-    ),
-      $bp-sm: (
-        font-size : 2rem,         // 32px
-        line-height : 1,          // 32px
-        margin-bottom: 1.5rem,    // 24px
-      ),
-        $bp-md : (
-          font-size : 2.5rem,       // 40px
-          line-height : 1,          // 40px
-          margin-bottom: 1.5rem,    // 24px
-        ),
-          $bp-lg : (
-            font-size : 2.5rem,       // 40px
-            line-height : 1,          // 40px
-            margin-bottom: 1.5rem,    // 24px
-          )
-          ) !default;
-
-  $h2-properties: (
-    color: $theme-indigo-900,
-    font-weight: 600,
-    $bp-xs : (
-      font-size : 1.5rem,       // 24px
-      line-height : 1.25,       // 30px
-      margin-bottom: 1.5rem,    // 24px
-    ),
-      $bp-sm : (
-        font-size : 1.5rem,       // 24px
-        line-height : 1.25,       // 30px
-        margin-bottom: 1.5rem,    // 24px
-      ),
-        $bp-md : (
-          font-size : 2rem,         // 32px
-          line-height : 1,          // 32px
-          margin-bottom: 1.5rem,    // 24px
-        ),
-          $bp-lg : (
-            font-size : 2rem,         // 32px
-            line-height : 1,          // 32px
-            margin-bottom: 1.5rem,    // 24px
-          )
-          ) !default;
-
-  $h3-properties: (
-    color: $theme-indigo-900,
-    font-weight: 600,
-    text-transform: none,
-    $bp-xs : (
-      font-size : 1.25rem,      // 20px
-      line-height : 1.4,        // 28px
-      margin-bottom: 1rem,   // 20px
-    ),
-      $bp-sm : (
-        font-size : 1.25rem,      // 20px
-        line-height : 1.4,        // 28px
-        margin-bottom: 1rem,   // 20px
-      ),
-        $bp-md : (
-          font-size : 1.5rem,       // 24px
-          line-height : 1.273,      // 28px
-          margin-bottom: 1rem,   // 20px
-        ),
-          $bp-lg : (
-            font-size : 1.5rem,       // 24px
-            line-height : 1.273,      // 28px
-            margin-bottom: 1rem,      // 16px
-          )
-          ) !default;
-
-  $h4-properties: (
-    color: $theme-indigo-900,
-    text-transform: none,
-    $bp-xs : (
-      font-size : 1rem,         // 16px
-      line-height : 1.5,        // 24px
-      margin-bottom: 0.75rem,      // 12px
-    ),
-      $bp-sm : (
-        font-size : 1rem,         // 16px
-        line-height : 1.5,        // 24px
-        margin-bottom: 0.75rem,      // 12px
-      ),
-        $bp-md : (
-          font-size : 1.125rem,     // 18px
-          line-height : 1.375,      // 22px
-          margin-bottom: 0.75rem,      // 12px
-        ),
-          $bp-lg : (
-            font-size : 1.125rem,     // 18px
-            line-height : 1.375,      // 22px
-            margin-bottom: 0.75rem,      // 12px
-          )
-          ) !default;
-
-  $h5-properties: (
-    color: $theme-indigo-900,
-    font-weight: 700,
-    text-transform: none,
-    $bp-xs : (
-      font-size : 0.875rem,     // 14px
-      line-height : 1.429,      // 20px
-      margin-bottom: 0.5rem,      // 8px
-    ),
-      $bp-sm : (
-        font-size : 0.875rem,     // 14px
-        line-height : 1.429,      // 20px
-        margin-bottom: 0.5rem,      // 8px
-      ),
-        $bp-md : (
-          font-size : 1rem,         // 16px
-          line-height : 1.5,        // 24px
-          margin-bottom: 0.5rem,      // 8px
-        ),
-          $bp-lg : (
-            font-size : 1rem,         // 16px
-            line-height : 1.5,        // 24px
-            margin-bottom: 0.5rem,      // 8px
-          )
-          ) !default;
-
-  $h6-properties: (
-    color: $theme-indigo-900,
-    text-transform: none,
-    $bp-xs : (
-      font-size : 0.875rem,     // 14px
-      line-height : 1.25,       // 17.5px
-      margin-bottom : 0.25rem,  // 4px
-    ),
-      $bp-sm : (
-        font-size : 0.875rem,     // 14px
-        line-height : 1.25,       // 17.5px
-        margin-bottom : 0.25rem,  // 4px
-      ),
-        $bp-md : (
-          font-size : 0.875rem,     // 14px
-          line-height : 1.25,       // 17.5px
-          margin-bottom : 0.25rem,  // 4px
-        ),
-          $bp-lg : (
-            font-size : 0.875rem,     // 14px
-            line-height : 1.25,       // 17.5px
-            margin-bottom : 0.25rem,  // 4px
-          )
-          ) !default;
-
-  // 	Headings
 
   // See the headings section in _variables.scss for the responsive properties.
   h1,
@@ -543,20 +357,355 @@ version: 4
     text-rendering: optimizelegibility;
   }
 
-  h1 { @include responsive-headers($h1-properties);}
-  h2 { @include responsive-headers($h2-properties);}
-  h3 { @include responsive-headers($h3-properties);}
-  h4 { @include responsive-headers($h4-properties);}
-  h5 { @include responsive-headers($h5-properties);}
-  h6 { @include responsive-headers($h6-properties);}
+  // Responsive Headers
+
+  h1 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    margin-top: 0;
+    text-transform: none;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h1 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  h2 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h2 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h2 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  h3 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.273;
+      margin-bottom: 1rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.273;
+      margin-bottom: 1rem;
+    }
+  }
+  h4 {
+    color: $theme-indigo-900;
+    text-transform: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h4 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h4 {
+      font-size: 1.125rem;
+      line-height: 1.375;
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h4 {
+      font-size: 1.125rem;
+      line-height: 1.375;
+      margin-bottom: 0.75rem;
+    }
+  }
+  h5 {
+    color: $theme-indigo-900;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 0.875rem;
+    line-height: 1.429;
+    margin-bottom: 0.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h5 {
+      font-size: 0.875rem;
+      line-height: 1.429;
+      margin-bottom: 0.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h5 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h5 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+  }
+  h6 {
+    color: $theme-indigo-900;
+    text-transform: none;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
 
   // These declarations are kept separate from and placed after
   // the previous tag-based declarations so that the classes beat the tags in
   // the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
-  .h1 { @include responsive-headers($h1-properties);}
-  .h2 { @include responsive-headers($h2-properties);}
-  .h3 { @include responsive-headers($h3-properties);}
-  .h4 { @include responsive-headers($h4-properties);}
-  .h5 { @include responsive-headers($h5-properties);}
-  .h6 { @include responsive-headers($h6-properties);}
+
+  .h1 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    margin-top: 0;
+    text-transform: none;
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h1 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h1 {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .h2 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h2 {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h2 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h2 {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .h3 {
+    color: $theme-indigo-900;
+    font-weight: 600;
+    text-transform: none;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h3 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h3 {
+      font-size: 1.5rem;
+      line-height: 1.273;
+      margin-bottom: 1rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h3 {
+      font-size: 1.5rem;
+      line-height: 1.273;
+      margin-bottom: 1rem;
+    }
+  }
+  .h4 {
+    color: $theme-indigo-900;
+    text-transform: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h4 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h4 {
+      font-size: 1.125rem;
+      line-height: 1.375;
+      margin-bottom: 0.75rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h4 {
+      font-size: 1.125rem;
+      line-height: 1.375;
+      margin-bottom: 0.75rem;
+    }
+  }
+  .h5 {
+    color: $theme-indigo-900;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 0.875rem;
+    line-height: 1.429;
+    margin-bottom: 0.5rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h5 {
+      font-size: 0.875rem;
+      line-height: 1.429;
+      margin-bottom: 0.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h5 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h5 {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .h6 {
+    color: $theme-indigo-900;
+    text-transform: none;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
+  }
+  @media screen and (min-width: $bp-sm) {
+    .h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
+  @media screen and (min-width: $bp-md) {
+    .h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
+  @media screen and (min-width: $bp-lg) {
+    .h6 {
+      font-size: 0.875rem;
+      line-height: 1.25;
+      margin-bottom: 0.25rem;
+    }
+  }
 }
