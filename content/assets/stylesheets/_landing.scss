@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 @import 'variables';
@@ -126,7 +126,7 @@ version: 4
         padding-left: 2.5rem;
       }
 
-      a {
+      .card-link {
         font-size: 1.5rem;
         line-height: 1.5rem;
         color: $landing-gl-purple-500;
@@ -247,7 +247,7 @@ version: 4
       }
     }
   }
-  
+
   .self-managed {
     h2 {
       font-weight: 500;
@@ -399,7 +399,7 @@ version: 4
         width: 100%;
       }
     }
-    
+
     h5 {
       font-weight: 500;
       font-size: 2.5rem;
@@ -445,7 +445,7 @@ version: 4
       width: 0.313rem;
       background-color: $gds-white;
       border-radius: 50%;
-      display: inline-block; 
+      display: inline-block;
     }
   }
 }
