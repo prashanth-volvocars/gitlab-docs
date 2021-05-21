@@ -2067,7 +2067,7 @@ sections:
           - doc_title: Design and UI
             doc_url: 'ee/development/contributing/design.html'
           - doc_title: GitLab Development Kit
-            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/README.md'
+            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/README.md'
             external_url: true
           - doc_title: Issues workflow
             doc_url: 'ee/development/contributing/issue_workflow.html'
@@ -2207,7 +2207,7 @@ sections:
           - doc_title: Widgets
             doc_url: 'ee/development/fe_guide/widgets.html'
       - category_title: GitLab Pages development
-        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/pages.md'
+        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/pages.md'
         external_url: true
       - category_title: Geo development
         category_url: 'ee/development/geo.html'
