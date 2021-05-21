@@ -10,15 +10,12 @@ $header-height: 3rem;
 // Width
 $sidebar-width: 16.66667%;
 $sidebar-mobile-width: 20rem;
-$toc-width: 20rem;
-$page-content-width: 61.25rem;
 
 // GitLab colors
 // Tanuki
 $color-tanuki-dark: rgb(226, 67, 41);
 $color-tanuki-medium: rgb(252, 109, 38);
 $color-tanuki-light: rgb(252, 163, 38);
-$color-btn-tanuki: rgba(252, 163, 38, 0.1);
 
 //// GitLab Design System's (GDS) colors ////
 // https://design.gitlab.com/#/foundations/colors
@@ -30,8 +27,6 @@ $gds-gray-100: #f2f2f2;
 $gds-gray-200: #dfdfdf;
 $gds-gray-300: #ccc;
 $gds-gray-400: #bababa;
-$gds-gray-500: #a7a7a7;
-$gds-gray-600: #919191;
 $gds-gray-700: #707070;
 $gds-gray-800: #4f4f4f;
 $gds-gray-900: #2e2e2e;
@@ -41,7 +36,6 @@ $gds-gray-1000: #666;
 
 // Blue palette
 $gds-blue-600: #1b69b6;
-$gds-blue-800: #134a81;
 
 // Purple palatte
 $gds-purple-900: #2f2a6b;
@@ -57,14 +51,11 @@ $gds-indigo-800: #393982;
 // Base colors
 $body-color: $gds-gray-950; //font color
 $bg-overlay-color: rgba(0, 0, 0, 0.3); // body overlay
-$body-background-color: $gds-white; //body background
 $header-background-color: $gds-purple-900;
 $header-free-trial-button-color: #cb4e18;
 
 // Link colors
 $link-color: $gds-blue-600;
-$link-color-hover: $gds-blue-800;
-$link-code-color: $gds-blue-600;
 $link-color-bg-active: rgba($gds-gray-900, 0.06);
 $link-color-nav: $gds-gray-800;
 $link-color-nav-hover: $gds-gray-900;
@@ -78,21 +69,7 @@ $global-nav-link-level4: $link-color-nav;
 $global-nav-link-shadow: $gds-gray-200;
 
 // Table of contents
-$toc-bg-color: $body-background-color;
-$toc-border: $gds-gray-600;
 $toc-link-color: $global-nav-link-level2;
-
-// Help and feedback section
-$feedback-bg: rgba($gds-gray-50, 0.4);
-$inactive-tabs: rgba($gds-gray-100, 0.6);
-$buttons-bg: $body-background-color;
-$tabs-border: $gds-gray-200;
-
-// Versions menu
-$versions-link-color: $global-nav-link-level1;
-$versions-link-color-hover: $link-color-nav-hover;
-$versions-link-color-bg-hover: rgba($gds-gray-200, 0.6);
-$versions-active-bg-color: $versions-link-color-bg-hover;
 
 /// Elements
 $h1-border-bottom: $gds-gray-700;
@@ -123,11 +100,8 @@ $alert-gray-border: $gds-gray-200;
 
 // Badges
 $badge-tier: $color-tanuki-dark;
-$badge-tier-transparent: rgba(252, 163, 38, 0.1);
 $badge-self-managed: $color-tanuki-medium;
-$badge-self-managed-transparent: rgba(252, 109, 38, 0.1);
 $badge-saas: $color-tanuki-light;
-$badge-saas-transparent: rgba(252, 163, 38, 0.1);
 
 //Icons
 $gl-icon-sizes: 8 10 12 14 16 18 24 32 48 72;
@@ -184,9 +158,6 @@ $color-light-gray: rgb(117, 117, 117);
 
 // Social colors
 $youtube: #f00;
-
-// Article colors
-$article-metadata: rgb(110, 110, 110);
 
 
 // New Styles from: https://gitlab.com/gitlab-org/gitlab/-/issues/300424
@@ -325,22 +296,6 @@ $gl-font-size-monospace-sm: 0.688rem;
 
 @mixin gl-text-gray-700 {
   color: $gray-700;
-}
-
-@mixin gl-text-gray-900 {
-  color: $gray-900;
-}
-
-@mixin gl-border-b-solid($hover: true) {
-  border-bottom-style: solid;
-}
-
-@mixin gl-border-b-1 {
-  border-bottom-width: $gl-border-size-1;
-}
-
-@mixin gl-border-b-gray-200 {
-  border-bottom-color: $gray-200;
 }
 
 @mixin gl-fluid-font-size($min, $max) {
