@@ -1,5 +1,5 @@
 ---
-version: 111
+version: 112
 ---
 
 @import 'variables';
@@ -67,6 +67,11 @@ h1 {
       position: fixed;
     }
   }
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
 }
 
 .nav-wrapper {
