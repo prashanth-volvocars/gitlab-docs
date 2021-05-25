@@ -2337,21 +2337,6 @@ sections:
         category_url: 'ee/development/integrations/jenkins.html'
       - category_title: Jira development environment
         category_url: 'ee/development/integrations/jira_connect.html'
-      - category_title: Kubernetes Agent
-        category_url: 'ee/development/agent/'
-        docs:
-          - doc_title: Routing kas requests
-            doc_url: 'ee/development/agent/routing.html'
-          - doc_title: Repository overview
-            doc_url: 'ee/development/agent/repository_overview.html'
-          - doc_title: Identity and authentication
-            doc_url: 'ee/development/agent/identity.html'
-          - doc_title: User stories
-            doc_url: 'ee/development/agent/user_stories.html'
-          - doc_title: GitOps with the Kubernetes Agent
-            doc_url: 'ee/development/agent/gitops.html'
-          - doc_title: Running locally
-            doc_url: 'ee/development/agent/local.html'
       - category_title: Kubernetes integration
         category_url: 'ee/development/kubernetes.html'
 
