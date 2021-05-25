@@ -63,9 +63,20 @@ module Nanoc::Helpers
 
     def next_version
       latest_stable = data_versions[:online].first
-      next_major, next_minor = latest_stable.split('.')
+      latest_major, latest_minor = latest_stable.split('.')
+      _, last_minor = data_versions[:last_before_new_major].first.split('.')
 
-      "#{next_major}.#{next_minor.to_i + 1}"
+      #
+      # If the minor version of the latest online version
+      # is equal to last_minor, bump the major version
+      # and set patch to 0. This is for the case where a new
+      # major version is the next version to be released.
+      #
+      if latest_minor == last_minor
+        "#{latest_major.to_i + 1}.0"
+      else
+        "#{latest_major}.#{latest_minor.to_i + 1}"
+      end
     end
 
     def dotcom
