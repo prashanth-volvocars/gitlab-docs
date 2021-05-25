@@ -1977,8 +1977,17 @@ sections:
                 doc_url: 'charts/backup-restore/backup.html'
               - doc_title: Restore
                 doc_url: 'charts/backup-restore/restore.html'
-          - doc_title: Migrate from Omnibus
+          - doc_title: Migration guides
             doc_url: 'charts/installation/migration/'
+            docs:
+              - doc_title: Migrate from the Linux package
+                doc_url: 'charts/installation/migration/package_to_helm.html'
+              - doc_title: Migrate to the Linux package
+                doc_url: 'charts/installation/migration/helm_to_package.html'
+              - doc_title: Migrate between Helm versions
+                doc_url: 'charts/installation/migration/helm.html'
+              - doc_title: Migrate to MinIO
+                doc_url: 'charts/installation/migration/minio.html'
           - doc_title: Version mappings
             doc_url: 'charts/installation/version_mappings.html'
 
