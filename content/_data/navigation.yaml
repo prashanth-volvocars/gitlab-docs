@@ -425,6 +425,8 @@ sections:
             doc_url: 'ee/administration/geo/replication/usage.html'
           - doc_title: Updating Geo nodes
             doc_url: 'ee/administration/geo/replication/updating_the_geo_nodes.html'
+          - doc_title: Version-specific updates
+            doc_url: '/ee/administration/geo/replication/version_specific_updates.html'
           - doc_title: Using object storage
             doc_url: 'ee/administration/geo/replication/object_storage.html'
           - doc_title: Using Docker Registry
