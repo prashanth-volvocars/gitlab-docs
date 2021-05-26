@@ -399,8 +399,6 @@ sections:
             doc_url: 'ee/administration/operations/sidekiq_memory_killer.html'
           - doc_title: Switch to Puma
             doc_url: 'ee/administration/operations/puma.html'
-          - doc_title: Unicorn
-            doc_url: 'ee/administration/operations/unicorn.html'
           - doc_title: Use SSH certificates
             doc_url: 'ee/administration/operations/ssh_certificates.html'
       - category_title: Packages
