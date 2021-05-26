@@ -28,7 +28,7 @@ class AdmonitionFilter < Nanoc::Filter
   end
 
   def generate(kind, content)
-    %(<div class="admonition-wrapper #{kind}">) +
+    %(<div class="mt-3 admonition-wrapper #{kind}">) +
       %(<div class="admonition alert alert-#{BOOTSTRAP_MAPPING[kind]}">) +
       %(#{icon(GITLAB_SVGS_MAPPING[kind])}#{content}</div></div>)
   end
