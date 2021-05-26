@@ -899,6 +899,13 @@ sections:
     section_categories:
       - category_title: Get started
         category_url: 'ee/user/project/merge_requests/getting_started.html'
+        docs:
+          - doc_title: Changes tab
+            doc_url: 'ee/user/project/merge_requests/changes.html'
+          - doc_title: Commits tab
+            doc_url: 'ee/user/project/merge_requests/commits.html'
+          - doc_title: Widgets
+            doc_url: 'ee/user/project/merge_requests/widgets.html'
       - category_title: Allow collaboration
         category_url: 'ee/user/project/merge_requests/allow_collaboration.html'
       - category_title: Approvals
