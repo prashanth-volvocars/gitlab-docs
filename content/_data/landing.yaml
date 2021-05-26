@@ -49,7 +49,7 @@ heros:
     alt: increase
     links:
       - title: Value stream analytics
-        url: '/ee/development/value_stream_analytics.html'
+        url: '/ee/user/analytics/value_stream_analytics.html'
       - title: Issue analytics
         url: '/ee/user/group/issues_analytics/'
       - title: Usage trends
