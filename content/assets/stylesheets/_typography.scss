@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 
 @import 'variables';
@@ -31,12 +31,6 @@ version: 6
     ul {
       margin-bottom: 0;
     }
-  }
-
-  img {
-    border: 1px solid $gds-gray-200;
-    border-radius: 0.5rem;
-    padding: 0.25rem;
   }
 
   ul,

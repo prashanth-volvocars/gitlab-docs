@@ -1,36 +1,72 @@
 ---
-version: 4
+version: 5
 ---
 
 @import 'variables';
 
-// Override some main elements
 .four-oh-four {
-  img {
-    border: 0;
-    box-shadow: none;
-  }
-
-  h1 {
-    font-size: 4.063rem;
-    border-bottom-color: $color-gray-medium;
-  }
-
   h2 {
-    border-bottom: 0;
-    font-size: 1.375rem;
+    color: $gds-purple-900;
   }
 
-  .back-button {
-    margin-top: 1.875rem;
-    margin-bottom: 1.875rem;
+  .btn-outline-primary {
+    transition: 0.3s all;
+    border-color: $landing-gl-purple-500;
+    color: $landing-gl-purple-500;
+
+    &:hover {
+      color: $gds-white;
+      background-color: $landing-gl-purple-500;
+    }
   }
 
-  .gray {
-    color: $color-gray;
+  .search {
+    background: $gds-white;
+    box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.5rem 1.5rem $landing-gl-blue-950;
+    border-radius: 0.25rem;
+    width: 65%;
+
+    @media (max-width: $bp-md) {
+      width: 100%;
+    }
+
+    .card-title {
+      font-size: 2rem;
+      color: $gds-purple-900;
+
+      @media (max-width: $bp-xs) {
+        font-size: 2rem;
+      }
+    }
+
+    .algolia-autocomplete {
+      width: 100%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 2rem;
+      bottom: 3rem;
+      z-index: 1;
+    }
+
+    .form-control {
+      background: $gds-white;
+      border: 1px solid $landing-gl-purple-550;
+      box-sizing: border-box;
+      box-shadow: 0 0 0 0.25rem $landing-gl-blue-200;
+      border-radius: 1.5rem;
+      padding-left: 2.5rem;
+    }
   }
 
-  .search-icon {
-    background-color: $color-white;
+  .algolia-autocomplete {
+    .ds-dropdown-menu [class^=ds-dataset-] {
+      /* stylelint-disable declaration-no-important */
+      max-height: 30vh !important;
+      max-width: 85vw !important;
+      /* stylelint-enable declaration-no-important */
+      overflow-x: scroll;
+    }
   }
 }
