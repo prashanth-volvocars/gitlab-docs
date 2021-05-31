@@ -1,5 +1,5 @@
 ---
-version: 13
+version: 14
 ---
 
 @import 'variables';
@@ -32,12 +32,6 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
 
 .search-input {
   border-radius: 2px;
-}
-
-.instantsearch-input {
-  @media all and (max-width: $bp-sm) {
-    margin-top: 40px;
-  }
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
@@ -143,15 +137,6 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
   /* stylelint-disable-next-line selector-list-comma-newline-after */
   > h1, h2, h3, h4, h5, h6 {
     border: 0;
-  }
-}
-
-//overrides padding for the searchbox
-.main.class {
-  padding-top: 90px;
-
-  @media (max-width: $bp-sm) {
-    padding-top: 20px;
   }
 }
 
