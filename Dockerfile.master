@@ -1,17 +1,17 @@
 #
 # This Dockerfile is mainly used to create the docs:latest image which includes
-# the latest 3 stable versions plus the most recent one built from master.
+# the latest 3 stable versions plus the most recent one built from main.
 #
 
-# First use the bootstrap image to build master
+# First use the bootstrap image to build main
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap as builder
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
 ARG NANOC_ENV
 ARG CI_COMMIT_REF_NAME
-# If CI_COMMIT_REF_NAME is not set (local development), set it to master
-ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
+# If CI_COMMIT_REF_NAME is not set (local development), set it to main
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 
 # Build the docs from this branch
 COPY . /source/
@@ -29,7 +29,7 @@ RUN /scripts/compress_images.sh /source/public ee
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
 RUN cd /source/public/ && rm -rf ce && ln -s ee ce
 
-# BUILD OF MASTER DOCS IS NOW DONE!
+# BUILD OF 'main' DOCS IS NOW DONE!
 
 # Reset to alpine so we don't get any docs source or extra apps
 FROM nginx:1.12-alpine

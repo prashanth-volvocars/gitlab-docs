@@ -13,7 +13,7 @@ run do |opts, args, cmd|
   unless system('yarn install --frozen-lockfile')
     abort <<~ERROR
       Error: failed to run yarn. JavaScript compilation failed. For more information, see:
-      https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
+      https://gitlab.com/gitlab-org/gitlab-docs/blob/main/README.md
 
     ERROR
   end
@@ -21,7 +21,7 @@ run do |opts, args, cmd|
   unless system('yarn bundle')
     abort <<~ERROR
       Error: failed to run yarn. JavaScript compilation failed. For more information, see:
-      https://gitlab.com/gitlab-org/gitlab-docs/blob/master/README.md
+      https://gitlab.com/gitlab-org/gitlab-docs/blob/main/README.md
 
     ERROR
   end

@@ -1,6 +1,6 @@
 # GitLab documentation
 
-[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/gitlab-docs/commits/master)
+[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/main/pipeline.svg)](https://gitlab.com/gitlab-org/gitlab-docs/commits/main)
 
 This project hosts the repository used to generate the GitLab documentation
 website and deployed to [https://docs.gitlab.com](https://docs.gitlab.com). It
@@ -66,7 +66,7 @@ There are a couple of options for installing dependencies for `gitlab-docs`:
 - The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn.
 
 The choice of which to use might depend on what you currently use. For example, you may have already
-[set up a dependency manager for GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/index.md#install-dependencies).
+[set up a dependency manager for GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md#install-dependencies).
 
 If you don't yet have Ruby, Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
 
@@ -333,7 +333,7 @@ docs site on every device connected to your network.
 ### Preview on the GitLab Development Kit
 
 Alternatively, you can preview changes using the GitLab Development Kit (GDK).
-For more information, see [Setting up GitLab Docs](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/master/doc/howto/gitlab_docs.md)
+For more information, see [Setting up GitLab Docs](https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/gitlab_docs.md)
 in the GDK repository.
 
 ## Contributing to the docs website itself
@@ -363,7 +363,7 @@ documentation site, use [Gitpod](https://www.gitpod.io) to deploy a
 pre-configured documentation site for your development use.
 
 For additional information, see the
-[GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/master/doc/howto/gitpod.md).
+[GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitpod.md).
 
 ### Get started with Gitpod
 
@@ -513,7 +513,7 @@ host this website. See [`.gitlab-ci.yml`](.gitlab-ci.yml) for more information.
 We also use [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
 to build the site once every four hours.
 
-By default, we pull from the master branch of [all the projects](#projects-we-pull-from).
+By default, we pull from the default branch of [all the projects](#projects-we-pull-from).
 
 ## Algolia search
 

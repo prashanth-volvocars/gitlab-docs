@@ -41,8 +41,8 @@ RUN echo 'gem: --no-document' >> /etc/gemrc
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
 ARG CI_COMMIT_REF_NAME
-# If CI_COMMIT_REF_NAME is not set (local development), set it to master
-ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
+# If CI_COMMIT_REF_NAME is not set (local development), set it to main
+ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 
 WORKDIR /tmp
 
