@@ -6,24 +6,21 @@
     <link rel="canonical" href="<%= @config[:base_url] %>/404.html">
     <link rel="stylesheet" href="<%= @items['/assets/stylesheets/404.*'].path %>">
   </head>
-  <body class="gl-docs">
+  <body>
     <%= render '/header.*' %>
-    <section class="container">
+    <section class="container-fluid mt-5 pt-5">
       <div class="row">
         <div class="col-12">
-          <div class="wrapper d-flex justify-content-center">
-            <div class="main class pl-lg-4">
-              <%= yield %>
-              <%= render '/footer.*' %>
-          </div>
-        </div>
+          <%= yield %>
+          <%= render '/footer.*' %>
       </div>
     </div>
   </section>
-  <%= render '/docsearch.*' %>
-  <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+  <script type="application/javascript" src="<%= @items['/assets/javascripts/404.*'].path %>"></script>
   <script src="<%= @items['/frontend/404/404.*'].path %>"></script>
+  <%= render '/docsearch.*' %>
   <% if production? %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>

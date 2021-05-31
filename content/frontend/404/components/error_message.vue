@@ -25,8 +25,8 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h2>There's no page at this address!</h2>
+  <div class="d-flex justify-content-center">
+    <h2 class="py-4">There's no page at this address!</h2>
 
     <p v-if="isProduction && isOffline" class="gray js-error-description">
       You attempted to view an older version of the documentation that is no longer available on

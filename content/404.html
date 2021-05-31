@@ -3,27 +3,28 @@ title: Page Not Found | GitLab Documentation
 searchbar: false
 ---
 
-<div class='four-oh-four'>
-  <div class="center">
+<div class="four-oh-four d-flex justify-content-center">
+  <div>
     <img src="<%= @items['/assets/images/error-404.svg'].path %>" alt="404"/>
     <div id="js-error-message"></div>
     <br>
-    <div id="pagesearchbar"> <!-- pagesearchbar -->
-      <form id="search-form" action="/search/" method="get">
-        <div class="input-container input-group justify-content-center">
-          <span class="input-group-prepend search-icon">
-            <i class="input-group-text fa fa-search" aria-hidden="true"></i>
-          </span>
-          <input id="search-input" type="text" name="query" class="docsearch form-control" placeholder="Type to search" required="true"/>
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="submit">All results</button>
-          </span>
-        </div>
-      </form>
-    </div> <!-- pagesearchbar -->
-    <div class="back-button center">
-      <a href="javascript:history.back()" class="btn btn-warning">
-      <i class="fa fa-arrow-left" aria-hidden="true"></i> Go back</a>
+    <div class="card search w-100 text-center">
+      <div class="card-body">
+        <h3 class="card-title mb-4">Search the docs</h3>
+        <form class="mb-3" id="search-form" action="/search" method="get">
+          <div class="form-group">
+            <img class="search-icon" src="/assets/images/search.svg" alt="Search" aria-hidden="true" role="img">
+            <input id="search-input" class="form-control search-input docsearch w-100" name="query" type="search" placeholder="Search the complete docs...">
+            <input type="submit" style="visibility: hidden; position:absolute;" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+      <a href="javascript:history.back()" class="btn btn-outline-primary">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        Go back
+      </a>
     </div>
     <br>
   </div>
