@@ -20,7 +20,7 @@ end
 def retrieve_branch(slug)
   # If CI_COMMIT_REF_NAME is not defined (run locally), set it to the default branch.
   if ENV["CI_COMMIT_REF_NAME"].nil?
-    default_branch(products['repo_url'])
+    default_branch(products[slug].fetch('repo'))
   # If we're on a gitlab-docs stable branch according to the regex, catch the
   # version and assign the product stable branches correctly.
   elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
@@ -39,7 +39,7 @@ def retrieve_branch(slug)
   # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
   # variable, and if not assigned, set to the default branch.
   else
-    ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products['repo_url']))
+    ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products[slug].fetch('repo')))
   end
 end
 
