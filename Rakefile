@@ -107,7 +107,7 @@ namespace :release do
     # Replace the branches variables in .gitlab-ci.yml
     ci_yaml = "#{source_dir}/.gitlab-ci.yml"
     ci_yaml_content = File.read(ci_yaml)
-    ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
+    ci_yaml_content.gsub!("BRANCH_EE: 'main'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
     ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
     ci_yaml_content.gsub!("BRANCH_RUNNER: 'main'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
     ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{chart_version(version).tr('.', '-')}-stable'")

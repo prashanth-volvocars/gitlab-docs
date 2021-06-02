@@ -25,10 +25,10 @@ stages:
   - post-deploy
 
 #
-# Pick the remote branch, by default master (see the Rakefile for more info)
+# Pick the remote branch (see the Rakefile for more info)
 #
 variables:
-  BRANCH_EE: 'master'
+  BRANCH_EE: 'main'
   BRANCH_OMNIBUS: 'master'
   BRANCH_RUNNER: 'main'
   BRANCH_CHARTS: 'master'

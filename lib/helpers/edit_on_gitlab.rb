@@ -25,8 +25,8 @@ module Nanoc::Helpers
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
       # gitlab-foss and gitlab repos
       when "ee"
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/#{docs_content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/main/doc/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/main/-/doc/#{docs_content_filename}"
       else
         # gitlab-docs pages
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/main/#{@item[:content_filename]}"
