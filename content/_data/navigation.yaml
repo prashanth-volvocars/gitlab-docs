@@ -1579,8 +1579,6 @@ sections:
           - doc_title: Securing your deployed applications
             doc_url: 'ee/user/project/clusters/protect/'
             docs:
-              - doc_title: Web Application Firewall
-                doc_url: 'ee/user/project/clusters/protect/web_application_firewall/'
               - doc_title: Container Network Security
                 doc_url: 'ee/user/project/clusters/protect/container_network_security/'
               - doc_title: Container Host Security
