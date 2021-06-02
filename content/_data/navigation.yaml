@@ -1407,8 +1407,6 @@ sections:
         docs:
           - doc_title: Security Configuration
             doc_url: 'ee/user/application_security/configuration/'
-          - doc_title: Code owners
-            doc_url: 'ee/user/project/code_owners.html'
           - doc_title: Container Scanning
             doc_url: 'ee/user/application_security/container_scanning/'
           - doc_title: Threat Monitoring
