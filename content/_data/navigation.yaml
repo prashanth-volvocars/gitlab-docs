@@ -1529,6 +1529,11 @@ sections:
       - category_title: Manage your infrastructure
         category_url: 'ee/user/project/clusters/'
         docs:
+          - doc_title: Kubernetes Agent
+            doc_url: 'ee/user/clusters/agent/'
+            docs:
+              - doc_title: Agent configuration repository
+                doc_url: 'ee/user/clusters/agent/repository.html'
           - doc_title: Adding and removing clusters
             doc_url: 'ee/user/project/clusters/add_remove_clusters.html'
             docs:
@@ -1560,11 +1565,6 @@ sections:
                 doc_url: 'ee/user/infrastructure/terraform_state.html'
               - doc_title: Terraform integration in merge requests
                 doc_url: 'ee/user/infrastructure/mr_integration.html'
-          - doc_title: Kubernetes Agent
-            doc_url: 'ee/user/clusters/agent/'
-            docs:
-              - doc_title: Agent configuration repository
-                doc_url: 'ee/user/clusters/agent/repository.html'
           - doc_title: Management project
             doc_url: 'ee/user/clusters/management_project.html'
           - doc_title: Pod logs
