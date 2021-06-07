@@ -1,7 +1,8 @@
 require './lib/task_helpers'
 require 'fileutils'
+require 'pathname'
 
-task default: [:setup_repos, :pull_repos, :setup_content_dirs, :generate_feature_flags]
+task default: [:clone_repositories, :generate_feature_flags]
 
 task :setup_git do
   puts "\n=> Setting up dummy user/email in Git"
@@ -10,8 +11,8 @@ task :setup_git do
   `git config --global user.email johndoe@example.com`
 end
 
-desc 'Setup repositories for EE, Omnibus, and Runner in special way exposing only their doc directories'
-task :setup_repos do
+desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
+task :clone_repositories do
   products.each_value do |product|
     branch = retrieve_branch(product['slug'])
 
@@ -23,112 +24,26 @@ task :setup_repos do
     # project.
     next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    next if File.exist?(product['temp_dir'])
+    puts "\n=> Cloning #{product['repo']} into #{product['project_dir']}\n"
 
-    puts "\n=> Setting up repository #{product['repo']} into #{product['temp_dir']}\n"
-    `git init #{product['temp_dir']}`
+    `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
-    Dir.chdir(product['temp_dir']) do
-      `git remote add origin #{product['repo']}`
-
-      # Configure repository for sparse-checkout
-      `git config core.sparsecheckout true`
-
-      File.open('.git/info/sparse-checkout', 'w') do |file|
-        product['content_dirs'].each do |content_dir|
-          file.puts("/#{content_dir['doc_dir']}/*")
-        end
-      end
-    end
+    # Print the latest commit from each project so that we can see which commit we're building from.
+    puts "Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}"
   end
 end
 
-desc 'Pulls down the CE, EE, Omnibus and Runner git repos fetching and keeping only the most recent commit'
-task :pull_repos do
-  products.each_value do |product|
-    branch = retrieve_branch(product['slug'])
-
-    # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
-    # First we check if the branch on the docs repo is other than the default branch and
-    # then we skip if the remote branch variable is the default branch name. Finally,
-    # check if the pipeline was triggered via the API (multi-project pipeline)
-    # to exclude the case where we create a branch right off the gitlab-docs
-    # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
-
-    puts "\n=> Pulling #{branch} of #{product['repo']}\n"
-
-    # Enter the temporary directory and return after block is completed.
-    Dir.chdir(product['temp_dir']) do
-      `git fetch origin #{branch} --depth 1`
-
-      # Stash modified and untracked files so we have "clean" environment
-      # without accidentally deleting data
-      `git stash -u` if git_workdir_dirty?
-      `git checkout #{branch}`
-
-      # Reset so that if the repo is cached, the latest commit will be used
-      `git reset --hard origin/#{branch}`
-      # Print the latest commit so that we can compare it to the branch we're
-      # pulling from, should we need to debug anything.
-      puts "Latest commit: #{`git log --oneline -n 1`}"
-    end
-  end
-end
-
-desc 'Setup content directories by symlinking to the repositories documentation folder'
-task :setup_content_dirs do
-  products.each_value do |product|
-    next unless File.exist?(product['temp_dir'])
-
-    product['content_dirs'].each do |content_dir|
-      source = File.join('../', product['temp_dir'], content_dir['doc_dir'])
-      target = content_dir['dest_dir']
-
-      next if File.symlink?(target)
-
-      puts "\n=> Setting up content directory for #{product['repo']}\n"
-
-      `ln -s #{source} #{target}`
-    end
-  end
-end
-
-desc 'Clean temp directories and symlinks'
-task :clean_dirs do
-  products.each_value do |product|
-    temp_dir = product['temp_dir']
-    product['content_dirs'].each do |content_dir|
-      dest_dir = content_dir['dest_dir']
-
-      FileUtils.rm_rf(temp_dir)
-      puts "Removed #{temp_dir}"
-
-      FileUtils.rm_rf(dest_dir)
-      puts "Removed #{dest_dir}"
-    end
-  end
-end
-
-desc 'Generates _data/feature_flags.yaml'
+desc 'Generate feature flags data file'
 task :generate_feature_flags do
+  feature_flags_dir = Pathname.new('..').join('gitlab', 'config', 'feature_flags').expand_path
+  feature_flags_ee_dir = Pathname.new('..').join('gitlab', 'ee', 'config', 'feature_flags').expand_path
 
-  feature_flags_dir = File.join('tmp', 'feature_flags')
-  feature_flags_ee_dir = File.join('tmp', 'feature_flags-ee')
-
-  unless Dir.exist?(feature_flags_dir)
-   abort('The feature flags directory does not exist.
-   See https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/README.md#generate-the-feature-flag-tables')
-  end
-
-  unless Dir.exist?(feature_flags_ee_dir)
-   abort('The feature flags EE directory does not exist.
-   See https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/README.md#generate-the-feature-flag-tables')
-  end
+  abort("The feature flags directory #{feature_flags_dir} does not exist.") unless feature_flags_dir.exist?
+  abort("The feature flags EE directory #{feature_flags_ee_dir} does not exist.") unless feature_flags_ee_dir.exist?
 
   paths = {
-    'GitLab Community Edition and Enterprise Edition' => File.join('tmp', 'feature_flags', '**', '*.yml'),
-    'GitLab Enterprise Edition only' => File.join('tmp', 'feature_flags-ee', '**', '*.yml')
+    'GitLab Community Edition and Enterprise Edition' => feature_flags_dir.join('**', '*.yml'),
+    'GitLab Enterprise Edition only' => feature_flags_ee_dir.join('**', '*.yml')
   }
 
   feature_flags = {
