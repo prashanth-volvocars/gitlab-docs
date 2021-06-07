@@ -1526,7 +1526,7 @@ sections:
                 doc_url: 'ee/operations/metrics/dashboards/develop.html'
               - doc_title: Templating variables for dashboards
                 doc_url: 'ee/operations/metrics/dashboards/templating_variables.html'
-      - category_title: Manage your infrastructure
+      - category_title: Kubernetes clusters
         category_url: 'ee/user/project/clusters/'
         docs:
           - doc_title: Kubernetes Agent
