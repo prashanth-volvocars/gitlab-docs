@@ -357,8 +357,6 @@ sections:
             doc_url: 'ee/user/project/integrations/prometheus.html'
           - doc_title: ServiceNow
             doc_url: 'ee/user/project/integrations/servicenow.html'
-          - doc_title: Service templates
-            doc_url: 'ee/user/project/integrations/services_templates.html'
           - doc_title: Shibboleth
             doc_url: 'ee/integration/shibboleth.html'
           - doc_title: Slack notifications
