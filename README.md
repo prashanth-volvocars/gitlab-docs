@@ -214,7 +214,8 @@ local checkouts in a `dev` directory:
    ```
 
 1. Clone the repositories you wish to contribute documentation changes to. Clone these projects
-   **in the same directory** as the `gitlab-docs` project. For example, `~/dev`:
+   **in the same directory** as the `gitlab-docs` project
+   (see [data sources](#nanoc-data-sources)). For example, `~/dev`:
 
    - **GitLab contributors** that don't have Developer access to the projects,
      fork the ones you want and then clone them by using your forked version:
@@ -252,7 +253,7 @@ Run the following command to build the documentation site and bring the embedded
 web server up:
 
 ```shell
-bundle exec nanoc && bundle exec nanoc live
+bundle exec nanoc live
 ```
 
 This generates the site and you can view it in your browser at <http://localhost:3000>.
@@ -377,6 +378,26 @@ We can then loop over the `versions` array with something like:
 
 Note that the data file must have the `yaml` extension (not `yml`) and that
 we reference the array with a symbol (`:versions`).
+
+## Nanoc data sources
+
+GitLab Docs uses Nanoc's [data sources](https://nanoc.app/doc/data-sources/) to import
+and compile the content from the projects we source docs from. The locations of the
+four projects are relative to the location of `gitlab-docs` (defined in
+[`nanoc.yaml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/8d9e30f14623c907f29f73883fefcae034092b39/nanoc.yaml#L48-75)).
+Each of the four projects must be at the same root level as `gitlab-docs` and named:
+
+- GitLab: `gitlab`
+- Runner: `gitlab-runner`
+- Omnibus: `omnibus-gitlab`
+- Charts: `charts-gitlab`
+
+If any of the four projects is missing or is misnamed, `nanoc live` will throw an
+error, but you'll still be able to preview the site. However, live reloading
+will not work, so you'll need to manually recompile Nanoc with `nanoc compile`
+when you make changes.
+
+For more information, see the [troubleshooting section](#troubleshooting).
 
 ## Modern JavaScript
 
@@ -575,3 +596,25 @@ in the `content` directory.
 
 This is usually caused in local instances of GitLab Docs where symlinks were used to link
 to documentation projects for content.
+
+### `ftype: No such file or directory @ rb_file_s_ftype`
+
+If you run into this error, it means you're probably still using symlinks
+under the `content/` directory. In June 2021, we
+[switched](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1742)
+to [Nanoc's data sources](#nanoc-data-sources) to build the site instead of
+using symlinks.
+
+Make sure no symlinks exist, and rebuild the site like you would normally do:
+
+```shell
+rm -f content/{ee,runner,omnibus,charts}
+```
+
+### `realpath: No such file or directory @ rb_check_realpath_internal`
+
+If you run into this error, it means you're missing one of the four projects
+`gitlab-docs` relies on to build the content of the docs site.
+
+See [Nanoc data sources](#nanoc-data-sources) to learn where the four projects
+should be placed and what names they should have.
