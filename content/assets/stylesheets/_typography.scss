@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import 'variables';
@@ -118,6 +118,9 @@ version: 7
     fill: $white;
     background-color: $pre-code-color;
     border: 0;
+    position: absolute;
+    right: 0;
+    top: 1px;
     svg {
       opacity: 0.5;
       transition: opacity 0.3s ease-in;
@@ -194,6 +197,18 @@ version: 7
   .gl-h6 {
     @include gl-font-weight-bold;
     @include gl-mb-3;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .gl-h2,
+  .gl-h3,
+  .gl-h4,
+  .gl-h5,
+  .gl-h6 {
 
     // Permalinks on header elements.
     .anchor {
@@ -308,11 +323,11 @@ version: 7
 
   .monospace {
     @include gl-font-monospace;
-    @include gl-font-size-monospace-lg;
+    @include gl-font-size-monospace;
     @include gl-line-height-24;
 
     &.sm {
-      @include gl-font-size-monospace;
+      @include gl-font-size-monospace-sm;
       @include gl-line-height-20;
     }
   }

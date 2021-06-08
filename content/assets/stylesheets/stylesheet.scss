@@ -1,5 +1,5 @@
 ---
-version: 112
+version: 113
 ---
 
 @import 'variables';
@@ -21,12 +21,6 @@ body {
       flex-direction: column-reverse;
       background-color: $white;
     }
-  }
-}
-
-h1 {
-  .anchor {
-    display: none;
   }
 }
 
