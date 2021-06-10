@@ -9,14 +9,20 @@ class IntroducedInFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('blockquote').each do |blockquote|
       content = blockquote.inner_html
-      # Searches for a blockquote with either:
-      # - "introduced <optional text> in"
-      # - "removed <optional text> in"
-      # - "deprecated <optional text> in"
-      # - "moved <optional text> to"
-      # ...followed by "GitLab"
-      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|deprecated)(<\/a>)?(.*)? (in|to).*GitLab/mi
+      # Searches for a blockquote with either of the following:
+      #
+      # - Specific strings:
+      #   - "introduced <optional text> in"
+      #   - "removed <optional text> in"
+      #   - "deprecated <optional text> in"
+      #   - "moved <optional text> to"
+      #   ...followed by "GitLab"
+      #
+      # - The presense of "**(VERSION_INFO)**" or "- **(VERSION_INFO)**"
 
+      next unless content =~ %r{(<a href="[^"]+">)?(introduced|(re)?moved|deprecated)(</a>)?(.*)? (in|to).*GitLab}mi || content =~ %r{(<li>)?<strong>\(VERSION_INFO\)</strong>(</li>)?}mi
+
+      content.gsub!(%r{(<li>)?<strong>\(VERSION_INFO\)</strong>(</li>)?}, "")
       new_content = generate(content)
       blockquote.replace(new_content)
     end
@@ -26,11 +32,14 @@ class IntroducedInFilter < Nanoc::Filter
   def generate(content)
     @incremental_id += 1
     # If the content is a list of items, collapse the content.
-    if content =~ /<ul>/i
-      %(<div class="introduced-in mb-3">Version history) +
-        %(<button class="text-expander" type="button" data-toggle="collapse" data-target="#release_version_notes_#{@incremental_id}" aria-expanded="false" aria-controls="release_version_notes_#{@incremental_id}" aria-label="Version history">) +
-        %(</button>) +
-        %(<div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">#{content}</div></div>)
+    if content.match?(/<ul>/i)
+      %(<div class="introduced-in mb-3">Version information
+          <button class="text-expander" type="button" data-toggle="collapse" data-target="#release_version_notes_#{@incremental_id}" aria-expanded="false" aria-controls="release_version_notes_#{@incremental_id}" aria-label="Version information">
+          </button>
+          <div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">
+            #{content}
+          </div>
+        </div>)
     else
       %(<div class="introduced-in">#{content}</div>)
     end
