@@ -1240,6 +1240,10 @@ sections:
               - doc_title: Runners
                 doc_url: 'ee/ci/runners/README.html'
                 docs:
+                  - doc_title: The scope of runners
+                    doc_url: 'ee/ci/runners/runners_scope.html'
+                  - doc_title: Configuring runners
+                    doc_url: 'ee/ci/runners/configure_runners.html'
                   - doc_title: Best practices for large repositories
                     doc_url: 'ee/ci/large_repositories/'
               - doc_title: Cache and artifacts
