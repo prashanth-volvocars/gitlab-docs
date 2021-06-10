@@ -1517,6 +1517,8 @@ sections:
             doc_url: 'ee/user/project/canary_deployments.html'
           - doc_title: Cluster environments
             doc_url: 'ee/user/clusters/environments.html'
+          - doc_title: Cluster integrations
+            doc_url: 'ee/user/clusters/integrations.html'
           - doc_title: Cluster cost management
             doc_url: 'ee/user/clusters/cost_management.html'
           - doc_title: Deploy boards
