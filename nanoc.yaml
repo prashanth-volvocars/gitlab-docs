@@ -114,7 +114,7 @@ checks:
       # Some links require authentication, but we want to keep them in development docs
       - 'https:\/\/dashboards.gitlab.com\/.*'
 
-breadcrumbs: true
+breadcrumbs: false
 debug: false
 
 # Control display of survey banner. See README.md#survey-banner
