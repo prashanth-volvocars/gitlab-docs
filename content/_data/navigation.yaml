@@ -1370,6 +1370,8 @@ sections:
                     doc_url: 'ee/user/packages/generic_packages/'
                   - doc_title: Store all packages in one project
                     doc_url: 'ee/user/packages/workflows/project_registry.html'
+                  - doc_title: Monorepo workflows
+                    doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
               - doc_title: Dependency Proxy
