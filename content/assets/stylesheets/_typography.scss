@@ -1,5 +1,5 @@
 ---
-version: 8
+version: 9
 ---
 
 @import 'variables';
@@ -376,11 +376,11 @@ version: 8
   h1 {
     color: $theme-indigo-900;
     font-weight: 600;
-    margin-top: 0;
     text-transform: none;
     font-size: 2rem;
     line-height: 1;
     margin-bottom: 1.5rem;
+    margin-top: 3.3rem;
   }
   @media screen and (min-width: $bp-sm) {
     h1 {
