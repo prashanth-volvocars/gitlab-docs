@@ -2377,6 +2377,8 @@ sections:
         category_url: 'ee/development/packages.html'
       - category_title: Permissions guide
         category_url: 'ee/development/permissions.html'
+      - category_title: Real-time features
+        category_url: 'ee/development/real_time.html'
       - category_title: Testing standards and styles
         category_url: 'ee/development/testing_guide/'
         docs:
