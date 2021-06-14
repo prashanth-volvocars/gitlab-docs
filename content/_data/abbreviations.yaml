@@ -1,6 +1,6 @@
 ---
-  abbreviations:
-    - abbrev: AJAX
-      fulltext: Asynchronous JavaScript and XML
-    - abbrev: HTML
-      fulltext: HyperText Markup Language
+abbreviations:
+  - abbrev: AJAX
+    fulltext: Asynchronous JavaScript and XML
+  - abbrev: HTML
+    fulltext: HyperText Markup Language
