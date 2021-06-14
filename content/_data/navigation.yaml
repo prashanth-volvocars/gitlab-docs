@@ -38,7 +38,7 @@ sections:
       - category_title: Features available to Starter and Bronze subscribers
         category_url: 'ee/subscriptions/bronze_starter.html'
 
-# INSTALLATION
+  # INSTALLATION
 
   - section_title: Install GitLab
     section_url: 'ee/install/'
@@ -48,7 +48,7 @@ sections:
       - category_title: Installation methods
         category_url: 'ee/install/'
         docs:
-            # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+          # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
           - doc_title: Linux packages (Omnibus)
             doc_url: 'omnibus/README.html'
             docs:
@@ -152,7 +152,7 @@ sections:
           - doc_title: Kubernetes
             doc_url: 'charts/'
             docs:
-            # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
+              # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
               - doc_title: Install
                 doc_url: 'charts/installation/'
                 docs:
@@ -404,7 +404,7 @@ sections:
       - category_title: Trello
         category_url: 'ee/integration/trello_power_up.html'
 
-# ADMINISTRATION
+  # ADMINISTRATION
 
   - section_title: Administer self-managed
     section_url: 'ee/administration/'
@@ -673,10 +673,10 @@ sections:
           - doc_title: Snippets
             doc_url: 'ee/administration/snippets/'
 
-# Maintain your install
+      # Maintain your install
 
       - category_title: Maintain your installation
-        category_url: 'ee/administration/operations/' # this was Operations
+        category_url: 'ee/administration/operations/' #  this was Operations
         docs:
           - doc_title: Clean up Redis sessions
             doc_url: 'ee/administration/operations/cleaning_up_redis_sessions.html'
@@ -740,7 +740,7 @@ sections:
           - doc_title: X509 signatures
             doc_url: 'ee/raketasks/x509_signatures.html'
 
-# New - secure (renamed existing topic)
+      # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
         category_url: 'ee/security/README.html'
@@ -803,13 +803,13 @@ sections:
           - doc_title: Email from GitLab
             doc_url: 'ee/tools/email.html'
 
-# USE GITLAB
+  # USE GITLAB
 
   - section_title: Use GitLab
-    section_url: 'ee/topics/use_gitlab.html' # new
+    section_url: 'ee/topics/use_gitlab.html' #  new
     section_categories:
       - category_title: Set up your organization
-        category_url: 'ee/topics/set_up_organization.html' # new
+        category_url: 'ee/topics/set_up_organization.html' #  new
         docs:
           - doc_title: Members
             doc_url: 'ee/user/project/members/'
@@ -857,7 +857,7 @@ sections:
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
-        category_url: 'ee/user/project/' # new
+        category_url: 'ee/user/project/' #  new
         docs:
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
@@ -961,7 +961,7 @@ sections:
             doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
 
       - category_title: Plan and track work
-        category_url: 'ee/topics/plan_and_track.html' # new
+        category_url: 'ee/topics/plan_and_track.html' #  new
         docs:
           - doc_title: Epics
             doc_url: 'ee/user/group/epics/'
@@ -1073,7 +1073,7 @@ sections:
                 doc_url: 'ee/user/project/push_options.html'
 
       - category_title: Build your application
-        category_url: 'ee/topics/build_your_application.html' # new
+        category_url: 'ee/topics/build_your_application.html' #  new
         docs:
           - doc_title: Repositories
             doc_url: 'ee/user/project/repository/'
@@ -1429,7 +1429,7 @@ sections:
             doc_url: 'ee/user/application_security/terminology/'
 
       - category_title: Release your application
-        category_url: 'ee/topics/release_your_application.html' # new
+        category_url: 'ee/topics/release_your_application.html' #  new
         docs:
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
@@ -2050,7 +2050,7 @@ sections:
         category_url: 'runner/best_practice/'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab-runner
 
-   # Development documentation from:
+  # Development documentation from:
   #
   # - https://gitlab.com/gitlab-org/gitlab
   # - https://gitlab.com/gitlab-org/omnibus-gitlab
