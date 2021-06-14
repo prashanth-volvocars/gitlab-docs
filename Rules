@@ -95,6 +95,7 @@ compile '/**/*.md' do
     filter :admonition
     filter :icons
     filter :introduced_in
+    filter :abbrev
 
     if item[:layout].nil?
       layout '/default.*'
