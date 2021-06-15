@@ -1636,6 +1636,8 @@ sections:
             docs:
               - doc_title: Configuring Crossplane
                 doc_url: 'ee/user/clusters/crossplane.html'
+              - doc_title: Migrate to Management Template
+                doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
           - doc_title: Infrastructure as code
             doc_url: 'ee/user/infrastructure/'
             docs:
@@ -1645,6 +1647,8 @@ sections:
                 doc_url: 'ee/user/infrastructure/mr_integration.html'
           - doc_title: Management project
             doc_url: 'ee/user/clusters/management_project.html'
+          - doc_title: Management project Template
+            doc_url: 'ee/user/clusters/management_project_template.html'
           - doc_title: Pod logs
             doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
           - doc_title: Runbooks
