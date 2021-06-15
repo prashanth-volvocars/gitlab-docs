@@ -17,7 +17,7 @@ module Nanoc::Filters
     def run(content, params={})
       output = content;
       @items['/_data/abbreviations.yaml'][:abbreviations].each do |a|
-        output = output.gsub(/(\s|[-,.;:"'!?>\(\[]+)#{a[:abbrev]}(\s|[-,.;:"'!?<\)\]]+)/,'\\1<abbr title="' + a[:fulltext] + '">' + a[:abbrev]+ '</abbr>\\2')
+        output = output.sub(/(\s|[-,.;:"'!?>\(\[]+)#{a[:abbrev]}(\s|[-,.;:"'!?<\)\]]+)/,'\\1<abbr title="' + a[:fulltext] + '">' + a[:abbrev]+ '</abbr>\\2')
       end
       return output
     end
