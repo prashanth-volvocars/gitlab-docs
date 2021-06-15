@@ -587,6 +587,8 @@ sections:
                     doc_url: 'ee/administration/gitaly/configure_gitaly.html'
                   - doc_title: Configure Gitaly Cluster
                     doc_url: 'ee/administration/gitaly/praefect.html'
+                  - doc_title: Frequently asked questions
+                    doc_url: 'ee/administration/gitaly/faq.html'
               - doc_title: Gitaly reference
                 doc_url: 'ee/administration/gitaly/reference.html'
               - doc_title: Gitaly timeouts
