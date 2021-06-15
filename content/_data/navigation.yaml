@@ -38,7 +38,7 @@ sections:
       - category_title: Features available to Starter and Bronze subscribers
         category_url: 'ee/subscriptions/bronze_starter.html'
 
-# INSTALLATION
+  # INSTALLATION
 
   - section_title: Install GitLab
     section_url: 'ee/install/'
@@ -48,7 +48,7 @@ sections:
       - category_title: Installation methods
         category_url: 'ee/install/'
         docs:
-            # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+          # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
           - doc_title: Linux packages (Omnibus)
             doc_url: 'omnibus/README.html'
             docs:
@@ -152,7 +152,7 @@ sections:
           - doc_title: Kubernetes
             doc_url: 'charts/'
             docs:
-            # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
+              # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
               - doc_title: Install
                 doc_url: 'charts/installation/'
                 docs:
@@ -300,6 +300,66 @@ sections:
           - doc_title: What's new
             doc_url: 'ee/administration/whats-new.html'
 
+  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
+
+  - section_title: Install GitLab Runner
+    section_url: 'runner/install/'
+    section_categories:
+      - category_title: Install
+        category_url: 'runner/install/'
+        docs:
+          - doc_title: Docker
+            doc_url: 'runner/install/docker.html'
+          - doc_title: FreeBSD
+            doc_url: 'runner/install/freebsd.html'
+          - doc_title: Kubernetes (Helm Chart)
+            doc_url: 'runner/install/kubernetes.html'
+          - doc_title: Kubernetes (Agent)
+            doc_url: 'runner/install/kubernetes-agent.html'
+          - doc_title: Linux
+            doc_url: 'runner/install/linux-manually.html'
+          - doc_title: macOS
+            doc_url: 'runner/install/osx.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/install/openshift.html'
+          - doc_title: Windows
+            doc_url: 'runner/install/windows.html'
+          - doc_title: Bleeding edge releases
+            doc_url: 'runner/install/bleeding-edge.html'
+          - doc_title: Official Linux packages
+            doc_url: 'runner/install/linux-repository.html'
+          - doc_title: Old GitLab Runner URLs
+            doc_url: 'runner/install/old.html'
+
+      - category_title: Configure
+        category_url: 'runner/configuration/'
+        docs:
+          - doc_title: Advanced config
+            doc_url: 'runner/configuration/advanced-configuration.html'
+          - doc_title: Autoscale config
+            doc_url: 'runner/configuration/autoscale.html'
+          - doc_title: Autoscale on AWS EC2
+            doc_url: 'runner/configuration/runner_autoscale_aws/'
+          - doc_title: Autoscale on AWS Fargate
+            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
+          - doc_title: Commands
+            doc_url: 'runner/commands/README.html'
+          - doc_title: Feature flags
+            doc_url: 'runner/configuration/feature-flags.html'
+          - doc_title: OpenShift
+            doc_url: 'runner/configuration/configuring_runner_openshift.html'
+          - doc_title: Running behind a proxy
+            doc_url: 'runner/configuration/proxy.html'
+          - doc_title: Rate limited requests
+            doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
+          - doc_title: Self-signed certificates
+            doc_url: 'runner/configuration/tls-self-signed.html'
+          - doc_title: System services
+            doc_url: 'runner/configuration/init.html'
+          - doc_title: Speed up job execution
+            doc_url: 'runner/configuration/speed_up_job_execution.html'
+      - category_title: Troubleshoot
+        category_url: 'runner/faq/README.html'
 
   - section_title: Integrate applications
     section_url: 'ee/integration/'
@@ -404,7 +464,7 @@ sections:
       - category_title: Trello
         category_url: 'ee/integration/trello_power_up.html'
 
-# ADMINISTRATION
+  # ADMINISTRATION
 
   - section_title: Administer self-managed
     section_url: 'ee/administration/'
@@ -673,10 +733,10 @@ sections:
           - doc_title: Snippets
             doc_url: 'ee/administration/snippets/'
 
-# Maintain your install
+      # Maintain your install
 
       - category_title: Maintain your installation
-        category_url: 'ee/administration/operations/' # this was Operations
+        category_url: 'ee/administration/operations/'
         docs:
           - doc_title: Clean up Redis sessions
             doc_url: 'ee/administration/operations/cleaning_up_redis_sessions.html'
@@ -740,7 +800,7 @@ sections:
           - doc_title: X509 signatures
             doc_url: 'ee/raketasks/x509_signatures.html'
 
-# New - secure (renamed existing topic)
+      # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
         category_url: 'ee/security/README.html'
@@ -803,13 +863,13 @@ sections:
           - doc_title: Email from GitLab
             doc_url: 'ee/tools/email.html'
 
-# USE GITLAB
+  # USE GITLAB
 
   - section_title: Use GitLab
-    section_url: 'ee/topics/use_gitlab.html' # new
+    section_url: 'ee/topics/use_gitlab.html'
     section_categories:
       - category_title: Set up your organization
-        category_url: 'ee/topics/set_up_organization.html' # new
+        category_url: 'ee/topics/set_up_organization.html'
         docs:
           - doc_title: Members
             doc_url: 'ee/user/project/members/'
@@ -857,7 +917,7 @@ sections:
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
-        category_url: 'ee/user/project/' # new
+        category_url: 'ee/user/project/'
         docs:
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
@@ -961,7 +1021,7 @@ sections:
             doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
 
       - category_title: Plan and track work
-        category_url: 'ee/topics/plan_and_track.html' # new
+        category_url: 'ee/topics/plan_and_track.html'
         docs:
           - doc_title: Epics
             doc_url: 'ee/user/group/epics/'
@@ -1073,7 +1133,7 @@ sections:
                 doc_url: 'ee/user/project/push_options.html'
 
       - category_title: Build your application
-        category_url: 'ee/topics/build_your_application.html' # new
+        category_url: 'ee/topics/build_your_application.html'
         docs:
           - doc_title: Repositories
             doc_url: 'ee/user/project/repository/'
@@ -1237,15 +1297,6 @@ sections:
                     doc_url: 'ee/ci/cloud_deployment/'
                   - doc_title: Review Apps
                     doc_url: 'ee/ci/review_apps/'
-              - doc_title: Runners
-                doc_url: 'ee/ci/runners/README.html'
-                docs:
-                  - doc_title: The scope of runners
-                    doc_url: 'ee/ci/runners/runners_scope.html'
-                  - doc_title: Configuring runners
-                    doc_url: 'ee/ci/runners/configure_runners.html'
-                  - doc_title: Best practices for large repositories
-                    doc_url: 'ee/ci/large_repositories/'
               - doc_title: Cache and artifacts
                 doc_url: 'ee/ci/caching/'
                 docs:
@@ -1344,6 +1395,53 @@ sections:
                     doc_url: 'ee/ci/examples/laravel_with_gitlab_and_envoy/'
               - doc_title: Troubleshooting CI/CD
                 doc_url: 'ee/ci/troubleshooting.html'
+
+          - doc_title: Runners
+            doc_url: 'runner/'
+            docs:
+              - doc_title: GitLab SaaS runners
+                doc_url: 'ee/ci/runners/README.html'
+              - doc_title: The scope of runners
+                doc_url: 'ee/ci/runners/runners_scope.html'
+              - doc_title: Register a runner
+                doc_url: 'runner/register/'
+                docs:
+                  - doc_title: Examples
+                    doc_url: 'runner/examples/gitlab.html'
+              - doc_title: Runner executors
+                doc_url: 'runner/executors/README.html'
+                docs:
+                  - doc_title: Custom
+                    doc_url: 'runner/executors/custom.html'
+                    docs:
+                      - doc_title: libvirt
+                        doc_url: 'runner/executors/custom_examples/libvirt.html'
+                      - doc_title: LXD
+                        doc_url: 'runner/executors/custom_examples/lxd.html'
+                  - doc_title: Docker
+                    doc_url: 'runner/executors/docker.html'
+                  - doc_title: Docker Machine
+                    doc_url: 'runner/executors/docker_machine.html'
+                  - doc_title: Kubernetes
+                    doc_url: 'runner/executors/kubernetes.html'
+                  - doc_title: Shell
+                    doc_url: 'runner/executors/shell.html'
+                    docs:
+                      - doc_title: Shells
+                        doc_url: 'runner/shells/'
+                  - doc_title: SSH
+                    doc_url: 'runner/executors/ssh.html'
+                  - doc_title: Parallels
+                    doc_url: 'runner/executors/parallels.html'
+                  - doc_title: Virtual Box
+                    doc_url: 'runner/executors/virtualbox.html'
+              - doc_title: Configuring runners
+                doc_url: 'ee/ci/runners/configure_runners.html'
+              - doc_title: Securing runners
+                doc_url: 'runner/security/'
+              - doc_title: Best practices for large repositories
+                doc_url: 'ee/ci/large_repositories/'
+
           - doc_title: Packages & Registries
             doc_url: 'ee/user/packages/'
             docs:
@@ -1429,7 +1527,7 @@ sections:
             doc_url: 'ee/user/application_security/terminology/'
 
       - category_title: Release your application
-        category_url: 'ee/topics/release_your_application.html' # new
+        category_url: 'ee/topics/release_your_application.html'
         docs:
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
@@ -1500,6 +1598,8 @@ sections:
                 doc_url: 'ee/operations/metrics/dashboards/develop.html'
               - doc_title: Templating variables for dashboards
                 doc_url: 'ee/operations/metrics/dashboards/templating_variables.html'
+      - category_title: Monitor runner performance
+        category_url: 'runner/monitoring/README.html'
       - category_title: Manage your infrastructure
         category_url: 'ee/user/project/clusters/'
         docs:
@@ -1945,112 +2045,7 @@ sections:
         category_url: 'ee/api/oauth2.html'
   # End of documentation from https://gitlab.com/gitlab-org/gitlab
 
-  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
-  - section_title: GitLab Runner
-    section_url: 'runner/'
-    section_categories:
-      - category_title: Install
-        category_url: 'runner/install/'
-        docs:
-          - doc_title: Docker
-            doc_url: 'runner/install/docker.html'
-          - doc_title: FreeBSD
-            doc_url: 'runner/install/freebsd.html'
-          - doc_title: Kubernetes (Helm Chart)
-            doc_url: 'runner/install/kubernetes.html'
-          - doc_title: Kubernetes (Agent)
-            doc_url: 'runner/install/kubernetes-agent.html'
-          - doc_title: Linux
-            doc_url: 'runner/install/linux-manually.html'
-          - doc_title: macOS
-            doc_url: 'runner/install/osx.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/install/openshift.html'
-          - doc_title: Windows
-            doc_url: 'runner/install/windows.html'
-          - doc_title: Bleeding edge releases
-            doc_url: 'runner/install/bleeding-edge.html'
-          - doc_title: Official Linux packages
-            doc_url: 'runner/install/linux-repository.html'
-          - doc_title: Old GitLab Runner URLs
-            doc_url: 'runner/install/old.html'
-
-      - category_title: Configure
-        category_url: 'runner/configuration/'
-        docs:
-          - doc_title: Advanced config
-            doc_url: 'runner/configuration/advanced-configuration.html'
-          - doc_title: Autoscale config
-            doc_url: 'runner/configuration/autoscale.html'
-          - doc_title: Autoscale on AWS EC2
-            doc_url: 'runner/configuration/runner_autoscale_aws/'
-          - doc_title: Autoscale on AWS Fargate
-            doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
-          - doc_title: Commands
-            doc_url: 'runner/commands/README.html'
-          - doc_title: Feature flags
-            doc_url: 'runner/configuration/feature-flags.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/configuration/configuring_runner_openshift.html'
-          - doc_title: Running behind a proxy
-            doc_url: 'runner/configuration/proxy.html'
-          - doc_title: Rate limited requests
-            doc_url: 'runner/configuration/proxy.html#handling-rate-limited-requests'
-          - doc_title: Self-signed certificates
-            doc_url: 'runner/configuration/tls-self-signed.html'
-          - doc_title: System services
-            doc_url: 'runner/configuration/init.html'
-          - doc_title: Speed up job execution
-            doc_url: 'runner/configuration/speed_up_job_execution.html'
-
-      - category_title: Register
-        category_url: 'runner/register/'
-        docs:
-          - doc_title: Examples
-            doc_url: 'runner/examples/gitlab.html'
-
-      - category_title: Executors
-        category_url: 'runner/executors/README.html'
-        docs:
-          - doc_title: Custom
-            doc_url: 'runner/executors/custom.html'
-            docs:
-              - doc_title: libvirt
-                doc_url: 'runner/executors/custom_examples/libvirt.html'
-              - doc_title: LXD
-                doc_url: 'runner/executors/custom_examples/lxd.html'
-          - doc_title: Docker
-            doc_url: 'runner/executors/docker.html'
-          - doc_title: Docker Machine
-            doc_url: 'runner/executors/docker_machine.html'
-          - doc_title: Kubernetes
-            doc_url: 'runner/executors/kubernetes.html'
-          - doc_title: Shell
-            doc_url: 'runner/executors/shell.html'
-          - doc_title: SSH
-            doc_url: 'runner/executors/ssh.html'
-          - doc_title: Parallels
-            doc_url: 'runner/executors/parallels.html'
-          - doc_title: Virtual Box
-            doc_url: 'runner/executors/virtualbox.html'
-
-      - category_title: Monitor
-        category_url: 'runner/monitoring/README.html'
-
-      - category_title: Security
-        category_url: 'runner/security/'
-
-      - category_title: Shells
-        category_url: 'runner/shells/'
-
-      - category_title: Troubleshoot
-        category_url: 'runner/faq/README.html'
-
-      - category_title: Best Practices
-        category_url: 'runner/best_practice/'
-  # End of documentation from https://gitlab.com/gitlab-org/gitlab-runner
-
-   # Development documentation from:
+  # Development documentation from:
   #
   # - https://gitlab.com/gitlab-org/gitlab
   # - https://gitlab.com/gitlab-org/omnibus-gitlab
