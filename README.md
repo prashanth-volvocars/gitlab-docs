@@ -249,7 +249,7 @@ If you cloned the projects into `~/dev`, you should now have the following proje
 
 ## Preview the documentation website
 
-Run the following command to build the documentation site and bring the embedded
+Run the following command from the root directory of the `gitlab-docs` project to build the documentation site and bring the embedded
 web server up:
 
 ```shell
@@ -284,7 +284,7 @@ To do that, we need to change the IP address Nanoc is serving on from the
 default `http://127.0.0.1` to your computer's
 [private IPv4 address](https://www.howtogeek.com/236838/how-to-find-any-devices-ip-address-mac-address-and-other-network-connection-details/).
 
-Once you know what's your computer's private IPv4, use the flag `-o`. For
+Once you know your computer's private IPv4, use the flag `-o`. For
 example, let's say your current IPv4 address is `192.168.0.105`:
 
 ```shell
