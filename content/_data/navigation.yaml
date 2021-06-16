@@ -1428,9 +1428,8 @@ sections:
                     doc_url: 'runner/executors/kubernetes.html'
                   - doc_title: Shell
                     doc_url: 'runner/executors/shell.html'
-                    docs:
-                      - doc_title: Shells
-                        doc_url: 'runner/shells/'
+                  - doc_title: Supported shells
+                    doc_url: 'runner/shells/'
                   - doc_title: SSH
                     doc_url: 'runner/executors/ssh.html'
                   - doc_title: Parallels
