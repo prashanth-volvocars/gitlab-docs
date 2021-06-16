@@ -45,6 +45,7 @@ To preview any changes you make to GitLab documentation, you need:
   - [`.tool-versions`](.tool-versions)
 - Node.js, at the version specified in [`.tool-versions`](.tool-versions).
 - Yarn, at the version specified in [`.tool-versions`](.tool-versions).
+- [jq](https://stedolan.github.io/jq/), needed by some Rake tasks.
 - Xcode *(macOS only)*:
   - Run `xcode-select --install` to install the command line tools only.
   - Or download and install the entire package using the macOS's App Store.

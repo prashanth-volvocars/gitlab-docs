@@ -64,6 +64,10 @@ def chart_version(gitlab_version)
   config.fetch(gitlab_version)
 end
 
-def default_branch(remote_url)
-  `git remote show #{remote_url} | grep 'HEAD branch' | cut -d' ' -f5`.tr("\n", '')
+def default_branch(repo)
+  # Get the URL-encoded path of the project
+  # https://docs.gitlab.com/ee/api/README.html#namespaced-path-encoding
+  url_encoded_path = repo.sub('https://gitlab.com/', '').sub('.git', '').gsub('/', '%2F')
+
+  `curl https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
 end
