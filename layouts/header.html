@@ -21,34 +21,8 @@
       </li>
     </ul>
     <ul class="navbar-nav mb-0">
-      <div id="versions-dropdowns"></div>
       <li class="nav-item p-2 dropdown">
-        <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= version_dropdown_title %>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" <%= active_dropdown(ENV['CI_DEFAULT_BRANCH']) %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip"><%= dotcom %>
-            <i class="fa fa-question-circle-o" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Latest pre-release version of GitLab, with features available or about to become available on GitLab.com. For self-managed GitLab installations, select your version number as listed at your GitLab instance's /help URL."></i>
-          </a>
-          <% if display_previous_versions? %>
-          <!-- Start of online versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:online].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of online versions -->
-
-          <!-- Start of last major versions -->
-          <div class="dropdown-divider"></div>
-          <% data_versions[:previous_majors].each do |version| %>
-            <%= render '/partials/versions_list.*', version: version %>
-          <% end %>
-          <!-- End of last major versions -->
-
-          <% end %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" <%= active_dropdown('archives') %> href='/archives/'>Archives</a>
-        </div>
+        <div data-identifier="<%= @item.identifier.without_ext %>" id="versions-dropdowns"></div>
       </li>
       <li class="nav-item p-2">
         <% if @item.identifier.to_s.split('/')[1] == 'omnibus' %>

@@ -1,5 +1,6 @@
 <script>
 import GlDropdown from '@gitlab/ui/dist/components/base/dropdown/dropdown';
+import GlDropdownDivider from '@gitlab/ui/dist/components/base/dropdown/dropdown_divider';
 import GlDropdownItem from '@gitlab/ui/dist/components/base/dropdown/dropdown_item';
 import GlLink from '@gitlab/ui/dist/components/base/link/link';
 
@@ -9,7 +10,14 @@ export default {
   components: {
     GlDropdown,
     GlDropdownItem,
+    GlDropdownDivider,
     GlLink
+  },
+  inject: {
+    identifier: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
@@ -35,8 +43,10 @@ export default {
 
 <template>
   <div class="d-flex justify-content-center">
-    <gl-dropdown text="Some dropdown">
-      <gl-dropdown-item v-for="version in versions" :key="version"><gl-link :href="version">{{ version }}</gl-link></gl-dropdown-item>
+    <gl-dropdown text="Versions" toggle-class="text-white">
+      <gl-dropdown-item v-for="version in versions.slice(0,5)" :key="version"><gl-link :href="version">{{ version }}</gl-link></gl-dropdown-item>
+      <gl-dropdown-divider />
+      <gl-dropdown-item><gl-link href="/archives/">Archives</gl-link></gl-dropdown-item>
     </gl-dropdown>
   </div>
 </template>

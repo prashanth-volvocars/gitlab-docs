@@ -5,12 +5,12 @@ export default {
   components: {
     GlLink,
   },
-  inject: {
-    archivesPath: {
-      type: String,
-      default: '',
+    inject: {
+      archivesPath: {
+        type: String,
+        default: '',
+      },
     },
-  },
   props: {
     isProduction: {
       type: Boolean,
