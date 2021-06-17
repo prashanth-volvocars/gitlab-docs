@@ -709,8 +709,8 @@ sections:
                 doc_url: 'ee/administration/geo/disaster_recovery/planned_failover.html'
               - doc_title: Bring primary back
                 doc_url: 'ee/administration/geo/disaster_recovery/bring_primary_back.html'
-          - doc_title: Automatic background verification
-            doc_url: 'ee/administration/geo/disaster_recovery/background_verification.html'
+              - doc_title: Automatic background verification
+                doc_url: 'ee/administration/geo/disaster_recovery/background_verification.html'
           - doc_title: Kubernetes Agent Server
             doc_url: 'ee/administration/clusters/kas.html'
           - doc_title: Server hooks
