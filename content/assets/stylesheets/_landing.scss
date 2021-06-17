@@ -45,7 +45,7 @@ version: 5
     }
 
     &:hover {
-      box-shadow: 0.1rem 0.5rem 2rem 0rem $landing-gl-blue-1000;
+      box-shadow: .1rem 0.5rem 2rem 0rem $landing-gl-blue-1000;
     }
   }
 
@@ -65,8 +65,8 @@ version: 5
       background-image: url('/assets/images/hero-bg-mobile.svg');
     }
 
-    .card-body {
-      padding: 1.75rem 2.25rem 2.5rem 2.25rem;
+    .topic .card-body {
+      padding: 1.75rem 2.25rem 2.5rem;
     }
 
     .search {
@@ -77,6 +77,10 @@ version: 5
 
       @media (max-width: $bp-md) {
         width: 100%;
+      }
+
+      .card-body {
+        padding: 1.25rem 3.25rem 1.25rem 3.25rem;
       }
 
       .card-title {
@@ -97,7 +101,7 @@ version: 5
 
       .search-icon {
         position: absolute;
-        left: 2rem;
+        left: 4rem;
         top: 6.75rem;
         z-index: 1;
 
