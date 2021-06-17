@@ -114,17 +114,15 @@ title: GitLab Documentation
           <ul class="text-left">
             <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
               <% product = topic[:url].split('/')[1] %>
-              <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
-                <% if topic[:description].include? "Omnibus" %>
-                  <li>
-                    <span>
-                      <a href="<%= topic[:url] %>">
-                        <strong><%= topic[:title] %>: </strong>
-                        <%= topic[:description] %>
-                      </a>
-                    </span>
-                  </li>
-                <% end %>
+              <% if topic[:description].include? "Omnibus" %>
+                <li>
+                  <span>
+                    <a href="<%= topic[:url] %>">
+                      <strong><%= topic[:title] %>: </strong>
+                      <%= topic[:description] %>
+                    </a>
+                  </span>
+                </li>
               <% end %>
             <% end %>
           </ul>
@@ -140,17 +138,15 @@ title: GitLab Documentation
           <ul class="text-left">
             <% @items['/_data/popular_topics.yaml'][:topics].each do |topic| %>
               <% product = topic[:url].split('/')[1] %>
-                <% if Dir.exist?("#{@config[:content_dir]}/#{product}") %>
-                  <% unless topic[:description].include? "Omnibus" %>
-                    <li>
-                      <span>
-                        <a href="<%=  topic[:url]  %>">
-                        <strong><%=  topic[:title]  %>: </strong>
-                        <%= topic[:description] %>
-                      </a>
-                    </span>
-                  </li>
-                <%  end %>
+                <% unless topic[:description].include? "Omnibus" %>
+                  <li>
+                    <span>
+                      <a href="<%= topic[:url] %>">
+                      <strong><%= topic[:title] %>: </strong>
+                      <%= topic[:description] %>
+                    </a>
+                  </span>
+                </li>
               <% end %>
             <% end %>
           </ul>
