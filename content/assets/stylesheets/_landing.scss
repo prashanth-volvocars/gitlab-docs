@@ -45,7 +45,7 @@ version: 5
     }
 
     &:hover {
-      box-shadow: .1rem 0.5rem 2rem 0rem $landing-gl-blue-1000;
+      box-shadow: 0.1rem 0.5rem 2rem 0rem $landing-gl-blue-1000;
     }
   }
 
@@ -61,9 +61,12 @@ version: 5
     background-attachment: inherit;
     background-position: 50% 4%;
 
-
     @media (max-width: $bp-sm) {
       background-image: url('/assets/images/hero-bg-mobile.svg');
+    }
+
+    .card-body {
+      padding: 1.75rem 2.25rem 2.5rem 2.25rem;
     }
 
     .search {
