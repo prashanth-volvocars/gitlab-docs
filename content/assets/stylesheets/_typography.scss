@@ -1,5 +1,5 @@
 ---
-version: 9
+version: 10
 ---
 
 @import 'variables';
@@ -105,6 +105,10 @@ version: 9
     overflow-wrap: break-word;
     padding: 2px 4px;
     transition: background-color 0.15s linear;
+  }
+
+  *:not(a) > code {
+    color: $accessible-code-color;
   }
 
   pre {
