@@ -1206,6 +1206,8 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/drafts.html'
               - doc_title: Export merge requests to CSV
                 doc_url: 'ee/user/project/merge_requests/csv_export.html'
+              - doc_title: External status checks
+                doc_url: 'ee/user/project/merge_requests/status_checks.html'
               - doc_title: Merge request dependencies
                 doc_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
               - doc_title: Fast forward
