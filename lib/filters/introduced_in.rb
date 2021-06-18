@@ -9,20 +9,8 @@ class IntroducedInFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('blockquote').each do |blockquote|
       content = blockquote.inner_html
-      # Searches for a blockquote with either of the following:
-      #
-      # - Specific strings:
-      #   - "introduced <optional text> in"
-      #   - "removed <optional text> in"
-      #   - "deprecated <optional text> in"
-      #   - "moved <optional text> to"
-      #   ...followed by "GitLab"
-      #
-      # - The presense of "**(VERSION_INFO)**" or "- **(VERSION_INFO)**"
+      next if content !~ %r{(<a href="[^"]+">)?(</a>)?(.*)?}
 
-      next unless content =~ %r{(<a href="[^"]+">)?(introduced|(re)?moved|deprecated)(</a>)?(.*)? (in|to).*GitLab}mi || content =~ %r{(<li>)?<strong>\(VERSION_INFO\)</strong>(</li>)?}mi
-
-      content.gsub!(%r{(<li>)?<strong>\(VERSION_INFO\)</strong>(</li>)?}, "")
       new_content = generate(content)
       blockquote.replace(new_content)
     end
