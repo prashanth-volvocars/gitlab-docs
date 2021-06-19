@@ -2182,8 +2182,8 @@ sections:
             doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Droplab
             doc_url: 'ee/development/fe_guide/droplab/droplab.html'
-          - doc_title: Editor lite
-            doc_url: 'ee/development/fe_guide/editor_lite.html'
+          - doc_title: Source editor
+            doc_url: 'ee/development/fe_guide/source_editor.html'
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Filter
