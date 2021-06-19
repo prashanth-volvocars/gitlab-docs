@@ -1069,7 +1069,7 @@ sections:
                 doc_url: 'ee/user/project/issues/associate_zoom_meeting.html'
           - doc_title: Labels
             doc_url: 'ee/user/project/labels.html'
-          - doc_title: Discussions
+          - doc_title: Comments and threads
             doc_url: 'ee/user/discussions/'
           - doc_title: Iterations
             doc_url: 'ee/user/group/iterations/'
