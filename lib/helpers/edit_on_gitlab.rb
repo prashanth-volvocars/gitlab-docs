@@ -17,8 +17,8 @@ module Nanoc::Helpers
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}-gitlab/edit/master/-/doc/#{docs_content_filename}"
       when "runner"
         # gitlab-runner repo
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/docs/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/master/-/docs/#{docs_content_filename}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/main/docs/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/main/-/docs/#{docs_content_filename}"
       when "charts"
         # GitLab Helm chart repo
         gitlab_url = "https://gitlab.com/gitlab-org/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"

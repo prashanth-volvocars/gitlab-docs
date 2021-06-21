@@ -30,7 +30,7 @@ stages:
 variables:
   BRANCH_EE: 'master'
   BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'master'
+  BRANCH_RUNNER: 'main'
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
