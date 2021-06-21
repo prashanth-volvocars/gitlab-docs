@@ -649,10 +649,12 @@ sections:
                     doc_url: 'ee/administration/gitaly/praefect.html'
                   - doc_title: Frequently asked questions
                     doc_url: 'ee/administration/gitaly/faq.html'
-              - doc_title: Gitaly reference
-                doc_url: 'ee/administration/gitaly/reference.html'
-              - doc_title: Gitaly timeouts
-                doc_url: 'ee/user/admin_area/settings/gitaly_timeouts.html'
+                  - doc_title: Troubleshooting
+                    doc_url: 'ee/administration/gitaly/troubleshooting.html'
+                  - doc_title: Gitaly reference
+                    doc_url: 'ee/administration/gitaly/reference.html'
+                  - doc_title: Gitaly timeouts
+                    doc_url: 'ee/user/admin_area/settings/gitaly_timeouts.html'
           - doc_title: Object storage
             doc_url: 'ee/administration/object_storage.html'
           - doc_title: Merge request diffs storage
