@@ -115,7 +115,7 @@ namespace :release do
     ci_yaml_content = File.read(ci_yaml)
     ci_yaml_content.gsub!("BRANCH_EE: 'master'", "BRANCH_EE: '#{version.tr('.', '-')}-stable-ee'")
     ci_yaml_content.gsub!("BRANCH_OMNIBUS: 'master'", "BRANCH_OMNIBUS: '#{version.tr('.', '-')}-stable'")
-    ci_yaml_content.gsub!("BRANCH_RUNNER: 'master'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
+    ci_yaml_content.gsub!("BRANCH_RUNNER: 'main'", "BRANCH_RUNNER: '#{version.tr('.', '-')}-stable'")
     ci_yaml_content.gsub!("BRANCH_CHARTS: 'master'", "BRANCH_CHARTS: '#{chart_version(version).tr('.', '-')}-stable'")
 
     File.open(ci_yaml, 'w') do |post|
