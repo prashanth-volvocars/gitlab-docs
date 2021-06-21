@@ -1,5 +1,5 @@
 ---
-version: 10
+version: 11
 ---
 
 @import 'variables';
@@ -98,6 +98,10 @@ version: 10
 
   // Code
 
+  *:not(a):not(pre) > code {
+    color: $accessible-code-color;
+  }
+
   *:not(pre) > code {
     background-color: $gray-50;
     border-radius: 4px;
@@ -105,10 +109,6 @@ version: 10
     overflow-wrap: break-word;
     padding: 2px 4px;
     transition: background-color 0.15s linear;
-  }
-
-  *:not(a) > code {
-    color: $accessible-code-color;
   }
 
   pre {
