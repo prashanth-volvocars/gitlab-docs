@@ -1477,6 +1477,11 @@ sections:
                     doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
+              - doc_title: Infrastructure Registry
+                doc_url: 'ee/user/packages/infrastructure_registry/'
+                docs:
+                  - doc_title: Terraform module registry
+                    doc_url: 'ee/user/packages/terraform_module_registry/'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/user/packages/dependency_proxy/'
       - category_title: Secure your application
