@@ -529,7 +529,7 @@ image:docs-lint-html:
     - .docker_prepare
   stage: build-images
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-html
   script:
     - docker build
