@@ -513,8 +513,6 @@ sections:
                 doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
               - doc_title: OAuth service provider
                 doc_url: 'ee/integration/oauth_provider.html'
-              - doc_title: Okta
-                doc_url: 'ee/administration/auth/okta.html'
               - doc_title: OmniAuth
                 doc_url: 'ee/integration/omniauth.html'
               - doc_title: OpenID Connect OmniAuth
@@ -829,7 +827,7 @@ sections:
           - doc_title: Proxying assets
             doc_url: 'ee/security/asset_proxy.html'
           - doc_title: CI/CD variables
-            doc_url: 'ee/security/cicd_environment_variables.html'
+            doc_url: 'ee/security/cicd_variables.html'
           - doc_title: Token overview
             doc_url: 'ee/security/token_overview.html'
           - doc_title: Compliance features
