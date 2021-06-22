@@ -22,7 +22,7 @@ heros:
       - title: Auto DevOps
         url: '/ee/topics/autodevops/'
   - title: Collaboration
-    description: Configure and develop your applications.
+    description: Configure and develop your software applications.
     img: /assets/images/collaberation.svg
     alt: collaboration
     links:

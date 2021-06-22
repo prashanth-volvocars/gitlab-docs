@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 @import 'variables';
@@ -84,7 +84,7 @@ version: 5
 
     .search {
       background: $gds-white;
-      box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.5rem 1.5rem $landing-gl-blue-950;
+      box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
       border-radius: 0.25rem;
       width: 65%;
 
@@ -175,7 +175,7 @@ version: 5
       }
 
       li {
-        margin: 0.5rem 0 0;
+        margin: 0;
       }
 
       a {
@@ -211,7 +211,7 @@ version: 5
 
   .popular {
     background: $gds-white;
-    border: 1px solid $landing-gl-gray-50;
+    border: 1px solid $gray-50;
 
     h2 {
       font-weight: 500;
@@ -306,6 +306,7 @@ version: 5
         font-size: 1rem;
         line-height: 1.25rem;
         color: $landing-gl-purple-500;
+        white-space: nowrap;
       }
 
       .card-text {
@@ -441,8 +442,8 @@ version: 5
     }
 
     .dot {
-      height: 0.313rem;
-      width: 0.313rem;
+      height: 0.25rem;
+      width: 0.25rem;
       background-color: $gds-white;
       border-radius: 50%;
       display: inline-block;
