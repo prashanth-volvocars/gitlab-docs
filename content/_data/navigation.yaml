@@ -422,8 +422,6 @@ sections:
             doc_url: 'ee/user/project/integrations/microsoft_teams.html'
           - doc_title: Mock CI
             doc_url: 'ee/user/project/integrations/mock_ci.html'
-          - doc_title: Pivotal Tracker
-            doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: Prometheus
             doc_url: 'ee/user/project/integrations/prometheus.html'
           - doc_title: ServiceNow
@@ -649,8 +647,6 @@ sections:
                     doc_url: 'ee/administration/gitaly/praefect.html'
                   - doc_title: Frequently asked questions
                     doc_url: 'ee/administration/gitaly/faq.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/administration/gitaly/troubleshooting.html'
                   - doc_title: Gitaly reference
                     doc_url: 'ee/administration/gitaly/reference.html'
                   - doc_title: Gitaly timeouts
@@ -2191,8 +2187,8 @@ sections:
             doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Droplab
             doc_url: 'ee/development/fe_guide/droplab/droplab.html'
-          - doc_title: Source editor
-            doc_url: 'ee/development/fe_guide/source_editor.html'
+          - doc_title: Editor lite
+            doc_url: 'ee/development/fe_guide/editor_lite.html'
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Filter
