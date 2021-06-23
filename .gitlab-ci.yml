@@ -237,7 +237,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-d2b92621
   extends:
     - .rules_site_tests
     - .cache_gem
