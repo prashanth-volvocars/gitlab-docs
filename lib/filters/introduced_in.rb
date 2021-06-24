@@ -15,7 +15,7 @@ class IntroducedInFilter < Nanoc::Filter
       # - "deprecated <optional text> in"
       # - "moved <optional text> to"
       # ...followed by "GitLab"
-      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|deprecated)(<\/a>)?(.*)? (in|to).*GitLab/mi
+      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|deprecated|renamed)(<\/a>)?(.*)? (in|to).*GitLab/mi
 
       new_content = generate(content)
       blockquote.replace(new_content)
