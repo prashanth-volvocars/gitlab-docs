@@ -1686,9 +1686,11 @@ sections:
             doc_url: 'ee/user/admin_area/analytics/dev_ops_report.html'
           - doc_title: DevOps adoption by group
             doc_url: 'ee/user/group/devops_adoption/'
-          - doc_title: Insights
+          - doc_title: Insights for projects
             doc_url: 'ee/user/project/insights/'
-          - doc_title: Issue analytics
+          - doc_title: Insights for groups
+            doc_url: 'ee/user/group/insights/'
+          - doc_title: Issue analytics for projects
             doc_url: 'ee/user/analytics/issue_analytics.html'
           - doc_title: Issue analytics for groups
             doc_url: 'ee/user/group/issues_analytics/'
@@ -1702,7 +1704,7 @@ sections:
             doc_url: 'ee/user/group/repositories_analytics/'
           - doc_title: Usage trends
             doc_url: 'ee/user/admin_area/analytics/usage_trends.html'
-          - doc_title: Value stream analytics
+          - doc_title: Value stream analytics for projects
             doc_url: 'ee/user/analytics/value_stream_analytics.html'
           - doc_title: Value stream analytics for groups
             doc_url: 'ee/user/group/value_stream_analytics/'
