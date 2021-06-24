@@ -2446,8 +2446,8 @@ sections:
             doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
           - doc_title: Event dictionary
             doc_url: 'ee/development/snowplow/dictionary.html'
-          - doc_title: Review Guidelines
-            doc_url: 'ee/development/usage_ping/review_guidelines.html'
+          - doc_title: Review guidelines
+            doc_url: 'ee/development/snowplow/review_guidelines.html'
       - category_title: Usage Ping guide
         category_url: 'ee/development/usage_ping/'
         docs:
@@ -2457,7 +2457,7 @@ sections:
             doc_url: 'ee/development/usage_ping/metrics_dictionary.html'
           - doc_title: Metrics dictionary
             doc_url: 'ee/development/usage_ping/dictionary.html'
-          - doc_title: Review Guidelines
+          - doc_title: Review guidelines
             doc_url: 'ee/development/usage_ping/review_guidelines.html'
       - category_title: Value Stream Analytics
         category_url: 'ee/development/value_stream_analytics.html'
