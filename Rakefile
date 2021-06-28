@@ -207,6 +207,8 @@ task :symlink_readmes do
 
     next if readmes.key?(product['slug']) == false
 
+    next if readmes.fetch(product['slug']).nil?
+
     readmes.fetch(product['slug']).each do |readme|
       dirname = File.dirname(readme)
       target = "#{dirname}/index.html"
