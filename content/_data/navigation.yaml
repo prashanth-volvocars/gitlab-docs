@@ -1671,8 +1671,14 @@ sections:
             docs:
               - doc_title: Container Network Security
                 doc_url: 'ee/user/project/clusters/protect/container_network_security/'
+                docs:
+                  - doc_title: Get started with Container Network Security
+                    doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
               - doc_title: Container Host Security
                 doc_url: 'ee/user/project/clusters/protect/container_host_security/'
+                docs:
+                  - doc_title: Get started with Container Host Security
+                    doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
