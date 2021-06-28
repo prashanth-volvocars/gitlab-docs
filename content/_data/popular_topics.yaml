@@ -18,7 +18,7 @@ topics:
   - title: GitLab CI/CD reference
     description: Configure GitLab CI/CD in the .gitlab-ci.yml file
     icon: rocket
-    url: /ee/ci/yaml/README.html
+    url: /ee/ci/yaml/index.html
   - title: Database settings
     description: Configure database settings for your Omnibus GitLab self-managed instance
     icon: table
@@ -64,7 +64,7 @@ developer:
     links:
       - title: API
         description: Use the API to develop against GitLab
-        url: /ee/api/README.html
+        url: /ee/api/index.html
       - title: Contributing
         description: Learn the processes and technical information you need to contribute to GitLab
-        url: /ee/development/README.html
+        url: /ee/development/index.html
