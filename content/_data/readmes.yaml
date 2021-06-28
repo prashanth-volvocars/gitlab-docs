@@ -1,6 +1,5 @@
 ---
 ee:
-  - public/ee/api/README.html
   - public/ee/ci/yaml/README.html
   - public/ee/ci/variables/README.html
   - public/ee/ci/README.html
