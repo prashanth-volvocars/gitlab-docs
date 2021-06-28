@@ -187,8 +187,6 @@ workflow:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
-    # Symlink all README.html to index.html so that we can have clean URLs
-    - bundle exec rake symlink_readmes
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
     # Remove CE dir and symlink EE to CE
