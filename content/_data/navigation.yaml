@@ -21,7 +21,7 @@
 sections:
   # Documentation from https://gitlab.com/gitlab-org/gitlab
   - section_title: GitLab Docs
-    section_url: 'ee/README.html'
+    section_url: 'ee/'
 
   - section_title: Choose a subscription
     section_url: 'ee/subscriptions/'
@@ -50,15 +50,15 @@ sections:
         docs:
           # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
           - doc_title: Linux packages (Omnibus)
-            doc_url: 'omnibus/README.html'
+            doc_url: 'omnibus/'
             docs:
               - doc_title: Architecture
-                doc_url: 'omnibus/architecture/README.html'
+                doc_url: 'omnibus/architecture/'
                 docs:
                   - doc_title: Omnibus packages and images
                     doc_url: 'omnibus/package-information/omnibus_packages.html'
                   - doc_title: Package information
-                    doc_url: 'omnibus/package-information/README.html'
+                    doc_url: 'omnibus/package-information/'
                   - doc_title: Package defaults
                     doc_url: 'omnibus/package-information/defaults.html'
                   - doc_title: Package licensing
@@ -69,7 +69,7 @@ sections:
                 doc_url: 'omnibus/installation/'
                 docs:
                   - doc_title: Container Registry
-                    doc_url: 'omnibus/architecture/registry/README.html'
+                    doc_url: 'omnibus/architecture/registry/'
                   - doc_title: Deprecation policy
                     doc_url: 'omnibus/package-information/deprecation_policy.html'
                   - doc_title: Deprecated OSes
@@ -81,7 +81,7 @@ sections:
                   - doc_title: Install JiHu Edition
                     doc_url: 'omnibus/jihu_edition.html'
               - doc_title: Configure
-                doc_url: 'omnibus/settings/README.html'
+                doc_url: 'omnibus/settings/'
                 docs:
                   - doc_title: Custom environment variables
                     doc_url: 'omnibus/settings/environment-variables.html'
@@ -90,11 +90,11 @@ sections:
                   - doc_title: Database
                     doc_url: 'omnibus/settings/database.html'
                   - doc_title: GitLab Mattermost
-                    doc_url: 'omnibus/gitlab-mattermost/README.html'
+                    doc_url: 'omnibus/gitlab-mattermost/'
                   - doc_title: Grafana
                     doc_url: 'omnibus/settings/grafana.html'
                   - doc_title: High availability roles
-                    doc_url: 'omnibus/roles/README.html'
+                    doc_url: 'omnibus/roles/'
                   - doc_title: LDAP
                     doc_url: 'ee/administration/auth/ldap/'
                   - doc_title: Logs
@@ -124,12 +124,12 @@ sections:
                   - doc_title: Memory-constrained environments
                     doc_url: 'omnibus/settings/memory_constrained_envs.html'
               - doc_title: Release process
-                doc_url: 'omnibus/release/README.html'
+                doc_url: 'omnibus/release/'
                 docs:
                   - doc_title: OpenShift release process
                     doc_url: 'omnibus/release/openshift.html'
               - doc_title: Update
-                doc_url: 'omnibus/update/README.html'
+                doc_url: 'omnibus/update/'
                 docs:
                   - doc_title: Convert to Omnibus
                     doc_url: 'omnibus/update/convert_to_omnibus.html'
@@ -144,9 +144,9 @@ sections:
                   - doc_title: GitLab 10 changes
                     doc_url: 'omnibus/update/gitlab_10_changes.html'
               - doc_title: Maintain
-                doc_url: 'omnibus/maintenance/README.html'
+                doc_url: 'omnibus/maintenance/'
               - doc_title: Troubleshoot
-                doc_url: 'omnibus/common_installation_problems/README.html'
+                doc_url: 'omnibus/common_installation_problems/'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
           - doc_title: Kubernetes
@@ -343,7 +343,7 @@ sections:
           - doc_title: Autoscale on AWS Fargate
             doc_url: 'runner/configuration/runner_autoscale_aws_fargate/'
           - doc_title: Commands
-            doc_url: 'runner/commands/README.html'
+            doc_url: 'runner/commands/'
           - doc_title: Feature flags
             doc_url: 'runner/configuration/feature-flags.html'
           - doc_title: OpenShift
@@ -359,7 +359,7 @@ sections:
           - doc_title: Speed up job execution
             doc_url: 'runner/configuration/speed_up_job_execution.html'
       - category_title: Troubleshoot
-        category_url: 'runner/faq/README.html'
+        category_url: 'runner/faq/'
 
   - section_title: Integrate applications
     section_url: 'ee/integration/'
@@ -475,7 +475,7 @@ sections:
         category_url: 'ee/administration/configure.html'
         docs:
           - doc_title: Authentication and authorization
-            doc_url: 'ee/administration/auth/README.html'
+            doc_url: 'ee/administration/auth/'
             docs:
               - doc_title: Atlassian Crowd
                 doc_url: 'ee/administration/auth/crowd.html'
@@ -807,7 +807,7 @@ sections:
       # New - secure (renamed existing topic)
 
       - category_title: Secure your installation
-        category_url: 'ee/security/README.html'
+        category_url: 'ee/security/'
         docs:
           - doc_title: Limits on SSH keys
             doc_url: 'ee/security/ssh_keys_restrictions.html'
@@ -917,7 +917,7 @@ sections:
               - doc_title: Delete account
                 doc_url: 'ee/user/profile/account/delete_account.html'
           - doc_title: SSH keys
-            doc_url: 'ee/ssh/README.html'
+            doc_url: 'ee/ssh/'
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
@@ -1232,7 +1232,7 @@ sections:
               - doc_title: Workflows
                 doc_url: 'ee/user/project/merge_requests/authorization_for_merge_requests.html'
           - doc_title: CI/CD
-            doc_url: 'ee/ci/README.html'
+            doc_url: 'ee/ci/'
             docs:
               - doc_title: Get started
                 doc_url: 'ee/ci/quick_start/'
@@ -1251,7 +1251,7 @@ sections:
                   - doc_title: Schedule a pipeline
                     doc_url: 'ee/ci/pipelines/schedules.html'
                   - doc_title: Trigger a pipeline
-                    doc_url: 'ee/ci/triggers/README.html'
+                    doc_url: 'ee/ci/triggers/'
                   - doc_title: Pipeline settings
                     doc_url: 'ee/ci/pipelines/settings.html'
                   - doc_title: Pipeline architectures
@@ -1282,7 +1282,7 @@ sections:
                   - doc_title: Git submodules
                     doc_url: 'ee/ci/git_submodules.html'
               - doc_title: Variables
-                doc_url: 'ee/ci/variables/README.html'
+                doc_url: 'ee/ci/variables/'
                 docs:
                   - doc_title: Predefined variables
                     doc_url: 'ee/ci/variables/predefined_variables.html'
@@ -1314,7 +1314,7 @@ sections:
                 doc_url: 'ee/ci/yaml/gitlab_ci_yaml.html'
                 docs:
                   - doc_title: '.gitlab-ci.yml reference'
-                    doc_url: 'ee/ci/yaml/README.html'
+                    doc_url: 'ee/ci/yaml/'
                   - doc_title: Validate syntax
                     doc_url: 'ee/ci/lint.html'
                   - doc_title: Pipeline Editor
@@ -1385,10 +1385,10 @@ sections:
                   - doc_title: Slack
                     doc_url: 'ee/ci/chatops/'
               - doc_title: CI/CD examples
-                doc_url: 'ee/ci/examples/README.html'
+                doc_url: 'ee/ci/examples/'
                 docs:
                   - doc_title: Deployment with Dpl
-                    doc_url: 'ee/ci/examples/deployment/README.html'
+                    doc_url: 'ee/ci/examples/deployment/'
                   - doc_title: End-to-end testing
                     doc_url: 'ee/ci/examples/end_to_end_testing_webdriverio/'
                   - doc_title: NPM with semantic-release
@@ -1406,7 +1406,7 @@ sections:
             doc_url: 'runner/'
             docs:
               - doc_title: GitLab SaaS runners
-                doc_url: 'ee/ci/runners/README.html'
+                doc_url: 'ee/ci/runners/'
               - doc_title: The scope of runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
@@ -1415,7 +1415,7 @@ sections:
                   - doc_title: Examples
                     doc_url: 'runner/examples/gitlab.html'
               - doc_title: Runner executors
-                doc_url: 'runner/executors/README.html'
+                doc_url: 'runner/executors/'
                 docs:
                   - doc_title: Custom
                     doc_url: 'runner/executors/custom.html'
@@ -1609,7 +1609,7 @@ sections:
               - doc_title: Templating variables for dashboards
                 doc_url: 'ee/operations/metrics/dashboards/templating_variables.html'
       - category_title: Monitor runner performance
-        category_url: 'runner/monitoring/README.html'
+        category_url: 'runner/monitoring/'
       - category_title: Manage your infrastructure
         category_url: 'ee/user/project/clusters/'
         docs:
@@ -1758,7 +1758,7 @@ sections:
               - doc_title: Usage statistics
                 doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
   - section_title: Use the API
-    section_url: 'ee/api/README.html'
+    section_url: 'ee/api/'
     section_categories:
       - category_title: Resources
         category_url: 'ee/api/api_resources.html'
@@ -2076,7 +2076,7 @@ sections:
   #
   # GitLab
   - section_title: Contribute to GitLab development
-    section_url: 'ee/development/README.html'
+    section_url: 'ee/development/'
     section_categories:
       - category_title: Get started
         category_url: 'ee/development/contributing/'
@@ -2280,7 +2280,7 @@ sections:
 
       # GitLab Runner development documentation
       - category_title: GitLab Runner
-        category_url: 'runner/development/README.html'
+        category_url: 'runner/development/'
         docs:
           - doc_title: Review GitLab Runner
             doc_url: 'runner/development/reviewing-gitlab-runner.html'
@@ -2357,10 +2357,10 @@ sections:
 
       # Omnibus GitLab development documentation
       - category_title: Omnibus GitLab
-        category_url: 'omnibus/development/README.html'
+        category_url: 'omnibus/development/'
         docs:
           - doc_title: Build locally
-            doc_url: 'omnibus/build/README.html'
+            doc_url: 'omnibus/build/'
             docs:
               - doc_title: Build Omnibus GitLab package
                 doc_url: 'omnibus/build/build_package.html'
