@@ -366,6 +366,8 @@ sections:
     section_categories:
       - category_title: Akismet
         category_url: 'ee/integration/akismet.html'
+      - category_title: Datadog
+        category_url: 'ee/integration/datadog.html'
       - category_title: Elasticsearch
         category_url: 'ee/integration/elasticsearch.html'
       - category_title: Gitpod
