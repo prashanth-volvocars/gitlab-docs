@@ -1758,7 +1758,7 @@ sections:
   - section_title: Use the API
     section_url: 'ee/api/'
     section_categories:
-      - category_title: Resources
+      - category_title: REST API resources
         category_url: 'ee/api/api_resources.html'
         docs:
           - doc_title: .gitignore (templates)
