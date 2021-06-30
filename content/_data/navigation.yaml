@@ -744,6 +744,8 @@ sections:
         docs:
           - doc_title: Clean up Redis sessions
             doc_url: 'ee/administration/operations/cleaning_up_redis_sessions.html'
+          - doc_title: Housekeeping
+            doc_url: 'ee/administration/housekeeping.html'
           - doc_title: Fast SSH key lookup
             doc_url: 'ee/administration/operations/fast_ssh_key_lookup.html'
           - doc_title: Filesystem benchmarking
