@@ -1409,6 +1409,11 @@ sections:
             docs:
               - doc_title: GitLab SaaS runners
                 doc_url: 'ee/ci/runners/'
+                docs:
+                  - doc_title: Linux
+                    doc_url: 'ee/ci/runners/build_cloud/linux_build_cloud.html'
+                  - doc_title: Windows
+                    doc_url: 'ee/ci/runners/build_cloud/windows_build_cloud.html'
               - doc_title: The scope of runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
