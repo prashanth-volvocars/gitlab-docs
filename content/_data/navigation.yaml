@@ -602,6 +602,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/sign_up_restrictions.html'
               - doc_title: System Hooks
                 doc_url: 'ee/system_hooks/system_hooks.html'
+              - doc_title: Third-party offers
+                doc_url: 'ee/user/admin_area/settings/third_party_offers.html'
               - doc_title: Timezone
                 doc_url: 'ee/administration/timezone.html'
               - doc_title: Uploads
