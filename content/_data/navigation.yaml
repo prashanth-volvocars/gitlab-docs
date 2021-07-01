@@ -1466,6 +1466,8 @@ sections:
                     doc_url: 'ee/user/packages/composer_repository/'
                   - doc_title: Conan
                     doc_url: 'ee/user/packages/conan_repository/'
+                  - doc_title: Debian
+                    doc_url: 'ee/user/packages/debian_repository/'
                   - doc_title: Go Proxy
                     doc_url: 'ee/user/packages/go_proxy/'
                   - doc_title: Maven
@@ -1814,6 +1816,12 @@ sections:
             doc_url: 'ee/api/custom_attributes.html'
           - doc_title: Dashboard annotations
             doc_url: 'ee/api/metrics_dashboard_annotations.html'
+          - doc_title: Debian
+            doc_url: 'ee/api/packages/debian.html'
+          - doc_title: Debian group distributions
+            doc_url: 'ee/api/packages/debian_group_distributions.html'
+          - doc_title: Debian project distributions
+            doc_url: 'ee/api/packages/debian_project_distributions.html'
           - doc_title: Dependencies
             doc_url: 'ee/api/dependencies.html'
           - doc_title: Dependency Proxy
