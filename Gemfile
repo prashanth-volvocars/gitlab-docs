@@ -9,7 +9,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.12.0'
+  gem 'gitlab_kramdown', '~> 0.13.0'
 
   # nanoc checks
   gem 'nokogiri', '~> 1.11.0'
