@@ -1258,7 +1258,7 @@ sections:
                     doc_url: 'ee/ci/pipelines/schedules.html'
                   - doc_title: Trigger a pipeline
                     doc_url: 'ee/ci/triggers/'
-                  - doc_title: Pipeline settings
+                  - doc_title: Customize pipeline configuration
                     doc_url: 'ee/ci/pipelines/settings.html'
                   - doc_title: Pipeline architectures
                     doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
