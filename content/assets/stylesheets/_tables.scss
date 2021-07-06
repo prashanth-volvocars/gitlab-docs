@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 @import 'variables';
@@ -54,6 +54,7 @@ table {
 
   td {
     vertical-align: top;
+    min-width: 6rem;
 
     a {
       /* stylelint-disable declaration-no-important */
