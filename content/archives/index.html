@@ -9,7 +9,7 @@ last_updated: 2020-05-15
 This website contains online versions of the GitLab documentation:
 
 <ul>
-  <li>The default version from the <code>master</code> branch.</li>
+  <li>The default version from the <code>main</code> branch.</li>
   <li>The latest released version.</li>
   <li>Previously released versions.</li>
 </ul>
@@ -24,11 +24,10 @@ They're available for download so that you can browse through them locally.
 <h2 id="default-version">Default version <a class="anchor" href="#default-version"></a></h2>
 
 The <a href="/">default version</a> of this website
-is built from the documentation directories on the <code>master</code> branches of:
+is built from the documentation directories on the default branches of:
 
 <ul>
-  <li><a href="https://gitlab.com/gitlab-org/gitlab-foss/tree/master/doc">GitLab Community Edition</a></li>
-  <li><a href="https://gitlab.com/gitlab-org/gitlab/tree/master/doc">GitLab Enterprise Edition</a></li>
+  <li><a href="https://gitlab.com/gitlab-org/gitlab/tree/master/doc">GitLab</a></li>
   <li><a href="https://gitlab.com/gitlab-org/omnibus-gitlab/tree/master/doc">Omnibus GitLab</a></li>
   <li><a href="https://gitlab.com/gitlab-org/gitlab-runner/tree/master/docs">GitLab Runner</a></li>
   <li><a href="https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc"> GitLab Charts</a></li>
@@ -64,8 +63,11 @@ The following versions are available online:
 In addition, online versions are available for the following versions:
 
 <ul>
-  <li><a href="/12.10/">12.10</a></li>
-  <li><a href="/11.11/">11.11</a></li>
+<% @items['/_data/versions.yaml'][:previous_majors].each do |version| %>
+  <li>
+    <a href='/<%= version %>/'><%= version %></a>
+  </li>
+<% end %>
 </ul>
 
 <h2 id="offline-archives">Offline archives <a class="anchor" href="#offline-archives"></a></h2>

@@ -2,34 +2,35 @@ module Nanoc::Helpers
   module EditOnGitLab
     def edit_on_gitlab(item, editor: :simple)
       # Make an array out of the content's source path.
-      content_filename_array = @item[:content_filename].split('/')
-      # Remove "/content/"
+      content_filename_array = @item.identifier.to_s.split('/')
+      # remove first empty item
       content_filename_array.shift
       # Get the product name.
       product = content_filename_array.shift
       # This should be the path from the doc/ directory for a given file.
       docs_content_filename = content_filename_array.join("/")
 
-      if product == "omnibus"
+      case product
+      when "omnibus"
         # omnibus-gitlab repo
         gitlab_url = "https://gitlab.com/gitlab-org/#{product}-gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}-gitlab/edit/master/-/doc/#{docs_content_filename}"
-      elsif product == "runner"
+      when "runner"
         # gitlab-runner repo
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/master/docs/#{docs_content_filename}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/master/-/docs/#{docs_content_filename}"
-      elsif product == "charts"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-#{product}/blob/main/docs/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-#{product}/edit/main/-/docs/#{docs_content_filename}"
+      when "charts"
         # GitLab Helm chart repo
         gitlab_url = "https://gitlab.com/gitlab-org/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
       # gitlab-foss and gitlab repos
-      elsif %w[ce ee].include?(product)
+      when "ee"
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/#{docs_content_filename}"
       else
         # gitlab-docs pages
-        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/master/#{@item[:content_filename]}"
-        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-docs/edit/master/-/#{@item[:content_filename]}"
+        gitlab_url = "https://gitlab.com/gitlab-org/gitlab-docs/blob/main/#{@item[:content_filename]}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab-docs/edit/main/-/#{@item[:content_filename]}"
       end
 
       case editor

@@ -1,8 +1,6 @@
 ---
-version: 4
+version: 5
 ---
-
-var NAV_INLINE_BREAKPOINT = 1100;
 
 var landingHeaderBar = document.getElementById('landing-header-bar');
 var headerLinks = document.getElementsByClassName('header-link');

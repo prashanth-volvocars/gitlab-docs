@@ -18,9 +18,9 @@ def products
 end
 
 def retrieve_branch(slug)
-  # If CI_COMMIT_REF_NAME is not defined, set it to master.
+  # If CI_COMMIT_REF_NAME is not defined (run locally), set it to the default branch.
   if ENV["CI_COMMIT_REF_NAME"].nil?
-    'master'
+    default_branch(products[slug].fetch('repo'))
   # If we're on a gitlab-docs stable branch according to the regex, catch the
   # version and assign the product stable branches correctly.
   elsif version = ENV["CI_COMMIT_REF_NAME"].match(VERSION_FORMAT)
@@ -35,14 +35,11 @@ def retrieve_branch(slug)
     when 'charts'
       chart = chart_version(ENV["CI_COMMIT_REF_NAME"]).match(VERSION_FORMAT)
       "#{chart[:major]}-#{chart[:minor]}-stable"
-    # For all other products use master
-    else
-      'master'
     end
   # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
-  # variable, and if not assigned, set to master.
+  # variable, and if not assigned, set to the default branch.
   else
-    ENV.fetch("BRANCH_#{slug.upcase}", 'master')
+    ENV.fetch("BRANCH_#{slug.upcase}", default_branch(products[slug].fetch('repo')))
   end
 end
 
@@ -65,4 +62,12 @@ def chart_version(gitlab_version)
   config = YAML.load_file('./content/_data/chart_versions.yaml')
 
   config.fetch(gitlab_version)
+end
+
+def default_branch(repo)
+  # Get the URL-encoded path of the project
+  # https://docs.gitlab.com/ee/api/README.html#namespaced-path-encoding
+  url_encoded_path = repo.sub('https://gitlab.com/', '').sub('.git', '').gsub('/', '%2F')
+
+  `curl https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
 end

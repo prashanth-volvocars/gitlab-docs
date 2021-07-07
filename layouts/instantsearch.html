@@ -5,12 +5,12 @@
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
     <%= render '/instantsearch-head.*' %>
   </head>
-  <body class="gl-docs">
+  <body>
     <%= render '/gtm.*' %>
     <%= render '/header.*' %>
-    <section class="container">
+    <section class="gl-docs container pt-5">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 mt-5">
           <div class="main class pl-lg-4 instantsearch-input">
             <%= yield %>
             <%= render '/footer.*' %>

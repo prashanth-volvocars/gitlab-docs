@@ -22,7 +22,7 @@ heros:
       - title: Auto DevOps
         url: '/ee/topics/autodevops/'
   - title: Collaboration
-    description: Configure and develop your applications.
+    description: Configure and develop your software applications.
     img: /assets/images/collaberation.svg
     alt: collaboration
     links:
@@ -86,7 +86,7 @@ referenceLarge:
     url: '/ee/administration/reference_architectures/50k_users.html'
 cards:
   - title: Install with Docker
-    url: '/omnibus/docker/'
+    url: '/ee/install/docker.html'
     description: GitLab maintains a set of official Docker images based on the Omnibus GitLab package.
   - title: Compile from source
     url: '/ee/install/installation.html'

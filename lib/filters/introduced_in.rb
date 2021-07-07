@@ -10,12 +10,15 @@ class IntroducedInFilter < Nanoc::Filter
     doc.css('blockquote').each do |blockquote|
       content = blockquote.inner_html
       # Searches for a blockquote with either:
-      # - "introduced in"
-      # - "removed in"
-      # - "deprecated in"
-      # - "moved to"
+      # - "deprecated <optional text> in"
+      # - "introduced <optional text> in"
+      # - "moved <optional text> to"
+      # - "recommended <optional text> in"
+      # - "removed <optional text> in"
+      # - "renamed <optional text> in"
+      # - "changed <optional text> in"
       # ...followed by "GitLab"
-      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|deprecated)(<\/a>)? (in|to).*GitLab/mi
+      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|changed|deprecated|renamed|recommended)(<\/a>)?(.*)? (in|to).*GitLab/mi
 
       new_content = generate(content)
       blockquote.replace(new_content)

@@ -30,7 +30,7 @@ stages:
 variables:
   BRANCH_EE: 'master'
   BRANCH_OMNIBUS: 'master'
-  BRANCH_RUNNER: 'master'
+  BRANCH_RUNNER: 'main'
   BRANCH_CHARTS: 'master'
   BUNDLE_PATH__SYSTEM: 'false'
   GIT_DEPTH: '20'
@@ -187,8 +187,6 @@ workflow:
     - yarn install --cache-folder .yarn-cache
     - bundle exec rake setup_git default
     - bundle exec nanoc compile -VV
-    # Symlink all README.html to index.html so that we can have clean URLs
-    - bundle exec rake symlink_readmes
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
     # Remove CE dir and symlink EE to CE
@@ -237,7 +235,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-d2b92621
   extends:
     - .rules_site_tests
     - .cache_gem
@@ -529,7 +527,7 @@ image:docs-lint-html:
     - .docker_prepare
   stage: build-images
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-html
   script:
     - docker build

@@ -1,5 +1,5 @@
 ---
-version: 112
+version: 114
 ---
 
 @import 'variables';
@@ -9,7 +9,6 @@ version: 112
 @import 'mixins';
 @import 'base';
 @import 'tables';
-@import 'breadcrumbs';
 @import 'sidebar';
 @import 'typography';
 
@@ -21,12 +20,6 @@ body {
       flex-direction: column-reverse;
       background-color: $white;
     }
-  }
-}
-
-h1 {
-  .anchor {
-    display: none;
   }
 }
 

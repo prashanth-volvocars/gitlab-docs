@@ -28,7 +28,6 @@ text_extensions: [
   'xhtml',
   'xml']
 output_dir: public
-content_dir: content
 index_filenames: ['index.html']
 enable_output_diff: false
 
@@ -44,6 +43,34 @@ data_sources:
     type: filesystem
     items_root: /
     layouts_root: /
+    encoding: utf-8
+    identifier_type: full
+  -  # Documentation from https://gitlab.com/gitlab-org/gitlab
+    type: filesystem
+    items_root: /ee/
+    content_dir: ../gitlab/doc
+    layouts_dir: null
+    encoding: utf-8
+    identifier_type: full
+  -  # Documentation from https://gitlab.com/gitlab-org/gitlab-runner
+    type: filesystem
+    items_root: /runner/
+    content_dir: ../gitlab-runner/docs
+    layouts_dir: null
+    encoding: utf-8
+    identifier_type: full
+  -  # Documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
+    type: filesystem
+    items_root: /omnibus/
+    content_dir: ../omnibus-gitlab/doc
+    layouts_dir: null
+    encoding: utf-8
+    identifier_type: full
+  -  # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
+    type: filesystem
+    items_root: /charts/
+    content_dir: ../charts-gitlab/doc
+    layouts_dir: null
     encoding: utf-8
     identifier_type: full
 
@@ -87,7 +114,7 @@ checks:
       # Some links require authentication, but we want to keep them in development docs
       - 'https:\/\/dashboards.gitlab.com\/.*'
 
-breadcrumbs: true
+breadcrumbs: false
 debug: false
 
 # Control display of survey banner. See README.md#survey-banner
@@ -97,32 +124,16 @@ products:
   ee:
     slug: 'ee'
     repo: 'https://gitlab.com/gitlab-org/gitlab.git'
-    temp_dir: 'tmp/ee/'
-    content_dirs:
-      - dest_dir: 'content/ee'
-        doc_dir: 'doc'
-      - dest_dir: 'tmp/feature_flags'
-        doc_dir: 'config/feature_flags'
-      - dest_dir: 'tmp/feature_flags-ee'
-        doc_dir: 'ee/config/feature_flags'
+    project_dir: '../gitlab'
   runner:
     slug: 'runner'
     repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    temp_dir: 'tmp/runner/'
-    content_dirs:
-      - dest_dir: 'content/runner'
-        doc_dir: 'docs'
+    project_dir: '../gitlab-runner'
   omnibus:
     slug: 'omnibus'
     repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
-    temp_dir: 'tmp/omnibus/'
-    content_dirs:
-      - dest_dir: 'content/omnibus'
-        doc_dir: 'doc'
+    project_dir: '../omnibus-gitlab'
   charts:
     slug: 'charts'
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
-    temp_dir: 'tmp/charts/'
-    content_dirs:
-      - dest_dir: 'content/charts'
-        doc_dir: 'doc'
+    project_dir: '../charts-gitlab'

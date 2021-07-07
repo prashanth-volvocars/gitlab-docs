@@ -15,6 +15,7 @@ RUN apk add --no-cache -U \
     go          \
     grep        \
     gzip        \
+    jq          \
     libcurl     \
     libxslt     \
     libxslt-dev \
