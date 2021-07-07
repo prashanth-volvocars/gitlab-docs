@@ -598,6 +598,8 @@ sections:
                 doc_url: 'ee/administration/reply_by_email.html'
               - doc_title: Repository checks
                 doc_url: 'ee/administration/repository_checks.html'
+              - doc_title: Sign-in and help page text
+                doc_url: 'ee/user/admin_area/settings/help_page.html'
               - doc_title: Sign-in restrictions
                 doc_url: 'ee/user/admin_area/settings/sign_in_restrictions.html'
               - doc_title: Sign-up restrictions
