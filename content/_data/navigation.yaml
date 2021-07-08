@@ -1474,6 +1474,8 @@ sections:
                     doc_url: 'ee/user/packages/debian_repository/'
                   - doc_title: Go Proxy
                     doc_url: 'ee/user/packages/go_proxy/'
+                  - doc_title: Helm
+                    doc_url: 'ee/user/packages/helm_repository/'
                   - doc_title: Maven
                     doc_url: 'ee/user/packages/maven_repository/'
                   - doc_title: npm
