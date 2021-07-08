@@ -933,7 +933,7 @@ sections:
         docs:
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
-          - doc_title: Public access
+          - doc_title: Project visibility
             doc_url: 'ee/public_access/public_access.html'
           - doc_title: Project settings
             doc_url: 'ee/user/project/settings/'
