@@ -75,7 +75,7 @@ sections:
                   - doc_title: Deprecated OSes
                     doc_url: 'omnibus/package-information/deprecated_os.html'
                   - doc_title: Docker images
-                    doc_url: 'omnibus/docker/README.html'
+                    doc_url: 'omnibus/docker/'
                   - doc_title: Manual installation
                     doc_url: 'omnibus/manual_install.html'
                   - doc_title: Install JiHu Edition

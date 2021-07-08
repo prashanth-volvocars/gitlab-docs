@@ -314,7 +314,7 @@ redirects:
     to: /ee/ci/pipelines/index.html
     remove_date: 2021-11-01
   - from: /ee/ci/services/docker-services.html
-    to: /ee/ci/services/README.html
+    to: /ee/ci/services/index.html
     remove_date: 2021-11-01
   - from: /ee/container_registry/README.html
     to: /ee/user/packages/container_registry/index.html
@@ -734,28 +734,28 @@ redirects:
     to: /ee/topics/git/lfs/migrate_to_git_lfs.html
     remove_date: 2021-11-01
   - from: /ee/university/bookclub/booklist.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/bookclub/index.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/bookclub/
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/glossary/README.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/high-availability/aws/README.html
     to: /ee/install/aws/index.html
     remove_date: 2021-11-01
   - from: /ee/university/process/README.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/training/end-user/README.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/university/training/topics/explore_gitlab.html
-    to: /ee/gitlab-basics/README.html
+    to: /ee/gitlab-basics/index.html
     remove_date: 2021-11-01
   - from: /ee/university/training/topics/gitlab_flow.html
     to: /ee/university/training/gitlab_flow.html
@@ -1103,7 +1103,7 @@ redirects:
     to: /ee/user/project/protected_branches.html
     remove_date: 2021-11-01
   - from: /ee/workflow/README.html
-    to: /ee/README.html
+    to: /ee/index.html
     remove_date: 2021-11-01
   - from: /ee/workflow/rebase_before_merge.html
     to: /ee/user/project/merge_requests/fast_forward_merge.html
@@ -1163,7 +1163,7 @@ redirects:
     to: /ee/administration/operations/incident_management/integrations.html
     remove_date: 2022-02-01
   - from: /ee/gitlab-basics/create-your-ssh-keys.html
-    to: /ee/ssh/README.html
+    to: /ee/ssh/index.html
     remove_date: 2022-02-01
   - from: /ee/gitlab-basics/create-project.html
     to: /ee/user/project/working_with_projects.html
@@ -1190,34 +1190,34 @@ redirects:
     to: /ee/api/dora4_project_analytics.html
     remove_date: 2022-01-01
   - from: /ee/ci/examples/artifactory_and_gitlab/index.html
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/artifactory_and_gitlab/
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/deploy_spring_boot_to_cloud_foundry/index.html
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/deploy_spring_boot_to_cloud_foundry/
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/devops_and_game_dev_with_gitlab_ci_cd/index.html
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/devops_and_game_dev_with_gitlab_ci_cd/
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/examples/test_phoenix_app_with_gitlab_ci_cd/index.html
-    to: /ee/ci/README.md
+    to: /ee/ci/index.html
     remove_date: 2022-01-01
   - from: /ee/ci/examples/test_phoenix_app_with_gitlab_ci_cd/
-    to: /ee/ci/README.md
+    to: /ee/ci/index.html
     remove_date: 2022-01-01
   - from: /ee/ci/examples/test-scala-application.html
-    to: /ee/ci/examples/README.md#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-01-01
   - from: /ee/ci/variables/deprecated_variables.html
-    to: /ee/ci/variables/README.html
+    to: /ee/ci/variables/index.html
     remove_date: 2022-01-01
   - from: /ee/ci/yaml/visualization.html
     to: /ee/ci/pipeline_editor/index.html#visualize-ci-configuration
@@ -1268,7 +1268,7 @@ redirects:
     to: /ee/ci/services/index.html
     remove_date: 2022-02-01
   - from: /ee/ci/examples/test-clojure-application.html
-    to: /ee/ci/examples/README.html#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-02-26
   - from: /ee/ci/quick_start/README.html
     to: /ee/ci/quick_start/index.html
@@ -1316,10 +1316,10 @@ redirects:
     to: /ee/topics/index.html
     remove_date: 2022-02-11
   - from: /omnibus/development.html
-    to: /omnibus/development/README.html
+    to: /omnibus/development/index.html
     remove_date: 2021-10-22
   - from: /omnibus/build.html
-    to: /omnibus/build/README.html
+    to: /omnibus/build/index.html
     remove_date: 2021-10-22
   - from: /omnibus/settings/ldap.html
     to: /ee/administration/auth/ldap.html
@@ -1364,13 +1364,13 @@ redirects:
     to: /ee/ci/docker/index.html
     remove_date: 2022-03-18
   - from: /ee/ci/examples/test-and-deploy-python-application-to-heroku.html
-    to: /ee/ci/examples/README.html#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-03-18
   - from: /ee/ci/examples/test-and-deploy-ruby-application-to-heroku.html
-    to: /ee/ci/examples/README.html#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-03-18
   - from: /ee/ci/examples/test-clojure-application.html
-    to: /ee/ci/examples/README.html#contributed-examples
+    to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-03-18
   - from: /ee/ci/quick_start/README.html
     to: /ee/ci/quick_start/index.html
@@ -1421,7 +1421,7 @@ redirects:
     to: /ee/raketasks/index.html
     remove_date: 2022-03-18
   - from: /ee/security/cicd_environment_variables.html
-    to: /ee/ci/variables/README.html#cicd-variable-security
+    to: /ee/ci/variables/index.html#cicd-variable-security
     remove_date: 2022-03-18
   - from: /ee/university/README.html
     to: /ee/topics/index.html
@@ -1451,5 +1451,5 @@ redirects:
     to: /ee/user/project/merge_requests/drafts.html
     remove_date: 2022-03-18
   - from: /ee/user/project/new_ci_build_permissions_model.html
-    to: /ee/ci/README.html
+    to: /ee/ci/index.html
     remove_date: 2022-03-18
