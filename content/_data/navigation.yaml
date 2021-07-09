@@ -1506,6 +1506,8 @@ sections:
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
             doc_url: 'ee/user/application_security/container_scanning/'
+          - doc_title: Cluster Image Scanning
+            doc_url: 'ee/user/application_security/cluster_image_scanning/'
           - doc_title: Threat Monitoring
             doc_url: 'ee/user/application_security/threat_monitoring/'
           - doc_title: Dependency Scanning
