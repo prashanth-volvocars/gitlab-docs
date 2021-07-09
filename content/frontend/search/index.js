@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import instantsearch from '@tnir/instantsearch.js';
 import { singleIndexQ } from '@tnir/instantsearch.js/es/lib/stateMappings';
 import {
@@ -54,20 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     infiniteHits({
       container: '#hits',
       templates: {
-        item(hit) {
-          const content = hit._highlightResult.content.value.replaceAll('&amp;quot;', '"');
-          return `
-           <a href="${hit.url}" class="hit">
-              <div class="hit-content">
-                <h3 class="hit-name lvl0">${hit._highlightResult.hierarchy.lvl0.value}</h3>
-                <h4 class="hit-description lvl1">${hit._highlightResult.hierarchy.lvl1.value}</h4>
-                <h5 class="hit-description lvl2">${hit._highlightResult.hierarchy.lvl2.value}</h5>
-                <div class="hit-text">${content}</div>
-                <div class="hit-tag">${hit.tags}</div>
-              </div>
-            </a>
-        `;
-        },
+        item: document.getElementById('hit-template').innerHTML,
         empty: 'We didn\'t find any results for the search <em>"{{query}}"</em>',
       },
       escapeHits: true,
