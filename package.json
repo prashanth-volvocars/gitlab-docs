@@ -10,21 +10,21 @@
     "prettier:fix": "prettier --write '**/*.{js,vue}'"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
     "@gitlab/eslint-plugin": "^8.4.0",
     "@gitlab/stylelint-config": "^2.3.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-replace": "^2.4.2",
-    "@vue/test-utils": "^1.2.0",
+    "@vue/test-utils": "^1.2.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
-    "eslint": "^7.27.0",
+    "eslint": "^7.30.0",
     "glob": "^7.1.7",
     "jest": "^26.6.3",
-    "prettier": "^2.3.0",
-    "rollup": "^2.50.5",
+    "prettier": "^2.3.2",
+    "rollup": "^2.53.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-import-resolver": "^1.2.1",
@@ -32,16 +32,16 @@
     "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-vue": "^5.1.9",
     "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "@gitlab/svgs": "^1.199.0",
-    "@gitlab/ui": "^29.31.0",
+    "@gitlab/svgs": "^1.202.0",
+    "@gitlab/ui": "^29.38.1",
     "@tnir/instantsearch.js": "4.13.2-q.1",
-    "algoliasearch": "4.9.1",
+    "algoliasearch": "4.10.3",
     "bootstrap": "^4.6.0",
     "pikaday": "^1.8.2",
     "popper.js": "1.16.1-lts",
-    "vue": "^2.6.12"
+    "vue": "^2.6.14"
   }
 }
