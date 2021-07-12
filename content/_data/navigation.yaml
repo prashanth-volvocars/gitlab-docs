@@ -926,7 +926,7 @@ sections:
                 doc_url: 'ee/user/profile/account/delete_account.html'
           - doc_title: SSH keys
             doc_url: 'ee/ssh/'
-          - doc_title: GitLab.com settings
+          - doc_title: GitLab SaaS settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
         category_url: 'ee/user/project/'
