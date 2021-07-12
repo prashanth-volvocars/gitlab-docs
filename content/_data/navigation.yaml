@@ -2149,20 +2149,39 @@ sections:
       - category_title: Database development
         category_url: 'ee/development/database/'
         docs:
+          - doc_title: Avoiding downtime in migrations
+            doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
+          - doc_title: Background migrations
+            doc_url: 'ee/development/background_migrations.html'
           - doc_title: Case study - filtering by label
             doc_url: 'ee/development/filtering_by_label.html'
           - doc_title: Case study - namespaces storage statistics
             doc_url: 'ee/development/namespaces_storage_statistics.html'
           - doc_title: Database review guidelines
             doc_url: 'ee/development/database_review.html'
+          - doc_title: Delete existing migrations
+            doc_url: 'ee/development/deleting_migrations.html'
           - doc_title: Migrations style guide
             doc_url: 'ee/development/migration_style_guide.html'
+          - doc_title: Pagination guidelines
+            doc_url: 'ee/development/database/pagination_guidelines.html'
+            docs:
+              - doc_title: Pagination performance guidelines
+                doc_url: 'ee/development/database/pagination_performance_guidelines.html'
+              - doc_title: Keyset pagination
+                doc_url: 'ee/development/database/keyset_pagination.html'
+          - doc_title: Post-deployment migrations
+            doc_url: 'ee/development/post_deployment_migrations.html'
+          - doc_title: Query comments with Marginalia
+            doc_url: 'ee/development/database_query_comments.html'
           - doc_title: SQL guidelines
             doc_url: 'ee/development/sql.html'
+          - doc_title: Swapping tables
+            doc_url: 'ee/development/swapping_tables.html'
+          - doc_title: Table partitioning
+            doc_url: 'ee/development/database/table_partitioning.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'ee/development/understanding_explain_plans.html'
-          - doc_title: Avoiding downtime in migrations
-            doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
       - category_title: Developer guide to logging
         category_url: 'ee/development/logging.html'
       - category_title: Development Rake tasks
