@@ -473,6 +473,8 @@ sections:
   - section_title: Administer self-managed
     section_url: 'ee/administration/'
     section_categories:
+      - category_title: Get started
+        category_url: 'ee/administration/get_started.html'
       - category_title: Configure your installation
         category_url: 'ee/administration/configure.html'
         docs:
