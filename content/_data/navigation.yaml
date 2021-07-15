@@ -1150,6 +1150,8 @@ sections:
           - doc_title: Repositories
             doc_url: 'ee/user/project/repository/'
             docs:
+              - doc_title: CSV files
+                doc_url: 'ee/user/project/repository/csv.html'
               - doc_title: Code owners
                 doc_url: 'ee/user/project/code_owners.html'
               - doc_title: Snippets
