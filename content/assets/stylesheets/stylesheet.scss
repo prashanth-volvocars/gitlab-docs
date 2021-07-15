@@ -1,5 +1,5 @@
 ---
-version: 114
+version: 115
 ---
 
 @import 'variables';
@@ -521,4 +521,8 @@ h6[id]::before {
       line-height: 10px;
     }
   }
+}
+
+.imageblock {
+  margin: 1rem 0;
 }
