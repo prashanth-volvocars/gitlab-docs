@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { shallowMount, mount } from '@vue/test-utils';
 import TableOfContents from '../../../../content/frontend/default/components/table_of_contents.vue';
 import * as dom from '../../../../content/frontend/shared/dom';

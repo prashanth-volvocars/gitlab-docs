@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
 import { createItem, createTOCElement, createExampleToc } from '../toc_helper';
 
