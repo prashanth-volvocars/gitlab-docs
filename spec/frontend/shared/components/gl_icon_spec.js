@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import GlIcon from '../../../../content/frontend/shared/components/gl_icon.vue';
 import { iconSizeOptions } from '../../../../content/frontend/shared/constants';

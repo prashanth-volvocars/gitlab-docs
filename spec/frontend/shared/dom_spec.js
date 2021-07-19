@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { findChildByTagName } from '../../../content/frontend/shared/dom';
 
 describe('frontend/shared/dom', () => {

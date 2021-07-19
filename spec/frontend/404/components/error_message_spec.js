@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { mount } from '@vue/test-utils';
 import ErrorMessage from '../../../../content/frontend/404/components/error_message.vue';
 

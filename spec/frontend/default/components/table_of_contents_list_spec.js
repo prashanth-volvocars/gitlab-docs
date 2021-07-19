@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { mount } from '@vue/test-utils';
 import TableOfContentsList from '../../../../content/frontend/default/components/table_of_contents_list.vue';
 import { parseTOC } from '../../../../content/frontend/shared/toc/parse_toc';
