@@ -1277,15 +1277,15 @@ sections:
                   - doc_title: Directed acyclic graph (DAG)
                     doc_url: 'ee/ci/directed_acyclic_graph/'
                   - doc_title: Multi-project pipelines
-                    doc_url: 'ee/ci/multi_project_pipelines.html'
+                    doc_url: 'ee/ci/pipelines/multi_project_pipelines.html'
                   - doc_title: Parent-child pipelines
-                    doc_url: 'ee/ci/parent_child_pipelines.html'
+                    doc_url: 'ee/ci/pipelines/parent_child_pipelines.html'
                   - doc_title: Pipelines for merge requests
-                    doc_url: 'ee/ci/merge_request_pipelines/'
+                    doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
                   - doc_title: Pipelines for merged results
-                    doc_url: 'ee/ci/merge_request_pipelines/pipelines_for_merged_results/'
+                    doc_url: 'ee/ci/pipelines/pipelines_for_merged_results.html'
                   - doc_title: Merge trains
-                    doc_url: 'ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/'
+                    doc_url: 'ee/ci/pipelines/merge_trains.html'
               - doc_title: Jobs
                 doc_url: 'ee/ci/jobs/'
                 docs:
