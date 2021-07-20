@@ -98,11 +98,6 @@ $alert-gray-border: $gds-gray-200;
 
 //// end of colors conforming with GitLab Design System ////
 
-// Badges
-$badge-tier: $color-tanuki-dark;
-$badge-self-managed: $color-tanuki-medium;
-$badge-saas: $color-tanuki-light;
-
 //Icons
 $gl-icon-sizes: 8 10 12 14 16 18 24 32 48 72;
 
@@ -260,6 +255,11 @@ $theme-indigo-700: #41419f !default;
 $theme-indigo-800: #303083 !default;
 $theme-indigo-900: #222261 !default;
 $theme-indigo-950: #14143d !default;
+
+// Badges
+$badge-tier: $red-500;
+$badge-self-managed: $orange-500;
+$badge-saas: $orange-500;
 
 // Typography
 $font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !default;
