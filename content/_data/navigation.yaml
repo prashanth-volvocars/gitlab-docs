@@ -2086,7 +2086,7 @@ sections:
       - category_title: GraphQL
         category_url: 'ee/api/graphql/'
         docs:
-          - doc_title: Get started
+          - doc_title: Get started using GraphQL
             doc_url: 'ee/api/graphql/getting_started.html'
           - doc_title: GraphQL reference
             doc_url: 'ee/api/graphql/reference/'
@@ -2349,6 +2349,8 @@ sections:
       - category_title: GraphQL development
         category_url: 'ee/development/graphql_guide/'
         docs:
+          - doc_title: GraphQL authorization
+            doc_url: 'ee/development/graphql_guide/authorization.html'
           - doc_title: GraphQL BatchLoader
             doc_url: 'ee/development/graphql_guide/batchloader.html'
           - doc_title: GraphQL pagination
