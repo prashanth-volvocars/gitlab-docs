@@ -1760,7 +1760,7 @@ sections:
                 doc_url: 'ee/administration/monitoring/prometheus/gitlab_exporter.html'
               - doc_title: GitLab Prometheus metrics
                 doc_url: 'ee/administration/monitoring/prometheus/gitlab_metrics.html'
-              - doc_title: GitLab self monitoring project
+              - doc_title: Self monitoring project
                 doc_url: 'ee/administration/monitoring/gitlab_self_monitoring_project/'
               - doc_title: IP allowlist endpoints
                 doc_url: 'ee/administration/monitoring/ip_whitelist.html'
