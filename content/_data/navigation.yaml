@@ -787,6 +787,8 @@ sections:
                 doc_url: 'ee/administration/raketasks/geo.html'
               - doc_title: GitHub import
                 doc_url: 'ee/administration/raketasks/github_import.html'
+              - doc_title: SPDX license list import
+                doc_url: 'ee/raketasks/spdx.html'
           - doc_title: Import repositories
             doc_url: 'ee/raketasks/import.html'
           - doc_title: Move repositories
@@ -1554,6 +1556,10 @@ sections:
             doc_url: 'ee/user/application_security/vulnerability_report/'
           - doc_title: Vulnerability Pages
             doc_url: 'ee/user/application_security/vulnerabilities/'
+          - doc_title: Vulnerability severity levels
+            doc_url: 'ee/user/application_security/vulnerabilities/severities.html'
+          - doc_title: CVE ID requests
+            doc_url: 'ee/user/application_security/cve_id_request.html'
           - doc_title: Scan Policies
             doc_url: 'ee/user/application_security/policies/'
           - doc_title: Security scanner integration
@@ -2152,6 +2158,8 @@ sections:
             doc_url: 'ee/development/auto_devops.html'
       - category_title: Code intelligence
         category_url: 'ee/development/code_intelligence/'
+      - category_title: CodeSandbox development environment
+        category_url: 'ee/development/integrations/codesandbox.html'
       - category_title: Danger bot
         category_url: 'ee/development/dangerbot.html'
       - category_title: Database development
@@ -2439,6 +2447,8 @@ sections:
         category_url: 'ee/development/permissions.html'
       - category_title: Real-time features
         category_url: 'ee/development/real_time.html'
+      - category_title: Secure partner onboarding process
+        category_url: 'ee/development/integrations/secure_partner_integration.html'
       - category_title: Testing standards and styles
         category_url: 'ee/development/testing_guide/'
         docs:
