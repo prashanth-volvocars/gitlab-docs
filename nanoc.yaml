@@ -118,7 +118,7 @@ breadcrumbs: false
 debug: false
 
 # Control display of survey banner. See README.md#survey-banner
-show_banner: false
+show_banner: true
 
 products:
   ee:
