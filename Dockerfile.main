@@ -49,9 +49,9 @@ RUN rm -rf /usr/share/nginx/html/*
 # Note: For the 14.2 release, when 13.12 is removed from this list, uncomment the
 # 13.2 version from "List the two last major versions" section, and remove this note.
 #
+COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:14.1 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:14.0 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.12 ${TARGET} ${TARGET}
-COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:13.11 ${TARGET} ${TARGET}
 
 # List the two last major versions
 # Copy the versions found in 'content/_data/versions.yaml' under previous_majors
