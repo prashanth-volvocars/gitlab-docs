@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 
 @import 'variables';
@@ -39,29 +39,13 @@ version: 6
       text-decoration: none;
       position: relative;
 
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 0.1rem;
-        bottom: 0;
-        left: 0;
-        background-color: $landing-gl-purple-500;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: all 0.3s ease-in-out 0s;
-      }
-
       &:hover {
-        &::before {
-          visibility: visible;
-          transform: scaleX(1);
-        }
+        text-decoration: underline;
       }
     }
 
     &:hover {
-      box-shadow: 1rem 1rem 1rem 1rem $landing-gl-blue-1000;
+      box-shadow: 0.1rem 0.5rem 2rem 0 $landing-gl-blue-1000;
     }
   }
 
@@ -77,9 +61,12 @@ version: 6
     background-attachment: inherit;
     background-position: 50% 4%;
 
-
     @media (max-width: $bp-sm) {
       background-image: url('/assets/images/hero-bg-mobile.svg');
+    }
+
+    .topic .card-body {
+      padding: 1.75rem 2.25rem 2.5rem;
     }
 
     .search {
@@ -92,9 +79,15 @@ version: 6
         width: 100%;
       }
 
+      .card-body {
+        padding: 1.25rem 3.25rem;
+      }
+
       .card-title {
         font-size: 3rem;
         line-height: 3.25rem;
+        font-weight: 700;
+        letter-spacing: -0.05rem;
         color: $gds-purple-900;
 
         @media (max-width: $bp-xs) {
@@ -108,7 +101,7 @@ version: 6
 
       .search-icon {
         position: absolute;
-        left: 2rem;
+        left: 4rem;
         top: 6.75rem;
         z-index: 1;
 
