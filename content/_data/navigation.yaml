@@ -470,7 +470,7 @@ sections:
 
   # ADMINISTRATION
 
-  - section_title: Administer self-managed
+  - section_title: Administer GitLab
     section_url: 'ee/administration/'
     section_categories:
       - category_title: Get started
