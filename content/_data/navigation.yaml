@@ -1522,14 +1522,16 @@ sections:
             doc_url: 'ee/user/application_security/threat_monitoring/'
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
-          - doc_title: Dependency Scanning Analyzers
-            doc_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
-          - doc_title: Dependency List
-            doc_url: 'ee/user/application_security/dependency_list/'
+            docs:
+              - doc_title: Dependency Scanning Analyzers
+                doc_url: 'ee/user/application_security/dependency_scanning/analyzers.html'
+              - doc_title: Dependency List
+                doc_url: 'ee/user/application_security/dependency_list/'
           - doc_title: Static Application Security Testing
             doc_url: 'ee/user/application_security/sast/'
-          - doc_title: SAST Analyzers
-            doc_url: 'ee/user/application_security/sast/analyzers.html'
+            docs:
+              - doc_title: SAST Analyzers
+                doc_url: 'ee/user/application_security/sast/analyzers.html'
           - doc_title: Secret Detection
             doc_url: 'ee/user/application_security/secret_detection/'
           - doc_title: Dynamic Application Security Testing (DAST)
@@ -1537,10 +1539,10 @@ sections:
             docs:
               - doc_title: DAST browser-based crawler
                 doc_url: 'ee/user/application_security/dast/browser_based.html'
-          - doc_title: DAST API
-            doc_url: 'ee/user/application_security/dast_api/'
-          - doc_title: DAST Troubleshooting
-            doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
+              - doc_title: DAST API
+                doc_url: 'ee/user/application_security/dast_api/'
+              - doc_title: DAST Troubleshooting
+                doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
           - doc_title: API Fuzzing
             doc_url: 'ee/user/application_security/api_fuzzing/'
             docs:
