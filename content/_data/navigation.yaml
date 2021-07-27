@@ -1543,6 +1543,8 @@ sections:
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: DAST Troubleshooting
                 doc_url: 'ee/user/application_security/dast/dast_troubleshooting.html'
+              - doc_title: Run DAST offline
+                doc_url: 'ee/user/application_security/dast/run_dast_offline.html'
           - doc_title: API Fuzzing
             doc_url: 'ee/user/application_security/api_fuzzing/'
             docs:
