@@ -963,8 +963,8 @@ sections:
             docs:
               - doc_title: License Compliance
                 doc_url: 'ee/user/compliance/license_compliance/'
-              - doc_title: Compliance Dashboard
-                doc_url: 'ee/user/compliance/compliance_dashboard/'
+              - doc_title: Compliance report
+                doc_url: 'ee/user/compliance/compliance_report/'
           - doc_title: Description templates
             doc_url: 'ee/user/project/description_templates.html'
           - doc_title: Deploy keys
