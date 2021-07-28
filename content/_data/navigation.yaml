@@ -377,6 +377,8 @@ sections:
       - category_title: Jira integrations
         category_url: 'ee/integration/jira/'
         docs:
+          - doc_title: Configure the Jira integration
+            doc_url: 'ee/integration/jira/configure.html'
           - doc_title: GitLab for Jira app
             doc_url: 'ee/integration/jira/connect-app.html'
           - doc_title: Jira DVCS connector
