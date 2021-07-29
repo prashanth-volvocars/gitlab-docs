@@ -2585,6 +2585,8 @@ sections:
         category_url: 'ee/development/value_stream_analytics.html'
       - category_title: Wikis
         category_url: 'ee/development/wikis.html'
+      - category_title: Work items and work item types
+        category_url: 'ee/development/work_items.html'
       - category_title: Working with Prometheus metrics
         category_url: 'ee/development/prometheus_metrics.html'
 # End of development documentation
