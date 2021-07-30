@@ -70,6 +70,9 @@ redirects:
   - from: /ee/administration/geo/replication/
     to: /ee/administration/geo/index.html
     remove_date: 2021-11-01
+  - from: /administration/git_annex.html
+    to: /administration/index.html
+    remove_date: 2022-04-30
   - from: /ee/administration/high_availability/alpha_database.html
     to: /ee/administration/high_availability/database.html
     remove_date: 2021-11-01
@@ -193,6 +196,9 @@ redirects:
   - from: /ee/api/deploy_key_multiple_projects.html
     to: /ee/api/deploy_keys.html#adding-deploy-keys-to-multiple-projects
     remove_date: 2021-11-01
+  - from: /ee/api/dora4_group_analytics.html
+    to: /ee/api/dora/metrics.html
+    remove_date: 2022-04-30
   - from: /ee/api/license_templates.html
     to: /ee/api/templates/licenses.html
     remove_date: 2021-11-01
@@ -439,6 +445,9 @@ redirects:
   - from: /ee/development/testing.html
     to: /ee/development/testing_guide/index.html
     remove_date: 2021-11-01
+  - from: /ee/development/what_requires_downtime.html
+    to: /ee/development/avoiding_downtime_in_migrations.html
+    remove_date: 2022-04-30
   - from: /ee/development/writing_documentation.html
     to: /ee/development/documentation/index.html
     remove_date: 2021-11-01
@@ -583,6 +592,9 @@ redirects:
   - from: /ee/integration/jira.html
     to: /ee/user/project/integrations/jira.html
     remove_date: 2021-11-01
+  - from: /ee/integration/jira_development_panel.html
+    to: /ee/integration/jira/index.html
+    remove_date: 2022-04-30
   - from: /ee/integration/ldap.html
     to: /ee/administration/auth/ldap/index.html
     remove_date: 2021-11-01
@@ -733,6 +745,9 @@ redirects:
   - from: /ee/topics/git/migrate_to_git_lfs/
     to: /ee/topics/git/lfs/migrate_to_git_lfs.html
     remove_date: 2021-11-01
+  - from: /ee/topics/git/lfs/migrate_from_git_annex_to_git_lfs.html
+    to: /ee/topics/git/lfs/migrate_to_git_lfs.html
+    remove_date: 2022-04-30
   - from: /ee/university/bookclub/booklist.html
     to: /ee/index.html
     remove_date: 2021-11-01
@@ -754,18 +769,27 @@ redirects:
   - from: /ee/university/training/end-user/README.html
     to: /ee/index.html
     remove_date: 2021-11-01
+  - from: /ee/university/training/topics/agile_git.html
+    to: /ee/user/project/issue_board.html
+    remove_date: 2022-04-30
   - from: /ee/university/training/topics/explore_gitlab.html
     to: /ee/gitlab-basics/index.html
     remove_date: 2021-11-01
   - from: /ee/university/training/topics/gitlab_flow.html
     to: /ee/university/training/gitlab_flow.html
     remove_date: 2021-11-01
+  - from: /ee/user/abuse_reports.html
+    to: /ee/user/report_abuse.html
+    remove_date: 2022-04-30
   - from: /ee/user/account/security.html
     to: /ee/user/profile/profile/account/index.html
     remove_date: 2021-11-01
   - from: /ee/user/account/two_factor_authentication.html
     to: /ee/user/profile/account/two_factor_authentication.html
     remove_date: 2021-11-01
+  - from: /ee/user/admin_area/abuse_reports.html
+    to: /ee/user/admin_area/review_abuse_reports.html
+    remove_date: 2022-04-30
   - from: /ee/user/admin_area/analytics/convdev.html
     to: /ee/user/admin_area/analytics/dev_ops_report.html
     remove_date: 2021-11-01
@@ -784,6 +808,9 @@ redirects:
   - from: /ee/user/analytics/cycle_analytics.html
     to: /ee/user/analytics/value_stream_analytics.html
     remove_date: 2021-11-01
+  - from: /ee/security/cicd_variables.html
+    to: /ee/ci/variables/index.html
+    remove_date: 2022-04-30
   - from: /ee/user/application_security/compliance_dashboard/index.html
     to: /ee/user/compliance/compliance_dashboard/index.html
     remove_date: 2021-11-01
@@ -859,6 +886,12 @@ redirects:
   - from: /ee/user/project/integrations/generic_alerts.html
     to: /ee/operations/incident_management/integrations.html
     remove_date: 2022-02-01
+  - from: /ee/user/project/integrations/jira.html
+    to: /ee/integration/jira/index.html
+    remove_date: 2022-04-30
+  - from: /ee/user/project/integrations/jira_integrations.html
+    to: /ee/integration/jira/index.html
+    remove_date: 2022-04-30
   - from: /ee/user/project/integrations/kubernetes.html
     to: /ee/user/project/clusters/index.html
     remove_date: 2021-11-01
@@ -910,6 +943,9 @@ redirects:
   - from: /ee/user/project/merge_requests/maintainer_access.html
     to: /ee/user/project/merge_requests/allow_collaboration.html
     remove_date: 2021-11-01
+  - from: /ee/user/project/merge_requests/merge_request_approvals.html
+    to: /ee/user/project/merge_requests/approvals/index.html
+    remove_date: 2022-04-30
   - from: /ee/user/project/merge_requests/merge_request_discussion_resolution.html
     to: /ee/user/discussions/index.html
     remove_date: 2021-11-01
