@@ -151,7 +151,7 @@ sections:
               - doc_title: Maintain
                 doc_url: 'omnibus/maintenance/'
               - doc_title: Troubleshoot
-                doc_url: 'omnibus/common_installation_problems/'
+                doc_url: 'omnibus/troubleshooting.html'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
           - doc_title: Kubernetes
