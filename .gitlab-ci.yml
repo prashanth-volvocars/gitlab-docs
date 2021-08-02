@@ -332,40 +332,39 @@ test_EOL_whitespace:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-3fb5bfe0
   needs: []
   before_script: []
   dependencies: []
   script:
     - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
+    - apk add jq
     - bundle exec rake setup_git default
-    - mv tasks/whitespace_task.json tmp/.markdownlint.json
-    - cd tmp
-    - markdownlint --version
-    - markdownlint -c .markdownlint.json **/*.md
+    - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md'
 
 test_unlinked_images:
   extends:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-3fb5bfe0
   needs: []
   before_script: []
   dependencies: []
   script:
+    - apk add jq
     - bundle exec rake setup_git default
-    - cp tasks/unlinked-images.sh tmp/ee/unlinked-images.sh
-    - cp tasks/unlinked-images.sh tmp/charts/unlinked-images.sh
-    - cp tasks/unlinked-images.sh tmp/omnibus/unlinked-images.sh
-    - cp tasks/unlinked-images.sh tmp/runner/unlinked-images.sh
-    - cd tmp/omnibus
+    - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../charts-gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../omnibus-gitlab/unlinked-images.sh
+    - cp tasks/unlinked-images.sh ../gitlab-runner/unlinked-images.sh
+    - cd ../omnibus-gitlab
     - ./unlinked-images.sh doc
-    - cd ../charts
+    - cd ../charts-gitlab
     - ./unlinked-images.sh doc
-    - cd ../runner
+    - cd ../gitlab-runner
     - ./unlinked-images.sh docs
-    - cd ../ee
+    - cd ../gitlab
     - ./unlinked-images.sh doc
 
 ###############################################
