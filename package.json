@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
     "@gitlab/eslint-plugin": "^9.0.2",
     "@gitlab/stylelint-config": "^2.3.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -20,7 +20,7 @@
     "@vue/test-utils": "^1.2.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^27.0.6",
-    "eslint": "^7.31.0",
+    "eslint": "^7.32.0",
     "glob": "^7.1.7",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
@@ -35,8 +35,8 @@
     "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "@gitlab/svgs": "^1.203.0",
-    "@gitlab/ui": "^31.6.0",
+    "@gitlab/svgs": "^1.207.0",
+    "@gitlab/ui": "^31.6.1",
     "@tnir/instantsearch.js": "4.13.2-q.1",
     "algoliasearch": "4.10.3",
     "bootstrap": "^4.6.0",
