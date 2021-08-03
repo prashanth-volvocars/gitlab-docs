@@ -1468,10 +1468,12 @@ sections:
                     doc_url: 'runner/executors/parallels.html'
                   - doc_title: Virtual Box
                     doc_url: 'runner/executors/virtualbox.html'
-              - doc_title: Configuring runners
+              - doc_title: Configure runners
                 doc_url: 'ee/ci/runners/configure_runners.html'
-              - doc_title: Securing runners
+              - doc_title: Secure runners
                 doc_url: 'runner/security/'
+              - doc_title: Scale a fleet of runners
+                doc_url: 'runner/enterprise_guide/'
               - doc_title: Best practices for large repositories
                 doc_url: 'ee/ci/large_repositories/'
 
