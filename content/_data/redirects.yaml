@@ -809,7 +809,7 @@ redirects:
     to: /ee/user/analytics/value_stream_analytics.html
     remove_date: 2021-11-01
   - from: /ee/security/cicd_variables.html
-    to: /ee/ci/variables/index.html
+    to: /ee/ci/variables/index.html#cicd-variable-security
     remove_date: 2022-04-30
   - from: /ee/user/application_security/compliance_dashboard/index.html
     to: /ee/user/compliance/compliance_dashboard/index.html
@@ -1286,7 +1286,7 @@ redirects:
     to: /ee/user/project/issues/managing_issues.html
     remove_date: 2021-08-12
   - from: /ee/security/cicd_environment_variables.html
-    to: /ee/security/cicd_variables.html
+    to: /ee/ci/variables/index.html#cicd-variable-security
     remove_date: 2022-02-15
   - from: /ee/raketasks/README.html
     to: /ee/raketasks/index.html
@@ -1455,9 +1455,6 @@ redirects:
     remove_date: 2022-03-18
   - from: /ee/raketasks/README.html
     to: /ee/raketasks/index.html
-    remove_date: 2022-03-18
-  - from: /ee/security/cicd_environment_variables.html
-    to: /ee/ci/variables/index.html#cicd-variable-security
     remove_date: 2022-03-18
   - from: /ee/university/README.html
     to: /ee/topics/index.html
