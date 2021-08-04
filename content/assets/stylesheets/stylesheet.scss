@@ -206,6 +206,13 @@ ol {
   border-radius: 5px;
 }
 
+.alert-flag {
+  background-color: $alert-flag-bg;
+  color: $alert-flag-txt;
+  border: solid 1px $alert-flag-border;
+  border-radius: 5px;
+}
+
 .alert-danger {
   background-color: $alert-danger-bg;
   color: $alert-danger-txt;
