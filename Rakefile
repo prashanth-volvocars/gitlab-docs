@@ -191,6 +191,35 @@ namespace :release do
   end
 end
 
+desc 'Symlink READMEs'
+task :symlink_readmes do
+  readmes = YAML.load_file('content/_data/readmes.yaml')
+  products.each_value do |product|
+    branch = retrieve_branch(product['slug'])
+
+    # Limit the pipeline to pull only the repo where the MR is, not all 4, to save time/space.
+    # First we check if the branch on the docs repo is other than the default branch and
+    # then we skip if the remote branch variable is the default branch name. Finally,
+    # check if the pipeline was triggered via the API (multi-project pipeline)
+    # to exclude the case where we create a branch right off the gitlab-docs
+    # project.
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+
+    next if readmes.key?(product['slug']) == false
+
+    next if readmes.fetch(product['slug']).nil?
+
+    readmes.fetch(product['slug']).each do |readme|
+      dirname = File.dirname(readme)
+      target = "#{dirname}/index.html"
+
+      next if File.symlink?(target)
+      puts "=> Symlink to #{target}"
+      `ln -sf README.html #{target}`
+    end
+  end
+end
+
 desc 'Create the _redirects file'
 task :redirects do
   redirects_yaml = YAML.load_file('content/_data/redirects.yaml')
