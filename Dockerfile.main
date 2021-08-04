@@ -19,9 +19,6 @@ RUN yarn install
 RUN bundle exec rake setup_git default
 RUN bundle exec nanoc compile -VV
 
-# Symlink all README.html to index.html
-RUN for i in `find /source/public/ -name README.html`; do ln -sf README.html $(dirname $i)/index.html; done
-
 # Compress images
 RUN /scripts/compress_images.sh /source/public ee
 
