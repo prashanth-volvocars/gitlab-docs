@@ -1911,6 +1911,8 @@ sections:
             doc_url: 'ee/api/group_wikis.html'
           - doc_title: Groups
             doc_url: 'ee/api/groups.html'
+          - doc_title: Helm
+            doc_url: 'ee/api/packages/helm.html'
           - doc_title: Import
             doc_url: 'ee/api/import.html'
           - doc_title: Instance-level CI/CD variables
