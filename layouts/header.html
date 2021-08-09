@@ -11,10 +11,10 @@
       <li class="nav-item active">
         <% if @item[:searchbar].nil? %>
           <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-            <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/" method="get">
-              <span class="fa fa-search form-control-feedback position-absolute ml-3 text-muted"></span>
+            <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/" method="get" role="search">
+              <span class="fa fa-search form-control-feedback position-absolute ml-3 text-muted" aria-hidden="true"></span>
               <input class="form-control mr-sm-2 docsearch border-0"  name="query" type="search" placeholder="Search the docs..." aria-label="Search">
-              <input type="submit" style="visibility: hidden; position:absolute;" />
+              <input type="submit" style="visibility: hidden; position:absolute;" aria-label="Submit search" />
             </form>
           <% end %>
         <% end %>
