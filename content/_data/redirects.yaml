@@ -373,9 +373,6 @@ redirects:
   - from: /ee/development/documentation/styleguide.html
     to: /ee/development/documentation/styleguide/index.html
     remove_date: 2021-12-01
-  - from: /ee/development/documentation/styleguide.html
-    to: /ee/development/documentation/styleguide/
-    remove_date: 2021-12-01
   - from: /ee/development/documentation/feature-change-workflow.html
     to: /ee/development/documentation/workflow.html
     remove_date: 2021-11-01
@@ -429,12 +426,6 @@ redirects:
     remove_date: 2021-11-01
   - from: /ee/development/new_fe_guide/style/prettier.html
     to: /ee/development/fe_guide/tooling.html#formatting-with-prettier
-    remove_date: 2021-11-01
-  - from: /ee/development/product_analytics/snowplow.html
-    to: /ee/development/snowplow.html
-    remove_date: 2021-11-01
-  - from: /ee/development/product_analytics/usage_ping.html
-    to: /ee/development/usage_ping.html
     remove_date: 2021-11-01
   - from: /ee/development/rolling_out_changes_using_feature_flags.html
     to: /ee/development/feature_flags/index.html
@@ -1192,29 +1183,11 @@ redirects:
   - from: /ee/user/project/clusters/securing.html
     to: /ee/user/project/clusters/protect/index.html
     remove_date: 2021-12-01
-  - from: /ee/operations/incident_management/alert_notifications.html
-    to: /ee/operations/incident_management/paging.html
-    remove_date: 2022-01-01
-  - from: /ee/operations/incident_management/alert_integrations.html
-    to: /ee/administration/operations/incident_management/integrations.html
-    remove_date: 2022-02-01
   - from: /ee/gitlab-basics/create-your-ssh-keys.html
     to: /ee/ssh/index.html
     remove_date: 2022-02-01
-  - from: /ee/gitlab-basics/create-project.html
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2021-05-04
-  - from: /ee/gitlab-basics/fork-project.html
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2021-05-04
-  - from: /ee/api/project_analytics.html
-    to: /ee/api/dora4_project_analytics.html
-    remove_date: 2022-01-25
   - from: /ee/development/prometheus.html
     to: /ee/user/project/integrations/prometheus.html
-    remove_date: 2021-11-19
-  - from: /ee/user/project/milestones/burndown_charts.html
-    to: /ee/user/project/milestones/burndown_and_burnup_charts.html
     remove_date: 2021-11-19
   - from: /ee/administration/geo/replication/remove_geo_node.html
     to: /ee/administration/geo/replication/remove_geo_site.html
@@ -1266,18 +1239,6 @@ redirects:
     remove_date: 2022-01-01
   - from: /ee/operations/incident_management/alert_notifications.html
     to: /ee/operations/incident_management/paging.html
-    remove_date: 2022-01-01
-  - from: /ee/topics/web_application_firewall/index.html
-    to: /ee/user/project/clusters/protect/web_application_firewall/index.html
-    remove_date: 2022-01-01
-  - from: /ee/topics/web_application_firewall/
-    to: /ee/user/project/clusters/protect/web_application_firewall/index.html
-    remove_date: 2022-01-01
-  - from: /ee/topics/web_application_firewall/quick_start_guide.html
-    to: /ee/user/project/clusters/protect/web_application_firewall/quick_start_guide.html
-    remove_date: 2022-01-01
-  - from: /ee/user/project/clusters/securing.html
-    to: /ee/user/project/clusters/protect/index.html
     remove_date: 2022-01-01
   - from: /ee/user/project/import/gemnasium.html
     to: /ee/user/project/import/index.html
@@ -1390,86 +1351,23 @@ redirects:
   - from: /ee/administration/auth/okta.html
     to: /ee/integration/saml.html
     remove_date: 2022-03-18
-  - from: /ee/administration/geo/replication/remove_geo_node.html
-    to: /ee/administration/geo/replication/remove_geo_site.html
-    remove_date: 2022-03-18
-  - from: /ee/ci/chatops/README.html
-    to: /ee/ci/chatops/index.html
-    remove_date: 2022-03-18
-  - from: /ee/ci/docker/README.html
-    to: /ee/ci/docker/index.html
-    remove_date: 2022-03-18
   - from: /ee/ci/examples/test-and-deploy-python-application-to-heroku.html
     to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-03-18
   - from: /ee/ci/examples/test-and-deploy-ruby-application-to-heroku.html
     to: /ee/ci/examples/index.html#contributed-examples
     remove_date: 2022-03-18
-  - from: /ee/ci/examples/test-clojure-application.html
-    to: /ee/ci/examples/index.html#contributed-examples
-    remove_date: 2022-03-18
-  - from: /ee/ci/quick_start/README.html
-    to: /ee/ci/quick_start/index.html
-    remove_date: 2022-03-18
-  - from: /ee/ci/services/README.html
-    to: /ee/ci/services/index.html
-    remove_date: 2022-03-18
-  - from: /ee/ci/ssh_keys/README.html
-    to: /ee/ci/ssh_keys/index.html
-    remove_date: 2022-03-18
   - from: /ee/development/feature_flags/development.html
     to: /ee/development/feature_flags/index.html
     remove_date: 2022-03-18
-  - from: /ee/development/new_fe_guide/dependencies.html
-    to: /ee/development/fe_guide/dependencies.html
-    remove_date: 2022-03-18
-  - from: /ee/development/usage_ping.html
-    to: /ee/development/usage_ping/index.html
-    remove_date: 2022-03-18
-  - from: /ee/downgrade_ee_to_ce/README.html
-    to: /ee/downgrade_ee_to_ce/index.html
-    remove_date: 2022-03-18
-  - from: /ee/gitlab-basics/create-project.html
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2022-03-18
-  - from: /ee/gitlab-basics/fork-project.html
-    to: /ee/user/project/working_with_projects.html
-    remove_date: 2022-03-18
-  - from: /ee/gitlab-basics/README.html
-    to: /ee/gitlab-basics/index.html
-    remove_date: 2022-03-18
-  - from: /ee/install/README.html
-    to: /ee/install/index.html
-    remove_date: 2022-03-18
   - from: /ee/integration/google_workspace_saml.html
     to: /ee/integration/saml.html
-    remove_date: 2022-03-18
-  - from: /ee/intro/README.html
-    to: /ee/intro/index.html
-    remove_date: 2022-03-18
-  - from: /ee/legal/README.html
-    to: /ee/legal/index.html
-    remove_date: 2022-03-18
-  - from: /ee/operations/incident_management/alert_integrations.html
-    to: /ee/operations/incident_management/integrations.html
-    remove_date: 2022-03-18
-  - from: /ee/raketasks/README.html
-    to: /ee/raketasks/index.html
-    remove_date: 2022-03-18
-  - from: /ee/university/README.html
-    to: /ee/topics/index.html
-    remove_date: 2022-03-18
-  - from: /ee/university/training/gitlab_flow.html
-    to: /ee/topics/gitlab_flow.html
     remove_date: 2022-03-18
   - from: /ee/university/training/topics/cherry_picking.html
     to: /ee/topics/git/cherry_picking.html
     remove_date: 2022-03-18
   - from: /ee/university/training/topics/tags.html
     to: /ee/topics/git/tags.html
-    remove_date: 2022-03-18
-  - from: /ee/update/README.html
-    to: /ee/update/index.html
     remove_date: 2022-03-18
   - from: /ee/user/admin_area/analytics/user_cohorts.html
     to: /ee/user/admin_area/user_cohorts.html
@@ -1479,9 +1377,6 @@ redirects:
     remove_date: 2022-03-18
   - from: /ee/user/project/integrations/jira_server_configuration.html
     to: /ee/integration/jira/jira_server_configuration.html
-    remove_date: 2022-03-18
-  - from: /ee/user/project/merge_requests/work_in_progress_merge_requests.html
-    to: /ee/user/project/merge_requests/drafts.html
     remove_date: 2022-03-18
   - from: /ee/user/project/new_ci_build_permissions_model.html
     to: /ee/ci/index.html
