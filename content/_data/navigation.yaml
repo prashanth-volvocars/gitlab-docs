@@ -2538,6 +2538,8 @@ sections:
           - doc_title: Metrics dictionary
             doc_url: 'https://gitlab-org.gitlab.io/growth/product-intelligence/metric-dictionary'
             external_url: true
+          - doc_title: Metrics lifecycle
+            doc_url: 'ee/development/service_ping/metrics_lifecycle.html'
           - doc_title: Review guidelines
             doc_url: 'ee/development/service_ping/review_guidelines.html'
       - category_title: Value Stream Analytics
