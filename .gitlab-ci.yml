@@ -244,6 +244,20 @@ test_internal_links_and_anchors:
     - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
 
 #
+# Check the redirect file for duplicates
+#
+check_duplicate_redirects:
+  image: busybox
+  extends:
+    - .rules_site_tests
+  needs: []
+  before_script: []
+  stage: test
+  script:
+    - grep -Ir "  - from:" content/_data/redirects.yaml | sort | uniq -d | tee output.txt
+    - exit $(cat output.txt | wc -l)
+
+#
 # Run rspec tests
 #
 rspec:
