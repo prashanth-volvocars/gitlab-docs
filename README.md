@@ -45,7 +45,7 @@ To preview any changes you make to GitLab documentation, you need:
   - [`.tool-versions`](.tool-versions)
 - Node.js, at the version specified in [`.tool-versions`](.tool-versions).
 - Yarn, at the version specified in [`.tool-versions`](.tool-versions).
-- [jq](https://stedolan.github.io/jq/), needed by some Rake tasks.
+- [jq](https://stedolan.github.io/jq/), needed by some [Rake tasks](#rake-tasks).
 - Xcode *(macOS only)*:
   - Run `xcode-select --install` to install the command line tools only.
   - Or download and install the entire package using the macOS's App Store.
@@ -575,7 +575,16 @@ it with:
 To test that the CSP header works as expected, you can visit
 <https://cspvalidator.org/> and paste the URL that you want tested.
 
-## Generate the feature flag tables
+## Rake Tasks
+
+The GitLab Docs project has some raketasks that automate various things. You
+can see the list of rake tasks with:
+
+```shell
+bundle exec rake -T
+```
+
+### Generate the feature flag tables
 
 The [feature flag tables](https://docs.gitlab.com/ee/user/feature_flags.html) are generated
 dynamically when GitLab Docs are published.
@@ -589,6 +598,33 @@ bundle exec rake generate_feature_flags
 Do this any time you want fresh data from your GitLab checkout.
 
 Any time you rebuild the site using `nanoc`, the feature flags tables are populated with data.
+
+### Clean up redirects
+
+The `docs:clean_redirects` rake task automates the removal of the expired
+redirect files, which is part of the monthly
+[scheduled TW tasks](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks)
+as seen in the "Local tasks" section of the [issue template](https://gitlab.com/gitlab-org/technical-writing/-/blob/main/.gitlab/issue_templates/tw-monthly-tasks.md):
+
+```shell
+bundle exec rake docs:clean_redirects
+```
+
+The task:
+
+1. Searches the doc files of each upstream product and:
+   1. Checks the `remove_date` defined in the YAML front matter. If the
+      `remove_date` is before the day you run the task, it removes the doc
+      and updates `content/_data/redirects.yaml`.
+   1. Creates a branch, commits the changes, and pushes the branch with
+      various push options to automatically create the merge request.
+1. When all the upstream products MRs have been created, it creates a branch
+   in the `gitlab-docs` repository, adds the changed `content/_data/redirects.yaml`,
+   and pushes the branch with various push options to automatically create the
+   merge request.
+
+Once all the MRs have been created, be sure to edit them to cross link between
+them and the recurring tasks issue.
 
 ## Troubleshooting
 

@@ -69,5 +69,5 @@ def default_branch(repo)
   # https://docs.gitlab.com/ee/api/README.html#namespaced-path-encoding
   url_encoded_path = repo.sub('https://gitlab.com/', '').sub('.git', '').gsub('/', '%2F')
 
-  `curl https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
+  `curl --silent https://gitlab.com/api/v4/projects/#{url_encoded_path} | jq --raw-output .default_branch`.tr("\n", '')
 end
