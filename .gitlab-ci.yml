@@ -38,6 +38,7 @@ variables:
   VALE_VERSION: '2.10.4'
   MARKDOWNLINT_VERSION: '0.28.1'
   RUBY_VERSION: '2.7.4'
+  NANOC_ENV: 'omnibus'
 
 #
 # Retry a job automatically if it fails (2 times)

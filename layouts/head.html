@@ -15,12 +15,14 @@
 <% if @item[:noindex] or !production_and_default_branch? %>
   <meta name="robots" content="noindex, nofollow">
 <% end %>
+<% unless omnibus? %>
 <!--https://community.algolia.com/docsearch/required-configuration.html#introduces-global-information-as-meta-tags-->
 <meta name="docsearch:language" content="en" />
 <% if !ENV['CI_COMMIT_REF_NAME'].nil? and stable_version?(ENV['CI_COMMIT_REF_NAME']) %>
 <meta name="docsearch:version" content="<%= ENV['CI_COMMIT_REF_NAME'] %>" />
 <% else %>
 <meta name="docsearch:version" content="<%= ENV['CI_DEFAULT_BRANCH'] %>" />
+<% end %>
 <% end %>
 
 <!-- Enable CSP headers -->
@@ -38,9 +40,11 @@
 <!-- new fontawesome version 4 - via CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- end of fontawesome -->
+<% unless omnibus? %>
 <!-- Docsearch https://community.algolia.com/docsearch/ - via CDN -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 <!-- end of docsearch -->
+<% end %>
 <% if production? %>
   <%# Adds GTM only in production %>
   <!-- add cookie consent  -->

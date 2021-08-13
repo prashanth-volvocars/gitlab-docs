@@ -14,16 +14,18 @@ title: GitLab Documentation
         <div class="col d-flex justify-content-center">
           <div class="card search mt-3 pb-4">
             <div class="card-body">
-              <h5 class="card-title pb-3 mb-2">Search the docs</h5>
-              <% if @item[:searchbar].nil? %>
-                <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
-                  <form class="mb-3" id="search-form" action="/search" method="get">
-                    <div class="form-group">
-                      <img class="search-icon" src="/assets/images/search.svg" alt="Search" aria-hidden="true" role="img">
-                      <input class="form-control docsearch-landing w-100"  name="query" type="search" placeholder="Search the complete docs...">
-                      <input type="submit" style="visibility: hidden; position:absolute;" />
-                    </div>
-                  </form>
+              <% unless omnibus? %>
+                <h5 class="card-title pb-3 mb-2">Search the docs</h5>
+                <% if @item[:searchbar].nil? %>
+                  <% unless @item.identifier.to_s.split('/')[1] == 'search' %>
+                    <form class="mb-3" id="search-form" action="/search" method="get">
+                      <div class="form-group">
+                        <img class="search-icon" src="/assets/images/search.svg" alt="Search" aria-hidden="true" role="img">
+                        <input class="form-control docsearch-landing w-100"  name="query" type="search" placeholder="Search the complete docs...">
+                        <input type="submit" style="visibility: hidden; position:absolute;" />
+                      </div>
+                    </form>
+                  <% end %>
                 <% end %>
               <% end %>
               <a href="/ee/index.html" class="card-link">

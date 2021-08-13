@@ -9,14 +9,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto mb-0">
       <li class="nav-item active">
-        <% if @item[:searchbar].nil? %>
-          <% location = @item.identifier.to_s.split('/')[1] %>
-          <% unless %w(search index.erb).any?(location) %>
-            <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/" method="get" role="search">
-              <span class="fa fa-search form-control-feedback position-absolute ml-3 text-muted" aria-hidden="true"></span>
-              <input class="form-control mr-sm-2 docsearch border-0"  name="query" type="search" placeholder="Search the docs..." aria-label="Search">
-              <input type="submit" style="visibility: hidden; position:absolute;" aria-label="Submit search" />
-            </form>
+        <% unless omnibus? %>
+          <% if @item[:searchbar].nil? %>
+            <% location = @item.identifier.to_s.split('/')[1] %>
+            <% unless %w(search index.erb).any?(location) %>
+              <form class="form-inline my-2 my-lg-0" id="search-form" action="/search/" method="get" role="search">
+                <span class="fa fa-search form-control-feedback position-absolute ml-3 text-muted" aria-hidden="true"></span>
+                <input class="form-control mr-sm-2 docsearch border-0"  name="query" type="search" placeholder="Search the docs..." aria-label="Search">
+                <input type="submit" style="visibility: hidden; position:absolute;" aria-label="Submit search" />
+              </form>
+            <% end %>
           <% end %>
         <% end %>
       </li>
@@ -65,4 +67,3 @@
     </ul>
   </div>
 </nav>
-
