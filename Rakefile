@@ -186,7 +186,7 @@ namespace :release do
 
       puts "=> Commit and push to create a merge request"
       `git commit -m "Update dropdown to #{current_version}"`
-      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
+      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="release"`
     end
   end
 end
@@ -233,5 +233,145 @@ task :redirects do
     File.open(redirects_file, 'a') do |f|
       f.puts "#{redirect.fetch('from')} #{redirect.fetch('to')} 301"
     end
+  end
+end
+
+#
+# https://docs.gitlab.com/ee/development/documentation/#move-or-rename-a-page
+#
+namespace :docs do
+  require 'date'
+  require 'pathname'
+  require "yaml"
+  desc 'GitLab | Docs | Clean up old redirects'
+  task :clean_redirects do
+    source_dir = File.expand_path(__dir__)
+    redirects_yaml = "#{source_dir}/content/_data/redirects.yaml"
+    today = Time.now.utc.to_date
+    mr_title = "Clean up docs redirects - #{today}"
+    mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/README.md#clean-up-redirects_</p>"
+
+    products.each_value do |product|
+      #
+      # Calculate new path from the redirect URL.
+      #
+      # If the redirect is not a full URL:
+      #   1. Create a new Pathname of the file
+      #   2. Use dirname to get all but the last component of the path
+      #   3. Join with the redirect_to entry
+      #   4. Substitute:
+      #      - '.md' => '.html'
+      #      - 'doc/' => '/ee/'
+      #
+      # If the redirect URL is a full URL pointing to the Docs site
+      # (cross-linking among the 4 products), remove the FQDN prefix:
+      #
+      #   From : https://docs.gitlab.com/ee/install/requirements.html
+      #   To   : /ee/install/requirements.html
+      #
+      def new_path(redirect, filename, content_dir, slug)
+        if !redirect.start_with?('http')
+          Pathname.new(filename).dirname.join(redirect).to_s.gsub(/\.md/, '.html').gsub(content_dir, "/#{slug}")
+        elsif redirect.start_with?('https://docs.gitlab.com')
+          redirect.gsub('https://docs.gitlab.com', '')
+        else
+          redirect
+        end
+      end
+
+      content_dir = product['content_dir']
+      next unless Dir.exist?(content_dir)
+
+      default_branch = default_branch(product['repo'])
+      slug = product['slug']
+      counter = 0
+
+      Dir.chdir(content_dir)
+      puts "=> (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch"
+      system("git stash --quiet -u") if git_workdir_dirty?
+      system("git checkout --quiet #{default_branch}")
+      system("git fetch --quiet origin #{default_branch}")
+      system("git reset --quiet --hard origin/#{default_branch}")
+      Dir.chdir(source_dir)
+
+      #
+      # Find the files to be deleted.
+      # Exclude 'doc/development/documentation/index.md' because it
+      # contains an example of the YAML front matter.
+      #
+      files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | grep -v doc/development/documentation/index.md | cut -d ":" -f1`.split("\n")
+
+      #
+      # Iterate over the files to be deleted and print the needed
+      # YAML entries for the Docs site redirects.
+      #
+      files_to_be_deleted.each do |filename|
+        frontmatter = YAML.safe_load(File.read(filename))
+        remove_date = Date.parse(frontmatter['remove_date'])
+        old_path = filename.gsub(/\.md/, '.html').gsub(content_dir, "/#{slug}")
+
+        #
+        # Check if the removal date is before today, and delete the file and
+        # print the content to be pasted in
+        # https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/content/_data/redirects.yaml.
+        # The remove_date of redirects.yaml should be nine months in the future.
+        # To not be confused with the remove_date of the Markdown page.
+        #
+        next unless remove_date < today
+
+        counter += 1
+
+        File.delete(filename) if File.exist?(filename)
+        File.open(redirects_yaml, 'a') do |post|
+          post.puts "  - from: #{old_path}"
+          post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
+          post.puts "    remove_date: #{remove_date >> 9}"
+        end
+      end
+
+      #
+      # If more than one files are found:
+      #
+      #   1. cd into each repository
+      #   2. Create a redirects branch
+      #   3. Add the changed files
+      #   4. Commit and push the branch to create the MR
+      #
+      next unless counter.positive?
+
+      redirects_branch = "clean-docs-redirects-#{slug}-#{today}"
+
+      puts "=> (#{slug}): Found #{counter} redirect(s)"
+      Dir.chdir(content_dir)
+      puts "=> (#{slug}): Creating a new branch for the redirects MR"
+      system("git checkout --quiet -b #{redirects_branch} origin/#{default_branch}")
+      puts "=> (#{slug}): Committing and pushing to create a merge request"
+      system("git add .")
+      system("git commit --quiet -m 'Update docs redirects #{today}'")
+      `git push origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` if ENV['SKIP_MR'].nil?
+      Dir.chdir(source_dir)
+      puts
+    end
+
+    #
+    # Finally, create the gitlab-docs MR
+    #
+    #   1. Create a redirects branch
+    #   2. Add the changed files
+    #   3. Commit and push the branch to create the MR
+    #
+    redirects_branch = "clean-docs-redirects-#{today}"
+
+    puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
+    system("git stash --quiet -u") if git_workdir_dirty?
+    system("git checkout --quiet main")
+    system("git fetch --quiet origin main")
+    system("git reset --quiet --hard origin/main")
+    puts "=> (gitlab-docs): Creating a new branch for the redirects MR"
+    system("git checkout --quiet -b #{redirects_branch} origin/main")
+    puts "=> (gitlab-docs): Committing and pushing to create a merge request"
+    system("git add #{redirects_yaml}")
+    system("git commit --quiet -m 'Update docs redirects #{today}'")
+    `git push origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs+Site"` if ENV['SKIP_MR'].nil?
   end
 end
