@@ -1,8 +1,8 @@
 ---
-version: 7
+version: 8
 ---
 
-@import "variables";
+@import 'variables';
 
 .clear {
   clear: both;
@@ -24,7 +24,7 @@ version: 7
       list-style: none;
 
       &::before {
-        content: "›";
+        content: '›';
         margin-right: 8px;
       }
 
@@ -46,7 +46,8 @@ version: 7
         color: $link-color-nav;
         background-color: transparent;
 
-        &:hover, &:only-child {
+        &:hover,
+        &:only-child {
           color: $link-color-nav-hover;
           text-decoration: underline;
           background-color: transparent;
@@ -86,12 +87,12 @@ version: 7
 
       &::before {
         font-family: FontAwesome;
-        content: "\f147";
+        content: '\f147';
         padding-right: 5px;
       }
 
       &::after {
-        content: "";
+        content: '';
         font-style: italic;
       }
 
@@ -102,11 +103,11 @@ version: 7
         background-color: $body-background-color;
 
         &::before {
-          content: "\f196";
+          content: '\f196';
         }
 
         &::after {
-          content: "On this page";
+          content: 'On this page';
         }
       }
     }

@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { mount } from '@vue/test-utils';
 import Banner from '../../../../content/frontend/shared/components/banner.vue';
 

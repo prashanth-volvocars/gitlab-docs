@@ -1,8 +1,8 @@
 ---
-version: 4
+version: 5
 ---
 
-@import "variables";
+@import 'variables';
 
 .comments {
   margin: 15px -10px 0;
@@ -120,13 +120,10 @@ version: 4
 }
 
 // Fixes padding in this row when the Disqus row isn't shown
-// scss-lint:disable IdSelector
 #doc-issue-row {
   padding-bottom: 20px;
 }
-// scss-lint:enable IdSelector
 
-// scss-lint:disable ImportantRule
 .nav-tabs {
   > li {
     > a {
@@ -146,4 +143,3 @@ version: 4
     }
   }
 }
-// scss-lint:enable ImportantRule

@@ -1,15 +1,15 @@
-const importResolver = require('rollup-plugin-import-resolver');
-const commonjs = require('rollup-plugin-commonjs');
-const vue = require('rollup-plugin-vue');
-const babel = require('rollup-plugin-babel');
 const json = require('@rollup/plugin-json');
 const glob = require('glob');
+const babel = require('rollup-plugin-babel');
+const commonjs = require('rollup-plugin-commonjs');
+const importResolver = require('rollup-plugin-import-resolver');
+const vue = require('rollup-plugin-vue');
 
 function mapDirectory(file) {
   return file.replace('content/', 'public/');
 }
 
-module.exports = glob.sync('content/frontend/**/*.js').map(file => ({
+module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
   input: file,
   output: {
     file: mapDirectory(file),

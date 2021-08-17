@@ -189,14 +189,17 @@ js_lint:
 #
 # SCSS linting
 #
-scss_lint:
+stylelint:
   extends:
     - .rules_site_tests
-    - .cache_gem
-    - .retry
+    - .cache_gem_yarn
   stage: test
   script:
-    - bundle exec scss-lint
+    # Remove the first three lines so the frontmatter doesn't
+    # cause stylelint to throw errors.
+    - yarn install --cache-folder .yarn-cache
+    - sed -i -E '1,3d' content/assets/stylesheets/*.scss
+    - yarn run stylelint content/assets/stylesheets/*.scss
 
 #
 # Yamllint of *.yml for .gitlab-ci.yml.

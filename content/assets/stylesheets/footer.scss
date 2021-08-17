@@ -1,8 +1,8 @@
 ---
-version: 4
+version: 5
 ---
 
-@import "variables";
+@import 'variables';
 
 .footer {
   position: relative;
@@ -81,8 +81,9 @@ version: 4
   text-align: center;
 }
 
-.animated, .animated a {
-  transition: all .2s linear;
+.animated,
+.animated a {
+  transition: all 0.2s linear;
 }
 
 .animated {

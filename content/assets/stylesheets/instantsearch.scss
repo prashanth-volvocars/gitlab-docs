@@ -1,17 +1,17 @@
 ---
-version: 11
+version: 12
 ---
 
-@import "variables";
+@import 'variables';
 
 // original CSS: https://github.com/algolia/examples/blob/master/instant-search/instantsearch.js/assets/style.css
 // original CSS customized and converted to SCSS with http://sebastianpontow.de/css2compass/
 
 //colors
-$color0: rgba(180, 162, 231, .1);
-$color1: rgba(180, 162, 231, .2);
-$color2: rgba(180, 162, 231, .1);
-$color3: rgba(79, 171, 225, .2);
+$color0: rgba(180, 162, 231, 0.1);
+$color1: rgba(180, 162, 231, 0.2);
+$color2: rgba(180, 162, 231, 0.1);
+$color3: rgba(79, 171, 225, 0.2);
 $color4: #eee;
 $color5: #ed5565;
 $color6: #999;
@@ -21,15 +21,13 @@ $color9: #383838;
 $color10: rgb(117, 117, 117);
 $color11: transparent;
 // link-color: rgb(32, 139, 196);
-$color12: rgba(32, 139, 196, .2); //link color lighter
+$color12: rgba(32, 139, 196, 0.2); //link color lighter
 
 
-//scss-lint:disable ImportantRule SelectorFormat
 .ais-SearchBox {
   width: 100%;
   max-width: 100% !important; // was 300px
 }
-//scss-lint:enable ImportantRule SelectorFormat
 
 .search-input {
   border-radius: 2px;
@@ -39,7 +37,6 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   padding-bottom: 7px;
 }
 
-//scss-lint:disable SelectorFormat
 .ais-PoweredBy {
   font-family: $sans-font-family;
   font-size: $body-font-size;
@@ -48,18 +45,17 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
     display: inline;
   }
 }
-//scss-lint:enable SelectorFormat
 
 .hit-content {
   border-top: 1px solid $color0;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   margin: 0;
   font-size: 13px;
   font-weight: 300;
   width: 100%; // was 81%
   position: relative;
   color: $color10;
-  transition: .3s ease;
+  transition: 0.3s ease;
   word-wrap: break-word;
 
   &:hover {
@@ -75,11 +71,9 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
     color: $black;
   }
 
-  //scss-lint:disable ImportantRule
   .lvl1 {
     font-size: 18px !important;
   }
-  //scss-lint:enable ImportantRule
 
   .lvl2 {
     font-size: 14px;
@@ -141,13 +135,16 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   }
 }
 
-//scss-lint:disable IdSelector
 #hits {
-  > h1, h2, h3, h4, h5, h6 {
+  > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     border: 0;
   }
 }
-//scss-lint:enable IdSelector
 
 //overrides padding for the searchbox
 .main.class {
@@ -162,7 +159,6 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   background-color: $color3;
 }
 
-//scss-lint:disable SelectorFormat
 .ais-InfiniteHits {
   .ais-InfiniteHits-item {
     width: 100%;
@@ -176,7 +172,7 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
 .ais-InfiniteHits-loadMore {
   display: block;
   width: 100%;
-  margin: 1rem .5rem;
+  margin: 1rem 0.5rem;
 
   &:focus {
     outline: none;
@@ -196,4 +192,3 @@ $color12: rgba(32, 139, 196, .2); //link color lighter
   text-transform: uppercase;
   color: $link-color;
 }
-//scss-lint:enable SelectorFormat

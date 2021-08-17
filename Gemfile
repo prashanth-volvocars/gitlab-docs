@@ -1,31 +1,29 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '~> 4.10'
-gem 'adsf', '~> 1.4'
-gem 'adsf-live', '~> 1.4'
-gem 'sassc', '~> 2.0'
-gem 'rouge', '~> 3.11'
-gem 'rake', '~> 12.3'
-gem 'asciidoctor-plantuml', '0.0.9'
+gem 'nanoc', '~> 4.12.0'
+gem 'sassc', '~> 2.4.0'
+gem 'rouge', '~> 3.26.0'
+gem 'rake', '~> 13.0.0'
 
 group :nanoc do
-  gem 'guard-nanoc', '~> 2.1'
+  gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.8.0'
+  gem 'gitlab_kramdown', '~> 0.14.0'
 
   # nanoc checks
-  gem 'nokogiri', '~> 1.10.3'
+  gem 'nokogiri', '~> 1.12.0'
 
   # Needed to generate Sitemap
-  gem 'builder', '~> 3.2'
+  gem 'builder', '~> 3.2.0'
+
+  # Needed to compile SCSS
+  gem 'sass', '3.7.4'
 end
 
 group :test, :development do
-  gem 'scss_lint', '~> 0.57', require: false
-  gem 'highline', '~> 2.0'
-  gem 'rspec', '~> 3.5'
-  gem 'pry-byebug', '~> 3.7', require: false
-  # Although we now use markdownlint-cli, we need the mdl gem for backwards compatibility
-  gem 'mdl'
+  gem 'highline', '~> 2.0.0'
+  gem 'rspec', '~> 3.10.0'
+  gem 'pry-byebug', '~> 3.9.0', require: false
+  gem 'gitlab-styles', '~> 6.2.0', require: false
 end
