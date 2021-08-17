@@ -2528,6 +2528,8 @@ sections:
       - category_title: Service Ping guide
         category_url: 'ee/development/service_ping/'
         docs:
+          - doc_title: Develop and test
+            doc_url: 'ee/development/service_ping/implement.html'
           - doc_title: Metrics instrumentation
             doc_url: 'ee/development/service_ping/metrics_instrumentation.html'
           - doc_title: Metrics dictionary guide
