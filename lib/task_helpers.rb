@@ -53,15 +53,26 @@ def local_branch_exist?(branch)
   !status.empty?
 end
 
-def chart_version_added?(gitlab_version)
-  config = YAML.load_file('./content/_data/chart_versions.yaml')
-  config.key?(gitlab_version)
-end
-
+#
+# The charts versions do not follow the same GitLab major number, BUT
+# they do follow a pattern https://docs.gitlab.com/charts/installation/version_mappings.html:
+#
+# 1. The minor version is the same for both
+# 2. The major version augments for both at the same time
+#
+# This means we can deduct the charts version from the GitLab version, since
+# the major charts version is always 9 versions behind its GitLab counterpart.
+#
 def chart_version(gitlab_version)
-  config = YAML.load_file('./content/_data/chart_versions.yaml')
+  major, minor = gitlab_version.split('.')
 
-  config.fetch(gitlab_version)
+  # Assume major charts version is nine less than major GitLab version.
+  # If this breaks and the version isn't found, it might be because they
+  # are no longer exactly 9 releases behind. Ask the distribution team
+  # about it.
+  major = major.to_i - 9
+
+  "#{major.to_s}.#{minor}"
 end
 
 def default_branch(repo)

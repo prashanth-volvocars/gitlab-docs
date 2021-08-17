@@ -73,12 +73,6 @@ namespace :release do
 
     raise 'You need to specify a version, like 10.1' unless version.match?(/\A\d+\.\d+\z/)
 
-    # Check if the chart version has been defined
-    unless chart_version_added?(version)
-      abort('Rake aborted! The chart version does not exist. Make sure `content/_data/charts_versions.yaml` is updated.
-            https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#add-chart-version')
-    end
-
     # Check if local branch exists
     abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.") if local_branch_exist?(version)
 
