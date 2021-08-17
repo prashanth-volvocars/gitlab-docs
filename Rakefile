@@ -76,7 +76,7 @@ namespace :release do
     # Check if the chart version has been defined
     unless chart_version_added?(version)
       abort('Rake aborted! The chart version does not exist. Make sure `content/_data/charts_versions.yaml` is updated.
-            https://docs.gitlab.com/ee/development/documentation/site_architecture/release_process.html#1-add-the-chart-version')
+            https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#add-chart-version')
     end
 
     # Check if local branch exists
