@@ -1240,12 +1240,6 @@ redirects:
   - from: /ee/operations/incident_management/alert_notifications.html
     to: /ee/operations/incident_management/paging.html
     remove_date: 2022-01-01
-  - from: /ee/user/project/import/gemnasium.html
-    to: /ee/user/project/import/index.html
-    remove_date: 2022-05-01
-  - from: /ee/user/project/bulk_editing.html
-    to: /ee/user/project/issues/managing_issues.html
-    remove_date: 2021-08-12
   - from: /ee/security/cicd_environment_variables.html
     to: /ee/ci/variables/index.html#cicd-variable-security
     remove_date: 2022-02-15
@@ -1336,16 +1330,28 @@ redirects:
   - from: /runner/executors/custom_examples/index.html
     to: /runner/executors/custom.html
     remove_date: 2021-10-26
+  - from: /runner/executors/custom_examples/
+    to: /runner/executors/custom.html
+    remove_date: 2021-10-26
   - from: /charts/advanced/external-mattermost.html
     to: /charts/advanced/external-mattermost/index.html
     remove_date: 2021-05-19
   - from: /charts/charts/redis-ha/index.html
     to: /charts/installation/deployment.html#redis
     remove_date: 2021-12-08
+  - from: /charts/charts/redis-ha/
+    to: /charts/installation/deployment.html#redis
+    remove_date: 2021-12-08
   - from: /charts/charts/gitlab/unicorn/index.html
     to: /charts/charts/gitlab/webservice/index.html
     remove_date: 2021-04-29
+  - from: /charts/charts/gitlab/unicorn/
+    to: /charts/charts/gitlab/webservice/index.html
+    remove_date: 2021-04-29
   - from: /charts/charts/redis/index.html
+    to: /charts/installation/deployment.html#redis
+    remove_date: 2021-12-08
+  - from: /charts/charts/redis/
     to: /charts/installation/deployment.html#redis
     remove_date: 2021-12-08
   - from: /ee/administration/auth/okta.html
@@ -1381,3 +1387,105 @@ redirects:
   - from: /ee/user/project/new_ci_build_permissions_model.html
     to: /ee/ci/index.html
     remove_date: 2022-03-18
+  - from: /ee/development/snowplow.html
+    to: /ee/development/snowplow/index.html
+    remove_date: 2022-03-30
+  - from: /ee/integration/README.html
+    to: /ee/integration/index.html
+    remove_date: 2022-04-30
+  - from: /ee/user/admin_area/activating_deactivating_users.html
+    to: /ee/user/admin_area/moderate_users.html
+    remove_date: 2022-05-12
+  - from: /ee/user/admin_area/blocking_unblocking_users.html
+    to: /ee/user/admin_area/moderate_users.html
+    remove_date: 2022-05-12
+  - from: /ee/user/group/bulk_editing/index.html
+    to: /ee/user/group/index.html
+    remove_date: 2022-05-13
+  - from: /ee/user/group/bulk_editing/
+    to: /ee/user/group/index.html
+    remove_date: 2022-05-13
+  - from: /ee/user/project/merge_requests/reviewing_and_managing_merge_requests.html
+    to: /ee/user/project/merge_requests/reviews/index.html
+    remove_date: 2022-05-03
+  - from: /ee/user/project/bulk_editing.html
+    to: /ee/user/project/issues/managing_issues.html
+    remove_date: 2022-05-12
+  - from: /ee/user/project/import/gemnasium.html
+    to: /ee/user/project/import/index.html
+    remove_date: 2022-05-15
+  - from: /ee/university/training/index.html
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/user_training.html
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/git_log.html
+    to: /ee/topics/git/git_log.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/git_intro.html
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/git_add.html
+    to: /ee/topics/git/git_add.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/merge_requests.html
+    to: /ee/user/project/merge_requests/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/getting_started.html
+    to: /ee/topics/git/getting_started.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/merge_conflicts.html
+    to: /ee/topics/git/merge_conflicts.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/rollback_commits.html
+    to: /ee/topics/git/rollback_commits.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/bisect.html
+    to: /ee/topics/git/bisect.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/unstage.html
+    to: /ee/topics/git/unstage.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/feature_branching.html
+    to: /ee/topics/git/feature_branching.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/stash.html
+    to: /ee/topics/git/stash.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/subtree.html
+    to: /ee/topics/git/subtree.html
+    remove_date: 2022-05-13
+  - from: /ee/university/training/topics/env_setup.html
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/index.html
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/university/
+    to: /ee/topics/index.html
+    remove_date: 2022-05-13
+  - from: /ee/topics/git/merge_requests.html
+    to: /ee/user/project/merge_requests/index.html
+    remove_date: 2022-05-13
+  - from: /ee/migrate_ci_to_ce/README.html
+    to: /ee/ci/index.html
+    remove_date: 2022-03-14
+  - from: /ee/migrate_ci_to_ce/index.html
+    to: /ee/ci/index.html
+    remove_date: 2022-03-14
+  - from: /ee/migrate_ci_to_ce/
+    to: /ee/ci/index.html
+    remove_date: 2022-03-14
+  - from: /omnibus/release/openshift.html
+    to: /charts/development/release.html
+    remove_date: 2022-03-30
+  - from: /charts/shared-secrets/index.html
+    to: /charts/shared-secrets.html
+    remove_date: 2022-02-22
+  - from: /charts/shared-secrets/
+    to: /charts/shared-secrets.html
+    remove_date: 2022-02-22
