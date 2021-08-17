@@ -148,10 +148,10 @@ To install Ruby, Node.js, and Yarn using `asdf`:
    ```
 
 1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
-   `.tool-versions` files. For example to set Ruby 2.7.2 as the global default, run:
+   `.tool-versions` files. For example to set Ruby 2.7.4 as the global default, run:
 
    ```shell
-   asdf global ruby 2.7.2
+   asdf global ruby 2.7.4
    ```
 
 Check your:
