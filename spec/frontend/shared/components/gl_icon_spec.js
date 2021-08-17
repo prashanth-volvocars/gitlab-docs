@@ -1,6 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import GlIcon from '../../../../content/frontend/shared/components/gl_icon.vue';
-import iconSizeOptions from '../../../../content/frontend/shared/constants';
+import { iconSizeOptions } from '../../../../content/frontend/shared/constants';
 
 const ICONS_PATH = '/path/to/icons.svg';
 const TEST_SIZE = 8;
@@ -14,7 +18,7 @@ describe('GlIcon component', () => {
   let wrapper;
   let consoleSpy;
 
-  const createComponent = props => {
+  const createComponent = (props) => {
     wrapper = shallowMount(GlIcon, {
       propsData: {
         size: TEST_SIZE,
@@ -25,8 +29,8 @@ describe('GlIcon component', () => {
     });
   };
 
-  const validateSize = size => GlIcon.props.size.validator(size);
-  const validateName = name => GlIcon.props.name.validator(name);
+  const validateSize = (size) => GlIcon.props.size.validator(size);
+  const validateName = (name) => GlIcon.props.name.validator(name);
 
   afterEach(() => {
     wrapper.destroy();

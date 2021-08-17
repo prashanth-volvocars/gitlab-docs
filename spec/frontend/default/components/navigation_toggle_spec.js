@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { mount } from '@vue/test-utils';
 import NavigationToggle from '../../../../content/frontend/default/components/navigation_toggle.vue';
 

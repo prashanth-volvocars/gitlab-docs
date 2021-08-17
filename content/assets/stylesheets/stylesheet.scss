@@ -1,10 +1,12 @@
 ---
-version: 66
+version: 67
 ---
 
-@import "variables";
+@import 'variables';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -21,13 +23,15 @@ body {
     min-height: 100vh;
 
     // adds extra padding to the side-nav and main content if a banner is displayed.
-    &.show-banner .nav-wrapper, &.show-banner .main {
+    &.show-banner .nav-wrapper,
+    &.show-banner .main {
       padding-top: calc(#{$page-header-height} + #{$banner-height});
     }
   }
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: $link-color;
 
@@ -71,7 +75,8 @@ table {
     }
   }
 
-  td, th {
+  td,
+  th {
     text-align: left;
     padding: 8px;
     border: 1px solid $table-border-color;
@@ -91,7 +96,9 @@ table {
   &.borderless-table {
     border: 0;
 
-    tr, td, th {
+    tr,
+    td,
+    th {
       border: 0;
     }
   }
@@ -120,7 +127,9 @@ blockquote {
   }
 
   // Override bootstrap
-  ol:last-child, p:last-child, ul:last-child {
+  ol:last-child,
+  p:last-child,
+  ul:last-child {
     margin: inherit;
   }
 
@@ -151,8 +160,8 @@ pre {
     outline: 0;
 
     i {
-      opacity: .5;
-      transition: opacity .3s ease-in;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in;
     }
 
     @media all and (max-width: $mobile-width) {
@@ -175,11 +184,14 @@ pre {
   }
 }
 
-code, code span {
+code,
+code span {
   font-family: $mono-font-family;
 }
 
-p code, li code, table code {
+p code,
+li code,
+table code {
   color: $code-color;
   background-color: $code-background-color;
 }
@@ -195,7 +207,11 @@ hr {
 }
 
 // Make code in headers match the font size of the given header.
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   border-bottom: solid 1px $h-border-bottom;
   line-height: 1.4;
   padding-bottom: 5px;
@@ -332,7 +348,7 @@ li {
     a {
       color: $h1-border-bottom;
       &::before {
-        content: "\f126";
+        content: '\f126';
         font-family: FontAwesome;
         font-size: 14px;
         font-style: normal;
@@ -347,10 +363,11 @@ li {
   }
 
   // external link
-  [href^="http://"], [href^="https://"] {
-    &:not([href*="gitlab.com"]) {
+  [href^='http://'],
+  [href^='https://'] {
+    &:not([href*='gitlab.com']) {
       &::after {
-        content: "\f08e";
+        content: '\f08e';
         font-family: FontAwesome;
         font-size: 14px;
         font-style: normal;
@@ -365,14 +382,16 @@ li {
     margin: 0 0 1.25em;    
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 20px 0;
   }
 
   li {
     line-height: 22px;
 
-    > ul, > ol {
+    > ul,
+    > ol {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -381,7 +400,7 @@ li {
   img {
     max-width: calc(100% - 10px);
     max-height: 100vh;
-    box-shadow: 0 4px 18px 0 rgba($color-dark, .1), 0 6px 20px 0 rgba($color-dark, .09);
+    box-shadow: 0 4px 18px 0 rgba($color-dark, 0.1), 0 6px 20px 0 rgba($color-dark, 0.09);
     margin: 40px auto;
     display: block;
   }
@@ -432,7 +451,6 @@ li {
 // Override Bootstraps default button (for GDS colors)
 .btn-default {
   border-color: $gds-gray-300;
-  -webkit-appearance: none;
 }
 
 .btn-default:hover {
@@ -465,7 +483,7 @@ li {
   max-width: 220px;
   width: 50px;
   height: 100vh;
-  transition: all .3s;
+  transition: all 0.3s;
   background: $gds-gray-50;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
@@ -521,7 +539,9 @@ li {
       display: none;
     }
 
-    .arrow, .arrow::before, .arrow::after {
+    .arrow,
+    .arrow::before,
+    .arrow::after {
       cursor: pointer;
       pointer-events: none;
       border-radius: 1px;
@@ -530,7 +550,7 @@ li {
       background: $gds-gray-700;
       position: absolute;
       display: block;
-      content: "";
+      content: '';
     }
 
     .arrow {
@@ -598,7 +618,8 @@ li {
         color: $gds-indigo-800;
       }
 
-      &.level-1, &.level-2 {
+      &.level-1,
+      &.level-2 {
         background-color: $gds-gray-200;
       }
     }
@@ -615,7 +636,7 @@ li {
     justify-content: center;
 
     &::after {
-      content: "";
+      content: '';
       border: solid $gds-gray-700;
       border-width: 0 1px 1px 0;
       display: inline-block;
@@ -644,8 +665,8 @@ li {
   padding-left: 10px;
 }
 
-// scss-lint:disable QualifyingElement
-a.global-nav-link, .nav-link {
+a.global-nav-link,
+.nav-link {
   text-decoration: none;
 
   &:hover {
@@ -668,7 +689,6 @@ a.global-nav-link {
 .nav-link:hover {
   background-color: $link-color-bg-active;
 }
-// scss-lint:enable QualifyingElement
 
 .global-nav-block-top {
   font-weight: 600;
@@ -755,7 +775,7 @@ a.global-nav-link {
     border-radius: 0;
 
     &:not(:last-child)::after {
-      content: "›\00a0";
+      content: '›\00a0';
     }
 
     &::after {
@@ -858,8 +878,8 @@ a.global-nav-link {
   color: inherit;
   border: 0;
   border-radius: 0;
-  padding: .75rem .60rem;
-  opacity: .9;
+  padding: 0.75rem 0.6rem;
+  opacity: 0.9;
 
   code {
     background-color: $alert-code-background-color;
@@ -988,11 +1008,11 @@ a.global-nav-link {
     border: 1px solid $color-tanuki-medium;
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
 
     &:active {
-      opacity: .8;
+      opacity: 0.8;
       box-shadow: none;
     }
   }
@@ -1030,7 +1050,7 @@ a.global-nav-link {
 
       i {
         padding-left: 5px;
-        opacity: .5;
+        opacity: 0.5;
 
         &:hover {
           opacity: 1;
@@ -1043,7 +1063,6 @@ a.global-nav-link {
     box-sizing: content-box;
     border: 1px solid $search-border;
     border-radius: $border-radius;
-    -webkit-appearance: none;
     padding: 7px 11px 7px 28px;
     width: 260px;
     background: $white url("<%= @items['/assets/images/icon_search.svg'].path %>") 9px 12px / 14px no-repeat;
@@ -1109,10 +1128,11 @@ a.global-nav-link {
   }
 
   // Override bootstrap
-  .nav > li > a:focus, .nav > li > a:hover {
+  .nav > li > a:focus,
+  .nav > li > a:hover {
     text-decoration: none;
     background-color: transparent;
-    opacity: .8;
+    opacity: 0.8;
   }
 
 }
@@ -1122,7 +1142,11 @@ a.global-nav-link {
 
 .landing {
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: $header-color;
   }
 
@@ -1186,7 +1210,7 @@ a.global-nav-link {
       height: 20px;
       width: 20px;
       z-index: 1;
-      opacity: .8;
+      opacity: 0.8;
     }
 
     input:focus {
@@ -1224,7 +1248,7 @@ a.global-nav-link {
     color: $color-white;
 
     @media all and (max-width: $mobile-width) {
-      font-size: .8em;
+      font-size: 0.8em;
     }
 
   }
@@ -1254,10 +1278,10 @@ a.global-nav-link {
     white-space: nowrap;
     overflow: auto;
     background-color: $landing-background;
-    transition: .2s cubic-bezier(0, 0, 0, 1);
+    transition: 0.2s cubic-bezier(0, 0, 0, 1);
 
     a:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
 
     p {
@@ -1284,7 +1308,7 @@ a.global-nav-link {
       text-align: center;
 
       @media all and (max-width: $mobile-width) {
-        font-size: .8em;
+        font-size: 0.8em;
         padding: 10px;
         margin-right: 0;
       }
@@ -1334,7 +1358,6 @@ a.global-nav-link {
       box-sizing: content-box;
       border: 1px solid $search-border;
       border-radius: $border-radius;
-      -webkit-appearance: none;
       padding: 7px 11px 7px 28px;
       margin: -20;
       width: 190px;
@@ -1388,7 +1411,7 @@ a.global-nav-link {
     }
 
     .topic:hover {
-      opacity: .6;
+      opacity: 0.6;
       color: $black;
     }
 
@@ -1460,7 +1483,8 @@ a.global-nav-link {
       margin: 20px 0 0;
     }
 
-    a p, a:visited p {
+    a p,
+    a:visited p {
       color: $black;
       vertical-align: bottom;
     }
@@ -1471,7 +1495,7 @@ a.global-nav-link {
       img {
         height: 76px;
         margin: auto auto 20px;
-        transition: .2s cubic-bezier(0, 0, 0, 1);
+        transition: 0.2s cubic-bezier(0, 0, 0, 1);
       }
 
       h2 {
@@ -1479,7 +1503,7 @@ a.global-nav-link {
       }
 
       .topic-info {
-        transition: .2s cubic-bezier(0, 0, 0, 1);
+        transition: 0.2s cubic-bezier(0, 0, 0, 1);
       }
 
       @media all and (max-width: $mobile-width) {
@@ -1492,7 +1516,8 @@ a.global-nav-link {
       font-weight: 400;
     }
 
-    a, a:visited {
+    a,
+    a:visited {
       text-decoration: none;
 
       h2 {
@@ -1518,10 +1543,15 @@ a.global-nav-link {
 }
 
 // https://gitlab.com/gitlab-org/gitlab-docs/issues/107#note_36655246
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   &[id]::before {
     display: block;
-    content: " ";
+    content: ' ';
     margin-top: -75px;
     height: 75px;
     visibility: hidden;
@@ -1533,17 +1563,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   cursor: pointer;
   padding-left: 5px;
-  transition: background-color .5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 
   .badge-gitlab,
   .badge-gitlab-com {
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 0;
       height: 2px;
-      transition: width .3s;
-      opacity: .5;
+      transition: width 0.3s;
+      opacity: 0.5;
     }
   }
 
@@ -1569,20 +1599,25 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   .badge-display {
     font-size: 11px;
   }
 }
 
-h5, h6 {
+h5,
+h6 {
   .badge-display {
     font-size: 10px;
     padding: 2px 4px;
   }
 }
 
-p, li {
+p,
+li {
   .badge-display {
     font-size: 9px;
     padding: 1px;
@@ -1596,9 +1631,12 @@ p {
   }
 }
 
-// scss-lint:disable MergeableSelector
-// skipping scss-lint rule: keeping all the badges styles together
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   .badges-drop {
     float: right;
   }
@@ -1618,7 +1656,6 @@ li {
     margin-right: 3px;
   }
 }
-// scss-lint:enable MergeableSelector
 
 .badge-display {
   text-transform: uppercase;
@@ -1629,7 +1666,7 @@ li {
   border-radius: 2px;
   font-size: 1em;
   font-weight: 700;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
   line-height: 1.4;
 }
 
@@ -1644,8 +1681,8 @@ li {
 
 .badge-small {
   color: $badge-gitlab;
-  opacity: .6;
-  transition: opacity .3s;
+  opacity: 0.6;
+  transition: opacity 0.3s;
 
   &:hover {
     opacity: 1;
@@ -1654,7 +1691,7 @@ li {
       content: attr(data-title);
       text-transform: uppercase;
       font-weight: 700;
-      font-size: .7em;
+      font-size: 0.7em;
       display: inline;
       position: absolute;
       padding: 1px 5px;
@@ -1667,13 +1704,11 @@ li {
   }
 }
 
-// scss-lint:disable ImportantRule
 .dotcom-false {
   .badge-gitlab-com {
     display: none;
   }
 }
-// scss-lint:enable ImportantRule
 
 .doc-nav,
 .breadcrumb {
@@ -1790,7 +1825,6 @@ li {
   }
 }
 
-// scss-lint:disable ImportantRule
 .display-none {
   display: none !important;
 }
@@ -1802,7 +1836,6 @@ li {
 .image-noshadow {
   box-shadow: none !important;
 }
-// scss-lint:enable ImportantRule
 
 //end of in-page styles
 
