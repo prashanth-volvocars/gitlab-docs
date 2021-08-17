@@ -145,7 +145,7 @@ namespace :release do
       abort('
       It appears you are on the default branch. Create the current release
       branch and run the raketask again. Follow the documentation guide
-      on how to create it: https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
+      on how to create it: https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#create-release-merge-request
       ')
     end
 
@@ -163,7 +163,7 @@ namespace :release do
       abort('
       A release branch for the latest stable version has not been created.
       Follow the documentation guide on how to create one:
-      https://docs.gitlab.com/ee/development/documentation/site_architecture/versions.html#3-create-the-release-merge-request
+      https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#create-release-merge-request
       ')
     end
 
