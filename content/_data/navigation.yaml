@@ -128,9 +128,6 @@ sections:
                     doc_url: 'omnibus/settings/memory_constrained_envs.html'
               - doc_title: Release process
                 doc_url: 'omnibus/release/'
-                docs:
-                  - doc_title: OpenShift release process
-                    doc_url: 'omnibus/release/openshift.html'
               - doc_title: Update
                 doc_url: 'omnibus/update/'
                 docs:
