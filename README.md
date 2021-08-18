@@ -626,6 +626,12 @@ The task:
 Once all the MRs have been created, be sure to edit them to cross link between
 them and the recurring tasks issue.
 
+To omit the automatic merge request creation:
+
+```shell
+SKIP_MR=true bundle exec rake docs:clean_redirects
+```
+
 ## Troubleshooting
 
 If you see a `Nanoc::Core::Site::DuplicateIdentifierError` error, confirm you have no symlinks
