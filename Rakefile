@@ -186,7 +186,7 @@ namespace :release do
 
       puts "=> Commit and push to create a merge request"
       `git commit -m "Update dropdown to #{current_version}"`
-      `git push origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="release"`
+      `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
   end
 end
@@ -250,6 +250,16 @@ namespace :docs do
     today = Time.now.utc.to_date
     mr_title = "Clean up docs redirects - #{today}"
     mr_description = "Monthly cleanup of docs redirects.</br><p>See https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks</p></br></hr></br><p>_Created automatically: https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/README.md#clean-up-redirects_</p>"
+    redirects_branch = "docs-clean-redirects-#{today}"
+    # Disable lefthook because it was causing some PATH errors
+    # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
+    ENV['LEFTHOOK'] = '0'
+
+    puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
+    system("git stash --quiet -u") if git_workdir_dirty?
+    system("git checkout --quiet main")
+    system("git fetch --quiet origin main")
+    system("git reset --quiet --hard origin/main")
 
     products.each_value do |product|
       #
@@ -327,6 +337,16 @@ namespace :docs do
           post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
           post.puts "    remove_date: #{remove_date >> 9}"
         end
+
+        # If the 'from' path ends with 'index.html' we need an extra redirect
+        # entry in 'redirects.yaml' that is without 'index.html'
+        next unless old_path.end_with?('index.html')
+
+        File.open(redirects_yaml, 'a') do |post|
+          post.puts "  - from: #{old_path.gsub!('index.html', '')}"
+          post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
+          post.puts "    remove_date: #{remove_date >> 9}"
+        end
       end
 
       #
@@ -337,18 +357,17 @@ namespace :docs do
       #   3. Add the changed files
       #   4. Commit and push the branch to create the MR
       #
-      next unless counter.positive?
-
-      redirects_branch = "clean-docs-redirects-#{slug}-#{today}"
 
       puts "=> (#{slug}): Found #{counter} redirect(s)"
+      next unless counter.positive?
+
       Dir.chdir(content_dir)
       puts "=> (#{slug}): Creating a new branch for the redirects MR"
       system("git checkout --quiet -b #{redirects_branch} origin/#{default_branch}")
       puts "=> (#{slug}): Committing and pushing to create a merge request"
       system("git add .")
       system("git commit --quiet -m 'Update docs redirects #{today}'")
-      `git push origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` if ENV['SKIP_MR'].nil?
+      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` if ENV['SKIP_MR'].nil?
       Dir.chdir(source_dir)
       puts
     end
@@ -360,18 +379,11 @@ namespace :docs do
     #   2. Add the changed files
     #   3. Commit and push the branch to create the MR
     #
-    redirects_branch = "clean-docs-redirects-#{today}"
-
-    puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
-    system("git stash --quiet -u") if git_workdir_dirty?
-    system("git checkout --quiet main")
-    system("git fetch --quiet origin main")
-    system("git reset --quiet --hard origin/main")
     puts "=> (gitlab-docs): Creating a new branch for the redirects MR"
     system("git checkout --quiet -b #{redirects_branch} origin/main")
     puts "=> (gitlab-docs): Committing and pushing to create a merge request"
     system("git add #{redirects_yaml}")
     system("git commit --quiet -m 'Update docs redirects #{today}'")
-    `git push origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical+Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs+Site"` if ENV['SKIP_MR'].nil?
+    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site"` if ENV['SKIP_MR'].nil?
   end
 end
