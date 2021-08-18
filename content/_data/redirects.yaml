@@ -1489,3 +1489,6 @@ redirects:
   - from: /charts/shared-secrets/
     to: /charts/shared-secrets.html
     remove_date: 2022-02-22
+  - from: /ee/development/testing_guide/end_to_end/environment_selection.html
+    to: /ee/development/testing_guide/end_to_end/execution_context_selection.html
+    remove_date: 2022-05-14
