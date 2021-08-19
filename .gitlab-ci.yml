@@ -503,11 +503,11 @@ pages:
 .docker_prepare:
   extends:
     - .retry
-  image: docker:latest
+  image: docker:20.10.8
   tags:
     - gitlab-org-docker
   services:
-    - docker:20.10.3-dind
+    - docker:20.10.8-dind
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
