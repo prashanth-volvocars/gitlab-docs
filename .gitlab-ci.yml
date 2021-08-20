@@ -69,7 +69,7 @@ workflow:
 #
 .rules_scheduled:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
       when: never
     - if: '$CI_PIPELINE_SOURCE != "schedule"'
       when: never
@@ -86,7 +86,7 @@ workflow:
 
 .rules_scheduled_manual:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
       when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule"'
       when: manual
@@ -100,13 +100,15 @@ workflow:
 
 .rules_chores:
   rules:
+    - if: '$CLEAN_REVIEW_APPS_DAYS'
+      when: never
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
       when: manual
       allow_failure: true
 
 .rules_site_tests:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
       when: never
     # Don't run site tests for review apps.
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
@@ -119,7 +121,7 @@ workflow:
 
 .rules_prod:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
       when: never
     # Don't deploy to production for trigerred pipelines (usually review apps)
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
@@ -129,7 +131,7 @@ workflow:
 
 .rules_pages:
   rules:
-    - if: $CHORES_PIPELINE == "true"
+    - if: $CHORES_PIPELINE == "true" || $CLEAN_REVIEW_APPS_DAYS
       when: never
     # Don't deploy to production for trigerred pipelines (usually review apps)
     - if: '$CI_PIPELINE_SOURCE == "pipeline"|| $CI_PIPELINE_SOURCE == "trigger"'
@@ -139,6 +141,8 @@ workflow:
 
 .rules_dev:
   rules:
+    - if: '$CLEAN_REVIEW_APPS_DAYS'
+      when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
@@ -451,6 +455,27 @@ review_stop:
     - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'
       allow_failure: true
       when: manual
+  tags:
+    - nginx
+    - review-apps
+
+#
+# Clean up review apps and free disk space
+#
+clean-pages:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  needs: []
+  artifacts: {}
+  before_script: []
+  cache: {}
+  script:
+    - /home/gitlab-runner/clean-pages ${CLEAN_REVIEW_APPS_DAYS}
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CLEAN_REVIEW_APPS_DAYS'
+      when: manual
+      allow_failure: true
   tags:
     - nginx
     - review-apps
