@@ -1,15 +1,15 @@
 # The two last major supported versions
 # https://about.gitlab.com/support/statement-of-support.html#we-support-the-current-major-version-and-the-two-previous-major-versions
 previous_majors:
-#  - "13.12" -> Uncomment for 14.2, when 13.12 is removed from the 'online:' section.
+  - "13.12"
   - "12.10"
 
 # The first online version should always point to the
 # current stable version.
 online:
+  - "14.2"
   - "14.1"
   - "14.0"
-  - "13.12"
 
 # The last version before the next major release. Verify near 14.10 as there may be more 14.X versions.
 last_before_new_major:
