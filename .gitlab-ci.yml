@@ -472,6 +472,7 @@ clean-pages:
   cache: {}
   script:
     - /home/gitlab-runner/clean-pages ${CLEAN_REVIEW_APPS_DAYS}
+    - df -h
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CLEAN_REVIEW_APPS_DAYS'
       when: manual
