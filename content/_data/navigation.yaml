@@ -273,6 +273,15 @@ sections:
             doc_url: 'ee/install/google_cloud_platform/'
           - doc_title: Amazon Web Services (AWS)
             doc_url: 'ee/install/aws/'
+            docs:
+              - doc_title: EKS best practices
+                doc_url: 'ee/install/aws/eks_clusters_aws.html'
+              - doc_title: Gitaly on AWS
+                doc_url: 'ee/install/aws/gitaly_on_aws.html'
+              - doc_title: GitLab Cloud Native Hybrid on AWS EKS
+                doc_url: 'ee/install/aws/gitlab_hybrid_on_aws.html'
+              - doc_title: Manual install on AWS
+                doc_url: 'ee/install/aws/manual_install_aws.html'
       - category_title: Reference Architectures
         category_url: 'ee/administration/reference_architectures/'
         docs:
