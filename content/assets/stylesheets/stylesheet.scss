@@ -1,5 +1,5 @@
 ---
-version: 116
+version: 117
 ---
 
 @import 'variables';
@@ -532,4 +532,10 @@ h6[id]::before {
 
 .imageblock {
   margin: 1rem 0;
+}
+
+.admonition {
+  p {
+    margin-bottom: 0;
+  }
 }
