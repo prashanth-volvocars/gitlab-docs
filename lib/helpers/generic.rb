@@ -46,5 +46,12 @@ module Nanoc::Helpers
     def gitlab_docs_or_local?
       ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil?
     end
+
+    #
+    # Control display of survey banner. See README.md#survey-banner
+    #
+    def show_banner?
+      @items['/_data/banner.yaml'][:show_banner]
+    end
   end
 end

@@ -508,18 +508,14 @@ In case there's a survey that needs to reach a big audience, the docs site has
 the ability to host a banner for that purpose. When it is enabled, it's shown
 at the top of every page of the docs site.
 
-To publish a survey:
+To publish a survey, edit [`banner.yaml`](/content/_data/banner.yaml) and:
 
-1. Edit [`layouts/banner.html`](/layouts/banner.html) and fill in the required
-   information like the description text and the survey link.
-1. Edit [`nanoc.yaml`](nanoc.yaml) and set `show_banner` to `true`.
+1. Set `show_banner` to `true`.
+1. Under `description`, add what information you want to appear in the banner.
+   Markdown is supported.
 
-To unpublish a survey:
-
-1. Edit [`nanoc.yaml`](nanoc.yaml) and set `show_banner` to `false`.
-1. Edit [`layouts/banner.html`](/layouts/banner.html) remove the survey link.
-   This step is optional, but it's good to have the link removed so that it's
-   not exposed when no new survey answers are needed.
+To unpublish a survey, edit [`banner.yaml`](/content/_data/banner.yaml) and
+set `show_banner` to `false`.
 
 ## CSP header
 
