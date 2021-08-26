@@ -3,7 +3,7 @@ class AdmonitionFilter < Nanoc::Filter
   identifier :admonition
 
   BOOTSTRAP_MAPPING = {
-    'note' => 'info',
+    'note' => 'note',
     'warning' => 'warning',
     'flag' => 'flag',
     'info' => 'info'
