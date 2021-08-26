@@ -1,5 +1,5 @@
 ---
-version: 117
+version: 118
 ---
 
 @import 'variables';
@@ -185,10 +185,10 @@ ol {
 
 // Pajamas alerts
 // https://gitlab-org.gitlab.io/gitlab-design/hosted/design-gitlab-specs/alerts-spec-previews/
-.alert-info {
-  background-color: $alert-info-bg;
-  color: $alert-info-txt;
-  border: solid 1px $alert-info-border;
+.alert-note {
+  background-color: $alert-note-bg;
+  color: $alert-note-txt;
+  border: solid 1px $alert-note-border;
   border-radius: 5px;
 }
 
