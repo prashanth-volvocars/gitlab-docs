@@ -2253,6 +2253,8 @@ sections:
             doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
           - doc_title: Deployment process
             doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
+          - doc_title: Documentation review apps
+            doc_url: 'ee/development/documentation/review_apps.html'
       - category_title: Distributed tracing
         category_url: 'ee/development/distributed_tracing.html'
       - category_title: Experiments
