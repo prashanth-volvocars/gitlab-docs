@@ -1708,7 +1708,7 @@ sections:
               - doc_title: GitLab managed Terraform state
                 doc_url: 'ee/user/infrastructure/terraform_state.html'
               - doc_title: Terraform integration in merge requests
-                doc_url: 'ee/user/infrastructure/mr_integration.html'
+                doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
           - doc_title: Management project
             doc_url: 'ee/user/clusters/management_project.html'
           - doc_title: Management project Template
