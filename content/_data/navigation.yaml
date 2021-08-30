@@ -447,6 +447,9 @@ sections:
             doc_url: 'ee/user/project/integrations/slack.html'
           - doc_title: Slack slash commands
             doc_url: 'ee/user/project/integrations/slack_slash_commands.html'
+            docs:
+              - doc_title: Slash commands
+                doc_url: 'ee/integration/slash_commands.html'
           - doc_title: Slack application
             doc_url: 'ee/user/project/integrations/gitlab_slack_application.html'
           - doc_title: Unify Circuit
