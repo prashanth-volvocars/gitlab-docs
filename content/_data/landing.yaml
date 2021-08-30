@@ -7,7 +7,7 @@ heros:
       - title: Issues
         url: '/ee/user/project/issues/'
       - title: Issue boards
-        url: '/ee/user/project/issues/'
+        url: '/ee/user/project/issue_board.html'
       - title: Labels
         url: '/ee/user/project/labels.html'
   - title: CI/CD
