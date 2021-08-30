@@ -2255,6 +2255,8 @@ sections:
             doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
           - doc_title: Documentation review apps
             doc_url: 'ee/development/documentation/review_apps.html'
+          - doc_title: Redirects
+            doc_url: 'ee/development/documentation/redirects.html'
       - category_title: Distributed tracing
         category_url: 'ee/development/distributed_tracing.html'
       - category_title: Experiments
