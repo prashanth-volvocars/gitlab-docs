@@ -1,5 +1,5 @@
 ---
-version: 3
+version: 4
 ---
 
 @import 'variables';
@@ -9,23 +9,17 @@ version: 3
 table {
   margin-top: 1rem;
   font-weight: normal;
+  font-size: 0.875rem;
   letter-spacing: normal;
   margin-bottom: 1.5em;
   border-collapse: collapse;
   width: 100%;
+  position: relative;
+  table-layout: auto;
+  display: table;
+  line-height: 1.5;
   max-width: 100%;
-  overflow-x: auto;
-  display: block;
-
-  @include breakpoint(md) {
-    table-layout: auto;
-  }
-
-  @include breakpoint($max: $bp-md) {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
+  overflow: auto;
 
   tr {
     border-top: 1px solid $gray-100;
@@ -45,16 +39,29 @@ table {
     padding: 1em;
   }
 
+  thead {
+    tr {
+      border-top: 0;
+    }
+  }
+
   th {
     background-color: $gray-50;
     color: $gray-900;
     line-height: 1.25;
     text-align: left;
+    position: sticky;
+    vertical-align: top;
+    z-index: 1;
+    top: 0;
+    box-shadow: 0 3px 0 0 var(--color-auto-gray-4);
+    padding: 12px 8px;
+    border: 0;
   }
 
   td {
     vertical-align: top;
-    min-width: 6rem;
+    max-width: 17rem;
 
     a {
       /* stylelint-disable declaration-no-important */

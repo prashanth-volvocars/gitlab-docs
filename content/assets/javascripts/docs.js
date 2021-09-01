@@ -67,6 +67,5 @@ if (landingHeaderBar) {
         globalNav.style.top = '';
       }
     });
-
   });
 })();
