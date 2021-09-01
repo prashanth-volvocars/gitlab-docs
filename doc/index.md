@@ -32,3 +32,13 @@ There are multiple ways to preview GitLab documentation changes, you can:
 - You can [create a Review App with each merge request](https://docs.gitlab.com/ee/development/documentation/index.html#previewing-the-changes-live),
   if you are a GitLab team member.
 - You can [use GDK for documentation development](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md).
+
+## Develop and maintain the docs site
+
+If you are interested in making contributions to the GitLab documentation site itself,
+see the [GitLab docs site development](development.md) page.
+
+GitLab team members might need to do maintenance tasks:
+
+- [GitLab docs site maintenance](maintenance.md).
+- [GitLab docs rake tasks](raketasks.md).

@@ -1,4 +1,4 @@
-# Rake Tasks
+# GitLab docs rake tasks
 
 The GitLab Docs project has some raketasks that automate various things. You
 can see the list of rake tasks with:
