@@ -9,7 +9,7 @@
   <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target="#doc-nav" data-offset="90">
     <%= render '/gtm.*' %>
     <%= render '/header.*' %>
-    <section class="gl-docs container-fluid pt-5">
+    <section class="gl-docs container-fluid">
       <div class="row">
         <div class="col-0 col-lg-2 pl-0">
           <div class="nav-wrapper active">
@@ -98,6 +98,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
     <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.2.3/jquery.floatThead.min.js"></script>
     <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
     <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
     <%= render '/docsearch.*' %>

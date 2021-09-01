@@ -1,5 +1,5 @@
 ---
-version: 118
+version: 119
 ---
 
 @import 'variables';
@@ -79,7 +79,8 @@ ol {
   flex-direction: column;
   position: fixed;
   width: 50px;
-  height: calc(100% - 46px);
+  top: 0;
+  height: 100%;
   transition: all 0.3s;
   border-right: 1px solid $gds-gray-200;
   z-index: 2;
@@ -260,6 +261,7 @@ ol {
 .navbar {
   min-height: $header-height;
   background-color: $header-background-color;
+  z-index: 3;
 
   .navbar-brand {
     font-size: 1.15rem;
