@@ -1,4 +1,6 @@
 redirects:
+  - from: /ce/*
+    to: /ee/:splat
   - from: /cookies-policy/
     to: /cookies/
   - from: /ee/administration/auth/google_secure_ldap.html
