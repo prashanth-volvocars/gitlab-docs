@@ -113,3 +113,19 @@ it with:
 
 To test that the CSP header works as expected, you can visit
 <https://cspvalidator.org/> and paste the URL that you want tested.
+
+## Project tokens
+
+The `gitlab-docs` project has two access tokens used for review apps. If you change
+or delete these tokens, review apps will stop working:
+
+- `DOCS_TRIGGER_TOKEN` is a [trigger token](https://docs.gitlab.com/ee/ci/triggers/index.html#trigger-token).
+  This token is used by other projects to authenticate with the `gitlab-docs` project
+  and trigger a review app deployment pipeline.
+- `DOCS_PROJECT_API_TOKEN` is a [project access token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html).
+  This token is used by other projects to poll the review app deployment pipeline
+  and determine if the pipeline has completed successfully.
+
+All projects that have documentation review apps use these tokens when running the
+[`trigger-build` script](https://gitlab.com/gitlab-org/gitlab/-/blob/b09be454102f4d53ec7963aef8a625daf8ef6acc/scripts/trigger-build#L207)
+to deploy a review app.
