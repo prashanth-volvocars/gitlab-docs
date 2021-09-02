@@ -1,5 +1,5 @@
 ---
-version: 21
+version: 22
 ---
 @import 'variables';
 @import 'utilities';
@@ -48,14 +48,14 @@ $nav-link-font-size: 0.875rem;
 .markdown-toc {
   top: 0;
 
-  @media(min-width: $bp-lg) {
+  @media(min-width: $bp-xl) {
     padding-left: 1rem;
     margin-bottom: 1.5rem;
     overflow-y: scroll;
     height: 100vh;
   }
 
-  @media(max-width: $bp-lg) {
+  @media(max-width: $bp-xl) {
     margin-top: 7rem;
   }
 }
@@ -75,7 +75,7 @@ $nav-link-font-size: 0.875rem;
   }
 }
 
-@media(max-width: $bp-lg) {
+@media(max-width: $bp-xl) {
   .doc-nav {
     margin-left: -20px;
     margin-top: -55px;
@@ -115,7 +115,7 @@ $nav-link-font-size: 0.875rem;
 }
 
 // wide enough to show toc but not quick nav
-@media(min-width: $bp-lg) {
+@media(min-width: $bp-xl) {
   .header {
     top: 0;
     left: 0;

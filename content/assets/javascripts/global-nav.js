@@ -34,7 +34,7 @@
   }
 
   function toggleSidebar() {
-    const mediaQuery = window.matchMedia('(max-width: 1099px)');
+    const mediaQuery = window.matchMedia('(max-width: 1199px)');
     const navWrapper = document.querySelector('.nav-wrapper');
     const main = document.querySelector('.main');
 

@@ -83,8 +83,8 @@ describe('frontend/default/components/table_of_contents', () => {
       expect(findMainListItems()).toEqual(flattenItems(TEST_ITEMS));
     });
 
-    it('is initially uncollapsed', () => {
-      expectCollapsed(false);
+    it('is initially collapsed', () => {
+      expectCollapsed(true);
     });
 
     describe('when collapse button is pressed', () => {
@@ -97,7 +97,7 @@ describe('frontend/default/components/table_of_contents', () => {
       });
 
       it('immediately updates collapse status', () => {
-        expectCollapsed(true);
+        expectCollapsed(false);
       });
 
       it('when button pressed again, nothing happens because in the middle of collapsing', () => {
@@ -105,7 +105,7 @@ describe('frontend/default/components/table_of_contents', () => {
 
         return wrapper.vm.$nextTick(() => {
           expect(findCollapsibleContainer().classes('sm-collapsing')).toBe(true);
-          expectCollapsed(true);
+          expectCollapsed(false);
         });
       });
     });
