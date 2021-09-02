@@ -151,7 +151,7 @@ ol {
       transform: rotate(-45deg) translateY(-4px);
     }
   }
-  @media(max-width: $bp-lg) {
+  @media(max-width: $bp-xl) {
     width: 0;
 
     .nav-toggle {

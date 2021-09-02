@@ -8,18 +8,17 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
     class="table-of-contents"
   >
     <h4
-      class="border-0 toc-sm d-lg-none"
+      class="border-0 toc-sm d-xl-none"
     >
       <a
         aria-controls="markdown-toc"
-        aria-expanded="true"
         class="d-flex text-decoration-none border-bottom-0"
         data-testid="collapse"
         href="#"
         role="button"
       >
         <i
-          class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3 fa-angle-down"
+          class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3 fa-angle-right"
           role="presentation"
         />
         
@@ -35,7 +34,7 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
     </h4>
      
     <div
-      class=""
+      class="sm-collapsed"
       data-testid="container"
     >
       <ul

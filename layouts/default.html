@@ -10,7 +10,7 @@
     <%= render '/header.*' %>
     <section class="gl-docs container-fluid">
       <div class="row">
-        <div class="col-0 col-lg-2 pl-0">
+        <div class="col-0 col-xl-2 pl-0">
           <div class="nav-wrapper active">
             <aside id="global-nav" class="global-nav">
             <!-- Render the global nav only if CI_PROJECT_NAME is gitlab-docs or is not set -->
@@ -21,7 +21,7 @@
             <div id="js-nav-toggle"></div>
           </div>
         </div>
-        <div class="main class pl-lg-4 wrapper js-main-wrapper col-12 col-lg-7">
+        <div class="main pl-xl-4 wrapper js-main-wrapper col-12 col-xl-7">
           <div class="row">
             <div class="col">
               <div id="js-version-banner" <%= 'data-is-outdated' if show_version_banner? %> data-latest-version-url='<%= @item.identifier.without_ext + '.html' %>' data-archives-url="/archives/"></div>
@@ -34,12 +34,12 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="my-3 my-lg-0">
+              <div class="my-3 my-xl-0">
               <a class="position-absolute text-muted mt-2 pt-1 text-decoration-none border-bottom-0 mobile-nav-toggle" href="#"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> | </a>
               </div>
             </div>
           </div>
-          <div class="row d-lg-none">
+          <div class="row d-xl-none">
             <div class="col">
               <div class="doc-nav"></div>
             </div>
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3 py-3 d-none d-lg-flex">
+        <div class="col-3 py-3 d-none d-xl-flex">
           <div id="doc-nav" class="doc-nav w-100"></div>
         </div>
       </div>

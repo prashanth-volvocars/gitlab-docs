@@ -174,7 +174,11 @@ version: 2
   }
 }
 
-@media (min-width: $bp-lg) {
+.mobile-nav-toggle {
+  z-index: 1;
+}
+
+@media (min-width: $bp-xl) {
   .mobile-nav-toggle {
     display: none;
     border-bottom: 0;

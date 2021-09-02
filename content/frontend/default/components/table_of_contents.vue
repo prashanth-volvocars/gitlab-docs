@@ -27,7 +27,7 @@ export default {
   },
   data() {
     return {
-      isCollapsed: false,
+      isCollapsed: true,
     };
   },
   computed: {
@@ -64,7 +64,7 @@ export default {
 <template>
   <div class="markdown-toc table-of-contents-container position-sticky">
     <div class="table-of-contents">
-      <h4 class="border-0 toc-sm d-lg-none">
+      <h4 class="border-0 toc-sm d-xl-none">
         <a
           class="d-flex text-decoration-none border-bottom-0"
           href="#"
