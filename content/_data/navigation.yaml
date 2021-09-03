@@ -278,8 +278,8 @@ sections:
             docs:
               - doc_title: EKS best practices
                 doc_url: 'ee/install/aws/eks_clusters_aws.html'
-              - doc_title: Gitaly on AWS
-                doc_url: 'ee/install/aws/gitaly_on_aws.html'
+              - doc_title: GitLab SRE for AWS
+                doc_url: 'ee/install/aws/gitlab_sre_for_aws.html'
               - doc_title: GitLab Cloud Native Hybrid on AWS EKS
                 doc_url: 'ee/install/aws/gitlab_hybrid_on_aws.html'
               - doc_title: Manual install on AWS

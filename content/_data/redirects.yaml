@@ -1494,3 +1494,6 @@ redirects:
   - from: /ee/development/testing_guide/end_to_end/environment_selection.html
     to: /ee/development/testing_guide/end_to_end/execution_context_selection.html
     remove_date: 2022-05-14
+  - from: /ee/install/aws/gitaly_on_aws.html
+    to: /ee/install/aws/gitlab_sre_for_aws.html
+    remove_date: 2022-06-03
