@@ -129,3 +129,66 @@ or delete these tokens, review apps will stop working:
 All projects that have documentation review apps use these tokens when running the
 [`trigger-build` script](https://gitlab.com/gitlab-org/gitlab/-/blob/b09be454102f4d53ec7963aef8a625daf8ef6acc/scripts/trigger-build#L207)
 to deploy a review app.
+
+## Redirects
+
+The GitLab Docs site has two kinds of redirects.
+
+If both of the redirects are present, the [HTML meta tag redirects](#html-meta-tag-redirects)
+override the [Pages redirects](https://docs.gitlab.com/ee/user/project/pages/redirects.html#files-override-redirects).
+
+### HTML meta tag redirects
+
+If a page has the `redirect_to` metadata in the YAML front matter, it
+redirects to the path defined in the metadata:
+
+1. When Nanoc builds the site, it makes some changes in the [`preprocess`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L6)
+   step. For the redirects, it [checks for a `redirect_to` item identifier](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L21-28)
+   (the YAML metadata) and changes the extension from `.md` to `.html`.
+1. Next, it compiles all the markdown files into HTML. In this step, it first checks
+   [if the `redirect_to` metadata is present](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L61),
+   and if it is, the [redirect layout is used](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rules#L105).
+1. The [redirect layout](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/redirect.html)
+   is a simple HTML page that essentially does two things:
+   - It uses an [`http-equiv` meta tag](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/layouts/redirect.html#L8)
+     with the URL set to the one defined in the `redirect_to` metadata of the
+     markdown file:
+
+     ```html
+     <meta http-equiv="refresh" content="0; url=<%= @item[:redirect_to] %>">
+     ```
+
+   - If for some reason this doesn't work,
+     [there's an additional URL](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/layouts/redirect.html#L24-26)
+     that explicitly points to the redirect URL that the user can manually click
+     and get redirected:
+
+     ```html
+     <a href="<%= @item[:redirect_to] %>">Click here if you are not redirected.</a>
+     ```
+
+### Pages redirects
+
+The GitLab Docs site is deployed in GitLab Pages and can leverage some of its
+features. We can enable server-side redirects by using a
+[`_redirects` file](https://docs.gitlab.com/ee/user/project/pages/redirects.html)
+that contains the redirect rules.
+
+We have a lot of redirects, so maintaining this plaintext file is cumbersome.
+Instead, we use a YAML file which is then converted into the `_redirects` file:
+
+1. The [`redirects.yaml` file](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/content/_data/redirects.yaml)
+   contains the redirect entries for the Docs site:
+
+   | Entry          | Required               | Description |
+   | -------------- | ---------------------- | ----------- |
+   | `from`         | **{check-circle}** Yes | The old path of the page to redirect from. |
+   | `to`           | **{check-circle}** Yes | The new path of the page to redirect to.   |
+   | `remove_date`  | **{dotted-circle}** No | Not used by any code, shows when to remove entries from `redirects.yaml`. |
+
+   These entries can be added manually, or by running the [clean up redirects Rake task](raketasks.md#clean-up-redirects) once a month.
+
+1. Every time the site is built in the pipeline, the [redirects Rake task executes](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/.gitlab-ci.yml#L194-195).
+1. The [Rake task creates `public/_redirects`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/4fc73c9a5f1652cc2e0b284bfe1e937887a37183/Rakefile#L217-231) by parsing `redirects.yaml`.
+1. After Pages deploys the site, the `_redirects` file is at <https://docs.gitlab.com/_redirects>,
+   and the redirects should be working.
