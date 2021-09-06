@@ -128,25 +128,6 @@ sections:
                     doc_url: 'omnibus/settings/memory_constrained_envs.html'
               - doc_title: Release process
                 doc_url: 'omnibus/release/'
-              - doc_title: Update
-                doc_url: 'omnibus/update/'
-                docs:
-                  - doc_title: Convert to Omnibus
-                    doc_url: 'omnibus/update/convert_to_omnibus.html'
-                  - doc_title: Package signatures
-                    doc_url: 'omnibus/update/package_signatures.html'
-                  - doc_title: GitLab 14 changes
-                    doc_url: 'omnibus/update/gitlab_14_changes.html'
-                  - doc_title: GitLab 13 changes
-                    doc_url: 'omnibus/update/gitlab_13_changes.html'
-                  - doc_title: GitLab 12 changes
-                    doc_url: 'omnibus/update/gitlab_12_changes.html'
-                  - doc_title: GitLab 11 changes
-                    doc_url: 'omnibus/update/gitlab_11_changes.html'
-                  - doc_title: GitLab 10 changes
-                    doc_url: 'omnibus/update/gitlab_10_changes.html'
-                  - doc_title: Downgrade
-                    doc_url: 'omnibus/update/#downgrade'
               - doc_title: Maintain
                 doc_url: 'omnibus/maintenance/'
               - doc_title: Troubleshoot
@@ -308,6 +289,32 @@ sections:
       - category_title: Upgrade GitLab
         category_url: 'ee/update/'
         docs:
+          - doc_title: Plan an upgrade
+            doc_url: 'ee/update/plan_your_upgrade.html'
+          - doc_title: Upgrade Omnibus instance
+            doc_url: 'omnibus/update/'
+            docs:
+              - doc_title: Convert to Omnibus
+                doc_url: 'omnibus/update/convert_to_omnibus.html'
+              - doc_title: Package signatures
+                doc_url: 'omnibus/update/package_signatures.html'
+              - doc_title: GitLab 14 changes
+                doc_url: 'omnibus/update/gitlab_14_changes.html'
+              - doc_title: GitLab 13 changes
+                doc_url: 'omnibus/update/gitlab_13_changes.html'
+              - doc_title: GitLab 12 changes
+                doc_url: 'omnibus/update/gitlab_12_changes.html'
+              - doc_title: GitLab 11 changes
+                doc_url: 'omnibus/update/gitlab_11_changes.html'
+              - doc_title: GitLab 10 changes
+                doc_url: 'omnibus/update/gitlab_10_changes.html'
+              - doc_title: Downgrade
+                doc_url: 'omnibus/update/#downgrade'
+          - doc_title: Upgrade source instance
+            doc_url: 'ee/update/upgrading_from_source.html'
+            docs:
+              - doc_title: Patch versions
+                doc_url: 'ee/update/patch_versions.html'
           - doc_title: Releases and maintenance
             doc_url: 'ee/policy/maintenance.html'
           - doc_title: Deprecations by milestone
