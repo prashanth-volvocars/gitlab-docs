@@ -33,9 +33,8 @@ sections:
             doc_url: 'ee/user/usage_quotas.html'
       - category_title: Self-managed subscriptions
         category_url: 'ee/subscriptions/self_managed/'
-        docs:
-          - doc_title: Quarterly reconciliation
-            doc_url: 'ee/subscriptions/quarterly_reconciliation.html'
+      - category_title: Quarterly reconciliation
+        category_url: 'ee/subscriptions/quarterly_reconciliation.html'
       - category_title: Activate Enterprise Edition
         category_url: 'ee/user/admin_area/license.html'
       - category_title: Features available to Starter and Bronze subscribers
