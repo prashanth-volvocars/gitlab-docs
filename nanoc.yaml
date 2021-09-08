@@ -90,6 +90,7 @@ checks:
       - 'https:\/\/www\.linkedin\.com\/company\/gitlab-com'
       - 'https:\/\/auth0\.com\/auth\/login'
       - 'https:\/\/gitlab-org\.gitlab\.io\/gitlab-svgs'
+      - 'https:\/\/gitlab-org\.gitlab\.io\/growth\/product-intelligence\/metric-dictionary'
       - 'https:\/\/dl\.acm\.org\/citation\.cfm\?id=361591'
       - 'https:\/\/pgp\.mit\.edu\/pks\/lookup\?op=vindex\&search=.*'
       - 'https:\/\/www\.amazon\.com\/.*'
