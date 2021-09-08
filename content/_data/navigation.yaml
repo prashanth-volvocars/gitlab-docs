@@ -1432,6 +1432,8 @@ sections:
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
+                  - doc_title: Authenticating with HashiCorp Vault
+                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
                   - doc_title: Deployment with Dpl
                     doc_url: 'ee/ci/examples/deployment/'
                   - doc_title: End-to-end testing
