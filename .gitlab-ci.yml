@@ -237,7 +237,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-d2b92621
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.14-ruby-2.7.4-db71f027
   extends:
     - .rules_site_tests
     - .cache_gem
@@ -348,7 +348,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-3fb5bfe0
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.14-ruby-2.7.4-db71f027
   needs: []
   before_script: []
   dependencies: []
@@ -363,7 +363,7 @@ test_unlinked_images:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.13-ruby-2.7.2-3fb5bfe0
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.14-ruby-2.7.4-db71f027
   needs: []
   before_script: []
   dependencies: []
