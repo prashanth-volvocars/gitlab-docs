@@ -6,10 +6,12 @@ class AdmonitionFilter < Nanoc::Filter
     'note' => 'note',
     'warning' => 'warning',
     'flag' => 'flag',
-    'info' => 'info'
+    'info' => 'info',
+    'tanuki' => 'tanuki'
   }.freeze
 
   GITLAB_SVGS_MAPPING = {
+    'tanuki' => 'tanuki',
     'note' => 'information-o',
     'warning' => 'warning',
     'flag' => 'flag',
@@ -22,7 +24,7 @@ class AdmonitionFilter < Nanoc::Filter
     doc = Nokogiri::HTML.fragment(content.dup)
     doc.css('p').each do |para|
       content = para.inner_html
-      match = content.match(/\A(?<type>NOTE|WARNING|FLAG|INFO):\s?(?<content>.*)\Z/m)
+      match = content.match(/\A(?<type>NOTE|WARNING|FLAG|INFO|TANUKI):\s?(?<content>.*)\Z/m)
       next unless match
 
       new_content = generate(match[:type].downcase, match[:content])

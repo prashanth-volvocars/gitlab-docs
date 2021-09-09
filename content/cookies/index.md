@@ -44,6 +44,9 @@ Service providers may participate in self-regulatory programs that provide ways 
 
 On mobile devices, advertising IDs provided by the platform may be collected and used similar to cookie IDs. You may use the controls on iOS and Android operating systems that allow you to limit tracking and/or reset the advertising IDs.
 
+TANUKI:
+Upgrade to [Ultimate](https://about.gitlab.com/some-revelant-url-path) to use this feature. 
+
 ## How do I control email web beacons?
 
 Most email clients have settings which allow you to prevent the automatic downloading of images, which will disable web beacons in the email messages you read.

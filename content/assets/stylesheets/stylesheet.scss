@@ -1,5 +1,5 @@
 ---
-version: 119
+version: 120
 ---
 
 @import 'variables';
@@ -255,6 +255,12 @@ ol {
     margin-left: 10px;
     margin-right: 10px;
   }
+}
+
+.alert-tanuki{
+  background-color: $help-indigo-50;
+  border-color: rgba($help-indigo-50, 0.3);
+  border-radius: 5px;
 }
 
 // Main header CSS
