@@ -367,6 +367,8 @@ sections:
             doc_url: 'runner/commands/'
           - doc_title: Feature flags
             doc_url: 'runner/configuration/feature-flags.html'
+          - doc_title: macOS setup
+            doc_url: 'runner/configuration/macos_setup.html'
           - doc_title: OpenShift
             doc_url: 'runner/configuration/configuring_runner_openshift.html'
           - doc_title: Running behind a proxy
