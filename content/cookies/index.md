@@ -38,7 +38,7 @@ Service providers may participate in self-regulatory programs that provide ways 
 
 - United States: [NAI](http://optout.networkadvertising.org) and [DAA](http://optout.aboutads.info/)
 - Canada: [Digital Advertising Alliance of Canada](https://youradchoices.ca/)
-- Europe: [European Digital Advertising Alliance](http://www.youronlinechoices.com/)
+- Europe: [European Digital Advertising Alliance](https://www.youronlinechoices.com/)
 
 ## How do I manage mobile advertising IDs?
 
