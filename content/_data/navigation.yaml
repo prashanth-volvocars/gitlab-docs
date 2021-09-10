@@ -712,8 +712,8 @@ sections:
                 doc_url: 'ee/administration/geo/replication/configuration.html'
               - doc_title: Using a Geo site
                 doc_url: 'ee/administration/geo/replication/usage.html'
-              - doc_title: Updating Geo nodes
-                doc_url: 'ee/administration/geo/replication/updating_the_geo_nodes.html'
+              - doc_title: Updating Geo sites
+                doc_url: 'ee/administration/geo/replication/updating_the_geo_sites.html'
               - doc_title: Version-specific updates
                 doc_url: 'ee/administration/geo/replication/version_specific_updates.html'
               - doc_title: Using object storage
