@@ -314,6 +314,8 @@ sections:
             docs:
               - doc_title: Patch versions
                 doc_url: 'ee/update/patch_versions.html'
+          - doc_title: Zero-downtime upgrades
+            doc_url: 'ee/update/zero_downtime.html'
           - doc_title: Releases and maintenance
             doc_url: 'ee/policy/maintenance.html'
           - doc_title: Deprecations by milestone
