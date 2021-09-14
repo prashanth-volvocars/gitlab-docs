@@ -1606,7 +1606,7 @@ sections:
             doc_url: 'ee/user/application_security/vulnerabilities/severities.html'
           - doc_title: CVE ID requests
             doc_url: 'ee/user/application_security/cve_id_request.html'
-          - doc_title: Scan Policies
+          - doc_title: Policies
             doc_url: 'ee/user/application_security/policies/'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
