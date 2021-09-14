@@ -14,4 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
       autoselect: false,
     },
   });
+
+  document.querySelectorAll('.docsearch-landing').forEach((e) => {
+    e.focus();
+  });
 });
