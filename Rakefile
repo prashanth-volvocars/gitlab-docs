@@ -300,10 +300,10 @@ namespace :docs do
 
       #
       # Find the files to be deleted.
-      # Exclude 'doc/development/documentation/index.md' because it
+      # Exclude 'doc/development/documentation/redirects.md' because it
       # contains an example of the YAML front matter.
       #
-      files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | grep -v doc/development/documentation/index.md | cut -d ":" -f1`.split("\n")
+      files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | grep -v doc/development/documentation/redirects.md | cut -d ":" -f1`.split("\n")
 
       #
       # Iterate over the files to be deleted and print the needed
