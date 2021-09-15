@@ -1497,3 +1497,24 @@ redirects:
   - from: /ee/install/aws/gitaly_on_aws.html
     to: /ee/install/aws/gitlab_sre_for_aws.html
     remove_date: 2022-06-03
+  - from: /ee/user/project/integrations/services_templates.html
+    to: /ee/user/admin_area/settings/project_integration_management.html
+    remove_date: 2022-06-09
+  - from: /ee/administration/operations/unicorn.html
+    to: /ee/administration/operations/puma.html
+    remove_date: 2022-05-26
+  - from: /omnibus/settings/puma.html
+    to: /ee/administration/operations/puma.html
+    remove_date: 2022-06-14
+  - from: /omnibus/settings/unicorn.html
+    to: /omnibus/settings/puma.html
+    remove_date: 2022-06-14
+  - from: /omnibus/update/gitlab_7_changes.html
+    to: /omnibus/update/index.html
+    remove_date: 2022-06-01
+  - from: /omnibus/update/gitlab_8_changes.html
+    to: /omnibus/update/index.html
+    remove_date: 2022-06-01
+  - from: /omnibus/update/gitlab_6_changes.html
+    to: /omnibus/update/index.html
+    remove_date: 2022-06-01
