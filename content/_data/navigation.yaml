@@ -108,7 +108,7 @@ sections:
                   - doc_title: Prometheus
                     doc_url: 'omnibus/settings/prometheus.html'
                   - doc_title: Puma
-                    doc_url: 'omnibus/settings/puma.html'
+                    doc_url: 'ee/administration/operations/puma.html'
                   - doc_title: Raspberry Pi
                     doc_url: 'omnibus/settings/rpi.html'
                   - doc_title: Redis
@@ -120,7 +120,7 @@ sections:
                   - doc_title: DNS
                     doc_url: 'omnibus/settings/dns.html'
                   - doc_title: Unicorn
-                    doc_url: 'omnibus/settings/unicorn.html'
+                    doc_url: 'ee/administration/operations/puma.html'
                   - doc_title: Image scaling
                     doc_url: 'omnibus/settings/image_scaling.html'
                   - doc_title: Memory-constrained environments
