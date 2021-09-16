@@ -92,7 +92,7 @@ sections:
                   - doc_title: Database
                     doc_url: 'omnibus/settings/database.html'
                   - doc_title: GitLab Mattermost
-                    doc_url: 'omnibus/gitlab-mattermost/'
+                    doc_url: 'ee/integration/mattermost/'
                   - doc_title: Grafana
                     doc_url: 'omnibus/settings/grafana.html'
                   - doc_title: High availability roles
