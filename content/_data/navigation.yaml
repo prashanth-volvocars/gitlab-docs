@@ -70,8 +70,6 @@ sections:
               - doc_title: Installation
                 doc_url: 'omnibus/installation/'
                 docs:
-                  - doc_title: Container Registry
-                    doc_url: 'omnibus/architecture/registry/'
                   - doc_title: Deprecation policy
                     doc_url: 'omnibus/package-information/deprecation_policy.html'
                   - doc_title: Deprecated OSes
