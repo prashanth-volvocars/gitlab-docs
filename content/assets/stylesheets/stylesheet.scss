@@ -1,5 +1,5 @@
 ---
-version: 119
+version: 120
 ---
 
 @import 'variables';
@@ -557,3 +557,23 @@ h6[id]::before {
     margin-bottom: 0;
   }
 }
+
+.admonition-non-dismissable {
+  position: relative;
+  padding-top: $gl-spacing-scale-5;
+  padding-bottom: $gl-spacing-scale-5;
+  padding-left: $gl-spacing-scale-9;
+
+  .alert-icon {
+    margin-top: $gl-spacing-scale-1;
+    position: absolute;
+    top: $gl-spacing-scale-5;
+    left: $gl-spacing-scale-5;
+    vertical-align: middle;
+  }
+
+  .alert-body {
+    @include gl-line-height-20;
+  }
+}
+
