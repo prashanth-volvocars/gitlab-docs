@@ -58,22 +58,22 @@ sections:
                 doc_url: 'omnibus/architecture/'
                 docs:
                   - doc_title: Omnibus packages and images
-                    doc_url: 'ee/administration/package-information/omnibus_packages.html'
+                    doc_url: 'ee/administration/package_information/omnibus_packages.html'
                   - doc_title: Package information
-                    doc_url: 'ee/administration/package-information/'
+                    doc_url: 'ee/administration/package_information/'
                   - doc_title: Package defaults
-                    doc_url: 'ee/administration/package-information/defaults.html'
+                    doc_url: 'ee/administration/package_information/defaults.html'
                   - doc_title: Package licensing
-                    doc_url: 'ee/administration/package-information/licensing.html'
+                    doc_url: 'ee/administration/package_information/licensing.html'
                   - doc_title: Package signatures
-                    doc_url: 'ee/administration/package-information/signed_packages.html'
+                    doc_url: 'ee/administration/package_information/signed_packages.html'
               - doc_title: Installation
                 doc_url: 'omnibus/installation/'
                 docs:
                   - doc_title: Deprecation policy
-                    doc_url: 'ee/administration/package-information/deprecation_policy.html'
+                    doc_url: 'ee/administration/package_information/deprecation_policy.html'
                   - doc_title: Deprecated OSes
-                    doc_url: 'ee/administration/package-information/deprecated_os.html'
+                    doc_url: 'ee/administration/package_information/deprecated_os.html'
                   - doc_title: Docker images
                     doc_url: 'omnibus/docker/'
                   - doc_title: Manual installation
