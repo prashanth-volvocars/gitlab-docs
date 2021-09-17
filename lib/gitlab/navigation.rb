@@ -51,7 +51,7 @@ module Gitlab
       return unless omnibus?
 
       children.filter! do |section|
-        if allowed_link?(section.url)
+        if section.url && allowed_link?(section.url)
           section.children.filter! { |category| allowed_link?(category.url) }
           true
         end

@@ -9,7 +9,7 @@ describe Gitlab::Navigation do
   let(:item) { double(path: '/omnibus/user/README.html', identifier: double(to_s: '/omnibus/user/README.md')) }
   let(:items) do
     {
-      '/_data/navigation.yaml' => { sections: [Gitlab::Navigation::Section.new(section_title: 'Default Section')] }
+      '/_data/navigation.yaml' => { sections: [{ section_title: 'Default Section' }] }
     }
   end
 
@@ -23,7 +23,7 @@ describe Gitlab::Navigation do
         sections = subject[:sections]
         section = sections.first
 
-        expect(section.title).to eq('Default Section')
+        expect(section).to eq(section_title: 'Default Section')
       end
     end
   end
