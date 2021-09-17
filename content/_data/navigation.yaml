@@ -1594,7 +1594,7 @@ sections:
             docs:
               - doc_title: HTTP Archive format
                 doc_url: 'ee/user/application_security/api_fuzzing/create_har_files.html'
-          - doc_title: Coverage Fuzzing
+          - doc_title: Coverage-guided fuzz testing
             doc_url: 'ee/user/application_security/coverage_fuzzing/'
           - doc_title: Security Dashboard
             doc_url: 'ee/user/application_security/security_dashboard/'
