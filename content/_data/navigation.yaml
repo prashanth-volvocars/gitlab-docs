@@ -2311,16 +2311,24 @@ sections:
             doc_url: 'ee/development/fe_guide/architecture.html'
           - doc_title: Axios
             doc_url: 'ee/development/fe_guide/axios.html'
+          - doc_title: Content Editor
+            doc_url: 'ee/development/fe_guide/content_editor.html'
           - doc_title: Dark mode
             doc_url: 'ee/development/fe_guide/dark_mode.html'
+          - doc_title: Dependencies
+            doc_url: 'ee/development/fe_guide/dependencies.html'
+          - doc_title: Design anti-patterns
+            doc_url: 'ee/development/fe_guide/design_anti_patterns.html'
           - doc_title: Design patterns
             doc_url: 'ee/development/fe_guide/design_patterns.html'
           - doc_title: Development process
             doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Droplab
             doc_url: 'ee/development/fe_guide/droplab/droplab.html'
-          - doc_title: Source editor
-            doc_url: 'ee/development/fe_guide/source_editor.html'
+          - doc_title: Editor Lite
+            doc_url: 'ee/development/fe_guide/editor_lite.html'
+          - doc_title: Event tracking
+            doc_url: 'ee/development/fe_guide/event_tracking.html'
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Filter
@@ -2329,10 +2337,16 @@ sections:
             doc_url: 'ee/development/fe_guide/frontend_faq.html'
           - doc_title: GraphQL
             doc_url: 'ee/development/fe_guide/graphql.html'
+          - doc_title: HAML
+            doc_url: 'ee/development/fe_guide/haml.html'
           - doc_title: Icons and SVG illustrations
             doc_url: 'ee/development/fe_guide/icons.html'
           - doc_title: InputSetter
             doc_url: 'ee/development/fe_guide/droplab/plugins/input_setter.html'
+          - doc_title: Keyboard shortcuts
+            doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
+          - doc_title: Logging
+            doc_url: 'ee/development/fe_guide/logging.html'
           - doc_title: Merge request widget extensions
             doc_url: 'ee/development/new_fe_guide/modules/widget_extensions.html'
           - doc_title: Performance
@@ -2341,12 +2355,18 @@ sections:
             doc_url: 'ee/development/fe_guide/principles.html'
           - doc_title: Security
             doc_url: 'ee/development/fe_guide/security.html'
+          - doc_title: Source editor
+            doc_url: 'ee/development/fe_guide/source_editor.html'
           - doc_title: Tooling
             doc_url: 'ee/development/fe_guide/tooling.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/development/fe_guide/troubleshooting.html'
           - doc_title: Vuex
             doc_url: 'ee/development/fe_guide/vuex.html'
           - doc_title: Vue
             doc_url: 'ee/development/fe_guide/vue.html'
+          - doc_title: Vue 3 migration
+            doc_url: 'ee/development/fe_guide/vue3_migration.html'
           - doc_title: Widgets
             doc_url: 'ee/development/fe_guide/widgets.html'
       - category_title: GitLab Pages development
