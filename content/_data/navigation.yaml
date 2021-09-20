@@ -1425,17 +1425,19 @@ sections:
                     doc_url: 'ee/ci/metrics_reports.html'
                   - doc_title: Test cases
                     doc_url: 'ee/ci/test_cases/'
-              - doc_title: External integrations
+              - doc_title: SSH keys
+                doc_url: 'ee/ci/ssh_keys/'
+              - doc_title: External secrets
+                doc_url: 'ee/ci/secrets/'
+              - doc_title: ChatOps
+                doc_url: 'ee/ci/chatops/'
+              - doc_title: External repository integrations
                 doc_url: 'ee/ci/ci_cd_for_external_repos/'
                 docs:
-                  - doc_title: SSH keys
-                    doc_url: 'ee/ci/ssh_keys/'
                   - doc_title: Bitbucket Cloud
                     doc_url: 'ee/ci/ci_cd_for_external_repos/bitbucket_integration.html'
                   - doc_title: GitHub
                     doc_url: 'ee/ci/ci_cd_for_external_repos/github_integration.html'
-                  - doc_title: Slack
-                    doc_url: 'ee/ci/chatops/'
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
