@@ -598,6 +598,8 @@ sections:
                 doc_url: 'ee/user/admin_area/geo_nodes.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
+              - doc_title: Git LFS rate limits
+                doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
               - doc_title: GitLab Pages
                 doc_url: 'ee/administration/pages/'
               - doc_title: Health Check
