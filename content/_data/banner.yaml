@@ -1,4 +1,4 @@
-show_banner: false
+show_banner: true
 description: |
-  We'd love to understand your experience with GitLab's documentation:
-  [Take the 3-minute survey!](https://gitlab.fra1.qualtrics.com/jfe/form/SV_7PUN2cXgMytSMyG)
+  Help us understand how you use docs.gitlab.com. Take the
+  [3-minute survey](https://gitlab.fra1.qualtrics.com/jfe/form/SV_7PUN2cXgMytSMyG).
