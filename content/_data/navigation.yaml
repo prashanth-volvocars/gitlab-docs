@@ -2449,8 +2449,6 @@ sections:
 
       - category_title: Import/Export
         category_url: 'ee/development/import_export.html'
-      - category_title: Instrumenting Ruby code
-        category_url: 'ee/development/instrumentation.html'
       - category_title: Internal API
         category_url: 'ee/development/internal_api.html'
       - category_title: Issuable-like Rails models utilities
