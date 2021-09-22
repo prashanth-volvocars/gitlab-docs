@@ -131,7 +131,7 @@ sections:
                 doc_url: 'omnibus/troubleshooting.html'
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
-          - doc_title: Kubernetes
+          - doc_title: Cloud Native
             doc_url: 'charts/'
             docs:
               # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
@@ -151,8 +151,10 @@ sections:
                         doc_url: 'charts/installation/cloud/gke.html'
                       - doc_title: OpenShift
                         doc_url: 'charts/installation/cloud/openshift.html'
-                  - doc_title: Deploy
+                  - doc_title: Install with Helm Charts
                     doc_url: 'charts/installation/deployment.html'
+                  - doc_title: Install with GitLab Operator
+                    doc_url: 'charts/installation/operator.html'
                   - doc_title: Upgrade
                     doc_url: 'charts/installation/upgrade.html'
                   - doc_title: Backup and Restore
