@@ -1698,72 +1698,56 @@ sections:
       - category_title: Manage your infrastructure
         category_url: 'ee/user/infrastructure/'
         docs:
-          - doc_title: Kubernetes Agent
-            doc_url: 'ee/user/clusters/agent/'
-            docs:
-              - doc_title: Agent configuration repository
-                doc_url: 'ee/user/clusters/agent/repository.html'
-          - doc_title: Add a cluster using cluster certificates
-            doc_url: 'ee/user/project/clusters/add_remove_clusters.html'
-            docs:
-              - doc_title: Add EKS clusters
-                doc_url: 'ee/user/project/clusters/add_eks_clusters.html'
-              - doc_title: Add GKE clusters
-                doc_url: 'ee/user/project/clusters/add_gke_clusters.html'
-          - doc_title: Group-level clusters
-            doc_url: 'ee/user/group/clusters/'
-          - doc_title: Instance-level clusters
-            doc_url: 'ee/user/instance/clusters/'
-          - doc_title: Canary deployments
-            doc_url: 'ee/user/project/canary_deployments.html'
-          - doc_title: Cluster environments
-            doc_url: 'ee/user/clusters/environments.html'
-          - doc_title: Cluster integrations
-            doc_url: 'ee/user/clusters/integrations.html'
-          - doc_title: Cluster cost management
-            doc_url: 'ee/user/clusters/cost_management.html'
-          - doc_title: Deploy boards
-            doc_url: 'ee/user/project/deploy_boards.html'
-          - doc_title: GitLab Managed Apps
-            doc_url: 'ee/user/clusters/applications.html'
-            docs:
-              - doc_title: Configuring Crossplane
-                doc_url: 'ee/user/clusters/crossplane.html'
-              - doc_title: Migrate to Management Template
-                doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
           - doc_title: Infrastructure as Code
             doc_url: 'ee/user/infrastructure/iac/'
             docs:
-              - doc_title: GitLab managed Terraform state
+              - doc_title: Terraform state
                 doc_url: 'ee/user/infrastructure/iac/terraform_state.html'
               - doc_title: Terraform integration in merge requests
                 doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
-          - doc_title: Management project
-            doc_url: 'ee/user/clusters/management_project.html'
-          - doc_title: Management project Template
-            doc_url: 'ee/user/clusters/management_project_template.html'
-          - doc_title: Pod logs
-            doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
+          - doc_title: Kubernetes clusters
+            doc_url: 'ee/user/project/clusters/'
+            docs:
+              - doc_title: Connect your clusters
+                doc_url: 'ee/user/infrastructure/clusters/connect/'
+                docs:
+                  - doc_title: Kubernetes Agent
+                    doc_url: 'ee/user/clusters/agent/'
+                    docs:
+              - doc_title: Cluster Management Project
+                doc_url: 'ee/user/clusters/management_project.html'
+                docs:
+                  - doc_title: Cluster Management Project Template
+                    doc_url: 'ee/user/clusters/management_project_template.html'
+                  - doc_title: Migrate to Cluster Management Project
+                    doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
+              - doc_title: Cluster environments
+                doc_url: 'ee/user/clusters/environments.html'
+              - doc_title: Cluster integrations
+                doc_url: 'ee/user/clusters/integrations.html'
+              - doc_title: Cluster cost management
+                doc_url: 'ee/user/clusters/cost_management.html'
+              - doc_title: Canary deployments
+                doc_url: 'ee/user/project/canary_deployments.html'
+              - doc_title: Deploy boards
+                doc_url: 'ee/user/project/deploy_boards.html'
+              - doc_title: Pod logs
+                doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
+              - doc_title: Secure cluster applications
+                doc_url: 'ee/user/project/clusters/protect/'
+                docs:
+                  - doc_title: Container Network Security
+                    doc_url: 'ee/user/project/clusters/protect/container_network_security/'
+                    docs:
+                      - doc_title: Get started with Container Network Security
+                        doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
+                  - doc_title: Container Host Security
+                    doc_url: 'ee/user/project/clusters/protect/container_host_security/'
+                    docs:
+                      - doc_title: Get started with Container Host Security
+                        doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
-          - doc_title: Serverless
-            doc_url: 'ee/user/project/clusters/serverless/'
-            docs:
-              - doc_title: Deploying AWS Lambda functions
-                doc_url: 'ee/user/project/clusters/serverless/aws.html'
-          - doc_title: Securing your deployed applications
-            doc_url: 'ee/user/project/clusters/protect/'
-            docs:
-              - doc_title: Container Network Security
-                doc_url: 'ee/user/project/clusters/protect/container_network_security/'
-                docs:
-                  - doc_title: Get started with Container Network Security
-                    doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
-              - doc_title: Container Host Security
-                doc_url: 'ee/user/project/clusters/protect/container_host_security/'
-                docs:
-                  - doc_title: Get started with Container Host Security
-                    doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
       - category_title: Analyze GitLab usage
         category_url: 'ee/user/analytics/'
         docs:
