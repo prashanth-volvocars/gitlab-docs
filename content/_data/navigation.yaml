@@ -485,8 +485,6 @@ sections:
             doc_url: 'ee/user/project/integrations/redmine.html'
           - doc_title: YouTrack
             doc_url: 'ee/user/project/integrations/youtrack.html'
-          - doc_title: ZenTao
-            doc_url: 'ee/user/project/integrations/zentao.html'
       - category_title: Gmail actions buttons
         category_url: 'ee/integration/gmail_action_buttons_for_gitlab.html'
       - category_title: reCAPTCHA
