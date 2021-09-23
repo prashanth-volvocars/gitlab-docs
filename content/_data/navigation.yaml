@@ -600,6 +600,8 @@ sections:
                 doc_url: 'ee/administration/lfs/'
               - doc_title: Git LFS rate limits
                 doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
+              - doc_title: Files API rate limits
+                doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
               - doc_title: GitLab Pages
                 doc_url: 'ee/administration/pages/'
               - doc_title: Health Check
