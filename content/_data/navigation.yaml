@@ -1219,7 +1219,14 @@ sections:
               - doc_title: File History
                 doc_url: 'ee/user/project/repository/git_history.html'
               - doc_title: Mirroring
-                doc_url: 'ee/user/project/repository/repository_mirroring.html'
+                doc_url: 'ee/user/project/repository/mirror/'
+                docs:
+                  - doc_title: Bidirectional mirroring
+                    doc_url: 'ee/user/project/repository/mirror/bidirectional.html'
+                  - doc_title: Pull mirroring
+                    doc_url: 'ee/user/project/repository/mirror/pull.html'
+                  - doc_title: Push mirroring
+                    doc_url: 'ee/user/project/repository/mirror/push.html'
               - doc_title: Protected branches
                 doc_url: 'ee/user/project/protected_branches.html'
               - doc_title: Protected tags
