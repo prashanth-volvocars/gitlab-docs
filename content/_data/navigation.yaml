@@ -81,7 +81,7 @@ sections:
               - doc_title: Configure
                 doc_url: 'omnibus/settings/'
                 docs:
-                  - doc_title: Actioncable
+                  - doc_title: Action Cable
                     doc_url: 'omnibus/settings/actioncable.html'
                   - doc_title: Custom environment variables
                     doc_url: 'omnibus/settings/environment-variables.html'
