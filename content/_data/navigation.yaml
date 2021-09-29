@@ -74,15 +74,15 @@ sections:
                     doc_url: 'ee/administration/package_information/deprecation_policy.html'
                   - doc_title: Deprecated OSes
                     doc_url: 'ee/administration/package_information/deprecated_os.html'
-                  - doc_title: Docker images
-                    doc_url: 'omnibus/docker/'
                   - doc_title: Manual installation
-                    doc_url: 'omnibus/manual_install.html'
+                    doc_url: 'ee/update/package/#upgrade-using-a-manually-downloaded-package'
                   - doc_title: Install JiHu Edition
                     doc_url: 'omnibus/jihu_edition.html'
               - doc_title: Configure
                 doc_url: 'omnibus/settings/'
                 docs:
+                  - doc_title: Action Cable
+                    doc_url: 'omnibus/settings/actioncable.html'
                   - doc_title: Custom environment variables
                     doc_url: 'omnibus/settings/environment-variables.html'
                   - doc_title: Backups
@@ -2479,6 +2479,8 @@ sections:
       - category_title: Omnibus GitLab
         category_url: 'omnibus/development/'
         docs:
+          - doc_title: Contribute to Omnibus GitLab
+            doc_url: 'omnibus/development/contribute-to-omnibus-gitlab.html'
           - doc_title: Build locally
             doc_url: 'omnibus/build/'
             docs:
@@ -2492,22 +2494,43 @@ sections:
             doc_url: 'omnibus/development/setup.html'
           - doc_title: Config options
             doc_url: 'omnibus/settings/configuration.html'
-          - doc_title: Changing YAML config options
+          - doc_title: CI variables
+            doc_url: 'omnibus/development/ci-variables.html'
+          - doc_title: Change package behavior
+            doc_url: 'omnibus/development/change-package-behavior.html'
+          - doc_title: Change YAML config options
             doc_url: 'omnibus/settings/gitlab.yml.html'
-          - doc_title: Adding deprecation messages
+          - doc_title: Add deprecation messages
             doc_url: 'omnibus/development/adding-deprecation-messages.html'
-          - doc_title: Adding new gitlab-ctl commands
+          - doc_title: Add new gitlab-ctl commands
             doc_url: 'omnibus/development/gitlab-ctl-commands.html'
-          - doc_title: Adding new services
+          - doc_title: Add new services
             doc_url: 'omnibus/development/new-services.html'
-          - doc_title: Adding new software definitions
+          - doc_title: Add new software definitions
             doc_url: 'omnibus/development/new-software-definition.html'
-          - doc_title: Creating patches
+          - doc_title: Create patches
             doc_url: 'omnibus/development/creating-patches.html'
-          - doc_title: Managing PostgreSQL versions
+          - doc_title: Add or remove configuration options
+            doc_url: 'omnibus/development/add-remove-configuration-options.html'
+          - doc_title: Manage PostgreSQL versions
             doc_url: 'omnibus/development/managing-postgresql-versions.html'
-          - doc_title: Working with public_attributes.json
+          - doc_title: Omnibus mirror
+            doc_url: 'omnibus/development/omnibus-mirror.html'
+          - doc_title: Version format for the packages and Docker images
+            doc_url: 'omnibus/development/package_version_format.html'
+          - doc_title: Pipelines
+            doc_url: 'omnibus/development/pipelines.html'
+          - doc_title: Work with public_attributes.json
             doc_url: 'omnibus/development/public-attributes.html'
+          - doc_title: Upgrade Chef
+            doc_url: 'omnibus/development/upgrading-chef.html'
+          - doc_title: Handle vulnerabilities
+            doc_url: 'omnibus/development/vulnerabilities.html'
+          - doc_title: Handle broken master pipelines
+            doc_url: 'omnibus/development/broken_master.html'
+          - doc_title: Deprecate and remove support for an OS
+            doc_url: 'omnibus/development/deprecating-and-removing-support-for-an-os.html'
+
       # End Omnibus GitLab development documentation
 
       - category_title: Package development
