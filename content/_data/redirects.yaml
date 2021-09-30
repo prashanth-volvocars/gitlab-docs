@@ -1518,42 +1518,42 @@ redirects:
   - from: /omnibus/update/gitlab_6_changes.html
     to: /omnibus/update/index.html
     remove_date: 2022-06-01
-  - from: ee/README.html
+  - from: /ee/README.html
     to: /ee/index.html
     remove_date: 2022-06-29
-  - from: ee/administration/auth/README.html
+  - from: /ee/administration/auth/README.html
     to: /ee/administration/auth/index.html
     remove_date: 2022-06-29
-  - from: ee/api/README.html
+  - from: /ee/api/README.html
     to: /ee/api/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/README.html
+  - from: /ee/ci/README.html
     to: /ee/ci/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/examples/README.html
+  - from: /ee/ci/examples/README.html
     to: /ee/ci/examples/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/examples/deployment/README.html
+  - from: /ee/ci/examples/deployment/README.html
     to: /ee/ci/examples/deployment/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/runners/README.html
+  - from: /ee/ci/runners/README.html
     to: /ee/ci/runners/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/triggers/README.html
+  - from: /ee/ci/triggers/README.html
     to: /ee/ci/triggers/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/variables/README.html
+  - from: /ee/ci/variables/README.html
     to: /ee/ci/variables/index.html
     remove_date: 2022-06-29
-  - from: ee/ci/yaml/README.html
+  - from: /ee/ci/yaml/README.html
     to: /ee/ci/yaml/index.html
     remove_date: 2022-06-29
-  - from: ee/development/README.html
+  - from: /ee/development/README.html
     to: /ee/development/index.html
     remove_date: 2022-06-29
-  - from: ee/security/README.html
+  - from: /ee/security/README.html
     to: /ee/security/index.html
     remove_date: 2022-06-29
-  - from: ee/ssh/README.html
+  - from: /ee/ssh/README.html
     to: /ee/ssh/index.html
     remove_date: 2022-06-29
