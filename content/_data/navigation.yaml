@@ -2615,7 +2615,7 @@ sections:
           - doc_title: Metrics dictionary guide
             doc_url: 'ee/development/service_ping/metrics_dictionary.html'
           - doc_title: Metrics dictionary
-            doc_url: 'https://gitlab-org.gitlab.io/growth/product-intelligence/metric-dictionary'
+            doc_url: 'https://metrics.gitlab.com/index.html'
             external_url: true
           - doc_title: Review guidelines
             doc_url: 'ee/development/service_ping/review_guidelines.html'
