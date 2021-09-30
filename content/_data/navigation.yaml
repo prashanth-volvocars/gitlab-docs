@@ -2600,7 +2600,8 @@ sections:
           - doc_title: Event dictionary guide
             doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
           - doc_title: Event dictionary
-            doc_url: 'ee/development/snowplow/dictionary.html'
+            doc_url: 'https://metrics.gitlab.com/snowplow.html'
+            external_url: true
           - doc_title: Review guidelines
             doc_url: 'ee/development/snowplow/review_guidelines.html'
       - category_title: Service Ping guide
