@@ -1951,6 +1951,8 @@ sections:
             doc_url: 'ee/api/import.html'
           - doc_title: Instance-level CI/CD variables
             doc_url: 'ee/api/instance_level_ci_variables.html'
+          - doc_title: Integrations
+            doc_url: 'ee/api/integrations.html'
           - doc_title: Invitations
             doc_url: 'ee/api/invitations.html'
           - doc_title: Issue boards (project)
