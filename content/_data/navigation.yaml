@@ -2599,6 +2599,10 @@ sections:
       - category_title: Snowplow guide
         category_url: 'ee/development/snowplow/'
         docs:
+          - doc_title: Implementation
+            doc_url: 'ee/development/snowplow/implementation.html'
+          - doc_title: Schemas
+            doc_url: 'ee/development/snowplow/schemas.html'
           - doc_title: Event dictionary guide
             doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
           - doc_title: Event dictionary
