@@ -1716,7 +1716,7 @@ sections:
               - doc_title: Terraform integration in merge requests
                 doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
           - doc_title: Kubernetes clusters
-            doc_url: 'ee/user/project/clusters/'
+            doc_url: 'ee/user/infrastructure/clusters/'
             docs:
               - doc_title: Connect your clusters
                 doc_url: 'ee/user/infrastructure/clusters/connect/'
