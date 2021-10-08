@@ -2321,16 +2321,12 @@ sections:
             doc_url: 'ee/development/fe_guide/design_patterns.html'
           - doc_title: Development process
             doc_url: 'ee/development/fe_guide/development_process.html'
-          - doc_title: Droplab
-            doc_url: 'ee/development/fe_guide/droplab/droplab.html'
           - doc_title: Editor Lite
             doc_url: 'ee/development/fe_guide/editor_lite.html'
           - doc_title: Event tracking
             doc_url: 'ee/development/fe_guide/event_tracking.html'
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
-          - doc_title: Filter
-            doc_url: 'ee/development/fe_guide/droplab/plugins/filter.html'
           - doc_title: Frontend FAQ
             doc_url: 'ee/development/fe_guide/frontend_faq.html'
           - doc_title: GraphQL
@@ -2339,8 +2335,6 @@ sections:
             doc_url: 'ee/development/fe_guide/haml.html'
           - doc_title: Icons and SVG illustrations
             doc_url: 'ee/development/fe_guide/icons.html'
-          - doc_title: InputSetter
-            doc_url: 'ee/development/fe_guide/droplab/plugins/input_setter.html'
           - doc_title: Keyboard shortcuts
             doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
           - doc_title: Logging
