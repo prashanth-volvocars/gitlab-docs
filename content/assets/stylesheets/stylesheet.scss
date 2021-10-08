@@ -1,5 +1,5 @@
 ---
-version: 121
+version: 122
 ---
 
 @import 'variables';
@@ -234,6 +234,13 @@ ol {
   background-color: $alert-danger-bg;
   color: $alert-danger-txt;
   border: solid 1px $alert-danger-border;
+  border-radius: 5px;
+}
+
+.alert-disclaimer {
+  background-color: $alert-disclaimer-bg;
+  color: $alert-disclaimer-txt;
+  border: solid 1px $alert-disclaimer-border;
   border-radius: 5px;
 }
 
