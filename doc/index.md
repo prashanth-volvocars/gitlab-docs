@@ -38,7 +38,8 @@ There are multiple ways to preview GitLab documentation changes, you can:
 If you are interested in making contributions to the GitLab documentation site itself,
 see the [GitLab docs site development](development.md) page.
 
-GitLab team members might need to do maintenance tasks:
+GitLab technical writing team members sometimes have to do maintenance tasks:
 
-- [GitLab docs site maintenance](maintenance.md).
-- [GitLab docs rake tasks](raketasks.md).
+- Publish the [next release of the GitLab docs site](releases.md).
+- Perform [GitLab docs site maintenance](maintenance.md).
+- Run [GitLab docs rake tasks](raketasks.md).
