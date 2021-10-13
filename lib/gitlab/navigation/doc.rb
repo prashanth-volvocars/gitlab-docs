@@ -30,7 +30,7 @@ module Gitlab
       end
 
       def children
-        @children ||= doc.fetch(:docs, []).map { |doc| Doc.new(doc) }
+        @children ||= doc.fetch(:docs, []).map { |nested_doc| Doc.new(nested_doc) }
       end
 
       private
