@@ -1557,3 +1557,87 @@ redirects:
   - from: /ee/ssh/README.html
     to: /ee/ssh/index.html
     remove_date: 2022-06-29
+  - from: /ee/development/usage_ping/review_guidelines.html
+    to: /ee/development/service_ping/review_guidelines.html
+    remove_date: 2022-07-09
+  - from: /ee/development/usage_ping/metrics_dictionary.html
+    to: /ee/development/service_ping/metrics_dictionary.html
+    remove_date: 2022-07-09
+  - from: /ee/development/usage_ping/product_intelligence_review.html
+    to: /ee/development/service_ping/review_guidelines.html
+    remove_date: 2022-07-09
+  - from: /ee/development/usage_ping/index.html
+    to: /ee/development/service_ping/index.html
+    remove_date: 2022-07-09
+  - from: /ee/development/usage_ping/
+    to: /ee/development/service_ping/index.html
+    remove_date: 2022-07-09
+  - from: /ee/development/usage_ping/metrics_instrumentation.html
+    to: /ee/development/service_ping/metrics_instrumentation.html
+    remove_date: 2022-07-09
+  - from: /ee/development/fe_guide/editor_lite.html
+    to: /ee/development/fe_guide/source_editor.html
+    remove_date: 2022-06-19
+  - from: /ee/ci/parent_child_pipelines.html
+    to: /ee/ci/pipelines/parent_child_pipelines.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/index.html
+    to: /ee/ci/pipelines/merge_request_pipelines.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/
+    to: /ee/ci/pipelines/merge_request_pipelines.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/index.html
+    to: /ee/ci/pipelines/merge_trains.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/pipelines_for_merged_results/merge_trains/
+    to: /ee/ci/pipelines/merge_trains.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/pipelines_for_merged_results/index.html
+    to: /ee/ci/pipelines/pipelines_for_merged_results.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/merge_request_pipelines/pipelines_for_merged_results/
+    to: /ee/ci/pipelines/pipelines_for_merged_results.html
+    remove_date: 2022-06-29
+  - from: /ee/ci/multi_project_pipelines.html
+    to: /ee/ci/pipelines/multi_project_pipelines.html
+    remove_date: 2022-06-29
+  - from: /ee/integration/shibboleth.html
+    to: /ee/integration/saml.html
+    remove_date: 2022-06-29
+  - from: /omnibus/settings/README.html
+    to: /omnibus/settings/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/common_installation_problems/README.html
+    to: /omnibus/troubleshooting.html
+    remove_date: 2022-06-28
+  - from: /omnibus/development/README.html
+    to: /omnibus/development/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/development/openshift/README.html
+    to: /omnibus/development/openshift/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/roles/README.html
+    to: /omnibus/roles/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/release/README.html
+    to: /omnibus/release/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/README.html
+    to: /omnibus/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/architecture/README.html
+    to: /omnibus/architecture/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/architecture/registry/README.html
+    to: /omnibus/architecture/registry/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/maintenance/README.html
+    to: /omnibus/maintenance/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/build/README.html
+    to: /omnibus/build/index.html
+    remove_date: 2022-06-28
+  - from: /omnibus/gitlab-mattermost/README.html
+    to: /omnibus/gitlab-mattermost/index.html
+    remove_date: 2022-06-28
