@@ -355,6 +355,7 @@ test_EOL_whitespace:
   script:
     - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
     - apk add jq
+    - bundle install
     - bundle exec rake setup_git default
     - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md'
 
@@ -369,6 +370,7 @@ test_unlinked_images:
   dependencies: []
   script:
     - apk add jq
+    - bundle install
     - bundle exec rake setup_git default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
     - cp tasks/unlinked-images.sh ../charts-gitlab/unlinked-images.sh
