@@ -16,73 +16,115 @@
         <div class="collapse <%= navigation.show_element?(sec) ? 'show' : '' %>" id="sec_<%= sec_uuid %>">
           <% sec.children.each do |cat| %>
             <% cat_uuid = SecureRandom.uuid %>
-              <span class="global-nav-cat nav-link">
-                <% if cat.external_url %>
-                  <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %>" href="<%= cat.url %>" target="_blank">
-                    <%= cat.title %>
-                  </a>
-                <% else %>
-                  <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(cat) ? 'active' : '' %>" href="<%= navigation.element_href(cat) %>">
-                    <%= cat.title %>
-                  </a>
-                <% end %><!-- end of if cat[:external_url] -->
-                <div class="<%= cat.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(cat) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#cat_<%= cat_uuid %>"></div>
-              </span>
+            <span class="global-nav-cat nav-link">
+              <% if cat.external_url %>
+                <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %>" href="<%= cat.url %>" target="_blank">
+                  <%= cat.title %>
+                </a>
+              <% else %>
+                <a class="global-nav-link level-1 <%= cat.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(cat) ? 'active' : '' %>" href="<%= navigation.element_href(cat) %>">
+                  <%= cat.title %>
+                </a>
+              <% end %><!-- end of if cat[:external_url] -->
+              <div class="<%= cat.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(cat) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#cat_<%= cat_uuid %>"></div>
+            </span>
 
               <!-- nav docs -->
               <% if cat.has_children? %>
                 <div class="collapse <%= navigation.show_element?(cat) ? 'show' : '' %>" id="cat_<%= cat_uuid %>">
                   <% cat.children.each do |doc| %>
                     <% doc_uuid = SecureRandom.uuid %>
-                      <span class="nav-link">
-                        <% if doc.external_url %>
-                          <a class="global-nav-link level-2 <%= doc.has_children? ? 'has-collapse' : '' %>" href="<%= doc.url %>" target="_blank">
-                            <%= doc.title %>
-                          </a>
-                        <% else%>
-                          <a class="global-nav-link level-2 <%= doc.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
-                            <%= doc.title %>
-                          </a>
-                        <% end %><!-- end of if doc[:external_url] -->
-                        <div class="<%= doc.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
-                      </span>
+                    <span class="nav-link">
+                      <% if doc.external_url %>
+                        <a class="global-nav-link level-2 <%= doc.has_children? ? 'has-collapse' : '' %>" href="<%= doc.url %>" target="_blank">
+                          <%= doc.title %>
+                        </a>
+                      <% else%>
+                        <a class="global-nav-link level-2 <%= doc.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
+                          <%= doc.title %>
+                        </a>
+                      <% end %><!-- end of if doc[:external_url] -->
+                      <div class="<%= doc.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
+                    </span>
 
                       <!-- nav sub docs -->
                       <% if doc.has_children? %>
                         <div class="collapse <%= navigation.show_element?(doc) ? 'show' : '' %>" id="doc_<%= doc_uuid %>">
-                          <% doc.children.each do |doc| %>
+                          <% doc.children.each do |doc3| %>
                             <% doc_uuid = SecureRandom.uuid %>
-                          <span class="nav-link">
-                            <% if doc.external_url %>
-                              <a class="global-nav-link level-3 <%= doc.has_children? ? 'has-collapse' : '' %>" href="<%= doc.url %>" target="_blank">
-                                <%= doc.title %>
-                              </a>
-                            <% else%>
-                              <a class="global-nav-link level-3 <%= doc.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
-                                <%= doc.title %>
-                              </a>
-                            <% end %><!-- end of if doc[:external_url] -->
-                            <div class="<%= doc.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
-                          </span>
+                            <span class="nav-link">
+                              <% if doc3.external_url %>
+                                <a class="global-nav-link level-3 <%= doc3.has_children? ? 'has-collapse' : '' %>" href="<%= doc3.url %>" target="_blank">
+                                  <%= doc3.title %>
+                                </a>
+                              <% else%>
+                                <a class="global-nav-link level-3 <%= doc3.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc3) ? 'active' : '' %>" href="<%= navigation.element_href(doc3) %>">
+                                  <%= doc3.title %>
+                                </a>
+                              <% end %><!-- end of if doc[:external_url] -->
+                              <div class="<%= doc3.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc3) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
+                            </span>
 
-                          <!-- nav sub sub docs -->
-                          <% if doc.has_children? %>
-                            <div class="collapse <%= navigation.show_element?(doc) ? 'show' : '' %>" id="doc_<%= doc_uuid %>">
-                              <% doc.children.each do |doc| %>
-                              <span class="nav-link">
-                                <% if doc.external_url %>
-                                  <a class="global-nav-link level-4" href="<%= doc.url %>" target="_blank">
-                                    <%= doc.title %>
-                                  </a>
-                                <% else%>
-                                  <a class="global-nav-link level-4 <%= navigation.show_element?(doc) ? 'active' : '' %>" href="<%= navigation.element_href(doc) %>">
-                                    <%= doc.title %>
-                                  </a>
-                                <% end %><!-- end of if doc[:external_url] -->
-                              </span>
-                              <% end %><!-- end of docs[:doc] -->
-                            </div>
-                          <% end %><!-- end of if doc[:docs] -->
+                            <!-- nav sub sub docs -->
+                            <% if doc3.has_children? %>
+                              <div class="collapse <%= navigation.show_element?(doc3) ? 'show' : '' %>" id="doc_<%= doc_uuid %>">
+                                <% doc3.children.each do |doc4| %>
+                                  <% doc_uuid = SecureRandom.uuid %>
+                                  <span class="nav-link">
+                                    <% if doc4.external_url %>
+                                      <a class="global-nav-link level-4 <%= doc4.has_children? ? 'has-collapse' : '' %>" href="<%= doc4.url %>" target="_blank">
+                                        <%= doc4.title %>
+                                      </a>
+                                    <% else%>
+                                      <a class="global-nav-link level-4 <%= doc4.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc4) ? 'active' : '' %>" href="<%= navigation.element_href(doc4) %>">
+                                        <%= doc4.title %>
+                                      </a>
+                                    <% end %><!-- end of if doc[:external_url] -->
+                                    <div class="<%= doc4.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc4) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
+                                  </span>
+
+                                  <!-- nav sub sub docs -->
+                                  <% if doc4.has_children? %>
+                                    <div class="collapse <%= navigation.show_element?(doc4) ? 'show' : '' %>" id="doc_<%= doc_uuid %>">
+                                      <% doc4.children.each do |doc5| %>
+                                        <% doc_uuid = SecureRandom.uuid %>
+                                        <span class="nav-link">
+                                          <% if doc5.external_url %>
+                                            <a class="global-nav-link level-5 <%= doc5.has_children? ? 'has-collapse' : '' %>" href="<%= doc5.url %>" target="_blank">
+                                              <%= doc5.title %>
+                                            </a>
+                                          <% else%>
+                                            <a class="global-nav-link level-5 <%= doc5.has_children? ? 'has-collapse' : '' %> <%= navigation.show_element?(doc5) ? 'active' : '' %>" href="<%= navigation.element_href(doc5) %>">
+                                              <%= doc5.title %>
+                                            </a>
+                                          <% end %><!-- end of if doc[:external_url] -->
+                                          <div class="<%= doc5.has_children? ? 'collapse-toggle' : '' %> <%= navigation.show_element?(doc5) ? 'active' : 'collapsed' %>" data-toggle="collapse" aria-expanded="false" data-target="#doc_<%= doc_uuid %>"></div>
+                                        </span>
+
+                                        <!-- nav sub sub docs -->
+                                        <% if doc5.has_children? %>
+                                          <div class="collapse <%= navigation.show_element?(doc) ? 'show' : '' %>" id="doc_<%= doc_uuid %>">
+                                            <% doc5.children.each do |doc6| %>
+                                              <span class="nav-link">
+                                                <% if doc6.external_url %>
+                                                  <a class="global-nav-link level-6" href="<%= doc6.url %>" target="_blank">
+                                                    <%= doc6.title %>
+                                                  </a>
+                                                <% else%>
+                                                  <a class="global-nav-link level-6 <%= navigation.show_element?(doc6) ? 'active' : '' %>" href="<%= navigation.element_href(doc6) %>">
+                                                    <%= doc6.title %>
+                                                  </a>
+                                                <% end %><!-- end of if doc[:external_url] -->
+                                              </span>
+                                            <% end %><!-- end of docs[:doc] -->
+                                          </div>
+                                        <% end %><!-- end of if doc[:docs] -->
+                                      <% end %><!-- end of docs[:doc] -->
+                                    </div>
+                                  <% end %><!-- end of if doc[:docs] -->
+                                <% end %><!-- end of docs[:doc] -->
+                              </div>
+                            <% end %><!-- end of if doc[:docs] -->
                           <% end %><!-- end of docs[:doc] -->
                         </div>
                       <% end %><!-- end of if doc[:docs] -->
