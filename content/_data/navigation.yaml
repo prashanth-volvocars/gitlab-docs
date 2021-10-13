@@ -1831,6 +1831,8 @@ sections:
                 doc_url: 'ee/administration/monitoring/performance/performance_bar.html'
               - doc_title: Performance monitoring
                 doc_url: 'ee/administration/monitoring/performance/'
+              - doc_title: Puma exporter
+                doc_url: 'ee/administration/monitoring/prometheus/puma_exporter.html'
               - doc_title: Redis exporter
                 doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
               - doc_title: Registry exporter
