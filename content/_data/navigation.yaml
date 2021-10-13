@@ -2591,10 +2591,10 @@ sections:
             doc_url: 'ee/development/i18n/proofreader.html'
           - doc_title: Merging
             doc_url: 'ee/development/i18n/merging_translations.html'
-      - category_title: Snowplow guide
+      - category_title: Snowplow
         category_url: 'ee/development/snowplow/'
         docs:
-          - doc_title: Implementation
+          - doc_title: Implement Snowplow
             doc_url: 'ee/development/snowplow/implementation.html'
           - doc_title: Schemas
             doc_url: 'ee/development/snowplow/schemas.html'
