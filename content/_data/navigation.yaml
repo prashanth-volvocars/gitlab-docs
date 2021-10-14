@@ -2326,8 +2326,6 @@ sections:
             doc_url: 'ee/development/fe_guide/design_patterns.html'
           - doc_title: Development process
             doc_url: 'ee/development/fe_guide/development_process.html'
-          - doc_title: Editor Lite
-            doc_url: 'ee/development/fe_guide/editor_lite.html'
           - doc_title: Event tracking
             doc_url: 'ee/development/fe_guide/event_tracking.html'
           - doc_title: Emojis
