@@ -1,4 +1,4 @@
-image: registry.gitlab.com/gitlab-org/gitlab-docs/lint:latest
+image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.14-ruby-2.7.4-8d8b30eb
 
 ports:
   - port: 3004
