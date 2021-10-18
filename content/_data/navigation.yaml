@@ -1925,7 +1925,7 @@ sections:
             doc_url: 'ee/api/experiments.html'
           - doc_title: External status checks
             doc_url: 'ee/api/status_checks.html'
-          - doc_title: Features flags
+          - doc_title: Feature flags
             doc_url: 'ee/api/feature_flags.html'
           - doc_title: Feature flag user lists
             doc_url: 'ee/api/feature_flag_user_lists.html'
