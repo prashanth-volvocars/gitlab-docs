@@ -1,3 +1,5 @@
+image: registry.gitlab.com/gitlab-org/gitlab-development-kit/gitpod-workspace:stable
+
 ports:
   - port: 3004
     onOpen: open-browser
