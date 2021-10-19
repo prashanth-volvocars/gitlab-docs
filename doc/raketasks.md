@@ -28,9 +28,23 @@ The `docs:clean_redirects` rake task automates the removal of the expired redire
 which is part of the monthly [scheduled TW tasks](https://about.gitlab.com/handbook/engineering/ux/technical-writing/#regularly-scheduled-tasks)
 as seen in the "Local tasks" section of the [issue template](https://gitlab.com/gitlab-org/technical-writing/-/blob/main/.gitlab/issue_templates/tw-monthly-tasks.md):
 
-```shell
-bundle exec rake docs:clean_redirects
-```
+1. Make sure you have `jq` installed. On macOS:
+   - Use `brew list` and see if `jq` is in the list.
+   - If it is not installed, run `brew install jq`.
+
+1. Optional. Run the rake task locally in your `gitlab-docs` directory in a "dry run" mode
+   that does not create any MRs:
+
+   ```shell
+   SKIP_MR=true bundle exec rake docs:clean_redirects
+   ```
+
+1. Run the rake task locally in your `gitlab-docs` directory. This command creates up to five
+   merge requests:
+
+   ```shell
+   bundle exec rake docs:clean_redirects
+   ```
 
 The task:
 
