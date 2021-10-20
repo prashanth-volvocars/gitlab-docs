@@ -499,6 +499,8 @@ sections:
         category_url: 'ee/integration/sourcegraph.html'
       - category_title: Trello
         category_url: 'ee/integration/trello_power_up.html'
+      - category_title: Visual Studio Code extension
+        category_url: 'ee/user/project/repository/vscode.html'
 
   # ADMINISTRATION
 
