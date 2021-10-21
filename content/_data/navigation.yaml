@@ -1733,18 +1733,18 @@ sections:
                 doc_url: 'ee/user/clusters/agent/'
                 docs:
                   - doc_title: Install the Agent
-                  - doc_url: 'ee/user/clusters/agent/install/'
+                    doc_url: 'ee/user/clusters/agent/install/'
                   - doc_title: Configure the Agent
-                  - doc_url: 'ee/user/clusters/agent/repository.html'
+                    doc_url: 'ee/user/clusters/agent/repository.html'
                   - doc_title: Manage with Inventory Objects
-                  - doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
+                    doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
                   - doc_title: Deploy with the CI/CD Tunnel
-                  - doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
+                    doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
                   - doc_title: Manage cluster applications
-                  - doc_url: 'ee/user/clusters/management_project.html'
+                    doc_url: 'ee/user/clusters/management_project.html'
                     docs:
                       - doc_title: Cluster Management Project template
-                      - doc_url: 'ee/user/clusters/management_project_template.html'
+                        doc_url: 'ee/user/clusters/management_project_template.html'
                       - doc_title: Migrate to Cluster Management Project
                       - doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
               - doc_title: Certificate-based clusters (deprecated)
