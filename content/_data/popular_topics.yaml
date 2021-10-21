@@ -19,6 +19,10 @@ topics:
     description: Configure GitLab CI/CD in the .gitlab-ci.yml file
     icon: rocket
     url: /ee/ci/yaml/index.html
+  - title: Visual Studio Code extension
+    description: |
+      Perform more of your day-to-day tasks from within VS Code
+    url: ee/user/project/repository/vscode.html
   - title: Database settings
     description: Configure database settings for your Omnibus GitLab self-managed instance
     icon: table
