@@ -1746,7 +1746,7 @@ sections:
                       - doc_title: Cluster Management Project template
                         doc_url: 'ee/user/clusters/management_project_template.html'
                       - doc_title: Migrate to Cluster Management Project
-                      - doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
+                        doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
               - doc_title: Certificate-based clusters (deprecated)
                 doc_url: 'ee/user/clusters/management_project_template.html'
                 docs:
