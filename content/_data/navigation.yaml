@@ -1729,43 +1729,58 @@ sections:
           - doc_title: Kubernetes clusters
             doc_url: 'ee/user/infrastructure/clusters/'
             docs:
-              - doc_title: Connect your clusters
-                doc_url: 'ee/user/infrastructure/clusters/connect/'
+              - doc_title: Kubernetes Agent (recommended)
+                doc_url: 'ee/user/clusters/agent/'
                 docs:
-                  - doc_title: Kubernetes Agent
-                    doc_url: 'ee/user/clusters/agent/'
-              - doc_title: Cluster Management Project
-                doc_url: 'ee/user/clusters/management_project.html'
-                docs:
-                  - doc_title: Cluster Management Project Template
-                    doc_url: 'ee/user/clusters/management_project_template.html'
-                  - doc_title: Migrate to Cluster Management Project
-                    doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
-              - doc_title: Cluster environments
-                doc_url: 'ee/user/clusters/environments.html'
-              - doc_title: Cluster integrations
-                doc_url: 'ee/user/clusters/integrations.html'
-              - doc_title: Cluster cost management
-                doc_url: 'ee/user/clusters/cost_management.html'
-              - doc_title: Canary deployments
-                doc_url: 'ee/user/project/canary_deployments.html'
-              - doc_title: Deploy boards
-                doc_url: 'ee/user/project/deploy_boards.html'
-              - doc_title: Pod logs
-                doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
-              - doc_title: Secure cluster applications
-                doc_url: 'ee/user/project/clusters/protect/'
-                docs:
-                  - doc_title: Container Network Security
-                    doc_url: 'ee/user/project/clusters/protect/container_network_security/'
+                  - doc_title: Install the Agent
+                  - doc_url: 'ee/user/clusters/agent/install/'
+                  - doc_title: Configure the Agent
+                  - doc_url: 'ee/user/clusters/agent/repository.html'
+                  - doc_title: Manage with Inventory Objects
+                  - doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
+                  - doc_title: Deploy with the CI/CD Tunnel
+                  - doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
+                  - doc_title: Manage cluster applications
+                  - doc_url: 'ee/user/clusters/management_project.html'
                     docs:
-                      - doc_title: Get started with Container Network Security
-                        doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
-                  - doc_title: Container Host Security
-                    doc_url: 'ee/user/project/clusters/protect/container_host_security/'
+                      - doc_title: Cluster Management Project template
+                      - doc_url: 'ee/user/clusters/management_project_template.html'
+                      - doc_title: Migrate to Cluster Management Project
+                      - doc_url: 'ee/user/clusters/migrating_from_gma_to_project_template.html'
+              - doc_title: Certificate-based clusters (deprecated)
+                doc_url: 'ee/user/clusters/management_project_template.html'
+                docs:
+                  - doc_title: Create a new cluster
+                  - doc_url: 'ee/user/project/clusters/add_remove_clusters.html'
+                  - doc_title: Connect an existing cluster
+                  - doc_url: 'ee/user/project/clusters/add_existing_cluster.html'
+                  - doc_title: Access controls
+                  - doc_url: 'ee/user/project/clusters/cluster_access.html'
+                  - doc_title: GitLab-Managed Clusters
+                  - doc_url: 'ee/user/project/clusters/gitlab_managed_clusters.html'
+                  - doc_title: GitLab Managed Apps
+                  - doc_url: 'ee/user/clusters/applications.html'
+                  - doc_title: Cluster third-party integrations
+                  - doc_url: 'ee/user/clusters/integrations.html'
+                  - doc_title: Cost management
+                  - doc_url: 'ee/user/clusters/cost_management.html'
+                  - doc_title: CI/CD environments
+                  - doc_url: 'ee/user/clusters/environments.html'
+                  - doc_title: Canary deployments
+                  - doc_url: 'ee/user/project/canary_deployments.html'
+                  - doc_title: Serverless
+                  - doc_url: '/ee/user/project/clusters/serverless/'
+                  - doc_title: Deploy Boards
+                  - doc_url: 'ee/user/project/deploy_boards.html'
+                  - doc_title: Pod logs
+                  - doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
+                  - doc_title: Secure cluster applications
+                    doc_url: 'ee/user/project/clusters/protect/'
                     docs:
-                      - doc_title: Get started with Container Host Security
-                        doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
+                      - doc_title: Container Network Security
+                        doc_url: 'ee/user/project/clusters/protect/container_network_security/'
+                      - doc_title: Container Host Security
+                        doc_url: 'ee/user/project/clusters/protect/container_host_security/'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
       - category_title: Analyze GitLab usage
