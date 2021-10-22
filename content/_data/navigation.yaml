@@ -1144,6 +1144,9 @@ sections:
             doc_url: 'ee/user/project/time_tracking.html'
           - doc_title: Wikis
             doc_url: 'ee/user/project/wiki/'
+            docs:
+              - doc_title: Group wikis
+                doc_url: 'ee/user/project/wiki/group.html'
           - doc_title: Keyboard shortcuts
             doc_url: 'ee/user/shortcuts.html'
           - doc_title: Quick actions
