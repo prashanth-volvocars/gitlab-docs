@@ -668,6 +668,8 @@ sections:
             doc_url: 'ee/administration/file_hooks.html'
           - doc_title: Git protocol v2
             doc_url: 'ee/administration/git_protocol.html'
+          - doc_title: Instance limits
+            doc_url: 'ee/administration/instance_limits.html'
           - doc_title: Instance Review
             doc_url: 'ee/administration/instance_review.html'
           - doc_title: PostgreSQL
