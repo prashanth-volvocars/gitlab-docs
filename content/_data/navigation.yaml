@@ -96,6 +96,8 @@ sections:
                     doc_url: 'omnibus/roles/'
                   - doc_title: LDAP
                     doc_url: 'ee/administration/auth/ldap/'
+                  - doc_title: LDAP synchronization
+                    doc_url: 'ee/administration/auth/ldap/ldap_synchronization.html'
                   - doc_title: Logs
                     doc_url: 'omnibus/settings/logs.html'
                   - doc_title: NGINX
