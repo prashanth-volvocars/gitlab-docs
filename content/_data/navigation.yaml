@@ -1770,13 +1770,6 @@ sections:
                     doc_url: 'ee/user/project/deploy_boards.html'
                   - doc_title: (DEPRECATED) Pod logs
                     doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
-                  - doc_title: (DEPRECATED) Secure cluster applications
-                    doc_url: 'ee/user/project/clusters/protect/'
-                    docs:
-                      - doc_title: (DEPRECATED) Container Network Security
-                        doc_url: 'ee/user/project/clusters/protect/container_network_security/'
-                      - doc_title: (DEPRECATED) Container Host Security
-                        doc_url: 'ee/user/project/clusters/protect/container_host_security/'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
       - category_title: Analyze GitLab usage
