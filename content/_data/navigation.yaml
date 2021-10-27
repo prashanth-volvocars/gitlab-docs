@@ -1200,6 +1200,24 @@ sections:
               - doc_title: Push options
                 doc_url: 'ee/user/project/push_options.html'
 
+      - category_title: Auto DevOps
+        category_url: 'ee/topics/autodevops/'
+        docs:
+          - doc_title: Get started
+            doc_url: 'ee/topics/autodevops/quick_start_guide.html'
+          - doc_title: Requirements
+            doc_url: 'ee/topics/autodevops/requirements.html'
+          - doc_title: Stages
+            doc_url: 'ee/topics/autodevops/stages.html'
+          - doc_title: Customize
+            doc_url: 'ee/topics/autodevops/customize.html'
+          - doc_title: Upgrade PostgreSQL
+            doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
+          - doc_title: Upgrade Auto Deploy dependencies
+            doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/topics/autodevops/troubleshooting.html'
+
       - category_title: Build your application
         category_url: 'ee/topics/build_your_application.html'
         docs:
@@ -1418,23 +1436,6 @@ sections:
                     doc_url: 'ee/ci/services/redis.html'
                   - doc_title: GitLab as a service
                     doc_url: 'ee/ci/services/gitlab.html'
-              - doc_title: Auto DevOps
-                doc_url: 'ee/topics/autodevops/'
-                docs:
-                  - doc_title: Get started
-                    doc_url: 'ee/topics/autodevops/quick_start_guide.html'
-                  - doc_title: Requirements
-                    doc_url: 'ee/topics/autodevops/requirements.html'
-                  - doc_title: Stages
-                    doc_url: 'ee/topics/autodevops/stages.html'
-                  - doc_title: Customize
-                    doc_url: 'ee/topics/autodevops/customize.html'
-                  - doc_title: Upgrade PostgreSQL
-                    doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
-                  - doc_title: Upgrade Auto Deploy dependencies
-                    doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
-                  - doc_title: Troubleshooting
-                    doc_url: 'ee/topics/autodevops/troubleshooting.html'
               - doc_title: Testing
                 doc_url: 'ee/ci/unit_test_reports.html'
                 docs:
