@@ -208,7 +208,7 @@ sections:
                       - doc_title: Sidekiq chart
                         doc_url: 'charts/charts/gitlab/sidekiq/'
                       - doc_title: Task Runner chart
-                        doc_url: 'charts/charts/gitlab/task-runner/'
+                        doc_url: 'charts/charts/gitlab/toolbox/'
                       - doc_title: Webservice chart
                         doc_url: 'charts/charts/gitlab/webservice/'
                   - doc_title: Minio chart
