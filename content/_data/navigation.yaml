@@ -2465,6 +2465,11 @@ sections:
         category_url: 'ee/development/real_time.html'
       - category_title: Secure partner onboarding process
         category_url: 'ee/development/integrations/secure_partner_integration.html'
+      - category_title: Spam protection and CAPTCHA
+        category_url: 'ee/development/spam_protection_and_captcha/'
+        docs:
+          - doc_title: Spam protection and CAPTCHA development guide
+            doc_url: 'ee/development/spam_protection_and_captcha/spam_protection_and_captcha_development_guide.html'
       - category_title: Testing standards and styles
         category_url: 'ee/development/testing_guide/'
         docs:
