@@ -2644,4 +2644,6 @@ sections:
         category_url: 'ee/development/work_items.html'
       - category_title: Working with Prometheus metrics
         category_url: 'ee/development/prometheus_metrics.html'
+      - category_title: Workspaces
+        category_url: 'ee/development/workspaces/'
 # End of development documentation
