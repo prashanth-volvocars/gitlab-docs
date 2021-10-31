@@ -124,43 +124,111 @@ To create the release merge request for the release:
 ## Update dropdown for online versions
 
 To update `content/_data/versions.yaml` for all online versions (stable branches `X.Y` of the
-`gitlab-docs` project). For example:
+`gitlab-docs` project).
 
-- The merge request to [update the 13.9 version dropdown menu for the 13.9 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1556).
-- The merge request to [update the 13.8 version dropdown menu for the 13.9 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1557).
-- The merge request to [update the 13.7 version dropdown menu for the 13.9 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1558).
+### Update dropdowns for the current major version
 
-1. Run the Rake task that creates all of the necessary merge requests to update the dropdowns. For
-   example, for the 13.9 release:
+1. Run the Rake task that creates the merge requests to update the dropdowns for the current major version. For
+   example, for the 14.4 release:
 
    ```shell
-   git checkout release-13-9
+   git checkout release-14-4
    ./bin/rake release:dropdowns
    ```
 
-1. [Visit the merge requests page](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?label_name%5B%5D=release)
-   to check that their pipelines pass. Set each merge request to _draft_ status.
+   For the 14.4 release, the task created the following three merge
+   requests:
 
-Do not merge these merge requests yet.
+   - [Update the 14.4 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2212).
+   - [Update the 14.3 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2213).
+   - [Update the 14.2 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2214).
+
+1. [Visit the merge requests page](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?label_name%5B%5D=release)
+   to check that their pipelines pass. Set each merge request to _draft_ status and do not merge them yet.
+
+### Update dropdowns for the previous major versions
+
+The previous major versions are listed under the current versions in the docs:
+
+![Previous major dropdowns](img/previous_major_dropdowns.png)
+
+The process to update the dropdowns for the previous major versions is not automated,
+so you must create the merge requests manually.
+For simplicity, these steps assume you are updating the 13.12 and 12.10 dropdowns.
+The steps should be updated when we move to the next major release (15.0).
+
+1. Create a branch off the stable branch for 13.12.
+   Use `update-13.12-for-release-<new-version>` for the branch name. For example:
+
+   ```shell
+   git checkout -b update-13.12-for-release-14.4 origin/13.12
+   ```
+
+1. Edit `content/_data/versions.yaml` and update the list of versions to reflect the new release:
+
+   - Add the latest version to the `online:` section.
+   - Remove the oldest version in `online:`. There should now be three
+     versions in `online:`.
+
+1. Commit and push. For example, for the 14.4 release:
+
+   ```shell
+   git add content/_data/versions.yaml
+   git commit -m "Update dropdown to 14.4"
+   git push origin update-13.12-for-release-14.4
+   ```
+
+1. Create the merge request:
+   - For the target branch, select the previous version's stable branch, in this case, `13.12` (do not select `main`!)
+   - Add the `~Technical Writing` and `~release` labels.
+   - Set the merge request to _draft_ status.
+   - [Example merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2219) for the 14.4 release.
+
+1. Create a branch off the stable branch for 12.10.
+   Use `update-12.10-for-release-<new-version>` for the branch name. For example:
+
+   ```shell
+   git checkout -b update-12.10-for-release-14.4 origin/12.10
+   ```
+
+1. Edit `content/_data/versions.yaml` and update the list of versions to reflect the new release:
+
+   - Add the latest version to the `online:` section.
+   - Remove the oldest **current** version from `online:`.
+
+1. Commit and push. For example, for the 14.4 release:
+
+   ```shell
+   git add content/_data/versions.yaml
+   git commit -m "Update dropdown to 14.4"
+   git push origin update-12.10-for-release-14.4
+   ```
+
+1. Create the merge request:
+   - For the target branch, select the previous version's stable branch, in this case, `12.10` (do not select `main`!)
+   - Add the `~Technical Writing` and `~release` labels.
+   - Set the merge request to _draft_ status.
+   - [Example merge request](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2220) for the 14.4 release.
+
+1. [Visit the merge requests page](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?label_name%5B%5D=release)
+   to check that their pipelines pass. Do not merge them yet.
 
 ## Merge merge requests and run Docker image builds
 
 The merge requests for the dropdowns should now all be merged into their respective stable branches.
-Each merge triggers a new pipeline for each stable branch. Wait for the stable branch pipelines to
-complete, then:
 
 1. Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines)
    and make sure all stable branches have green pipelines.
-1. After all the pipelines succeed:
-   1. Merge all of the [dropdown merge requests](#update-dropdown-for-online-versions).
-   1. Merge the [release merge request](#create-release-merge-request).
-1. Finally, run the
-   [`Build docker images weekly` pipeline](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
-   that builds the `:latest` Docker image.
-
-1. Go to the [CI/CD Schedules pipelines tab](https://gitlab.com/gitlab-org/gitlab-docs/-/pipeline_schedules) and view the latest **Build docker images weekly** job. Run the **image:docs-latest** job.
-
-As the last step in the scheduled pipeline, the documentation site deploys with all new versions.
+1. Merge all of the [dropdown merge requests](#update-dropdown-for-online-versions).
+1. Merge the [release merge request](#create-release-merge-request).
+1. Each merge triggers a new pipeline for each stable branch.
+   Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines) and wait
+   for all the stable branch pipelines to complete.
+1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
+   and run the `Build docker images weekly` pipeline that builds the `:latest` Docker image.
+1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job.
+1. When the pipeline is complete, run the `Build docs.gitlab.com every 4 hours` scheduled pipeline to deploy all new versions to the public documentation site.
+   You don't need to run any jobs manually for this second pipeline.
 
 ## Post-deployment checklist
 
