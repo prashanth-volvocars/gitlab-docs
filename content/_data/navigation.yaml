@@ -1366,9 +1366,6 @@ sections:
                     doc_url: 'ee/ci/variables/predefined_variables.html'
                   - doc_title: Where variables can be used
                     doc_url: 'ee/ci/variables/where_variables_can_be_used.html'
-              - doc_title: Environments and deployments
-                doc_url: 'ee/ci/environments/'
-                docs:
                   - doc_title: Environments Dashboard
                     doc_url: 'ee/ci/environments/environments_dashboard.html'
                   - doc_title: Protected environments
@@ -1647,9 +1644,11 @@ sections:
           - doc_title: Secure and Protect Terminology
             doc_url: 'ee/user/application_security/terminology/'
 
-      - category_title: Release your application
+      - category_title: Deploy and release your application
         category_url: 'ee/topics/release_your_application.html'
         docs:
+          - doc_title: Environments and deployments
+            doc_url: 'ee/ci/environments/'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
           - doc_title: Feature flags
