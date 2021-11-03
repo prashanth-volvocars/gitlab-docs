@@ -47,6 +47,11 @@
           <main>
             <div class="row">
               <div class="col">
+                <%= render '/top-section.*' %>
+              </div>  
+            </div>
+            <div class="row">
+              <div class="col">
                 <div class="article-metadata">
                   <% if @item[:author] and @item[:author_gitlab] %>
                   Article written by <a href="https://gitlab.com/<%= @item[:author_gitlab] %>" target="_blank"><%= @item[:author] %></a>
