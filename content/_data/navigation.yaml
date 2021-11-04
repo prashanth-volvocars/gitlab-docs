@@ -1772,6 +1772,19 @@ sections:
                     doc_url: 'ee/user/project/deploy_boards.html'
                   - doc_title: (DEPRECATED) Pod logs
                     doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
+          - doc_title: Protect deployed applications
+            doc_url: 'ee/user/project/clusters/protect/'
+            docs:
+              - doc_title: Container Network Security
+                doc_url: 'ee/user/project/clusters/protect/container_network_security/'
+                docs:
+                  - doc_title: Getting started
+                    doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
+              - doc_title: Container Host Security
+                doc_url: 'ee/user/project/clusters/protect/container_host_security/'
+                docs:
+                  - doc_title: Getting started
+                    doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
           - doc_title: Runbooks
             doc_url: 'ee/user/project/clusters/runbooks/'
       - category_title: Analyze GitLab usage
