@@ -247,6 +247,8 @@ sections:
             doc_url: 'ee/install/docker.html'
           - doc_title: From source
             doc_url: 'ee/install/installation.html'
+          - doc_title: Troubleshooting
+            doc_url: 'ee/administration/troubleshooting/'
       - category_title: Cloud providers guides
         category_url: 'ee/install/#install-gitlab-on-cloud-providers'
         docs:
