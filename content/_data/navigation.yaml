@@ -1488,18 +1488,18 @@ sections:
           - doc_title: Runners
             doc_url: 'runner/'
             docs:
-              - doc_title: GitLab Build Cloud runners
+              - doc_title: GitLab Runner Cloud
                 doc_url: 'ee/ci/runners/'
                 docs:
                   - doc_title: Linux
-                    doc_url: 'ee/ci/runners/build_cloud/linux_build_cloud.html'
+                    doc_url: 'ee/ci/runners/runner_cloud/linux_runner_cloud.html'
                   - doc_title: macOS
-                    doc_url: 'ee/ci/runners/build_cloud/macos_build_cloud.html'
+                    doc_url: 'ee/ci/runners/runner_cloud/macos_runner_cloud.html'
                     docs:
                       - doc_title: VM instances for macOS
-                        doc_url: 'ee/ci/runners/build_cloud/macos/environment.html'
+                        doc_url: 'ee/ci/runners/runner_cloud/macos/environment.html'
                   - doc_title: Windows
-                    doc_url: 'ee/ci/runners/build_cloud/windows_build_cloud.html'
+                    doc_url: 'ee/ci/runners/runner_cloud/windows_runner_cloud.html'
               - doc_title: The scope of runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
@@ -1539,7 +1539,7 @@ sections:
               - doc_title: Secure runners
                 doc_url: 'runner/security/'
               - doc_title: Scale a fleet of runners
-                doc_url: 'runner/enterprise_guide/'
+                doc_url: 'runner/fleet_scaling/'
               - doc_title: Best practices for large repositories
                 doc_url: 'ee/ci/large_repositories/'
 
