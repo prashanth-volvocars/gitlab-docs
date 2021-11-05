@@ -1766,8 +1766,6 @@ sections:
                     doc_url: 'ee/user/clusters/cost_management.html'
                   - doc_title: (DEPRECATED) CI/CD environments
                     doc_url: 'ee/user/clusters/environments.html'
-                  - doc_title: (DEPRECATED) Canary deployments
-                    doc_url: 'ee/user/project/canary_deployments.html'
                   - doc_title: (DEPRECATED) Serverless
                     doc_url: '/ee/user/project/clusters/serverless/'
                   - doc_title: (DEPRECATED) Deploy Boards
