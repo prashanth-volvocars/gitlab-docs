@@ -2281,6 +2281,8 @@ sections:
             doc_url: 'ee/development/database/table_partitioning.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'ee/development/understanding_explain_plans.html'
+      - category_title: Deprecation guidelines
+        category_url: 'ee/development/deprecation_guidelines/'
       - category_title: Developer guide to logging
         category_url: 'ee/development/logging.html'
       - category_title: Development Rake tasks
