@@ -12,7 +12,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
-    "@gitlab/eslint-plugin": "^9.4.0",
+    "@gitlab/eslint-plugin": "^10.0.0",
     "@gitlab/stylelint-config": "^2.6.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
