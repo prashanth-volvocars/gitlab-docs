@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 @import 'variables';
@@ -185,7 +185,7 @@ version: 2
   }
 
   .last-updated {
-    color: $color-light-gray;
+    color: $gray-500;
     font-size: 13px;
     padding-bottom: 10px;
     text-align: right;

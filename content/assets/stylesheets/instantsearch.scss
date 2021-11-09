@@ -1,5 +1,5 @@
 ---
-version: 14
+version: 15
 ---
 
 @import 'variables';
@@ -36,7 +36,7 @@ $color12: rgba(32, 139, 196, 0.2); //link color lighter
 
 /* stylelint-disable-next-line selector-class-pattern */
 .ais-PoweredBy {
-  font-family: $sans-font-family;
+  font-family: $gl-regular-font;
   font-size: $body-font-size;
 
   svg {

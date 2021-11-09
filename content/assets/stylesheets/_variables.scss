@@ -3,7 +3,6 @@ version: 1
 ---
 
 // Fonts
-$sans-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 $body-font-size: 16px;
 
 // Heights
@@ -36,7 +35,6 @@ $gds-gray-800: #4f4f4f;
 $gds-gray-900: #2e2e2e;
 $gds-gray-950: #1f1f1f;
 $gds-black: #000;
-$gds-gray-1000: #666;
 
 // Blue palette
 $gds-blue-600: #1b69b6;
@@ -79,10 +77,8 @@ $toc-link-color: $global-nav-link-level2;
 
 /// Elements
 $h1-border-bottom: $gds-gray-700;
-$border-color: $gds-gray-200;
 
 // Pajama alerts
-
 $alert-note-bg: #fafafa;
 $alert-note-txt: $gds-black;
 $alert-note-border: #dbdbdb;
@@ -124,7 +120,7 @@ $gl-icon-sizes: 8 10 12 14 16 18 24 32 48 72;
 $code-color: rgb(31, 31, 31);
 $code-background-color: rgb(240, 240, 240);
 $alert-code-background-color: rgb(242, 242, 242);
-$accessible-code-color: rgb(210, 20, 115);
+$accessible-code-color: rgb(64, 64, 64);
 
 //copy button bg color == pre code color
 $pre-code-color: transparent;
@@ -162,14 +158,7 @@ $help-gray-200: #bfbfbf;
 $help-gray-900: #303030;
 
 // Other colors
-$hr-border-color: $border-color;
 $search-border: rgba(0, 0, 0, 0.25);
-
-// Colors
-$color-white: #fff;
-$color-gray: #777;
-$color-gray-medium: #ddd;
-$color-light-gray: rgb(117, 117, 117);
 
 // Social colors
 $youtube: #f00;
@@ -184,8 +173,6 @@ $bp-sm: 544px !default;
 $bp-md: 768px !default;
 $bp-lg: 992px !default;
 $bp-xl: 1200px !default;
-
-$measure: 48rem;
 
 // Colors
 $green-50: #ecf4ee !default;
@@ -279,11 +266,6 @@ $theme-indigo-950: #14143d !default;
 $badge-tier: $red-500;
 $badge-self-managed: $orange-500;
 $badge-saas: $orange-500;
-
-// Typography
-$font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !default;
-
-$font-size-sm: 0.875rem;
 
 // Gl Markdown
 

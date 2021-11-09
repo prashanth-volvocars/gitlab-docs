@@ -1,5 +1,5 @@
 ---
-version: 1
+version: 2
 ---
 
 @import 'variables';
@@ -21,11 +21,16 @@ body {
   display: flex;
   flex-flow: column;
   font-size: 1rem;
-  font-family: $font-sans-serif;
+  font-family: $gl-regular-font;
   line-height: 1.5;
   min-height: 100%;
   position: relative;
   -webkit-font-smoothing: antialiased;
+
+  code {
+    font-size: 0.875rem;
+    font-family: $gl-monospace-font;
+  }
 }
 
 // Fluid images by default
