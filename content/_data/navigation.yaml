@@ -1452,6 +1452,8 @@ sections:
                     doc_url: 'ee/ci/metrics_reports.html'
                   - doc_title: Test cases
                     doc_url: 'ee/ci/test_cases/'
+                  - doc_title: Test coverage visualization
+                    doc_url: 'ee/user/project/merge_requests/test_coverage_visualization.html'
               - doc_title: SSH keys
                 doc_url: 'ee/ci/ssh_keys/'
               - doc_title: External secrets
