@@ -1,5 +1,5 @@
 ---
-version: 123
+version: 124
 ---
 
 @import 'variables';
@@ -40,7 +40,7 @@ body {
   }
   .edit-on {
     text-align: center;
-    border-top: 1px solid $hr-border-color;
+    border-top: 1px solid $gds-gray-200;
     padding-top: 20px;
     margin-top: 15px;
     a {

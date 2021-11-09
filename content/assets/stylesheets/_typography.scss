@@ -1,5 +1,5 @@
 ---
-version: 11
+version: 12
 ---
 
 @import 'variables';
@@ -107,7 +107,7 @@ version: 11
     border-radius: 4px;
     line-height: 1;
     overflow-wrap: break-word;
-    padding: 2px 4px;
+    padding: 2px;
     transition: background-color 0.15s linear;
   }
 
@@ -201,6 +201,10 @@ version: 11
   .gl-h6 {
     @include gl-font-weight-bold;
     @include gl-mb-3;
+
+    code {
+      font-size: inherit;
+    }
   }
 
   h2,
