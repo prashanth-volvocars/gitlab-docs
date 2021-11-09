@@ -2495,7 +2495,7 @@ sections:
       - category_title: Import/Export
         category_url: 'ee/development/import_export.html'
       - category_title: Internal API
-        category_url: 'ee/development/internal_api.html'
+        category_url: 'ee/development/internal_api/'
       - category_title: Issuable-like Rails models utilities
         category_url: 'ee/development/issuable-like-models.html'
       - category_title: Issue types
