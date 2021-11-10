@@ -1400,6 +1400,8 @@ sections:
                     doc_url: 'ee/ci/pipeline_editor/'
                   - doc_title: Include examples
                     doc_url: 'ee/ci/yaml/includes.html'
+                  - doc_title: Workflow examples
+                    doc_url: 'ee/ci/yaml/workflow.html'
               - doc_title: Docker
                 doc_url: 'ee/ci/docker/'
                 docs:
