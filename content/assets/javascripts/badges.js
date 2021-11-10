@@ -1,5 +1,5 @@
 ---
-version: 6
+version: 7
 ---
 
 (function() {
@@ -123,7 +123,7 @@ version: 6
         'data-placement': 'top',
         'target': '_blank',
         title: title,
-        href: 'https://about.gitlab.com/pricing/'
+        href: 'https://about.gitlab.com/pricing/?glm_source=docs.gitlab.com&glm_content=badges-docs'
       });
       container.append($('<span>').append(badges));
 

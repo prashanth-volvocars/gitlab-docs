@@ -91,3 +91,14 @@ The links pointing to the files should be similar to:
 
 Nanoc then builds and renders those links correctly according with what's
 defined in [`Rules`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
+
+##  Adding query strings to CTAs headed to about.gitlab.com/pricing
+We've created [a Sisense dashboard that can only be seen by full-time team members](https://app.periscopedata.com/app/gitlab/950797/GitLab.com-SaaS-trials---no-SAFE-data) to track the number of SaaS free trials that start from docs. 
+
+If you would like to track that information, add the following parameters to the URL:
+1. `glm_source` is `docs.gitlab.com`
+1. `glm_content` set to anything that ends with `-docs`
+
+### Example: 
+
+`https://about.gitlab.com/pricing?=glm_source=docs.gitlab.com&glm_content=name-of-item-docs`
