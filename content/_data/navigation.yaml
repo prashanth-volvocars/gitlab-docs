@@ -1611,6 +1611,8 @@ sections:
             docs:
               - doc_title: SAST Analyzers
                 doc_url: 'ee/user/application_security/sast/analyzers.html'
+          - doc_title: Infrastructure as Code (IaC) Scanning
+            doc_url: 'ee/user/application_security/iac_scanning/'
           - doc_title: Secret Detection
             doc_url: 'ee/user/application_security/secret_detection/'
           - doc_title: Dynamic Application Security Testing (DAST)
