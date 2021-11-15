@@ -1392,8 +1392,8 @@ sections:
                 docs:
                   - doc_title: '.gitlab-ci.yml reference'
                     doc_url: 'ee/ci/yaml/'
-                  - doc_title: 'YAML-specific features'
-                    doc_url: 'ee/ci/yaml/yaml_specific_features.html'
+                  - doc_title: 'Optimize your YAML files'
+                    doc_url: 'ee/ci/yaml/yaml_optimization.html'
                   - doc_title: Validate syntax
                     doc_url: 'ee/ci/lint.html'
                   - doc_title: Pipeline Editor

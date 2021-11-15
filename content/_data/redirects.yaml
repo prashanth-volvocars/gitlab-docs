@@ -1641,3 +1641,6 @@ redirects:
   - from: /omnibus/gitlab-mattermost/README.html
     to: /omnibus/gitlab-mattermost/index.html
     remove_date: 2022-06-28
+  - from: /ee/ci/yaml/yaml_specific_features.html
+    to: /ee/ci/yaml/yaml_optimization.html
+    remove_date: 2022-06-29
