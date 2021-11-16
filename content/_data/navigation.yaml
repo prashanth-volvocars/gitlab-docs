@@ -2163,6 +2163,8 @@ sections:
             doc_url: 'ee/api/tags.html'
           - doc_title: To-Do lists
             doc_url: 'ee/api/todos.html'
+          - doc_title: Topics
+            doc_url: 'ee/api/topics.html'
           - doc_title: Service Data
             doc_url: 'ee/api/usage_data.html'
           - doc_title: Users
