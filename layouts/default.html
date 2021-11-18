@@ -47,7 +47,7 @@
           <main>
             <div class="row">
               <div class="col">
-                <%= render '/top-section.*' %>
+                <%= render '/trial-promo.*' %>
               </div>  
             </div>
             <div class="row">
@@ -76,7 +76,7 @@
                   <%= reading_time(item.raw_content.split.size) %> to read
                   <% end %>
                 </div>
-                <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage">
+                <div class="article-content js-article-content" role="main" itemscope itemprop="mainContentOfPage" data-maincontent>
                   <%= yield %>
                 </div>
               </div>
@@ -104,6 +104,7 @@
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <script type="application/javascript" src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
     <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
+    <script type="application/javascript" src="<%= @items['/assets/javascripts/trial-promo.*'].path %>"></script>
     <%= render '/docsearch.*' %>
     <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% if production? %>
