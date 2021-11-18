@@ -535,6 +535,8 @@ sections:
                 doc_url: 'ee/integration/bitbucket.html'
               - doc_title: CAS
                 doc_url: 'ee/integration/cas.html'
+              - doc_title: DingTalk
+                doc_url: 'ee/integration/ding_talk.html'
               - doc_title: Facebook
                 doc_url: 'ee/integration/facebook.html'
               - doc_title: Generic OAuth2
