@@ -1795,8 +1795,6 @@ sections:
                     doc_url: 'ee/user/clusters/environments.html'
                   - doc_title: 'Clusters health'
                     doc_url: 'ee/user/infrastructure/clusters/manage/clusters_health.html'
-                  - doc_title: Canary deployments
-                    doc_url: 'ee/user/project/canary_deployments.html'
                   - doc_title: 'Crossplane integration'
                     doc_url: 'ee/user/clusters/crossplane.html'
                   - doc_title: Serverless
