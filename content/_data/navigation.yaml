@@ -71,8 +71,8 @@ sections:
                 docs:
                   - doc_title: Deprecation policy
                     doc_url: 'ee/administration/package_information/deprecation_policy.html'
-                  - doc_title: Deprecated OSes
-                    doc_url: 'ee/administration/package_information/deprecated_os.html'
+                  - doc_title: Supported OSes
+                    doc_url: 'ee/administration/package_information/supported_os.html'
                   - doc_title: Manual installation
                     doc_url: 'ee/update/package/#upgrade-using-a-manually-downloaded-package'
                   - doc_title: Install JiHu Edition
