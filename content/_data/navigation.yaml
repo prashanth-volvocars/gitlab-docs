@@ -1402,6 +1402,8 @@ sections:
                     doc_url: 'ee/ci/lint.html'
                   - doc_title: Pipeline Editor
                     doc_url: 'ee/ci/pipeline_editor/'
+                  - doc_title: Artifacts reports
+                    doc_url: 'ee/ci/yaml/artifacts_reports.html'
                   - doc_title: Include examples
                     doc_url: 'ee/ci/yaml/includes.html'
                   - doc_title: Workflow examples
