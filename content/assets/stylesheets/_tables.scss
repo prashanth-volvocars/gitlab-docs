@@ -1,5 +1,5 @@
 ---
-version: 5
+version: 6
 ---
 
 @import 'variables';
@@ -53,7 +53,7 @@ table {
     position: sticky;
     vertical-align: top;
     z-index: 1;
-    top: 0;
+    top: $header-height;
     box-shadow: 0 3px 0 0 var(--color-auto-gray-4);
     padding: 12px 8px;
     border: 0;
