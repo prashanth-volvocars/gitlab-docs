@@ -1,16 +1,18 @@
 ---
-version: 3
+version: 4
 ---
 
 function loadMermaidJsIfNeeded() {
-    if (document.querySelector('.mermaid') === null) {
-        return;
-    }
+  if (document.querySelector('.mermaid') === null) {
+      return;
+  }
 
-    var element = document.createElement("script");
-    element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.12.0/mermaid.min.js";
-    element.onload = function(){mermaid.init();};
-    document.body.appendChild(element);
+  var element = document.createElement("script");
+  element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.12.0/mermaid.min.js";
+  element.onload = function() {
+      mermaid.init();
+  };
+  document.body.appendChild(element);
 }
 
 if (window.addEventListener)
