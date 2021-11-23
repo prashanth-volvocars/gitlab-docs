@@ -946,7 +946,7 @@ sections:
             docs:
               - doc_title: Custom group-level project templates
                 doc_url: 'ee/user/group/custom_project_templates.html'
-              - doc_title: Group Import/Export
+              - doc_title: Group import/export
                 doc_url: 'ee/user/group/settings/import_export.html'
               - doc_title: Migrating groups
                 doc_url: 'ee/user/group/import/'
