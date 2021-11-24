@@ -1150,6 +1150,8 @@ sections:
             doc_url: 'ee/user/project/requirements/'
           - doc_title: Roadmaps
             doc_url: 'ee/user/group/roadmap/'
+          - doc_title: Planning hierarchies
+            doc_url: 'ee/user/group/planning_hierarchy/'
           - doc_title: Tasks
             doc_url: 'ee/user/tasks.html'
           - doc_title: Time tracking
