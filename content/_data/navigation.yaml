@@ -1102,7 +1102,7 @@ sections:
             doc_url: 'ee/user/project/issues/'
             docs:
               - doc_title: Manage issues
-                doc_url: 'ee/user/project/issues/issue_data_and_actions.html'
+                doc_url: 'ee/user/project/issues/managing_issues.html'
               - doc_title: Award emoji
                 doc_url: 'ee/user/award_emojis.html'
               - doc_title: Confidential issues
@@ -1119,12 +1119,12 @@ sections:
                 doc_url: 'ee/user/project/issues/due_dates.html'
               - doc_title: Issue Boards
                 doc_url: 'ee/user/project/issue_board.html'
-              - doc_title: Managing issues
-                doc_url: 'ee/user/project/issues/managing_issues.html'
               - doc_title: Multiple assignees
                 doc_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
               - doc_title: Linked issues
                 doc_url: 'ee/user/project/issues/related_issues.html'
+              - doc_title: Parts of an issue
+                doc_url: 'ee/user/project/issues/issue_data_and_actions.html'
               - doc_title: Service Desk
                 doc_url: 'ee/user/project/service_desk.html'
               - doc_title: Sorting and ordering issue lists
