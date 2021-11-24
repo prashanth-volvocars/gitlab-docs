@@ -1644,3 +1644,6 @@ redirects:
   - from: /ee/ci/yaml/yaml_specific_features.html
     to: /ee/ci/yaml/yaml_optimization.html
     remove_date: 2022-06-29
+  - from: /ee/administration/database_load_balancing.html
+    to: /ee/administration/postgresql/database_load_balancing.html
+    remove_date: 2022-02-16
