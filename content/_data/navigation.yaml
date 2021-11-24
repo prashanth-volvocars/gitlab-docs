@@ -1508,14 +1508,14 @@ sections:
                 doc_url: 'ee/ci/runners/'
                 docs:
                   - doc_title: Linux
-                    doc_url: 'ee/ci/runners/runner_cloud/linux_runner_cloud.html'
+                    doc_url: 'ee/ci/runners/saas/linux_saas_runner.html'
                   - doc_title: macOS
-                    doc_url: 'ee/ci/runners/runner_cloud/macos_runner_cloud.html'
+                    doc_url: 'ee/ci/runners/saas/macos_saas_runner.html'
                     docs:
                       - doc_title: VM instances for macOS
-                        doc_url: 'ee/ci/runners/runner_cloud/macos/environment.html'
+                        doc_url: 'ee/ci/runners/saas/macos/environment.html'
                   - doc_title: Windows
-                    doc_url: 'ee/ci/runners/runner_cloud/windows_runner_cloud.html'
+                    doc_url: 'ee/ci/runners/saas/windows_saas_runner.html'
               - doc_title: The scope of runners
                 doc_url: 'ee/ci/runners/runners_scope.html'
               - doc_title: Register a runner
