@@ -1632,6 +1632,9 @@ sections:
             docs:
               - doc_title: DAST browser-based crawler
                 doc_url: 'ee/user/application_security/dast/browser_based.html'
+                docs:
+                  - doc_title: Vulnerability checks
+                    doc_url: 'ee/user/application_security/dast/checks/'
               - doc_title: DAST API
                 doc_url: 'ee/user/application_security/dast_api/'
               - doc_title: DAST Troubleshooting
