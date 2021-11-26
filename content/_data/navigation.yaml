@@ -1139,6 +1139,13 @@ sections:
             doc_url: 'ee/user/project/labels.html'
           - doc_title: Comments and threads
             doc_url: 'ee/user/discussions/'
+          - doc_title: Customer relations (CRM)
+            doc_url: 'ee/user/crm/'
+            docs:
+              - doc_title: Contacts
+                doc_url: 'ee/user/crm/index.html#contacts'
+              - doc_title: Organizations
+                doc_url: 'ee/user/crm/index.html#organizations'
           - doc_title: Iterations
             doc_url: 'ee/user/group/iterations/'
           - doc_title: Milestones
