@@ -23,7 +23,7 @@
     "eslint": "^7.32.0",
     "glob": "^7.2.0",
     "jest": "^27.3.1",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "rollup": "^2.53.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@gitlab/svgs": "^1.221.0",
-    "@gitlab/ui": "^32.39.0",
+    "@gitlab/ui": "^32.41.0",
     "@tnir/instantsearch.js": "4.13.2-q.1",
     "algoliasearch": "4.11.0",
     "bootstrap": "^4.6.0",

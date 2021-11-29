@@ -1064,10 +1064,10 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-1.221.0.tgz#1804d181b09672d13005d49818eb2da040d67488"
   integrity sha512-Xn29eer39uVqeuefL/3hVuxo2tazHoEFIXC0F7DnESmBggrcjueNM2tuBUk40oaX6kCzM2Bn4Qn9ESIR+V0PgQ==
 
-"@gitlab/ui@^32.39.0":
-  version "32.39.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-32.39.0.tgz#81dd3fd730721e828f62f6aff0a3f41afc3ac309"
-  integrity sha512-SgbmTkjpMFoTGREkJM7D7/VnzQjdmAikF45pqQJVJWZtGSLAadIbuZQBFUYwa9SFC6BhXjeoSmyRxBr1sdB19A==
+"@gitlab/ui@^32.41.0":
+  version "32.41.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-32.41.0.tgz#d88f34c8ccf120d4834ab5eac8196469cabfbd34"
+  integrity sha512-WKLYLDwOj36nOpzFtFWN/ScTZfh9qX3on3qo1hEqakBHgUhZPCkUi/W2vp9S89RrBV9qSxgGzvj+d0iw50XXgQ==
   dependencies:
     "@babel/standalone" "^7.0.0"
     bootstrap-vue "2.20.1"
@@ -5280,10 +5280,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.4.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
-  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
+  integrity sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==
 
 pretty-format@^27.3.1:
   version "27.3.1"
