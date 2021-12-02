@@ -94,10 +94,6 @@ sections:
                     doc_url: 'omnibus/settings/grafana.html'
                   - doc_title: High availability roles
                     doc_url: 'omnibus/roles/'
-                  - doc_title: LDAP
-                    doc_url: 'ee/administration/auth/ldap/'
-                  - doc_title: LDAP synchronization
-                    doc_url: 'ee/administration/auth/ldap/ldap_synchronization.html'
                   - doc_title: Logs
                     doc_url: 'omnibus/settings/logs.html'
                   - doc_title: NGINX
@@ -553,10 +549,13 @@ sections:
                 doc_url: 'ee/integration/kerberos.html'
               - doc_title: LDAP
                 doc_url: 'ee/administration/auth/ldap/'
-              - doc_title: LDAP (Google Secure)
-                doc_url: 'ee/administration/auth/ldap/google_secure_ldap.html'
-              - doc_title: LDAP Troubleshooting
-                doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
+                docs:
+                  - doc_title: LDAP synchronization
+                    doc_url: 'ee/administration/auth/ldap/ldap_synchronization.html'
+                  - doc_title: LDAP (Google Secure)
+                    doc_url: 'ee/administration/auth/ldap/google_secure_ldap.html'
+                  - doc_title: LDAP troubleshooting
+                    doc_url: 'ee/administration/auth/ldap/ldap-troubleshooting.html'
               - doc_title: OAuth service provider
                 doc_url: 'ee/integration/oauth_provider.html'
               - doc_title: OmniAuth
