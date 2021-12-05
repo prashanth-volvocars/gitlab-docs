@@ -49,7 +49,7 @@ To minimize problems during the documentation release process, use the following
   1. [Update the three online versions](#update-dropdown-for-online-versions), so that they display the new release on their
      version dropdown menus.
 
-- On the 22nd of the month:
+- On the 22nd of the month, after the release post is live:
 
   [Merge the release merge requests and run the necessary Docker image builds](#merge-merge-requests-and-run-docker-image-builds).
 
@@ -77,16 +77,30 @@ For example, see [the 13.9 release pipeline](https://gitlab.com/gitlab-org/gitla
 
 If the pipeline fails, the new Docker image is not created and so not added to the registry.
 
-Optionally, you can test locally by:
+### Optional. Test locally
 
-1. Building the image and running it. For example, for GitLab 13.9 documentation:
+Prerequisite:
+
+- Install Docker. To verify, run `which docker`.
+
+1. Build the image and run it. For example, for GitLab 13.9 documentation:
 
    ```shell
    docker build -t docs:13.9 -f Dockerfile.13.9 .
    docker run -it --rm -p 4000:4000 docs:13.9
    ```
 
-1. Visiting `http://localhost:4000/13.9` to see if everything works correctly.
+   If you get a permission error, try running the commands prefixed with `sudo`.
+
+   If you're informed that the Docker daemon isn't running, start it manually:
+
+      - (MacOS) `dockerd` ([read more](https://docs.docker.com/config/daemon/#start-the-daemon-manually)).
+      - (Linux) `sudo systemctl start docker` ([read more](https://docs.docker.com/config/daemon/systemd/#start-manually)).
+
+1. Visit `http://localhost:4000/13.9` to see if everything works correctly.
+1. Stop the Docker container:
+   1. Identify the container's ID with `docker container ls`.
+   1. Run `docker stop <container ID>`.
 
 ## Create release merge request
 
@@ -214,6 +228,8 @@ The steps should be updated when we move to the next major release (15.0).
    to check that their pipelines pass. Do not merge them yet.
 
 ## Merge merge requests and run Docker image builds
+
+_Do this after the release post is live._
 
 The merge requests for the dropdowns should now all be merged into their respective stable branches.
 
