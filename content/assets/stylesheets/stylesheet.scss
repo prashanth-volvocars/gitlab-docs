@@ -1,5 +1,5 @@
 ---
-version: 124
+version: 125
 ---
 
 @import 'variables';
@@ -14,9 +14,9 @@ version: 124
 
 body {
   overflow-x: hidden;
-  >.wrapper {
+  > .wrapper {
     min-height: 100vh;
-    @media(max-width: $bp-md) {
+    @media (max-width: $bp-md) {
       flex-direction: column-reverse;
       background-color: $white;
     }
@@ -34,7 +34,7 @@ body {
   }
 
   &:not(.has-toc) {
-    >.doc-nav {
+    > .doc-nav {
       display: none;
     }
   }
@@ -151,7 +151,7 @@ ol {
       transform: rotate(-45deg) translateY(-4px);
     }
   }
-  @media(max-width: $bp-xl) {
+  @media (max-width: $bp-xl) {
     width: 0;
 
     .nav-toggle {
@@ -329,6 +329,10 @@ ol {
       min-width: 20rem;
       text-indent: 1.25rem;
       padding: 0 1rem;
+
+      @media all and (max-width: $bp-lg) {
+        min-width: 15rem;
+      }
 
       @media all and (max-width: $bp-sm) {
         min-width: 100%;
@@ -588,4 +592,3 @@ h6[id]::before {
     @include gl-line-height-24;
   }
 }
-
