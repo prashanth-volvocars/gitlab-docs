@@ -1,5 +1,5 @@
 ---
-version: 125
+version: 126
 ---
 
 @import 'variables';
@@ -317,6 +317,16 @@ ol {
     }
 
     .algolia-autocomplete {
+      width: 100%;
+
+      .ds-dropdown-menu {
+        @media all and (max-width: $bp-sm) {
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
+        }
+      }
+
       @media all and (max-width: $bp-lg) {
         width: 100%;
         margin: 0 2.5rem 0 0.5rem;
@@ -330,11 +340,11 @@ ol {
       text-indent: 1.25rem;
       padding: 0 1rem;
 
-      @media all and (max-width: $bp-lg) {
+      @media all and (max-width: $bp-xl) {
         min-width: 15rem;
       }
 
-      @media all and (max-width: $bp-sm) {
+      @media all and (max-width: $bp-lg) {
         min-width: 100%;
       }
     }
