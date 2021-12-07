@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import 'variables';
@@ -69,6 +69,18 @@ version: 7
       padding: 1.75rem 2.25rem 2.5rem;
     }
 
+    .algolia-autocomplete {
+      width: 100%;
+
+      .ds-dropdown-menu {
+        @media all and (max-width: $bp-sm) {
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
+        }
+      }
+    }
+
     .search {
       background: $gds-white;
       box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
@@ -93,10 +105,6 @@ version: 7
         @media (max-width: $bp-xs) {
           font-size: 2rem;
         }
-      }
-
-      .algolia-autocomplete {
-        width: 100%;
       }
 
       .search-icon {
