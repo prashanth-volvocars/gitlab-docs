@@ -462,3 +462,66 @@ redirects:
   - from: /ee/administration/database_load_balancing.html
     to: /ee/administration/postgresql/database_load_balancing.html
     remove_date: 2022-02-16
+  - from: /ee/intro/index.html
+    to: /ee/topics/use_gitlab.html
+    remove_date: 2022-09-08
+  - from: /ee/intro/
+    to: /ee/topics/use_gitlab.html
+    remove_date: 2022-09-08
+  - from: /ee/development/event_tracking/backend.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/event_tracking/index.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/event_tracking/
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/event_tracking/frontend.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/product_analytics/event_dictionary.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/product_analytics/index.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/product_analytics/
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/development/service_ping/dictionary.html
+    to: https://metrics.gitlab.com/index.html
+    remove_date: 2022-08-10
+  - from: /ee/development/usage_ping/dictionary.html
+    to: https://metrics.gitlab.com/index.html
+    remove_date: 2022-08-10
+  - from: /ee/development/fe_guide/event_tracking.html
+    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
+    remove_date: 2022-09-01
+  - from: /ee/user/admin_area/approving_users.html
+    to: /ee/user/admin_area/moderate_users.html
+    remove_date: 2022-07-20
+  - from: /ee/user/compliance/compliance_dashboard/index.html
+    to: /ee/user/compliance/compliance_report/index.html
+    remove_date: 2022-07-23
+  - from: /ee/user/compliance/compliance_dashboard/
+    to: /ee/user/compliance/compliance_report/index.html
+    remove_date: 2022-07-23
+  - from: /ee/user/infrastructure/mr_integration.html
+    to: /ee/user/infrastructure/iac/mr_integration.html
+    remove_date: 2022-08-26
+  - from: /ee/user/infrastructure/terraform_state.html
+    to: /ee/user/infrastructure/iac/terraform_state.html
+    remove_date: 2022-08-26
+  - from: /ee/api/services.html
+    to: /ee/api/integrations.html
+    remove_date: 2022-08-09
+  - from: /ee/administration/geo/replication/updating_the_geo_nodes.html
+    to: /ee/administration/geo/replication/updating_the_geo_sites.html
+    remove_date: 2022-08-23
+  - from: /omnibus/common_installation_problems/index.html
+    to: /omnibus/troubleshooting.html
+    remove_date: 2022-07-28
+  - from: /omnibus/common_installation_problems/
+    to: /omnibus/troubleshooting.html
+    remove_date: 2022-07-28
