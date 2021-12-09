@@ -37,7 +37,7 @@ variables:
   ALPINE_VERSION: '3.14'
   VALE_VERSION: '2.12.0'
   MARKDOWNLINT_VERSION: '0.29.0'
-  RUBY_VERSION: '2.7.4'
+  RUBY_VERSION: '2.7.5'
 
 #
 # Retry a job automatically if it fails (2 times)
