@@ -105,3 +105,83 @@ If you would like to track that information, add the following parameters to the
 ### Example: 
 
 `https://about.gitlab.com/pricing?=glm_source=docs.gitlab.com&glm_content=name-of-item-docs`
+
+## Add a new product
+
+To add a new product other than the main 4 (GitLab, Omnibus, Runner, Charts):
+
+1. Clone the repository at the same root level as the `gitlab-docs` repository:
+
+   ```shell
+   git clone https://gitlab.com/<repo>.git <product_name>
+   ```
+
+1. In [`nanoc.yaml`](./nanoc.yaml):
+
+   - Add an entry under `data_sources` similar to the other ones. For example:
+
+     ```yaml
+     -  # Documentation from https://gitlab.com/<repo>
+       type: filesystem
+       items_root: /<slug>/
+       content_dir: ../<product_name>/<doc_dir>
+       layouts_dir: null
+       encoding: utf-8
+       identifier_type: full
+     ```
+
+     Where:
+
+     - `items_root`: the subdirectory where the docs will be hosted. This will
+       end up being `https://docs.gitlab.com/<slug>`.
+     - `content_dir`: the relative path where the docs reside. Normally, this is
+       points to the repository you cloned in the first step.
+
+   - Add the product's details under the `products` key:
+
+     ```yaml
+     <product_name>:
+       slug: '<product_name_slug>'
+       repo: 'https://gitlab.com/<repo>.git'
+       project_dir: '../product_name'
+       content_dir: '../product_name/<doc_dir>'
+     ```
+
+     Where:
+
+     - `<product_name>`: this is used by other parts of code, for example
+       `lib/task_helpers.rb`.
+     - `slug`: used in the Rakefile. Usually the same as the product name.
+     - `project_dir`: the repository of the product, relative to the `gitlab-docs`
+        repo.
+     - `content_dir`: the product's documentation directory. This is the same
+       as the `content_dir` defined in `data_sources`.
+
+1. In [`lib/task_helpers.rb`](./lib/task_helpers.rb):
+
+   - Add the `<product_name>` under the `PRODUCTS` variable. For example:
+
+     ```ruby
+     PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
+     ```
+
+   - If the product has a different stable branch naming scheme than what is
+     already in this file, you need to add another
+     [when statement](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/lib/task_helpers.rb#L20-44)
+     that takes care of that.
+
+     Otherwise, if the product doesn't have a stable branch at all, you can omit
+     this and the default branch will be always pulled.
+
+1. In [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/.gitlab-ci.yml#L30-34),
+   set the default branch variable for the new product. For example:
+
+   ```yaml
+   variables:
+     BRANCH_PRODUCT: main
+   ```
+
+1. In [`Rakefile`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/Rakefile#L107-113),
+   add a line to replace the product's branch variable. If the product doesn't
+   follow a stable branch process yet, you can omit this step and the product's
+   default branch will be used.
