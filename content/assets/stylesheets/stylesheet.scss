@@ -486,6 +486,10 @@ ol {
   overflow: auto;
 }
 
+.mermaid:not([data-processed='true']) {
+  display: none;
+}
+
 .banner {
   z-index: 5;
   line-height: 2;
