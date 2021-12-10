@@ -158,13 +158,11 @@ To add an additional set of product documentation to docs.gitlab.com from a sepa
    PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
    ```
 
-   - If the product has a different stable branch naming scheme than what is
-     already in this file, you need to add another
-     [when statement](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/lib/task_helpers.rb#L20-44)
-     that takes care of that.
-
-     Otherwise, if the product doesn't have a stable branch at all, you can omit
-     this and the default branch will be always pulled.
+   If the product has a different stable branch naming scheme than what is
+   already in this file, you need to add another
+   [when statement](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/lib/task_helpers.rb#L20-44)
+   that takes care of that. Otherwise, if the product doesn't have a stable
+   branch at all, you can omit this and the default branch will be always pulled.
 
 1. Edit [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/.gitlab-ci.yml#L30-34) and set the default branch variable for the new product. For example:
 
