@@ -3,10 +3,24 @@ import NavigationToggle from './components/navigation_toggle.vue';
 import VersionBanner from './components/version_banner.vue';
 import { setupTableOfContents } from './setup_table_of_contents';
 
+function fixScrollPosition() {
+  if (!window.location.hash || !document.querySelector(window.location.hash)) return;
+  const contentBody = document.querySelector('.gl-docs main');
+
+  const scrollPositionMutationObserver = new ResizeObserver(() => {
+    document.scrollingElement.scrollTop =
+      document.querySelector(window.location.hash).getBoundingClientRect().top + window.scrollY;
+  });
+
+  scrollPositionMutationObserver.observe(contentBody);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const versionBanner = document.querySelector('#js-version-banner');
   const isOutdated = versionBanner.hasAttribute('data-is-outdated');
   const { latestVersionUrl, archivesUrl } = versionBanner.dataset;
+
+  fixScrollPosition();
 
   // eslint-disable-next-line no-new
   new Vue({
