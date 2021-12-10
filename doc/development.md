@@ -108,7 +108,7 @@ If you would like to track that information, add the following parameters to the
 
 ## Add a new product
 
-To add a new product other than the main 4 (GitLab, Omnibus, Runner, Charts):
+To add an additional set of product documentation to docs.gitlab.com from a separate GitLab repository (beyond any product documentation already added to the site):
 
 1. Clone the repository at the same root level as the `gitlab-docs` repository:
 
@@ -116,54 +116,47 @@ To add a new product other than the main 4 (GitLab, Omnibus, Runner, Charts):
    git clone https://gitlab.com/<repo>.git <product_name>
    ```
 
-1. In [`nanoc.yaml`](./nanoc.yaml):
+1. Edit [`nanoc.yaml`](./nanoc.yaml) and complete the following steps:
 
-   - Add an entry under `data_sources` similar to the other ones. For example:
+   1. Add an entry to `data_sources` similar to any other listed entries. For example:
 
-     ```yaml
-     -  # Documentation from https://gitlab.com/<repo>
-       type: filesystem
-       items_root: /<slug>/
-       content_dir: ../<product_name>/<doc_dir>
-       layouts_dir: null
-       encoding: utf-8
-       identifier_type: full
-     ```
+      ```yaml
+      -  # Documentation from https://gitlab.com/<repo>
+        type: filesystem
+        items_root: /<slug>/
+        content_dir: ../<product_name>/<doc_dir>
+        layouts_dir: null
+        encoding: utf-8
+        identifier_type: full
+      ```
 
-     Where:
+      Where:
 
-     - `items_root`: the subdirectory where the docs will be hosted. This will
-       end up being `https://docs.gitlab.com/<slug>`.
-     - `content_dir`: the relative path where the docs reside. Normally, this is
-       points to the repository you cloned in the first step.
+      - `items_root`: The subdirectory where the docs will be hosted. This will end up being `https://docs.gitlab.com/<slug>`.
+      - `content_dir`: The relative path where the docs reside. This normally points to the repository you cloned in the first step.
 
-   - Add the product's details under the `products` key:
+   1. Add the product's details under the `products` key:
 
-     ```yaml
-     <product_name>:
-       slug: '<product_name_slug>'
-       repo: 'https://gitlab.com/<repo>.git'
-       project_dir: '../product_name'
-       content_dir: '../product_name/<doc_dir>'
-     ```
+      ```yaml
+      <product_name>:
+        slug: '<product_name_slug>'
+        repo: 'https://gitlab.com/<repo>.git'
+        project_dir: '../product_name'
+        content_dir: '../product_name/<doc_dir>'
+      ```
 
-     Where:
+      Where:
 
-     - `<product_name>`: this is used by other parts of code, for example
-       `lib/task_helpers.rb`.
-     - `slug`: used in the Rakefile. Usually the same as the product name.
-     - `project_dir`: the repository of the product, relative to the `gitlab-docs`
-        repo.
-     - `content_dir`: the product's documentation directory. This is the same
-       as the `content_dir` defined in `data_sources`.
+      - `<product_name>`: Used by other parts of code (for example `lib/task_helpers.rb`).
+      - `slug`: Used in the Rakefile. Usually the same as the product name.
+      - `project_dir`: The repository of the product, relative to the `gitlab-docs` repository.
+      - `content_dir`: The product's documentation directory. This is the same as the `content_dir` defined in `data_sources`.
 
-1. In [`lib/task_helpers.rb`](./lib/task_helpers.rb):
+1. Edit [`lib/task_helpers.rb`](./lib/task_helpers.rb) and add the `<product_name>` to the `PRODUCTS` variable. For example:
 
-   - Add the `<product_name>` under the `PRODUCTS` variable. For example:
-
-     ```ruby
-     PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
-     ```
+   ```ruby
+   PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
+   ```
 
    - If the product has a different stable branch naming scheme than what is
      already in this file, you need to add another
@@ -173,15 +166,11 @@ To add a new product other than the main 4 (GitLab, Omnibus, Runner, Charts):
      Otherwise, if the product doesn't have a stable branch at all, you can omit
      this and the default branch will be always pulled.
 
-1. In [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/.gitlab-ci.yml#L30-34),
-   set the default branch variable for the new product. For example:
+1. Edit [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/.gitlab-ci.yml#L30-34) and set the default branch variable for the new product. For example:
 
    ```yaml
    variables:
      BRANCH_PRODUCT: main
    ```
 
-1. In [`Rakefile`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/Rakefile#L107-113),
-   add a line to replace the product's branch variable. If the product doesn't
-   follow a stable branch process yet, you can omit this step and the product's
-   default branch will be used.
+1. Edit the [`Rakefile`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/68814c875e322b1871d6368135af49794041ddd1/Rakefile#L107-113) and add a line to replace the product's branch variable. If the product doesn't have a stable branch process, omit this step to use the product's default branch.
