@@ -2158,8 +2158,6 @@ sections:
             doc_url: 'ee/api/scim.html'
           - doc_title: Search
             doc_url: 'ee/api/search.html'
-          - doc_title: Services
-            doc_url: 'ee/api/services.html'
           - doc_title: Settings (application)
             doc_url: 'ee/api/settings.html'
           - doc_title: Sidekiq metrics
@@ -2396,7 +2394,8 @@ sections:
           - doc_title: Development process
             doc_url: 'ee/development/fe_guide/development_process.html'
           - doc_title: Event tracking
-            doc_url: 'ee/development/fe_guide/event_tracking.html'
+            doc_url: 'https://about.gitlab.com/handbook/product/product-intelligence-guide/'
+            external_url: true
           - doc_title: Emojis
             doc_url: 'ee/development/fe_guide/emojis.html'
           - doc_title: Frontend FAQ
