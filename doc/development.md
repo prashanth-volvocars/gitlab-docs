@@ -108,6 +108,9 @@ If you would like to track that information, add the following parameters to the
 
 ## Add a new product
 
+NOTE:
+We encourage you to create an issue and connect with the Technical Writing team before you add a new product to the documentation site, as there may be planning information that the team can help with, including integrating any new content into the site's global navigation menu.
+
 To add an additional set of product documentation to <docs.gitlab.com> from a separate GitLab repository (beyond any product documentation already added to the site):
 
 1. Clone the repository at the same root level as the `gitlab-docs` repository:
