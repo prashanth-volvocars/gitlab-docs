@@ -108,7 +108,7 @@ If you would like to track that information, add the following parameters to the
 
 ## Add a new product
 
-To add an additional set of product documentation to docs.gitlab.com from a separate GitLab repository (beyond any product documentation already added to the site):
+To add an additional set of product documentation to <docs.gitlab.com> from a separate GitLab repository (beyond any product documentation already added to the site):
 
 1. Clone the repository at the same root level as the `gitlab-docs` repository:
 
@@ -116,9 +116,9 @@ To add an additional set of product documentation to docs.gitlab.com from a sepa
    git clone https://gitlab.com/<repo>.git <product_name>
    ```
 
-1. Edit [`nanoc.yaml`](./nanoc.yaml) and complete the following steps:
+1. Edit [`nanoc.yaml`](../nanoc.yaml) and complete the following steps:
 
-   1. Add an entry to `data_sources` similar to any other listed entries. For example:
+   1. Add an entry to `data_sources` similar to the other listed entries. For example:
 
       ```yaml
       -  # Documentation from https://gitlab.com/<repo>
@@ -152,7 +152,7 @@ To add an additional set of product documentation to docs.gitlab.com from a sepa
       - `project_dir`: The repository of the product, relative to the `gitlab-docs` repository.
       - `content_dir`: The product's documentation directory. This is the same as the `content_dir` defined in `data_sources`.
 
-1. Edit [`lib/task_helpers.rb`](./lib/task_helpers.rb) and add the `<product_name>` to the `PRODUCTS` variable. For example:
+1. Edit [`lib/task_helpers.rb`](../lib/task_helpers.rb) and add the `<product_name>` to the `PRODUCTS` variable. For example:
 
    ```ruby
    PRODUCTS = %w[ee omnibus runner charts <product_name>].freeze
