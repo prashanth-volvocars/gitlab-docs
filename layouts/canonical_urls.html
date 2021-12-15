@@ -5,36 +5,36 @@ We want to:
 - All index.html and README.html files stripped
 - Replace ce/ with ee/
 ------------------
-if the link ends with README.md or index.md
-  if the link starts with ce
-    replace it with ee and strip README.md or index.md
-  if the link doesn't start with ce
-    strip README.md or index.md
-if the link doesn't end with README.md or index.md
-  if the link starts with ce
-    replace it with ee
-  if the link doesn't start with ce
-    use its initial path
+if the link ends with 'README.md' or 'index.md'
+  strip 'README.md' or 'index.md'
+else if link is '/index.erb'
+  use a single '/'
+else
+  use the link and replace extension with '.html'
+
+if the link starts with 'ce'
+  replace it with 'ee'
+
+join indentifiers with '/' to form the canonical link
 <% end %>
+
 <% if production? %>
   <% if (@item.identifier =~ /(index|README)\.md$/) == 0 %>
-    <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
-      <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />
-      <meta property="og:url" content="<%= @config[:base_url] %>/ee/<%= @item.identifier.to_s.split('/')[2..-2].join('/') %><% unless @item.identifier.to_s.split('/')[2..-2].join('/').length == 0 %>/<% end %>" />
-    <% else %>
-      <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.to_s.split('/')[0..-2].join('/') %>/" />
-      <meta property="og:url" content="<%= @config[:base_url] %><%= @item.identifier.to_s.split('/')[0..-2].join('/') %>/" />
-    <% end %>
+    <% identifiers = @item.identifier.to_s.split('/') %>
+    <% identifiers[-1] = '' %>
+  <% elsif @item.identifier.to_s == '/index.erb' %>
+    <% identifiers = ['/'] %>
   <% else %>
-    <% if @item.identifier.to_s.split('/')[1] == 'ce' %>
-      <link rel="canonical" href="<%= @config[:base_url] %>/ee/<%= @item.identifier.without_ext.to_s.split('/')[2..-1].join('/') + '.html' %>" />
-      <meta property="og:url" content="<%= @config[:base_url] %>/ee/<%= @item.identifier.without_ext.to_s.split('/')[2..-1].join('/') + '.html' %>" />
-    <% elsif @item.identifier.to_s == '/index.erb' %>
-      <link rel="canonical" href="<%= @config[:base_url] %>/" />
-      <meta property="og:url" content="<%= @config[:base_url] %>/" />
-    <% else %>
-      <link rel="canonical" href="<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>" />
-      <meta property="og:url" content="<%= @config[:base_url] %><%= @item.identifier.without_ext + '.html' %>" />
-    <% end %>
+    <% identifiers = @item.identifier.without_ext.to_s.split('/') %>
+    <% identifiers[-1] = identifiers[-1] + '.html' %>
   <% end %>
+
+  <% if identifiers[1] == 'ce' %>
+    <% identifiers[1] = 'ee' %>
+  <% end %>
+
+  <% canonical_link = identifiers.join('/') %>
+
+  <link rel="canonical" href="<%= @config[:base_url] %><%= canonical_link %>" />
+  <meta property="og:url" content="<%= @config[:base_url] %><%= canonical_link %>" />
 <% end %>
