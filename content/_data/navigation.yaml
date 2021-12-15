@@ -2207,6 +2207,8 @@ sections:
             docs:
               - doc_title: Wikis (group)
                 doc_url: 'ee/api/group_wikis.html'
+      - category_title: OpenAPI
+        category_url: 'ee/api/openapi/openapi_interactive.html'
       - category_title: GraphQL
         category_url: 'ee/api/graphql/'
         docs:
