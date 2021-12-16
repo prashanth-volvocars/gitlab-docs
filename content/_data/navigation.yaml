@@ -2272,7 +2272,7 @@ sections:
       - category_title: CI/CD development
         category_url: 'ee/development/cicd/'
         docs:
-          - doc_title: CI/CD reference styleguide
+          - doc_title: CI/CD reference style guide
             doc_url: 'ee/development/cicd/cicd_reference_documentation_guide.html'
           - doc_title: CI/CD template development
             doc_url: 'ee/development/cicd/templates.html'
