@@ -454,6 +454,8 @@ sections:
             doc_url: 'ee/user/project/integrations/microsoft_teams.html'
           - doc_title: Mock CI
             doc_url: 'ee/user/project/integrations/mock_ci.html'
+          - doc_title: Pipeline status emails
+            doc_url: 'ee/user/project/integrations/pipeline_status_emails.html'
           - doc_title: Pivotal Tracker
             doc_url: 'ee/user/project/integrations/pivotal_tracker.html'
           - doc_title: Prometheus
