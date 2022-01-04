@@ -17,8 +17,9 @@ class IntroducedInFilter < Nanoc::Filter
       # - "removed <optional text> in"
       # - "renamed <optional text> in"
       # - "changed <optional text> in"
+      # - "enabled <optional text> in"
       # ...followed by "GitLab"
-      next if content !~ /(<a href="[^"]+">)?(introduced|(re)?moved|changed|deprecated|renamed|recommended)(<\/a>)?(.*)? (in|to).*GitLab/mi
+      next if content !~ /(<a href="[^"]+">)?(introduced|enabled|(re)?moved|changed|deprecated|renamed|recommended)(<\/a>)?(.*)? (in|to).*GitLab/mi
 
       new_content = generate(content)
       blockquote.replace(new_content)
