@@ -1482,6 +1482,11 @@ sections:
                 doc_url: 'ee/ci/ssh_keys/'
               - doc_title: External secrets
                 doc_url: 'ee/ci/secrets/'
+              - doc_title: Connect to cloud services
+                doc_url: 'ee/ci/cloud_services/'
+                docs:
+                  - doc_title: Configure OpenID Connect in AWS
+                    doc_url: 'ee/ci/cloud_services/aws/'
               - doc_title: ChatOps
                 doc_url: 'ee/ci/chatops/'
               - doc_title: External repository integrations
