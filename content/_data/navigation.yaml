@@ -2619,7 +2619,7 @@ sections:
 
       - category_title: Package development
         category_url: 'ee/development/packages.html'
-      - category_title: Permissions guide
+      - category_title: Permissions
         category_url: 'ee/development/permissions.html'
       - category_title: Real-time features
         category_url: 'ee/development/real_time.html'
