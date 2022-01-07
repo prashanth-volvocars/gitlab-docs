@@ -2114,7 +2114,7 @@ sections:
           - doc_title: Plan limits
             doc_url: 'ee/api/plan_limits.html'
           - doc_title: Project access tokens
-            doc_url: 'ee/api/resource_access_tokens.html'
+            doc_url: 'ee/api/project_access_tokens.html'
           - doc_title: Project aliases
             doc_url: 'ee/api/project_aliases.html'
           - doc_title: Project import/export
