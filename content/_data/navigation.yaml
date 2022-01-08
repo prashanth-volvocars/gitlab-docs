@@ -2013,6 +2013,8 @@ sections:
             doc_url: 'ee/api/pages.html'
           - doc_title: Go Proxy
             doc_url: 'ee/api/packages/go_proxy.html'
+          - doc_title: Group access tokens
+            doc_url: 'ee/api/group_access_tokens.html'
           - doc_title: Group activity analytics
             doc_url: 'ee/api/group_activity_analytics.html'
           - doc_title: Group Import/Export
