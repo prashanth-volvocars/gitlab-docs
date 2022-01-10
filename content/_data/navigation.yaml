@@ -2333,6 +2333,11 @@ sections:
             doc_url: 'ee/development/database/table_partitioning.html'
           - doc_title: Understanding EXPLAIN plans
             doc_url: 'ee/development/understanding_explain_plans.html'
+          - doc_title: Multiple databases
+            doc_url: 'ee/development/database/multiple_databases.html'
+            docs:
+              - doc_title: Loose Foreign Keys
+                doc_url: 'ee/development/database/loose_foreign_keys.html'
       - category_title: Deprecation guidelines
         category_url: 'ee/development/deprecation_guidelines/'
       - category_title: Developer guide to logging
