@@ -249,6 +249,9 @@ namespace :docs do
     # https://docs.gitlab.com/ee/development/contributing/style_guides.html#disable-lefthook-temporarily
     ENV['LEFTHOOK'] = '0'
 
+    # Check jq is available
+    abort("jq not found. Install jq and run task again.") if `command -v jq`.empty?
+
     puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
     system("git stash --quiet -u") if git_workdir_dirty?
     system("git checkout --quiet main")
