@@ -695,6 +695,7 @@ image:docs-latest:
 
 gemnasium-dependency_scanning:
   before_script: []
+  needs: []
   rules:
     - if: $DEPENDENCY_SCANNING_DISABLED
       when: never
@@ -715,6 +716,7 @@ gemnasium-dependency_scanning:
         - '{conan.lock,*/conan.lock,*/*/conan.lock}'
 
 gemnasium-maven-dependency_scanning:
+  needs: []
   before_script: []
   rules:
     - if: $DEPENDENCY_SCANNING_DISABLED
@@ -731,6 +733,7 @@ gemnasium-maven-dependency_scanning:
         - '{pom.xml,*/pom.xml,*/*/pom.xml}'
 
 gemnasium-python-dependency_scanning:
+  needs: []
   before_script: []
   rules:
     - if: $DEPENDENCY_SCANNING_DISABLED
@@ -754,6 +757,7 @@ gemnasium-python-dependency_scanning:
           $PIP_REQUIREMENTS_FILE
 
 bundler-audit-dependency_scanning:
+  needs: []
   before_script: []
   rules:
     - if: $DEPENDENCY_SCANNING_DISABLED
@@ -767,6 +771,7 @@ bundler-audit-dependency_scanning:
         - '{Gemfile.lock,*/Gemfile.lock,*/*/Gemfile.lock}'
 
 retire-js-dependency_scanning:
+  needs: []
   before_script: []
   rules:
     - if: $DEPENDENCY_SCANNING_DISABLED
