@@ -813,8 +813,6 @@ sections:
       - category_title: Maintain your installation
         category_url: 'ee/administration/operations/'
         docs:
-          - doc_title: Clean up Redis sessions
-            doc_url: 'ee/administration/operations/cleaning_up_redis_sessions.html'
           - doc_title: Housekeeping
             doc_url: 'ee/administration/housekeeping.html'
           - doc_title: Fast SSH key lookup
