@@ -525,3 +525,24 @@ redirects:
   - from: /omnibus/common_installation_problems/
     to: /omnibus/troubleshooting.html
     remove_date: 2022-07-28
+  - from: /ee/development/snowplow/dictionary.html
+    to: https://metrics.gitlab.com/snowplow.html
+    remove_date: 2022-09-28
+  - from: /ee/administration/operations/cleaning_up_redis_sessions.html
+    to: /ee/administration/operations/index.html
+    remove_date: 2022-09-10
+  - from: /omnibus/release.html
+    to: /omnibus/release/index.html
+    remove_date: 2022-09-29
+  - from: /omnibus/architecture/registry/index.html
+    to: /ee/administration/packages/container_registry.html
+    remove_date: 2022-09-16
+  - from: /omnibus/architecture/registry/
+    to: /ee/administration/packages/container_registry.html
+    remove_date: 2022-09-16
+  - from: /omnibus/gitlab-mattermost/index.html
+    to: /ee/integration/mattermost/
+    remove_date: 2022-09-16
+  - from: /omnibus/gitlab-mattermost/
+    to: /ee/integration/mattermost/
+    remove_date: 2022-09-16
