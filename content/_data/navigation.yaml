@@ -2254,7 +2254,8 @@ sections:
   - section_title: Contribute to GitLab development
     section_url: 'ee/development/'
     section_categories:
-      - category_title: Get started
+      # GitLab app development documentation
+      - category_title: Contribute to GitLab
         category_url: 'ee/development/contributing/'
         docs:
           - doc_title: Changelog entries
@@ -2274,301 +2275,365 @@ sections:
             doc_url: 'ee/development/code_review.html'
           - doc_title: Style guides
             doc_url: 'ee/development/contributing/style_guides.html'
-      - category_title: Approval rules development guide
-        category_url: 'ee/development/approval_rules.html'
-      - category_title: Architecture
-        category_url: 'ee/development/architecture.html'
-      - category_title: Audit Event development guide
-        category_url: 'ee/development/audit_event_guide/'
-      - category_title: CI/CD development
-        category_url: 'ee/development/cicd/'
-        docs:
+          - doc_title: Approval rules development guide
+            doc_url: 'ee/development/approval_rules.html'
+          - doc_title: Architecture
+            doc_url: 'ee/development/architecture.html'
+          - doc_title: Audit Event development guide
+            doc_url: 'ee/development/audit_event_guide/'
+          - doc_title: CI/CD development
+            doc_url: 'ee/development/cicd/'
           - doc_title: CI/CD reference style guide
             doc_url: 'ee/development/cicd/cicd_reference_documentation_guide.html'
           - doc_title: CI/CD template development
             doc_url: 'ee/development/cicd/templates.html'
           - doc_title: Auto DevOps development
             doc_url: 'ee/development/auto_devops.html'
-      - category_title: Code intelligence
-        category_url: 'ee/development/code_intelligence/'
-      - category_title: CodeSandbox development environment
-        category_url: 'ee/development/integrations/codesandbox.html'
-      - category_title: Danger bot
-        category_url: 'ee/development/dangerbot.html'
-      - category_title: Database development
-        category_url: 'ee/development/database/'
-        docs:
-          - doc_title: Avoiding downtime in migrations
-            doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
-          - doc_title: Background migrations
-            doc_url: 'ee/development/background_migrations.html'
-          - doc_title: Case study - filtering by label
-            doc_url: 'ee/development/filtering_by_label.html'
-          - doc_title: Case study - namespaces storage statistics
-            doc_url: 'ee/development/namespaces_storage_statistics.html'
-          - doc_title: Database review guidelines
-            doc_url: 'ee/development/database_review.html'
-          - doc_title: Delete existing migrations
-            doc_url: 'ee/development/deleting_migrations.html'
-          - doc_title: Migrations style guide
-            doc_url: 'ee/development/migration_style_guide.html'
-          - doc_title: Pagination guidelines
-            doc_url: 'ee/development/database/pagination_guidelines.html'
+          - doc_title: Code intelligence
+            doc_url: 'ee/development/code_intelligence/'
+          - doc_title: CodeSandbox development environment
+            doc_url: 'ee/development/integrations/codesandbox.html'
+          - doc_title: Danger bot
+            doc_url: 'ee/development/dangerbot.html'
+          - doc_title: Database development
+            doc_url: 'ee/development/database/'
             docs:
-              - doc_title: Pagination performance guidelines
-                doc_url: 'ee/development/database/pagination_performance_guidelines.html'
-              - doc_title: Keyset pagination
-                doc_url: 'ee/development/database/keyset_pagination.html'
-          - doc_title: Post-deployment migrations
-            doc_url: 'ee/development/post_deployment_migrations.html'
-          - doc_title: Query comments with Marginalia
-            doc_url: 'ee/development/database_query_comments.html'
-          - doc_title: SQL guidelines
-            doc_url: 'ee/development/sql.html'
-          - doc_title: Swapping tables
-            doc_url: 'ee/development/swapping_tables.html'
-          - doc_title: Table partitioning
-            doc_url: 'ee/development/database/table_partitioning.html'
-          - doc_title: Understanding EXPLAIN plans
-            doc_url: 'ee/development/understanding_explain_plans.html'
-          - doc_title: Multiple databases
-            doc_url: 'ee/development/database/multiple_databases.html'
+              - doc_title: Avoiding downtime in migrations
+                doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
+              - doc_title: Background migrations
+                doc_url: 'ee/development/background_migrations.html'
+              - doc_title: Case study - filtering by label
+                doc_url: 'ee/development/filtering_by_label.html'
+              - doc_title: Case study - namespaces storage statistics
+                doc_url: 'ee/development/namespaces_storage_statistics.html'
+              - doc_title: Database review guidelines
+                doc_url: 'ee/development/database_review.html'
+              - doc_title: Delete existing migrations
+                doc_url: 'ee/development/deleting_migrations.html'
+              - doc_title: Migrations style guide
+                doc_url: 'ee/development/migration_style_guide.html'
+              - doc_title: Pagination guidelines
+                doc_url: 'ee/development/database/pagination_guidelines.html'
+                docs:
+                  - doc_title: Pagination performance guidelines
+                    doc_url: 'ee/development/database/pagination_performance_guidelines.html'
+                  - doc_title: Keyset pagination
+                    doc_url: 'ee/development/database/keyset_pagination.html'
+              - doc_title: Post-deployment migrations
+                doc_url: 'ee/development/post_deployment_migrations.html'
+              - doc_title: Query comments with Marginalia
+                doc_url: 'ee/development/database_query_comments.html'
+              - doc_title: SQL guidelines
+                doc_url: 'ee/development/sql.html'
+              - doc_title: Swapping tables
+                doc_url: 'ee/development/swapping_tables.html'
+              - doc_title: Table partitioning
+                doc_url: 'ee/development/database/table_partitioning.html'
+              - doc_title: Understanding EXPLAIN plans
+                doc_url: 'ee/development/understanding_explain_plans.html'
+              - doc_title: Multiple databases
+                doc_url: 'ee/development/database/multiple_databases.html'
+                docs:
+                  - doc_title: Loose Foreign Keys
+                    doc_url: 'ee/development/database/loose_foreign_keys.html'
+              - doc_title: Deprecation guidelines
+                doc_url: 'ee/development/deprecation_guidelines/'
+          - doc_title: Developer guide to logging
+            doc_url: 'ee/development/logging.html'
+          - doc_title: Development Rake tasks
+            doc_url: 'ee/development/rake_tasks.html'
             docs:
-              - doc_title: Loose Foreign Keys
-                doc_url: 'ee/development/database/loose_foreign_keys.html'
-      - category_title: Deprecation guidelines
-        category_url: 'ee/development/deprecation_guidelines/'
-      - category_title: Developer guide to logging
-        category_url: 'ee/development/logging.html'
-      - category_title: Development Rake tasks
-        category_url: 'ee/development/rake_tasks.html'
-        docs:
-          - doc_title: Mass insert Rails models
-            doc_url: 'ee/development/mass_insert.html'
-      - category_title: Documentation
-        category_url: 'ee/development/documentation/'
-        docs:
-          - doc_title: Style guide
-            doc_url: 'ee/development/documentation/styleguide/'
-          - doc_title: GraphQL style guide
-            doc_url: 'ee/development/documentation/graphql_styleguide.html'
-          - doc_title: RESTful API style guide
-            doc_url: 'ee/development/documentation/restful_api_styleguide.html'
-          - doc_title: Recommended word list
-            doc_url: 'ee/development/documentation/styleguide/word_list.html'
-          - doc_title: Topic types
-            doc_url: 'ee/development/documentation/structure.html'
-          - doc_title: Process
-            doc_url: 'ee/development/documentation/workflow.html'
-          - doc_title: Testing
-            doc_url: 'ee/development/documentation/testing.html'
-          - doc_title: Site architecture
-            doc_url: 'ee/development/documentation/site_architecture/'
-          - doc_title: Global navigation
-            doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
-          - doc_title: Deployment process
-            doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
-          - doc_title: Documentation review apps
-            doc_url: 'ee/development/documentation/review_apps.html'
-          - doc_title: Redirects
-            doc_url: 'ee/development/documentation/redirects.html'
-      - category_title: Distributed tracing
-        category_url: 'ee/development/distributed_tracing.html'
-      - category_title: Experiments
-        category_url: 'ee/development/experiment_guide/'
-        docs:
-          - doc_title: Experimentation module
-            doc_url: 'ee/development/experiment_guide/experimentation.html'
-          - doc_title: GLEX
-            doc_url: 'ee/development/experiment_guide/gitlab_experiment.html'
-      - category_title: Feature flags for GitLab development
-        category_url: 'ee/development/feature_flags/'
-        docs:
-          - doc_title: Controlling feature flags
-            doc_url: 'ee/development/feature_flags/controls.html'
-          - doc_title: Documenting feature flags
-            doc_url: 'ee/development/documentation/feature_flags.html'
-      - category_title: Framework - DeclarativePolicy
-        category_url: 'ee/development/policies.html'
-      - category_title: Frontend development
-        category_url: 'ee/development/fe_guide/'
-        docs:
-          - doc_title: Accessibility
-            doc_url: 'ee/development/fe_guide/accessibility.html'
-          - doc_title: Architecture
-            doc_url: 'ee/development/fe_guide/architecture.html'
-          - doc_title: Axios
-            doc_url: 'ee/development/fe_guide/axios.html'
-          - doc_title: Content Editor
-            doc_url: 'ee/development/fe_guide/content_editor.html'
-          - doc_title: Dark mode
-            doc_url: 'ee/development/fe_guide/dark_mode.html'
-          - doc_title: Dependencies
-            doc_url: 'ee/development/fe_guide/dependencies.html'
-          - doc_title: Design anti-patterns
-            doc_url: 'ee/development/fe_guide/design_anti_patterns.html'
-          - doc_title: Design patterns
-            doc_url: 'ee/development/fe_guide/design_patterns.html'
-          - doc_title: Development process
-            doc_url: 'ee/development/fe_guide/development_process.html'
-          - doc_title: Event tracking
-            doc_url: 'https://about.gitlab.com/handbook/product/product-intelligence-guide/'
-            external_url: true
-          - doc_title: Emojis
-            doc_url: 'ee/development/fe_guide/emojis.html'
-          - doc_title: Frontend FAQ
-            doc_url: 'ee/development/fe_guide/frontend_faq.html'
-          - doc_title: GraphQL
-            doc_url: 'ee/development/fe_guide/graphql.html'
-          - doc_title: HAML
-            doc_url: 'ee/development/fe_guide/haml.html'
-          - doc_title: Icons and SVG illustrations
-            doc_url: 'ee/development/fe_guide/icons.html'
-          - doc_title: Keyboard shortcuts
-            doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
-          - doc_title: Logging
-            doc_url: 'ee/development/fe_guide/logging.html'
-          - doc_title: Merge request widget extensions
-            doc_url: 'ee/development/new_fe_guide/modules/widget_extensions.html'
-          - doc_title: Performance
-            doc_url: 'ee/development/fe_guide/performance.html'
-          - doc_title: Principles
-            doc_url: 'ee/development/fe_guide/principles.html'
-          - doc_title: Security
-            doc_url: 'ee/development/fe_guide/security.html'
-          - doc_title: Source editor
-            doc_url: 'ee/development/fe_guide/source_editor.html'
-          - doc_title: Tooling
-            doc_url: 'ee/development/fe_guide/tooling.html'
-          - doc_title: Troubleshooting
-            doc_url: 'ee/development/fe_guide/troubleshooting.html'
-          - doc_title: Vuex
-            doc_url: 'ee/development/fe_guide/vuex.html'
-          - doc_title: Vue
-            doc_url: 'ee/development/fe_guide/vue.html'
-          - doc_title: Vue 3 migration
-            doc_url: 'ee/development/fe_guide/vue3_migration.html'
-          - doc_title: Widgets
-            doc_url: 'ee/development/fe_guide/widgets.html'
-      - category_title: GitLab Pages development
-        category_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/pages.md'
-        external_url: true
-      - category_title: Geo development
-        category_url: 'ee/development/geo.html'
-        docs:
-          - doc_title: Geo framework
-            doc_url: 'ee/development/geo/framework.html'
-      - category_title: Git LFS
-        category_url: 'ee/development/lfs.html'
-      - category_title: Gitaly development
-        category_url: 'ee/development/gitaly.html'
-      - category_title: GitLab Design System
-        category_url: 'https://design.gitlab.com'
-        external_url: true
-      - category_title: GitLab development style guides
-        category_url: 'ee/development/fe_guide/style/'
-        docs:
-          - doc_title: API style guide
-            doc_url: 'ee/development/api_styleguide.html'
-          - doc_title: Go standards and style guidelines
-            doc_url: 'ee/development/go_guide/'
-          - doc_title: GraphQL API style guide
-            doc_url: 'ee/development/api_graphql_styleguide.html'
-          - doc_title: Guidelines for shell commands
-            doc_url: 'ee/development/shell_commands.html'
-          - doc_title: HTML style guide
-            doc_url: 'ee/development/fe_guide/style/html.html'
-          - doc_title: JavaScript style guide
-            doc_url: 'ee/development/fe_guide/style/javascript.html'
-          - doc_title: Newlines style guide
-            doc_url: 'ee/development/newlines_styleguide.html'
-          - doc_title: Python development guidelines
-            doc_url: 'ee/development/python_guide/'
-          - doc_title: SCSS style guide
-            doc_url: 'ee/development/fe_guide/style/scss.html'
-          - doc_title: Shell scripting standards and style guidelines
-            doc_url: 'ee/development/shell_scripting_guide/'
-          - doc_title: Sidekiq debugging
-            doc_url: 'ee/administration/troubleshooting/sidekiq.html'
-          - doc_title: Sidekiq style guide
-            doc_url: 'ee/development/sidekiq_style_guide.html'
-          - doc_title: Vue style guide
-            doc_url: 'ee/development/fe_guide/style/vue.html'
-      - category_title: GitLab group migration
-        category_url: 'ee/development/bulk_import.html'
-      - category_title: GitLab project pipelines
-        category_url: 'ee/development/pipelines.html'
-
-      # GitLab Runner development documentation
-      - category_title: GitLab Runner
-        category_url: 'runner/development/'
-        docs:
-          - doc_title: Review GitLab Runner
-            doc_url: 'runner/development/reviewing-gitlab-runner.html'
-          - doc_title: Add new Windows version support for Docker executor
-            doc_url: 'runner/development/add-windows-version.html'
-      # End GitLab Runner development documentation
-
-      - category_title: GraphQL development
-        category_url: 'ee/development/graphql_guide/'
-        docs:
-          - doc_title: GraphQL authorization
-            doc_url: 'ee/development/graphql_guide/authorization.html'
-          - doc_title: GraphQL BatchLoader
-            doc_url: 'ee/development/graphql_guide/batchloader.html'
-          - doc_title: GraphQL pagination
-            doc_url: 'ee/development/graphql_guide/pagination.html'
-          - doc_title: GraphQL Pro
-            doc_url: 'ee/development/graphql_guide/graphql_pro.html'
-
-      # GitLab Helm Charts development documentation
-      - category_title: Helm Charts
-        category_url: 'charts/development/'
-        docs:
-          - doc_title: Architecture of Cloud native GitLab Helm charts
-            doc_url: 'charts/architecture/'
+              - doc_title: Mass insert Rails models
+                doc_url: 'ee/development/mass_insert.html'
+          - doc_title: Documentation
+            doc_url: 'ee/development/documentation/'
             docs:
-              - doc_title: Backup and Restore
-                doc_url: 'charts/architecture/backup-restore.html'
-              - doc_title: Goals
-                doc_url: 'charts/architecture/goals.html'
+              - doc_title: Style guide
+                doc_url: 'ee/development/documentation/styleguide/'
+              - doc_title: GraphQL style guide
+                doc_url: 'ee/development/documentation/graphql_styleguide.html'
+              - doc_title: RESTful API style guide
+                doc_url: 'ee/development/documentation/restful_api_styleguide.html'
+              - doc_title: Recommended word list
+                doc_url: 'ee/development/documentation/styleguide/word_list.html'
+              - doc_title: Topic types
+                doc_url: 'ee/development/documentation/structure.html'
+              - doc_title: Process
+                doc_url: 'ee/development/documentation/workflow.html'
+              - doc_title: Testing
+                doc_url: 'ee/development/documentation/testing.html'
+              - doc_title: Site architecture
+                doc_url: 'ee/development/documentation/site_architecture/'
+              - doc_title: Global navigation
+                doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
+              - doc_title: Deployment process
+                doc_url: 'ee/development/documentation/site_architecture/deployment_process.html'
+              - doc_title: Documentation review apps
+                doc_url: 'ee/development/documentation/review_apps.html'
+              - doc_title: Redirects
+                doc_url: 'ee/development/documentation/redirects.html'
+          - doc_title: Distributed tracing
+            doc_url: 'ee/development/distributed_tracing.html'
+          - doc_title: Experiments
+            doc_url: 'ee/development/experiment_guide/'
+            docs:
+              - doc_title: Experimentation module
+                doc_url: 'ee/development/experiment_guide/experimentation.html'
+              - doc_title: GLEX
+                doc_url: 'ee/development/experiment_guide/gitlab_experiment.html'
+          - doc_title: Feature flags for GitLab development
+            doc_url: 'ee/development/feature_flags/'
+            docs:
+              - doc_title: Controlling feature flags
+                doc_url: 'ee/development/feature_flags/controls.html'
+              - doc_title: Documenting feature flags
+                doc_url: 'ee/development/documentation/feature_flags.html'
+          - doc_title: Framework - DeclarativePolicy
+            doc_url: 'ee/development/policies.html'
+          - doc_title: Frontend development
+            doc_url: 'ee/development/fe_guide/'
+            docs:
+              - doc_title: Accessibility
+                doc_url: 'ee/development/fe_guide/accessibility.html'
               - doc_title: Architecture
-                doc_url: 'charts/architecture/architecture.html'
-              - doc_title: Design Decisions
-                doc_url: 'charts/architecture/decisions.html'
-              - doc_title: Resource Usage
-                doc_url: 'charts/architecture/resource-usage.html'
-          - doc_title: Environment setup
-            doc_url: 'charts/development/environment_setup.html'
-          - doc_title: Style guide
-            doc_url: 'charts/development/style_guide.html'
-          - doc_title: Versioning and release
-            doc_url: 'charts/development/release.html'
-      # End GitLab Helm Charts development documentation
-
-      - category_title: Import/Export
-        category_url: 'ee/development/import_export.html'
-      - category_title: Internal API
-        category_url: 'ee/development/internal_api/'
-        docs:
-          - doc_title: Internal allowed API
-            doc_url: 'ee/development/internal_api/internal_api_allowed.html'
-      - category_title: Issuable-like Rails models utilities
-        category_url: 'ee/development/issuable-like-models.html'
-      - category_title: Issue types
-        category_url: 'ee/development/issue_types.html'
-      - category_title: Jenkins in local environments
-        category_url: 'ee/development/integrations/jenkins.html'
-      - category_title: Jira development environment
-        category_url: 'ee/development/integrations/jira_connect.html'
-      - category_title: Kubernetes integration
-        category_url: 'ee/development/kubernetes.html'
+                doc_url: 'ee/development/fe_guide/architecture.html'
+              - doc_title: Axios
+                doc_url: 'ee/development/fe_guide/axios.html'
+              - doc_title: Content Editor
+                doc_url: 'ee/development/fe_guide/content_editor.html'
+              - doc_title: Dark mode
+                doc_url: 'ee/development/fe_guide/dark_mode.html'
+              - doc_title: Dependencies
+                doc_url: 'ee/development/fe_guide/dependencies.html'
+              - doc_title: Design anti-patterns
+                doc_url: 'ee/development/fe_guide/design_anti_patterns.html'
+              - doc_title: Design patterns
+                doc_url: 'ee/development/fe_guide/design_patterns.html'
+              - doc_title: Development process
+                doc_url: 'ee/development/fe_guide/development_process.html'
+              - doc_title: Event tracking
+                doc_url: 'https://about.gitlab.com/handbook/product/product-intelligence-guide/'
+                external_url: true
+              - doc_title: Emojis
+                doc_url: 'ee/development/fe_guide/emojis.html'
+              - doc_title: Frontend FAQ
+                doc_url: 'ee/development/fe_guide/frontend_faq.html'
+              - doc_title: GraphQL
+                doc_url: 'ee/development/fe_guide/graphql.html'
+              - doc_title: HAML
+                doc_url: 'ee/development/fe_guide/haml.html'
+              - doc_title: Icons and SVG illustrations
+                doc_url: 'ee/development/fe_guide/icons.html'
+              - doc_title: Keyboard shortcuts
+                doc_url: 'ee/development/fe_guide/keyboard_shortcuts.html'
+              - doc_title: Logging
+                doc_url: 'ee/development/fe_guide/logging.html'
+              - doc_title: Merge request widget extensions
+                doc_url: 'ee/development/new_fe_guide/modules/widget_extensions.html'
+              - doc_title: Performance
+                doc_url: 'ee/development/fe_guide/performance.html'
+              - doc_title: Principles
+                doc_url: 'ee/development/fe_guide/principles.html'
+              - doc_title: Security
+                doc_url: 'ee/development/fe_guide/security.html'
+              - doc_title: Source editor
+                doc_url: 'ee/development/fe_guide/source_editor.html'
+              - doc_title: Tooling
+                doc_url: 'ee/development/fe_guide/tooling.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/development/fe_guide/troubleshooting.html'
+              - doc_title: Vuex
+                doc_url: 'ee/development/fe_guide/vuex.html'
+              - doc_title: Vue
+                doc_url: 'ee/development/fe_guide/vue.html'
+              - doc_title: Vue 3 migration
+                doc_url: 'ee/development/fe_guide/vue3_migration.html'
+              - doc_title: Widgets
+                doc_url: 'ee/development/fe_guide/widgets.html'
+          - doc_title: GitLab Pages development
+            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/pages.md'
+            external_url: true
+          - doc_title: Geo development
+            doc_url: 'ee/development/geo.html'
+            docs:
+              - doc_title: Geo framework
+                doc_url: 'ee/development/geo/framework.html'
+          - doc_title: Git LFS
+            doc_url: 'ee/development/lfs.html'
+          - doc_title: Gitaly development
+            doc_url: 'ee/development/gitaly.html'
+          - doc_title: GitLab Design System
+            doc_url: 'https://design.gitlab.com'
+            external_url: true
+          - doc_title: GitLab development style guides
+            doc_url: 'ee/development/fe_guide/style/'
+            docs:
+              - doc_title: API style guide
+                doc_url: 'ee/development/api_styleguide.html'
+              - doc_title: Go standards and style guidelines
+                doc_url: 'ee/development/go_guide/'
+              - doc_title: GraphQL API style guide
+                doc_url: 'ee/development/api_graphql_styleguide.html'
+              - doc_title: Guidelines for shell commands
+                doc_url: 'ee/development/shell_commands.html'
+              - doc_title: HTML style guide
+                doc_url: 'ee/development/fe_guide/style/html.html'
+              - doc_title: JavaScript style guide
+                doc_url: 'ee/development/fe_guide/style/javascript.html'
+              - doc_title: Newlines style guide
+                doc_url: 'ee/development/newlines_styleguide.html'
+              - doc_title: Python development guidelines
+                doc_url: 'ee/development/python_guide/'
+              - doc_title: SCSS style guide
+                doc_url: 'ee/development/fe_guide/style/scss.html'
+              - doc_title: Shell scripting standards and style guidelines
+                doc_url: 'ee/development/shell_scripting_guide/'
+              - doc_title: Sidekiq debugging
+                doc_url: 'ee/administration/troubleshooting/sidekiq.html'
+              - doc_title: Sidekiq style guide
+                doc_url: 'ee/development/sidekiq_style_guide.html'
+              - doc_title: Vue style guide
+                doc_url: 'ee/development/fe_guide/style/vue.html'
+          - doc_title: GitLab group migration
+            doc_url: 'ee/development/bulk_import.html'
+          - doc_title: GitLab project pipelines
+            doc_url: 'ee/development/pipelines.html'
+          - doc_title: GraphQL development
+            doc_url: 'ee/development/graphql_guide/'
+            docs:
+              - doc_title: GraphQL authorization
+                doc_url: 'ee/development/graphql_guide/authorization.html'
+              - doc_title: GraphQL BatchLoader
+                doc_url: 'ee/development/graphql_guide/batchloader.html'
+              - doc_title: GraphQL pagination
+                doc_url: 'ee/development/graphql_guide/pagination.html'
+              - doc_title: GraphQL Pro
+                doc_url: 'ee/development/graphql_guide/graphql_pro.html'
+          - doc_title: Import/Export
+            doc_url: 'ee/development/import_export.html'
+          - doc_title: Internal API
+            doc_url: 'ee/development/internal_api/'
+            docs:
+              - doc_title: Internal allowed API
+                doc_url: 'ee/development/internal_api/internal_api_allowed.html'
+          - doc_title: Issuable-like Rails models utilities
+            doc_url: 'ee/development/issuable-like-models.html'
+          - doc_title: Issue types
+            doc_url: 'ee/development/issue_types.html'
+          - doc_title: Jenkins in local environments
+            doc_url: 'ee/development/integrations/jenkins.html'
+          - doc_title: Jira development environment
+            doc_url: 'ee/development/integrations/jira_connect.html'
+          - doc_title: Kubernetes integration
+            doc_url: 'ee/development/kubernetes.html'
+          - doc_title: Package development
+            doc_url: 'ee/development/packages.html'
+          - doc_title: Permissions
+            doc_url: 'ee/development/permissions.html'
+          - doc_title: Real-time features
+            doc_url: 'ee/development/real_time.html'
+          - doc_title: Secure partner onboarding process
+            doc_url: 'ee/development/integrations/secure_partner_integration.html'
+          - doc_title: Testing standards and styles
+            doc_url: 'ee/development/testing_guide/'
+            docs:
+              - doc_title: Flaky tests
+                doc_url: 'ee/development/testing_guide/flaky_tests.html'
+              - doc_title: Frontend testing standards and style guidelines
+                doc_url: 'ee/development/testing_guide/frontend_testing.html'
+              - doc_title: GitLab tests in CI context
+                doc_url: 'ee/development/testing_guide/ci.html'
+              - doc_title: Review apps
+                doc_url: 'ee/development/testing_guide/review_apps.html'
+              - doc_title: Smoke tests
+                doc_url: 'ee/development/testing_guide/smoke.html'
+              - doc_title: Testing best practices
+                doc_url: 'ee/development/testing_guide/best_practices.html'
+              - doc_title: Testing levels
+                doc_url: 'ee/development/testing_guide/testing_levels.html'
+              - doc_title: Testing Rails migrations
+                doc_url: 'ee/development/testing_guide/testing_migrations_guide.html'
+              - doc_title: Testing Rake tasks
+                doc_url: 'ee/development/testing_guide/testing_rake_tasks.html'
+          - doc_title: Testing (end to end)
+            doc_url: 'ee/development/testing_guide/end_to_end/'
+            docs:
+              - doc_title: Beginner's guide to writing end-to-end tests
+                doc_url: 'ee/development/testing_guide/end_to_end/beginners_guide.html'
+              - doc_title: Best practices when writing end-to-end tests
+                doc_url: 'ee/development/testing_guide/end_to_end/best_practices.html'
+              - doc_title: Dynamic element validation
+                doc_url: 'ee/development/testing_guide/end_to_end/dynamic_element_validation.html'
+              - doc_title: Flows in GitLab QA
+                doc_url: 'ee/development/testing_guide/end_to_end/flows.html'
+              - doc_title: Page objects in GitLab QA
+                doc_url: 'ee/development/testing_guide/end_to_end/page_objects.html'
+              - doc_title: Resource class in GitLab QA
+                doc_url: 'ee/development/testing_guide/end_to_end/resources.html'
+              - doc_title: Style guide for writing end-to-end tests
+                doc_url: 'ee/development/testing_guide/end_to_end/style_guide.html'
+              - doc_title: Testing with feature flags
+                doc_url: 'ee/development/testing_guide/end_to_end/feature_flags.html'
+          - doc_title: Translate GitLab
+            doc_url: 'ee/development/i18n/'
+            docs:
+              - doc_title: Externalization
+                doc_url: 'ee/development/i18n/externalization.html'
+              - doc_title: Translation
+                doc_url: 'ee/development/i18n/translation.html'
+              - doc_title: Proofreading
+                doc_url: 'ee/development/i18n/proofreader.html'
+              - doc_title: Merging
+                doc_url: 'ee/development/i18n/merging_translations.html'
+          - doc_title: Snowplow
+            doc_url: 'ee/development/snowplow/'
+            docs:
+              - doc_title: Implement Snowplow
+                doc_url: 'ee/development/snowplow/implementation.html'
+              - doc_title: Schemas
+                doc_url: 'ee/development/snowplow/schemas.html'
+              - doc_title: Event dictionary guide
+                doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
+              - doc_title: Event dictionary
+                doc_url: 'https://metrics.gitlab.com/snowplow.html'
+                external_url: true
+              - doc_title: Review guidelines
+                doc_url: 'ee/development/snowplow/review_guidelines.html'
+          - doc_title: Service Ping guide
+            doc_url: 'ee/development/service_ping/'
+            docs:
+              - doc_title: Metrics lifecycle
+                doc_url: 'ee/development/service_ping/metrics_lifecycle.html'
+              - doc_title: Implement Service Ping
+                doc_url: 'ee/development/service_ping/implement.html'
+              - doc_title: Metrics instrumentation
+                doc_url: 'ee/development/service_ping/metrics_instrumentation.html'
+              - doc_title: Metrics dictionary guide
+                doc_url: 'ee/development/service_ping/metrics_dictionary.html'
+              - doc_title: Metrics dictionary
+                doc_url: 'https://metrics.gitlab.com/index.html'
+                external_url: true
+              - doc_title: Metrics Performance Indicator
+                doc_url: 'ee/development/service_ping/performance_indicator_metrics.html'
+              - doc_title: Review guidelines
+                doc_url: 'ee/development/service_ping/review_guidelines.html'
+          - doc_title: Value Stream Analytics
+            doc_url: 'ee/development/value_stream_analytics.html'
+          - doc_title: Wikis
+            doc_url: 'ee/development/wikis.html'
+          - doc_title: Work items and work item types
+            doc_url: 'ee/development/work_items.html'
+          - doc_title: Working with Prometheus metrics
+            doc_url: 'ee/development/prometheus_metrics.html'
+          - doc_title: Workspaces
+            doc_url: 'ee/development/workspaces/'
+      # End of GitLab app development documentation
 
       # Omnibus GitLab development documentation
-      - category_title: Omnibus GitLab
+      - category_title: Contribute to Omibus GitLab
         category_url: 'omnibus/development/'
         docs:
-          - doc_title: Contribute to Omnibus GitLab
+          - doc_title: Get started
             doc_url: 'omnibus/development/contribute-to-omnibus-gitlab.html'
           - doc_title: Build locally
             doc_url: 'omnibus/build/'
@@ -2622,105 +2687,41 @@ sections:
 
       # End Omnibus GitLab development documentation
 
-      - category_title: Package development
-        category_url: 'ee/development/packages.html'
-      - category_title: Permissions
-        category_url: 'ee/development/permissions.html'
-      - category_title: Real-time features
-        category_url: 'ee/development/real_time.html'
-      - category_title: Secure partner onboarding process
-        category_url: 'ee/development/integrations/secure_partner_integration.html'
-      - category_title: Testing standards and styles
-        category_url: 'ee/development/testing_guide/'
+      # GitLab Runner development documentation
+      - category_title: Contribute to GitLab Runner
+        category_url: 'runner/development/'
         docs:
-          - doc_title: Flaky tests
-            doc_url: 'ee/development/testing_guide/flaky_tests.html'
-          - doc_title: Frontend testing standards and style guidelines
-            doc_url: 'ee/development/testing_guide/frontend_testing.html'
-          - doc_title: GitLab tests in CI context
-            doc_url: 'ee/development/testing_guide/ci.html'
-          - doc_title: Review apps
-            doc_url: 'ee/development/testing_guide/review_apps.html'
-          - doc_title: Smoke tests
-            doc_url: 'ee/development/testing_guide/smoke.html'
-          - doc_title: Testing best practices
-            doc_url: 'ee/development/testing_guide/best_practices.html'
-          - doc_title: Testing levels
-            doc_url: 'ee/development/testing_guide/testing_levels.html'
-          - doc_title: Testing Rails migrations
-            doc_url: 'ee/development/testing_guide/testing_migrations_guide.html'
-          - doc_title: Testing Rake tasks
-            doc_url: 'ee/development/testing_guide/testing_rake_tasks.html'
-      - category_title: Testing (end to end)
-        category_url: 'ee/development/testing_guide/end_to_end/'
+          - doc_title: Review GitLab Runner
+            doc_url: 'runner/development/reviewing-gitlab-runner.html'
+          - doc_title: Add new Windows version support for Docker executor
+            doc_url: 'runner/development/add-windows-version.html'
+
+      # End GitLab Runner development documentation
+
+      # GitLab Helm Charts development documentation
+      - category_title: Contribute to GitLab Helm Charts
+        category_url: 'charts/development/'
         docs:
-          - doc_title: Beginner's guide to writing end-to-end tests
-            doc_url: 'ee/development/testing_guide/end_to_end/beginners_guide.html'
-          - doc_title: Best practices when writing end-to-end tests
-            doc_url: 'ee/development/testing_guide/end_to_end/best_practices.html'
-          - doc_title: Dynamic element validation
-            doc_url: 'ee/development/testing_guide/end_to_end/dynamic_element_validation.html'
-          - doc_title: Flows in GitLab QA
-            doc_url: 'ee/development/testing_guide/end_to_end/flows.html'
-          - doc_title: Page objects in GitLab QA
-            doc_url: 'ee/development/testing_guide/end_to_end/page_objects.html'
-          - doc_title: Resource class in GitLab QA
-            doc_url: 'ee/development/testing_guide/end_to_end/resources.html'
-          - doc_title: Style guide for writing end-to-end tests
-            doc_url: 'ee/development/testing_guide/end_to_end/style_guide.html'
-          - doc_title: Testing with feature flags
-            doc_url: 'ee/development/testing_guide/end_to_end/feature_flags.html'
-      - category_title: Translate GitLab
-        category_url: 'ee/development/i18n/'
-        docs:
-          - doc_title: Externalization
-            doc_url: 'ee/development/i18n/externalization.html'
-          - doc_title: Translation
-            doc_url: 'ee/development/i18n/translation.html'
-          - doc_title: Proofreading
-            doc_url: 'ee/development/i18n/proofreader.html'
-          - doc_title: Merging
-            doc_url: 'ee/development/i18n/merging_translations.html'
-      - category_title: Snowplow
-        category_url: 'ee/development/snowplow/'
-        docs:
-          - doc_title: Implement Snowplow
-            doc_url: 'ee/development/snowplow/implementation.html'
-          - doc_title: Schemas
-            doc_url: 'ee/development/snowplow/schemas.html'
-          - doc_title: Event dictionary guide
-            doc_url: 'ee/development/snowplow/event_dictionary_guide.html'
-          - doc_title: Event dictionary
-            doc_url: 'https://metrics.gitlab.com/snowplow.html'
-            external_url: true
-          - doc_title: Review guidelines
-            doc_url: 'ee/development/snowplow/review_guidelines.html'
-      - category_title: Service Ping guide
-        category_url: 'ee/development/service_ping/'
-        docs:
-          - doc_title: Metrics lifecycle
-            doc_url: 'ee/development/service_ping/metrics_lifecycle.html'
-          - doc_title: Implement Service Ping
-            doc_url: 'ee/development/service_ping/implement.html'
-          - doc_title: Metrics instrumentation
-            doc_url: 'ee/development/service_ping/metrics_instrumentation.html'
-          - doc_title: Metrics dictionary guide
-            doc_url: 'ee/development/service_ping/metrics_dictionary.html'
-          - doc_title: Metrics dictionary
-            doc_url: 'https://metrics.gitlab.com/index.html'
-            external_url: true
-          - doc_title: Metrics Performance Indicator
-            doc_url: 'ee/development/service_ping/performance_indicator_metrics.html'
-          - doc_title: Review guidelines
-            doc_url: 'ee/development/service_ping/review_guidelines.html'
-      - category_title: Value Stream Analytics
-        category_url: 'ee/development/value_stream_analytics.html'
-      - category_title: Wikis
-        category_url: 'ee/development/wikis.html'
-      - category_title: Work items and work item types
-        category_url: 'ee/development/work_items.html'
-      - category_title: Working with Prometheus metrics
-        category_url: 'ee/development/prometheus_metrics.html'
-      - category_title: Workspaces
-        category_url: 'ee/development/workspaces/'
-# End of development documentation
+          - doc_title: Architecture of Cloud native GitLab Helm charts
+            doc_url: 'charts/architecture/'
+            docs:
+              - doc_title: Backup and Restore
+                doc_url: 'charts/architecture/backup-restore.html'
+              - doc_title: Goals
+                doc_url: 'charts/architecture/goals.html'
+              - doc_title: Architecture
+                doc_url: 'charts/architecture/architecture.html'
+              - doc_title: Design Decisions
+                doc_url: 'charts/architecture/decisions.html'
+              - doc_title: Resource Usage
+                doc_url: 'charts/architecture/resource-usage.html'
+          - doc_title: Environment setup
+            doc_url: 'charts/development/environment_setup.html'
+          - doc_title: Style guide
+            doc_url: 'charts/development/style_guide.html'
+          - doc_title: Versioning and release
+            doc_url: 'charts/development/release.html'
+
+      # End GitLab Helm Charts development documentation
+
+  # End of development documentation
