@@ -2380,8 +2380,6 @@ sections:
           - doc_title: Experiments
             doc_url: 'ee/development/experiment_guide/'
             docs:
-              - doc_title: Experimentation module
-                doc_url: 'ee/development/experiment_guide/experimentation.html'
               - doc_title: GLEX
                 doc_url: 'ee/development/experiment_guide/gitlab_experiment.html'
           - doc_title: Feature flags for GitLab development
