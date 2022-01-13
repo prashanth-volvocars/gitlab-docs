@@ -2,6 +2,7 @@ include:
   - project: gitlab-org/frontend/untamper-my-lockfile
     file: .gitlab-ci-template.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/SAST.gitlab-ci.yml
 
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
@@ -20,6 +21,7 @@ default:
 stages:
   - build-images
   - build
+  - security
   - test
   - pre-deploy
   - deploy
@@ -688,36 +690,56 @@ image:docs-latest:
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
 
-#
-# Override Dependency scanning defaults to ensure it works in this pipeline
-#
+###############################################
+#                  Security                   #
+###############################################
 
-.dependency-scanning-overrides:
+#
+# Override Security scanning defaults to ensure specific scanners work in this pipeline
+#
+.security-scanning-overrides:
+  stage: security
   dependencies: []
   needs: []
   before_script: []
 
+#
+# Dependency scanning job overrides
+#
 gemnasium-dependency_scanning:
   extends:
     - .ds-analyzer
-    - .dependency-scanning-overrides
-
-gemnasium-maven-dependency_scanning:
-  extends:
-    - .ds-analyzer
-    - .dependency-scanning-overrides
-
-gemnasium-python-dependency_scanning:
-  extends:
-    - .ds-analyzer
-    - .dependency-scanning-overrides
+    - .security-scanning-overrides
 
 bundler-audit-dependency_scanning:
   extends:
     - .ds-analyzer
-    - .dependency-scanning-overrides
+    - .security-scanning-overrides
 
 retire-js-dependency_scanning:
   extends:
     - .ds-analyzer
-    - .dependency-scanning-overrides
+    - .security-scanning-overrides
+
+#
+# SAST job overrides
+#
+brakeman-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides
+
+nodejs-scan-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides
+
+semgrep-sast:
+  extends:
+    - .sast-analyzer
+    - .security-scanning-overrides
+
+# eslint-sast scans html too, so run after html files are generated
+eslint-sast:
+  stage: security
+  before_script: []
