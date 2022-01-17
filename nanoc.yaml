@@ -112,8 +112,9 @@ checks:
       - 'https:\/\/github.com\/.*'
       - 'https:\/\/www.youtube.com\/.*'
       - 'https:\/\/youtu.be\/.*'
-      # Some links require authentication, but we want to keep them in development docs
+      # Some links require authentication
       - 'https:\/\/dashboards.gitlab.com\/.*'
+      - 'https:\/\/ops.gitlab.net\/.*'
 
 breadcrumbs: false
 debug: false
