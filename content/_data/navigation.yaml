@@ -326,6 +326,8 @@ sections:
             doc_url: 'ee/policy/maintenance.html'
           - doc_title: Deprecations by milestone
             doc_url: 'ee/update/deprecations.html'
+          - doc_title: Removals by milestone
+            doc_url: 'ee/update/removals.html'
           - doc_title: What's new
             doc_url: 'ee/administration/whats-new.html'
 
