@@ -2551,8 +2551,6 @@ sections:
                 doc_url: 'ee/development/testing_guide/flaky_tests.html'
               - doc_title: Frontend testing standards and style guidelines
                 doc_url: 'ee/development/testing_guide/frontend_testing.html'
-              - doc_title: GitLab tests in CI context
-                doc_url: 'ee/development/testing_guide/ci.html'
               - doc_title: Review apps
                 doc_url: 'ee/development/testing_guide/review_apps.html'
               - doc_title: Smoke tests
