@@ -4,8 +4,8 @@ extends:
 env:
   jest: true
 parserOptions:
-  parser: babel-eslint
-  import/no-extraneous-dependencies: off
+  parser: '@babel/eslint-parser'
+  import/no-extraneous-dependencies: false
 rules:
   filenames/match-regex:
     - error
