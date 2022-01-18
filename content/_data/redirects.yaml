@@ -546,3 +546,9 @@ redirects:
   - from: /omnibus/gitlab-mattermost/
     to: /ee/integration/mattermost/
     remove_date: 2022-09-16
+  - from: /ee/security/rack_attack.html
+    to: /ee/user/admin_area/settings/protected_paths.html
+    remove_date: 2022-10-14
+  - from: /ee/development/testing_guide/ci.html
+    to: /ee/development/pipelines.html
+    remove_date: 2022-10-12
