@@ -1397,6 +1397,8 @@ sections:
                     doc_url: 'ee/ci/environments/protected_environments.html'
                   - doc_title: Deployment safety
                     doc_url: 'ee/ci/environments/deployment_safety.html'
+                  - doc_title: Deployment approvals
+                    doc_url: 'ee/ci/environments/deployment_approvals.html'
                   - doc_title: Roll out an application incrementally
                     doc_url: 'ee/ci/environments/incremental_rollouts.html'
                   - doc_title: Deploy to AWS
