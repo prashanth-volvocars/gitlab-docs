@@ -1,11 +1,11 @@
+const inject = require('@rollup/plugin-inject');
 const json = require('@rollup/plugin-json');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const replace = require('@rollup/plugin-replace');
 const glob = require('glob');
-const babel = require('rollup-plugin-babel');
-const commonjs = require('rollup-plugin-commonjs');
+const commonjs = require('@rollup/plugin-commonjs');
+const { babel } = require('@rollup/plugin-babel');
 const importResolver = require('rollup-plugin-import-resolver');
-const nodePolyfills = require('rollup-plugin-node-polyfills');
 const svg = require('rollup-plugin-svg');
 const vue = require('rollup-plugin-vue');
 
@@ -25,9 +25,12 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
     commonjs(),
     vue(),
     svg(),
-    nodePolyfills(),
+    inject({
+      exclude: 'node_modules/**',
+    }),
     babel({
       exclude: 'node_modules/**',
+      babelHelpers: 'bundled',
     }),
     json(),
     importResolver({
