@@ -2498,10 +2498,6 @@ sections:
                 doc_url: 'ee/development/fe_guide/style/scss.html'
               - doc_title: Shell scripting standards and style guidelines
                 doc_url: 'ee/development/shell_scripting_guide/'
-              - doc_title: Sidekiq debugging
-                doc_url: 'ee/administration/troubleshooting/sidekiq.html'
-              - doc_title: Sidekiq style guide
-                doc_url: 'ee/development/sidekiq_style_guide.html'
               - doc_title: Vue style guide
                 doc_url: 'ee/development/fe_guide/style/vue.html'
           - doc_title: GitLab group migration
@@ -2544,6 +2540,19 @@ sections:
             doc_url: 'ee/development/real_time.html'
           - doc_title: Secure partner onboarding process
             doc_url: 'ee/development/integrations/secure_partner_integration.html'
+          - doc_title: Sidekiq development
+            doc_url: 'ee/development/sidekiq/'
+            docs:
+              - doc_title: Compatibility across updates
+                doc_url: 'ee/development/sidekiq/compatibility_across_updates.html'
+              - doc_title: Job idempotency and job deduplication
+                doc_url: 'ee/development/sidekiq/idempotent_jobs.html'
+              - doc_title: Limited capacity worker
+                doc_url: 'ee/development/sidekiq/limited_capacity_worker.html'
+              - doc_title: Logging
+                doc_url: 'ee/development/sidekiq/logging.html'
+              - doc_title: Worker attributes
+                doc_url: 'ee/development/sidekiq/worker_attributes.html'
           - doc_title: Testing standards and styles
             doc_url: 'ee/development/testing_guide/'
             docs:
