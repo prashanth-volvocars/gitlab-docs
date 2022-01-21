@@ -182,6 +182,28 @@ namespace :release do
       `git commit -m "Update dropdown to #{current_version}"`
       `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
+
+    # Create a merge request to update the dropdowns in all previous major online versions
+    versions['previous_majors'].each do |version|
+      # Set the commit title
+      mr_title = "Update #{version} dropdown to match that of #{current_version}"
+      mr_description = "Update version dropdown of #{version} release for the #{current_version} release."
+      branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
+
+      puts "=> Fetch #{version} stable branch"
+      `git fetch origin #{version}`
+
+      puts "=> Create a new branch off of the online version"
+      `git checkout -b #{branch_name} origin/#{version}`
+      `git reset --hard origin/#{version}`
+
+      puts "=> Copy the versions.yaml content from the release-#{current_version} branch"
+      `git checkout release-#{current_version.tr('.', '-')} -- content/_data/versions.yaml`
+
+      puts "=> Commit and push to create a merge request"
+      `git commit -m "Update dropdown to #{current_version}"`
+      `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
+    end
   end
 end
 
