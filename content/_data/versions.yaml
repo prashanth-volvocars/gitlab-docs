@@ -1,13 +1,25 @@
-# The first online version should always point to the
-# current stable version.
-online:
-  - "14.6"
-  - "14.5"
-  - "14.4"
+# The two last major supported versions
+# https://about.gitlab.com/support/statement-of-support.html#we-support-the-current-major-version-and-the-two-previous-major-versions
+previous_majors:
   - "13.12"
   - "12.10"
 
+# The first online version should always point to the
+# current stable version.
+online:
+  - "14.7"
+  - "14.6"
+  - "14.5"
+
+# The last version before the next major release. Verify near 14.10 as there may be more 14.X versions.
+last_before_new_major:
+  - "14.10"
+
+# Versions not appearing in the dropdown, but available as Docker images
+# https://docs.gitlab.com/archives/#offline-archives
 offline:
+  - "14.4"
+  - "14.3"
   - "14.2"
   - "14.1"
   - "14.0"
