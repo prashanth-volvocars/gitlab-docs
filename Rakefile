@@ -204,6 +204,9 @@ namespace :release do
       `git commit -m "Update dropdown to #{current_version}"`
       `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
+
+    # Switch back to the release branch after the dropdowns are pushed
+    `git checkout #{release_branch}`
   end
 end
 
