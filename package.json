@@ -10,9 +10,9 @@
     "prettier:fix": "prettier --write '**/*.{js,vue}'"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.16.12",
     "@babel/eslint-parser": "^7.16.5",
-    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "@gitlab/eslint-plugin": "^10.0.2",
     "@gitlab/stylelint-config": "^2.6.0",
     "@rollup/plugin-json": "^4.1.0",
