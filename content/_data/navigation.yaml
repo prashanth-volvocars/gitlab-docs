@@ -2320,6 +2320,8 @@ sections:
                 doc_url: 'ee/development/namespaces_storage_statistics.html'
               - doc_title: Database review guidelines
                 doc_url: 'ee/development/database_review.html'
+              - doc_title: Database check-migrations job
+                doc_url: 'ee/development/database/dbcheck-migrations-job.html'
               - doc_title: Delete existing migrations
                 doc_url: 'ee/development/deleting_migrations.html'
               - doc_title: Migrations style guide
