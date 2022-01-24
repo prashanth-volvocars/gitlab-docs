@@ -137,25 +137,18 @@ To create the release merge request for the release:
 
 ## Update dropdown for online versions
 
-To update `content/_data/versions.yaml` for all online versions (stable branches `X.Y` of the
-`gitlab-docs` project).
-
-### Update dropdowns for the current major version
+To update `content/_data/versions.yaml` for all `online` and `previous_majors`
+versions (stable branches `X.Y` of the `gitlab-docs` project):
 
 1. Run the Rake task that creates the merge requests to update the dropdowns for the current major version. For
-   example, for the 14.4 release:
+   example, for the 14.7 release:
 
    ```shell
-   git checkout release-14-4
+   git checkout release-14-7
    ./bin/rake release:dropdowns
    ```
 
-   For the 14.4 release, the task created the following three merge
-   requests:
-
-   - [Update the 14.4 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2212).
-   - [Update the 14.3 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2213).
-   - [Update the 14.2 version dropdown menu for the 14.4 release](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/2214).
+   For the 14.7 release, the task created [five merge requests](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?scope=all&state=all&label_name[]=release&milestone_title=14.7&search=update).
 
 1. [Visit the merge requests page](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?label_name%5B%5D=release)
    to check that their pipelines pass. Set each merge request to _draft_ status and do not merge them yet.
