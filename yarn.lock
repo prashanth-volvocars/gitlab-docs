@@ -1083,10 +1083,10 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.2.0.tgz#95cf58d6ae634d535145159f08f5cff6241d4013"
   integrity sha512-mCwR3KfNPsxRoojtTjMIZwdd4FFlBh5DlR9AeodP+7+k8rILdWGYxTZbJMPNXoPbZx16R94nG8c5bR7toD4QBw==
 
-"@gitlab/ui@^32.61.0":
-  version "32.65.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-32.65.0.tgz#e3068adc4e4db919961126a98acf35affc77e325"
-  integrity sha512-jR3V0pjmu6tLwLbLfU45KKIqZ+tBniIX/MRzx5cUEP/xZ/z75PRoB3nGI22D+hB/64DkCpo3KJcuIjXLvW41xw==
+"@gitlab/ui@^33.0.0":
+  version "33.0.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-33.0.0.tgz#d41f59e9acc19af84a80fa14c4ac4eff0b8f6ba5"
+  integrity sha512-os2PmiOIdzlYIv0GoFtvTmBXhl8B4rnzPgibHUOiMZf8n9Oye8LNs9+zA1fk5PRur/SVwmS5+0hIFH7Dyqt9hw==
   dependencies:
     "@babel/standalone" "^7.0.0"
     bootstrap-vue "2.20.1"
@@ -1447,12 +1447,7 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/estree@*":
-  version "0.0.50"
-  resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.50.tgz#1e0caa9364d3fccd2931c3ed96fdbeaa5d4cca83"
-  integrity sha512-C6N5s2ZFtuZRj54k2/zyRhNDjJwwcViAM3Nbm8zjBpbqAdZ00mr0CFxvSKeO8Y/e03WVFLpQMdHYVfUd6SB+Hw==
-
-"@types/estree@0.0.39":
+"@types/estree@*", "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
@@ -4819,15 +4814,10 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
-ms@2.1.2:
+ms@2.1.2, ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-ms@^2.1.1:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
-  integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
 native-request@^1.0.5:
   version "1.1.0"
