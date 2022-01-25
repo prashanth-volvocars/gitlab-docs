@@ -360,7 +360,7 @@ pages:
 .docker_prepare:
   extends:
     - .retry
-  image: docker:latest
+  image: docker:19.03.5
   tags:
     - gitlab-org-docker
   services:
