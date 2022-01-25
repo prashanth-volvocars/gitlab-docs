@@ -676,7 +676,7 @@ image:docs-latest:
   extends:
     - .rules_scheduled_manual
     - .docker_prepare
-  stage: pre-deploy
+  stage: build-images
   artifacts: {}
   cache: {}
   dependencies: []
