@@ -1615,6 +1615,8 @@ sections:
                     doc_url: 'ee/user/packages/workflows/project_registry.html'
                   - doc_title: Monorepo workflows
                     doc_url: 'ee/user/packages/workflows/working_with_monorepos.html'
+                  - doc_title: Reduce Package Registry storage
+                    doc_url: 'ee/user/packages/package_registry/reduce_package_registry_storage.html'
               - doc_title: Container Registry
                 doc_url: 'ee/user/packages/container_registry/'
                 docs:
@@ -1627,6 +1629,9 @@ sections:
                     doc_url: 'ee/user/packages/terraform_module_registry/'
               - doc_title: Dependency Proxy
                 doc_url: 'ee/user/packages/dependency_proxy/'
+                docs:
+                  - doc_title: Reduce Dependency Proxy storage
+                    doc_url: 'ee/user/packages/dependency_proxy/reduce_dependency_proxy_storage.html'
       - category_title: Secure your application
         category_url: 'ee/user/application_security/'
         docs:
