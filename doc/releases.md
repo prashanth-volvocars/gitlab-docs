@@ -174,8 +174,8 @@ The merge requests for the dropdowns should now all be merged into their respect
    Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines) and wait
    for all the stable branch pipelines to complete.
 1. Go to the [scheduled pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipeline_schedules)
-   and run the `Build docker images weekly` pipeline that builds the `:latest` Docker image.
-1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job.
+   and run the `Build docker images weekly` pipeline.
+1. In the scheduled pipeline you just started, manually run the **image:docs-latest** job that builds the `:latest` Docker image.
 1. When the pipeline is complete, run the `Build docs.gitlab.com every 4 hours` scheduled pipeline to deploy all new versions to the public documentation site.
    You don't need to run any jobs manually for this second pipeline.
 
