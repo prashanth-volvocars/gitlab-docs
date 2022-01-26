@@ -222,3 +222,36 @@ the latest [`gitlab-docs:bootstrap`](https://docs.gitlab.com/ee/development/docu
 1. Run the **image:bootstrap** job. This job creates a new bootstrap image
    and adds it to the container registry.
 1. After the **Build** and **Test** stages are complete, run the **image:docs-latest** job.
+
+### `Gem::FilePermissionError: You don't have write permissions for the /usr/local/bundle directory`
+
+To build the Docker images, we use [Docker-in-Docker (dind)](https://hub.docker.com/_/docker/)
+as defined in [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/6d4e30f1c14917cf895ee9250c29e0e18309796a/.gitlab-ci.yml#L529-533).
+
+If the `image` and `services` images use different docker versions,
+you are very likely to encounter an error like the following:
+
+```plaintext
+`/root` is not writable.
+Bundler will use `/tmp/bundler20220122-1-5zons41' as your home directory temporarily.
+Fetching gem metadata from https://rubygems.org/..........
+Fetching rake 13.0.6
+Installing rake 13.0.6
+Gem::FilePermissionError: You don't have write permissions for the
+/usr/local/bundle directory.
+An error occurred while installing rake (13.0.6), and Bundler cannot continue.
+```
+
+This can also happen if you're using `docker:latest` instead of a stable version.
+
+To fix the error, make sure the Docker images for `image` and `services` use
+the same stable version. For example:
+
+```yaml
+image: docker:20.10.8
+services:
+  - docker:20.10.8-dind
+```
+
+If the error still persists, use a more recent `docker:` version
+(search in [Docker Hub](https://hub.docker.com/_/docker/)).
