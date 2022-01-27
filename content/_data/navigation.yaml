@@ -2385,6 +2385,8 @@ sections:
                 doc_url: 'ee/development/documentation/testing.html'
               - doc_title: Site architecture
                 doc_url: 'ee/development/documentation/site_architecture/'
+              - doc_title: Folder structure
+                doc_url: 'ee/development/documentation/site_architecture/folder_structure.html'
               - doc_title: Global navigation
                 doc_url: 'ee/development/documentation/site_architecture/global_nav.html'
               - doc_title: Deployment process
