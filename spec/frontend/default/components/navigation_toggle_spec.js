@@ -7,9 +7,12 @@ import NavigationToggle from '../../../../content/frontend/default/components/na
 
 describe('component: Navigation Toggle', () => {
   let wrapper;
+  const className = 'some-selector';
 
   beforeEach(() => {
-    const propsData = { targetSelector: ['.some-selector'] };
+    const propsData = { targetSelector: [`.${className}`] };
+
+    document.body.innerHTML = `<div class="${className}"></div>`;
     wrapper = mount(NavigationToggle, { propsData });
   });
 
@@ -26,8 +29,10 @@ describe('component: Navigation Toggle', () => {
   });
 
   it('toggles the navigation when the navigation toggle is clicked', () => {
-    wrapper.setMethods({ toggle: jest.fn() });
+    const findMenu = () => document.querySelector(`.${className}`);
+    jest.spyOn(findMenu().classList, 'toggle');
+
     wrapper.find('.nav-toggle').trigger('click');
-    expect(wrapper.vm.toggle).toHaveBeenCalled();
+    expect(findMenu().classList.toggle).toHaveBeenCalledWith('active');
   });
 });

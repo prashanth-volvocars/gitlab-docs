@@ -10,8 +10,8 @@ module.exports = {
   restoreMocks: true,
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '^.+\\.vue$': 'vue-jest',
-    '^.+\\.svg$': 'vue-jest',
+    '^.+\\.vue$': '@vue/vue2-jest',
+    '^.+\\.svg$': '@vue/vue2-jest',
   },
   transformIgnorePatterns: ['node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue)/)'],
 };
