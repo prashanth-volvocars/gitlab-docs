@@ -2531,6 +2531,8 @@ sections:
             docs:
               - doc_title: Internal allowed API
                 doc_url: 'ee/development/internal_api/internal_api_allowed.html'
+          - doc_title: Internal users
+            doc_url: 'ee/development/internal_users.html'
           - doc_title: Issuable-like Rails models utilities
             doc_url: 'ee/development/issuable-like-models.html'
           - doc_title: Issue types
