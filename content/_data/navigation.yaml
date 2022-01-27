@@ -1369,10 +1369,10 @@ sections:
                     doc_url: 'ee/ci/pipelines/multi_project_pipelines.html'
                   - doc_title: Parent-child pipelines
                     doc_url: 'ee/ci/pipelines/parent_child_pipelines.html'
-                  - doc_title: Pipelines for merge requests
+                  - doc_title: Merge request pipelines
                     doc_url: 'ee/ci/pipelines/merge_request_pipelines.html'
-                  - doc_title: Pipelines for merged results
-                    doc_url: 'ee/ci/pipelines/pipelines_for_merged_results.html'
+                  - doc_title: Merged results pipelines
+                    doc_url: 'ee/ci/pipelines/merged_results_pipelines.html'
                   - doc_title: Merge trains
                     doc_url: 'ee/ci/pipelines/merge_trains.html'
               - doc_title: Jobs
