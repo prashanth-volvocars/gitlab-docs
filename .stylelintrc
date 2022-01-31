@@ -1,5 +1,6 @@
 {
   "extends": "@gitlab/stylelint-config",
+  "customSyntax": "postcss-scss",
   "ignoreFiles": [
     "content/assets/stylesheets/highlight.scss"
   ],
