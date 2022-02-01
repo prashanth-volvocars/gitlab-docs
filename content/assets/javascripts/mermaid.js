@@ -8,7 +8,7 @@ function loadMermaidJsIfNeeded() {
     }
 
     var element = document.createElement("script");
-    element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.12.0/mermaid.min.js";
+    element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.10/mermaid.min.js";
     element.onload = function(){mermaid.init();};
     document.body.appendChild(element);
 }
