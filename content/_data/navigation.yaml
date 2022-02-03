@@ -1301,6 +1301,8 @@ sections:
                     doc_url: 'ee/user/project/merge_requests/approvals/rules.html'
                   - doc_title: Approval settings
                     doc_url: 'ee/user/project/merge_requests/approvals/settings.html'
+              - doc_title: Changes
+                doc_url: 'ee/user/project/merge_requests/changes.html'
               - doc_title: Cherry pick changes
                 doc_url: 'ee/user/project/merge_requests/cherry_pick_changes.html'
               - doc_title: Commit message templates
