@@ -239,6 +239,7 @@ compile_dev:
   extends:
     - .rules_dev
     - .build_base
+    - .cache_compile_dev
 
 ###############################################
 #              Test the website               #
