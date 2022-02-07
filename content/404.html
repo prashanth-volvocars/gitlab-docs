@@ -11,13 +11,7 @@ searchbar: false
     <div class="card search w-100 text-center">
       <div class="card-body">
         <h3 class="card-title mb-4">Search the docs</h3>
-        <form class="mb-3" id="search-form" action="/search" method="get">
-          <div class="form-group">
-            <img class="search-icon" src="/assets/images/search.svg" alt="Search" aria-hidden="true" role="img">
-            <input id="search-input" class="form-control search-input docsearch w-100" name="query" type="search" placeholder="Search the complete docs...">
-            <input type="submit" style="visibility: hidden; position:absolute;" />
-          </div>
-        </form>
+        <div id="docsearch" class="mb-3 d-flex justify-content-center"></div>
       </div>
     </div>
     <div class="d-flex justify-content-center my-4">

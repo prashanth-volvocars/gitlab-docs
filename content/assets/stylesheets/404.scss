@@ -1,8 +1,9 @@
 ---
-version: 5
+version: 6
 ---
 
 @import 'variables';
+@import 'docsearch';
 
 .four-oh-four {
   h2 {
@@ -37,36 +38,6 @@ version: 5
       @media (max-width: $bp-xs) {
         font-size: 2rem;
       }
-    }
-
-    .algolia-autocomplete {
-      width: 100%;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 2rem;
-      bottom: 3rem;
-      z-index: 1;
-    }
-
-    .form-control {
-      background: $gds-white;
-      border: 1px solid $landing-gl-purple-550;
-      box-sizing: border-box;
-      box-shadow: 0 0 0 0.25rem $landing-gl-blue-200;
-      border-radius: 1.5rem;
-      padding-left: 2.5rem;
-    }
-  }
-
-  .algolia-autocomplete {
-    .ds-dropdown-menu [class^=ds-dataset-] {
-      /* stylelint-disable declaration-no-important */
-      max-height: 30vh !important;
-      max-width: 85vw !important;
-      /* stylelint-enable declaration-no-important */
-      overflow-x: scroll;
     }
   }
 }

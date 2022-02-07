@@ -1,8 +1,9 @@
 ---
-version: 8
+version: 10
 ---
 
 @import 'variables';
+@import 'docsearch';
 
 .landing {
   font-size: $body-font-size;
@@ -69,18 +70,6 @@ version: 8
       padding: 1.75rem 2.25rem 2.5rem;
     }
 
-    .algolia-autocomplete {
-      width: 100%;
-
-      .ds-dropdown-menu {
-        @media all and (max-width: $bp-sm) {
-          width: 100%;
-          max-width: 100%;
-          min-width: 0;
-        }
-      }
-    }
-
     .search {
       background: $gds-white;
       box-shadow: 0 0 0.125rem $landing-gl-black-50, 0 0.25rem 1.5rem $landing-gl-blue-950;
@@ -105,26 +94,6 @@ version: 8
         @media (max-width: $bp-xs) {
           font-size: 2rem;
         }
-      }
-
-      .search-icon {
-        position: absolute;
-        left: 4rem;
-        top: 6.75rem;
-        z-index: 1;
-
-        @media all and (max-width: $bp-sm) {
-          top: 10rem;
-        }
-      }
-
-      .form-control {
-        background: $gds-white;
-        border: 1px solid $landing-gl-purple-550;
-        box-sizing: border-box;
-        box-shadow: 0 0 0 0.25rem $landing-gl-blue-200;
-        border-radius: 1.5rem;
-        padding-left: 2.5rem;
       }
 
       .card-link {
@@ -417,7 +386,7 @@ version: 8
   }
 
   // footer
-  footer {
+  .landing-footer {
     height: 3rem;
     background-color: $landing-gl-purple-550;
 

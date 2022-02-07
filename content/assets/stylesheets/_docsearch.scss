@@ -1,0 +1,31 @@
+---
+version: 1
+---
+
+@import 'variables';
+
+/* stylelint-disable declaration-no-important */
+.DocSearch-Hit-source {
+  color: $gray-700 !important;
+}
+
+.DocSearch-Hit-content-wrapper {
+  overflow-x: inherit !important;
+}
+
+.DocSearch-Hit-content-wrapper {
+  mark {
+    padding: 0 !important;
+  }
+}
+
+.DocSearch-Button {
+  background: $gds-white !important;
+  border: 1px solid $landing-gl-purple-550 !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 0 0 0.25rem $landing-gl-blue-200 !important;
+  border-radius: 1.5rem !important;
+  padding-left: 0.5rem !important;
+  margin: 0 !important;
+}
+/* stylelint-enable declaration-no-important */
