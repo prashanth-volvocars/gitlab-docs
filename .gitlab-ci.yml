@@ -186,7 +186,7 @@ workflow:
     - key: $CI_JOB_NAME
       paths:
         - tmp/
-        - public/*.(html|js|css)
+        - public/*.html
 
 ###############################################
 #             Build the website               #
