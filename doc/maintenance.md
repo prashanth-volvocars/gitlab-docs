@@ -18,33 +18,6 @@ See [`.gitlab-ci.yml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.gi
 for the current configuration. The project has [scheduled pipelines](https://docs.gitlab.com/ee/user/project/pipelines/schedules.html)
 that build and deploy the site once every four hours.
 
-## Algolia search
-
-The docs site uses [Algolia docsearch](https://community.algolia.com/docsearch/)
-for its search function. This is how it works:
-
-1. GitLab is a member of the [docsearch program](https://community.algolia.com/docsearch/#join-docsearch-program),
-   which is the free tier of [Algolia](https://www.algolia.com/).
-1. Algolia hosts a [doscsearch config](https://github.com/algolia/docsearch-configs/blob/master/configs/gitlab.json)
-   for the GitLab docs site, and we've worked together to refine it.
-1. That [config](https://community.algolia.com/docsearch/config-file.html) is
-   parsed by their [crawler](https://community.algolia.com/docsearch/crawler-overview.html)
-   every 24h and [stores](https://community.algolia.com/docsearch/inside-the-engine.html)
-   the [docsearch index](https://community.algolia.com/docsearch/how-do-we-build-an-index.html)
-   on [Algolia's servers](https://community.algolia.com/docsearch/faq.html#where-is-my-data-hosted%3F).
-1. On the docs side, we use a [docsearch layout](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/docsearch.html) which
-   is present on pretty much every page except <https://docs.gitlab.com/search/>,
-   which uses its [own layout](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/instantsearch.html). In those layouts,
-   there's a Javascript snippet which initiates docsearch by using an API key
-   and an index name (`gitlab`) that are needed for Algolia to show the results.
-
-**For GitLab team members:**
-The credentials to access the Algolia dashboard are stored in 1Password. If you
-want to receive weekly reports of the search usage, search the Google doc with
-title "Email, Slack, and GitLab Groups and Aliases", search for `docsearch`,
-and add a comment with your email to be added to the alias that gets the weekly
-reports.
-
 ## Survey banner
 
 In case there's a survey that needs to reach a big audience, the docs site has

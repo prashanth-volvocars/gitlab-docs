@@ -43,3 +43,4 @@ GitLab technical writing team members sometimes have to do maintenance tasks:
 - Publish the [next release of the GitLab docs site](releases.md).
 - Perform [GitLab docs site maintenance](maintenance.md).
 - Run [GitLab docs rake tasks](raketasks.md).
+- Refine the [search results using DocSearch](docsearch.md).
