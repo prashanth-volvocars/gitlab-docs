@@ -30,6 +30,8 @@ text_extensions: [
 output_dir: public
 index_filenames: ['index.html']
 enable_output_diff: false
+breadcrumbs: false
+debug: false
 
 domain: docs.gitlab.com
 base_url: https://docs.gitlab.com
@@ -74,6 +76,28 @@ data_sources:
     encoding: utf-8
     identifier_type: full
 
+products:
+  ee:
+    slug: 'ee'
+    repo: 'https://gitlab.com/gitlab-org/gitlab.git'
+    project_dir: '../gitlab'
+    content_dir: '../gitlab/doc'
+  runner:
+    slug: 'runner'
+    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
+    project_dir: '../gitlab-runner'
+    content_dir: '../gitlab-runner/docs'
+  omnibus:
+    slug: 'omnibus'
+    repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
+    project_dir: '../omnibus-gitlab'
+    content_dir: '../omnibus-gitlab/doc'
+  charts:
+    slug: 'charts'
+    repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
+    project_dir: '../charts-gitlab'
+    content_dir: '../charts-gitlab/doc'
+
 checks:
   internal_links:
     exclude:
@@ -115,28 +139,3 @@ checks:
       # Some links require authentication
       - 'https:\/\/dashboards.gitlab.com\/.*'
       - 'https:\/\/ops.gitlab.net\/.*'
-
-breadcrumbs: false
-debug: false
-
-products:
-  ee:
-    slug: 'ee'
-    repo: 'https://gitlab.com/gitlab-org/gitlab.git'
-    project_dir: '../gitlab'
-    content_dir: '../gitlab/doc'
-  runner:
-    slug: 'runner'
-    repo: 'https://gitlab.com/gitlab-org/gitlab-runner.git'
-    project_dir: '../gitlab-runner'
-    content_dir: '../gitlab-runner/docs'
-  omnibus:
-    slug: 'omnibus'
-    repo: 'https://gitlab.com/gitlab-org/omnibus-gitlab.git'
-    project_dir: '../omnibus-gitlab'
-    content_dir: '../omnibus-gitlab/doc'
-  charts:
-    slug: 'charts'
-    repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
-    project_dir: '../charts-gitlab'
-    content_dir: '../charts-gitlab/doc'
