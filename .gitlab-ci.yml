@@ -220,6 +220,7 @@ workflow:
   artifacts:
     paths:
       - public
+      - tmp
     expire_in: 1d
 
 #
