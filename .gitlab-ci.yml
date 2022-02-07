@@ -174,6 +174,20 @@ workflow:
     paths:
       - .yarn-cache/
 
+.cache_compile_dev:
+  cache:
+    - key:
+        files:
+          - Gemfile.lock
+          - yarn.lock
+      paths:
+        - vendor/ruby
+        - .yarn-cache/
+    - key: $CI_JOB_NAME
+      paths:
+        - tmp/
+        - public/
+
 ###############################################
 #             Build the website               #
 ###############################################
