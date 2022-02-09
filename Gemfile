@@ -8,7 +8,7 @@ group :nanoc do
   gem 'nanoc-live'
 
   # custom kramdown dialect
-  gem 'gitlab_kramdown', '~> 0.16.0'
+  gem 'gitlab_kramdown', git: 'https://gitlab.com/gitlab-org/gitlab_kramdown', branch: 'sh-plantuml-clickable-link'
 
   # Needed to generate Sitemap
   gem 'builder', '~> 3.2.0'
