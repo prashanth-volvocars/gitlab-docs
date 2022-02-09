@@ -2657,6 +2657,8 @@ sections:
                 doc_url: 'ee/development/service_ping/performance_indicator_metrics.html'
               - doc_title: Review guidelines
                 doc_url: 'ee/development/service_ping/review_guidelines.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/development/service_ping/troubleshooting.html'
           - doc_title: Value Stream Analytics
             doc_url: 'ee/development/value_stream_analytics.html'
           - doc_title: Wikis
