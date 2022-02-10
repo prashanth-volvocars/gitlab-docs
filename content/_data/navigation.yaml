@@ -87,10 +87,12 @@ sections:
                 docs:
                   - doc_title: Action Cable
                     doc_url: 'omnibus/settings/actioncable.html'
-                  - doc_title: Custom environment variables
-                    doc_url: 'omnibus/settings/environment-variables.html'
                   - doc_title: Backups
                     doc_url: 'omnibus/settings/backups.html'
+                  - doc_title: Configuration options
+                    doc_url: 'omnibus/settings/configuration.html'
+                  - doc_title: Custom environment variables
+                    doc_url: 'omnibus/settings/environment-variables.html'
                   - doc_title: Database
                     doc_url: 'omnibus/settings/database.html'
                   - doc_title: GitLab Mattermost
@@ -2690,8 +2692,6 @@ sections:
                 doc_url: 'omnibus/build/team_member_docs.html'
           - doc_title: Set up a development environment
             doc_url: 'omnibus/development/setup.html'
-          - doc_title: Config options
-            doc_url: 'omnibus/settings/configuration.html'
           - doc_title: CI variables
             doc_url: 'omnibus/development/ci-variables.html'
           - doc_title: Change package behavior
