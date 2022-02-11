@@ -1949,8 +1949,6 @@ sections:
                 doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
               - doc_title: Registry exporter
                 doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
-              - doc_title: Request profiling
-                doc_url: 'ee/administration/monitoring/performance/request_profiling.html'
               - doc_title: Usage statistics
                 doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
   - section_title: Use the API
