@@ -1700,6 +1700,11 @@ sections:
             doc_url: 'ee/user/application_security/cve_id_request.html'
           - doc_title: Policies
             doc_url: 'ee/user/application_security/policies/'
+            docs:
+              - doc_title: Scan execution policies
+                doc_url: 'ee/user/application_security/policies/scan-execution-policies.html'
+              - doc_title: Scan result policies
+                doc_url: 'ee/user/application_security/policies/scan-result-policies.html'
           - doc_title: Security scanner integration
             doc_url: 'ee/development/integrations/secure.html'
           - doc_title: Secure and Protect Terminology
