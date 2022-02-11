@@ -44,7 +44,7 @@ GEM
       rubocop-performance (~> 1.9.2)
       rubocop-rails (~> 2.9)
       rubocop-rspec (~> 1.44)
-    gitlab_kramdown (0.16.0)
+    gitlab_kramdown (0.17.0)
       asciidoctor-plantuml (= 0.0.15)
       kramdown (~> 2.3.1)
       nokogiri (~> 1.12.0)
@@ -192,7 +192,7 @@ PLATFORMS
 DEPENDENCIES
   builder (~> 3.2.0)
   gitlab-styles (~> 6.6.0)
-  gitlab_kramdown (~> 0.16.0)
+  gitlab_kramdown (~> 0.17.0)
   highline (~> 2.0.0)
   nanoc (~> 4.12.0)
   nanoc-live
