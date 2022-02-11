@@ -620,12 +620,6 @@ sections:
                 doc_url: 'ee/user/admin_area/geo_nodes.html'
               - doc_title: Git LFS administration
                 doc_url: 'ee/administration/lfs/'
-              - doc_title: Git LFS rate limits
-                doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
-              - doc_title: Files API rate limits
-                doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
-              - doc_title: Users API rate limits
-                doc_url: 'ee/user/admin_area/settings/rate_limit_on_users_api.html'
               - doc_title: GitLab Pages
                 doc_url: 'ee/administration/pages/'
               - doc_title: Health Check
@@ -654,10 +648,16 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/protected_paths.html'
               - doc_title: Push event activities limit
                 doc_url: 'ee/user/admin_area/settings/push_event_activities_limit.html'
+              - doc_title: Rate limits on Files API
+                doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
+              - doc_title: Rate limits on Git LFS
+                doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
               - doc_title: Rate limits on issue creation
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_issues_creation.html'
               - doc_title: Rate limits on note creation
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_notes_creation.html'
+              - doc_title: Rate limits on Users API
+                doc_url: 'ee/user/admin_area/settings/rate_limit_on_users_api.html'              
               - doc_title: Reply by email
                 doc_url: 'ee/administration/reply_by_email.html'
               - doc_title: Repository checks
