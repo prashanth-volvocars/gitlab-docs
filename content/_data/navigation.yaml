@@ -1805,12 +1805,14 @@ sections:
           - doc_title: Kubernetes clusters
             doc_url: 'ee/user/clusters/agent/'
             docs:
-              - doc_title: Install the Agent for Kubernetes
+              - doc_title: Install the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/install/'
-              - doc_title: Configure the Agent for Kubernetes
+              - doc_title: Configure the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/repository.html'
-              - doc_title: Troubleshoot the Agent for Kubernetes
+              - doc_title: Troubleshoot the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
+              - doc_title: Migrate to the agent for Kubernetes
+                doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
               - doc_title: Manage cluster applications
                 doc_url: 'ee/user/clusters/management_project_template.html'
               - doc_title: Manage clusters with Inventory Objects
