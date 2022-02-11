@@ -648,7 +648,7 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/protected_paths.html'
               - doc_title: Push event activities limit
                 doc_url: 'ee/user/admin_area/settings/push_event_activities_limit.html'
-              - doc_title: Rate limits on Files API
+              - doc_title: Rate limits on Repository files API
                 doc_url: 'ee/user/admin_area/settings/files_api_rate_limits.html'
               - doc_title: Rate limits on Git LFS
                 doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
