@@ -16,7 +16,7 @@ heros:
     alt: continuous-delivery
     links:
       - title: GitLab CI/CD
-        url: '/ee/ci/index.html'
+        url: '/ee/ci/'
       - title: GitLab Runner
         url: '/runner/'
       - title: Auto DevOps

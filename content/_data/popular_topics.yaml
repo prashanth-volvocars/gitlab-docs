@@ -14,11 +14,11 @@ topics:
   - title: GitLab groups
     description: Manage multiple projects at the same time
     icon: group
-    url: /ee/user/group/index.html
+    url: /ee/user/group/
   - title: GitLab CI/CD reference
     description: Configure GitLab CI/CD in the .gitlab-ci.yml file
     icon: rocket
-    url: /ee/ci/yaml/index.html
+    url: /ee/ci/yaml/
   - title: Visual Studio Code extension
     description: |
       Perform more of your day-to-day tasks from within VS Code
@@ -52,12 +52,12 @@ topics:
       Learn about the settings on GitLab.com, like IP ranges,
       shared runners, and SSH keys fingerprints
     icon: settings
-    url: /ee/user/gitlab_com/index.html
+    url: /ee/user/gitlab_com/
   - title: Reference architectures
     description: |
       Scale your GitLab installation for your number of users
     icon: tachometer
-    url: /ee/administration/reference_architectures/index.html
+    url: /ee/administration/reference_architectures/
   - title: Feature availability
     description: |
       See what features are available with feature flags
@@ -68,7 +68,7 @@ developer:
     links:
       - title: API
         description: Use the API to develop against GitLab
-        url: /ee/api/index.html
+        url: /ee/api/
       - title: Contributing
         description: Learn the processes and technical information you need to contribute to GitLab
-        url: /ee/development/index.html
+        url: /ee/development/

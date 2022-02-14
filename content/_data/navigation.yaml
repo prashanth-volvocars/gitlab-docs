@@ -11,7 +11,7 @@
 # - If you're referring to a section within index.html, include only the anchor. For example, section_url:`dir/#some-anchor`.
 #
 # For more information, see:
-# - Docs Site architecture: https://docs.gitlab.com/ee/development/documentation/site_architecture/index.html
+# - Docs Site architecture: https://docs.gitlab.com/ee/development/documentation/site_architecture/
 # - Global Navigation: https://docs.gitlab.com/ee/development/documentation/site_architecture/global_nav.html
 #
 # Options:
@@ -2306,7 +2306,7 @@ sections:
           - doc_title: Design and UI
             doc_url: 'ee/development/contributing/design.html'
           - doc_title: GitLab Development Kit
-            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/README.md'
+            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/README.md'
             external_url: true
           - doc_title: Issues workflow
             doc_url: 'ee/development/contributing/issue_workflow.html'
