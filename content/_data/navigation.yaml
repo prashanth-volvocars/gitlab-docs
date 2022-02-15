@@ -2342,8 +2342,8 @@ sections:
                 docs:
                   - doc_title: Loose Foreign Keys
                     doc_url: 'ee/development/database/loose_foreign_keys.html'
-              - doc_title: Deprecation guidelines
-                doc_url: 'ee/development/deprecation_guidelines/'
+          - doc_title: Deprecation guidelines
+            doc_url: 'ee/development/deprecation_guidelines/'
           - doc_title: Developer guide to logging
             doc_url: 'ee/development/logging.html'
           - doc_title: Development Rake tasks
