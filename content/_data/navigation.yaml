@@ -2655,6 +2655,8 @@ sections:
                 doc_url: 'ee/development/snowplow/review_guidelines.html'
               - doc_title: Troubleshooting
                 doc_url: 'ee/development/snowplow/troubleshooting.html'
+              - doc_title: Infrastructure
+                doc_url: 'ee/development/snowplow/infrastructure.html'                
           - doc_title: Service Ping guide
             doc_url: 'ee/development/service_ping/'
             docs:
