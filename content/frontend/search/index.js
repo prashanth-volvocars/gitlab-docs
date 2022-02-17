@@ -1,5 +1,5 @@
-import instantsearch from '@tnir/instantsearch.js';
-import { singleIndexQ } from '@tnir/instantsearch.js/es/lib/stateMappings';
+import instantsearch from 'instantsearch.js';
+import { singleIndex } from 'instantsearch.js/es/lib/stateMappings';
 import {
   searchBox,
   refinementList,
@@ -7,7 +7,7 @@ import {
   stats,
   poweredBy,
   configure,
-} from '@tnir/instantsearch.js/es/widgets';
+} from 'instantsearch.js/es/widgets';
 import algoliasearch from 'algoliasearch';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       filters: 'tags:gitlab<score=3> OR tags:omnibus<score=2> OR tags:runner<score=1>',
     },
     routing: {
-      stateMapping: singleIndexQ('gitlab'),
+      stateMapping: singleIndex('gitlab'),
     },
     searchFunction: (helper) => {
       if (helper.state.query === '') {
