@@ -4,3 +4,4 @@
 - [ ] Link to the merge request that introduced the new page.
 
 /label ~"Category:Docs Site" ~"global nav item" ~"Technical Writing"
+/assign me
