@@ -1814,10 +1814,16 @@ sections:
           - doc_title: Kubernetes clusters
             doc_url: 'ee/user/clusters/agent/'
             docs:
+              - doc_title: GitOps workflow
+                doc_url: 'ee/user/clusters/agent/gitops.html'
+              - doc_title: GitLab CI/CD workflow
+                doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
               - doc_title: Install the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/install/'
-              - doc_title: Configure the agent for Kubernetes
+              - doc_title: Work with the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/repository.html'
+              - doc_title: Vulnerability scanning
+                doc_url: 'ee/user/clusters/agent/vulnerabilities.html'
               - doc_title: Troubleshoot the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
               - doc_title: Migrate to the agent for Kubernetes
