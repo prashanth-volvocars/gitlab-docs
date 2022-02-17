@@ -1834,7 +1834,7 @@ sections:
                 doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
               - doc_title: Deploy to clusters with the CI/CD Tunnel
                 doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
-              - doc_title: Protect deployed applications
+              - doc_title: (DEPRECATED) Protect deployed applications
                 doc_url: 'ee/user/project/clusters/protect/'
                 docs:
                   - doc_title: Container Network Security
