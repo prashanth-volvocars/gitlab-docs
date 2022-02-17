@@ -1325,6 +1325,8 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/status_checks.html'
               - doc_title: Merge request dependencies
                 doc_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
+              - doc_title: Merge request widgets
+                doc_url: 'ee/user/project/merge_requests/widgets.html'
               - doc_title: Fast forward
                 doc_url: 'ee/user/project/merge_requests/fast_forward_merge.html'
               - doc_title: Merge when pipeline succeeds
