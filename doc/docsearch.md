@@ -41,7 +41,7 @@ there's one file to edit:
 ## Navigate Algolia as a GitLab member
 
 GitLab members can access Algolia's dashboard with the credentials that are
-stored in 1Password (seach for Algolia). After you log in, you can visit:
+stored in 1Password (search for Algolia). After you log in, you can visit:
 
 - The index dashboard
 - The Algolia crawler
