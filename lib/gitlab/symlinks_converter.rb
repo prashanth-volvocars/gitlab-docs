@@ -1,6 +1,6 @@
 module Gitlab
   class SymlinksConverter
-    EXTENTIONS = %w[png jpg gif svg].freeze
+    EXTENSIONS = %w[png jpg gif svg].freeze
 
     def initialize(config, items)
       @config = config
@@ -19,7 +19,7 @@ module Gitlab
 
         next unless id.to_s.start_with?('/ee/')
 
-        if EXTENTIONS.include?(id.ext)
+        if EXTENSIONS.include?(id.ext)
           file_path = File.join(config.fetch(:content_dir), id.to_s)
           real_path = Pathname.new(file_path).realpath.to_s
           symlink = File.join(config.output_dir, id.to_s)
