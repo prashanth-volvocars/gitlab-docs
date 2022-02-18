@@ -121,8 +121,6 @@ sections:
                     doc_url: 'omnibus/settings/ssl.html'
                   - doc_title: DNS
                     doc_url: 'omnibus/settings/dns.html'
-                  - doc_title: Unicorn
-                    doc_url: 'ee/administration/operations/puma.html'
                   - doc_title: Image scaling
                     doc_url: 'omnibus/settings/image_scaling.html'
                   - doc_title: Memory-constrained environments
