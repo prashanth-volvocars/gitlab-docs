@@ -1,5 +1,5 @@
 ---
-version: 127
+version: 128
 ---
 
 @import 'variables';
@@ -433,6 +433,28 @@ ol {
 
 .mermaid {
   overflow: auto;
+
+  /* stylelint-disable declaration-no-important */
+  .label,
+  text {
+    font-family: $gl-regular-font !important;
+    font-size: 0.9rem !important;
+  }
+
+  rect {
+    fill: $white !important;
+    stroke: $gray-300 !important;
+  }
+
+  svg {
+    max-height: 1000px;
+  }
+
+  .note {
+    fill: $gray-50 !important;
+    stroke: $gray-50 !important;
+  }
+  /* stylelint-enable declaration-no-important */
 }
 
 .mermaid:not([data-processed='true']) {
