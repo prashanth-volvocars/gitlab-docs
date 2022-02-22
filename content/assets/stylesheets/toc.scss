@@ -1,5 +1,5 @@
 ---
-version: 22
+version: 23
 ---
 @import 'variables';
 @import 'utilities';
@@ -7,6 +7,40 @@ version: 22
 $base-nav-link-padding: 0.75rem;
 $sm-nav-link-padding: 0.25rem;
 $nav-link-font-size: 0.875rem;
+
+@mixin nav-link-toc-level($i) {
+  padding-left: $base-nav-link-padding * ($i + 0.75);
+  padding-top: 0;
+  line-height: 1rem;
+}
+
+@mixin toc-nav-link {
+  font-size: $nav-link-font-size;
+  color: $toc-link-color;
+  border-radius: 0;
+  border-left: 3px solid $gds-indigo-100;
+  border-bottom: 0;
+
+  &:hover {
+    color: $link-color-nav-hover;
+    text-decoration: underline;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 0;
+  }
+
+  &.active {
+    color: $link-color-nav;
+    background-color: transparent;
+    border-color: $gds-indigo-800;
+
+    /* stylelint-disable-next-line selector-list-comma-newline-after */
+    &:hover, &:only-child {
+      color: $link-color-nav-hover;
+      background-color: transparent;
+    }
+  }
+}
 
 // ToC styles
 .table-of-contents {
@@ -17,31 +51,42 @@ $nav-link-font-size: 0.875rem;
   }
 
   .nav-link {
-    font-size: $nav-link-font-size;
-    color: $toc-link-color;
-    border-radius: 0;
-    border-left: 3px solid $gds-indigo-100;
-    border-bottom: 0;
+    @include toc-nav-link;
+  }
+}
 
-    &:hover {
-      color: $link-color-nav-hover;
-      text-decoration: underline;
-      background-color: transparent;
-      box-shadow: none;
-      border-bottom: 0;
-    }
+// ToC before JavaScript loads
+#markdown-toc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: calc(4.75rem + 1.375rem * 1.125);
+  padding-left: 3rem;
+  margin: 0;
+  transform: translateX(100%);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: calc(25vw - 1rem); // max scrollbar size
 
-    &.active {
-      color: $link-color-nav;
-      background-color: transparent;
-      border-color: $gds-indigo-800;
+  code {
+    all: revert;
+    font: inherit;
+  }
 
-      /* stylelint-disable-next-line selector-list-comma-newline-after */
-      &:hover, &:only-child {
-        color: $link-color-nav-hover;
-        background-color: transparent;
-      }
-    }
+  a {
+    @include toc-nav-link;
+
+    display: block;
+    padding: 0 1rem 0.5rem;
+    line-height: 1rem;
+  }
+
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
   }
 }
 
@@ -69,9 +114,11 @@ $nav-link-font-size: 0.875rem;
 // than 10 anyways...
 @for $i from 0 to 10 {
   .nav-link.toc-level-#{$i} {
-    padding-left: $base-nav-link-padding * ($i + 0.75);
-    padding-top: 0;
-    line-height: 1rem;
+    @include nav-link-toc-level($i);
+  }
+
+  #markdown-toc #{repeat-str('ul', $i)} a {
+    @include nav-link-toc-level($i);
   }
 }
 
