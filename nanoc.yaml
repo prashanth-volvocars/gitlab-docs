@@ -29,7 +29,7 @@ text_extensions: [
   'xml']
 output_dir: public
 index_filenames: ['index.html']
-enable_output_diff: false
+enable_output_diff: true
 breadcrumbs: false
 debug: false
 
