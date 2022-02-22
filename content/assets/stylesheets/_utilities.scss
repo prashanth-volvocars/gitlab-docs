@@ -1,8 +1,22 @@
 ---
-version: 6
+version: 7
 ---
 
 @import 'variables';
+
+@function repeat-str($str, $times) {
+  @if $times <=0 {
+    @return '';
+  } @else {
+    $result: '';
+
+    @for $i from 1 through $times {
+      $result: $result + $str + ' ';
+    }
+
+    @return $result;
+  }
+}
 
 @mixin sidebar-fixed {
   overflow: auto;
