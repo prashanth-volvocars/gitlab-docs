@@ -1814,6 +1814,9 @@ sections:
             docs:
               - doc_title: GitOps workflow
                 doc_url: 'ee/user/clusters/agent/gitops.html'
+                docs:
+                  - doc_title: Manage Kubernetes secrets
+                    doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
               - doc_title: GitLab CI/CD workflow
                 doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
               - doc_title: Install the agent for Kubernetes
