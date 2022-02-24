@@ -459,9 +459,6 @@ redirects:
   - from: /ee/ci/yaml/yaml_specific_features.html
     to: /ee/ci/yaml/yaml_optimization.html
     remove_date: 2022-06-29
-  - from: /ee/administration/database_load_balancing.html
-    to: /ee/administration/postgresql/database_load_balancing.html
-    remove_date: 2022-02-16
   - from: /ee/intro/index.html
     to: /ee/topics/use_gitlab.html
     remove_date: 2022-09-08
@@ -552,3 +549,78 @@ redirects:
   - from: /ee/development/testing_guide/ci.html
     to: /ee/development/pipelines.html
     remove_date: 2022-10-12
+  - from: /ee/development/agent/routing.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/kas_request_routing.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/identity.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/identity_and_auth.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/user_stories.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/user_stories.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/gitops.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/gitops.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/index.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/architecture.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/architecture.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/repository_overview.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/repository_overview.md
+    remove_date: 2022-11-01
+  - from: /ee/development/agent/local.html
+    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/local.md
+    remove_date: 2022-11-01
+  - from: /ee/development/internal_api.html
+    to: /ee/development/internal_api/index.html
+    remove_date: 2022-11-09
+  - from: /ee/ci/runners/build_cloud/macos/environment.html
+    to: /ee/ci/runners/saas/macos/environment.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/build_cloud/macos_build_cloud.html
+    to: /ee/ci/runners/saas/macos_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/build_cloud/windows_build_cloud.html
+    to: /ee/ci/runners/saas/windows_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/build_cloud/linux_build_cloud.html
+    to: /ee/ci/runners/saas/linux_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/runner_cloud/macos/environment.html
+    to: /ee/ci/runners/saas/macos/environment.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/runner_cloud/linux_runner_cloud.html
+    to: /ee/ci/runners/saas/linux_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/runner_cloud/macos_runner_cloud.html
+    to: /ee/ci/runners/saas/macos_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/ci/runners/runner_cloud/windows_runner_cloud.html
+    to: /ee/ci/runners/saas/windows_saas_runner.html
+    remove_date: 2022-11-05
+  - from: /ee/user/clusters/agent/runner.html
+    to: /runner/install/kubernetes-agent.html
+    remove_date: 2022-11-01
+  - from: /ee/user/project/merge_requests/resolve_conflicts.html
+    to: /ee/user/project/merge_requests/conflicts.html
+    remove_date: 2022-10-26
+  - from: /ee/administration/package_information/deprecated_os.html
+    to: /ee/administration/package_information/supported_os.html
+    remove_date: 2022-11-18
+  - from: /ee/administration/database_load_balancing.html
+    to: /ee/administration/postgresql/database_load_balancing.html
+    remove_date: 2022-11-19
+  - from: /ee/topics/index.html
+    to: /ee/index.html
+    remove_date: 2022-11-03
+  - from: /ee/topics/
+    to: /ee/index.html
+    remove_date: 2022-11-03
+  - from: /runner/enterprise_guide/index.html
+    to: /runner/fleet_scaling/index.html
+    remove_date: 2022-11-05
+  - from: /runner/enterprise_guide/
+    to: /runner/fleet_scaling/index.html
+    remove_date: 2022-11-05
