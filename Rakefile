@@ -332,7 +332,8 @@ namespace :docs do
       # contains an example of the YAML front matter.
       #
       files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | grep -v doc/development/documentation/redirects.md | cut -d ":" -f1`.split("\n")
-
+      puts "Found redirect files:"
+      files_to_be_deleted.each { |file| puts "- #{file}" }
       #
       # Iterate over the files to be deleted and print the needed
       # YAML entries for the Docs site redirects.
@@ -350,6 +351,7 @@ namespace :docs do
         # To not be confused with the remove_date of the Markdown page.
         #
         next unless remove_date < today
+        puts "In #{filename}, remove date: #{remove_date} is less than today (#{today})."
 
         counter += 1
 
