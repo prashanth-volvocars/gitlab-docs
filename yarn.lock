@@ -1059,10 +1059,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@gitlab/eslint-plugin@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-10.0.2.tgz#6a8c24901b3c6a1cd5f46c987a905c102e9ffa52"
-  integrity sha512-A2FqRuJR7t1JXACV/VaJcqwNPcKt4SFllqoCKCc4TCQ4SEvEOnt+lkNlk5xl46f3hxpRsk4GXmOv0Ffcxim5kA==
+"@gitlab/eslint-plugin@^11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/eslint-plugin/-/eslint-plugin-11.0.0.tgz#90d71bc0c5f54ac066faba8c6f909b0df761d0bb"
+  integrity sha512-5t1eTu/+myitEP68ceKQRRE0S5R1QStlRVykivZFZDxGloCyAq1zE96ZwqsMzDtpfK5fmf1+7yxGw9CPdLUB/A==
   dependencies:
     babel-eslint "^10.0.3"
     eslint-config-airbnb-base "^14.2.1"
@@ -1090,10 +1090,10 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.5.0.tgz#e0569916fa858462b1801cc90ef8dd9706a12e96"
   integrity sha512-cH/EBs//wdkH6kG+kDpvRCIl63/A8JgjAhBJ+ZWucPgtNCDD6x6RDMGdQrxSqhYwcCKDoLStfcxmblBkuiSRXQ==
 
-"@gitlab/ui@^36.7.1":
-  version "36.7.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-36.7.1.tgz#49005f55e3fedc3c3ca054355d29c7ac5ade94b5"
-  integrity sha512-MIohLWzZtKxUVwxB26em/R7JB8RB8a/BbTDZR/06xp8yMa4wpNtGTuTGajBKBnbltdKE1h1jVIOLF9Kkb3Njow==
+"@gitlab/ui@^37.0.0":
+  version "37.0.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-37.0.0.tgz#75a4fe340950623f9c232218762a5ceaf3609982"
+  integrity sha512-He4tu3Sd7zkGBZzIk1IHjq8adkzGsN5Z/0XWD8V+NoJcjQWn/+6fzr5g2bq1s6krD+FgfZAppez5MKR/bdC8eg==
   dependencies:
     "@babel/standalone" "^7.0.0"
     bootstrap-vue "2.20.1"
@@ -1409,10 +1409,10 @@
     is-module "^1.0.0"
     resolve "^1.19.0"
 
-"@rollup/plugin-replace@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-replace/-/plugin-replace-3.1.0.tgz#d31e3a90c6b47064f3c9f2ce0ded5bcf0d3b82f6"
-  integrity sha512-pA3XRUrSKybVYqmH5TqWNZpGxF+VV+1GrYchKgCNIj2vsSOX7CVm2RCtx8p2nrC7xvkziYyK+lSi74T93MU3YA==
+"@rollup/plugin-replace@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-replace/-/plugin-replace-4.0.0.tgz#e34c457d6a285f0213359740b43f39d969b38a67"
+  integrity sha512-+rumQFiaNac9y64OHtkHGmdjm7us9bo1PlbgQfdihQtuNxzjpaB064HbRnewUOggLQxVCCyINfStkgmBeQpv1g==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     magic-string "^0.25.7"
