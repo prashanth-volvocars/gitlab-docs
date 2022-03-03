@@ -1817,7 +1817,7 @@ sections:
                 docs:
                   - doc_title: Manage Kubernetes secrets
                     doc_url: 'ee/user/clusters/agent/gitops/secrets_management.html'
-                  - doc_title: Manage clusters with Inventory Objects
+                  - doc_title: Track cluster resources
                     doc_url: 'ee/user/infrastructure/clusters/deploy/inventory_object.html'
               - doc_title: GitLab CI/CD workflow
                 doc_url: 'ee/user/clusters/agent/ci_cd_tunnel.html'
