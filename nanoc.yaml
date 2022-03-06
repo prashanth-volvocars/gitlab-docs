@@ -124,6 +124,7 @@ checks:
       - 'https:\/\/twitter\.com\/gitlab'
       # Redirected links to ignore.
       - 'https:\/\/www\.jaegertracing\.io\/docs\/latest\/'
+      - 'https:\/\/bit.ly\/.*'
       # Don't check links matching the following patterns.
       - 'https?:\/\/\w*\.example\.com.*'
       - 'https?:\/\/localhost.*'
