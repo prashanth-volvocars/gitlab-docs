@@ -441,7 +441,8 @@ ol {
     font-size: 0.9rem !important;
   }
 
-  rect {
+  rect,
+  polygon {
     fill: $white !important;
     stroke: $gray-300 !important;
   }
