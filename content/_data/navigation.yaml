@@ -1810,7 +1810,14 @@ sections:
                 doc_url: 'ee/user/infrastructure/iac/mr_integration.html'
               - doc_title: Troubleshoot Terraform
                 doc_url: 'ee/user/infrastructure/iac/troubleshooting.html'
-          - doc_title: Kubernetes clusters
+          - doc_title: Create Kubernetes clusters
+            doc_url: 'ee/user/clusters/create/index.html'
+            docs:
+              - doc_title: Amazon EKS
+                doc_url: 'ee/user/infrastructure/clusters/connect/new_eks_cluster.html'
+              - doc_title: Google GKE
+                doc_url: 'ee/user/infrastructure/clusters/connect/new_gke_cluster.html'
+          - doc_title: Connect Kubernetes clusters
             doc_url: 'ee/user/clusters/agent/'
             docs:
               - doc_title: GitOps workflow
