@@ -754,6 +754,10 @@ sections:
                 doc_url: 'ee/administration/geo/replication/configuration.html'
               - doc_title: Using a Geo site
                 doc_url: 'ee/administration/geo/replication/usage.html'
+              - doc_title: Configure secondary proxying
+                doc_url: 'ee/administration/geo/secondary_proxy/'
+              - doc_title: Location-aware public URL
+                doc_url: 'ee/administration/geo/secondary_proxy/location_aware_external_url.html'
               - doc_title: Updating Geo sites
                 doc_url: 'ee/administration/geo/replication/updating_the_geo_sites.html'
               - doc_title: Version-specific updates
