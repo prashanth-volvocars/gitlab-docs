@@ -602,6 +602,8 @@ sections:
                 doc_url: 'ee/user/admin_area/monitoring/background_migrations.html'
               - doc_title: CI/CD
                 doc_url: 'ee/user/admin_area/settings/continuous_integration.html'
+              - doc_title: Application cache interval
+                doc_url: 'ee/administration/application_settings_cache.html'
               - doc_title: Custom instance-level project templates
                 doc_url: 'ee/user/admin_area/custom_project_templates.html'
               - doc_title: Deprecated API rate limits
@@ -948,6 +950,8 @@ sections:
             doc_url: 'ee/administration/user_settings.html'
           - doc_title: Moderate users
             doc_url: 'ee/user/admin_area/moderate_users.html'
+          - doc_title: Auditor users
+            doc_url: 'ee/administration/auditor_users.html'
           - doc_title: Broadcast messages
             doc_url: 'ee/user/admin_area/broadcast_messages.html'
           - doc_title: Email from GitLab
