@@ -424,6 +424,8 @@ sections:
             doc_url: 'ee/integration/jira/issues.html'
       - category_title: Kroki diagrams
         category_url: 'ee/administration/integration/kroki.html'
+      - category_title: Mailgun
+        category_url: 'ee/administration/integration/mailgun.html'
       - category_title: PlantUML
         category_url: 'ee/administration/integration/plantuml.html'
       - category_title: Project integration management
