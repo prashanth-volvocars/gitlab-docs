@@ -720,7 +720,7 @@ sections:
           - doc_title: Redis
             doc_url: 'ee/administration/redis/'
             docs:
-              - doc_title: Redis configuration with Omnibus
+              - doc_title: Redis configuration
                 doc_url: 'ee/administration/redis/replication_and_failover.html'
               - doc_title: Self managed Redis configuration
                 doc_url: 'ee/administration/redis/replication_and_failover_external.html'
