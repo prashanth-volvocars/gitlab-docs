@@ -65,14 +65,14 @@ sections:
                     doc_url: 'ee/administration/package_information/omnibus_packages.html'
                   - doc_title: Package information
                     doc_url: 'ee/administration/package_information/'
-                  - doc_title: Postgresql versions
-                    doc_url: 'ee/administration/package_information/postgresql_versions.html'
                   - doc_title: Package defaults
                     doc_url: 'ee/administration/package_information/defaults.html'
                   - doc_title: Package licensing
                     doc_url: 'ee/administration/package_information/licensing.html'
                   - doc_title: Package signatures
                     doc_url: 'ee/administration/package_information/signed_packages.html'
+                  - doc_title: Postgresql versions
+                    doc_url: 'ee/administration/package_information/postgresql_versions.html'
               - doc_title: Installation
                 doc_url: 'omnibus/installation/'
                 docs:
