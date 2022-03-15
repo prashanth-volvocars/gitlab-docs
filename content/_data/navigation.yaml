@@ -688,6 +688,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/visibility_and_access_controls.html'
           - doc_title: Consul
             doc_url: 'ee/administration/consul.html'
+          - doc_title: Environment variables
+            doc_url: 'ee/administration/environment_variables.html'
           - doc_title: File hooks
             doc_url: 'ee/administration/file_hooks.html'
           - doc_title: Git protocol v2
@@ -850,6 +852,8 @@ sections:
             doc_url: 'ee/administration/operations/puma.html'
           - doc_title: Use SSH certificates
             doc_url: 'ee/administration/operations/ssh_certificates.html'
+          - doc_title: Enable encrypted configuration
+            doc_url: 'ee/administration/encrypted_configuration.html'
           - doc_title: Rake tasks
             doc_url: 'ee/raketasks/'
             docs:
