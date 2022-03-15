@@ -840,6 +840,8 @@ sections:
             doc_url: 'ee/administration/operations/filesystem_benchmarking.html'
           - doc_title: Multiple Sidekiq processes
             doc_url: 'ee/administration/operations/extra_sidekiq_processes.html'
+          - doc_title: Sidekiq routing rules
+            doc_url: 'ee/administration/operations/extra_sidekiq_routing.html'
           - doc_title: Rails console
             doc_url: 'ee/administration/operations/rails_console.html'
           - doc_title: Sidekiq MemoryKiller
@@ -863,6 +865,8 @@ sections:
                 doc_url: 'ee/administration/raketasks/geo.html'
               - doc_title: GitHub import
                 doc_url: 'ee/administration/raketasks/github_import.html'
+              - doc_title: SMTP
+                doc_url: 'ee/administration/raketasks/smtp.html'
               - doc_title: SPDX license list import
                 doc_url: 'ee/raketasks/spdx.html'
           - doc_title: Import repositories
@@ -954,6 +958,8 @@ sections:
             doc_url: 'ee/user/admin_area/moderate_users.html'
           - doc_title: Auditor users
             doc_url: 'ee/administration/auditor_users.html'
+          - doc_title: Configure the libravatar service
+            doc_url: 'ee/administration/libravatar.html'
           - doc_title: Broadcast messages
             doc_url: 'ee/user/admin_area/broadcast_messages.html'
           - doc_title: Email from GitLab
