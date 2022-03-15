@@ -985,6 +985,8 @@ sections:
           - doc_title: Moderate users
             doc_url: 'ee/user/admin_area/moderate_users.html'
           - doc_title: Auditor users
+          - doc_title: Configure the libravatar service
+            doc_url: 'ee/administration/libravatar.html'
             doc_url: 'ee/administration/auditor_users.html'
           - doc_title: Configure the libravatar service
             doc_url: 'ee/administration/libravatar.html'
