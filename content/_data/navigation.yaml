@@ -1859,7 +1859,7 @@ sections:
               - doc_title: Troubleshoot Terraform
                 doc_url: 'ee/user/infrastructure/iac/troubleshooting.html'
           - doc_title: Create Kubernetes clusters
-            doc_url: 'ee/user/clusters/create/index.html'
+            doc_url: 'ee/user/clusters/create/'
             docs:
               - doc_title: Amazon EKS
                 doc_url: 'ee/user/infrastructure/clusters/connect/new_eks_cluster.html'
