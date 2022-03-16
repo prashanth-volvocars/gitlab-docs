@@ -1,5 +1,5 @@
 ---
-version: 12
+version: 13
 ---
 
 @import 'variables';
@@ -729,4 +729,24 @@ version: 12
       margin-bottom: 0.25rem;
     }
   }
+}
+
+.gl-text-red-800 {
+  color: $red-800;
+}
+
+.gl-text-red-600 {
+  color: $red-600;
+}
+
+.gl-text-orange-400 {
+  color: $orange-400;
+}
+
+.gl-text-orange-300 {
+  color: $orange-300;
+}
+
+.gl-text-blue-400 {
+  color: $blue-400;
 }
