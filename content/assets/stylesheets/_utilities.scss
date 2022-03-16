@@ -1,5 +1,5 @@
 ---
-version: 7
+version: 8
 ---
 
 @import 'variables';
@@ -48,4 +48,24 @@ version: 7
 
 .gl-w-3 {
   width: 1rem;
+}
+
+.gl-fill-red-800 {
+  fill: $red-800;
+}
+
+.gl-fill-red-600 {
+  fill: $red-600;
+}
+
+.gl-fill-orange-400 {
+  fill: $orange-400;
+}
+
+.gl-fill-orange-300 {
+  fill: $orange-300;
+}
+
+.gl-fill-blue-400 {
+  fill: $blue-400;
 }
