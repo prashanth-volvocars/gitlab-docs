@@ -2451,7 +2451,7 @@ sections:
             docs:
               - doc_title: Style guide
                 doc_url: 'ee/development/documentation/styleguide/'
-              - doc_title: GraphQL style guide
+              - doc_title: Creating a GraphQL example page
                 doc_url: 'ee/development/documentation/graphql_styleguide.html'
               - doc_title: RESTful API style guide
                 doc_url: 'ee/development/documentation/restful_api_styleguide.html'
