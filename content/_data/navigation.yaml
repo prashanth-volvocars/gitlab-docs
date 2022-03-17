@@ -2535,6 +2535,8 @@ sections:
                 doc_url: 'ee/development/fe_guide/performance.html'
               - doc_title: Principles
                 doc_url: 'ee/development/fe_guide/principles.html'
+              - doc_title: Registry architecture
+                doc_url: 'ee/development/fe_guide/registry_architecture.html'
               - doc_title: Security
                 doc_url: 'ee/development/fe_guide/security.html'
               - doc_title: Source editor
