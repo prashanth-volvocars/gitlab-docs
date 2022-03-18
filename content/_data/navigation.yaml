@@ -71,7 +71,7 @@ sections:
                     doc_url: 'ee/administration/package_information/licensing.html'
                   - doc_title: Package signatures
                     doc_url: 'ee/administration/package_information/signed_packages.html'
-                  - doc_title: Postgresql versions
+                  - doc_title: PostgreSQL versions
                     doc_url: 'ee/administration/package_information/postgresql_versions.html'
               - doc_title: Installation
                 doc_url: 'omnibus/installation/'
