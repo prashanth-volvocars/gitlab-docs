@@ -2354,6 +2354,8 @@ sections:
             external_url: true
           - doc_title: Issues workflow
             doc_url: 'ee/development/contributing/issue_workflow.html'
+          - doc_title: Merge request concepts
+            doc_url: 'ee/development/merge_request_concepts/'
           - doc_title: Merge request workflow
             doc_url: 'ee/development/contributing/merge_request_workflow.html'
           - doc_title: Code review guidelines
