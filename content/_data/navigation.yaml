@@ -726,7 +726,7 @@ sections:
                 doc_url: 'ee/administration/redis/replication_and_failover_external.html'
               - doc_title: Standalone Redis configuration
                 doc_url: 'ee/administration/redis/standalone.html'
-              - doc_title: Troubleshooting Redis
+              - doc_title: Troubleshooting
                 doc_url: 'ee/administration/redis/troubleshooting.html'
           - doc_title: Sidekiq
             doc_url: 'ee/administration/sidekiq.html'
