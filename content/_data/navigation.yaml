@@ -972,7 +972,7 @@ sections:
   # USE GITLAB
 
   - section_title: Use GitLab
-    section_url: 'ee/topics/use_gitlab.html'
+    section_url: 'ee/user/'
     section_categories:
       - category_title: Set up your organization
         category_url: 'ee/topics/set_up_organization.html'
