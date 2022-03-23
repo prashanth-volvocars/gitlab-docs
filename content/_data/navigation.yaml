@@ -2630,6 +2630,15 @@ sections:
             doc_url: 'ee/development/integrations/jira_connect.html'
           - doc_title: Kubernetes integration
             doc_url: 'ee/development/kubernetes.html'
+          - doc_title: Observability for stage groups
+            doc_url: 'ee/development/stage_group_observability/'
+            docs:
+              - doc_title: Dashboards
+                doc_url: 'ee/development/stage_group_observability/dashboards/'
+              - doc_title: Stage group dashboard
+                doc_url: 'ee/development/stage_group_observability/dashboards/stage_group_dashboard.html'
+              - doc_title: Error budget detail
+                doc_url: 'ee/development/stage_group_observability/dashboards/error_budget_detail.html'
           - doc_title: Package development
             doc_url: 'ee/development/packages.html'
           - doc_title: Permissions
