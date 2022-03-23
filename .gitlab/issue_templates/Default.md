@@ -7,7 +7,10 @@ If you are experiencing an issue when using GitLab.com, your first port of call 
 
 * https://forum.gitlab.com/
 
-If you feel that your issue can be categorized as a reproducible bug or a feature proposal for GitLab Docs, please remove this text and provide as much information as possible.
+If you feel that your issue can be categorized as a reproducible bug or a feature proposal for:
+
+- GitLab Docs content, please [raise an issue](https://gitlab.com/gitlab-org/gitlab/-/issues) on the GitLab project.
+- GitLab Docs publishing or pipelines, please remove this text and provide as much information as possible.
 
 Thank you for helping to make GitLab a better product.
 -->
