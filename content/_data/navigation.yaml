@@ -71,6 +71,8 @@ sections:
                     doc_url: 'ee/administration/package_information/licensing.html'
                   - doc_title: Package signatures
                     doc_url: 'ee/administration/package_information/signed_packages.html'
+                  - doc_title: PostgreSQL versions
+                    doc_url: 'ee/administration/package_information/postgresql_versions.html'
               - doc_title: Installation
                 doc_url: 'omnibus/installation/'
                 docs:
@@ -628,6 +630,9 @@ sections:
                 doc_url: 'ee/administration/lfs/'
               - doc_title: GitLab Pages
                 doc_url: 'ee/administration/pages/'
+                docs:
+                  - doc_title: GitLab Pages for source installations
+                    doc_url: 'ee/administration/pages/source.html'
               - doc_title: Health Check
                 doc_url: 'ee/user/admin_area/monitoring/health_check.html'
               - doc_title: Incoming email
@@ -717,6 +722,15 @@ sections:
             doc_url: 'ee/administration/nfs.html'
           - doc_title: Redis
             doc_url: 'ee/administration/redis/'
+            docs:
+              - doc_title: Configure the bundled Redis for replication
+                doc_url: 'ee/administration/redis/replication_and_failover.html'
+              - doc_title: Configure your own Redis for replication
+                doc_url: 'ee/administration/redis/replication_and_failover_external.html'
+              - doc_title: Standalone Redis configuration
+                doc_url: 'ee/administration/redis/standalone.html'
+              - doc_title: Troubleshooting
+                doc_url: 'ee/administration/redis/troubleshooting.html'
           - doc_title: Sidekiq
             doc_url: 'ee/administration/sidekiq.html'
           - doc_title: Repository storage
