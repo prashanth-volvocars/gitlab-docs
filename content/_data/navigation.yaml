@@ -1404,6 +1404,8 @@ sections:
                     doc_url: 'ee/ci/pipelines/pipeline_architectures.html'
                   - doc_title: Pipeline efficiency
                     doc_url: 'ee/ci/pipelines/pipeline_efficiency.html'
+                  - doc_title: Pipeline resource groups
+                    doc_url: ee/ci/resource_groups/
                   - doc_title: Directed acyclic graph (DAG)
                     doc_url: 'ee/ci/directed_acyclic_graph/'
                   - doc_title: Multi-project pipelines
@@ -1756,6 +1758,8 @@ sections:
                 doc_url: 'ee/ci/environments/incremental_rollouts.html'
               - doc_title: Deploy to AWS
                 doc_url: 'ee/ci/cloud_deployment/'
+              - doc_title: Deploy to Amazon ECS
+                doc_url: 'ee/ci/cloud_deployment/ecs/quick_start_guide.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
           - doc_title: Review Apps
@@ -2508,6 +2512,8 @@ sections:
                 doc_url: 'ee/development/feature_flags/controls.html'
               - doc_title: Documenting feature flags
                 doc_url: 'ee/development/documentation/feature_flags.html'
+              - doc_title: Feature flags API
+                doc_url: 'ee/api/features.html'
           - doc_title: Framework - DeclarativePolicy
             doc_url: 'ee/development/policies.html'
           - doc_title: Frontend development
