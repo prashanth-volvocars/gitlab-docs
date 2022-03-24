@@ -635,8 +635,6 @@ sections:
                     doc_url: 'ee/administration/pages/source.html'
               - doc_title: Health Check
                 doc_url: 'ee/user/admin_area/monitoring/health_check.html'
-              - doc_title: Incoming email
-                doc_url: 'ee/administration/incoming_email.html'
               - doc_title: Instance template repository
                 doc_url: 'ee/user/admin_area/settings/instance_template_repository.html'
               - doc_title: Job artifacts
@@ -699,6 +697,8 @@ sections:
             doc_url: 'ee/administration/file_hooks.html'
           - doc_title: Git protocol v2
             doc_url: 'ee/administration/git_protocol.html'
+          - doc_title: Incoming email
+            doc_url: 'ee/administration/incoming_email.html'
           - doc_title: Instance limits
             doc_url: 'ee/administration/instance_limits.html'
           - doc_title: Instance Review
@@ -720,6 +720,8 @@ sections:
             doc_url: 'ee/administration/load_balancer.html'
           - doc_title: NFS
             doc_url: 'ee/administration/nfs.html'
+          - doc_title: Postfix
+            doc_url: 'ee/administration/reply_by_email_postfix_setup.html'
           - doc_title: Redis
             doc_url: 'ee/administration/redis/'
             docs:
@@ -733,6 +735,11 @@ sections:
                 doc_url: 'ee/administration/redis/troubleshooting.html'
           - doc_title: Sidekiq
             doc_url: 'ee/administration/sidekiq.html'
+            docs:
+              - doc_title: Sidekiq health check
+                doc_url: 'ee/administration/sidekiq_health_check.html'
+          - doc_title: S/MIME signing
+            doc_url: 'ee/administration/smime_signing_email.html'
           - doc_title: Repository storage
             doc_url: 'ee/administration/repository_storage_paths.html'
             docs:
@@ -903,8 +910,12 @@ sections:
             doc_url: 'ee/administration/raketasks/praefect.html'
           - doc_title: Project import and export
             doc_url: 'ee/administration/raketasks/project_import_export.html'
+          - doc_title: Read-only state
+            doc_url: 'ee/administration/read_only_gitlab.html'
           - doc_title: Repository storage
             doc_url: 'ee/administration/raketasks/storage.html'
+          - doc_title: Restart GitLab
+            doc_url: 'ee/administration/restart_gitlab.html'
           - doc_title: Sample Prometheus data
             doc_url: 'ee/raketasks/generate_sample_prometheus_data.html'
           - doc_title: Uploads migration
