@@ -2199,6 +2199,8 @@ sections:
             doc_url: 'ee/api/project_aliases.html'
           - doc_title: Project import/export
             doc_url: 'ee/api/project_import_export.html'
+          - doc_title: Project relations export
+            doc_url: 'ee/api/project_relations_export.html'
           - doc_title: Project remote mirrors
             doc_url: 'ee/api/remote_mirrors.html'
           - doc_title: Project repository storage moves
@@ -2231,6 +2233,8 @@ sections:
             doc_url: 'ee/api/repository_files.html'
           - doc_title: Repository submodules
             doc_url: 'ee/api/repository_submodules.html'
+          - doc_title: Resource group
+            doc_url: 'ee/api/resource_groups.html'
           - doc_title: Resource iteration events
             doc_url: 'ee/api/resource_iteration_events.html'
           - doc_title: Resource label events
