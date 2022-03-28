@@ -1246,11 +1246,13 @@ sections:
             doc_url: 'ee/topics/git/'
             docs:
               - doc_title: Get started
-                doc_url: 'ee/gitlab-basics/start-using-git.html'
+                doc_url: 'ee/tutorials/make_your_first_git_commit.html'
+              - doc_title: Terminology
+                doc_url: 'ee/topics/git/terminology.html'
               - doc_title: Installing Git
                 doc_url: 'ee/topics/git/how_to_install_git/'
-              - doc_title: Create branch
-                doc_url: 'ee/gitlab-basics/create-branch.html'
+              - doc_title: Command line Git
+                doc_url: 'ee/gitlab-basics/start-using-git.html'
               - doc_title: Feature branch workflow
                 doc_url: 'ee/gitlab-basics/feature_branch_workflow.html'
               - doc_title: Feature branch development
