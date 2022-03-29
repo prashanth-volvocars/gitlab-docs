@@ -678,7 +678,7 @@ sections:
               - doc_title: Sign-up restrictions
                 doc_url: 'ee/user/admin_area/settings/sign_up_restrictions.html'
               - doc_title: System Hooks
-                doc_url: 'ee/system_hooks/system_hooks.html'
+                doc_url: 'ee/administration/system_hooks.html'
               - doc_title: Third-party offers
                 doc_url: 'ee/user/admin_area/settings/third_party_offers.html'
               - doc_title: Timezone
@@ -992,7 +992,7 @@ sections:
           - doc_title: Broadcast messages
             doc_url: 'ee/user/admin_area/broadcast_messages.html'
           - doc_title: Email from GitLab
-            doc_url: 'ee/tools/email.html'
+            doc_url: 'ee/user/admin_area/email_from_gitlab.html'
 
   # USE GITLAB
 
@@ -1046,7 +1046,7 @@ sections:
               - doc_title: Delete account
                 doc_url: 'ee/user/profile/account/delete_account.html'
           - doc_title: SSH keys
-            doc_url: 'ee/ssh/'
+            doc_url: 'ee/user/ssh.html'
           - doc_title: GitLab.com settings
             doc_url: 'ee/user/gitlab_com/'
       - category_title: Organize work with projects
@@ -1055,7 +1055,7 @@ sections:
           - doc_title: Manage projects
             doc_url: 'ee/user/project/working_with_projects.html'
           - doc_title: Project visibility
-            doc_url: 'ee/public_access/public_access.html'
+            doc_url: 'ee/user/public_access.html'
           - doc_title: Project settings
             doc_url: 'ee/user/project/settings/'
           - doc_title: Project access tokens
