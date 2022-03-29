@@ -261,6 +261,26 @@ check_duplicate_redirects:
     - exit $(cat output.txt | wc -l)
 
 #
+# Check for index.html in navigation.yaml
+#
+check_index_html:
+  image: busybox
+  extends:
+    - .rules_site_tests
+  needs: []
+  before_script: []
+  stage: test
+  script:
+    # Check for index.html in navigation.yaml and write the output in output.txt
+    - grep -Ir "/index.html" content/_data/navigation.yaml | sed -e '/^#/d' | tee output.txt
+    - |
+      echo "***************************************************************************"
+      echo "* If this job failed, it is because a navbar entry is using 'index.html'. *"
+      echo "* Link to just '/' instead, For example 'ee/user/'                        *"
+      echo "***************************************************************************"
+    - exit $(cat output.txt | wc -l)
+
+#
 # Run rspec tests
 #
 rspec:
