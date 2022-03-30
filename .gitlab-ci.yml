@@ -3,6 +3,9 @@ include:
     file: templates/merge_request_pipelines.yml
   - template: Security/Dependency-Scanning.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
+  - project: 'gitlab-org/quality/pipeline-common'
+    file:
+      - '/ci/danger-review.yml'
 
 default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base

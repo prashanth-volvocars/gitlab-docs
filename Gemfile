@@ -23,3 +23,7 @@ group :test, :development do
   gem 'pry-byebug', '~> 3.9.0', require: false
   gem 'gitlab-styles', '~> 7.0.0', require: false
 end
+
+group :development, :danger do
+  gem 'gitlab-dangerfiles', '~> 3.0.0', require: false
+end
