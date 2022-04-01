@@ -2464,6 +2464,8 @@ sections:
                 doc_url: 'ee/development/database/dbcheck-migrations-job.html'
               - doc_title: Delete existing migrations
                 doc_url: 'ee/development/deleting_migrations.html'
+              - doc_title: Layout and access patterns
+                doc_url: 'ee/development/database/layout_and_access_patterns.html'
               - doc_title: Migrations style guide
                 doc_url: 'ee/development/migration_style_guide.html'
               - doc_title: Pagination guidelines
