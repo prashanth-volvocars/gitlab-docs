@@ -353,8 +353,8 @@ sections:
             doc_url: 'runner/install/linux-manually.html'
           - doc_title: macOS
             doc_url: 'runner/install/osx.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/install/openshift.html'
+          - doc_title: Runner Operator
+            doc_url: 'runner/install/operator.html'
           - doc_title: Windows
             doc_url: 'runner/install/windows.html'
           - doc_title: Bleeding edge releases
@@ -381,8 +381,8 @@ sections:
             doc_url: 'runner/configuration/feature-flags.html'
           - doc_title: macOS setup
             doc_url: 'runner/configuration/macos_setup.html'
-          - doc_title: OpenShift
-            doc_url: 'runner/configuration/configuring_runner_openshift.html'
+          - doc_title: Runner Operator on OpenShift
+            doc_url: 'runner/configuration/configuring_runner_operator.html'
           - doc_title: Running behind a proxy
             doc_url: 'runner/configuration/proxy.html'
           - doc_title: Rate limited requests
