@@ -3,13 +3,17 @@
 When a new GitLab version is released on the 22nd, we release version-specific published
 documentation for the new version.
 
-We complete the process as soon as possible after the GitLab version is announced. The result is:
+The tasks described in this document cover the preparation steps and the publication steps. The
+preparation steps are completed on your local computer. The publication steps are completed in the
+GitLab UI.
+
+When you've completed the documentation release process:
 
 - The [online published documentation](https://docs.gitlab.com) includes:
   - The three most recent minor releases of the current major version. For example 13.9, 13.8, and
     13.7.
   - The most recent minor releases of the last two major versions. For example 12.10, and 11.11.
-- Documentation updates after the 22nd are for the next release. The versions drop down
+- Documentation updates after the 22nd are for the next release. The versions dropdown
   should have the current milestone with `-pre` appended to it, for example `13.10-pre`.
 
 Each documentation release:
@@ -30,7 +34,8 @@ For example:
 
 To minimize problems during the documentation release process, use the following timeline:
 
-- Between the 17th and the 20th of the month:
+- Complete the preparation steps between the 17th and the 20th of the month. **All** of the following steps
+  must be completed successfully before proceeding with the publication steps:
 
   1. [Create a stable branch and Docker image](#create-stable-branch-and-docker-image-for-release) for
      the new version.
@@ -49,7 +54,7 @@ To minimize problems during the documentation release process, use the following
   1. [Update the three online versions](#update-dropdown-for-online-versions), so that they display the new release on their
      version dropdown menus.
 
-- On the 22nd of the month, after the release post is live:
+- Complete the publication steps on the 22nd of the month, after the release post is live:
 
   [Merge the release merge requests and run the necessary Docker image builds](#merge-merge-requests-and-run-docker-image-builds).
 
@@ -58,6 +63,13 @@ To minimize problems during the documentation release process, use the following
 To create a stable branch of the `gitlab-docs` project and a Docker image for the release:
 
 1. Make sure you're in the root path of the `gitlab-docs` repository.
+1. Update your local clone:
+
+   ```shell
+   git stash -u
+   git fetch origin && git rebase origin/main
+   ```
+
 1. Run the Rake task to create the single version. For example, to create the 13.9 release branch
    and perform other tasks:
 
@@ -68,14 +80,18 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
    A branch for the release is created, a new `Dockerfile.13.9` is created, and `.gitlab-ci.yml`
    has branches variables updated into a new branch. These files are automatically committed.
 
-1. Push the newly created branch, but **don't create a merge request**. After you push, the
-   `image:docs-single` job creates a new Docker image tagged with the name of the branch you created
-   earlier. You can see the Docker image in the `registry` environment at
-   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry>.
+1. Push the newly created branch, but **don't create a merge request**.
+
+   After you push, the `image:docs-single` job creates a new Docker image tagged with the name of
+   the branch you created earlier.
+
+   Confirm the Docker image has been created. Go to the `registry` environment at
+   <https://gitlab.com/gitlab-org/gitlab-docs/-/environments/folders/registry> and confirm the image
+   is listed. The Docker image may not be created if stable branches have not been created for all
+   the related projects. If that occurs, continue with the docs release process because the
+   Docker creation job will be run again later in the process.
 
 For example, see [the 13.9 release pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines/260288747).
-
-If the pipeline fails, the new Docker image is not created and so not added to the registry.
 
 ### Optional. Test locally
 
@@ -109,12 +125,22 @@ Prerequisite:
 To create the release merge request for the release:
 
 1. Make sure you're in the root path of the `gitlab-docs` repository.
+1. Update your local clone:
+
+   ```shell
+   git stash -u
+   git fetch origin && git rebase origin/main
+   ```
+
 1. Create a branch `release-X-Y`. For example:
 
    ```shell
    git checkout main
    git checkout -b release-13-9
    ```
+
+   Confirm the branch has been created. Go to <https://gitlab.com/gitlab-org/gitlab-docs/-/branches/active>
+   and verify the branch is listed.
 
 1. Edit `content/_data/versions.yaml` and update the lists of versions to reflect the new release:
 
@@ -160,7 +186,7 @@ _Do this after the release post is live._
 The merge requests for the dropdowns should now all be merged into their respective stable branches.
 
 1. Check the [pipelines page](https://gitlab.com/gitlab-org/gitlab-docs/pipelines)
-   and make sure all stable branches have green pipelines.
+   and make sure the pipelines in all the MRs are green.
 1. Merge all of the [dropdown merge requests](#update-dropdown-for-online-versions).
 1. Merge the [release merge request](#create-release-merge-request).
 1. Each merge triggers a new pipeline for each stable branch.
