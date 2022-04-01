@@ -51,6 +51,9 @@ sections:
     section_categories:
       - category_title: Requirements
         category_url: 'ee/install/requirements.html'
+        docs:
+          - doc_title: PostgreSQL extensions
+            doc_url: 'ee/install/postgresql_extensions.html'
       - category_title: Installation methods
         category_url: 'ee/install/'
         docs:
@@ -250,6 +253,9 @@ sections:
             doc_url: 'ee/install/docker.html'
           - doc_title: From source
             doc_url: 'ee/install/installation.html'
+            docs:
+              - doc_title: Install under a relative URL
+                doc_url: 'ee/install/relative_url.html'
           - doc_title: Troubleshooting
             doc_url: 'ee/administration/troubleshooting/'
       - category_title: Cloud providers guides
@@ -324,6 +330,8 @@ sections:
                 doc_url: 'ee/update/patch_versions.html'
           - doc_title: Zero-downtime upgrades
             doc_url: 'ee/update/zero_downtime.html'
+          - doc_title: Change from Enterprise Edition to Community Edition
+            doc_url: 'ee/downgrade_ee_to_ce/'
           - doc_title: Releases and maintenance
             doc_url: 'ee/policy/maintenance.html'
           - doc_title: Deprecations by milestone
@@ -890,6 +898,8 @@ sections:
                 doc_url: 'ee/administration/raketasks/geo.html'
               - doc_title: GitHub import
                 doc_url: 'ee/administration/raketasks/github_import.html'
+              - doc_title: Sidekiq job migration
+                doc_url: 'ee/raketasks/sidekiq_job_migration.html'
               - doc_title: SMTP
                 doc_url: 'ee/administration/raketasks/smtp.html'
               - doc_title: SPDX license list import
@@ -999,6 +1009,8 @@ sections:
   - section_title: Use GitLab
     section_url: 'ee/user/'
     section_categories:
+      - category_title: GitLab basics
+        category_url: 'ee/gitlab-basics/'
       - category_title: Set up your organization
         category_url: 'ee/topics/set_up_organization.html'
         docs:
