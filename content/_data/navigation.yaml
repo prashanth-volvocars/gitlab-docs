@@ -2635,6 +2635,11 @@ sections:
             doc_url: 'ee/development/integrations/jira_connect.html'
           - doc_title: Kubernetes integration
             doc_url: 'ee/development/kubernetes.html'
+          - doc_title: Markdown
+            doc_url: 'ee/development/markdown/index.html'
+            docs:
+              - doc_title: GitLab-Flavored Markdown Specification Guide
+                doc_url: 'ee/development/markdown/gitlab_flavored_markdown_specification_guide/index.html'
           - doc_title: Package development
             doc_url: 'ee/development/packages.html'
           - doc_title: Permissions
