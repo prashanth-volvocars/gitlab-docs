@@ -1085,15 +1085,15 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.1.0"
 
-"@gitlab/svgs@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.6.0.tgz#49f020b0a732f5df01138bd21b610a0a940badd6"
-  integrity sha512-jI8CHlrriePtUsognRkpZQWVsZe7ZjytmKakeYyU1aKvsnJ4fAeySlVkCAiqKbbZm3T/eeH/6b3jxHn24U0k0Q==
+"@gitlab/svgs@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.7.0.tgz#9615a53ab3390d090ee034194eb4c092879c69bb"
+  integrity sha512-nvC9qOw9xz7QSfB7GHZ8s19ET1GhUYSjeDT37Ne2FIQ6Nq1VS75WjGjh+CBoVf2nj4qFPapeonBjPUAzIkxLig==
 
-"@gitlab/ui@^38.0.1":
-  version "38.0.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-38.0.1.tgz#73767792f6e27791f84899dbe29b09547ecd8004"
-  integrity sha512-y83h2JsFypuvx1P3BFB7iEbusv/tc/jx3CkEEFY9N8/P25Fs3F3wcYChhlYZ2V1VX0wwEHzBV9cvPIGcmAGNMA==
+"@gitlab/ui@^38.2.1":
+  version "38.2.1"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-38.2.1.tgz#f529ded0258bd9938c4ebf1740b7bd9cc1cd2fdb"
+  integrity sha512-0rPUuClbiaz3hvTAv48ZvIH00tER5McpoNi7BOxlh4XQP6wc2pQVHqaIxOdj/zruVSqgoeWY75LP2+Wv2gM97Q==
   dependencies:
     "@babel/standalone" "^7.0.0"
     bootstrap-vue "2.20.1"
@@ -3449,10 +3449,10 @@ ini@^1.3.4, ini@^1.3.5:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
-instantsearch.js@^4.40.1:
-  version "4.40.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.40.1.tgz#9c702a1e7e3bc14e5137b1236be2ee68bb0bf643"
-  integrity sha512-0wIuz1vAHPo2aUpsSsym5urLDpAqQIVBx4QzbHZmmXhA+DEQq5bHmNCCo3FnyKFZ2/79dNmg0OwJTMQM6Je/fg==
+instantsearch.js@^4.40.2:
+  version "4.40.2"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.40.2.tgz#600ac15fe6b22c55f3c08542b1b3ba1b8ff1fe96"
+  integrity sha512-XK4vXBbYJYVeXHNKtio9dbE1vp4WfyV4NME+PwBrKt/RDdk44GDRUcz+cTx2A9XQeA6+AeskSyZFk9KEJpviZw==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
@@ -4972,10 +4972,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.1.tgz#d472797e0d7461605c1609808e27b80c0f9cfe17"
-  integrity sha512-8UVbTBYGwN37Bs9LERmxCPjdvPxlEowx2urIL6urHzdb3SDq4B/Z6xLFCblrSnE4iKWcS6ziJ3aOYrc1kz/E2A==
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
+  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
 
 pretty-format@^27.5.1:
   version "27.5.1"
