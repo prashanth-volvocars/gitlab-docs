@@ -139,115 +139,134 @@ sections:
           # End of documentation from https://gitlab.com/gitlab-org/omnibus-gitlab
 
           - doc_title: Cloud Native
-            doc_url: 'charts/'
+            doc_url: 'ee/install/cloud_native/'
             docs:
               # Documentation from https://gitlab.com/gitlab-org/charts/gitlab
-              - doc_title: Install
-                doc_url: 'charts/installation/'
+              - doc_title: Install with Helm Charts
+                doc_url: 'charts/'
                 docs:
-                  - doc_title: Required tools
-                    doc_url: 'charts/installation/tools.html'
-                  - doc_title: Cloud cluster preparation
-                    doc_url: 'charts/installation/cloud/'
+                  - doc_title: Install
+                    doc_url: 'charts/installation/'
                     docs:
-                      - doc_title: AKS
-                        doc_url: 'charts/installation/cloud/aks.html'
-                      - doc_title: EKS
-                        doc_url: 'charts/installation/cloud/eks.html'
-                      - doc_title: GKE
-                        doc_url: 'charts/installation/cloud/gke.html'
-                      - doc_title: OpenShift
-                        doc_url: 'charts/installation/cloud/openshift.html'
-                  - doc_title: Install with Helm Charts
-                    doc_url: 'charts/installation/deployment.html'
-                  - doc_title: Install with GitLab Operator
-                    doc_url: 'charts/installation/operator.html'
-                  - doc_title: Upgrade
-                    doc_url: 'charts/installation/upgrade.html'
-                  - doc_title: Backup and Restore
-                    doc_url: 'charts/backup-restore/'
-                    docs:
-                      - doc_title: Backup
-                        doc_url: 'charts/backup-restore/backup.html'
-                      - doc_title: Restore
-                        doc_url: 'charts/backup-restore/restore.html'
-                  - doc_title: Migrate from Omnibus
-                    doc_url: 'charts/installation/migration/'
-                    docs:
-                      - doc_title: Migrate from the Linux package
-                        doc_url: 'charts/installation/migration/package_to_helm.html'
-                      - doc_title: Migrate to the Linux package
-                        doc_url: 'charts/installation/migration/helm_to_package.html'
-                      - doc_title: Migrate between Helm versions
-                        doc_url: 'charts/installation/migration/helm.html'
-                      - doc_title: Migrate to MinIO
-                        doc_url: 'charts/installation/migration/minio.html'
+                      - doc_title: Required tools
+                        doc_url: 'charts/installation/tools.html'
+                      - doc_title: Cloud cluster preparation
+                        doc_url: 'charts/installation/cloud/'
+                        docs:
+                          - doc_title: AKS
+                            doc_url: 'charts/installation/cloud/aks.html'
+                          - doc_title: EKS
+                            doc_url: 'charts/installation/cloud/eks.html'
+                          - doc_title: GKE
+                            doc_url: 'charts/installation/cloud/gke.html'
+                          - doc_title: OpenShift
+                            doc_url: 'charts/installation/cloud/openshift.html'
+                      - doc_title: Install with Helm Charts
+                        doc_url: 'charts/installation/deployment.html'
+                      - doc_title: Upgrade
+                        doc_url: 'charts/installation/upgrade.html'
+                      - doc_title: Backup and Restore
+                        doc_url: 'charts/backup-restore/'
+                        docs:
+                          - doc_title: Backup
+                            doc_url: 'charts/backup-restore/backup.html'
+                          - doc_title: Restore
+                            doc_url: 'charts/backup-restore/restore.html'
+                      - doc_title: Migrate from Omnibus
+                        doc_url: 'charts/installation/migration/'
+                        docs:
+                          - doc_title: Migrate from the Linux package
+                            doc_url: 'charts/installation/migration/package_to_helm.html'
+                          - doc_title: Migrate to the Linux package
+                            doc_url: 'charts/installation/migration/helm_to_package.html'
+                          - doc_title: Migrate between Helm versions
+                            doc_url: 'charts/installation/migration/helm.html'
+                          - doc_title: Migrate to MinIO
+                            doc_url: 'charts/installation/migration/minio.html'
 
-                  - doc_title: Version mappings
-                    doc_url: 'charts/installation/version_mappings.html'
-              - doc_title: Configure
-                doc_url: 'charts/charts/'
+                      - doc_title: Version mappings
+                        doc_url: 'charts/installation/version_mappings.html'
+                  - doc_title: Configure
+                    doc_url: 'charts/charts/'
+                    docs:
+                      - doc_title: Globals
+                        doc_url: 'charts/charts/globals.html'
+                      - doc_title: GitLab sub-charts
+                        doc_url: 'charts/charts/gitlab/'
+                        docs:
+                          - doc_title: Gitaly chart
+                            doc_url: 'charts/charts/gitlab/gitaly/'
+                          - doc_title: GitLab Exporter chart
+                            doc_url: 'charts/charts/gitlab/gitlab-exporter/'
+                          - doc_title: GitLab Grafana chart
+                            doc_url: 'charts/charts/gitlab/gitlab-grafana/'
+                          - doc_title: GitLab Pages chart
+                            doc_url: 'charts/charts/gitlab/gitlab-pages/'
+                          - doc_title: GitLab Runner chart
+                            doc_url: 'charts/charts/gitlab/gitlab-runner/'
+                          - doc_title: GitLab Shell chart
+                            doc_url: 'charts/charts/gitlab/gitlab-shell/'
+                          - doc_title: KAS chart
+                            doc_url: 'charts/charts/gitlab/kas/'
+                          - doc_title: Migrations chart
+                            doc_url: 'charts/charts/gitlab/migrations/'
+                          - doc_title: Praefect chart
+                            doc_url: 'charts/charts/gitlab/praefect/'
+                          - doc_title: Sidekiq chart
+                            doc_url: 'charts/charts/gitlab/sidekiq/'
+                          - doc_title: Task Runner chart
+                            doc_url: 'charts/charts/gitlab/toolbox/'
+                          - doc_title: Webservice chart
+                            doc_url: 'charts/charts/gitlab/webservice/'
+                      - doc_title: Minio chart
+                        doc_url: 'charts/charts/minio/'
+                      - doc_title: Nginx chart
+                        doc_url: 'charts/charts/nginx/'
+                      - doc_title: Redis chart
+                        doc_url: 'charts/installation/deployment.html#redis'
+                      - doc_title: Redis HA chart
+                        doc_url: 'charts/installation/deployment.html#redis'
+                      - doc_title: Registry chart
+                        doc_url: 'charts/charts/registry/'
+                      - doc_title: Advanced
+                        doc_url: 'charts/advanced/'
+                        docs:
+                          - doc_title: External database
+                            doc_url: 'charts/advanced/external-db/'
+                          - doc_title: External Gitaly
+                            doc_url: 'charts/advanced/external-gitaly/'
+                          - doc_title: External Mattermost
+                            doc_url: 'charts/advanced/external-mattermost/'
+                          - doc_title: External Nginx
+                            doc_url: 'charts/advanced/external-nginx/'
+                          - doc_title: External object storage
+                            doc_url: 'charts/advanced/external-object-storage/'
+                          - doc_title: External Redis
+                            doc_url: 'charts/advanced/external-redis/'
+                          - doc_title: Persistent volumes
+                            doc_url: 'charts/advanced/persistent-volumes/'
+
+                  - doc_title: Troubleshoot
+                    doc_url: 'charts/troubleshooting/'
+              # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
+
+              # Documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
+              - doc_title: Install with GitLab Operator
+                doc_url: 'operator/'
                 docs:
-                  - doc_title: Globals
-                    doc_url: 'charts/charts/globals.html'
-                  - doc_title: GitLab sub-charts
-                    doc_url: 'charts/charts/gitlab/'
-                    docs:
-                      - doc_title: Gitaly chart
-                        doc_url: 'charts/charts/gitlab/gitaly/'
-                      - doc_title: GitLab Exporter chart
-                        doc_url: 'charts/charts/gitlab/gitlab-exporter/'
-                      - doc_title: GitLab Grafana chart
-                        doc_url: 'charts/charts/gitlab/gitlab-grafana/'
-                      - doc_title: GitLab Pages chart
-                        doc_url: 'charts/charts/gitlab/gitlab-pages/'
-                      - doc_title: GitLab Runner chart
-                        doc_url: 'charts/charts/gitlab/gitlab-runner/'
-                      - doc_title: GitLab Shell chart
-                        doc_url: 'charts/charts/gitlab/gitlab-shell/'
-                      - doc_title: KAS chart
-                        doc_url: 'charts/charts/gitlab/kas/'
-                      - doc_title: Migrations chart
-                        doc_url: 'charts/charts/gitlab/migrations/'
-                      - doc_title: Praefect chart
-                        doc_url: 'charts/charts/gitlab/praefect/'
-                      - doc_title: Sidekiq chart
-                        doc_url: 'charts/charts/gitlab/sidekiq/'
-                      - doc_title: Task Runner chart
-                        doc_url: 'charts/charts/gitlab/toolbox/'
-                      - doc_title: Webservice chart
-                        doc_url: 'charts/charts/gitlab/webservice/'
-                  - doc_title: Minio chart
-                    doc_url: 'charts/charts/minio/'
-                  - doc_title: Nginx chart
-                    doc_url: 'charts/charts/nginx/'
-                  - doc_title: Redis chart
-                    doc_url: 'charts/installation/deployment.html#redis'
-                  - doc_title: Redis HA chart
-                    doc_url: 'charts/installation/deployment.html#redis'
-                  - doc_title: Registry chart
-                    doc_url: 'charts/charts/registry/'
-                  - doc_title: Advanced
-                    doc_url: 'charts/advanced/'
-                    docs:
-                      - doc_title: External database
-                        doc_url: 'charts/advanced/external-db/'
-                      - doc_title: External Gitaly
-                        doc_url: 'charts/advanced/external-gitaly/'
-                      - doc_title: External Mattermost
-                        doc_url: 'charts/advanced/external-mattermost/'
-                      - doc_title: External Nginx
-                        doc_url: 'charts/advanced/external-nginx/'
-                      - doc_title: External object storage
-                        doc_url: 'charts/advanced/external-object-storage/'
-                      - doc_title: External Redis
-                        doc_url: 'charts/advanced/external-redis/'
-                      - doc_title: Persistent volumes
-                        doc_url: 'charts/advanced/persistent-volumes/'
-
-              - doc_title: Troubleshoot
-                doc_url: 'charts/troubleshooting/'
-          # End of documentation from https://gitlab.com/gitlab-org/charts/gitlab
+                  - doc_title: Install
+                    doc_url: 'operator/installation.html'
+                  - doc_title: Backup and restore
+                    doc_url: 'operator/backup_and_restore.html'
+                  - doc_title: Upgrade GitLab
+                    doc_url: 'operator/gitlab_upgrades.html'
+                  - doc_title: Support for Git over SSH
+                    doc_url: 'operator/git_over_ssh.html'
+                  - doc_title: Upgrade the Operator
+                    doc_url: 'operator/operator_upgrades.html'
+                  - doc_title: Security context constraints
+                    doc_url: 'operator/security_context_constraints.html'
+              # End of documentation from https://gitlab.com/gitlab-org/cloud-native/gitlab-operator
 
           - doc_title: Docker
             doc_url: 'ee/install/docker.html'
