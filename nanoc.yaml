@@ -75,6 +75,13 @@ data_sources:
     layouts_dir: null
     encoding: utf-8
     identifier_type: full
+  -  # Documentation from git@gitlab.com:gitlab-org/cloud-native/gitlab-operator
+    type: filesystem
+    items_root: /operator/
+    content_dir: ../gitlab-operator/doc
+    layouts_dir: null
+    encoding: utf-8
+    identifier_type: full
 
 products:
   ee:
@@ -97,6 +104,11 @@ products:
     repo: 'https://gitlab.com/gitlab-org/charts/gitlab.git'
     project_dir: '../charts-gitlab'
     content_dir: '../charts-gitlab/doc'
+  operator:
+    slug: 'operator'
+    repo: 'https://gitlab.com/gitlab-org/cloud-native/gitlab-operator.git'
+    project_dir: '../gitlab-operator'
+    content_dir: '../gitlab-operator/doc'
 
 checks:
   internal_links:

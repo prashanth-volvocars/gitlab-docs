@@ -1,6 +1,6 @@
 require 'yaml'
 
-PRODUCTS = %w[ee omnibus runner charts].freeze
+PRODUCTS = %w[ee omnibus runner charts operator].freeze
 VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/.freeze
 
 def config
