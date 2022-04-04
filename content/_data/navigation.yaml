@@ -2407,6 +2407,8 @@ sections:
             doc_url: 'ee/development/changelog.html'
           - doc_title: Community roles
             doc_url: 'ee/development/contributing/community_roles.html'
+          - doc_title: Built-in project templates
+            doc_url: 'ee/development/project_templates.html'
           - doc_title: Design and UI
             doc_url: 'ee/development/contributing/design.html'
           - doc_title: GitLab Development Kit
