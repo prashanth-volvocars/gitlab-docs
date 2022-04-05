@@ -486,3 +486,60 @@ redirects:
   - from: /runner/enterprise_guide/
     to: /runner/fleet_scaling/index.html
     remove_date: 2022-11-05
+  - from: /ee/install/pivotal/index.html
+    to: /ee/install/index.html
+    remove_date: 2022-12-08
+  - from: /ee/install/pivotal/
+    to: /ee/install/index.html
+    remove_date: 2022-12-08
+  - from: /ee/development/feature_flags/process.html
+    to: https://about.gitlab.com/handbook/product-development-flow/feature-flag-lifecycle/
+    remove_date: 2022-12-01
+  - from: /ee/user/project/repository/repository_mirroring.html
+    to: /ee/user/project/repository/mirror/index.html
+    remove_date: 2022-12-22
+  - from: /ee/user/project/issues/issue_data_and_actions.html
+    to: /ee/user/project/issues/index.html
+    remove_date: 2022-11-24
+  - from: /ee/user/project/pages/lets_encrypt_for_gitlab_pages.html
+    to: /ee/user/project/pages/custom_domains_ssl_tls_certification/lets_encrypt_integration.html
+    remove_date: 2022-12-14
+  - from: /ee/administration/raketasks/doctor.html
+    to: /ee/administration/raketasks/check.html#verify-database-values-can-be-decrypted-using-the-current-secrets
+    remove_date: 2022-12-04
+  - from: /omnibus/package-information/defaults.html
+    to: /ee/administration/package_information/defaults.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/licensing.html
+    to: /ee/administration/package_information/licensing.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/postgresql_versions.html
+    to: /ee/administration/package_information/postgresql_versions.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/signed_packages.html
+    to: /ee/administration/package_information/signed_packages.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/deprecated_os.html
+    to: /ee/administration/package_information/deprecated_os.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/deprecation_policy.html
+    to: /ee/administration/package_information/deprecation_policy.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/README.html
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/index.html
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/omnibus_packages.html
+    to: /ee/administration/package_information/omnibus_packages.html
+    remove_date: 2022-12-28
+  - from: /charts/charts/gitlab/task-runner/index.html
+    to: /charts/charts/gitlab/toolbox/index.html
+    remove_date: 2022-10-29
+  - from: /charts/charts/gitlab/task-runner/
+    to: /charts/charts/gitlab/toolbox/index.html
+    remove_date: 2022-10-29
