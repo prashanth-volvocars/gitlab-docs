@@ -6,6 +6,8 @@ env:
 parserOptions:
   parser: '@babel/eslint-parser'
   import/no-extraneous-dependencies: false
+plugins:
+  - 'filenames'
 rules:
   filenames/match-regex:
     - error
