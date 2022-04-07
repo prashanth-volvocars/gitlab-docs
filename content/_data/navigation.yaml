@@ -295,6 +295,11 @@ sections:
                 doc_url: 'ee/install/aws/gitlab_hybrid_on_aws.html'
               - doc_title: Manual install on AWS
                 doc_url: 'ee/install/aws/manual_install_aws.html'
+      - category_title: Offline GitLab
+        category_url: '/ee/topics/offline/'
+        docs:
+          - doc_title: Offline GitLab installation
+            doc_url: 'ee/topics/offline/quick_start_guide.html'
       - category_title: Reference Architectures
         category_url: 'ee/administration/reference_architectures/'
         docs:
@@ -347,6 +352,8 @@ sections:
             docs:
               - doc_title: Patch versions
                 doc_url: 'ee/update/patch_versions.html'
+              - doc_title: Change from Community Edition to Enterprise Edition
+                doc_url: 'ee/update/upgrading_from_ce_to_ee.html'
           - doc_title: Zero-downtime upgrades
             doc_url: 'ee/update/zero_downtime.html'
           - doc_title: Change from Enterprise Edition to Community Edition
@@ -643,6 +650,8 @@ sections:
                 doc_url: 'ee/user/admin_area/diff_limits.html'
               - doc_title: Email
                 doc_url: 'ee/user/admin_area/settings/email.html'
+              - doc_title: External authorization
+                doc_url: 'ee/user/admin_area/settings/external_authorization.html'
               - doc_title: External pipeline validation
                 doc_url: 'ee/administration/external_pipeline_validation.html'
               - doc_title: Enable features with feature flags
@@ -690,6 +699,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/git_lfs_rate_limits.html'
               - doc_title: Rate limits on issue creation
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_issues_creation.html'
+              - doc_title: Rate limits on raw endpoints
+                doc_url: 'ee/user/admin_area/settings/rate_limits_on_raw_endpoints.html'
               - doc_title: Rate limits on note creation
                 doc_url: 'ee/user/admin_area/settings/rate_limit_on_notes_creation.html'
               - doc_title: Rate limits on Users API
@@ -704,6 +715,8 @@ sections:
                 doc_url: 'ee/user/admin_area/settings/sign_in_restrictions.html'
               - doc_title: Sign-up restrictions
                 doc_url: 'ee/user/admin_area/settings/sign_up_restrictions.html'
+              - doc_title: Spamcheck
+                doc_url: 'ee/user/admin_area/reporting/spamcheck.html'
               - doc_title: System Hooks
                 doc_url: 'ee/administration/system_hooks.html'
               - doc_title: Third-party offers
@@ -1183,6 +1196,8 @@ sections:
             doc_url: 'ee/user/project/settings/import_export.html'
           - doc_title: Project/Group import/export rate limits
             doc_url: 'ee/user/admin_area/settings/import_export_rate_limits.html'
+          - doc_title: Project import achive size limits
+            doc_url: 'ee/security/project_import_decompressed_archive_size_limits.html'
 
       - category_title: Plan and track work
         category_url: 'ee/topics/plan_and_track.html'
