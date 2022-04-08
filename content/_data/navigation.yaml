@@ -296,7 +296,7 @@ sections:
               - doc_title: Manual install on AWS
                 doc_url: 'ee/install/aws/manual_install_aws.html'
       - category_title: Offline GitLab
-        category_url: '/ee/topics/offline/'
+        category_url: 'ee/topics/offline/'
         docs:
           - doc_title: Offline GitLab installation
             doc_url: 'ee/topics/offline/quick_start_guide.html'
