@@ -2867,6 +2867,17 @@ sections:
             doc_url: 'ee/development/wikis.html'
           - doc_title: Work items and work item types
             doc_url: 'ee/development/work_items.html'
+          - doc_title: Workhorse
+            doc_url: 'ee/development/workhorse/'
+            docs:
+              - doc_title: Adding new features to Workhorse
+                doc_url: 'ee/development/workhorse/new_features.html'
+              - doc_title: Configuration
+                doc_url: 'ee/development/workhorse/configuration.html'
+              - doc_title: Features that rely on Workhorse
+                doc_url: 'ee/development/workhorse/gitlab_features.html'
+              - doc_title: Websocket channel support
+                doc_url: 'ee/development/workhorse/channel.html'
           - doc_title: Working with Prometheus metrics
             doc_url: 'ee/development/prometheus_metrics.html'
           - doc_title: Workspace
