@@ -383,12 +383,12 @@ sections:
             doc_url: 'runner/install/kubernetes.html'
           - doc_title: Kubernetes (Agent)
             doc_url: 'runner/install/kubernetes-agent.html'
+          - doc_title: Kubernetes (Operator)
+            doc_url: 'runner/install/operator.html'
           - doc_title: Linux
             doc_url: 'runner/install/linux-manually.html'
           - doc_title: macOS
             doc_url: 'runner/install/osx.html'
-          - doc_title: Runner Operator
-            doc_url: 'runner/install/operator.html'
           - doc_title: Windows
             doc_url: 'runner/install/windows.html'
           - doc_title: Bleeding edge releases
