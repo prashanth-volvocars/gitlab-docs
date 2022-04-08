@@ -1043,8 +1043,6 @@ sections:
   - section_title: Use GitLab
     section_url: 'ee/user/'
     section_categories:
-      - category_title: GitLab basics
-        category_url: 'ee/gitlab-basics/'
       - category_title: Set up your organization
         category_url: 'ee/topics/set_up_organization.html'
         docs:
