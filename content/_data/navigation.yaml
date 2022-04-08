@@ -2487,9 +2487,9 @@ sections:
             doc_url: 'ee/development/database/'
             docs:
               - doc_title: Avoiding downtime in migrations
-                doc_url: 'ee/development/avoiding_downtime_in_migrations.html'
+                doc_url: 'ee/development/database/avoiding_downtime_in_migrations.html'
               - doc_title: Background migrations
-                doc_url: 'ee/development/background_migrations.html'
+                doc_url: 'ee/development/database/background_migrations.html'
               - doc_title: Case study - filtering by label
                 doc_url: 'ee/development/filtering_by_label.html'
               - doc_title: Case study - namespaces storage statistics
@@ -2501,7 +2501,7 @@ sections:
               - doc_title: Database check-migrations job
                 doc_url: 'ee/development/database/dbcheck-migrations-job.html'
               - doc_title: Delete existing migrations
-                doc_url: 'ee/development/deleting_migrations.html'
+                doc_url: 'ee/development/database/deleting_migrations.html'
               - doc_title: Layout and access patterns
                 doc_url: 'ee/development/database/layout_and_access_patterns.html'
               - doc_title: Migrations style guide
@@ -2514,7 +2514,7 @@ sections:
                   - doc_title: Keyset pagination
                     doc_url: 'ee/development/database/keyset_pagination.html'
               - doc_title: Post-deployment migrations
-                doc_url: 'ee/development/post_deployment_migrations.html'
+                doc_url: 'ee/development/database/post_deployment_migrations.html'
               - doc_title: Query comments with Marginalia
                 doc_url: 'ee/development/database_query_comments.html'
               - doc_title: SQL guidelines
