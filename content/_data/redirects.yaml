@@ -39,42 +39,6 @@ redirects:
   - from: /ee/user/project/merge_requests/merge_request_approvals.html
     to: /ee/user/project/merge_requests/approvals/index.html
     remove_date: 2022-04-30
-  - from: /ee/administration/auth/okta.html
-    to: /ee/integration/saml.html
-    remove_date: 2022-03-18
-  - from: /ee/ci/examples/test-and-deploy-python-application-to-heroku.html
-    to: /ee/ci/examples/index.html#contributed-examples
-    remove_date: 2022-03-18
-  - from: /ee/ci/examples/test-and-deploy-ruby-application-to-heroku.html
-    to: /ee/ci/examples/index.html#contributed-examples
-    remove_date: 2022-03-18
-  - from: /ee/development/feature_flags/development.html
-    to: /ee/development/feature_flags/index.html
-    remove_date: 2022-03-18
-  - from: /ee/integration/google_workspace_saml.html
-    to: /ee/integration/saml.html
-    remove_date: 2022-03-18
-  - from: /ee/university/training/topics/cherry_picking.html
-    to: /ee/topics/git/cherry_picking.html
-    remove_date: 2022-03-18
-  - from: /ee/university/training/topics/tags.html
-    to: /ee/topics/git/tags.html
-    remove_date: 2022-03-18
-  - from: /ee/user/admin_area/analytics/user_cohorts.html
-    to: /ee/user/admin_area/user_cohorts.html
-    remove_date: 2022-03-18
-  - from: /ee/user/project/integrations/jira_cloud_configuration.html
-    to: /ee/integration/jira/jira_cloud_configuration.html
-    remove_date: 2022-03-18
-  - from: /ee/user/project/integrations/jira_server_configuration.html
-    to: /ee/integration/jira/jira_server_configuration.html
-    remove_date: 2022-03-18
-  - from: /ee/user/project/new_ci_build_permissions_model.html
-    to: /ee/ci/index.html
-    remove_date: 2022-03-18
-  - from: /ee/development/snowplow.html
-    to: /ee/development/snowplow/index.html
-    remove_date: 2022-03-30
   - from: /ee/integration/README.html
     to: /ee/integration/index.html
     remove_date: 2022-04-30
@@ -156,18 +120,6 @@ redirects:
   - from: /ee/topics/git/merge_requests.html
     to: /ee/user/project/merge_requests/index.html
     remove_date: 2022-05-13
-  - from: /ee/migrate_ci_to_ce/README.html
-    to: /ee/ci/index.html
-    remove_date: 2022-03-14
-  - from: /ee/migrate_ci_to_ce/index.html
-    to: /ee/ci/index.html
-    remove_date: 2022-03-14
-  - from: /ee/migrate_ci_to_ce/
-    to: /ee/ci/index.html
-    remove_date: 2022-03-14
-  - from: /omnibus/release/openshift.html
-    to: /charts/development/release.html
-    remove_date: 2022-03-30
   - from: /ee/development/testing_guide/end_to_end/environment_selection.html
     to: /ee/development/testing_guide/end_to_end/execution_context_selection.html
     remove_date: 2022-05-14
@@ -327,36 +279,6 @@ redirects:
   - from: /ee/intro/
     to: /ee/topics/use_gitlab.html
     remove_date: 2022-09-08
-  - from: /ee/development/event_tracking/backend.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/event_tracking/index.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/event_tracking/
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/event_tracking/frontend.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/product_analytics/event_dictionary.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/product_analytics/index.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/product_analytics/
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
-  - from: /ee/development/service_ping/dictionary.html
-    to: https://metrics.gitlab.com/index.html
-    remove_date: 2022-08-10
-  - from: /ee/development/usage_ping/dictionary.html
-    to: https://metrics.gitlab.com/index.html
-    remove_date: 2022-08-10
-  - from: /ee/development/fe_guide/event_tracking.html
-    to: https://about.gitlab.com/handbook/product/product-intelligence-guide/
-    remove_date: 2022-09-01
   - from: /ee/user/admin_area/approving_users.html
     to: /ee/user/admin_area/moderate_users.html
     remove_date: 2022-07-20
@@ -384,9 +306,6 @@ redirects:
   - from: /omnibus/common_installation_problems/
     to: /omnibus/troubleshooting.html
     remove_date: 2022-07-28
-  - from: /ee/development/snowplow/dictionary.html
-    to: https://metrics.gitlab.com/snowplow.html
-    remove_date: 2022-09-28
   - from: /ee/administration/operations/cleaning_up_redis_sessions.html
     to: /ee/administration/operations/index.html
     remove_date: 2022-09-10
@@ -411,30 +330,6 @@ redirects:
   - from: /ee/development/testing_guide/ci.html
     to: /ee/development/pipelines.html
     remove_date: 2022-10-12
-  - from: /ee/development/agent/routing.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/kas_request_routing.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/identity.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/identity_and_auth.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/user_stories.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/user_stories.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/gitops.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/gitops.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/index.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/architecture.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/architecture.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/repository_overview.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/repository_overview.md
-    remove_date: 2022-11-01
-  - from: /ee/development/agent/local.html
-    to: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/blob/master/doc/local.md
-    remove_date: 2022-11-01
   - from: /ee/development/internal_api.html
     to: /ee/development/internal_api/index.html
     remove_date: 2022-11-09
@@ -492,9 +387,6 @@ redirects:
   - from: /ee/install/pivotal/
     to: /ee/install/index.html
     remove_date: 2022-12-08
-  - from: /ee/development/feature_flags/process.html
-    to: https://about.gitlab.com/handbook/product-development-flow/feature-flag-lifecycle/
-    remove_date: 2022-12-01
   - from: /ee/user/project/repository/repository_mirroring.html
     to: /ee/user/project/repository/mirror/index.html
     remove_date: 2022-12-22
