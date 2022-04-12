@@ -356,6 +356,11 @@ namespace :docs do
         counter += 1
 
         File.delete(filename) if File.exist?(filename)
+
+        # Don't add any entries that are domain-level redirects, they are not supported
+        # https://docs.gitlab.com/ee/user/project/pages/redirects.html
+        next if new_path(frontmatter['redirect_to'], filename, content_dir, slug).start_with?('http')
+
         File.open(redirects_yaml, 'a') do |post|
           post.puts "  - from: #{old_path}"
           post.puts "    to: #{new_path(frontmatter['redirect_to'], filename, content_dir, slug)}"
