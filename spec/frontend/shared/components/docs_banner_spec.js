@@ -3,7 +3,7 @@
  */
 
 import { mount } from '@vue/test-utils';
-import Banner from '../../../../content/frontend/shared/components/banner.vue';
+import DocsBanner from '../../../../content/frontend/shared/components/docs_banner.vue';
 
 const propsData = { text: 'Some text', show: true };
 
@@ -11,7 +11,7 @@ describe('component: Banner', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Banner, { propsData });
+    wrapper = mount(DocsBanner, { propsData });
   });
 
   it('renders a banner', () => {

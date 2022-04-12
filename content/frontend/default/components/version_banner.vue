@@ -1,9 +1,9 @@
 <script>
-import Banner from '../../shared/components/banner.vue';
+import DocsBanner from '../../shared/components/docs_banner.vue';
 
 export default {
   components: {
-    Banner,
+    DocsBanner,
   },
   props: {
     isOutdated: {
@@ -28,8 +28,8 @@ export default {
 </script>
 
 <template>
-  <banner :show="isOutdated" @toggle="toggleVersionBanner">
+  <docs-banner :show="isOutdated" @toggle="toggleVersionBanner">
     This is <a :href="archivesUrl">archived documentation</a> for GitLab. Go to
     <a :href="latestVersionUrl">the latest</a>.
-  </banner>
+  </docs-banner>
 </template>
