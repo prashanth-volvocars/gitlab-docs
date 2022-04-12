@@ -435,3 +435,60 @@ redirects:
   - from: /charts/charts/gitlab/task-runner/
     to: /charts/charts/gitlab/toolbox/index.html
     remove_date: 2022-10-29
+  - from: /ee/api/resource_access_tokens.html
+    to: /ee/api/project_access_tokens.html
+    remove_date: 2023-01-06
+  - from: /ee/push_rules/push_rules.html
+    to: 
+    remove_date: 2023-01-10
+  - from: /omnibus/release.html
+    to: /omnibus/release/index.html
+    remove_date: 2022-09-29
+  - from: /omnibus/architecture/registry/index.html
+    to: /ee/administration/packages/container_registry.html
+    remove_date: 2022-09-16
+  - from: /omnibus/architecture/registry/
+    to: /ee/administration/packages/container_registry.html
+    remove_date: 2022-09-16
+  - from: /omnibus/package-information/defaults.html
+    to: /ee/administration/package_information/defaults.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/licensing.html
+    to: /ee/administration/package_information/licensing.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/postgresql_versions.html
+    to: /ee/administration/package_information/postgresql_versions.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/signed_packages.html
+    to: /ee/administration/package_information/signed_packages.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/deprecated_os.html
+    to: /ee/administration/package_information/deprecated_os.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/deprecation_policy.html
+    to: /ee/administration/package_information/deprecation_policy.html
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/README.html
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/index.html
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/
+    to: /ee/administration/package_information/
+    remove_date: 2022-12-28
+  - from: /omnibus/package-information/omnibus_packages.html
+    to: /ee/administration/package_information/omnibus_packages.html
+    remove_date: 2022-12-28
+  - from: /omnibus/gitlab-mattermost/index.html
+    to: /ee/integration/mattermost/
+    remove_date: 2022-09-16
+  - from: /omnibus/gitlab-mattermost/
+    to: /ee/integration/mattermost/
+    remove_date: 2022-09-16
+  - from: /charts/charts/gitlab/task-runner/index.html
+    to: /charts/charts/gitlab/toolbox/index.html
+    remove_date: 2022-10-29
+  - from: /charts/charts/gitlab/task-runner/
+    to: /charts/charts/gitlab/toolbox/index.html
+    remove_date: 2022-10-29
