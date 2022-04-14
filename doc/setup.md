@@ -201,6 +201,7 @@ local checkouts in a `dev` directory:
      git clone https://gitlab.com/<username>/gitlab-runner.git
      git clone https://gitlab.com/<username>/omnibus-gitlab.git
      git clone https://gitlab.com/<username>/charts/gitlab.git charts-gitlab
+     git clone https://gitlab.com/<username>/gitlab-operator.git
      ```
 
    - For members that have Developer access (usually the
@@ -212,6 +213,7 @@ local checkouts in a `dev` directory:
      git clone git@gitlab.com:gitlab-org/gitlab-runner.git
      git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
      git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts-gitlab
+     git clone git@gitlab.com:gitlab-org/cloud-native/gitlab-operator.git
      ```
 
 If you cloned the projects into `~/dev`, you should now have the following projects:
@@ -221,6 +223,7 @@ If you cloned the projects into `~/dev`, you should now have the following proje
 - `~/dev/gitlab-runner`
 - `~/dev/omnibus-gitlab`
 - `~/dev/charts-gitlab`
+- `~/dev/gitlab-operator`
 
 ## Preview the documentation website
 
