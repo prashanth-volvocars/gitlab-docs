@@ -152,6 +152,7 @@ Each of the four projects must be at the same root level as `gitlab-docs` and na
 - Runner: `gitlab-runner`
 - Omnibus: `omnibus-gitlab`
 - Charts: `charts-gitlab`
+- Operator: `gitlab-operator`
 
 If any of the four projects is missing or is misnamed, `nanoc live` will throw an
 error, but you'll still be able to preview the site. However, live reloading
