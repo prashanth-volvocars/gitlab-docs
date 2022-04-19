@@ -17,10 +17,10 @@ DocSearch is defined in various places:
   - Layout: [`content/index.erb`](../content/index.erb)
 - Dedicated search page under `/search`:
   - Javascript: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
-  - Layout: [`layouts/instantsearch.html`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/instantsearch.html)
+  - Layout: [`layouts/instantsearch.html`](../layouts/instantsearch.html)
 - Every other page:
   - Javascript: [`content/assets/javascripts/docsearch.js`](../content/assets/javascripts/docsearch.js)
-  - Layout: [`layouts/docsearch.html`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/docsearch.html)
+  - Layout: [`layouts/docsearch.html`](../layouts/docsearch.html)
 
 A Javascript snippet initiates docsearch by using an API key, app ID,
 and an index name that are needed for Algolia to show the results:
@@ -89,5 +89,5 @@ You can view the search usage in the
 [analytics dashboard](https://www.algolia.com/apps/3PNCFOU757/analytics/overview/gitlab).
 
 If you want to receive weekly reports of the search usage, open a new
-[access request](https://about.gitlab.com/handbook/engineering/#access-requests)
+[access request](https://about.gitlab.com/handbook/business-technology/team-member-enablement/onboarding-access-requests/access-requests/)
 issue and ask that your email is added to the DocSearch alias (the same email as found in 1Password).
