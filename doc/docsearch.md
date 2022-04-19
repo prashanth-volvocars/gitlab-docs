@@ -17,7 +17,8 @@ DocSearch is defined in various places:
   - Layout: [`content/index.erb`](../content/index.erb)
 - Dedicated search page under `/search`:
   - Javascript: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
-  - Layout: [`layouts/instantsearch.html`](../layouts/instantsearch.html)
+  - Page Layout: [`layouts/instantsearch.html`](../layouts/instantsearch.html)
+  - Search Layout: [`content/search/index.md`](../content/search/index.md)
 - Every other page:
   - Javascript: [`content/assets/javascripts/docsearch.js`](../content/assets/javascripts/docsearch.js)
   - Layout: [`layouts/docsearch.html`](../layouts/docsearch.html)
