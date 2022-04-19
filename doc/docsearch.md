@@ -10,26 +10,17 @@ and DocSearch provides a dropdown search experience on our website.
 
 ## DocSearch implementation details
 
-DocSearch is defined in various places:
+DocSearch layouts are defined in various places:
 
-- Home page:
-  - Javascript: [`content/frontend/home/index.js`](../content/frontend/home/index.js)
-  - Layout: [`content/index.erb`](../content/index.erb)
-- Dedicated search page under `/search`:
-  - Javascript: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
-  - Layout: [`layouts/instantsearch.html`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/instantsearch.html)
-- Every other page:
-  - Javascript: [`content/assets/javascripts/docsearch.js`](../content/assets/javascripts/docsearch.js)
-  - Layout: [`layouts/docsearch.html`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/layouts/docsearch.html)
+- Home page: [`content/index.erb`](../content/index.erb)
+- Dedicated search page under `/search`: [`layouts/instantsearch.html`](../layouts/instantsearch.html)
+- Every other page: [`layouts/docsearch.html`](../layouts/docsearch.html)
 
 A Javascript snippet initiates docsearch by using an API key, app ID,
 and an index name that are needed for Algolia to show the results:
 
-```js
-apiKey: '89b85ffae982a7f1adeeed4a90bb0ab1',
-indexName: 'gitlab',
-appId: '3PNCFOU757'
-```
+- Dedicated search page under `/search`: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
+- Every other page: [`content/assets/javascripts/docsearch.js`](../content/assets/javascripts/docsearch.js)
 
 ## Override DocSearch CSS
 
