@@ -2722,6 +2722,11 @@ sections:
             doc_url: 'ee/development/integrations/jira_connect.html'
           - doc_title: Kubernetes integration
             doc_url: 'ee/development/kubernetes.html'
+          - doc_title: GitLab Flavored Markdown (GLFM) developer documentation
+            doc_url: 'ee/development/gitlab_flavored_markdown/'
+            docs:
+              - doc_title: GitLab Flavored Markdown (GLFM) specification guide
+                doc_url: 'ee/development/gitlab_flavored_markdown/specification_guide/'
           - doc_title: Observability for stage groups
             doc_url: 'ee/development/stage_group_observability/'
             docs:
