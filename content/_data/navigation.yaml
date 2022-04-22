@@ -2479,6 +2479,13 @@ sections:
             doc_url: 'ee/development/code_intelligence/'
           - doc_title: CodeSandbox development environment
             doc_url: 'ee/development/integrations/codesandbox.html'
+          - doc_title: Create - Source Code backend
+            doc_url: 'ee/development/backend/create_source_code_be/'
+            docs:
+              - doc_title: Gitaly touch points
+                doc_url: 'ee/development/backend/create_source_code_be/gitaly_touch_points.html'
+              - doc_title: Source Code REST endpoints
+                doc_url: 'ee/development/backend/create_source_code_be/rest_endpoints.html'
           - doc_title: Danger bot
             doc_url: 'ee/development/dangerbot.html'
           - doc_title: Database development
@@ -2680,6 +2687,8 @@ sections:
                 doc_url: 'ee/development/newlines_styleguide.html'
               - doc_title: Python development guidelines
                 doc_url: 'ee/development/python_guide/'
+              - doc_title: Ruby style guide
+                doc_url: 'ee/development/backend/ruby_style_guide.html'
               - doc_title: SCSS style guide
                 doc_url: 'ee/development/fe_guide/style/scss.html'
               - doc_title: Shell scripting standards and style guidelines
