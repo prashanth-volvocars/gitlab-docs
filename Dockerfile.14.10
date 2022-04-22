@@ -10,7 +10,7 @@ ARG BRANCH_EE=14-10-stable-ee
 ARG BRANCH_OMNIBUS=14-10-stable
 ARG BRANCH_RUNNER=14-10-stable
 ARG BRANCH_CHARTS=5-10-stable
-ARG BRANCH_CHARTS=master
+ARG BRANCH_OPERATOR=master
 
 # This image comes from the Dockerfile.builder.onbuild file
 # https://gitlab.com/gitlab-org/gitlab-docs/blob/main/dockerfiles/Dockerfile.builder.onbuild
