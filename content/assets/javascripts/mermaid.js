@@ -1,5 +1,5 @@
 ---
-version: 4
+version: 5
 ---
 
 function loadMermaidJsIfNeeded() {
@@ -8,7 +8,7 @@ function loadMermaidJsIfNeeded() {
     }
 
     var element = document.createElement("script");
-    element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.0/mermaid.min.js";
+    element.src = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.0.1/mermaid.min.js";
     element.onload = function(){mermaid.init();};
     document.body.appendChild(element);
 }
