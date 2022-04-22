@@ -435,3 +435,12 @@ redirects:
   - from: /charts/charts/gitlab/task-runner/
     to: /charts/charts/gitlab/toolbox/index.html
     remove_date: 2022-10-29
+  - from: /ee/development/experiment_guide/experimentation.html
+    to: /ee/development/experiment_guide/gitlab_experiment.html
+    remove_date: 2023-01-13
+  - from: /ee/development/sidekiq_style_guide.html
+    to: /ee/development/sidekiq/index.html
+    remove_date: 2023-01-13
+  - from: /ee/api/resource_access_tokens.html
+    to: /ee/api/project_access_tokens.html
+    remove_date: 2023-01-06
