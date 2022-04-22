@@ -26,6 +26,8 @@ task :clone_repositories do
 
     puts "\n=> Cloning #{product['repo']} into #{product['project_dir']}\n"
 
+    puts "git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}"
+
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
     # Print the latest commit from each project so that we can see which commit we're building from.
