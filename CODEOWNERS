@@ -1,15 +1,15 @@
 ## See https://about.gitlab.com/handbook/engineering/projects/#gitlab-docs
 
-*                   @aqualls @axil @cnorris @dianalogan @eread @fneill @jeanduplessis @kpaizee @marcel.amirault @marcia @msedlakjakubowski @ngaskill @rdickenson @sselhorn @susantacker
+*                   @aqualls @axil @dianalogan @eread @fneill @jeanduplessis @kpaizee @marcel.amirault @msedlakjakubowski @rdickenson @sselhorn @susantacker @sarahgerman
 
-content/assets      @axil @marcia @derek-knox @ealcantara @jerasmus @oregand @dmishunov @iamphill @nicolasdular
+content/assets      @axil @derek-knox @ealcantara @jerasmus @oregand @dmishunov @iamphill @nicolasdular @sarahgerman
 
-/bin/*              @caalberts @godfat-gitlab @markglenfletcher @rymai @cwoolley-gitlab @vyaklushin
-Gemfile*            @axil @eread @marcel.amirault
-dockerfiles/*       @axil @eread @marcel.amirault
+/bin/*              @caalberts @godfat-gitlab @markglenfletcher @rymai @cwoolley-gitlab @vyaklushin @sarahgerman
+Gemfile*            @axil @eread @marcel.amirault @sarahgerman
+dockerfiles/*       @axil @eread @marcel.amirault @sarahgerman
 
-spec                @cwoolley-gitlab @vyaklushin @doregan @mikegreiling
+spec                @cwoolley-gitlab @vyaklushin @doregan @mikegreiling @sarahgerman
 
-package.json        @oregand @ealcantara @jerasmus
-yarn.lock           @oregand @ealcantara @jerasmus
-jest.config.js      @oregand @ealcantara @jerasmus
+package.json        @oregand @ealcantara @jerasmus @sarahgerman
+yarn.lock           @oregand @ealcantara @jerasmus @sarahgerman
+jest.config.js      @oregand @ealcantara @jerasmus @sarahgerman
