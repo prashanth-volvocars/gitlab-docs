@@ -258,10 +258,9 @@ ol {
 .alert-banner {
   background-color: $help-indigo-50;
   border-color: rgba($help-indigo-50, 0.3);
-  margin-top: 20px;
-  i {
-    margin-left: 10px;
-    margin-right: 10px;
+  svg {
+    min-width: 12px;
+    fill: $color-tanuki-dark;
   }
 }
 
