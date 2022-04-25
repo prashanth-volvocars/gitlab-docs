@@ -2871,10 +2871,6 @@ sections:
           - doc_title: Uploads
             doc_url: 'ee/development/uploads/'
             docs:
-              - doc_title: Background
-                doc_url: 'ee/development/uploads/background.html'
-              - doc_title: Implementation
-                doc_url: 'ee/development/uploads/implementation.html'
               - doc_title: Adding new uploads
                 doc_url: 'ee/development/uploads/working_with_uploads.html'
           - doc_title: Value Stream Analytics
