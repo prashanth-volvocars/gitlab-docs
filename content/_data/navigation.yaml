@@ -1354,8 +1354,6 @@ sections:
                 doc_url: 'ee/user/project/code_owners.html'
               - doc_title: Snippets
                 doc_url: 'ee/user/snippets.html'
-              - doc_title: Static Site Editor
-                doc_url: 'ee/user/project/static_site_editor/'
               - doc_title: Branches
                 doc_url: 'ee/user/project/repository/branches/'
               - doc_title: Default branch

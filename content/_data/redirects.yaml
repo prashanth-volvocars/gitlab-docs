@@ -444,3 +444,6 @@ redirects:
   - from: /ee/api/resource_access_tokens.html
     to: /ee/api/project_access_tokens.html
     remove_date: 2023-01-06
+  - from: /ee/user/project/static_site_editor.html
+    to: /ee/user/project/web_ide.html
+    remove_date: 2022-05-22
