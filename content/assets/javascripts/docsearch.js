@@ -1,5 +1,5 @@
 ---
-version: 2
+version: 3
 ---
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,5 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
     container: '#docsearch',
     appId: "3PNCFOU757",
     placeholder: 'Search the docs',
+    resultsFooterComponent({ state }) {
+      return {
+        type: "a",
+        ref: undefined,
+        constructor: undefined,
+        key: state.query,
+        props: {
+          href: `/search/?query=${state.query}`,
+          children: `See all results`
+        },
+        __v: null
+      }
+    }
   });
 });
