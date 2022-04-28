@@ -2096,6 +2096,8 @@ sections:
             doc_url: 'ee/api/templates/gitlab_ci_ymls.html'
           - doc_title: Access requests
             doc_url: 'ee/api/access_requests.html'
+          - doc_title: Agent for Kubernetes
+            doc_url: 'ee/api/cluster_agents.html'
           - doc_title: Alert Management
             doc_url: 'ee/api/alert_management_alerts.html'
           - doc_title: Appearance (application)
@@ -2116,12 +2118,6 @@ sections:
             doc_url: 'ee/api/branches.html'
           - doc_title: Broadcast messages
             doc_url: 'ee/api/broadcast_messages.html'
-          - doc_title: Clusters (project)
-            doc_url: 'ee/api/project_clusters.html'
-          - doc_title: Clusters (group)
-            doc_url: 'ee/api/group_clusters.html'
-          - doc_title: Clusters (instance)
-            doc_url: 'ee/api/instance_clusters.html'
           - doc_title: Commits
             doc_url: 'ee/api/commits.html'
           - doc_title: Composer
