@@ -1996,8 +1996,6 @@ sections:
                     doc_url: 'ee/user/infrastructure/clusters/manage/clusters_health.html'
                   - doc_title: 'Crossplane integration'
                     doc_url: 'ee/user/clusters/crossplane.html'
-                  - doc_title: Serverless
-                    doc_url: 'ee/user/project/clusters/serverless/'
                   - doc_title: Deploy Boards
                     doc_url: 'ee/user/project/deploy_boards.html'
                   - doc_title: Pod logs
