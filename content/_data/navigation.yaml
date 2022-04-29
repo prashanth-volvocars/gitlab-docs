@@ -441,6 +441,9 @@ sections:
         category_url: 'ee/integration/datadog.html'
       - category_title: Elasticsearch
         category_url: 'ee/integration/elasticsearch.html'
+        docs:
+          - doc_title: Elasticsearch troubleshooting
+            doc_url: '/ee/integration/elasticsearch_troubleshooting'
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
       - category_title: Jira integrations
