@@ -23,8 +23,12 @@ module Nanoc::Helpers
         # GitLab Helm chart repo
         gitlab_url = "https://gitlab.com/gitlab-org/#{product}/gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/#{product}/gitlab/edit/master/-/doc/#{docs_content_filename}"
-      # gitlab-foss and gitlab repos
+      when "operator"
+        # GitLab Operator repo
+        gitlab_url = "https://gitlab.com/gitlab-org/cloud-native/gitlab-#{product}/blob/master/doc/#{docs_content_filename}"
+        gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/cloud-native/gitlab-#{product}/edit/master/-/doc/#{docs_content_filename}"
       when "ee"
+        # gitlab-foss and gitlab repos
         gitlab_url = "https://gitlab.com/gitlab-org/gitlab/blob/master/doc/#{docs_content_filename}"
         gitlab_ide_url = "https://gitlab.com/-/ide/project/gitlab-org/gitlab/edit/master/-/doc/#{docs_content_filename}"
       else
