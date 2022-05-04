@@ -1751,8 +1751,6 @@ sections:
             doc_url: 'ee/user/application_security/container_scanning/'
           - doc_title: Cluster Image Scanning
             doc_url: 'ee/user/application_security/cluster_image_scanning/'
-          - doc_title: Threat Monitoring
-            doc_url: 'ee/user/application_security/threat_monitoring/'
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
             docs:
@@ -1956,19 +1954,6 @@ sections:
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
               - doc_title: Migrate to the agent for Kubernetes
                 doc_url: 'ee/user/infrastructure/clusters/migrate_to_gitlab_agent.html'
-              - doc_title: (DEPRECATED) Protect deployed applications
-                doc_url: 'ee/user/project/clusters/protect/'
-                docs:
-                  - doc_title: Container Network Security
-                    doc_url: 'ee/user/project/clusters/protect/container_network_security/'
-                    docs:
-                      - doc_title: Getting started
-                        doc_url: 'ee/user/project/clusters/protect/container_network_security/quick_start_guide.html'
-                  - doc_title: Container Host Security
-                    doc_url: 'ee/user/project/clusters/protect/container_host_security/'
-                    docs:
-                      - doc_title: Getting started
-                        doc_url: 'ee/user/project/clusters/protect/container_host_security/quick_start_guide.html'
               - doc_title: (DEPRECATED) Certificate-based clusters
                 doc_url: 'ee/user/infrastructure/clusters/'
                 docs:
