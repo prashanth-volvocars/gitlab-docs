@@ -564,6 +564,8 @@ sections:
           - doc_title: Authentication and authorization
             doc_url: 'ee/administration/auth/'
             docs:
+              - doc_title: AliCloud
+                doc_url: 'ee/integration/alicloud.html'
               - doc_title: Atlassian Crowd
                 doc_url: 'ee/administration/auth/crowd.html'
               - doc_title: Atlassian
