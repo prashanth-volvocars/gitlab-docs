@@ -11,9 +11,11 @@ default:
   image: registry.gitlab.com/gitlab-org/gitlab-docs:base
   tags:
     - gitlab-org
-  # Check Ruby version and install gems
+  # Check Ruby, RubyGems, and Bundler versions and install gems
   before_script:
     - ruby -v
+    - gem -v
+    - bundle -v
     - bundle config set path 'vendor'
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 
