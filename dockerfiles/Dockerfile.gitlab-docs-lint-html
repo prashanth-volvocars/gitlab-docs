@@ -38,6 +38,9 @@ RUN apk add --no-cache -U \
 # Do not install rdoc to save some space
 RUN echo 'gem: --no-document' >> /etc/gemrc
 
+# Update RubyGems
+gem update --system 3.3.13
+
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
 ARG CI_COMMIT_REF_NAME
@@ -53,6 +56,7 @@ RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME
 
 RUN cd gitlab-docs \
   && yarn install --frozen-lockfile \
+  && bundle update --bundler \
   && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
 
 RUN yarn cache clean --all
