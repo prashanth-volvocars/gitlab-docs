@@ -39,7 +39,7 @@ RUN apk add --no-cache -U \
 RUN echo 'gem: --no-document' >> /etc/gemrc
 
 # Update RubyGems
-gem update --system 3.3.13
+RUN gem update --system 3.3.13
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
