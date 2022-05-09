@@ -8,7 +8,6 @@
 ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
-MAINTAINER GitLab Technical Writing team
 
 # VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
@@ -33,6 +32,7 @@ RUN apk add --no-cache -U \
     yarn
 
 # Install vale
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN curl -sfL https://install.goreleaser.com/github.com/ValeLint/vale.sh | sh -s v${VALE_VERSION}
 
 # Set up needed environment variables that are called with --build-arg when

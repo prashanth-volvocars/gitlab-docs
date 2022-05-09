@@ -12,7 +12,6 @@ ARG RUBY_VERSION
 ARG ALPINE_VERSION
 
 FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION}
-MAINTAINER GitLab Technical Writing team
 
 # Install dependencies
 RUN apk add --no-cache -U \
@@ -33,13 +32,9 @@ RUN apk add --no-cache -U \
     tar         \
     xz          \
     xz-dev      \
-    yarn
-
-# Do not install rdoc to save some space
-RUN echo 'gem: --no-document' >> /etc/gemrc
-
-# Update RubyGems
-RUN gem update --system 3.3.13
+    yarn        \
+    && echo 'gem: --no-document' >> /etc/gemrc \
+    && gem update --system 3.3.13
 
 # Set up needed environment variables that are called with --build-arg when
 # the Docker image is built (see .gitlab-ci.yml).
@@ -49,14 +44,14 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 
 WORKDIR /tmp
 
-RUN wget https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME/gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
+RUN wget --quiet https://gitlab.com/gitlab-org/gitlab-docs/-/archive/$CI_COMMIT_REF_NAME/gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
   && tar xvjf gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2 \
   && mv gitlab-docs-$CI_COMMIT_REF_NAME gitlab-docs \
   && rm gitlab-docs-$CI_COMMIT_REF_NAME.tar.bz2
 
-RUN cd gitlab-docs \
-  && yarn install --frozen-lockfile \
+WORKDIR /tmp/gitlab-docs/
+
+RUN yarn install --frozen-lockfile \
+  && yarn cache clean --all \
   && bundle update --bundler \
   && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
-
-RUN yarn cache clean --all

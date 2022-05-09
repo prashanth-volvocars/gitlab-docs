@@ -21,15 +21,13 @@ COPY /Gemfile* /source/
 COPY /yarn.lock /source/
 WORKDIR /source
 
-# Install gems
-RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
-# Install node libraries
-RUN yarn install
+# Install gems and node libraries
+RUN NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4 && \
+    yarn install && \
+    yarn cache clean
 
 # Copy scripts used for static HTML post-processing
 COPY scripts /scripts/
 COPY --from=minifier /minify /usr/local/bin/minify
 
-MAINTAINER GitLab Documentation Team
-
-CMD echo "Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site."
+CMD ["echo 'Nothing to do here. This is the bootstrap image that contains all dependencies to build the docs site.'"]
