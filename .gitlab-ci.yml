@@ -412,6 +412,18 @@ test_unlinked_images:
     - cd ../gitlab
     - ./unlinked-images.sh doc
 
+
+lint_dockerfiles:
+  extends:
+    - .rules_site_tests
+  image: hadolint/hadolint:latest-alpine
+  needs: []
+  before_script: []
+  dependencies: []
+  script:
+    - for file in Dockerfile.*; do hadolint $file; done
+    - for file in dockerfiles/Dockerfile.*; do hadolint $file; done
+
 ###############################################
 #               Review Apps                   #
 ###############################################

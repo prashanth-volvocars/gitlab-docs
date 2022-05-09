@@ -15,17 +15,16 @@ ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-main}
 
 # Build the docs from this branch
 COPY . /source/
-RUN yarn install
-RUN bundle install
-RUN bundle exec rake setup_git default
-RUN bundle exec nanoc compile -VV
-
-# Compress images
-RUN /scripts/compress_images.sh /source/public ee
+RUN yarn install && \
+    bundle install && \
+    bundle exec rake setup_git default && \
+    bundle exec nanoc compile -VV && \
+    /scripts/compress_images.sh /source/public ee # compress images
 
 # Symlink EE to CE
 # https://gitlab.com/gitlab-org/gitlab-docs/issues/418
-RUN cd /source/public/ && rm -rf ce && ln -s ee ce
+WORKDIR /source/public/
+RUN rm -rf ce && ln -s ee ce
 
 # BUILD OF 'main' DOCS IS NOW DONE!
 
@@ -63,4 +62,5 @@ COPY --from=builder /source/public ${TARGET}
 COPY --from=builder /scripts/minify* /scripts/
 
 # Serve the site (target), which is now all static HTML
+# hadolint ignore=DL3025
 CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
