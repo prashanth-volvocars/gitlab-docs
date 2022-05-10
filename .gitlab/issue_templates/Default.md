@@ -14,3 +14,5 @@ If you feel that your issue can be categorized as a reproducible bug or a featur
 
 Thank you for helping to make GitLab a better product.
 -->
+
+<!-- template sourced from https://gitlab.com/gitlab-org/gitlab-docs/-/blob/master/.gitlab/issue_templates/Default.md -->
