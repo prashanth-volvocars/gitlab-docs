@@ -2443,6 +2443,8 @@ sections:
             doc_url: 'ee/development/architecture.html'
           - doc_title: Audit Event development guide
             doc_url: 'ee/development/audit_event_guide/'
+          - doc_title: Verify stage development guide
+            doc_url: 'ee/development/contributing/verify/'
           - doc_title: CI/CD development
             doc_url: 'ee/development/cicd/'
             docs:
