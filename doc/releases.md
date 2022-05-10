@@ -77,7 +77,7 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
    ./bin/rake "release:single[13.9]"
    ```
 
-   A branch for the release is created, a new `Dockerfile.13.9` is created, and `.gitlab-ci.yml`
+   A branch for the release is created, a new `13.9.Dockerfile` is created, and `.gitlab-ci.yml`
    has branches variables updated into a new branch. These files are automatically committed.
 
 1. Push the newly created branch, but **don't create a merge request**.
@@ -102,7 +102,7 @@ Prerequisite:
 1. Build the image and run it. For example, for GitLab 13.9 documentation:
 
    ```shell
-   docker build -t docs:13.9 -f Dockerfile.13.9 .
+   docker build -t docs:13.9 -f 13.9.Dockerfile .
    docker run -it --rm -p 4000:4000 docs:13.9
    ```
 
@@ -148,12 +148,12 @@ To create the release merge request for the release:
    - Move the oldest version in `online:` to the `offline:` section. There should now be three
      versions in `online:`.
 
-1. Edit `Dockerfile.main` by removing the oldest version, and then adding the newest version to the top of the list.
+1. Edit `latest.Dockerfile` by removing the oldest version, and then adding the newest version to the top of the list.
 
 1. Commit and push to create the merge request. For example:
 
    ```shell
-   git add content/_data/versions.yaml Dockerfile.main
+   git add content/_data/versions.yaml latest.Dockerfile
    git commit -m "Release 13.9"
    git push origin release-13-9
    ```

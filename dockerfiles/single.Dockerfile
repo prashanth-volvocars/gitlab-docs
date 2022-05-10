@@ -11,12 +11,12 @@ ARG BRANCH_OMNIBUS=X-Y-stable
 ARG BRANCH_RUNNER=X-Y-stable
 ARG BRANCH_CHARTS=W-Z-stable
 
-# This image comes from the Dockerfile.builder.onbuild file
+# This image comes from the builder.onbuild.Dockerfile file
 # https://gitlab.com/gitlab-org/gitlab-docs/blob/main/dockerfiles/Dockerfile.builder.onbuild
 # Build the website
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:builder-onbuild AS builder
 
-# This image comes from the Dockerfile.nginx.onbuild file
+# This image comes from the nginx.onbuild.Dockerfile file
 # https://gitlab.com/gitlab-org/gitlab-docs/blob/main/dockerfiles/Dockerfile.nginx.onbuild
 # Copy the generated HTML files to a smaller image
 FROM registry.gitlab.com/gitlab-org/gitlab-docs:nginx-onbuild

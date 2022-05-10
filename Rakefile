@@ -89,13 +89,13 @@ namespace :release do
     `git checkout -b #{version}`
 
     # Replace the branches variables in Dockerfile.X.Y
-    dockerfile = "#{source_dir}/Dockerfile.#{version}"
+    dockerfile = "#{source_dir}/#{version}.Dockerfile"
 
     if File.exist?(dockerfile)
       abort('rake aborted!') if ask("#{dockerfile} already exists. Do you want to overwrite?", %w[y n]) == 'n'
     end
 
-    content = File.read('dockerfiles/Dockerfile.single')
+    content = File.read('dockerfiles/single.Dockerfile')
     content.gsub!('X.Y', version)
     content.gsub!('X-Y', version.tr('.', '-'))
     content.gsub!('W-Z', chart_version(version).tr('.', '-'))
@@ -117,7 +117,7 @@ namespace :release do
     end
 
     # Add and commit
-    `git add .gitlab-ci.yml Dockerfile.#{version}`
+    `git add .gitlab-ci.yml #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
     puts

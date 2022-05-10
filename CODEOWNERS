@@ -6,7 +6,7 @@ content/assets      @axil @derek-knox @ealcantara @jerasmus @oregand @dmishunov 
 
 /bin/*              @caalberts @godfat-gitlab @markglenfletcher @rymai @cwoolley-gitlab @vyaklushin @sarahgerman
 Gemfile*            @axil @eread @marcel.amirault @sarahgerman
-dockerfiles/*       @axil @eread @marcel.amirault @sarahgerman
+/**/*.Dockerfile    @axil @eread @marcel.amirault @sarahgerman
 
 spec                @cwoolley-gitlab @vyaklushin @doregan @mikegreiling @sarahgerman
 
