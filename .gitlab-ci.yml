@@ -421,8 +421,8 @@ lint_dockerfiles:
   before_script: []
   dependencies: []
   script:
-    - for file in Dockerfile.*; do hadolint $file; done
-    - for file in dockerfiles/Dockerfile.*; do hadolint $file; done
+    - for file in *.Dockerfile; do hadolint $file; done
+    - for file in dockerfiles/*.Dockerfile; do hadolint $file; done
 
 ###############################################
 #               Review Apps                   #
@@ -587,7 +587,7 @@ image:docs-lint-markdown:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
-    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-markdown
+    DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
   script:
     - docker build
       --build-arg ALPINE_VERSION=${ALPINE_VERSION}
@@ -606,7 +606,7 @@ image:docs-lint-html:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
-    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-lint-html
+    DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
   script:
     - docker build
       --build-arg RUBY_VERSION=${RUBY_VERSION}
@@ -627,7 +627,7 @@ image:gitlab-docs-base:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:base
-    DOCKERFILE: dockerfiles/Dockerfile.gitlab-docs-base
+    DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -645,7 +645,7 @@ image:bootstrap:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:bootstrap
-    DOCKERFILE: dockerfiles/Dockerfile.bootstrap
+    DOCKERFILE: dockerfiles/bootstrap.Dockerfile
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -662,7 +662,7 @@ image:builder-onbuild:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:builder-onbuild
-    DOCKERFILE: dockerfiles/Dockerfile.builder.onbuild
+    DOCKERFILE: dockerfiles/builder.onbuild.Dockerfile
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -680,7 +680,7 @@ image:nginx-onbuild:
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE:nginx-onbuild
-    DOCKERFILE: dockerfiles/Dockerfile.nginx.onbuild
+    DOCKERFILE: dockerfiles/nginx.onbuild.Dockerfile
   script:
     - docker build -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
@@ -689,7 +689,7 @@ image:nginx-onbuild:
 
 #
 # Final Docker image containing a single version
-# It is based on Dockerfile.single for each branch
+# It is based on single.Dockerfile for each branch
 #
 image:docs-single:
   extends:
@@ -701,7 +701,7 @@ image:docs-single:
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
-    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+    DOCKERFILE: $CI_COMMIT_REF_NAME.Dockerfile
   environment:
     name: registry/$CI_COMMIT_REF_SLUG
   script:
@@ -725,7 +725,7 @@ image:docs-latest:
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    DOCKERFILE: Dockerfile.$CI_COMMIT_REF_NAME
+    DOCKERFILE: $CI_COMMIT_REF_NAME.Dockerfile
   environment:
     name: registry/latest
   script:
