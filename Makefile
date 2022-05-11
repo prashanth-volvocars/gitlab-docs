@@ -15,4 +15,4 @@ clean:
 	@rm -rf tmp public
 
 test: setup
-	@bundle exec rspec && yarn test && yarn eslint && yarn prettier
+	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile

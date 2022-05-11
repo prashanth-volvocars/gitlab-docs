@@ -421,8 +421,7 @@ lint_dockerfiles:
   before_script: []
   dependencies: []
   script:
-    - for file in *.Dockerfile; do hadolint $file; done
-    - for file in dockerfiles/*.Dockerfile; do hadolint $file; done
+    - hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
 
 ###############################################
 #               Review Apps                   #
