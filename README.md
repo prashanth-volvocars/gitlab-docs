@@ -18,6 +18,7 @@ you must contribute the documentation changes in the projects for those products
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
 - [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
 - [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
+- [GitLab Operator](https://gitlab.com/gitlab-org/cloud-native/gitlab-operator)
 
 If you want to preview your documentation changes and see how they would appear on
 <http://docs.gitlab.com>, there are a few ways to [preview GitLab documentation changes](doc/index.md#development-when-contributing-to-git-lab-documentation).
