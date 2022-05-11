@@ -35,8 +35,10 @@ def retrieve_branch(slug)
     when 'charts'
       chart = chart_version(ENV["CI_COMMIT_REF_NAME"]).match(VERSION_FORMAT)
       "#{chart[:major]}-#{chart[:minor]}-stable"
-    when 'operator'
-      "master"
+    # If the upstream product doesn't follow a stable branch scheme, set the
+    # branch to the default
+    else
+      "#{default_branch(products[slug].fetch('repo'))}"
     end
   # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
   # variable, and if not assigned, set to the default branch.
