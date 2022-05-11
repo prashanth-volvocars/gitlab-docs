@@ -1604,6 +1604,8 @@ sections:
               - doc_title: Connect to cloud services
                 doc_url: 'ee/ci/cloud_services/'
                 docs:
+                  - doc_title: Authenticating with HashiCorp Vault
+                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
                   - doc_title: Configure OpenID Connect in AWS
                     doc_url: 'ee/ci/cloud_services/aws/'
                   - doc_title: Configure OpenID Connect with Google Cloud
@@ -1620,8 +1622,6 @@ sections:
               - doc_title: CI/CD examples
                 doc_url: 'ee/ci/examples/'
                 docs:
-                  - doc_title: Authenticating with HashiCorp Vault
-                    doc_url: 'ee/ci/examples/authenticating-with-hashicorp-vault/'
                   - doc_title: Deployment with Dpl
                     doc_url: 'ee/ci/examples/deployment/'
                   - doc_title: End-to-end testing
