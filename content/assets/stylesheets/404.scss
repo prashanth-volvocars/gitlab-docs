@@ -14,9 +14,11 @@ version: 6
     transition: 0.3s all;
     border-color: $landing-gl-purple-500;
     color: $landing-gl-purple-500;
+    fill: $landing-gl-purple-500;
 
     &:hover {
       color: $gds-white;
+      fill: $gds-white;
       background-color: $landing-gl-purple-500;
     }
   }
