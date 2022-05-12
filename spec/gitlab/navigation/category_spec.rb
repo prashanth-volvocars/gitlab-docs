@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'gitlab/navigation/category'
 require 'gitlab/navigation/doc'

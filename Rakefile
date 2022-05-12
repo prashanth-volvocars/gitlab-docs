@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/task_helpers'
 require 'fileutils'
 require 'pathname'

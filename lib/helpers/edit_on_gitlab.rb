@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Nanoc::Helpers
   module EditOnGitLab
     def edit_on_gitlab(item, editor: :simple)

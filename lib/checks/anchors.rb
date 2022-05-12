@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Nanoc::Check.define(:internal_anchors) do
   output_html_filenames.each do |file|
     Gitlab::Docs::Page.new(file).links.each do |link|

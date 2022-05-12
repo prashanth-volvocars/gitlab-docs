@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 #
 # This allows us to add icons to our documentation using standard Markdown
 #

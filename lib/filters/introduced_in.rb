@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+#
 # Adapted from the admonition code on http://nanoc.ws/
 class IntroducedInFilter < Nanoc::Filter
   identifier :introduced_in

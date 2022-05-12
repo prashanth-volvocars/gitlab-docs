@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Nanoc::Filters
   class MarkdownToHtmlExt < Nanoc::Filter
     identifier :md_to_html_ext
