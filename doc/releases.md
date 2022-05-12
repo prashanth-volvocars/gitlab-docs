@@ -70,14 +70,14 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
    git fetch origin && git rebase origin/main
    ```
 
-1. Run the Rake task to create the single version. For example, to create the 13.9 release branch
+1. Run the Rake task to create the single version. For example, to create the 15.0 release branch
    and perform other tasks:
 
    ```shell
-   ./bin/rake "release:single[13.9]"
+   ./bin/rake "release:single[15.0]"
    ```
 
-   A branch for the release is created, a new `13.9.Dockerfile` is created, and `.gitlab-ci.yml`
+   A branch for the release is created, a new `15.0.Dockerfile` is created, and `.gitlab-ci.yml`
    has branches variables updated into a new branch. These files are automatically committed.
 
 1. Push the newly created branch, but **don't create a merge request**.
@@ -99,11 +99,11 @@ Prerequisite:
 
 - Install Docker. To verify, run `which docker`.
 
-1. Build the image and run it. For example, for GitLab 13.9 documentation:
+1. Build the image and run it. For example, for GitLab 15.0 documentation:
 
    ```shell
-   docker build -t docs:13.9 -f 13.9.Dockerfile .
-   docker run -it --rm -p 4000:4000 docs:13.9
+   docker build -t docs:15.0 -f 15.0.Dockerfile .
+   docker run -it --rm -p 4000:4000 docs:15.0
    ```
 
    If you get a permission error, try running the commands prefixed with `sudo`.
@@ -113,7 +113,7 @@ Prerequisite:
       - (MacOS) `dockerd` ([read more](https://docs.docker.com/config/daemon/#start-the-daemon-manually)).
       - (Linux) `sudo systemctl start docker` ([read more](https://docs.docker.com/config/daemon/systemd/#start-manually)).
 
-1. Visit `http://localhost:4000/13.9` to see if everything works correctly.
+1. Visit `http://localhost:4000/15.0` to see if everything works correctly.
 1. Stop the Docker container:
    1. Identify the container's ID with `docker container ls`.
    1. Run `docker stop <container ID>`.
@@ -136,7 +136,7 @@ To create the release merge request for the release:
 
    ```shell
    git checkout main
-   git checkout -b release-13-9
+   git checkout -b release-15-0
    ```
 
    Confirm the branch has been created. Go to <https://gitlab.com/gitlab-org/gitlab-docs/-/branches/active>
@@ -154,8 +154,8 @@ To create the release merge request for the release:
 
    ```shell
    git add content/_data/versions.yaml latest.Dockerfile
-   git commit -m "Release 13.9"
-   git push origin release-13-9
+   git commit -m "Release 15.0"
+   git push origin release-15-0
    ```
 
 1. Create the merge request and choose the `Release` description
