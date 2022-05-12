@@ -49,5 +49,4 @@ COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.4 ${TARGET} ${TARGET}
 COPY --from=registry.gitlab.com/gitlab-org/gitlab-docs:10.3 ${TARGET} ${TARGET}
 
 # Serve the site (target), which is now all static HTML
-# hadolint ignore=DL3025
-CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
+CMD ["sh", "-c", "echo 'GitLab docs are viewable at: http://0.0.0.0:4000'; exec nginx -g 'daemon off;'"]
