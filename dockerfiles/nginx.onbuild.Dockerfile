@@ -18,5 +18,4 @@ ONBUILD COPY --from=builder /site /usr/share/nginx/html
 COPY dockerfiles/nginx-overrides.conf /etc/nginx/conf.d/default.conf
 
 # Start Nginx to serve the archive at / (which will redirect to the version-specific dir)
-# hadolint ignore=DL3025
-CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
+CMD ["sh", "-c", "echo 'GitLab docs are viewable at: http://0.0.0.0:4000'; exec nginx -g 'daemon off;'"]

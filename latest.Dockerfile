@@ -62,5 +62,4 @@ COPY --from=builder /source/public ${TARGET}
 COPY --from=builder /scripts/minify* /scripts/
 
 # Serve the site (target), which is now all static HTML
-# hadolint ignore=DL3025
-CMD echo -e "GitLab docs are viewable at:\nhttp://0.0.0.0:4000"; exec nginx -g 'daemon off;'
+CMD ["sh", "-c", "echo 'GitLab docs are viewable at: http://0.0.0.0:4000'; exec nginx -g 'daemon off;'"]
