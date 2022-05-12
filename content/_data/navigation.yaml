@@ -1215,7 +1215,7 @@ sections:
                 doc_url: 'ee/user/group/epics/manage_epics.html'
               - doc_title: Linked epics
                 doc_url: 'ee/user/group/epics/linked_epics.html'
-              - doc_title: Epic Boards
+              - doc_title: Epic boards
                 doc_url: 'ee/user/group/epics/epic_boards.html'
           - doc_title: Issues
             doc_url: 'ee/user/project/issues/'
@@ -1236,7 +1236,7 @@ sections:
                 doc_url: 'ee/user/project/issues/design_management.html'
               - doc_title: Due dates
                 doc_url: 'ee/user/project/issues/due_dates.html'
-              - doc_title: Issue Boards
+              - doc_title: Issue boards
                 doc_url: 'ee/user/project/issue_board.html'
               - doc_title: Multiple assignees
                 doc_url: 'ee/user/project/issues/multiple_assignees_for_issues.html'
@@ -1981,7 +1981,7 @@ sections:
                     doc_url: 'ee/user/clusters/environments.html'
                   - doc_title: 'Clusters health'
                     doc_url: 'ee/user/infrastructure/clusters/manage/clusters_health.html'
-                  - doc_title: Deploy Boards
+                  - doc_title: Deploy boards
                     doc_url: 'ee/user/project/deploy_boards.html'
                   - doc_title: Pod logs
                     doc_url: 'ee/user/project/clusters/kubernetes_pod_logs.html'
