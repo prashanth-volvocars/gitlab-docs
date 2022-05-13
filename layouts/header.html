@@ -25,7 +25,7 @@
     <ul class="navbar-nav mb-0">
       <li class="nav-item p-2 dropdown">
         <button class="btn dropdown-toggle text-white" type="button" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= version_dropdown_title %>
+          <%= version_dropdown_title %><%= icon('chevron-down') %>
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" <%= active_dropdown(ENV['CI_DEFAULT_BRANCH']) %> href='<%= @item.identifier.without_ext + '.html' %>' class="versions-tooltip"><%= dotcom %>

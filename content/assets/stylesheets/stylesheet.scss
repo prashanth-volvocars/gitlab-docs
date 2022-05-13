@@ -313,11 +313,28 @@ ol {
 
   .dropdown-toggle {
     background-color: $help-indigo-500;
+    svg {
+      fill: $white;
+      margin-right: 0 !important;
+    }
+    &::after {
+      display: none;
+    }
   }
 
   @media all and (max-width: $bp-md) {
     .btn {
       width: 100%;
+    }
+    .navbar-toggler {
+      border: 0;
+    }
+    .navbar-toggler-icon {
+      background-color: $theme-indigo-200;
+      /*  https://caniuse.com/css-masks */
+      /* stylelint-disable property-no-vendor-prefix */
+      mask: url('/assets/images/ellipsis_h.svg') no-repeat center;
+      -webkit-mask: url('/assets/images/ellipsis_h.svg') no-repeat center;
     }
   }
 }
