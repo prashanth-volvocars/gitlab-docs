@@ -1405,6 +1405,8 @@ sections:
                 doc_url: 'ee/user/project/repository/web_editor.html'
               - doc_title: Web IDE
                 doc_url: 'ee/user/project/web_ide/'
+              - doc_title: Managing large repositories
+                doc_url: 'ee/user/project/repository/managing_large_repositories.html'
           - doc_title: Merge requests
             doc_url: 'ee/user/project/merge_requests/'
             docs:
