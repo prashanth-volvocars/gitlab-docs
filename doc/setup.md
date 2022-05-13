@@ -163,68 +163,14 @@ For more information, see the [troubleshooting section](#troubleshooting).
 
 ## Clone the repositories
 
-Since this process clones a few repositories, it might be a good idea to
-create a separate directory to have them all together. For example, to store all
-local checkouts in a `dev` directory:
+To build the full GitLab documentation website locally, you must have cloned all the documentation projects that provide
+Nanoc data sources. To clone all projects, run:
 
-1. Open a terminal and run:
+```shell
+make clone-all-docs-projects
+```
 
-   ```shell
-   mkdir -p ~/dev
-   ```
-
-1. Navigate to the directory you'd like the repositories to be cloned:
-
-   ```shell
-   cd ~/dev
-   ```
-
-1. Clone the documentation's website repository:
-
-   ```shell
-   ## Using SSH (for GitLab Team members)
-   git clone git@gitlab.com:gitlab-org/gitlab-docs.git
-
-   ## Using HTTPS (for external contributors)
-   git clone https://gitlab.com/gitlab-org/gitlab-docs.git
-   ```
-
-1. Clone the repositories you wish to contribute documentation changes to. Clone these projects
-   **in the same directory** as the `gitlab-docs` project
-   (see [data sources](#nanoc-data-sources)). For example, `~/dev`:
-
-   - **GitLab contributors** that don't have Developer access to the projects,
-     fork the ones you want and then clone them by using your forked version:
-
-     ```shell
-     ## Using HTTPS (for members that do not have Developer access)
-     git clone https://gitlab.com/<username>/gitlab.git
-     git clone https://gitlab.com/<username>/gitlab-runner.git
-     git clone https://gitlab.com/<username>/omnibus-gitlab.git
-     git clone https://gitlab.com/<username>/charts/gitlab.git charts-gitlab
-     git clone https://gitlab.com/<username>/gitlab-operator.git
-     ```
-
-   - For members that have Developer access (usually the
-     **GitLab Team members**), clone the required repositories using SSH:
-
-     ```shell
-     ## Using SSH (for members that have Developer access)
-     git clone git@gitlab.com:gitlab-org/gitlab.git
-     git clone git@gitlab.com:gitlab-org/gitlab-runner.git
-     git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git
-     git clone git@gitlab.com:gitlab-org/charts/gitlab.git charts-gitlab
-     git clone git@gitlab.com:gitlab-org/cloud-native/gitlab-operator.git
-     ```
-
-If you cloned the projects into `~/dev`, you should now have the following projects:
-
-- `~/dev/gitlab-docs`
-- `~/dev/gitlab`
-- `~/dev/gitlab-runner`
-- `~/dev/omnibus-gitlab`
-- `~/dev/charts-gitlab`
-- `~/dev/gitlab-operator`
+The documentation projects are cloned into the parent directory.
 
 ## Preview the documentation website
 

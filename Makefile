@@ -1,5 +1,27 @@
 .PHONY: all clean test up
 
+../gitlab/.git:
+	@echo "\nINFO: Cloning GitLab project into parent directory.."
+	@git clone git@gitlab.com:gitlab-org/gitlab.git ../gitlab
+
+../gitlab-runner/.git:
+	@echo "\nINFO: Cloning GitLab Runner project into parent directory.."
+	@git clone git@gitlab.com:gitlab-org/gitlab-runner.git ../gitlab-runner
+
+../omnibus-gitlab/.git:
+	@echo "\nINFO: Cloning Omnibus GitLab project into parent directory.."
+	@git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git ../omnibus-gitlab
+
+../charts-gitlab/.git:
+	@echo "\nINFO: Cloning GitLab Chart project into parent directory.."
+	@git clone git@gitlab.com:gitlab-org/charts/gitlab.git ../charts-gitlab
+
+../gitlab-operator/.git:
+	@echo "\nINFO: Cloning GitLab Operator project into parent directory.."
+	@git clone git@gitlab.com:gitlab-org/cloud-native/gitlab-operator.git ../gitlab-operator
+
+clone-all-docs-projects: ../gitlab/.git ../gitlab-runner/.git ../omnibus-gitlab/.git ../charts-gitlab/.git ../gitlab-operator/.git
+
 up: setup view
 
 compile: setup
@@ -17,13 +39,13 @@ setup:
 clean:
 	@rm -rf tmp public
 
-internal-links-check: compile
+internal-links-check: clone-all-docs-projects compile
 	@bundle exec nanoc check internal_links
 
-internal-anchors-check: compile
+internal-anchors-check: clone-all-docs-projects compile
 	@bundle exec nanoc check internal_anchors
 
-internal-links-and-anchors-check: compile
+internal-links-and-anchors-check: clone-all-docs-projects compile
 	@parallel time bundle exec nanoc check ::: internal_links internal_anchors
 
 external-links-check: compile
