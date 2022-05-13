@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 # See: https://gitlab.com/gitlab-org/omnibus-gitlab/-/merge_requests/4726#note_459473659

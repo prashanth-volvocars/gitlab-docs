@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 usage       'frontend [options]'
 aliases     :ds, :stuff
 summary     'uses nanoc cli to execute frontend related tasks'

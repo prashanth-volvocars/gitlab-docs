@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Nanoc::Helpers
   module ChildParentBetter
     # Returns an array of ancestor pages for the given page.

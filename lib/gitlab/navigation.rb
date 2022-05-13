@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../helpers/generic'
 require_relative '../helpers/icons_helper'
 

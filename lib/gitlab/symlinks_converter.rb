@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Gitlab
   class SymlinksConverter
     EXTENSIONS = %w[png jpg gif svg].freeze
