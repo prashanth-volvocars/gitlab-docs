@@ -2450,9 +2450,9 @@ sections:
           - doc_title: CI/CD development
             doc_url: 'ee/development/cicd/'
             docs:
-              - doc_title: CI/CD reference style guide
+              - doc_title: Documenting keywords
                 doc_url: 'ee/development/cicd/cicd_reference_documentation_guide.html'
-              - doc_title: Contribute to the CI/CD Schema
+              - doc_title: Contribute to the CI/CD schema
                 doc_url: 'ee/development/cicd/schema.html'
               - doc_title: CI/CD template development
                 doc_url: 'ee/development/cicd/templates.html'
