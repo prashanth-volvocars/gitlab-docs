@@ -22,6 +22,28 @@
 
 clone-all-docs-projects: ../gitlab/.git ../gitlab-runner/.git ../omnibus-gitlab/.git ../charts-gitlab/.git ../gitlab-operator/.git
 
+update-gitlab: ../gitlab/.git
+	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab project.."
+	@cd ../gitlab && git stash && git checkout master && git pull --ff-only
+
+update-gitlab-runner: ../gitlab-runner/.git
+	@echo "\nINFO: Stash any changes, switch to main branch, and pull updates to GitLab Runner project.."
+	@cd ../gitlab-runner && git stash && git checkout main && git pull --ff-only
+
+update-omnibus-gitlab: ../omnibus-gitlab/.git
+	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to Omnibus GitLab project.."
+	@cd ../omnibus-gitlab && git stash && git checkout master && git pull --ff-only
+
+update-charts-gitlab: ../charts-gitlab/.git
+	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab Chart project.."
+	@cd ../charts-gitlab && git stash && git checkout master && git pull --ff-only
+
+update-gitlab-operator: ../gitlab-operator/.git
+	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab Operator project.."
+	@cd ../gitlab-operator && git stash && git checkout master && git pull --ff-only
+
+update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitlab update-charts-gitlab update-gitlab-operator
+
 up: setup view
 
 compile: setup
@@ -35,6 +57,12 @@ live: compile
 
 setup:
 	@asdf install && bundle install && yarn install --frozen-lockfile
+
+update:
+	@echo "\nINFO: Stash any changes, switch to main branch, and pull updates to GitLab Docs project.."
+	@git stash && git checkout main && git pull --ff-only
+
+update-all-projects: update update-all-docs-projects
 
 clean:
 	@rm -rf tmp public
