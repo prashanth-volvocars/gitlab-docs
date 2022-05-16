@@ -439,8 +439,13 @@ sections:
         category_url: 'ee/integration/akismet.html'
       - category_title: Datadog
         category_url: 'ee/integration/datadog.html'
-      - category_title: Elasticsearch
-        category_url: 'ee/integration/elasticsearch.html'
+      - category_title: Advanced Search
+        category_url: 'ee/integration/advanced_search/advanced_search.html'
+        docs:
+          - docs_title: Elasticsearch
+            docs_url: 'ee/integration/advanced_search/elasticsearch.html'
+          - docs_title: Opensearch
+            docs_url: 'ee/integration/advanced_search/opensearch.html'
       - category_title: Gitpod
         category_url: 'ee/integration/gitpod.html'
       - category_title: Jira integrations
