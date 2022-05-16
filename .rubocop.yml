@@ -11,6 +11,7 @@ Layout/LineLength:
 Naming/FileName:
   Enabled: false
 
+# Project is not a Rails project
 Rails/RakeEnvironment:
   Enabled: false
 
