@@ -39,3 +39,17 @@ Install Lefthook with `lefthook install`, then the tests run each time you run a
 `git push` command
 
 Lefthook settings are configured in [`lefthook.yml`](../lefthook.yml).
+
+## Troubleshooting
+
+### `untamper-my-lockfile` fails when the integrity checksum hashes are different
+
+In case the [`untamper-my-lockfile` job fails](https://gitlab.com/gitlab-org/gitlab-docs/-/jobs/2460255126)
+due to a hash mismatch,
+[update the checksums](https://classic.yarnpkg.com/en/docs/cli/install#toc-yarn-install-update-checksums)
+of `yarn.lock`:
+
+```shell
+rm yarn.lock
+yarn install --update-checksums
+```
