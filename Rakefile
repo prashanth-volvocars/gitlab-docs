@@ -277,7 +277,7 @@ namespace :docs do
     ENV['LEFTHOOK'] = '0'
 
     # Check jq is available
-    abort("jq not found. Install jq and run task again.") if `command -v jq`.empty?
+    abort("jq not found. Install jq and run task again.") if `which jq`.empty?
 
     puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
     system("git stash --quiet -u") if git_workdir_dirty?
