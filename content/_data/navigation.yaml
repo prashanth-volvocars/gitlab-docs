@@ -1437,12 +1437,15 @@ sections:
                 doc_url: 'ee/user/project/merge_requests/csv_export.html'
               - doc_title: External status checks
                 doc_url: 'ee/user/project/merge_requests/status_checks.html'
+              - doc_title: Merge methods
+                doc_url: 'ee/user/project/merge_requests/methods/'
+                docs:
+                  - doc_title: Squash and merge
+                    doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
               - doc_title: Merge request dependencies
                 doc_url: 'ee/user/project/merge_requests/merge_request_dependencies.html'
               - doc_title: Merge request widgets
                 doc_url: 'ee/user/project/merge_requests/widgets.html'
-              - doc_title: Fast forward
-                doc_url: 'ee/user/project/merge_requests/fast_forward_merge.html'
               - doc_title: Merge when pipeline succeeds
                 doc_url: 'ee/user/project/merge_requests/merge_when_pipeline_succeeds.html'
               - doc_title: Merge conflicts
@@ -1454,8 +1457,6 @@ sections:
                 docs:
                   - doc_title: Suggestions
                     doc_url: 'ee/user/project/merge_requests/reviews/suggestions.html'
-              - doc_title: Squash and merge
-                doc_url: 'ee/user/project/merge_requests/squash_and_merge.html'
               - doc_title: Versions
                 doc_url: 'ee/user/project/merge_requests/versions.html'
               - doc_title: Workflows
