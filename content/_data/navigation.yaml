@@ -1531,7 +1531,7 @@ sections:
               - doc_title: '.gitlab-ci.yml'
                 doc_url: 'ee/ci/yaml/gitlab_ci_yaml.html'
                 docs:
-                  - doc_title: '.gitlab-ci.yml reference'
+                  - doc_title: '.gitlab-ci.yml keyword reference'
                     doc_url: 'ee/ci/yaml/'
                   - doc_title: 'Optimize your YAML files'
                     doc_url: 'ee/ci/yaml/yaml_optimization.html'
