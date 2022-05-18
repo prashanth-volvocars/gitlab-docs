@@ -8,7 +8,7 @@ require 'gitlab/navigation/section'
 describe Gitlab::Navigation do
   subject(:navigation) { described_class.new(items, item) }
 
-  let(:item) { double(path: '/omnibus/user/README.html', identifier: double(to_s: '/omnibus/user/README.md')) }
+  let(:item) { instance_double(Nanoc::Core::CompilationItemView, path: '/omnibus/user/README.html', identifier: instance_double(Nanoc::Core::Identifier, to_s: '/omnibus/user/README.md')) }
   let(:items) do
     {
       '/_data/navigation.yaml' => { sections: [Gitlab::Navigation::Section.new(section_title: 'Default Section')] }
@@ -19,7 +19,7 @@ describe Gitlab::Navigation do
     subject { navigation.nav_items }
 
     context 'when yaml configuration for project does not exist' do
-      let(:item) { double(path: '/ee/user/README.html', identifier: double(to_s: '/ee/user/README.md')) }
+      let(:item) { instance_double(Nanoc::Core::CompilationItemView, path: '/ee/user/README.html', identifier: instance_double(Nanoc::Core::Identifier, to_s: '/ee/user/README.md')) }
 
       it 'returns default sections' do
         sections = subject[:sections]
@@ -39,7 +39,7 @@ describe Gitlab::Navigation do
     it { is_expected.to eq('/omnibus/user/README.html') }
 
     context 'when yaml configuration for project does not exist' do
-      let(:item) { double(path: '/ee/user/README.html', identifier: double(to_s: '/ee/user/README.md')) }
+      let(:item) { instance_double(Nanoc::Core::CompilationItemView, path: '/ee/user/README.html', identifier: instance_double(Nanoc::Core::Identifier, to_s: '/ee/user/README.md')) }
 
       it { is_expected.to eq('/omnibus/user/README.html') }
     end

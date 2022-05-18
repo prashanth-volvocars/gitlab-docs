@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe Gitlab::Docs::Link do
-  let(:page) { double('page') }
+  let(:page) { instance_double(Gitlab::Docs::Page) }
   let(:href) { '../some/page.html#some-anchor' }
 
   subject { described_class.new(href, page) }
@@ -98,7 +98,7 @@ describe Gitlab::Docs::Link do
 
     context 'when the link is an external link' do
       let(:href) { '../some/page.html#my-anchor' }
-      let(:destination) { double('destination') }
+      let(:destination) { instance_double(Gitlab::Docs::Page) }
 
       before do
         allow(page).to receive(:directory).and_return('/my/docs/page')
@@ -126,7 +126,7 @@ describe Gitlab::Docs::Link do
     before do
       allow(page).to receive(:directory).and_return('/my/dir')
       allow(subject).to receive(:destination_file)
-        .and_return(double('page', exists?: false))
+        .and_return(instance_double(Gitlab::Docs::Page, exists?: false))
     end
 
     it 'returns false if page does not exist' do
@@ -138,7 +138,7 @@ describe Gitlab::Docs::Link do
     before do
       allow(page).to receive(:directory).and_return('/my/dir')
       allow(subject).to receive(:destination_file)
-        .and_return(double('page', has_anchor?: false))
+        .and_return(instance_double(Gitlab::Docs::Page, has_anchor?: false))
     end
 
     it 'returns false if anchor does not exist' do
