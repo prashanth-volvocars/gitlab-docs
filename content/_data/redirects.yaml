@@ -444,3 +444,6 @@ redirects:
   - from: /ee/api/resource_access_tokens.html
     to: /ee/api/project_access_tokens.html
     remove_date: 2023-01-06
+  - from: /ee/push_rules/push_rules.html
+    to: /ee/user/project/repository/push_rules.html
+    remove_date: 2023-02-10
