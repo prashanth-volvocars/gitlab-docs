@@ -2,11 +2,6 @@
 
 require 'spec_helper'
 
-require 'nokogiri'
-require 'gitlab/docs/link'
-require 'gitlab/docs/page'
-require 'gitlab/docs/nanoc'
-
 describe Gitlab::Docs::Link do
   let(:page) { double('page') }
   let(:href) { '../some/page.html#some-anchor' }
