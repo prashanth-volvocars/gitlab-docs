@@ -79,5 +79,8 @@ internal-links-and-anchors-check: clone-all-docs-projects compile
 external-links-check: compile
 	@bundle exec nanoc check external_links
 
-test: setup
+brew-bundle:
+	@(command -v brew > /dev/null 2>&1) && brew bundle --no-lock || true
+
+test: setup brew-bundle
 	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
