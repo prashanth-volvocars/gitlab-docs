@@ -333,15 +333,21 @@ namespace :docs do
       # Exclude 'doc/development/documentation/redirects.md' because it
       # contains an example of the YAML front matter.
       #
-      files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | grep -v doc/development/documentation/redirects.md | cut -d ":" -f1`.split("\n")
-      puts "Found redirect files:"
+      files_to_be_deleted = `grep -Ir 'remove_date:' #{content_dir} | cut -d ":" -f1`.split("\n")
+      puts "Files containing 'remove_date':"
       files_to_be_deleted.each { |file| puts "- #{file}" }
+      puts
+
       #
       # Iterate over the files to be deleted and print the needed
       # YAML entries for the Docs site redirects.
       #
       files_to_be_deleted.each do |filename|
         frontmatter = YAML.safe_load(File.read(filename))
+
+        # Skip if remove_date is not found in the frontmatter
+        next unless frontmatter.has_key?('remove_date')
+
         remove_date = Date.parse(frontmatter['remove_date'])
         old_path = filename.gsub(/\.md/, '.html').gsub(content_dir, "/#{slug}")
 
