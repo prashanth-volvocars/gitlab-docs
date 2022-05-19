@@ -24,9 +24,7 @@ module Nanoc::Helpers
       minutes = (words / WPM).ceil
       seconds = (words % WPM / (WPM / 60)).floor
 
-      if seconds.positive?
-        minutes += 1
-      end
+      minutes += 1 if seconds.positive?
 
       (minutes <= 1 ? 'about a minute' : "~#{minutes} minutes")
     end

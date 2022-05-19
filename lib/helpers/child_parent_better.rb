@@ -4,9 +4,7 @@ module Nanoc::Helpers
   module ChildParentBetter
     # Returns an array of ancestor pages for the given page.
     def ancestor_path_array(item)
-      if @config[:debug]
-        puts item
-      end
+      puts item if @config[:debug]
 
       parent_array = []
       current_item = item
@@ -27,9 +25,7 @@ module Nanoc::Helpers
     # A recursive function which returns the nearest parent item for the
     # given path.
     def get_nearest_parent(item_identifier)
-      if @config[:debug]
-        puts item_identifier
-      end
+      puts item_identifier if @config[:debug]
 
       if (item_identifier.nil? || (item_identifier.to_s.end_with?('README.md', 'index.md') && item_identifier.to_s.split('/').length == 3))
         return

@@ -76,9 +76,7 @@ module Nanoc::Filters
       elements.each do |e|
         results.push(e) if type == e.type
 
-        unless e.children.empty?
-          results.concat(find_type_elements(type, e.children))
-        end
+        e.children.empty? unless results.concat(find_type_elements(type, e.children))
       end
 
       results
