@@ -2742,7 +2742,14 @@ sections:
               - doc_title: Error budget detail
                 doc_url: 'ee/development/stage_group_observability/dashboards/error_budget_detail.html'
           - doc_title: Package development
-            doc_url: 'ee/development/packages.html'
+            doc_url: 'ee/development/packages/'
+            docs:
+              - doc_title: Package settings
+                doc_url: 'ee/development/packages/settings.html'
+              - doc_title: Package structure
+                doc_url: 'ee/development/packages/structure.html'
+              - doc_title: Support new formats
+                doc_url: 'ee/development/packages/new_format_development.html'
           - doc_title: Permissions
             doc_url: 'ee/development/permissions.html'
           - doc_title: Product Qualified Lead (PQL) guide
