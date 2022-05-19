@@ -24,7 +24,9 @@ task :clone_repositories do
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] \
+      && branch == ENV['CI_DEFAULT_BRANCH'] \
+      && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     puts "\n=> Cloning #{product['repo']} into #{product['project_dir']}\n"
 
@@ -76,7 +78,8 @@ namespace :release do
     raise 'You need to specify a version, like 10.1' unless version.match?(/\A\d+\.\d+\z/)
 
     # Check if local branch exists
-    abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.") if local_branch_exist?(version)
+    abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.") \
+      if local_branch_exist?(version)
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
@@ -224,7 +227,9 @@ task :symlink_readmes do
     # check if the pipeline was triggered via the API (multi-project pipeline)
     # to exclude the case where we create a branch right off the gitlab-docs
     # project.
-    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] && branch == ENV['CI_DEFAULT_BRANCH'] && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
+    next if ENV["CI_COMMIT_REF_NAME"] != ENV['CI_DEFAULT_BRANCH'] \
+      && branch == ENV['CI_DEFAULT_BRANCH'] \
+      && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
     next if readmes.key?(product['slug']) == false
 
@@ -398,7 +403,8 @@ namespace :docs do
       puts "=> (#{slug}): Committing and pushing to create a merge request"
       system("git add .")
       system("git commit --quiet -m 'Update docs redirects #{today}'")
-      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` if ENV['SKIP_MR'].nil?
+      `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` \
+        if ENV['SKIP_MR'].nil?
       Dir.chdir(source_dir)
       puts
     end
@@ -415,6 +421,7 @@ namespace :docs do
     puts "=> (gitlab-docs): Committing and pushing to create a merge request"
     system("git add #{redirects_yaml}")
     system("git commit --quiet -m 'Update docs redirects #{today}'")
-    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site"` if ENV['SKIP_MR'].nil?
+    `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site"` \
+      if ENV['SKIP_MR'].nil?
   end
 end
