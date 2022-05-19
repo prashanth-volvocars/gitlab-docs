@@ -1,45 +1,48 @@
 .PHONY: all clean test up
 
+INFO = \033[32m
+INFO_END = \033[0m
+
 ../gitlab/.git:
-	@echo "\nINFO: Cloning GitLab project into parent directory.."
+	@echo "\n$(INFO)INFO: Cloning GitLab project into parent directory..$(INFO_END)\n"
 	@git clone git@gitlab.com:gitlab-org/gitlab.git ../gitlab
 
 ../gitlab-runner/.git:
-	@echo "\nINFO: Cloning GitLab Runner project into parent directory.."
+	@printf "\n$(INFO)INFO: Cloning GitLab Runner project into parent directory..$(INFO_END)\n"
 	@git clone git@gitlab.com:gitlab-org/gitlab-runner.git ../gitlab-runner
 
 ../omnibus-gitlab/.git:
-	@echo "\nINFO: Cloning Omnibus GitLab project into parent directory.."
+	@printf "\n$(INFO)INFO: Cloning Omnibus GitLab project into parent directory..$(INFO_END)\n"
 	@git clone git@gitlab.com:gitlab-org/omnibus-gitlab.git ../omnibus-gitlab
 
 ../charts-gitlab/.git:
-	@echo "\nINFO: Cloning GitLab Chart project into parent directory.."
+	@printf "\n$(INFO)INFO: Cloning GitLab Chart project into parent directory..$(INFO_END)\n"
 	@git clone git@gitlab.com:gitlab-org/charts/gitlab.git ../charts-gitlab
 
 ../gitlab-operator/.git:
-	@echo "\nINFO: Cloning GitLab Operator project into parent directory.."
+	@printf "\n$(INFO)INFO: Cloning GitLab Operator project into parent directory..$(INFO_END)\n"
 	@git clone git@gitlab.com:gitlab-org/cloud-native/gitlab-operator.git ../gitlab-operator
 
 clone-all-docs-projects: ../gitlab/.git ../gitlab-runner/.git ../omnibus-gitlab/.git ../charts-gitlab/.git ../gitlab-operator/.git
 
 update-gitlab: ../gitlab/.git
-	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to master branch, and pull updates to GitLab project..$(INFO_END)\n"
 	@cd ../gitlab && git stash && git checkout master && git pull --ff-only
 
 update-gitlab-runner: ../gitlab-runner/.git
-	@echo "\nINFO: Stash any changes, switch to main branch, and pull updates to GitLab Runner project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to main branch, and pull updates to GitLab Runner project..$(INFO_END)\n"
 	@cd ../gitlab-runner && git stash && git checkout main && git pull --ff-only
 
 update-omnibus-gitlab: ../omnibus-gitlab/.git
-	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to Omnibus GitLab project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to master branch, and pull updates to Omnibus GitLab project..$(INFO_END)\n"
 	@cd ../omnibus-gitlab && git stash && git checkout master && git pull --ff-only
 
 update-charts-gitlab: ../charts-gitlab/.git
-	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab Chart project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to master branch, and pull updates to GitLab Chart project..$(INFO_END)\n"
 	@cd ../charts-gitlab && git stash && git checkout master && git pull --ff-only
 
 update-gitlab-operator: ../gitlab-operator/.git
-	@echo "\nINFO: Stash any changes, switch to master branch, and pull updates to GitLab Operator project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to master branch, and pull updates to GitLab Operator project..$(INFO_END)\n"
 	@cd ../gitlab-operator && git stash && git checkout master && git pull --ff-only
 
 update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitlab update-charts-gitlab update-gitlab-operator
@@ -47,40 +50,51 @@ update-all-docs-projects: update-gitlab update-gitlab-runner update-omnibus-gitl
 up: setup view
 
 compile: setup
+	@printf "\n$(INFO)INFO: Compiling GitLab documentation site..$(INFO_END)\n"
 	@bundle exec nanoc compile
 
 view: compile
+	@printf "\n$(INFO)INFO: Starting GitLab documentation site..$(INFO_END)\n"
 	@bundle exec nanoc view
 
 live: compile
+	@printf "\n$(INFO)INFO: Starting GitLab documentation site with live reload..$(INFO_END)\n"
 	bundle exec nanoc live
 
 setup:
+	@printf "\n$(INFO)INFO: Installing dependencies..$(INFO_END)\n"
 	@asdf install && bundle install && yarn install --frozen-lockfile
 
 update:
-	@echo "\nINFO: Stash any changes, switch to main branch, and pull updates to GitLab Docs project.."
+	@printf "\n$(INFO)INFO: Stash any changes, switch to main branch, and pull updates to GitLab Docs project..$(INFO_END)\n"
 	@git stash && git checkout main && git pull --ff-only
 
 update-all-projects: update update-all-docs-projects
 
 clean:
+	@printf "\n$(INFO)INFO: Removing tmp and public directories..$(INFO_END)\n"
 	@rm -rf tmp public
 
 internal-links-check: clone-all-docs-projects compile
+	@printf "\n$(INFO)INFO: Checking all internal links..$(INFO_END)\n"
 	@bundle exec nanoc check internal_links
 
 internal-anchors-check: clone-all-docs-projects compile
+	@printf "\n$(INFO)INFO: Checking all internal anchors..$(INFO_END)\n"
 	@bundle exec nanoc check internal_anchors
 
 internal-links-and-anchors-check: clone-all-docs-projects compile
+	@printf "\n$(INFO)INFO: Checking all internal links and anchors..$(INFO_END)\n"
 	@parallel time bundle exec nanoc check ::: internal_links internal_anchors
 
 external-links-check: compile
+	@printf "\n$(INFO)INFO: Checking all external links..$(INFO_END)\n"
 	@bundle exec nanoc check external_links
 
 brew-bundle:
+	@printf "\n$(INFO)INFO: Checking Brew dependencies, if Brew is available..$(INFO_END)\n"
 	@(command -v brew > /dev/null 2>&1) && brew bundle --no-lock || true
 
 test: setup brew-bundle
+	@printf "\n$(INFO)INFO: Running all tests..$(INFO_END)\n"
 	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
