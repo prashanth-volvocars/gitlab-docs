@@ -1,27 +1,11 @@
-# GitLab documentation project
+# GitLab Docs project
 
-[![build status](https://gitlab.com/gitlab-org/gitlab-docs/badges/main/pipeline.svg)](https://gitlab.com/gitlab-org/gitlab-docs/commits/main)
+This project generates and deploys the GitLab documentation website to <https://docs.gitlab.com>.
 
-This project hosts the repository used to generate the GitLab documentation
-website deployed to [https://docs.gitlab.com](https://docs.gitlab.com). It
-uses the [Nanoc](http://nanoc.ws) static site generator.
+For information on:
 
-## Contribution
-
-If you are interested in contributing improvements to how the <https://docs.gitlab.com> **site** itself works,
-see the [GitLab docs site documentation](doc/index.md)
-
-If you are interested in contributing to the **documentation** for specific GitLab products,
-you must contribute the documentation changes in the projects for those products:
-
-- [GitLab](https://gitlab.com/gitlab-org/gitlab)
-- [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
-- [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner)
-- [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
-- [GitLab Operator](https://gitlab.com/gitlab-org/cloud-native/gitlab-operator)
-
-If you want to preview your documentation changes and see how they would appear on
-<http://docs.gitlab.com>, there are a few ways to [preview GitLab documentation changes](doc/index.md#development-when-contributing-to-git-lab-documentation).
+- This project, see the [GitLab Docs site](doc/index.md).
+- Contributing to GitLab documentation content, see [GitLab Documentation guidelines](https://docs.gitlab.com/ee/development/documentation/).
 
 ## Contributing agreement
 

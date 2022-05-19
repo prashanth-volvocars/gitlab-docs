@@ -1,4 +1,4 @@
-# GitLab docs site
+# GitLab Docs site
 
 ## Projects we pull from
 
