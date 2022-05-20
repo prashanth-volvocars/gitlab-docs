@@ -1,8 +1,6 @@
 # GitLab Docs site
 
-## Projects we pull from
-
-There are currently 5 products that are pulled and generate the docs website:
+The GitLab Docs site comprises documentation from the following projects:
 
 - [GitLab](https://gitlab.com/gitlab-org/gitlab)
 - [Omnibus GitLab](https://gitlab.com/gitlab-org/omnibus-gitlab)
@@ -10,38 +8,19 @@ There are currently 5 products that are pulled and generate the docs website:
 - [GitLab Chart](https://gitlab.com/gitlab-org/charts/gitlab)
 - [GitLab Operator](https://gitlab.com/gitlab-org/gitlab-operator)
 
-NOTE:
-Although GitLab Community Edition is generated, it is hidden from the website
-as it's the same as the Enterprise Edition. We generate it for consistency,
-until [better redirects](https://gitlab.com/gitlab-org/gitlab-pages/issues/24)
-are implemented.
+This project can be used to:
 
-## Development when contributing to GitLab documentation
+- [Build and run](setup.md) the GitLab Docs site locally, to preview changes you make to the documentation.
+- [Develop](development.md) and [test](testing.md) the GitLab Docs site itself.
 
-This section is about contributing to one of the GitLab
-[projects' documentation](#projects-we-pull-from), and preview your changes at
-the same time.
+If you use GDK, you can also [use GDK for documentation development](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md).
 
-Before diving into writing, here are two handy links:
+## Technical Writing team member tasks
 
-- [Writing documentation](https://docs.gitlab.com/ee/development/documentation/index.html)
-- [Style guide](https://docs.gitlab.com/ee/development/documentation/styleguide/index.html)
+GitLab [Technical Writing team members](https://about.gitlab.com/handbook/engineering/ux/technical-writing/) perform
+the following maintenance tasks on the GitLab Docs site:
 
-There are multiple ways to preview GitLab documentation changes, you can:
-
-- You can [build and run the docs site locally](setup.md).
-- You can [create a Review App with each merge request](https://docs.gitlab.com/ee/development/documentation/index.html#previewing-the-changes-live),
-  if you are a GitLab team member.
-- You can [use GDK for documentation development](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitlab_docs.md).
-
-## Develop and maintain the docs site
-
-If you are interested in making contributions to the GitLab documentation site itself,
-see the [GitLab docs site development](development.md) and [Testing the GitLab docs site](testing.md) pages.
-
-GitLab technical writing team members sometimes have to do maintenance tasks:
-
-- Publish the [next release of the GitLab docs site](releases.md).
-- Perform [GitLab docs site maintenance](maintenance.md).
-- Run [GitLab docs rake tasks](raketasks.md).
-- Refine the [search results using DocSearch](docsearch.md).
+- Publish [releases](releases.md).
+- Perform [maintenance](maintenance.md).
+- Run [Rake tasks](raketasks.md).
+- Refine [search results](docsearch.md).
