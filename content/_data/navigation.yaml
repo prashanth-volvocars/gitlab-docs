@@ -999,8 +999,7 @@ sections:
           - doc_title: User email confirmation
             doc_url: 'ee/security/user_email_confirmation.html'
           - doc_title: Security of running jobs
-            doc_url: 'https://docs.gitlab.com/runner/security/'
-            external_url: true
+            doc_url: 'runner/security/'
           - doc_title: Proxying assets
             doc_url: 'ee/security/asset_proxy.html'
           - doc_title: CI/CD variables
