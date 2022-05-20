@@ -1,1 +1,2 @@
 brew "hadolint"
+brew "yamllint"

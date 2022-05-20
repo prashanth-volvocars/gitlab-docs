@@ -1,41 +1,75 @@
-# Testing the GitLab docs site
+# Testing the GitLab Docs site
 
-Before any changes to the `gitlab-docs` project are merged, they are tested in a merge request's
-CI/CD pipeline. The pipeline configuration is in the [`.gitlab-ci.yml`](../.gitlab-ci.yml) file.
+Tests for the GitLab Docs site include tests for code and tests for links in content. For more information, see
+[Documentation testing](https://docs.gitlab.com/ee/development/documentation/testing.html).
 
-You can [run the same tests locally](#run-tests-locally), before pushing your changes
-to the project.
+Tests are run in `gitlab-docs` [CI/CD pipeline](https://gitlab.com/gitlab-org/gitlab-docs/-/pipelines), which is
+configured in the project's [`.gitlab-ci.yml`](../.gitlab-ci.yml) file.
 
-## What do we test?
+## Code tests
 
-| Test target  | Tool        | Purpose             |
-| ------------ | ----------- | ------------------- |
-| CSS          | Stylelint   | Code quality        |
-| Dockerfiles  | Hadolint    | Syntax checks       |
-| JavaScript   | ESLint      | Syntax checks       |
-| JavaScript   | Prettier    | Code formatting     |
-| Links        | Nanoc check | Find broken links   |
-| Ruby         | RSpec       | Unit tests          |
-| Vue          | Jest        | Unit tests          |
-| YAML         | yamllint    | Syntax checks       |
+These code tests are included in the project:
 
-## Run tests locally
+| Test target | Tool        | Purpose           |
+|:------------|:------------|:------------------|
+| CSS         | Stylelint   | Code quality      |
+| Dockerfiles | Hadolint    | Syntax checks     |
+| JavaScript  | ESLint      | Syntax checks     |
+| JavaScript  | Prettier    | Code formatting   |
+| Ruby        | RSpec       | Unit tests        |
+| Vue         | Jest        | Unit tests        |
+| YAML        | yamllint    | Syntax checks     |
 
-You must install the dependencies before you can run tests locally:
+Stylelint tests are run in the CI/CD pipeline only.
 
-- node modules: `yarn install`
-- Ruby gems: `bundle install`
-- hadolint (MacOS: `brew install hadolint`)
-- yamllint (MacOS: `brew install yamllint`)
+### Run code tests locally
 
 To run the tests:
 
-`make test`
+```shell
+make test
+```
 
-### Lefthook
+### Install Lefthook
 
-Optionally, you can use Lefthook to automatically run tests before pushing code.
-Install Lefthook with `lefthook install`, then the tests run each time you run a
-`git push` command
+If you want to run the tests before pushing changes, use [Lefthook](https://github.com/evilmartians/lefthook#readme).
+To install Lefthook, run:
 
-Lefthook settings are configured in [`lefthook.yml`](../lefthook.yml).
+```shell
+lefthook install
+```
+
+Tests are run whenever you run `git push`.
+
+Lefthook is configured in [`lefthook.yml`](../lefthook.yml).
+
+## Link tests
+
+You can use `gitlab-docs` to test links in content. These tests don't test `gitlab-docs`, but the content in the
+projects that comprise the published GitLab Docs site.
+
+### Run link tests locally
+
+To test links between content pages, run:
+
+```shell
+make internal-links-check
+```
+
+To test anchor links, run:
+
+```shell
+make internal-anchors-check
+```
+
+To test both links between content pages and anchor links, run:
+
+```shell
+make internal-links-and-anchors-check
+```
+
+To test external links, run:
+
+```shell
+make external-links-check
+```

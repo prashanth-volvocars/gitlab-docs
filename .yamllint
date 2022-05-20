@@ -3,5 +3,7 @@
 extends: default
 
 rules:
-  line-length: disable
+  comments-indentation:
+    ignore: content/_data/navigation.yaml
   document-start: disable
+  line-length: disable
