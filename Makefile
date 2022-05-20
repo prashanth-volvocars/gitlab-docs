@@ -97,4 +97,4 @@ brew-bundle:
 
 test: setup brew-bundle
 	@printf "\n$(INFO)INFO: Running all tests..$(INFO_END)\n"
-	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile && yamllint .gitlab-ci.yml content/_data
