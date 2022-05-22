@@ -7,15 +7,15 @@ Nanoc::Check.define(:internal_anchors) do
       next unless link.to_anchor?
       next if link.anchor_name == 'markdown-toc'
 
-      if link.destination_anchor_not_found?
-        add_issue <<~ERROR
-          Broken anchor detected!
-                - source file `#{link.source_file}`
-                - destination `#{link.destination_file}`
-                - link `#{link.href}`
-                - anchor `##{link.anchor_name}`
-        ERROR
-      end
+      next unless link.destination_anchor_not_found?
+
+      add_issue <<~ERROR
+        Broken anchor detected!
+              - source file `#{link.source_file}`
+              - destination `#{link.destination_file}`
+              - link `#{link.href}`
+              - anchor `##{link.anchor_name}`
+      ERROR
     end
   end
   add_issue "#{issues.count} offenses found!" if issues.count.positive?
