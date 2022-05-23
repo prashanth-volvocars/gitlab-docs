@@ -15,7 +15,7 @@ describe Gitlab::Docs::Page do
 
   context 'when file exists' do
     before do
-      allow(File).to receive(:exists?)
+      allow(File).to receive(:exist?)
         .with('some/file.html')
         .and_return(true)
 
