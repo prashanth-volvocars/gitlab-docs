@@ -54,4 +54,4 @@ WORKDIR /tmp/gitlab-docs/
 RUN yarn install --frozen-lockfile \
   && yarn cache clean --all \
   && bundle update --bundler \
-  && NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+  && bundle install --jobs 4
