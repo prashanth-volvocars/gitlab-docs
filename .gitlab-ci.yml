@@ -423,7 +423,7 @@ lint_dockerfiles:
   before_script: []
   dependencies: []
   script:
-    - hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+    - hadolint main.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
 
 ###############################################
 #               Review Apps                   #
