@@ -833,10 +833,10 @@ sections:
                 doc_url: 'ee/administration/geo/secondary_proxy/'
               - doc_title: Location-aware public URL
                 doc_url: 'ee/administration/geo/secondary_proxy/location_aware_external_url.html'
-              - doc_title: Updating Geo sites
-                doc_url: 'ee/administration/geo/replication/updating_the_geo_sites.html'
-              - doc_title: Version-specific updates
-                doc_url: 'ee/administration/geo/replication/version_specific_updates.html'
+              - doc_title: Upgrading Geo sites
+                doc_url: 'ee/administration/geo/replication/upgrading_the_geo_sites.html'
+              - doc_title: Version-specific upgrades
+                doc_url: 'ee/administration/geo/replication/version_specific_upgrades.html'
               - doc_title: Using object storage
                 doc_url: 'ee/administration/geo/replication/object_storage.html'
               - doc_title: Using Docker Registry
