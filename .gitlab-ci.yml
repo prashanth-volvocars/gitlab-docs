@@ -17,7 +17,7 @@ default:
     - gem -v
     - bundle -v
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install --jobs 4
+    - bundle install --jobs 4
 
 .yarn:
   before_script:
