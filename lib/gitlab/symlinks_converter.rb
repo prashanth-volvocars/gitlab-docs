@@ -20,15 +20,14 @@ module Gitlab
         id = item.identifier
 
         next unless id.to_s.start_with?('/ee/')
+        next unless EXTENSIONS.include?(id.ext)
 
-        if EXTENSIONS.include?(id.ext)
-          file_path = File.join(config.fetch(:content_dir), id.to_s)
-          real_path = Pathname.new(file_path).realpath.to_s
-          symlink = File.join(config.output_dir, id.to_s)
+        file_path = File.join(config.fetch(:content_dir), id.to_s)
+        real_path = Pathname.new(file_path).realpath.to_s
+        symlink = File.join(config.output_dir, id.to_s)
 
-          # Replace a file with a symlink
-          File.delete(symlink) && File.symlink(real_path, symlink) if File.exist?(symlink)
-        end
+        # Replace a file with a symlink
+        File.delete(symlink) && File.symlink(real_path, symlink) if File.exist?(symlink)
       end
     end
 
