@@ -423,7 +423,7 @@ lint_dockerfiles:
   before_script: []
   dependencies: []
   script:
-    - hadolint main.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+    - hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
 
 ###############################################
 #               Review Apps                   #
@@ -726,7 +726,7 @@ image:docs-latest:
   variables:
     NANOC_ENV: 'production'
     IMAGE_NAME: $CI_REGISTRY_IMAGE:latest
-    DOCKERFILE: $CI_COMMIT_REF_NAME.Dockerfile
+    DOCKERFILE: latest.Dockerfile
   environment:
     name: registry/latest
   script:
