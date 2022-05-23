@@ -14,7 +14,7 @@ task :setup_git do
   puts "\n#{COLOR_CODE_GREEN}INFO: Setting up dummy user and email in Git..#{COLOR_CODE_RESET}"
 
   `git config --global user.name "Sidney Jones"`
-  `git config --global user.email "sidneyjones@example.com`
+  `git config --global user.email "sidneyjones@example.com"`
 end
 
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
@@ -32,12 +32,12 @@ task :clone_repositories do
       && branch == ENV['CI_DEFAULT_BRANCH'] \
       && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']} into #{product['project_dir']}..#{COLOR_CODE_RESET}"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']} into #{product['project_dir']} ..#{COLOR_CODE_RESET}"
 
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
     # Print the latest commit from each project so that we can see which commit we're building from.
-    puts "\n#{COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}.#{COLOR_CODE_RESET}"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}#{COLOR_CODE_RESET}"
   end
 end
 
