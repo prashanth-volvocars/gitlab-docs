@@ -1,3 +1,3 @@
-show_banner: false
+show_banner: true
 description: |
-  Help us improve our APIs by completing a [short survey](https://gitlab.fra1.qualtrics.com/jfe/form/SV_cD9wcDYMcVDruSy)! We're looking to hear from you about how we can take our APIs to the next level.
+  Help us learn about your current experience with GitLab! [Take the survey](https://gitlab.fra1.qualtrics.com/jfe/form/SV_09gagZ9eaJl69NA).
