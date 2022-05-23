@@ -2841,6 +2841,8 @@ sections:
             docs:
               - doc_title: Implement Snowplow
                 doc_url: 'ee/development/snowplow/implementation.html'
+              - doc_title: Snowplow Infrastructure
+                doc_url: 'ee/development/snowplow/infrastructure.html'
               - doc_title: Schemas
                 doc_url: 'ee/development/snowplow/schemas.html'
               - doc_title: Event dictionary guide
