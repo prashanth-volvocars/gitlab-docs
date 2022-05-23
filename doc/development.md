@@ -106,6 +106,40 @@ If you would like to track that information, add the following parameters to the
 
 `https://about.gitlab.com/pricing?=glm_source=docs.gitlab.com&glm_content=name-of-item-docs`
 
+## Run a fully-versioned Docs site locally
+
+You can run the following bash script to fetch all the versions that appear in
+the dropdown and have a fully-versioned site like the one in production.
+
+Prerequisites:
+
+- You must have Docker or another compatible container runtime installed.
+- For Linux users, to run the `docker` CLI command as a non-root user,
+  add your user to the `docker` user group, re-login, and restart
+  `docker.service`. 
+
+Edit the `versions` array to match that of the dropdown:
+
+```shell
+#!/bin/bash
+versions=( 15.0 14.10 14.9 13.12 )
+for i in "${versions[@]}"
+do
+  docker create -it --name gitlab-docs-$i registry.gitlab.com/gitlab-org/gitlab-docs:$i
+  docker cp gitlab-docs-$i:/usr/share/nginx/html/$i public/
+  docker rm -f gitlab-docs-$i
+done
+```
+
+### MacOS Docker considerations
+
+- Due to licensing restrictions, consider an alternative to Docker Desktop. There are several suggestions in [the handbook](https://about.gitlab.com/handbook/tools-and-tips/mac/#docker-desktop). Colima works well with the above script.
+- M1 Macs require an environment variable in order to run these images:
+
+  ```shell
+  export DOCKER_DEFAULT_PLATFORM=linux/amd64
+  ```
+
 ## Add a new product
 
 NOTE:
