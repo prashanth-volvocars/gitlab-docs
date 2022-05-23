@@ -4,13 +4,17 @@ require './lib/task_helpers'
 require 'fileutils'
 require 'pathname'
 
+COLOR_CODE_RESET = "\e[0m"
+COLOR_CODE_RED = "\e[31m"
+COLOR_CODE_GREEN = "\e[32m"
+
 task default: [:clone_repositories, :generate_feature_flags]
 
 task :setup_git do
-  puts "\n=> Setting up dummy user/email in Git"
+  puts "\n#{COLOR_CODE_GREEN}INFO: Setting up dummy user and email in Git..#{COLOR_CODE_RESET}"
 
-  `git config --global user.name "John Doe"`
-  `git config --global user.email johndoe@example.com`
+  `git config --global user.name "Sidney Jones"`
+  `git config --global user.email "sidneyjones@example.com`
 end
 
 desc 'Clone Git repositories of documentation projects, keeping only the most recent commit'
@@ -28,12 +32,12 @@ task :clone_repositories do
       && branch == ENV['CI_DEFAULT_BRANCH'] \
       && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    puts "\n=> Cloning #{product['repo']} into #{product['project_dir']}\n"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']} into #{product['project_dir']}..#{COLOR_CODE_RESET}"
 
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
     # Print the latest commit from each project so that we can see which commit we're building from.
-    puts "Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Latest commit: #{`git -C #{product['project_dir']} log --oneline -n 1`}.#{COLOR_CODE_RESET}"
   end
 end
 
@@ -42,8 +46,8 @@ task :generate_feature_flags do
   feature_flags_dir = Pathname.new('..').join('gitlab', 'config', 'feature_flags').expand_path
   feature_flags_ee_dir = Pathname.new('..').join('gitlab', 'ee', 'config', 'feature_flags').expand_path
 
-  abort("The feature flags directory #{feature_flags_dir} does not exist.") unless feature_flags_dir.exist?
-  abort("The feature flags EE directory #{feature_flags_ee_dir} does not exist.") unless feature_flags_ee_dir.exist?
+  abort("\n#{COLOR_CODE_RED}ERROR: The feature flags directory #{feature_flags_dir} does not exist.#{COLOR_CODE_RESET}") unless feature_flags_dir.exist?
+  abort("\n#{COLOR_CODE_RED}ERROR: The feature flags EE directory #{feature_flags_ee_dir} does not exist.#{COLOR_CODE_RESET}") unless feature_flags_ee_dir.exist?
 
   paths = {
     'GitLab Community Edition and Enterprise Edition' => feature_flags_dir.join('**', '*.yml'),
@@ -64,7 +68,7 @@ task :generate_feature_flags do
 
   feature_flags_yaml = File.join('content', '_data', 'feature_flags.yaml')
 
-  puts "Generating #{feature_flags_yaml}"
+  puts "\n#{COLOR_CODE_GREEN}INFO: Generating #{feature_flags_yaml}..#{COLOR_CODE_RESET}"
   File.write(feature_flags_yaml, feature_flags.to_yaml)
 end
 
@@ -78,12 +82,12 @@ namespace :release do
     raise 'You need to specify a version, like 10.1' unless version.match?(/\A\d+\.\d+\z/)
 
     # Check if local branch exists
-    abort("Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.") \
+    abort("\n#{COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{COLOR_CODE_RESET}") \
       if local_branch_exist?(version)
 
     # Stash modified and untracked files so we have "clean" environment
     # without accidentally deleting data
-    puts "Stashing changes"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Stashing changes..#{COLOR_CODE_RESET}"
     `git stash -u` if git_workdir_dirty?
 
     # Sync with upstream default branch
@@ -125,27 +129,15 @@ namespace :release do
     `git add .gitlab-ci.yml #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
-    puts
-    puts "--------------------------------"
-    puts
-    puts "=> Created new Dockerfile: #{dockerfile}"
-    puts
-    puts "=> You can now add, commit and push the new branch:"
-    puts
-    puts "    git push origin #{version}"
-    puts
-    puts "--------------------------------"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Created new Dockerfile: #{dockerfile}.#{COLOR_CODE_RESET}"
+    puts "#{COLOR_CODE_GREEN}INFO: You can now add, commit and push the new branch: git push origin #{version}.#{COLOR_CODE_RESET}"
   end
 
   desc 'Creates merge requests to update the dropdowns in all online versions'
   task :dropdowns do
     # Check if you're on the default branch before starting. Fail if you are.
     if `git branch --show-current`.tr("\n", '') == ENV['CI_DEFAULT_BRANCH']
-      abort('
-      It appears you are on the default branch. Create the current release
-      branch and run the raketask again. Follow the documentation guide
-      on how to create it: https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#create-release-merge-request
-      ')
+      abort("\n#{COLOR_CODE_RED}ERROR: You are on the default branch. Create the current release branch and run the Rake task again.#{COLOR_CODE_RESET}")
     end
 
     # Load online versions
@@ -159,11 +151,7 @@ namespace :release do
 
     # Check if a release branch has been created, if not fail and warn the user
     if `git rev-parse --verify #{release_branch}`.empty?
-      abort('
-      A release branch for the latest stable version has not been created.
-      Follow the documentation guide on how to create one:
-      https://about.gitlab.com/handbook/engineering/ux/technical-writing/workflow/#create-release-merge-request
-      ')
+      abort("\n#{COLOR_CODE_RED}ERROR: A release branch for the latest stable version has not been created.#{COLOR_CODE_RESET}")
     end
 
     # Create a merge request to update the dropdowns in all online versions
@@ -173,17 +161,17 @@ namespace :release do
       mr_description = "Update version dropdown of #{version} release for the #{current_version} release."
       branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
 
-      puts "=> Fetch #{version} stable branch"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Fetching #{version} stable branch..#{COLOR_CODE_RESET}"
       `git fetch origin #{version}`
 
-      puts "=> Create a new branch off of the online version"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Creating a new branch off of the online version..#{COLOR_CODE_RESET}"
       `git checkout -b #{branch_name} origin/#{version}`
       `git reset --hard origin/#{version}`
 
-      puts "=> Copy the versions.yaml content from the release-#{current_version} branch"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Copying the versions.yaml content from the release-#{current_version} branch..#{COLOR_CODE_RESET}"
       `git checkout release-#{current_version.tr('.', '-')} -- content/_data/versions.yaml`
 
-      puts "=> Commit and push to create a merge request"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
       `git commit -m "Update dropdown to #{current_version}"`
       `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
@@ -195,17 +183,17 @@ namespace :release do
       mr_description = "Update version dropdown of #{version} release for the #{current_version} release."
       branch_name = "update-#{version.tr('.', '-')}-for-release-#{current_version.tr('.', '-')}"
 
-      puts "=> Fetch #{version} stable branch"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Fetching #{version} stable branch..#{COLOR_CODE_RESET}"
       `git fetch origin #{version}`
 
-      puts "=> Create a new branch off of the online version"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Creating a new branch off of the online version..#{COLOR_CODE_RESET}"
       `git checkout -b #{branch_name} origin/#{version}`
       `git reset --hard origin/#{version}`
 
-      puts "=> Copy the versions.yaml content from the release-#{current_version} branch"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Copying the versions.yaml content from the release-#{current_version} branch..#{COLOR_CODE_RESET}"
       `git checkout release-#{current_version.tr('.', '-')} -- content/_data/versions.yaml`
 
-      puts "=> Commit and push to create a merge request"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
       `git commit -m "Update dropdown to #{current_version}"`
       `git push --set-upstream origin #{branch_name} -o merge_request.create -o merge_request.target=#{version} -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="release"`
     end
@@ -240,7 +228,7 @@ task :symlink_readmes do
       target = "#{dirname}/index.html"
 
       next if File.symlink?(target)
-      puts "=> Symlink to #{target}"
+      puts "\n#{COLOR_CODE_GREEN}INFO: Symlinking to #{target}..#{COLOR_CODE_RESET}"
       `ln -sf README.html #{target}`
     end
   end
@@ -282,9 +270,9 @@ namespace :docs do
     ENV['LEFTHOOK'] = '0'
 
     # Check jq is available
-    abort("jq not found. Install jq and run task again.") if `which jq`.empty?
+    abort("\n#{COLOR_CODE_RED}ERROR: jq not found. Install jq and run task again.#{COLOR_CODE_RESET}") if `which jq`.empty?
 
-    puts "=> (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch"
+    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Stashing changes of gitlab-docs and syncing with upstream default branch..#{COLOR_CODE_RESET}"
     system("git stash --quiet -u") if git_workdir_dirty?
     system("git checkout --quiet main")
     system("git fetch --quiet origin main")
@@ -326,7 +314,7 @@ namespace :docs do
       counter = 0
 
       Dir.chdir(content_dir)
-      puts "=> (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch"
+      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Stashing changes of #{slug} and syncing with upstream default branch..#{COLOR_CODE_RESET}"
       system("git stash --quiet -u") if git_workdir_dirty?
       system("git checkout --quiet #{default_branch}")
       system("git fetch --quiet origin #{default_branch}")
@@ -400,13 +388,13 @@ namespace :docs do
       #   4. Commit and push the branch to create the MR
       #
 
-      puts "=> (#{slug}): Found #{counter} redirect(s)"
+      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Found #{counter} redirect(s).#{COLOR_CODE_RESET}"
       next unless counter.positive?
 
       Dir.chdir(content_dir)
-      puts "=> (#{slug}): Creating a new branch for the redirects MR"
+      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
       system("git checkout --quiet -b #{redirects_branch} origin/#{default_branch}")
-      puts "=> (#{slug}): Committing and pushing to create a merge request"
+      puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
       system("git add .")
       system("git commit --quiet -m 'Update docs redirects #{today}'")
       `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` \
@@ -422,9 +410,9 @@ namespace :docs do
     #   2. Add the changed files
     #   3. Commit and push the branch to create the MR
     #
-    puts "=> (gitlab-docs): Creating a new branch for the redirects MR"
+    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Creating a new branch for the redirects MR..#{COLOR_CODE_RESET}"
     system("git checkout --quiet -b #{redirects_branch} origin/main")
-    puts "=> (gitlab-docs): Committing and pushing to create a merge request"
+    puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
     system("git add #{redirects_yaml}")
     system("git commit --quiet -m 'Update docs redirects #{today}'")
     `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site"` \
