@@ -1943,6 +1943,8 @@ sections:
                 doc_url: 'ee/user/infrastructure/clusters/connect/new_eks_cluster.html'
               - doc_title: Google GKE
                 doc_url: 'ee/user/infrastructure/clusters/connect/new_gke_cluster.html'
+              - doc_title: Civo
+                doc_url: 'ee/user/infrastructure/clusters/connect/new_civo_cluster.html'
           - doc_title: Connect Kubernetes clusters
             doc_url: 'ee/user/clusters/agent/'
             docs:
