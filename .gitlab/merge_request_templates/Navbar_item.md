@@ -3,5 +3,5 @@
 - [ ] Give the MR a descriptive title.
 - [ ] Link to the merge request that introduced the new page.
 
-/label ~"Category:Docs Site" ~"global nav item" ~"Technical Writing"
+/label ~"Category:Docs Site" ~"global nav item" ~"Technical Writing" ~"type::maintenance"
 /assign me
