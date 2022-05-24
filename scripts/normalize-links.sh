@@ -33,9 +33,6 @@ fi
 ##
 ## Relative URLs
 ##
-echo "Replace relative URLs in $TARGET/$VER for /ce/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ce/#="/'"$VER"'/ce/#g'
-
 echo "Replace relative URLs in $TARGET/$VER for /ee/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/ee/#="/'"$VER"'/ee/#g'
 
@@ -47,6 +44,9 @@ find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/omnib
 
 echo "Replace relative URLs in $TARGET/$VER for /charts/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/charts/#="/'"$VER"'/charts/#g'
+
+echo "Replace relative URLs in $TARGET/$VER for /operator/"
+find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/operator/#="/'"$VER"'/operator/#g'
 
 echo "Replace relative URLs in $TARGET/$VER for /assets/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/assets/#="/'"$VER"'/assets/#g'
@@ -63,9 +63,6 @@ find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="/opens
 ##
 ## Full URLs
 ##
-echo "Replace full URLs in $TARGET/$VER for /ce/"
-find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ce/#="/'"$VER"'/ce/#g'
-
 echo "Replace full URLs in $TARGET/$VER for /ee/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/ee/#="/'"$VER"'/ee/#g'
 
@@ -77,6 +74,9 @@ find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https:
 
 echo "Replace full URLs in $TARGET/$VER for /charts/"
 find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/charts/#="/'"$VER"'/charts/#g'
+
+echo "Replace full URLs in $TARGET/$VER for /operator/"
+find ${TARGET}/$VER -type f -name '*.html' -print0 | xargs -0 sed -i 's#="https://docs.gitlab.com/operator/#="/'"$VER"'/operator/#g'
 
 echo "Fix URLs inside the sitemap"
 find ${TARGET}/$VER -type f -name 'sitemap.xml' -print0 | xargs -0 sed -i 's#docs.gitlab.com/#docs.gitlab.com/'"$VER"'/#g'
