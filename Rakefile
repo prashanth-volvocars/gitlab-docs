@@ -32,7 +32,7 @@ task :clone_repositories do
       && branch == ENV['CI_DEFAULT_BRANCH'] \
       && ENV["CI_PIPELINE_SOURCE"] == 'pipeline'
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']} into #{product['project_dir']} ..#{COLOR_CODE_RESET}"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Cloning #{product['repo']}..#{COLOR_CODE_RESET}"
 
     `git clone --branch #{branch} --single-branch #{product['repo']} --depth 1 #{product['project_dir']}`
 
