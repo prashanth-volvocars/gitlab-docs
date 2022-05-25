@@ -1,11 +1,8 @@
-#
-# Image that contains all Nanoc dependencies and tools that
-# are needed to build the docs site and run the tests.
-#
+# Base image for other Docker images
 FROM ruby:2.7.5-alpine3.15
 
 # Install dependencies
-RUN apk add --no-cache -U \
+RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
     bash        \
     build-base  \
     curl        \
@@ -27,4 +24,10 @@ RUN apk add --no-cache -U \
     xz-dev      \
     yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem update --system 3.3.13
+    && gem update --silent --system 3.3.13 \
+    && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+    && echo "Ruby: $(ruby --version)" \
+    && echo "RubyGems: $(gem --version)" \
+    && echo "Node.js: $(node --version)" \
+    && echo "Yarn: $(yarn --version)" \
+    && printf "\n"

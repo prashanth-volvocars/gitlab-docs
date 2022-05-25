@@ -621,7 +621,7 @@ image:docs-lint-html:
     name: registry/docs-lint-html
 
 #
-# GitLab docs image
+# Build and deploy the GitLab docs base Docker image
 #
 image:gitlab-docs-base:
   extends:
@@ -636,6 +636,20 @@ image:gitlab-docs-base:
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-base
+
+#
+# Test the GitLab docs base Docker image if changes made to its Dockerfile
+#
+test:image:gitlab-docs-base:
+  extends:
+    - .docker_prepare
+  stage: test
+  needs: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - dockerfiles/gitlab-docs-base.Dockerfile
+  script: docker build -f dockerfiles/gitlab-docs-base.Dockerfile .
 
 #
 # Helper Docker image containing all build dependencies.
