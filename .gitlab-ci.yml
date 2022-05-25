@@ -337,10 +337,7 @@ stylelint:
   needs: []
   stage: test
   script:
-    # Remove the first three lines so the frontmatter doesn't
-    # cause stylelint to throw errors.
-    - sed -i -E '1,3d' content/assets/stylesheets/*.scss
-    - yarn run stylelint content/assets/stylesheets/*.scss
+    - scripts/run-stylelint.sh
 
 #
 # Yamllint of *.yml for .gitlab-ci.yml.

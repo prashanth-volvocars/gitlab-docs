@@ -20,8 +20,6 @@ These code tests are included in the project:
 | Vue         | Jest        | Unit tests        |
 | YAML        | yamllint    | Syntax checks     |
 
-Stylelint tests are run in the CI/CD pipeline only.
-
 ### Run code tests locally
 
 To run the tests:

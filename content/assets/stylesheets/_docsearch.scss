@@ -1,10 +1,10 @@
 ---
-version: 1
+version: 2
 ---
 
 @import 'variables';
 
-/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-class-pattern */
 .DocSearch-Hit-source {
   color: $gray-700 !important;
 }
@@ -33,4 +33,4 @@ version: 1
   display: none;
 }
 
-/* stylelint-enable declaration-no-important */
+/* stylelint-enable selector-class-pattern */
