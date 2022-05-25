@@ -577,6 +577,8 @@ pages:
   before_script:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
 
 #
 # GitLab docs lint image containing all test tools
