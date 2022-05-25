@@ -784,6 +784,8 @@ sections:
             docs:
               - doc_title: Sidekiq health check
                 doc_url: 'ee/administration/sidekiq_health_check.html'
+              - doc_title: Sidekiq job size limits
+                doc_url: 'ee/user/admin_area/settings/sidekiq_job_limits.html'
           - doc_title: S/MIME signing
             doc_url: 'ee/administration/smime_signing_email.html'
           - doc_title: Repository storage
