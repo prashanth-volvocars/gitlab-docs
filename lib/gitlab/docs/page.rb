@@ -19,7 +19,7 @@ module Gitlab
       end
 
       def exists?
-        File.exists?(@file)
+        File.exist?(@file)
       end
 
       def directory

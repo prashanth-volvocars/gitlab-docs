@@ -240,7 +240,7 @@ task :redirects do
   redirects_file = 'public/_redirects'
 
   # Remove _redirects before populating it
-  File.delete(redirects_file) if File.exists?(redirects_file)
+  File.delete(redirects_file) if File.exist?(redirects_file)
 
   # Iterate over each entry and append to _redirects
   redirects_yaml.fetch('redirects').each do |redirect|
