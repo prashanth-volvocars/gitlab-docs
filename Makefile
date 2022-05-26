@@ -96,12 +96,17 @@ brew-bundle:
 	@(command -v brew > /dev/null 2>&1) && brew bundle --no-lock || true
 
 test: setup brew-bundle
-	@printf "\n$(INFO)INFO: Running all tests..$(INFO_END)\n"
-	@bundle exec rspec && yarn test && yarn eslint && yarn prettier && hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile && yamllint .gitlab-ci.yml content/_data
+	@printf "\n$(INFO)INFO: Running RSpec tests..$(INFO_END)\n"
 	@bundle exec rspec
+	@printf "\n$(INFO)INFO: Running Jest tests..$(INFO_END)\n"
 	@yarn test
+	@printf "\n$(INFO)INFO: Running ESLint tests..$(INFO_END)\n"
 	@yarn eslint
+	@printf "\n$(INFO)INFO: Running Prettier tests..$(INFO_END)\n"
 	@yarn prettier
+	@printf "\n$(INFO)INFO: Running Stylelint tests..$(INFO_END)\n"
 	@scripts/run-stylelint.sh
+	@printf "\n$(INFO)INFO: Running hadolint tests..$(INFO_END)\n"
 	@hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+	@printf "\n$(INFO)INFO: Running yamllint tests..$(INFO_END)\n"
 	@yamllint .gitlab-ci.yml content/_data
