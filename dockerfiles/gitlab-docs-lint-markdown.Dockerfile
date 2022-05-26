@@ -1,10 +1,6 @@
-############################
+# GitLab Docs linting (Markdown) Docker image
 #
-# Image that contains the doc lint tools.
-#
-############################
-
-# ALPINE_VERSION is defined in .gitlab-ci.yml
+# ALPINE_VERSION is defined in ../.gitlab-ci.yml
 ARG ALPINE_VERSION
 
 FROM alpine:${ALPINE_VERSION}
@@ -14,7 +10,7 @@ ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 
 # Install dependencies
-RUN apk add --no-cache -U \
+RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
     bash         \
     build-base   \
     curl         \
@@ -29,19 +25,21 @@ RUN apk add --no-cache -U \
     openssl      \
     pngquant     \
     tar          \
-    yarn
+    yarn         \
+    && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+    && echo "Node.js: $(node --version)" \
+    && echo "Yarn: $(yarn --version)" \
+    && printf "\n"
 
-# Install vale
-SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
-RUN curl -sfL https://install.goreleaser.com/github.com/ValeLint/vale.sh | sh -s v${VALE_VERSION}
+# Install Vale
+RUN printf "\n\e[32mINFO: Installing Vale %s..\e[39m\n" "${VALE_VERSION}" \
+  && wget --quiet https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz \
+  && tar -xvzf vale_${VALE_VERSION}_Linux_64-bit.tar.gz -C bin \
+  && echo "Vale: $(vale --version)" \
+  && printf "\n"
 
-# Set up needed environment variables that are called with --build-arg when
-# the Docker image is built (see .gitlab-ci.yml).
-ARG CI_COMMIT_REF_NAME
-# If CI_COMMIT_REF_NAME is not set (local development), set it to master
-ENV CI_COMMIT_REF_NAME ${CI_COMMIT_REF_NAME:-master}
-
-WORKDIR /tmp
-
-# markdownlint-cli pinned to control when new versions are put in place.
-RUN yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean
+# Install markdownlint-cli
+RUN printf "\n\e[32mINFO: Installing markdownlint-cli %s..\e[39m\n" "${MARKDOWNLINT_VERSION}" \
+  && yarn global add markdownlint-cli@${MARKDOWNLINT_VERSION} && yarn cache clean \
+  && echo "markdownlint-cli: $(markdownlint --version)" \
+  && printf "\n"

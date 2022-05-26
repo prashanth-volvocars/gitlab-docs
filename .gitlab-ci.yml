@@ -578,7 +578,7 @@ pages:
     DOCKER_TLS_CERTDIR: "/certs"
 
 #
-# GitLab docs lint image containing all test tools
+# Build and deploy the GitLab Docs linting (Markdown) Docker image
 #
 image:docs-lint-markdown:
   extends:
@@ -593,12 +593,35 @@ image:docs-lint-markdown:
       --build-arg ALPINE_VERSION=${ALPINE_VERSION}
       --build-arg VALE_VERSION=${VALE_VERSION}
       --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
-      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
       -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-markdown
 
+#
+# Test the GitLab Docs linting (Markdown) Docker image if changes are made to its Dockerfile
+#
+test:image:docs-lint-markdown:
+  extends:
+    - .docker_prepare
+  stage: test
+  needs: []
+  variables:
+    DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - docker build
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg VALE_VERSION=${VALE_VERSION}
+             --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+             --file $DOCKERFILE .
+
+#
+# Build and deploy the GitLab Docs linting (HTML) Docker image
+#
 image:docs-lint-html:
   extends:
     - .rules_scheduled_manual
@@ -611,14 +634,33 @@ image:docs-lint-html:
     - docker build
       --build-arg RUBY_VERSION=${RUBY_VERSION}
       --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME}
       -t $IMAGE_NAME -f $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-html
 
 #
-# Build and deploy the GitLab docs base Docker image
+# Test the GitLab Docs linting (HTML) Docker image if changes are made to its Dockerfile
+#
+test:image:docs-lint-html:
+  extends:
+    - .docker_prepare
+  stage: test
+  needs: []
+  variables:
+    DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    - docker build
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --file $DOCKERFILE .
+
+#
+# Build and deploy the GitLab Docs base Docker image
 #
 image:gitlab-docs-base:
   extends:
@@ -635,18 +677,21 @@ image:gitlab-docs-base:
     name: registry/docs-base
 
 #
-# Test the GitLab docs base Docker image if changes made to its Dockerfile
+# Test the GitLab docs base Docker image if changes are made to its Dockerfile
 #
 test:image:gitlab-docs-base:
   extends:
     - .docker_prepare
   stage: test
   needs: []
+  variables:
+    DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
-        - dockerfiles/gitlab-docs-base.Dockerfile
-  script: docker build -f dockerfiles/gitlab-docs-base.Dockerfile .
+        - $DOCKERFILE
+  script:
+    - docker build --file $DOCKERFILE .
 
 #
 # Helper Docker image containing all build dependencies.
