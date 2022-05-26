@@ -19,9 +19,9 @@ class BadgesFilter < Nanoc::Filter
 
   BADGES_HTML_PATTERN = %r{
     <strong>
-    [\[|\(]
+    [\[|(]
     (?<tier>CORE|STARTER|PREMIUM|ULTIMATE|FREE|BRONZE|SILVER|GOLD)(?:\s+(?<type>ONLY|SAAS|SELF))?
-    [\]|\)]
+    [\]|)]
     </strong>
   }x.freeze
 
