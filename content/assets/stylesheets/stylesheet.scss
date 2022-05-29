@@ -113,12 +113,8 @@ ol {
     height: 50px;
     flex-shrink: 0;
     border-radius: 0;
-    &:hover {
-      background-color: $gds-gray-200;
-    }
-    &:focus {
-      box-shadow: none;
-    }
+    box-shadow: none;
+    justify-content: left;
     .label {
       display: none;
     }
@@ -150,6 +146,12 @@ ol {
       top: 0;
       bottom: -7px;
       transform: rotate(-45deg) translateY(-4px);
+    }
+  }
+  .gl-button.nav-toggle {
+    &:hover,
+    &:focus {
+      box-shadow: none;
     }
   }
   @media (max-width: $bp-xl) {
@@ -269,6 +271,7 @@ ol {
   min-height: $header-height;
   background-color: $header-background-color;
   z-index: 3;
+  padding: 0.5rem 1rem;
 
   .navbar-brand {
     font-size: 1rem;
