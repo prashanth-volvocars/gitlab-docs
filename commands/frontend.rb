@@ -3,7 +3,7 @@
 usage       'frontend [options]'
 aliases     :ds, :stuff
 summary     'uses nanoc cli to execute frontend related tasks'
-description 'This command is used by the Nanoc CLI to bundle the JavaScript.'
+description 'This command is used by the Nanoc CLI to bundle JavaScript.'
 
 flag   :h, :help, 'show help for this command' do |value, cmd|
   puts cmd.help
@@ -28,7 +28,7 @@ run do |opts, args, cmd|
     ERROR
   end
 
-  puts 'Create icons.svg ...'
+  puts 'Creating icons.svg ...'
   root = File.expand_path('../', __dir__)
   path = 'node_modules/@gitlab/svgs/dist/icons.svg'
 
@@ -37,4 +37,16 @@ run do |opts, args, cmd|
   else
     puts 'Failed to create icons.svg!'
   end
+
+  puts 'Copying GitLab UI CSS...'
+  gl_ui_src = 'node_modules/@gitlab/ui/dist'
+  gl_ui_dest = 'public/assets/stylesheets/gitlab-ui'
+  Dir.mkdir gl_ui_dest
+
+  Dir.children("#{gl_ui_src}").each do |filename|
+    if filename.include?("css") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
+      puts "Copied #{gl_ui_src}/#{filename}"
+    end
+  end
+
 end

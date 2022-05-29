@@ -4,15 +4,15 @@ title: GitLab Documentation
 <!-- Render the front page only if CI_PROJECT_NAME is gitlab-docs or is not set -->
 <% if ENV['CI_PROJECT_NAME'] == 'gitlab-docs' or ENV['CI_PROJECT_NAME'].nil? %>
   <!-- Hero-->
-  <section class="hero text-center pt-5 mt-3">
+  <section class="hero text-center pt-4 mt-4">
     <!-- Feedback Banner-->
-    <div class="mt-n4">
+    <div class="gl-mt-n3">
       <%= render '/banner.*' %>
     </div>
-    <div class="container py-5 mb-2">
+    <div class="container py-6 mb-3">
       <div class="row">
         <div class="col d-flex justify-content-center">
-          <div class="card search mt-3 pb-4">
+          <div class="card search mt-4 pb-4">
             <div class="card-body">
               <h5 class="card-title pb-3 mb-2">Search the docs</h5>
               <% if @item[:searchbar].nil? %>
@@ -27,7 +27,7 @@ title: GitLab Documentation
           </div>
         </div>
       </div>
-      <div class="row pb-4 pt-5">
+      <div class="row pb-4 pt-7">
         <div class="col">
           <h2>
             Get started with...
@@ -70,7 +70,7 @@ title: GitLab Documentation
   <!-- Popular Topics-->
   <section class="popular text-center">
     <div class="container">
-      <div class="row pt-5">
+      <div class="row pt-7">
         <div class="col">
           <h2 class="m-0 pb-4">
             Popular topics
@@ -122,7 +122,7 @@ title: GitLab Documentation
           </ul>
         </div>
       </div>
-      <div class="row pb-5">
+      <div class="row pb-6">
         <div class="col-md-3 col-12">
           <h5 class="align-top mt-0 text-left">
             General <br class="d-none d-md-block">topics
@@ -150,7 +150,7 @@ title: GitLab Documentation
   </section>
 
   <!-- Self Managed-->
-  <section class="self-managed text-center py-5 mb-3">
+  <section class="self-managed text-center py-6">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -188,12 +188,12 @@ title: GitLab Documentation
         <% @items['/_data/landing.yaml'][:cards].each do |card| %>
           <div class="col-lg-4 col-12 py-3">
             <div class="card transparent text-left h-100">
-              <div class="card-body">
-                <h5 class="card-title my-2">
-                  <img src="/assets/images/download.svg" class="mr-3" alt="" role="img" />
+              <div class="p-3">
+                <h5 class="card-title">
+                  <img src="/assets/images/download.svg" class="mr-2" alt="" role="img" />
                   <a href="<%= card[:url] %>"><%= card[:title] %></a>
                 </h5>
-                <p class="card-text pl-5">
+                <p class="card-text pl-6">
                   <%= card[:description] %>
                 </p>
               </div>
@@ -261,8 +261,8 @@ title: GitLab Documentation
   </section>
 
   <!-- Support-->
-  <section class="support py-5">
-    <div class="container pt-3">
+  <section class="support py-9">
+    <div class="container">
       <div class="row">
         <div class="col d-flex justify-content-center">
           <div class="card text-center h-100">
