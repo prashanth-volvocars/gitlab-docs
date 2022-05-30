@@ -123,4 +123,4 @@ yamllint-tests:
 	@printf "\n$(INFO)INFO: Running yamllint tests..$(INFO_END)\n"
 	@yamllint .gitlab-ci.yml content/_data
 
-test: setup brew-bundle rspec-test jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests
+test: setup brew-bundle rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests
