@@ -37,8 +37,8 @@ heros:
     img: /assets/images/locked.svg
     alt: locked
     links:
-      - title: Security scans
-        url: '/ee/user/application_security/#security-scanning-tools'
+      - title: Secure your application
+        url: '/ee/user/application_security/'
       - title: Vulnerability management
         url: '/ee/user/application_security/vulnerability_report/'
       - title: Offline environments
