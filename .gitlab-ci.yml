@@ -297,7 +297,7 @@ rspec:
   stage: test
   script:
     - yarn install --cache-folder .yarn-cache
-    - bundle exec rspec
+    - make rspec-tests
 
 #
 # Run JavaScript tests
@@ -310,7 +310,7 @@ jest:
   needs: []
   stage: test
   script:
-    - yarn test
+    - make jest-tests
 
 #
 # Lint JavaScript
@@ -323,8 +323,8 @@ js_lint:
   needs: []
   stage: test
   script:
-    - yarn eslint
-    - yarn prettier
+    - make eslint-tests
+    - make prettier-tests
 
 #
 # Lint SCSS
@@ -337,7 +337,7 @@ stylelint:
   needs: []
   stage: test
   script:
-    - scripts/run-stylelint.sh
+    - make stylelint-tests
 
 #
 # Yamllint of *.yml for .gitlab-ci.yml.
