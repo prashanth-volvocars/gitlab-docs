@@ -95,18 +95,32 @@ brew-bundle:
 	@printf "\n$(INFO)INFO: Checking Brew dependencies, if Brew is available..$(INFO_END)\n"
 	@(command -v brew > /dev/null 2>&1) && brew bundle --no-lock || true
 
-test: setup brew-bundle
+rspec-tests:
 	@printf "\n$(INFO)INFO: Running RSpec tests..$(INFO_END)\n"
 	@bundle exec rspec
+
+jest-tests:
 	@printf "\n$(INFO)INFO: Running Jest tests..$(INFO_END)\n"
 	@yarn test
+
+eslint-tests:
 	@printf "\n$(INFO)INFO: Running ESLint tests..$(INFO_END)\n"
 	@yarn eslint
+
+prettier-tests:
 	@printf "\n$(INFO)INFO: Running Prettier tests..$(INFO_END)\n"
 	@yarn prettier
+
+stylelint-tests:
 	@printf "\n$(INFO)INFO: Running Stylelint tests..$(INFO_END)\n"
 	@scripts/run-stylelint.sh
+
+hadolint-tests:
 	@printf "\n$(INFO)INFO: Running hadolint tests..$(INFO_END)\n"
 	@hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
+
+yamllint-tests:
 	@printf "\n$(INFO)INFO: Running yamllint tests..$(INFO_END)\n"
 	@yamllint .gitlab-ci.yml content/_data
+
+test: setup brew-bundle rspec-test jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests

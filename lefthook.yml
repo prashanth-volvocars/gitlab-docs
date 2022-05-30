@@ -1,5 +1,18 @@
 ---
 pre-push:
   commands:
-    tests:
-      run: make test
+    parallel: true
+    rspec-tests:
+      run: make rspec-tests
+    jest-tests:
+      run: make jest-tests
+    eslint-tests:
+      run: make eslint-tests
+    prettier-tests:
+      run: make prettier-tests
+    stylelint-tests:
+      run: make stylelint-tests
+    hadolint-tests:
+      run: make hadolint-tests
+    yamllint-tests:
+      run: make yamllint-tests
