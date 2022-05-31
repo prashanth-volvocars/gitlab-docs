@@ -228,6 +228,7 @@ task :symlink_readmes do
       target = "#{dirname}/index.html"
 
       next if File.symlink?(target)
+
       puts "\n#{COLOR_CODE_GREEN}INFO: Symlinking to #{target}..#{COLOR_CODE_RESET}"
       `ln -sf README.html #{target}`
     end
@@ -352,6 +353,7 @@ namespace :docs do
         # To not be confused with the remove_date of the Markdown page.
         #
         next unless remove_date < today
+
         puts "In #{filename}, remove date: #{remove_date} is less than today (#{today})."
 
         counter += 1
@@ -397,8 +399,10 @@ namespace :docs do
       puts "\n#{COLOR_CODE_GREEN}INFO: (#{slug}): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
       system("git add .")
       system("git commit --quiet -m 'Update docs redirects #{today}'")
+
       `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="documentation" -o merge_request.label="docs::improvement"` \
         if ENV['SKIP_MR'].nil?
+
       Dir.chdir(source_dir)
       puts
     end
@@ -415,6 +419,7 @@ namespace :docs do
     puts "\n#{COLOR_CODE_GREEN}INFO: (gitlab-docs): Committing and pushing to create a merge request..#{COLOR_CODE_RESET}"
     system("git add #{redirects_yaml}")
     system("git commit --quiet -m 'Update docs redirects #{today}'")
+
     `git push --set-upstream origin #{redirects_branch} -o merge_request.create -o merge_request.remove_source_branch -o merge_request.title="#{mr_title}" -o merge_request.description="#{mr_description}" -o merge_request.label="Technical Writing" -o merge_request.label="redirects" -o merge_request.label="Category:Docs Site"` \
       if ENV['SKIP_MR'].nil?
   end

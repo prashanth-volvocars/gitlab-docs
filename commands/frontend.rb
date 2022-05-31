@@ -48,5 +48,4 @@ run do |opts, args, cmd|
       puts "Copied #{gl_ui_src}/#{filename}"
     end
   end
-
 end

@@ -73,6 +73,5 @@ module Gitlab
     def dir
       @dir ||= item.identifier.to_s[%r{(?<=/)[^/]+}]
     end
-
   end
 end
