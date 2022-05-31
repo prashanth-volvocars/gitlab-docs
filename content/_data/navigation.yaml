@@ -1081,6 +1081,8 @@ sections:
                     doc_url: 'ee/administration/troubleshooting/group_saml_scim.html'
               - doc_title: Subgroups
                 doc_url: 'ee/user/group/subgroups/'
+              - doc_title: Move a personal project to a group
+                doc_url: 'ee/tutorials/move_personal_project_to_a_group.html'
           - doc_title: User account options
             doc_url: 'ee/user/profile/'
             docs:
