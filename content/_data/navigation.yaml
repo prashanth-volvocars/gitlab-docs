@@ -1593,7 +1593,7 @@ sections:
                   - doc_title: Troubleshooting
                     doc_url: 'ee/topics/autodevops/troubleshooting.html'
               - doc_title: Testing
-                doc_url: 'ee/ci/unit_test_reports.html'
+                doc_url: 'ee/ci/testing/'
                 docs:
                   - doc_title: Accessibility testing
                     doc_url: 'ee/user/project/merge_requests/accessibility_testing.html'
@@ -1609,6 +1609,10 @@ sections:
                     doc_url: 'ee/ci/test_cases/'
                   - doc_title: Test coverage visualization
                     doc_url: 'ee/user/project/merge_requests/test_coverage_visualization.html'
+                  - doc_title: Unit test reports
+                    doc_url: 'ee/ci/testing/unit_test_reports.html'
+                  - doc_title: Unit test report examples
+                    doc_url: 'ee/ci/testing/unit_test_report_examples.html'
               - doc_title: SSH keys
                 doc_url: 'ee/ci/ssh_keys/'
               - doc_title: External secrets
