@@ -2064,7 +2064,7 @@ sections:
               - doc_title: Self monitoring project
                 doc_url: 'ee/administration/monitoring/gitlab_self_monitoring_project/'
               - doc_title: IP allowlist endpoints
-                doc_url: 'ee/administration/monitoring/ip_whitelist.html'
+                doc_url: 'ee/administration/monitoring/ip_allowlist.html'
               - doc_title: Node exporter
                 doc_url: 'ee/administration/monitoring/prometheus/node_exporter.html'
               - doc_title: PGBouncer exporter
