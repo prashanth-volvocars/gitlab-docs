@@ -3,24 +3,28 @@
 You can set up and compile the docs site on your own computer, and use it to
 preview changes you make to GitLab documentation.
 
-## Requirements
+## Prerequisites
 
-To preview any changes you make to GitLab documentation, you need:
+To preview any changes you make to GitLab documentation, you need
+a Unix/Linux or macOS environment.
 
-- Environment: Unix/Linux or macOS.
-- Ruby, at version specified in:
-  - [`.ruby-version`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.ruby-version)
-  - [`.tool-versions`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions)
-- Node.js, at the version specified in [`.tool-versions`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions).
-- Yarn, at the version specified in [`.tool-versions`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions).
-- [jq](https://stedolan.github.io/jq/), needed by some [Rake tasks](raketasks.md).
-- Xcode *(macOS only)*:
-  - Run `xcode-select --install` to install the command line tools only.
-  - Or download and install the entire package using the macOS's App Store.
+- Linux:
+  1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+  1. Optional. [Install `jq`](https://stedolan.github.io/jq/download/), that is needed
+     by some [Rake tasks](raketasks.md).
+- macOS:
+  1. Install Xcode:
+     - Open the terminal and run `xcode-select --install` to install the command line tools only.
+     - Or download and install the entire package using the macOS's App Store.
+  1. Install [Homebrew](https://brew.sh).
+  1. Install the rest of the dependencies:
 
-NOTE:
-On Windows, the process described here would be different, but as most
-contributors use Unix, we go over this process for macOS and Linux users.
+     ```shell
+     brew bundle
+     ```
+
+- [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/):
+  Follow the Linux instructions.
 
 Alternatively, you can use [Gitpod](#gitpod-integration) to access a
 cloud-based, pre-configured GitLab documentation site.
@@ -29,14 +33,50 @@ cloud-based, pre-configured GitLab documentation site.
 
 There are a couple of options for installing dependencies for `gitlab-docs`:
 
+- The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn (recommended).
 - Using [separate dependency managers](#use-separate-dependency-managers) for Ruby, Node.js, and
   Yarn.
-- The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn.
 
 The choice of which to use might depend on what you currently use. For example, you may have already
 [set up a dependency manager for GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md#install-dependencies).
 
 If you don't yet have Ruby, Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
+
+### Use `asdf`
+
+This is the recommended way.
+
+To install Ruby, Node.js, and Yarn using `asdf`:
+
+1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html).
+1. Add the Ruby, Node.js, and Yarn `asdf` plugins required to install versions
+   of these dependencies:
+
+   ```shell
+   asdf plugin add ruby
+   asdf plugin add nodejs
+   asdf plugin add yarn
+   ```
+
+1. Install the dependencies listed in the project's [`.tool-versions`](../.tool-versions) file:
+
+   ```shell
+   asdf install
+   ```
+
+1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
+   `.tool-versions` files. For example to set Ruby 2.7.4 as the global default, run:
+
+   ```shell
+   asdf global ruby 2.7.5
+   ```
+
+Check your:
+
+- Ruby version with `ruby --version`.
+- Bundler version with `bundle --version`.
+- Node.js version with `node -v`.
+- Yarn version with `yarn -v`
 
 ### Use separate dependency managers
 
@@ -51,7 +91,7 @@ In the instructions below, you:
 To install Ruby using [`rbenv`](https://github.com/rbenv/rbenv):
 
 1. [Install `rbenv`](https://github.com/rbenv/rbenv#installation).
-1. Install the supported version of Ruby:
+1. Install the [supported version of Ruby](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions):
 
    ```shell
    rbenv install <supported-version>
@@ -92,42 +132,7 @@ Check your Node.js version with `node -v`.
 Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the
 Node.js ecosystem.
 
-Check your Yarn version with `yarn -v`.
-
-### Use `asdf`
-
-To install Ruby, Node.js, and Yarn using `asdf`:
-
-1. [Install `asdf`](https://asdf-vm.com/#/core-manage-asdf-vm?id=install).
-1. Add the Ruby, Node.js, and Yarn [`asdf` plugins](https://asdf-vm.com/#/core-manage-plugins)
-   required to install versions of these dependencies:
-
-   ```shell
-   asdf plugin add ruby
-   asdf plugin add nodejs
-   asdf plugin add yarn
-   ```
-
-1. [Install](https://asdf-vm.com/#/core-manage-versions) the dependencies listed in the project's
-   `.tool-versions` file:
-
-   ```shell
-   asdf install
-   ```
-
-1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
-   `.tool-versions` files. For example to set Ruby 2.7.4 as the global default, run:
-
-   ```shell
-   asdf global ruby 2.7.4
-   ```
-
-Check your:
-
-- Ruby version with `ruby --version`.
-- Bundler version with `bundle --version`.
-- Node.js version with `node -v`.
-- Yarn version with `yarn -v`
+Check your [Yarn version](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions) with `yarn -v`.
 
 ## Install Nanoc's dependencies
 
