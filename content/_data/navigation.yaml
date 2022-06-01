@@ -2468,6 +2468,8 @@ sections:
                 doc_url: 'ee/development/cicd/schema.html'
               - doc_title: CI/CD template development
                 doc_url: 'ee/development/cicd/templates.html'
+              - doc_title: Pipeline Wizard
+                doc_url: 'ee/development/cicd/pipeline_wizard.html'
           - doc_title: Auto DevOps development
             doc_url: 'ee/development/auto_devops.html'
           - doc_title: Code intelligence
