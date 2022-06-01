@@ -110,3 +110,8 @@ test: setup brew-bundle
 	@hadolint latest.Dockerfile .gitpod.Dockerfile **/*.Dockerfile
 	@printf "\n$(INFO)INFO: Running yamllint tests..$(INFO_END)\n"
 	@yamllint .gitlab-ci.yml content/_data
+
+build-search-index:
+	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
+	node scripts/lunr/build-contents.js > content/lunr-content.json
+	cat content/lunr-content.json | node scripts/lunr/build-index.js > content/lunr-index.json

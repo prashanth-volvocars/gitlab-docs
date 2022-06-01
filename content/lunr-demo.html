@@ -1,0 +1,52 @@
+---
+title: LunrJS Demo | GitLab Documentation
+---
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+
+<script>
+    fetch('./lunr-index.json')
+    .then(response => response.text())
+    .then((data) => {
+        var idx = lunr.Index.load(JSON.parse(data))
+        window.idx = idx
+    })
+    const showResults = (results) => {
+        console.log(results)
+    
+        fetch('./lunr-content.json')
+        .then(response => response.text())
+        .then((data) => {
+            const resultsList = document.querySelector('.lunr-results')
+            const map = JSON.parse(data)
+    
+            resultsList.innerHTML = ""
+                    
+            for (var item in results) {
+                let contentItem = map.find( ({ id }) => id === results[item].ref)
+                let searchItem = `<li><a href="${contentItem.id}">${contentItem.title}</a></li>`
+                resultsList.innerHTML += searchItem;
+            }
+        })
+    }
+    const runSearch = () => {
+        let query = document.getElementById("query").value;
+        const results = window.idx.search(query)
+        showResults(results)
+    }
+</script>
+
+<h1>LunrJS Offline Search Demo</h1>
+
+<p>
+    This search uses <a href="https://github.com/olivernn/lunr.js">lunr.js</a> with a pre-built, offline index that contains page URLs and titles only.
+    <br>Open the browser console to see the full result object.
+</p>
+
+<form class="lunr-search mt-3" onsubmit="return false;">
+    <label for="query">Search</label><br>
+    <input type="text" id="query" name="query"><br>
+    <input class="mt-2" type="submit" value="Submit" onclick="runSearch()">
+</form>
+
+<ul class="lunr-results mt-4"></ul>

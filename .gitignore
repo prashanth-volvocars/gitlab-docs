@@ -18,6 +18,9 @@ content/doc
 content/docs
 content/charts
 
+# Lunr index files
+content/lunr-*.json
+
 # Temporary file directory
 tmp/
 

@@ -16,7 +16,7 @@ default:
     - ruby -v
     - gem -v
     - bundle -v
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
     - bundle install --jobs 4
 
 .yarn:
@@ -148,7 +148,7 @@ workflow:
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/' # TODO: Remove once no projects create such branch
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
 
 #
@@ -196,6 +196,11 @@ workflow:
     - bundle exec nanoc compile -VV
     # Create _redirects for Pages redirects
     - bundle exec rake redirects
+    # Create the offline search index
+    # @todo make this conditional
+    - echo "Build offline search index"
+	  - node scripts/lunr/build-contents.js > public/lunr-content.json
+	  - cat public/lunr-content.json | node scripts/lunr/build-index.js > public/lunr-index.json
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
     - SIZE_BEFORE=$(du -sh public/ | awk '{print $1}')
     # Minify the assets of the resulting site
@@ -250,7 +255,7 @@ test_internal_links_and_anchors:
     - echo "  all:" >> nanoc.yaml
     - echo "    exclude_files:" >> nanoc.yaml
     - echo "      - '\/(ee|runner|omnibus|charts)\/.*\/.*'" >> nanoc.yaml
-    - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
+    - 'parallel time bundle exec nanoc check ::: internal_links internal_anchors'
 
 #
 # Check the redirect file for duplicates
@@ -379,7 +384,7 @@ test_EOL_whitespace:
   script:
     - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
     - apk add jq
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake setup_git default
     - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md'
@@ -395,7 +400,7 @@ test_unlinked_images:
   dependencies: []
   script:
     - apk add jq
-    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake setup_git default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
@@ -410,7 +415,6 @@ test_unlinked_images:
     - ./unlinked-images.sh docs
     - cd ../gitlab
     - ./unlinked-images.sh doc
-
 
 lint_dockerfiles:
   extends:
@@ -456,7 +460,7 @@ review:
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/' # TODO: Remove once no projects create such branch
   tags:
     - nginx
     - review-apps
@@ -542,7 +546,7 @@ pages:
   # We are using dependencies, because we do not want to
   # re-deploy if the previous stages failed.
   dependencies:
-    - compile_prod    # Contains the public directory
+    - compile_prod # Contains the public directory
   script:
     #
     # We want to use the artifacts of the compile_prod job as
@@ -575,7 +579,7 @@ pages:
     - docker info
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   variables:
-    DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_TLS_CERTDIR: '/certs'
 
 #
 # GitLab docs lint image containing all test tools
