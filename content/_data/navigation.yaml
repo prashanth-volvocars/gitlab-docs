@@ -2081,14 +2081,14 @@ sections:
                 doc_url: 'ee/administration/monitoring/performance/performance_bar.html'
               - doc_title: Performance monitoring
                 doc_url: 'ee/administration/monitoring/performance/'
-              - doc_title: Puma exporter
-                doc_url: 'ee/administration/monitoring/prometheus/puma_exporter.html'
               - doc_title: Redis exporter
                 doc_url: 'ee/administration/monitoring/prometheus/redis_exporter.html'
               - doc_title: Registry exporter
                 doc_url: 'ee/administration/monitoring/prometheus/registry_exporter.html'
               - doc_title: Usage statistics
                 doc_url: 'ee/user/admin_area/settings/usage_statistics.html'
+              - doc_title: Web exporter
+                doc_url: 'ee/administration/monitoring/prometheus/web_exporter.html'
   - section_title: Use the API
     section_url: 'ee/api/'
     section_categories:
