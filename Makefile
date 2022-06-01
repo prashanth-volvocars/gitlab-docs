@@ -1,4 +1,4 @@
-.PHONY: all clean test up
+.PHONY: all clean setup test up
 
 INFO = \033[32m
 INFO_END = \033[0m
@@ -59,11 +59,31 @@ view: compile
 
 live: compile
 	@printf "\n$(INFO)INFO: Starting GitLab documentation site with live reload..$(INFO_END)\n"
-	bundle exec nanoc live
+	@bundle exec nanoc live
 
-setup:
-	@printf "\n$(INFO)INFO: Installing dependencies..$(INFO_END)\n"
-	@asdf install && bundle install && yarn install --frozen-lockfile
+setup-asdf:
+	@printf "\n$(INFO)INFO: Installing asdf plugins..$(INFO_END)\n"
+	@asdf plugin add ruby || true
+	@asdf plugin add nodejs || true
+	@asdf plugin add yarn || true
+	@printf "\n$(INFO)INFO: Updating asdf plugins..$(INFO_END)\n"
+	@asdf plugin update ruby
+	@asdf plugin update nodejs
+	@asdf plugin update yarn
+
+install-asdf-dependencies:
+	@printf "\n$(INFO)INFO: Installing asdf dependencies..$(INFO_END)\n"
+	@asdf install
+
+install-ruby-dependencies:
+	@printf "\n$(INFO)INFO: Installing Ruby dependencies..$(INFO_END)\n"
+	@bundle install
+
+install-nodejs-dependencies:
+	@printf "\n$(INFO)INFO: Installing Node.js dependencies..$(INFO_END)\n"
+	@yarn install --frozen-lockfile
+
+setup: setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 
 update:
 	@printf "\n$(INFO)INFO: Stash any changes, switch to main branch, and pull updates to GitLab Docs project..$(INFO_END)\n"
