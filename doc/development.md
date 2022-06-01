@@ -68,6 +68,12 @@ match to make it easier to find:
 You should replace `<bundle-name>` with whatever you'd like to call your
 bundle.
 
+### Add a global library
+
+Libraries that are not specific to individual components (e.g, jQuery) are bundled via `global_imports.js`. The resulting build is included on all pages.
+
+This is a pattern to avoid going forward -- ideally third-party libraries are only loaded from components that require them -- but this allows us to utilize yarn for package management and avoid external CDNs while the site is still only partially component-driven.
+
 ## Bump versions of CSS and JavaScript
 
 Whenever the custom CSS and JavaScript files under `content/assets/` change,
@@ -92,7 +98,7 @@ The links pointing to the files should be similar to:
 Nanoc then builds and renders those links correctly according with what's
 defined in [`Rules`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/Rules).
 
-##  Adding query strings to CTAs headed to about.gitlab.com/pricing
+## Adding query strings to CTAs headed to about.gitlab.com/pricing
 
 We've created [a Sisense dashboard that can only be seen by full-time team members](https://app.periscopedata.com/app/gitlab/950797/GitLab.com-SaaS-trials---no-SAFE-data)
 to track the number of SaaS free trials that start from a documentation page.
@@ -102,7 +108,7 @@ If you would like to track that information, add the following parameters to the
 - `glm_source` is `docs.gitlab.com`
 - `glm_content` set to anything that ends with `-docs`
 
-### Example: 
+### Example
 
 `https://about.gitlab.com/pricing?=glm_source=docs.gitlab.com&glm_content=name-of-item-docs`
 
