@@ -2,6 +2,7 @@
 /public/
 /vendor/
 /tmp/
+/scripts/lunr/build_index.js
 
 # ignore legacy code to be migrated
 /content/assets/

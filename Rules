@@ -159,7 +159,7 @@ layout '/**/*', :erb
 
 # Leave the favicon and Lunr index alone.
 passthrough '/favicon.ico'
-passthrough '/lunr-index.json'
+passthrough '/lunr-*.json'
 
 postprocess do
   system('nanoc frontend')

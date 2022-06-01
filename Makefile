@@ -113,5 +113,5 @@ test: setup brew-bundle
 
 build-search-index:
 	@printf "\n$(INFO)INFO: Building offline search index..$(INFO_END)\n"
-	node scripts/lunr/build-contents.js > content/lunr-content.json
-	cat content/lunr-content.json | node scripts/lunr/build-index.js > content/lunr-index.json
+	node scripts/lunr/build_contents.js > content/lunr-content.json
+	cat content/lunr-content.json | node scripts/lunr/build_index.js > content/lunr-index.json
