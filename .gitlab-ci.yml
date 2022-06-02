@@ -792,6 +792,7 @@ test:image:docs-single:
     - export CI_COMMIT_REF_NAME=${VER}
     - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} --build-arg VER=${VER} --tag ${IMAGE_NAME} --file $DOCKERFILE .
     - docker run --detach --rm -p 4000:4000 ${IMAGE_NAME}
+    - ps aux | grep 4000
     - apk add --no-cache -U curl
     - curl http://0.0.0.0:4000/${VER}/ | grep $VER
 
