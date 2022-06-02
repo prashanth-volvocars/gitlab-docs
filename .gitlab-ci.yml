@@ -764,7 +764,8 @@ image:docs-single:
   environment:
     name: registry/$CI_COMMIT_REF_SLUG
   script:
-    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} -t $IMAGE_NAME -f $DOCKERFILE .
+    - export CI_COMMIT_REF_NAME=${VER}
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} --build-arg VER=${VER} --tag ${IMAGE_NAME} --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   # Only branches with versions like 10.4
   rules:
@@ -778,23 +779,21 @@ test:image:docs-single:
     - .docker_prepare
   stage: test
   variables:
+    VER: '15.0'
+    NANOC_ENV: 'production'
+    IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     DOCKERFILE: dockerfiles/single.Dockerfile
-    MAJOR_VERSION_GITLAB: '15'
-    MINOR_VERSION_GITLAB: '0'
-    MAJOR_VERSION_CHARTS: '6'
-    MINOR_VERSION_CHARTS: '0'
   needs: []
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
         - $DOCKERFILE
   script:
-    # Update template with version numbers
-    - sed -i "s/X\.Y/${MAJOR_VERSION_GITLAB}\.${MINOR_VERSION_GITLAB}/" $DOCKERFILE
-    - sed -i "s/X-Y/${MAJOR_VERSION_GITLAB}-${MINOR_VERSION_GITLAB}/" $DOCKERFILE
-    - sed -i "s/W-Z/${MAJOR_VERSION_CHARTS}-${MINOR_VERSION_CHARTS}/" $DOCKERFILE
-    # Build the image
-    - docker build --file $DOCKERFILE .
+    - export CI_COMMIT_REF_NAME=${VER}
+    - docker build --build-arg NANOC_ENV=${NANOC_ENV} --build-arg CI_COMMIT_REF_NAME=${CI_COMMIT_REF_NAME} --build-arg VER=${VER} --tag ${IMAGE_NAME} --file $DOCKERFILE .
+    - docker run --detach --rm -p 4000:4000 ${IMAGE_NAME}
+    - apk add --no-cache -U curl
+    - curl http://0.0.0.0:4000/${VER}/ | grep $VER
 
 #
 # Build master containing the online archives and latest docs (on schedules)

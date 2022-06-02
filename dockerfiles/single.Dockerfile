@@ -24,18 +24,13 @@ FROM ruby:2.7.5-alpine3.15 AS builder
 # Copy minifier binary from the minifier stage
 COPY --from=minifier /minify /usr/local/bin/minify
 
-# Set to the version for this archive (must match the branch name)
-ENV VER=X.Y
-ENV CI_COMMIT_REF_NAME=X.Y
-
-# Replace the versions to match the stable branches of the upstream projects
-ENV BRANCH_EE=X-Y-stable-ee
-ENV BRANCH_OMNIBUS=X-Y-stable
-ENV BRANCH_RUNNER=X-Y-stable
-ENV BRANCH_CHARTS=W-Z-stable
-
-# Set NANOC_ENV to production
-ENV NANOC_ENV=production
+#
+# Set the following variables as ARGs and pass them with --build-arg when
+# building the Docker image.
+#
+ARG NANOC_ENV=production
+ARG VER
+ARG CI_COMMIT_REF_NAME
 
 #
 # Install Nanoc dependencies and tools that
