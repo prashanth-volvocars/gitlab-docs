@@ -63,7 +63,13 @@ RUN apk add --no-cache -U \
     xz-dev      \
     yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem update --system 3.3.13
+    && gem update --silent --system 3.3.13 \
+    && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+    && echo "Ruby: $(ruby --version)" \
+    && echo "RubyGems: $(gem --version)" \
+    && echo "Node.js: $(node --version)" \
+    && echo "Yarn: $(yarn --version)" \
+    && printf "\n"
 
 # Build the docs from this branch
 COPY . /source/
@@ -78,12 +84,12 @@ RUN yarn install --frozen-lockfile                              \
 
 # Move generated HTML to /site
 RUN mkdir /site \
-    && mv public /site/${VER}
+    && mv public "/site/${VER}"
 
 # Do some HTML post-processing on the archive, compress images, and minify assets
-RUN /source/scripts/normalize-links.sh /site ${VER}    \
-    && /source/scripts/compress_images.sh /site ${VER} \
-    && /source/scripts/minify-assets.sh /site ${VER} # ATTENTION: This should be the last script to run
+RUN /source/scripts/normalize-links.sh /site "${VER}"    \
+    && /source/scripts/compress_images.sh /site "${VER}" \
+    && /source/scripts/minify-assets.sh /site "${VER}" # ATTENTION: This should be the last script to run
 
 # Make an index.html and 404.html which will redirect / to /${VER}/
 RUN echo "<html><head><title>Redirect for ${VER}</title><meta http-equiv=\"refresh\" content=\"0;url='/${VER}/'\" /></head><body><p>If you are not redirected automatically, click <a href=\"/${VER}/\">here</a>.</p></body></html>" > /site/index.html \

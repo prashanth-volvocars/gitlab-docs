@@ -771,6 +771,32 @@ image:docs-single:
     - if: '$CI_COMMIT_BRANCH =~ /^\d{1,2}\.\d{1,2}$/'
 
 #
+# Test the GitLab docs single version Docker image if changes made to its Dockerfile
+#
+test:image:docs-single:
+  extends:
+    - .docker_prepare
+  stage: test
+  variables:
+    DOCKERFILE: dockerfiles/single.Dockerfile
+    MAJOR_VERSION_GITLAB: '15'
+    MINOR_VERSION_GITLAB: '0'
+    MAJOR_VERSION_CHARTS: '6'
+    MINOR_VERSION_CHARTS: '0'
+  needs: []
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - $DOCKERFILE
+  script:
+    # Update template with version numbers
+    - sed -i "s/X\.Y/${MAJOR_VERSION_GITLAB}\.${MINOR_VERSION_GITLAB}/" $DOCKERFILE
+    - sed -i "s/X-Y/${MAJOR_VERSION_GITLAB}-${MINOR_VERSION_GITLAB}/" $DOCKERFILE
+    - sed -i "s/W-Z/${MAJOR_VERSION_CHARTS}-${MINOR_VERSION_CHARTS}/" $DOCKERFILE
+    # Build the image
+    - docker build --file $DOCKERFILE .
+
+#
 # Build master containing the online archives and latest docs (on schedules)
 #
 image:docs-latest:
