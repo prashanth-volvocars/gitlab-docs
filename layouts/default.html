@@ -104,6 +104,9 @@
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
     <% end %>
+    <% if @item.identifier.to_s == '/ee/update/deprecations.md' %>
+      <script src="<%= @items['/frontend/deprecations/filters.*'].path %>"></script>
+    <% end %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/docs.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/global-nav.*'].path %>"></script>
