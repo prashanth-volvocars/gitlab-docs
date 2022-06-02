@@ -16,7 +16,7 @@ default:
     - ruby -v
     - gem -v
     - bundle -v
-    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install --jobs 4
 
 .yarn:
@@ -148,7 +148,7 @@ workflow:
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/' # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $CHORES_PIPELINE == "true"'
 
 #
@@ -384,7 +384,7 @@ test_EOL_whitespace:
   script:
     - yarn global add markdownlint-cli@$MARKDOWNLINT_VERSION
     - apk add jq
-    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake setup_git default
     - markdownlint --config tasks/whitespace_task.yml '../gitlab/doc/**/*.md' '../gitlab-runner/doc/**/*.md' '../omnibus-gitlab/doc/**/*.md' '../charts-gitlab/doc/**/*.md'
@@ -400,7 +400,7 @@ test_unlinked_images:
   dependencies: []
   script:
     - apk add jq
-    - bundle config set --local deployment true # Install dependencies into ./vendor/ruby
+    - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install
     - bundle exec rake setup_git default
     - cp tasks/unlinked-images.sh ../gitlab/unlinked-images.sh
@@ -460,7 +460,7 @@ review:
       when: never
     - if: '$CI_MERGE_REQUEST_ID'
     - if: '$CI_PIPELINE_SOURCE == "pipeline" || $CI_PIPELINE_SOURCE == "trigger"'
-    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/' # TODO: Remove once no projects create such branch
+    - if: '$CI_COMMIT_BRANCH =~ /docs-preview/'  # TODO: Remove once no projects create such branch
   tags:
     - nginx
     - review-apps
@@ -546,7 +546,7 @@ pages:
   # We are using dependencies, because we do not want to
   # re-deploy if the previous stages failed.
   dependencies:
-    - compile_prod # Contains the public directory
+    - compile_prod  # Contains the public directory
   script:
     #
     # We want to use the artifacts of the compile_prod job as
