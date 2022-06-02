@@ -3,3 +3,7 @@
 /vendor/
 /tmp/
 /content/assets/javascripts/
+
+# Ignore yml files since prettier formatting clashes with yamllint.
+# https://github.com/adrienverge/yamllint/issues/443
+*.yml
