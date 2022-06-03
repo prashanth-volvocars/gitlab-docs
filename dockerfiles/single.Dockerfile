@@ -28,7 +28,7 @@ COPY --from=minifier /minify /usr/local/bin/minify
 # Set the following variables as ARGs and pass them with --build-arg when
 # building the Docker image.
 #
-ARG NANOC_ENV=production
+ARG NANOC_ENV
 ARG VER
 ARG CI_COMMIT_REF_NAME
 
