@@ -14,6 +14,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     bash         \
     build-base   \
     curl         \
+    gcompat      \
     git          \
     gnupg        \
     grep         \
