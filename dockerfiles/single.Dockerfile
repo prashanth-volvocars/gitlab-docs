@@ -45,6 +45,7 @@ RUN apk add --no-cache -U \
     bash        \
     build-base  \
     curl        \
+    gcompat     \
     git         \
     gnupg       \
     go          \
