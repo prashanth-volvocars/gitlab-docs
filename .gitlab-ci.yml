@@ -662,16 +662,23 @@ test:image:docs-lint-html:
 #
 # Build and deploy the GitLab Docs base Docker image
 #
-image:gitlab-docs-base:
+build-deploy:image:gitlab-docs-base:
   extends:
-    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE:base
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - $DOCKERFILE
   script:
-    - docker build -t $IMAGE_NAME -f $DOCKERFILE .
+    - docker build
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-base
@@ -685,13 +692,18 @@ test:image:gitlab-docs-base:
   stage: test
   needs: []
   variables:
+    IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
         - $DOCKERFILE
   script:
-    - docker build --file $DOCKERFILE .
+    - docker build
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
 
 #
 # Helper Docker image containing all build dependencies.

@@ -1,5 +1,10 @@
 # Base image for other Docker images
-FROM ruby:2.7.5-alpine3.15
+#
+# RUBY_VERSION and ALPINE_VERSION are defined in ../.gitlab-ci.yml
+ARG RUBY_VERSION
+ARG ALPINE_VERSION
+
+FROM ruby:${RUBY_VERSION}-alpine${ALPINE_VERSION}
 
 # Install dependencies
 RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
