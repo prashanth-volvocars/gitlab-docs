@@ -14,7 +14,5 @@ describe 'Content directory size' do
   # `content` directory is included to the Omnibus package
   # We want to make sure that the size of the directory is small enough
   # to prevent accidental Omnibus pipeline failures.
-  it 'is not too big' do
-    is_expected.to be < maximum_size
-  end
+  it { is_expected.to be < maximum_size }
 end
