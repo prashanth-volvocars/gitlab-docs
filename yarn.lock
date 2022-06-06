@@ -1099,15 +1099,15 @@
   resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.16.0.tgz#b9551af803487158d232a8b4b806ec2bbc2fb9eb"
   integrity sha512-VvaB4ttd5mdE0ntiSZM/70dFeBu4iE4CyVJA72OyCfJLzmJEClsn81eYF44bT53BCy8rrZKgJG3lsvvlbeFCAA==
 
-"@gitlab/ui@^40.7.1":
-  version "40.7.1"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-40.7.1.tgz#e6595c5cc37d994e3f0ba780626fbf4e8174df2a"
-  integrity sha512-u100mDpdI7RfNVcAYi8n0RRH2FfIiYuMVgt5jPrQ7AAL+QrwLAkqfBZtkT9pSMpycBuuQsxSMHJK5FlnXum46g==
+"@gitlab/ui@^41.3.0":
+  version "41.3.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-41.3.0.tgz#f040a6d9ce01f0626182e376f05069bf934088e8"
+  integrity sha512-KUCPQX+bLrWtAHcGOtVTeNKs3JWznxnt7By2jiB7lurlSp90nNm7Jb2+Y6Rgw7sp29hL1Hsy1AcgpGqHDtUDMg==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
     dompurify "^2.3.8"
-    echarts "^5.2.1"
+    echarts "^5.3.2"
     iframe-resizer "^4.3.2"
     lodash "^4.17.20"
     portal-vue "^2.1.6"
@@ -2652,7 +2652,7 @@ dompurify@^2.3.8:
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.8.tgz#224fe9ae57d7ebd9a1ae1ac18c1c1ca3f532226f"
   integrity sha512-eVhaWoVibIzqdGYjwsBWodIQIaXFSB+cKDf4cfxLMsK0xiud6SE+/WCVx/Xw/UwQsa4cS3T2eITcdtmTg2UKcw==
 
-echarts@^5.2.1:
+echarts@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/echarts/-/echarts-5.3.2.tgz#0a7b3be8c48a48b2e7cb1b82121df0c208d42d2c"
   integrity sha512-LWCt7ohOKdJqyiBJ0OGBmE9szLdfA9sGcsMEi+GGoc6+Xo75C+BkcT/6NNGRHAWtnQl2fNow05AQjznpap28TQ==
