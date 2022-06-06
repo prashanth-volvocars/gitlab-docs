@@ -29,7 +29,7 @@ module Gitlab
     end
 
     def id_for(element)
-      element.title.gsub(/[\s\/()]/, '')
+      element.title.gsub(%r{[\s/()]}, '')
     end
 
     def children

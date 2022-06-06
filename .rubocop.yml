@@ -20,3 +20,9 @@ RSpec/MultipleMemoizedHelpers:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# See https://gitlab.com/gitlab-org/gitlab/-/issues/327495
+# Prefer percent_r instead of mix of styles
+Style/RegexpLiteral:
+  Enabled: true
+  EnforcedStyle: percent_r
