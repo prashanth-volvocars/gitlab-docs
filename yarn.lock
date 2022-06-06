@@ -1094,15 +1094,15 @@
     stylelint-declaration-strict-value "1.8.0"
     stylelint-scss "4.1.0"
 
-"@gitlab/svgs@^2.14.0":
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.14.0.tgz#92b36bc98ccbed49a4dbca310862146275091cb2"
-  integrity sha512-U9EYmEIiTMl7R3X5DmCrw6fz7gz8c1kjvQtaF6HfJ15xDtR7trRAyCNbn3z7YGk1QJ8Cv/Ifw2/T5SxXwYd7dw==
+"@gitlab/svgs@^2.16.0":
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.16.0.tgz#b9551af803487158d232a8b4b806ec2bbc2fb9eb"
+  integrity sha512-VvaB4ttd5mdE0ntiSZM/70dFeBu4iE4CyVJA72OyCfJLzmJEClsn81eYF44bT53BCy8rrZKgJG3lsvvlbeFCAA==
 
-"@gitlab/ui@^40.6.5":
-  version "40.6.5"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-40.6.5.tgz#857448ac2b77c27f232d0d5f13a9065024679662"
-  integrity sha512-00n8DKKET8htsIZdv5UTCYwDJcjYyPjs96cJUVBy+NO4vWyxCf8qZvgma2oKT3T7gYXNA8coZhzg84zHPCbcKQ==
+"@gitlab/ui@^40.7.1":
+  version "40.7.1"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-40.7.1.tgz#e6595c5cc37d994e3f0ba780626fbf4e8174df2a"
+  integrity sha512-u100mDpdI7RfNVcAYi8n0RRH2FfIiYuMVgt5jPrQ7AAL+QrwLAkqfBZtkT9pSMpycBuuQsxSMHJK5FlnXum46g==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
@@ -2949,10 +2949,10 @@ eslint-visitor-keys@^3.1.0, eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.16.0:
-  version "8.16.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.16.0.tgz#6d936e2d524599f2a86c708483b4c372c5d3bbae"
-  integrity sha512-MBndsoXY/PeVTDJeWsYj7kLZ5hQpJOfMYLsF6LicLHQWbRDG19lK5jOix4DPl8yY4SUFcE3txy86OzFLWT+yoA==
+eslint@^8.17.0:
+  version "8.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.17.0.tgz#1cfc4b6b6912f77d24b874ca1506b0fe09328c21"
+  integrity sha512-gq0m0BTJfci60Fz4nczYxNAlED+sMcihltndR8t9t1evnU/azx53x3t2UHXC/uRjcbvRw/XctpaNygSTcQD+Iw==
   dependencies:
     "@eslint/eslintrc" "^1.3.0"
     "@humanwhocodes/config-array" "^0.9.2"
@@ -3583,10 +3583,10 @@ ini@^1.3.4, ini@^1.3.5:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
-instantsearch.js@^4.40.6:
-  version "4.40.6"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.40.6.tgz#a2734bb116e88e7f92020782fceaff8a1603fb69"
-  integrity sha512-Yjy7k9Ct+8TmHKTsKGUVZ2gXxjpv8eCjHP7vxC109MgQrgA5N0cJ/QP3H4lQP3nGA5csXgCrq8UlusFZ94eIkQ==
+instantsearch.js@^4.41.0:
+  version "4.41.0"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.0.tgz#c879d7b892e3d9159a17a803e793e695aeb5431f"
+  integrity sha512-g9l+Cty0xxMT06L36gc6x6Nz6HsEbrqbNQOXAZDORb2g9ADjMQwR1YtOVqN28pTuwXnhWJ4UfEKlLfHTgTVKmg==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
@@ -5491,10 +5491,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.75.3:
-  version "2.75.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.3.tgz#11bd3e8ace526911feea8af17f2a286fbfdb4cf8"
-  integrity sha512-YA29fLU6MAYSaDxIQYrGGOcbXlDmG96h0krGGYObroezcQ0KgEPM3+7MtKD/qeuUbFuAJXvKZee5dA1dpwq1PQ==
+rollup@^2.75.5:
+  version "2.75.5"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.75.5.tgz#7985c1962483235dd07966f09fdad5c5f89f16d0"
+  integrity sha512-JzNlJZDison3o2mOxVmb44Oz7t74EfSd1SQrplQk0wSaXV7uLQXtVdHbxlcT3w+8tZ1TL4r/eLfc7nAbz38BBA==
   optionalDependencies:
     fsevents "~2.3.2"
 
