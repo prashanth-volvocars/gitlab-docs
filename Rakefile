@@ -79,7 +79,7 @@ namespace :release do
     version = args.version.to_s
     source_dir = File.expand_path(__dir__)
 
-    raise 'You need to specify a version, like 10.1' unless version.match?(/\A\d+\.\d+\z/)
+    raise 'You need to specify a version, like 10.1' unless version.match?(%r{\A\d+\.\d+\z})
 
     # Check if local branch exists
     abort("\n#{COLOR_CODE_RED}ERROR: Rake aborted! The branch already exists. Delete it with `git branch -D #{version}` and rerun the task.#{COLOR_CODE_RESET}") \
@@ -267,7 +267,7 @@ namespace :docs do
       #
       def new_path(redirect, filename, content_dir, slug)
         if !redirect.start_with?('http')
-          Pathname.new(filename).dirname.join(redirect).to_s.gsub(/\.md/, '.html').gsub(content_dir, "/#{slug}")
+          Pathname.new(filename).dirname.join(redirect).to_s.gsub(%r{\.md}, '.html').gsub(content_dir, "/#{slug}")
         elsif redirect.start_with?('https://docs.gitlab.com')
           redirect.gsub('https://docs.gitlab.com', '')
         else
@@ -311,7 +311,7 @@ namespace :docs do
         next unless frontmatter.has_key?('remove_date')
 
         remove_date = Date.parse(frontmatter['remove_date'])
-        old_path = filename.gsub(/\.md/, '.html').gsub(content_dir, "/#{slug}")
+        old_path = filename.gsub(%r{\.md}, '.html').gsub(content_dir, "/#{slug}")
 
         #
         # Check if the removal date is before today, and delete the file and

@@ -3,7 +3,7 @@
 require 'yaml'
 
 PRODUCTS = %w[ee omnibus runner charts operator].freeze
-VERSION_FORMAT = /^(?<major>\d{1,2})\.(?<minor>\d{1,2})$/.freeze
+VERSION_FORMAT = %r{^(?<major>\d{1,2})\.(?<minor>\d{1,2})$}.freeze
 
 def config
   # Parse the config file and create a hash.
