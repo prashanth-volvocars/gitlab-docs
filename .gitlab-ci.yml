@@ -8,7 +8,7 @@ include:
       - '/ci/danger-review.yml'
 
 default:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs:base
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.15-ruby-2.7.5-ed77855b
   tags:
     - gitlab-org
   # Check Ruby, RubyGems, and Bundler versions and install gems
@@ -580,20 +580,23 @@ pages:
 #
 # Build and deploy the GitLab Docs linting (Markdown) Docker image
 #
-image:docs-lint-markdown:
+build-deploy:image:docs-lint-markdown:
   extends:
-    - .rules_scheduled_manual
     - .docker_prepare
-  stage: build-images
+  stage: deploy
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-markdown:alpine-$ALPINE_VERSION-vale-$VALE_VERSION-markdownlint-$MARKDOWNLINT_VERSION
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - $DOCKERFILE
   script:
     - docker build
-      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      --build-arg VALE_VERSION=${VALE_VERSION}
-      --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
-      -t $IMAGE_NAME -f $DOCKERFILE .
+             --build-arg VALE_VERSION=${VALE_VERSION}
+             --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-markdown
@@ -614,7 +617,6 @@ test:image:docs-lint-markdown:
         - $DOCKERFILE
   script:
     - docker build
-             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg VALE_VERSION=${VALE_VERSION}
              --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
              --file $DOCKERFILE .
@@ -622,19 +624,21 @@ test:image:docs-lint-markdown:
 #
 # Build and deploy the GitLab Docs linting (HTML) Docker image
 #
-image:docs-lint-html:
+build-deploy:image:docs-lint-html:
   extends:
-    - .rules_scheduled_manual
     - .docker_prepare
-  stage: build-images
+  stage: deploy
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/lint-html:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - $DOCKERFILE
   script:
     - docker build
-      --build-arg RUBY_VERSION=${RUBY_VERSION}
-      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      -t $IMAGE_NAME -f $DOCKERFILE .
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-html
@@ -655,8 +659,6 @@ test:image:docs-lint-html:
         - $DOCKERFILE
   script:
     - docker build
-             --build-arg RUBY_VERSION=${RUBY_VERSION}
-             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --file $DOCKERFILE .
 
 #
@@ -665,7 +667,7 @@ test:image:docs-lint-html:
 build-deploy:image:gitlab-docs-base:
   extends:
     - .docker_prepare
-  stage: build-images
+  stage: deploy
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
@@ -692,7 +694,6 @@ test:image:gitlab-docs-base:
   stage: test
   needs: []
   variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
@@ -702,7 +703,6 @@ test:image:gitlab-docs-base:
     - docker build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
              --build-arg RUBY_VERSION=${RUBY_VERSION}
-             --tag $IMAGE_NAME
              --file $DOCKERFILE .
 
 #

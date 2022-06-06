@@ -1,33 +1,16 @@
 # GitLab Docs linting (Markdown) Docker image
 #
-# ALPINE_VERSION is defined in ../.gitlab-ci.yml
-ARG ALPINE_VERSION
-
-FROM alpine:${ALPINE_VERSION}
+FROM registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.15-ruby-2.7.5-ed77855b
 
 # VALE_VERSION and MARKDOWNLINT_VERSION are defined in .gitlab-ci.yml
 ARG VALE_VERSION
 ARG MARKDOWNLINT_VERSION
 
-# Install dependencies
-RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cache -U \
-    bash         \
-    build-base   \
-    curl         \
-    gcompat      \
-    git          \
-    gnupg        \
-    grep         \
-    libc6-compat \
-    libcurl      \
-    libxslt      \
-    libxslt-dev  \
-    nodejs       \
-    openssl      \
-    pngquant     \
-    tar          \
-    yarn         \
-    && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+# Report dependencies
+RUN printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
+    && echo "Ruby: $(ruby --version)" \
+    && echo "RubyGems: $(gem --version)" \
+    && echo "Bundler: $(bundle --version)" \
     && echo "Node.js: $(node --version)" \
     && echo "Yarn: $(yarn --version)" \
     && printf "\n"
