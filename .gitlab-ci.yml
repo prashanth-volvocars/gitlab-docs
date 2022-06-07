@@ -590,10 +590,11 @@ image:docs-lint-markdown:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-markdown.Dockerfile
   script:
     - docker build
-      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      --build-arg VALE_VERSION=${VALE_VERSION}
-      --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
-      -t $IMAGE_NAME -f $DOCKERFILE .
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --build-arg VALE_VERSION=${VALE_VERSION}
+             --build-arg MARKDOWNLINT_VERSION=${MARKDOWNLINT_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-markdown
@@ -632,9 +633,10 @@ image:docs-lint-html:
     DOCKERFILE: dockerfiles/gitlab-docs-lint-html.Dockerfile
   script:
     - docker build
-      --build-arg RUBY_VERSION=${RUBY_VERSION}
-      --build-arg ALPINE_VERSION=${ALPINE_VERSION}
-      -t $IMAGE_NAME -f $DOCKERFILE .
+             --build-arg RUBY_VERSION=${RUBY_VERSION}
+             --build-arg ALPINE_VERSION=${ALPINE_VERSION}
+             --tag $IMAGE_NAME
+             --file $DOCKERFILE .
     - docker push $IMAGE_NAME
   environment:
     name: registry/docs-lint-html
@@ -662,17 +664,14 @@ test:image:docs-lint-html:
 #
 # Build and deploy the GitLab Docs base Docker image
 #
-build-deploy:image:gitlab-docs-base:
+image:gitlab-docs-base:
   extends:
+    - .rules_scheduled_manual
     - .docker_prepare
   stage: build-images
   variables:
     IMAGE_NAME: $CI_REGISTRY_IMAGE/base:alpine-$ALPINE_VERSION-ruby-$RUBY_VERSION-$CI_COMMIT_SHORT_SHA
     DOCKERFILE: dockerfiles/gitlab-docs-base.Dockerfile
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-        - $DOCKERFILE
   script:
     - docker build
              --build-arg ALPINE_VERSION=${ALPINE_VERSION}
