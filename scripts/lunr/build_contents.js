@@ -33,7 +33,9 @@ const getHeadings = (file, heading) => {
   let headingText = '';
   const $ = cheerio.load(fs.readFileSync(file));
 
+  // eslint-disable-next-line array-callback-return
   $(heading).map((_, element) => {
+    // eslint-disable-next-line prefer-template
     headingText += $(element).text().replace('\n', '') + ' ';
   });
   return headingText;
@@ -66,7 +68,7 @@ getContent(outputDir, function addPage(err, filenames) {
     console.log('Error', err);
   } else {
     Object.keys(filenames).forEach((key) => {
-      let content = getText(filenames[key]);
+      const content = getText(filenames[key]);
       if (content.h1) {
         results.push({
           id: filenames[key].slice(outputDir.length),
