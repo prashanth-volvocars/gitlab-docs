@@ -230,6 +230,28 @@ and when the Charts branch is cut:
 - If the error happens when you create the stable branch, go to the **Pipelines** page and run a new pipeline for your branch.
 - If the error happens when you create the MRs to update the dropdown, return to your MR and run the pipeline again.
 
+### image:docs-latest job fails due to broken links
+
+When this pipeline fails, it is usually because the `gitlab-docs` repository contains
+changes to the navigation menu, but the corresponding page changes in the `gitlab`
+repository didn't make it into the release. This can happen close to the cutoff for
+the release. For example:
+
+1. On the 19th, a merge request in `gitlab` is merged, but the GitLab release doesn't include commits from that merge request. The cutoff for the
+   release occurred on the 18th.
+1. A navigation menu item in `gitlab-docs` is also merged on the 19th.
+1. The `gitlab-docs` stable branch is created on the 20th, and includes the navigation menu changes.
+1. The link checker fails, because when building the Docker image, it pulls the
+   stable branch from `gitlab`. This branch doesn't have the new content added on
+   the 19th (first step), but the stable branch in `gitlab-docs` has the navigation menu changes.
+
+Solution: revert the navigation menu change in the `gitlab-docs` stable branch:
+
+1. Find the change to the navigation menu in
+   [the list of recently merged MRs](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests?scope=all&state=merged)
+   for the `gitlab-docs` repository
+1. In the **Overview** tab, select **Revert** and target the `gitlab-docs` stable branch.
+
 ### image:docs-latest job fails with `GemNotFound` error
 
 When you start the **Build docker images weekly** scheduled pipeline and
