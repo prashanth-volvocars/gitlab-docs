@@ -2,7 +2,8 @@
 
 /*
  * This script is copied from
- * https://lunrjs.com/guides/index_prebuilding.html
+ * https://lunrjs.com/guides/index_prebuilding.html,
+ * with custom field elements for GitLab Docs.
  */
 
 var lunr = require('lunr'),
@@ -22,7 +23,10 @@ stdin.on('end', function () {
 
   var idx = lunr(function () {
     this.ref('id');
-    this.field('title');
+    /* Custom fields */
+    this.field('h1', { boost: 10 });
+    this.field('h2', { boost: 5 });
+    this.field('h3', { boost: 2 });
 
     documents.forEach(function (doc) {
       this.add(doc);

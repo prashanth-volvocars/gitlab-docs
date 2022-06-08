@@ -12,26 +12,67 @@ const glob = require('glob');
 const outputDir = 'public/';
 const results = [];
 
-const getFiles = (src, callback) => {
+const getContent = (src, callback) => {
   glob(`${src}/**/*.html`, callback);
 };
 
-const getPageTitle = (file) => {
+/**
+ * Extracts text from HTML heading elements.
+ *
+ * When multiple headings of a given type are present,
+ * these are appended together and returned as a single string.
+ *
+ * @param {String} file
+ *   Path to an HTML file.
+ * @param {String} heading
+ *   Heading level (e.g, 'h1').
+ * @return {String}
+ *   Text from the HTML document that is marked up at this heading level.
+ */
+const getHeadings = (file, heading) => {
+  let headingText = '';
   const $ = cheerio.load(fs.readFileSync(file));
-  return $('h1').text().replace('\n', '');
+
+  $(heading).map((_, element) => {
+    headingText += $(element).text().replace('\n', '') + ' ';
+  });
+  return headingText;
 };
 
-getFiles(outputDir, function addPage(err, filenames) {
+/**
+ * Extracts heading text from a page.
+ *
+ * @param {string} file
+ *   Path to an HTML file.
+ * @return {Object}
+ *   Page content object, structured for LunrJS indexing.
+ */
+const getText = (file) => {
+  return {
+    h1: getHeadings(file, 'h1'),
+    h2: getHeadings(file, 'h2'),
+    h3: getHeadings(file, 'h3'),
+  };
+};
+
+/**
+ *
+ * @param {$} heading
+ * @returns {String}
+ */
+getContent(outputDir, function addPage(err, filenames) {
   if (err) {
     // eslint-disable-next-line no-console
     console.log('Error', err);
   } else {
     Object.keys(filenames).forEach((key) => {
-      const pageTitle = getPageTitle(filenames[key]);
-      if (pageTitle) {
+      let content = getText(filenames[key]);
+      if (content.h1) {
         results.push({
           id: filenames[key].slice(outputDir.length),
-          title: pageTitle,
+          h1: content.h1,
+          h2: content.h2,
+          h3: content.h3,
         });
       }
     });
