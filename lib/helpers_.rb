@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-include Nanoc::Helpers::LinkTo
-include Nanoc::Helpers::XMLSitemap
-include Nanoc::Helpers::Rendering
-include Nanoc::Helpers::EditOnGitLab
-include Nanoc::Helpers::VersionsDropdown
-include Nanoc::Helpers::IconsHelper
-include Nanoc::Helpers::ReadingTimeHelper
-include Nanoc::Helpers::Generic
-include Nanoc::Helpers::GitLabKramdown
+use_helper Nanoc::Helpers::EditOnGitLab
+use_helper Nanoc::Helpers::Generic
+use_helper Nanoc::Helpers::GitLabKramdown
+use_helper Nanoc::Helpers::IconsHelper
+use_helper Nanoc::Helpers::ReadingTimeHelper
+use_helper Nanoc::Helpers::Rendering
+use_helper Nanoc::Helpers::VersionsDropdown
+use_helper Nanoc::Helpers::XMLSitemap
