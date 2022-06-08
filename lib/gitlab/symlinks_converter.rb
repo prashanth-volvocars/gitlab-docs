@@ -2,6 +2,7 @@
 
 module Gitlab
   class SymlinksConverter
+    include Nanoc::Helpers::Generic
     EXTENSIONS = %w[png jpg gif svg].freeze
 
     def initialize(config, items)
@@ -14,7 +15,7 @@ module Gitlab
     end
 
     def run
-      return unless Nanoc::Helpers::Generic.omnibus?
+      return unless omnibus?
 
       items.each do |item|
         id = item.identifier
