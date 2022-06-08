@@ -2649,8 +2649,7 @@ sections:
               - doc_title: Widgets
                 doc_url: 'ee/development/fe_guide/widgets.html'
           - doc_title: GitLab Pages development
-            doc_url: 'https://gitlab.com/gitlab-org/gitlab-development-kit/blob/main/doc/howto/pages.md'
-            external_url: true
+            doc_url: 'ee/development/pages/'
           - doc_title: Geo development
             doc_url: 'ee/development/geo.html'
             docs:
