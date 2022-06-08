@@ -1761,8 +1761,6 @@ sections:
             doc_url: 'ee/user/application_security/configuration/'
           - doc_title: Container Scanning
             doc_url: 'ee/user/application_security/container_scanning/'
-          - doc_title: Cluster Image Scanning
-            doc_url: 'ee/user/application_security/cluster_image_scanning/'
           - doc_title: Dependency Scanning
             doc_url: 'ee/user/application_security/dependency_scanning/'
             docs:
@@ -1960,7 +1958,7 @@ sections:
                 doc_url: 'ee/user/clusters/agent/install/'
               - doc_title: Work with the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/work_with_agent.html'
-              - doc_title: Vulnerability scanning
+              - doc_title: Operational container scanning
                 doc_url: 'ee/user/clusters/agent/vulnerabilities.html'
               - doc_title: Troubleshoot the agent for Kubernetes
                 doc_url: 'ee/user/clusters/agent/troubleshooting.html'
