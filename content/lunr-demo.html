@@ -20,11 +20,11 @@ title: LunrJS Demo | GitLab Documentation
             const resultsList = document.querySelector('.lunr-results')
             const map = JSON.parse(data)
     
-            resultsList.innerHTML = ""
+            document.querySelector('#results-summary').innerHTML = `Query returned ${results.length} results`
                     
             for (var item in results) {
                 let contentItem = map.find( ({ id }) => id === results[item].ref)
-                let searchItem = `<li><a href="${contentItem.id}">${contentItem.h1}</a></li>`
+                let searchItem = `<li><a href="${contentItem.id}">${contentItem.h1}</a><br><small>Score: ${results[item].score.toFixed(2)}</small></li>`
                 resultsList.innerHTML += searchItem;
             }
         })
@@ -49,4 +49,5 @@ title: LunrJS Demo | GitLab Documentation
     <input class="mt-2" type="submit" value="Submit" onclick="runSearch()">
 </form>
 
+<p id="results-summary" class="mt-4"></p>
 <ul class="lunr-results mt-4"></ul>
