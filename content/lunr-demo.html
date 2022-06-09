@@ -24,7 +24,7 @@ title: LunrJS Demo | GitLab Documentation
                     
             for (var item in results) {
                 let contentItem = map.find( ({ id }) => id === results[item].ref)
-                let searchItem = `<li><a href="${contentItem.id}">${contentItem.title}</a></li>`
+                let searchItem = `<li><a href="${contentItem.id}">${contentItem.h1}</a></li>`
                 resultsList.innerHTML += searchItem;
             }
         })
