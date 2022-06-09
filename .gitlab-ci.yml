@@ -198,7 +198,7 @@ workflow:
     - bundle exec rake redirects
     # Create the offline search index
     # @todo make this conditional
-    - echo "Build offline search index"
+    # @todo show index compile time
     - node scripts/lunr/build_contents.js > public/lunr-content.json
     - cat public/lunr-content.json | node scripts/lunr/build_index.js > public/lunr-index.json
     # Calculate sizes before and after minifying/gzipping the static files (HTML, CSS, JS)
