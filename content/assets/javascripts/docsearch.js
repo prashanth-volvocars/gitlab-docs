@@ -1,8 +1,13 @@
 ---
-version: 3
+version: 4
 ---
 
 document.addEventListener('DOMContentLoaded', () => {
+  let version = "main"
+  if (document.querySelector('meta[name="docsearch:version"]').content.length > 0) {
+    version = document.querySelector('meta[name="docsearch:version"]').content;
+  }
+
   // eslint-disable-next-line no-undef
   docsearch({
     apiKey: '89b85ffae982a7f1adeeed4a90bb0ab1',
@@ -10,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     container: '#docsearch',
     appId: "3PNCFOU757",
     placeholder: 'Search the docs',
+    searchParameters: {
+      facetFilters: [`version:${version}`],
+    },
     resultsFooterComponent({ state }) {
       return {
         type: "a",
