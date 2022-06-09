@@ -61,7 +61,7 @@ module Gitlab
     end
 
     def allowed_link?(link)
-      link.start_with?('ee/') || link.start_with?('http')
+      link.start_with?('ee/', 'http')
     end
 
     def has_active_element?(collection)
