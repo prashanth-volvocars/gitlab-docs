@@ -19,7 +19,7 @@ RUN apk add --no-cache git \
 
 #- Start of builder stage -#
 
-FROM ruby:2.7.5-alpine3.15 AS builder
+FROM ruby:2.7.6-alpine3.16 AS builder
 
 # Copy minifier binary from the minifier stage
 COPY --from=minifier /minify /usr/local/bin/minify
@@ -64,7 +64,7 @@ RUN apk add --no-cache -U \
     xz-dev      \
     yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem update --silent --system 3.3.13 \
+    && gem update --silent --system \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
