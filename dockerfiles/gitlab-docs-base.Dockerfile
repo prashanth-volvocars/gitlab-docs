@@ -30,7 +30,7 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     xz-dev      \
     yarn        \
     && echo 'gem: --no-document' >> /etc/gemrc \
-    && gem update --silent --system 3.3.13 \
+    && gem update --silent --system \
     && printf "\n\e[32mINFO: Dependency versions:\e[39m\n" \
     && echo "Ruby: $(ruby --version)" \
     && echo "RubyGems: $(gem --version)" \
