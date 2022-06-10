@@ -58,7 +58,7 @@ To minimize problems during the documentation release process, use the following
 
   [Merge the release merge requests and run the necessary Docker image builds](#merge-merge-requests-and-run-docker-image-builds).
 
-  If the 22nd of the month falls on a weekend or public holiday, it's OK to complete this last publication step on the next working day. 
+  If the 22nd of the month falls on a weekend or public holiday, it's OK to complete this last publication step on the next working day.
 
 ## Create stable branch and Docker image for release
 

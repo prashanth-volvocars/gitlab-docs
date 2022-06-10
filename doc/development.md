@@ -122,7 +122,7 @@ Prerequisites:
 - You must have Docker or another compatible container runtime installed.
 - For Linux users, to run the `docker` CLI command as a non-root user,
   add your user to the `docker` user group, re-login, and restart
-  `docker.service`. 
+  `docker.service`.
 
 Edit the `versions` array to match that of the dropdown:
 

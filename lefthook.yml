@@ -16,3 +16,5 @@ pre-push:
       run: make hadolint-tests
     yamllint-tests:
       run: make yamllint-tests
+    markdownlint-tests:
+      run: make markdownlint-tests
