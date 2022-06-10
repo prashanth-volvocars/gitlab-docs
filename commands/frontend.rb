@@ -44,8 +44,6 @@ run do |opts, args, cmd|
   Dir.mkdir gl_ui_dest
 
   Dir.children("#{gl_ui_src}").each do |filename|
-    if filename.include?("css") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
-      puts "Copied #{gl_ui_src}/#{filename}"
-    end
+    puts "Copied #{gl_ui_src}/#{filename}" if filename.include?("css") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
   end
 end

@@ -136,9 +136,7 @@ namespace :release do
   desc 'Creates merge requests to update the dropdowns in all online versions'
   task :dropdowns do
     # Check if you're on the default branch before starting. Fail if you are.
-    if `git branch --show-current`.tr("\n", '') == ENV['CI_DEFAULT_BRANCH']
-      abort("\n#{COLOR_CODE_RED}ERROR: You are on the default branch. Create the current release branch and run the Rake task again.#{COLOR_CODE_RESET}")
-    end
+    abort("\n#{COLOR_CODE_RED}ERROR: You are on the default branch. Create the current release branch and run the Rake task again.#{COLOR_CODE_RESET}") if `git branch --show-current`.tr("\n", '') == ENV['CI_DEFAULT_BRANCH']
 
     # Load online versions
     versions = YAML.load_file('./content/_data/versions.yaml')
@@ -150,9 +148,7 @@ namespace :release do
     release_branch = "release-#{current_version.tr('.', '-')}"
 
     # Check if a release branch has been created, if not fail and warn the user
-    if `git rev-parse --verify #{release_branch}`.empty?
-      abort("\n#{COLOR_CODE_RED}ERROR: A release branch for the latest stable version has not been created.#{COLOR_CODE_RESET}")
-    end
+    abort("\n#{COLOR_CODE_RED}ERROR: A release branch for the latest stable version has not been created.#{COLOR_CODE_RESET}") if `git rev-parse --verify #{release_branch}`.empty?
 
     # Create a merge request to update the dropdowns in all online versions
     versions['online'].each do |version|
