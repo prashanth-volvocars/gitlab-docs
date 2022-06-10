@@ -20,6 +20,7 @@ title: LunrJS Demo | GitLab Documentation
             const resultsList = document.querySelector('.lunr-results')
             const map = JSON.parse(data)
     
+            resultsList.innerHTML = "";
             document.querySelector('#results-summary').innerHTML = `Query returned ${results.length} results`
                     
             for (var item in results) {
