@@ -82,3 +82,20 @@ You can view the search usage in the
 If you want to receive weekly reports of the search usage, open a new
 [access request](https://about.gitlab.com/handbook/engineering/#access-requests)
 issue and ask that your email is added to the DocSearch alias (the same email as found in 1Password).
+
+## Testing Algolia configuration changes
+
+In order to test configuration changes without impacting docs.gitlab.com, you can create an additional
+crawler via the [Algolia dashboard](https://crawler.algolia.com/admin/crawlers?sort=status&order=ASC&limit=20).
+You can copy the config from the crawler that we use in production and make any changes you want. Make sure that
+you change `indexName` to something that starts with `gitlab`, for example `gitlab_mytest`
+(this is an Algolia [limitation](https://github.com/algolia/docsearch/issues/1392#issuecomment-1139907134)).
+
+The new crawler will generate its own [index](https://www.algolia.com/apps/3PNCFOU757/indices), which can also be configured without impacting the production instance.
+
+To use a test index from a review app or locally, update the `apiKey` and `indexName` fields in either:
+
+- [DocSearch config](../content/assets/javascripts/docsearch.js) (homepage and navbar search).
+- [InstantSearch config](../content/frontend/search/index.js) (dedicated search page).
+
+You can find the API key under **Crawler > Settings** on the Algolia dashboard. This is a public, read-only key, so you can use it in merge requests.
