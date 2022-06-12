@@ -40,7 +40,7 @@ def retrieve_branch(slug)
     # If the upstream product doesn't follow a stable branch scheme, set the
     # branch to the default
     else
-      "#{default_branch(products[slug].fetch('repo'))}"
+      default_branch(products[slug].fetch('repo'))
     end
   # If we're NOT on a gitlab-docs stable branch, fetch the BRANCH_* environment
   # variable, and if not assigned, set to the default branch.
