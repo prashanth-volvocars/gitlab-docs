@@ -14,13 +14,13 @@ DocSearch layouts are defined in various places:
 
 - Home page: [`content/index.erb`](../content/index.erb)
 - Dedicated search page under `/search`: [`layouts/instantsearch.html`](../layouts/instantsearch.html)
-- Every other page: [`layouts/docsearch.html`](../layouts/docsearch.html)
+- Every other page: [`layouts/header.html`](../layouts/header.html)
 
 A Javascript snippet initiates docsearch by using an API key, app ID,
 and an index name that are needed for Algolia to show the results:
 
 - Dedicated search page under `/search`: [`content/frontend/search/index.js`](../content/frontend/search/index.js)
-- Every other page: [`content/assets/javascripts/docsearch.js`](../content/assets/javascripts/docsearch.js)
+- Every other page: [`content/frontend/search/docsearch.js`](../content/frontend/search/docsearch.js)
 
 ## Override DocSearch CSS
 

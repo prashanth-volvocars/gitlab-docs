@@ -16,9 +16,9 @@
       </div>
     </div>
   </section>
-  <script src="/frontend/shared/global_imports.js"></script>
+  <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
+  <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
   <script src="<%= @items['/frontend/404/404.*'].path %>"></script>
-  <%= render '/docsearch.*' %>
   <% if production? %>
   <%# Add analytics only in production %>
     <%= render '/analytics.*' %>
