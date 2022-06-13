@@ -1,4 +1,6 @@
+#
 # Base image for other Docker images
+# Includes all system dependencies to build the GitLab Docs site
 #
 # RUBY_VERSION and ALPINE_VERSION are defined in ../.gitlab-ci.yml
 ARG RUBY_VERSION
@@ -14,13 +16,13 @@ RUN printf "\n\e[32mINFO: Installing dependencies..\e[39m\n" && apk add --no-cac
     gcompat     \
     git         \
     gnupg       \
-    go          \
     grep        \
     gzip        \
     jq          \
     libcurl     \
     libxslt     \
     libxslt-dev \
+    minify      \
     nodejs      \
     openssl     \
     pngquant    \

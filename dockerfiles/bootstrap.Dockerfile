@@ -1,3 +1,5 @@
+# DEPRECATED: DO NOT UPDATE
+
 # This is the Nanoc bootstrap Dockerfile which builds an image that contains
 # all Nanoc's runtime dependencies and gems.
 
