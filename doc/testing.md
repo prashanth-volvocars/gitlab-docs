@@ -10,22 +10,29 @@ configured in the project's [`.gitlab-ci.yml`](../.gitlab-ci.yml) file.
 
 These code tests are included in the project:
 
-| Test target | Tool        | Purpose           |
-|:------------|:------------|:------------------|
-| CSS         | Stylelint   | Code quality      |
-| Dockerfiles | Hadolint    | Syntax checks     |
-| JavaScript  | ESLint      | Syntax checks     |
-| JavaScript  | Prettier    | Code formatting   |
-| Ruby        | RSpec       | Unit tests        |
-| Vue         | Jest        | Unit tests        |
-| YAML        | yamllint    | Syntax checks     |
+| Test target | Tool         | Make target          | Purpose                                    |
+|:----------- |:-------------|:---------------------|:-------------------------------------------|
+| CSS         | Stylelint    | `stylelint-tests`    | Code quality                               |
+| Dockerfiles | Hadolint     | `hadolint-tests`     | Syntax checks                              |
+| JavaScript  | ESLint       | `eslint-tests`       | Syntax checks                              |
+| JavaScript  | Prettier     | `prettier-tests`     | Code formatting                            |
+| Markdown    | markdownlint | `markdownlint-tests` | Documentation formatting and syntax checks |
+| Ruby        | RSpec        | `rspec-tests`        | Unit tests                                 |
+| Vue         | Jest         | `jest-tests`         | Unit tests                                 |
+| YAML        | yamllint     | `yamllint-tests`     | Syntax checks                              |
 
 ### Run code tests locally
 
-To run the tests:
+To run all tests:
 
 ```shell
 make test
+```
+
+You can also run tests individually by specifying the Make target. For example, to run RSpec tests only:
+
+```shell
+make rspec-tests
 ```
 
 ### Install Lefthook
