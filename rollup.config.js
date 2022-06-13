@@ -6,6 +6,7 @@ const glob = require('glob');
 const commonjs = require('@rollup/plugin-commonjs');
 const { babel } = require('@rollup/plugin-babel');
 const importResolver = require('rollup-plugin-import-resolver');
+const css = require('rollup-plugin-import-css');
 const svg = require('rollup-plugin-svg');
 const vue = require('rollup-plugin-vue');
 
@@ -35,6 +36,7 @@ module.exports = glob.sync('content/frontend/**/*.js').map((file) => ({
       babelHelpers: 'bundled',
     }),
     json(),
+    css(),
     importResolver({
       alias: {
         vue: './node_modules/vue/dist/vue.esm.browser.min.js',

@@ -8,14 +8,14 @@
     <%= render '/gtm.*' %>
     <%= render '/header.*' %>
     <%= yield %>
-    <%= render '/docsearch.*' %>
     <% if production? and ENV['CI_COMMIT_REF_NAME'] == ENV['CI_DEFAULT_BRANCH'] %>
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
     <% end %>
     <%= render '/schema-microdata.*' %>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="/frontend/shared/global_imports.js"></script>
-    <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
+    <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
+    <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
+    <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
   </body>
 </html>

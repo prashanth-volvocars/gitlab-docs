@@ -93,12 +93,12 @@
         </div>
       </div>
     </section>
-    <script src="/frontend/shared/global_imports.js"></script>
+    <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
+    <script src="<%= @items['/frontend/search/docsearch.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/toggle_popover.*'].path %>"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
     <script src="<%= @items['/assets/javascripts/clipboardjs.*'].path %>"></script>
     <script src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
-    <%= render '/docsearch.*' %>
     <script src="<%= @items['/assets/javascripts/mermaid.*'].path %>"></script>
     <% if production? %>
     <%# Add analytics only in production %>
