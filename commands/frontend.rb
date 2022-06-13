@@ -43,7 +43,7 @@ run do |opts, args, cmd|
   gl_ui_dest = 'public/assets/stylesheets/gitlab-ui'
   Dir.mkdir gl_ui_dest
 
-  Dir.children("#{gl_ui_src}").each do |filename|
+  Dir.children(gl_ui_src).each do |filename|
     puts "Copied #{gl_ui_src}/#{filename}" if filename.include?("css") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
   end
 end
