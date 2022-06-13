@@ -354,6 +354,19 @@ yaml_lint:
     - yamllint .gitlab-ci.yml content/_data
 
 #
+# Run markdownlint tests
+#
+markdownlint:
+  extends:
+    - .rules_site_tests
+    - .cache_yarn
+    - .yarn
+  needs: []
+  stage: test
+  script:
+    - make markdownlint-tests
+
+#
 # Check for broken external links
 #
 test_external_links:
