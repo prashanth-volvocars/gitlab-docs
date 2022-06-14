@@ -444,7 +444,7 @@ sections:
       - category_title: Datadog
         category_url: 'ee/integration/datadog.html'
       - category_title: Elasticsearch
-        category_url: 'ee/integration/elasticsearch.html'
+        category_url: 'ee/integration/advanced_search/elasticsearch.html'
         docs:
           - doc_title: Elasticsearch troubleshooting
             doc_url: 'ee/integration/advanced_search/elasticsearch_troubleshooting.html'
