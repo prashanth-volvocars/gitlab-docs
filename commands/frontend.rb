@@ -38,12 +38,11 @@ run do |opts, args, cmd|
     puts 'Failed to create icons.svg!'
   end
 
-  puts 'Copying GitLab UI CSS...'
+  puts 'Copying GitLab UI CSS sourcemaps...'
   gl_ui_src = 'node_modules/@gitlab/ui/dist'
-  gl_ui_dest = 'public/assets/stylesheets/gitlab-ui'
-  Dir.mkdir gl_ui_dest
+  gl_ui_dest = 'public/frontend/shared'
 
   Dir.children(gl_ui_src).each do |filename|
-    puts "Copied #{gl_ui_src}/#{filename}" if filename.include?("css") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
+    puts "Copied #{gl_ui_src}/#{filename}" if filename.include?("map") && File.write("#{gl_ui_dest}/#{filename}", File.read("#{root}/#{gl_ui_src}/#{filename}"))
   end
 end
