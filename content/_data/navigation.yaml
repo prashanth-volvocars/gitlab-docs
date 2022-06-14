@@ -2816,6 +2816,13 @@ sections:
                 doc_url: 'ee/development/testing_guide/testing_migrations_guide.html'
               - doc_title: Testing Rake tasks
                 doc_url: 'ee/development/testing_guide/testing_rake_tasks.html'
+          - doc_title: Testing (contract)
+            doc_url: 'ee/development/testing_guide/contract/'
+            docs:
+              - doc_title: Writing consumer tests
+                doc_url: 'ee/development/testing_guide/contract/consumer_tests.html'
+              - doc_title: Writing provider tests
+                doc_url: 'ee/development/testing_guide/contract/provider_tests.html'
           - doc_title: Testing (end to end)
             doc_url: 'ee/development/testing_guide/end_to_end/'
             docs:
