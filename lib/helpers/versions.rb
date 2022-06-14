@@ -11,8 +11,8 @@ module Nanoc::Helpers
     def active_dropdown(selection)
       if archives?
         active_class if selection == 'archives'
-      else
-        active_class if selection == ENV['CI_COMMIT_REF_NAME']
+      elsif selection == ENV['CI_COMMIT_REF_NAME']
+        active_class
       end
     end
 
