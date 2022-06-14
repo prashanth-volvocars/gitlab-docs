@@ -1,4 +1,4 @@
-brew "hadolint"
-brew "yamllint"
 brew "gpg"
+brew "hadolint"
 brew "jq"
+brew "yamllint"

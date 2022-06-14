@@ -93,7 +93,7 @@ install-nodejs-dependencies:
 	@printf "\n$(INFO)INFO: Installing Node.js dependencies...$(END)\n"
 	@yarn install --frozen-lockfile
 
-setup: setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
+setup: brew-bundle setup-asdf install-asdf-dependencies install-ruby-dependencies install-nodejs-dependencies
 
 update:
 	@printf "\n$(INFO)INFO: Stashing any changes, switching to main branch, and pulling updates to GitLab Docs project...$(END)\n"
@@ -157,4 +157,4 @@ markdownlint-tests:
 	@printf "\n$(INFO)INFO: Running markdownlint tests...$(END)\n"
 	@yarn markdownlint doc/**/*.md
 
-test: setup brew-bundle rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests
+test: setup rspec-tests jest-tests eslint-tests prettier-tests stylelint-tests hadolint-tests yamllint-tests markdownlint-tests
