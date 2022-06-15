@@ -201,7 +201,7 @@ end
 
 desc 'Create the _redirects file'
 task :redirects do
-  redirects_yaml = YAML.load_file('content/_data/redirects.yaml')
+  redirects_yaml = YAML.load_file('content/_data/redirects.yaml', permitted_classes: [Date])
   redirects_file = 'public/_redirects'
 
   # Remove _redirects before populating it
