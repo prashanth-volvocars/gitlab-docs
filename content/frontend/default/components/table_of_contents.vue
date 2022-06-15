@@ -1,4 +1,5 @@
 <script>
+import { GlIcon } from '@gitlab/ui';
 import { flattenItems } from '../../shared/toc/flatten_items';
 import CollapsibleContainer from './collapsible_container.vue';
 import TableOfContentsList from './table_of_contents_list.vue';
@@ -8,6 +9,7 @@ export default {
   components: {
     CollapsibleContainer,
     TableOfContentsList,
+    GlIcon,
   },
   props: {
     items: {
@@ -50,8 +52,8 @@ export default {
       // Flatten the items so that only one is highlighted at a time
       return flattenItems(this.items.concat(this.helpAndFeedbackItems));
     },
-    collapseIconClass() {
-      return this.isCollapsed ? 'fa-angle-right' : 'fa-angle-down';
+    collapseIcon() {
+      return this.isCollapsed ? 'chevron-right' : 'chevron-down';
     },
   },
   methods: {
@@ -74,12 +76,7 @@ export default {
           data-testid="collapse"
           @click.prevent="toggleCollapse"
         >
-          <i
-            class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3"
-            :class="collapseIconClass"
-            role="presentation"
-          ></i>
-          On this page
+          <gl-icon :name="collapseIcon" class="gl-pt-2 gl-mr-2 s18" /> On this page
         </a>
       </h4>
       <h4 class="border-0 gl-font-base font-weight-bold toc-lg">On this page</h4>

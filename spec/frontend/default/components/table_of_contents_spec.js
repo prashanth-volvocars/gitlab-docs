@@ -35,7 +35,7 @@ describe('frontend/default/components/table_of_contents', () => {
   };
 
   const findCollapseButton = () => wrapper.find('[data-testid="collapse"]');
-  const findCollapseIcon = () => findCollapseButton().find('i');
+  const findCollapseIcon = () => findCollapseButton().find('svg');
   const findCollapsibleContainer = () => wrapper.find('[data-testid="container"]');
   const findMainList = () => wrapper.find('[data-testid="main-list"]');
   const findMainListItems = () => findMainList().props('items');
@@ -44,7 +44,9 @@ describe('frontend/default/components/table_of_contents', () => {
   const expectCollapsed = (isCollapsed = true) => {
     expect(findCollapseButton().attributes('aria-expanded')).toBe(isCollapsed ? undefined : 'true');
     expect(findCollapsibleContainer().props('isCollapsed')).toBe(isCollapsed);
-    expect(findCollapseIcon().classes(isCollapsed ? 'fa-angle-right' : 'fa-angle-down')).toBe(true);
+    expect(findCollapseIcon().attributes('data-testid')).toBe(
+      isCollapsed ? 'chevron-right-icon' : 'chevron-down-icon',
+    );
   };
 
   it('matches snapshot', () => {
