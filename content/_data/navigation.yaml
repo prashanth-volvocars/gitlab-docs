@@ -2475,6 +2475,8 @@ sections:
                 doc_url: 'ee/development/cicd/pipeline_wizard.html'
           - doc_title: Auto DevOps development
             doc_url: 'ee/development/auto_devops.html'
+          - doc_title: ChatOps on GitLab.com
+            doc_url: 'ee/development/chatops_on_gitlabcom.html'
           - doc_title: Code intelligence
             doc_url: 'ee/development/code_intelligence/'
           - doc_title: CodeSandbox development environment
