@@ -1,5 +1,5 @@
 ---
-version: 11
+version: 12
 ---
 
 @import 'variables';
@@ -346,6 +346,11 @@ version: 11
       background-color: $landing-gl-blue-600;
       height: 9.25rem;
       width: 9.25rem;
+      transition: all 0.5s;
+
+      &:hover {
+        box-shadow: 0.1rem 0.5rem 2rem 0 $landing-gl-white-500;
+      }
     }
   }
 
