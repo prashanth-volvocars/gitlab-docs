@@ -8,7 +8,7 @@ include:
       - '/ci/danger-review.yml'
 
 default:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs:base
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/base:alpine-3.16-ruby-2.7.6-0bc327a4
   tags:
     - gitlab-org
   # Check Ruby, RubyGems, and Bundler versions and install gems
@@ -185,7 +185,6 @@ workflow:
 ###############################################
 
 .build_base:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs:bootstrap
   stage: build
   extends:
     - .cache_gem_yarn
@@ -240,7 +239,7 @@ compile_dev:
 # Test internal links and anchors with nanoc
 #
 test_internal_links_and_anchors:
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.15-ruby-2.7.5-cee62c13
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
   extends:
     - .rules_site_tests
     - .cache_gem
@@ -385,7 +384,7 @@ test_EOL_whitespace:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.15-ruby-2.7.5-cee62c13
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
   needs: []
   before_script: []
   dependencies: []
@@ -402,7 +401,7 @@ test_unlinked_images:
     - .rules_chores
     - .cache_gem
   stage: test
-  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.15-ruby-2.7.5-cee62c13
+  image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
   needs: []
   before_script: []
   dependencies: []
