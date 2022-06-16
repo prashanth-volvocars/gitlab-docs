@@ -358,8 +358,10 @@ sections:
                 doc_url: 'ee/update/patch_versions.html'
               - doc_title: Change from Community Edition to Enterprise Edition
                 doc_url: 'ee/update/upgrading_from_ce_to_ee.html'
-          - doc_title: Zero-downtime upgrades
+          - doc_title: Zero-downtime upgrades for multi-node instances
             doc_url: 'ee/update/zero_downtime.html'
+          - doc_title: Upgrades with downtime for multi-node instances
+            doc_url: 'ee/update/with_downtime.html'
           - doc_title: Change from Enterprise Edition to Community Edition
             doc_url: 'ee/downgrade_ee_to_ce/'
           - doc_title: Releases and maintenance
