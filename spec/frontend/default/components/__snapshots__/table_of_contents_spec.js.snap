@@ -17,12 +17,17 @@ exports[`frontend/default/components/table_of_contents matches snapshot 1`] = `
         href="#"
         role="button"
       >
-        <i
-          class="fa d-flex align-items-center justify-content-center mr-1 gl-w-3 fa-angle-right"
-          role="presentation"
-        />
-        
-        On this page
+        <svg
+          aria-hidden="true"
+          class="gl-pt-2 gl-mr-2 s18 gl-icon s16"
+          data-testid="chevron-right-icon"
+          role="img"
+        >
+          <use
+            href="[object Object]#chevron-right"
+          />
+        </svg>
+         On this page
       
       </a>
     </h4>
