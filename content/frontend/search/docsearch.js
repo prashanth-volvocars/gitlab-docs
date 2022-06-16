@@ -1,11 +1,9 @@
 import docsearch from '@docsearch/js';
 import '@docsearch/css';
+import { getDocsVersion } from './search';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let version = 'main';
-  if (document.querySelector('meta[name="docsearch:version"]').content.length > 0) {
-    version = document.querySelector('meta[name="docsearch:version"]').content;
-  }
+  const docsVersion = getDocsVersion();
 
   // eslint-disable-next-line no-undef
   docsearch({
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     appId: '3PNCFOU757',
     placeholder: 'Search the docs',
     searchParameters: {
-      facetFilters: [`version:${version}`],
+      facetFilters: [`version:${docsVersion}`],
     },
     resultsFooterComponent({ state }) {
       return {

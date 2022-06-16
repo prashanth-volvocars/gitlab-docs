@@ -3,7 +3,7 @@
   <head>
     <%= render '/head.*' %>
     <link rel="canonical" href="<%= @config[:base_url] %>/search/">
-    <%= render '/instantsearch-head.*' %>
+    <link rel="stylesheet" href="/frontend/search/instantsearch.css">
   </head>
   <body>
     <%= render '/gtm.*' %>
@@ -11,17 +11,17 @@
     <section class="gl-docs container pt-5">
       <div class="row">
         <div class="col-12 mt-5">
-          <div class="main class pl-lg-4 instantsearch-input">
-            <%= yield %>
+          <div class="main class pl-lg-4">
+            <div class="js-instantsearch"></div>
             <%= render '/footer.*' %>
           </div>
         </div>
       </div>
     </section>
-    <script src="/frontend/shared/global_imports.js"></script>
-    <script type="application/javascript" src="<%= @items['/assets/javascripts/badges.*'].path %>"></script>
+    <script src="<%= @items['/frontend/shared/global_imports.*'].path %>"></script>
     <script src="<%= @items['/frontend/header/index.*'].path %>"></script>
-    <script src="<%= @items['/frontend/search/index.*'].path %>"></script>
+    <script src="<%= @items['/frontend/search/instantsearch.*'].path %>"></script>
+
     <% if production? %>
     <%# Add analytics only in production %>
       <%= render '/analytics.*' %>
