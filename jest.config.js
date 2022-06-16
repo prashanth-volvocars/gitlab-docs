@@ -1,11 +1,10 @@
-const moduleNameMapper = {
-  '^~(/.*)$': '<rootDir>/content/frontend$1',
-};
-
 module.exports = {
   testMatch: ['<rootDir>/spec/frontend/**/**/*_spec.js'],
   moduleFileExtensions: ['js', 'json', 'vue'],
-  moduleNameMapper,
+  moduleNameMapper: {
+    '^~(/.*)$': '<rootDir>/content/frontend$1',
+    '\\.(css|less|sass|scss)$': '<rootDir>/spec/frontend/__mocks__/style_mock.js',
+  },
   cacheDirectory: '<rootDir>/tmp/cache/jest',
   restoreMocks: true,
   transform: {
@@ -13,5 +12,7 @@ module.exports = {
     '^.+\\.vue$': '@vue/vue2-jest',
     '^.+\\.svg$': '@vue/vue2-jest',
   },
-  transformIgnorePatterns: ['node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue)/)'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@gitlab/(ui|svgs)|bootstrap-vue|vue-instantsearch|instantsearch.js)/)',
+  ],
 };
