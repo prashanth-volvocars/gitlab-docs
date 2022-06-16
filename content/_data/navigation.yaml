@@ -2665,8 +2665,6 @@ sections:
                 doc_url: 'ee/development/fe_guide/vue3_migration.html'
               - doc_title: Widgets
                 doc_url: 'ee/development/fe_guide/widgets.html'
-          - doc_title: GitLab Pages development
-            doc_url: 'ee/development/pages/'
           - doc_title: Geo development
             doc_url: 'ee/development/geo.html'
             docs:
@@ -2922,6 +2920,9 @@ sections:
           - doc_title: Workspace
             doc_url: 'ee/development/workspace/'
       # End of GitLab app development documentation
+
+      - doc_title: Contributing to GitLab Pages
+        doc_url: 'ee/development/pages/'
 
       # Omnibus GitLab development documentation
       - category_title: Contribute to Omibus GitLab
