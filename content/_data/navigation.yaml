@@ -1078,6 +1078,8 @@ sections:
                 docs:
                   - doc_title: SCIM provisioning
                     doc_url: 'ee/user/group/saml_sso/scim_setup.html'
+                  - doc_title: SAML Group Sync
+                    doc_url: 'ee/user/group/saml_sso/group_sync.html'
                   - doc_title: Troubleshooting Group SAML and SCIM
                     doc_url: 'ee/administration/troubleshooting/group_saml_scim.html'
               - doc_title: Subgroups
