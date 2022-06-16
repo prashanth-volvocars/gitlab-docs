@@ -2921,8 +2921,8 @@ sections:
             doc_url: 'ee/development/workspace/'
       # End of GitLab app development documentation
 
-      - doc_title: Contributing to GitLab Pages
-        doc_url: 'ee/development/pages/'
+      - category_title: Contributing to GitLab Pages
+        category_url: 'ee/development/pages/'
 
       # Omnibus GitLab development documentation
       - category_title: Contribute to Omibus GitLab
