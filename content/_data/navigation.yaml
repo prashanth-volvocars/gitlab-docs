@@ -2930,7 +2930,7 @@ sections:
       # End of GitLab app development documentation
 
       # Omnibus GitLab development documentation
-      - category_title: Contribute to Omibus GitLab
+      - category_title: Contribute to Omnibus GitLab
         category_url: 'omnibus/development/'
         docs:
           - doc_title: Get started
