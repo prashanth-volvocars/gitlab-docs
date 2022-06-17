@@ -41,10 +41,14 @@ class IntroducedInFilter < Nanoc::Filter
     @incremental_id += 1
     # If the content is a list of items, collapse the content.
     if content.match?(%r{<ul>}i)
-      %(<div class="introduced-in mb-3">Version history
-          <button class="text-expander" type="button" data-toggle="collapse" data-target="#release_version_notes_#{@incremental_id}" aria-expanded="false" aria-controls="release_version_notes_#{@incremental_id}" aria-label="Version history"></button>
-          <div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">#{content}</div>
-        </div>)
+      <<~HTML
+      <div class="introduced-in mb-3">Version history
+        <button class="text-expander" type="button" data-toggle="collapse" data-target="#release_version_notes_#{@incremental_id}" aria-expanded="false" aria-controls="release_version_notes_#{@incremental_id}" aria-label="Version history"></button>
+        <div class="introduced-in-content collapse" id="release_version_notes_#{@incremental_id}">
+          #{content}
+        </div>
+      </div>
+      HTML
     else
       %(<div class="introduced-in">#{content}</div>)
     end
