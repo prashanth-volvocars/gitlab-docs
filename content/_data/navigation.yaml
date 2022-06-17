@@ -1581,8 +1581,6 @@ sections:
               - doc_title: Auto DevOps
                 doc_url: 'ee/topics/autodevops/'
                 docs:
-                  - doc_title: Get started
-                    doc_url: 'ee/topics/autodevops/quick_start_guide.html'
                   - doc_title: Requirements
                     doc_url: 'ee/topics/autodevops/requirements.html'
                   - doc_title: Stages
@@ -1593,6 +1591,12 @@ sections:
                     doc_url: 'ee/topics/autodevops/upgrading_postgresql.html'
                   - doc_title: Upgrade Auto Deploy dependencies
                     doc_url: 'ee/topics/autodevops/upgrading_auto_deploy_dependencies.html'
+                  - doc_title: Deploy to GKE
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_gke.html'
+                  - doc_title: Deploy to ECS
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ecs.html'
+                  - doc_title: Deploy to EC2
+                    doc_url: 'ee/topics/autodevops/cloud_deployments/auto_devops_with_ec2.html'
                   - doc_title: Troubleshooting
                     doc_url: 'ee/topics/autodevops/troubleshooting.html'
               - doc_title: Testing
@@ -1857,7 +1861,7 @@ sections:
               - doc_title: Deploy to AWS
                 doc_url: 'ee/ci/cloud_deployment/'
               - doc_title: Deploy to Amazon ECS
-                doc_url: 'ee/ci/cloud_deployment/ecs/quick_start_guide.html'
+                doc_url: 'ee/ci/cloud_deployment/ecs/deploy_to_aws_ecs.html'
           - doc_title: Releases
             doc_url: 'ee/user/project/releases/'
           - doc_title: Review Apps
