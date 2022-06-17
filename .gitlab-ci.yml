@@ -19,6 +19,12 @@ default:
     - bundle config set --local deployment true  # Install dependencies into ./vendor/ruby
     - bundle install --jobs 4
 
+.alternative_default:
+  before_script:
+    - ruby -v
+    - gem -v
+    - bundle -v
+
 .yarn:
   before_script:
     - yarn install --cache-folder .yarn-cache
@@ -243,6 +249,7 @@ test_internal_links_and_anchors:
   extends:
     - .rules_site_tests
     - .cache_gem
+    - .alternative_default
   stage: test
   script:
     # Only check files in top-level directories. This means a much faster and less repetitive check of global navigation links.
