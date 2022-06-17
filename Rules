@@ -57,6 +57,9 @@ compile '/**/*.html' do
   layout '/default.*'
 end
 
+# Do not process Markdown files in ee/doc/drawers/
+ignore '/ee/drawers/*.md'
+
 compile '/**/*.md' do
   if item[:redirect_to].nil?
 
