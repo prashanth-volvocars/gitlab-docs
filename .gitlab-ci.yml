@@ -236,9 +236,9 @@ compile_dev:
 ###############################################
 
 #
-# Test internal links and anchors with nanoc
+# Test the links in the global nav
 #
-test_internal_links_and_anchors:
+test_global_nav_links:
   image: registry.gitlab.com/gitlab-org/gitlab-docs/lint-html:alpine-3.16-ruby-2.7.6-0bc327a4
   extends:
     - .rules_site_tests
@@ -248,7 +248,7 @@ test_internal_links_and_anchors:
     # Only check files in top-level directories. This means a much faster and less repetitive check of global navigation links.
     - echo "  all:" >> nanoc.yaml
     - echo "    exclude_files:" >> nanoc.yaml
-    - echo "      - '\/(ee|runner|omnibus|charts)\/.*\/.*'" >> nanoc.yaml
+    - echo "      - '\/(ee|runner|omnibus|charts|operator)\/.*\/.*'" >> nanoc.yaml
     - "parallel time bundle exec nanoc check ::: internal_links internal_anchors"
 
 #
