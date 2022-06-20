@@ -129,8 +129,8 @@ namespace :release do
     `git add .gitlab-ci.yml #{version}.Dockerfile`
     `git commit -m 'Release cut #{version}'`
 
-    puts "\n#{COLOR_CODE_GREEN}INFO: Created new Dockerfile: #{dockerfile}.#{COLOR_CODE_RESET}"
-    puts "#{COLOR_CODE_GREEN}INFO: You can now add, commit and push the new branch: git push origin #{version}.#{COLOR_CODE_RESET}"
+    puts "\n#{COLOR_CODE_GREEN}INFO: Created new Dockerfile:#{COLOR_CODE_RESET} #{dockerfile}."
+    puts "#{COLOR_CODE_GREEN}INFO: To push the new branch, run:#{COLOR_CODE_RESET} git push origin #{version}."
   end
 
   desc 'Creates merge requests to update the dropdowns in all online versions'
