@@ -68,8 +68,7 @@ To create a stable branch of the `gitlab-docs` project and a Docker image for th
 1. Update your local clone:
 
    ```shell
-   git stash -u
-   git fetch origin && git rebase origin/main
+   make update
    ```
 
 1. Run the Rake task to create the single version. For example, to create the 15.0 release branch
@@ -130,19 +129,14 @@ To create the release merge request for the release:
 1. Update your local clone:
 
    ```shell
-   git stash -u
-   git fetch origin && git rebase origin/main
+   make update
    ```
 
 1. Create a branch `release-X-Y`. For example:
 
    ```shell
-   git checkout main
    git checkout -b release-15-0
    ```
-
-   Confirm the branch has been created. Go to <https://gitlab.com/gitlab-org/gitlab-docs/-/branches/active>
-   and verify the branch is listed.
 
 1. Edit `content/_data/versions.yaml` and update the lists of versions to reflect the new release:
 
