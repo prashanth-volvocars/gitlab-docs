@@ -148,10 +148,10 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.17.10.tgz#711dc726a492dfc8be8220028b1b92482362baab"
   integrity sha512-GZt/TCsG70Ms19gfZO1tM4CVnXsPgEPBCpJu+Qz3L0LUDsY5nZqFZglIoPC1kIYOtNBZlrnFT+klg12vFGZXrw==
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.17.0", "@babel/core@^7.18.2":
-  version "7.18.2"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.18.2.tgz#87b2fcd7cce9becaa7f5acebdc4f09f3dd19d876"
-  integrity sha512-A8pri1YJiC5UnkdrWcmfZTJTV85b4UXTAfImGmCfYmax4TR9Cw8sDS0MOk++Gp2mE/BefVJ5nwy5yzqNJbP/DQ==
+"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.17.0", "@babel/core@^7.18.5":
+  version "7.18.5"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.18.5.tgz#c597fa680e58d571c28dda9827669c78cdd7f000"
+  integrity sha512-MGY8vg3DxMnctw0LdvSEojOsumc70g0t18gNyUdAZqB1Rpd1Bqo/svHGvt+UJ6JcGX+DIekGFDxxIWofBxLCnQ==
   dependencies:
     "@ampproject/remapping" "^2.1.0"
     "@babel/code-frame" "^7.16.7"
@@ -159,10 +159,10 @@
     "@babel/helper-compilation-targets" "^7.18.2"
     "@babel/helper-module-transforms" "^7.18.0"
     "@babel/helpers" "^7.18.2"
-    "@babel/parser" "^7.18.0"
+    "@babel/parser" "^7.18.5"
     "@babel/template" "^7.16.7"
-    "@babel/traverse" "^7.18.2"
-    "@babel/types" "^7.18.2"
+    "@babel/traverse" "^7.18.5"
+    "@babel/types" "^7.18.4"
     convert-source-map "^1.7.0"
     debug "^4.1.0"
     gensync "^1.0.0-beta.2"
@@ -400,10 +400,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.16.7", "@babel/parser@^7.18.0", "@babel/parser@^7.6.0", "@babel/parser@^7.9.6":
-  version "7.18.0"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.0.tgz#10a8d4e656bc01128d299a787aa006ce1a91e112"
-  integrity sha512-AqDccGC+m5O/iUStSJy3DGRIUFu7WbY/CppZYwrEUB4N0tZlnI8CSTsgL7v5fHVFmUbRv2sd+yy27o8Ydt4MGg==
+"@babel/parser@^7.1.0", "@babel/parser@^7.14.7", "@babel/parser@^7.16.7", "@babel/parser@^7.18.5", "@babel/parser@^7.6.0", "@babel/parser@^7.9.6":
+  version "7.18.5"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.5.tgz#337062363436a893a2d22faa60be5bb37091c83c"
+  integrity sha512-YZWVaglMiplo7v8f1oMQ5ZPQr0vn7HPeZXxXWsxXJRjGVrzUFn9OxFQl1sb5wzfootjA/yChhW84BV+383FSOw==
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.17.12":
   version "7.17.12"
@@ -1035,10 +1035,10 @@
     "@babel/parser" "^7.16.7"
     "@babel/types" "^7.16.7"
 
-"@babel/traverse@^7.13.0", "@babel/traverse@^7.16.7", "@babel/traverse@^7.16.8", "@babel/traverse@^7.18.0", "@babel/traverse@^7.18.2", "@babel/traverse@^7.7.2":
-  version "7.18.2"
-  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.2.tgz#b77a52604b5cc836a9e1e08dca01cba67a12d2e8"
-  integrity sha512-9eNwoeovJ6KH9zcCNnENY7DMFwTU9JdGCFtqNLfUAqtUHRCOsTOqWoffosP8vKmNYeSBUv3yVJXjfd8ucwOjUA==
+"@babel/traverse@^7.13.0", "@babel/traverse@^7.16.7", "@babel/traverse@^7.16.8", "@babel/traverse@^7.18.0", "@babel/traverse@^7.18.2", "@babel/traverse@^7.18.5", "@babel/traverse@^7.7.2":
+  version "7.18.5"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.5.tgz#94a8195ad9642801837988ab77f36e992d9a20cd"
+  integrity sha512-aKXj1KT66sBj0vVzk6rEeAO6Z9aiiQ68wfDgge3nHhA/my6xMM/7HGQUNumKZaoa2qUPQ5whJG9aAifsxUKfLA==
   dependencies:
     "@babel/code-frame" "^7.16.7"
     "@babel/generator" "^7.18.2"
@@ -1046,12 +1046,12 @@
     "@babel/helper-function-name" "^7.17.9"
     "@babel/helper-hoist-variables" "^7.16.7"
     "@babel/helper-split-export-declaration" "^7.16.7"
-    "@babel/parser" "^7.18.0"
-    "@babel/types" "^7.18.2"
+    "@babel/parser" "^7.18.5"
+    "@babel/types" "^7.18.4"
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/types@^7.0.0", "@babel/types@^7.16.0", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.17.0", "@babel/types@^7.18.0", "@babel/types@^7.18.2", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4", "@babel/types@^7.6.1", "@babel/types@^7.9.6":
+"@babel/types@^7.0.0", "@babel/types@^7.16.0", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.17.0", "@babel/types@^7.18.0", "@babel/types@^7.18.2", "@babel/types@^7.18.4", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4", "@babel/types@^7.6.1", "@babel/types@^7.9.6":
   version "7.18.4"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.4.tgz#27eae9b9fd18e9dccc3f9d6ad051336f307be354"
   integrity sha512-ThN1mBcMq5pG/Vm2IcBmPPfyPXbd8S02rS+OBIDENdufvqC7Z/jHPCv9IcP01277aKtDI8g/2XysBN4hA8niiw==
@@ -1124,24 +1124,24 @@
     eslint-plugin-vue "^8.5.0"
     lodash "^4.17.21"
 
-"@gitlab/stylelint-config@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/stylelint-config/-/stylelint-config-4.0.0.tgz#d24646592908d92dce35aaa8e7bea66fd53e4160"
-  integrity sha512-5avbb8XQLdnL/vdrxf9jvdPl/HPaXnI7Y/fArOHe1uMpgcBoBWUKmon15+lHJ4MgURsGuYSiM2FIgArDSylR4g==
+"@gitlab/stylelint-config@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/stylelint-config/-/stylelint-config-4.1.0.tgz#bd431406c8f8725afba353652f08e42c3301a982"
+  integrity sha512-WiTLRKoXutmAKR0z4Z/kuXiTAtblyA2XWX6vb2/NHhLd7oboKrxR8CiznSfw7SNxmYtqW/ripaQOdanR1fYMwA==
   dependencies:
-    postcss-scss "4.0.3"
+    postcss-scss "4.0.4"
     stylelint-declaration-strict-value "1.8.0"
-    stylelint-scss "4.1.0"
+    stylelint-scss "4.2.0"
 
-"@gitlab/svgs@^2.18.0":
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.18.0.tgz#aafff929bc5365f7cad736b6d061895b3f9aa381"
-  integrity sha512-Okbm4dAAf/aiaRojUT57yfqY/TVka/zAXN4T+hOx/Yho6wUT2eAJ8CcFpctPdt3kUNM4bHU2CZYoGqklbtXkmg==
+"@gitlab/svgs@^2.21.0":
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/svgs/-/svgs-2.21.0.tgz#bc71951dc35a61647fb2c0267cca6fb55a04d317"
+  integrity sha512-cVa5cgvVmY2MsRdV61id+rLTsY/tAGPq7Og9ETblUuZXl06ciw8H/g7cYPMxN39DdEfDklzbUnS98OJlMmD9TQ==
 
-"@gitlab/ui@^41.5.0":
-  version "41.5.0"
-  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-41.5.0.tgz#cf999e9c1e5a913d4eb703260d93d5808309b731"
-  integrity sha512-hbfBnGWRX4xXlxjwGBPXjoxUtgcJLPnpar1sVDkdzd3i9reSu4rJh/Fk+ATUoLeq8aUeFzvDgWEF5ucZAMSCOA==
+"@gitlab/ui@^41.10.0":
+  version "41.10.0"
+  resolved "https://registry.yarnpkg.com/@gitlab/ui/-/ui-41.10.0.tgz#20c6475b5b8e47e4eda97d2d76d851191c981251"
+  integrity sha512-ANxKD7YGSHTPphZE/oGrvyMraLUrC/cll8xGGizipPFo9pza9krobQfBt1tfLMs7DLSbtdmPoIpFjrOLaYM4NA==
   dependencies:
     "@popperjs/core" "^2.11.2"
     bootstrap-vue "2.20.1"
@@ -1853,10 +1853,10 @@ ajv@^8.0.1:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.8.2.tgz#35726dc6d211f49dbab0bf6d37b4658165539523"
-  integrity sha512-AXxiF0zT9oYwl8ZBgU/eRXvfYhz7cBA5YrLPlw9inZHdaYF0QEya/f1Zp1mPYMXc1v6VkHwBq4pk6/vayBLICg==
+algoliasearch-helper@^3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/algoliasearch-helper/-/algoliasearch-helper-3.8.3.tgz#74066a6aa56a6dfa7af1f3ab8c6a545d707d5d5e"
+  integrity sha512-J0H08fQoyhZ2qLi7Uy8EvUeN/NJ4Trtt7NWB8mF1CGLuYpdXPyjZu9+Uoya2eayxQ20RP+QGF9Om/LddPv49vw==
   dependencies:
     "@algolia/events" "^4.0.1"
 
@@ -3020,10 +3020,10 @@ eslint-visitor-keys@^3.1.0, eslint-visitor-keys@^3.3.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
 
-eslint@^8.17.0:
-  version "8.17.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.17.0.tgz#1cfc4b6b6912f77d24b874ca1506b0fe09328c21"
-  integrity sha512-gq0m0BTJfci60Fz4nczYxNAlED+sMcihltndR8t9t1evnU/azx53x3t2UHXC/uRjcbvRw/XctpaNygSTcQD+Iw==
+eslint@^8.18.0:
+  version "8.18.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.18.0.tgz#78d565d16c993d0b73968c523c0446b13da784fd"
+  integrity sha512-As1EfFMVk7Xc6/CvhssHUjsAQSkpfXvUGMFC3ce8JDe6WvqCgRrLOBQbVpsBFr1X1V+RACOadnzVvcUS5ni2bA==
   dependencies:
     "@eslint/eslintrc" "^1.3.0"
     "@humanwhocodes/config-array" "^0.9.2"
@@ -3664,32 +3664,16 @@ instantsearch.css@^7.4.5:
   resolved "https://registry.yarnpkg.com/instantsearch.css/-/instantsearch.css-7.4.5.tgz#2a521aa634329bf1680f79adf87c79d67669ec8d"
   integrity sha512-iIGBYjCokU93DDB8kbeztKtlu4qVEyTg1xvS6iSO1YvqRwkIZgf0tmsl/GytsLdZhuw8j4wEaeYsCzNbeJ/zEQ==
 
-instantsearch.js@^4.37.2:
-  version "4.41.1"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.1.tgz#5d8947ab37769255931649dbe23d5ed25fc84970"
-  integrity sha512-uwl8voHcsvy+FJQPgT7Q4SCiwHGhtFnAFU8doWZZC1+o2KRPGHF6vtd+8c/UqXmFx9iHwGuJwQ5fve0G/zBjfA==
+instantsearch.js@^4.37.2, instantsearch.js@^4.41.2:
+  version "4.41.2"
+  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.2.tgz#5f8aa367a00ce828db0b825dac77d4a36ec27336"
+  integrity sha512-YsVd2tOxKPMZQSlqOgVzCYq9zIYqda1p8N6PDKgCdYoLbjngxAdIj7VHxWQEnJjGdAAkGqFPjr+RFx1l6WlwgA==
   dependencies:
     "@algolia/events" "^4.0.1"
     "@types/google.maps" "^3.45.3"
     "@types/hogan.js" "^3.0.0"
     "@types/qs" "^6.5.3"
-    algoliasearch-helper "^3.8.2"
-    classnames "^2.2.5"
-    hogan.js "^3.0.2"
-    preact "^10.6.0"
-    qs "^6.5.1 < 6.10"
-    search-insights "^2.1.0"
-
-instantsearch.js@^4.41.0:
-  version "4.41.0"
-  resolved "https://registry.yarnpkg.com/instantsearch.js/-/instantsearch.js-4.41.0.tgz#c879d7b892e3d9159a17a803e793e695aeb5431f"
-  integrity sha512-g9l+Cty0xxMT06L36gc6x6Nz6HsEbrqbNQOXAZDORb2g9ADjMQwR1YtOVqN28pTuwXnhWJ4UfEKlLfHTgTVKmg==
-  dependencies:
-    "@algolia/events" "^4.0.1"
-    "@types/google.maps" "^3.45.3"
-    "@types/hogan.js" "^3.0.0"
-    "@types/qs" "^6.5.3"
-    algoliasearch-helper "^3.8.2"
+    algoliasearch-helper "^3.8.3"
     classnames "^2.2.5"
     hogan.js "^3.0.2"
     preact "^10.6.0"
@@ -5195,10 +5179,10 @@ postcss-safe-parser@^6.0.0:
   resolved "https://registry.yarnpkg.com/postcss-safe-parser/-/postcss-safe-parser-6.0.0.tgz#bb4c29894171a94bc5c996b9a30317ef402adaa1"
   integrity sha512-FARHN8pwH+WiS2OPCxJI8FuRJpTVnn6ZNFiqAM2aeW2LwTHWWmWgIyKC6cUo0L8aeKiF/14MNvnpls6R2PBeMQ==
 
-postcss-scss@4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-4.0.3.tgz#36c23c19a804274e722e83a54d20b838ab4767ac"
-  integrity sha512-j4KxzWovfdHsyxwl1BxkUal/O4uirvHgdzMKS1aWJBAV0qh2qj5qAZqpeBfVUYGWv+4iK9Az7SPyZ4fyNju1uA==
+postcss-scss@4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-4.0.4.tgz#aa8f60e19ee18259bc193db9e4b96edfce3f3b1f"
+  integrity sha512-aBBbVyzA8b3hUL0MGrpydxxXKXFZc5Eqva0Q3V9qsBOLEMsjb6w49WfpsoWzpEgcqJGW4t7Rio8WXVU9Gd8vWg==
 
 postcss-selector-parser@^6.0.10, postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.6, postcss-selector-parser@^6.0.9:
   version "6.0.10"
@@ -5254,15 +5238,10 @@ postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-preact@^10.0.0:
+preact@^10.0.0, preact@^10.6.0:
   version "10.7.3"
   resolved "https://registry.yarnpkg.com/preact/-/preact-10.7.3.tgz#f98c09a29cb8dbb22e5fc824a1edcc377fc42b5a"
   integrity sha512-giqJXP8VbtA1tyGa3f1n9wiN7PrHtONrDyE3T+ifjr/tTkg+2N4d/6sjC9WyJKv8wM7rOYDveqy5ZoFmYlwo4w==
-
-preact@^10.6.0:
-  version "10.7.2"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.7.2.tgz#5c632ba194b87345dcaee6598b3b6529b58e6a12"
-  integrity sha512-GLjn0I3r6ka+NvxJUppsVFqb4V0qDTEHT/QxHlidPuClGaxF/4AI2Qti4a0cv3XMh5n1+D3hLScW10LRIm5msQ==
 
 prelude-ls@^1.2.1:
   version "1.2.1"
@@ -5274,10 +5253,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-"prettier@^1.18.2 || ^2.0.0", prettier@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
-  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-format@^28.1.1:
   version "28.1.1"
@@ -5986,10 +5965,10 @@ stylelint-declaration-strict-value@1.8.0:
     css-values "^0.1.0"
     shortcss "^0.1.3"
 
-stylelint-scss@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-4.1.0.tgz#39b808696f8152081163d970449257ff80b5c041"
-  integrity sha512-BNYTo7MMamhFOlcaAWp2dMpjg6hPyM/FFqfDIYzmYVLMmQJqc8lWRIiTqP4UX5bresj9Vo0dKC6odSh43VP2NA==
+stylelint-scss@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-4.2.0.tgz#e25fd390ee38a7e89fcfaec2a8f9dce2ec6ddee8"
+  integrity sha512-HHHMVKJJ5RM9pPIbgJ/XA67h9H0407G68Rm69H4fzFbFkyDMcTV1Byep3qdze5+fJ3c0U7mJrbj6S0Fg072uZA==
   dependencies:
     lodash "^4.17.21"
     postcss-media-query-parser "^0.2.3"
