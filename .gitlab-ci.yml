@@ -530,6 +530,22 @@ clean-pages:
     - nginx
     - review-apps
 
+#
+# Clean up stopped review app environments. Only done in chores pipeline,
+# only deletes stopped environments that are over 30 days old.
+#
+delete_stopped_environments:
+  image: alpine:latest
+  needs: []
+  before_script: []
+  dependencies: []
+  extends:
+    - .rules_chores
+  stage: test
+  script:
+    - apk --update add curl jq
+    - curl --request DELETE "https://gitlab.com/api/v4/projects/1794617/environments/review_apps?dry_run=false&private_token=$DELETE_ENVIRONMENTS_TOKEN" | jq
+
 ###############################################
 #          GitLab Pages (production)          #
 ###############################################
