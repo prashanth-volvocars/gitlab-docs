@@ -1,200 +1,61 @@
-# Set up and preview the documentation site locally
+# Set up, preview, and update GitLab Docs site
 
-You can set up and compile the docs site on your own computer, and use it to
-preview changes you make to GitLab documentation.
+You can set up, compile, update, and preview the GitLab Docs site locally.
 
-## Prerequisites
+## Set up GitLab Docs
 
-To preview any changes you make to GitLab documentation, you need
-a Unix/Linux or macOS environment.
+GitLab Docs requires [Git](https://git-scm.com) and Make (for example, [GNU Make](https://www.gnu.org/software/make/)).
+To check they are installed, run:
 
-- Linux:
-  1. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-  1. Optional. [Install `jq`](https://stedolan.github.io/jq/download/), that is needed
-     by some [Rake tasks](raketasks.md).
-- macOS:
-  1. Install Xcode:
-     - Open the terminal and run `xcode-select --install` to install the command line tools only.
-     - Or download and install the entire package using the macOS's App Store.
-  1. Install [Homebrew](https://brew.sh).
-  1. Install the rest of the dependencies:
+```shell
+which git && which make
+```
 
-     ```shell
-     brew bundle
-     ```
+If they aren't installed, use Homebrew or your Linux distribution's package manager to install them.
 
-- [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/):
-  Follow the Linux instructions.
+To set up GitLab Docs:
 
-Alternatively, you can use [Gitpod](#gitpod-integration) to access a
-cloud-based, pre-configured GitLab documentation site.
-
-## Install dependencies
-
-There are a couple of options for installing dependencies for `gitlab-docs`:
-
-- The [unified dependency manager](#use-asdf) `asdf` for Ruby, Node.js, and Yarn (recommended).
-- Using [separate dependency managers](#use-separate-dependency-managers) for Ruby, Node.js, and
-  Yarn.
-
-The choice of which to use might depend on what you currently use. For example, you may have already
-[set up a dependency manager for GDK](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/index.md#install-dependencies).
-
-If you don't yet have Ruby, Node.js, and Yarn set up, use [`asdf`](https://asdf-vm.com/#/).
-
-### Use `asdf`
-
-This is the recommended way.
-
-To install Ruby, Node.js, and Yarn using `asdf`:
-
-1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html).
-1. Add the Ruby, Node.js, and Yarn `asdf` plugins required to install versions
-   of these dependencies:
+1. [Install `asdf`](https://asdf-vm.com/guide/getting-started.html) and its dependencies. To complete the `asdf`
+   installation, close the terminal you used to install `asdf` and open a new terminal. That enables `asdf` for later
+   steps.
+1. Clone `gitlab-docs` project.
+1. In the checkout of `gitlab-docs`, run:
 
    ```shell
-   asdf plugin add ruby
-   asdf plugin add nodejs
-   asdf plugin add yarn
+   make setup
    ```
 
-1. Install the dependencies listed in the project's [`.tool-versions`](../.tool-versions) file:
+If you have trouble installing Ruby on Linux using `make setup`, you might be missing a
+[compatible version of OpenSSL](https://bugs.ruby-lang.org/issues/18658). The solution can vary between different
+distributions and versions. For some additional information, see
+[Ruby troubleshooting information](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/troubleshooting/ruby.md#openssl-3-breaks-ruby-builds)
+for GDK.
 
-   ```shell
-   asdf install
-   ```
+An alternative to `make setup` is to follow [Advanced setup for GitLab Docs](advanced_setup.md).
 
-1. Set the installed versions of Ruby, Node.js, and Yarn to be global for projects that don't use
-   `.tool-versions` files. For example to set Ruby 2.7.4 as the global default, run:
+## Clone all documentation repositories
 
-   ```shell
-   asdf global ruby 2.7.5
-   ```
-
-Check your:
-
-- Ruby version with `ruby --version`.
-- Bundler version with `bundle --version`.
-- Node.js version with `node -v`.
-- Yarn version with `yarn -v`
-
-### Use separate dependency managers
-
-In the instructions below, you:
-
-- Install Ruby using `rbenv`.
-- Install Node.js using `nvm`.
-- Install Yarn using your preferred method in their installation instructions.
-
-#### Ruby
-
-To install Ruby using [`rbenv`](https://github.com/rbenv/rbenv):
-
-1. [Install `rbenv`](https://github.com/rbenv/rbenv#installation).
-1. Install the [supported version of Ruby](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions):
-
-   ```shell
-   rbenv install <supported-version>
-   ```
-
-1. Use the newly installed Ruby:
-
-   ```shell
-   rbenv global <supported-version>
-   ```
-
-Check your:
-
-- Ruby version with `ruby --version`.
-- Bundler version with `bundle --version`.
-
-#### Node.js
-
-To install Node.js using [`nvm`](https://github.com/nvm-sh/nvm):
-
-1. [Install `nvm`](https://github.com/nvm-sh/nvm#installation-and-update).
-1. Install the latest Node.js:
-
-   ```shell
-   nvm install --lts
-   ```
-
-1. Use the newly installed Node.js:
-
-   ```shell
-   nvm use --lts --default
-   ```
-
-Check your Node.js version with `node -v`.
-
-#### Yarn
-
-Install [yarn](https://yarnpkg.com/en/docs/install), a package manager for the
-Node.js ecosystem.
-
-Check your [Yarn version](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/.tool-versions) with `yarn -v`.
-
-## Install Nanoc's dependencies
-
-The project depends on many Ruby and Node.js libraries. To install these:
-
-1. Open a terminal and navigate to your local checkout of this project.
-1. Run:
-
-   ```shell
-   bundle install && yarn install --frozen-lockfile
-   ```
-
-## Nanoc data sources
-
-GitLab Docs uses Nanoc's [data sources](https://nanoc.app/doc/data-sources/) to import
-and compile the content from the projects we source docs from. The locations of the
-four projects are relative to the location of `gitlab-docs` (defined in
-[`nanoc.yaml`](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/8d9e30f14623c907f29f73883fefcae034092b39/nanoc.yaml#L48-75)).
-Each of the four projects must be at the same root level as `gitlab-docs` and named:
-
-- GitLab: `gitlab`
-- Runner: `gitlab-runner`
-- Omnibus: `omnibus-gitlab`
-- Charts: `charts-gitlab`
-- Operator: `gitlab-operator`
-
-If any of the four projects is missing or is misnamed, `nanoc live` will throw an
-error, but you'll still be able to preview the site. However, live reloading
-will not work, so you'll need to manually recompile Nanoc with `nanoc compile`
-when you make changes.
-
-For more information, see the [troubleshooting section](#troubleshooting).
-
-## Clone the repositories
-
-To build the full GitLab documentation website locally, you must have cloned all the documentation projects that provide
-Nanoc data sources. To clone all projects, run:
+To build the full GitLab documentation website locally, you must clone all the documentation projects that provide the
+Nanoc [data sources](https://gitlab.com/gitlab-org/gitlab-docs/-/blob/main/nanoc.yaml). To clone all documentation
+projects, run:
 
 ```shell
 make clone-all-docs-projects
 ```
 
-The documentation projects are cloned into the parent directory.
+The documentation projects are cloned into the parent directory. If you make documentation changes in these projects,
+they can be previewed.
 
-## Preview the documentation website
+## Preview GitLab Docs
 
-Run the following command from the root directory of the `gitlab-docs` project to build the documentation site and bring the embedded
-web server up:
-
-```shell
-bundle exec nanoc live
-```
-
-This generates the site and you can view it in your browser at <http://localhost:3000>.
-
-To preview the site on another port, use:
+To preview GitLab Docs locally, run:
 
 ```shell
-bundle exec nanoc live -p 3004
+make view
 ```
 
-This generates the site and you can view it in your browser at <http://localhost:3004>.
+If you make changes to any of the documentation in any of the documentation projects, rerun `make view` to see an
+updated preview.
 
 ### Preview on mobile
 
@@ -207,39 +68,47 @@ If you want to check how your changes look on mobile devices, you can use:
 - [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode)
   on Chrome.
 
-An alternative is to preview the documentation site with your own devices, as
-long as they are connected to the same network as your computer.
+An alternative is to preview the documentation site with your own devices, as long as they are connected to the same
+network as your computer:
 
-To do that, we need to change the IP address Nanoc is serving on from the
-default `http://127.0.0.1` to your computer's
-[private IPv4 address](https://www.howtogeek.com/236838/how-to-find-any-devices-ip-address-mac-address-and-other-network-connection-details/).
+1. Find your computer's [private IPv4 address](https://www.howtogeek.com/236838/how-to-find-any-devices-ip-address-mac-address-and-other-network-connection-details/).
+1. Pass the private IPv4 address to Nanoc using the `-o` flag. For example, if your current IPv4 address is `192.168.0.105`:
 
-Once you know your computer's private IPv4, use the flag `-o`. For
-example, let's say your current IPv4 address is `192.168.0.105`:
+   ```shell
+   bundle exec nanoc live -o 192.168.0.105
+   ```
+
+1. Open your mobile device's browser and type `http://192.168.0.105:3000` (if your current IPv4 address is `192.168.0.105`).
+   You should be able to navigate through the GitLab Docs site. This process applies to previewing the GitLab Docs site
+   on every device connected to your network.
+
+## Update GitLab Docs
+
+To update GitLab Docs itself, run:
 
 ```shell
-bundle exec nanoc live -o 192.168.0.105
+make update
 ```
 
-Now, open your mobile's browser and type `http://192.168.0.105:3000`, and you should
-be able to navigate through the docs site. This process applies to previewing the
-docs site on every device connected to your network.
+To update GitLab Docs and all documentation projects, run:
 
-## Gitpod integration
+```shell
+make update-all-projects
+```
 
-To avoid having to build and maintain a local environment for running the GitLab
-documentation site, use [Gitpod](https://www.gitpod.io) to deploy a
-pre-configured documentation site for your development use.
+## Using Gitpod
+
+An alternative to building and maintaining a local environment for running the GitLab Docs site, is to use
+[Gitpod](https://www.gitpod.io) to deploy a pre-configured GitLab Docs site for your development use.
 
 For additional information, see the
 [GDK Gitpod docs](https://gitlab.com/gitlab-org/gitlab-development-kit/-/blob/main/doc/howto/gitpod.md).
 
-### Get started with Gitpod
+### Set up Gitpod
 
-To start developing with Gitpod:
+To set up Gitpod:
 
-1. Create a [Gitpod](https://www.gitpod.io) account and connect it to your
-   GitLab account.
+1. Create a [Gitpod](https://www.gitpod.io) account and connect it to your GitLab account.
 1. Enable the integration in your GitLab [profile preferences](https://gitlab.com/-/profile/preferences).
 1. Open the GitLab documentation site in Gitpod:
 
@@ -279,30 +148,11 @@ To commit and push changes:
 
 ## Troubleshooting
 
-If you see a `Nanoc::Core::Site::DuplicateIdentifierError` error, confirm you have no symlinks
-in the `content` directory.
-
-This is usually caused in local instances of GitLab Docs where symlinks were used to link
-to documentation projects for content.
-
-### `ftype: No such file or directory @ rb_file_s_ftype`
-
-If you run into this error, it means you're probably still using symlinks
-under the `content/` directory. In June 2021, we
-[switched](https://gitlab.com/gitlab-org/gitlab-docs/-/merge_requests/1742)
-to [Nanoc's data sources](#nanoc-data-sources) to build the site instead of
-using symlinks.
-
-Make sure no symlinks exist, and rebuild the site like you would normally do:
-
-```shell
-rm -f content/{ee,runner,omnibus,charts}
-```
-
 ### `realpath: No such file or directory @ rb_check_realpath_internal`
 
-If you run into this error, it means you're missing one of the four projects
-`gitlab-docs` relies on to build the content of the docs site.
+If you run into this error, it means you're missing one of the projects `gitlab-docs` relies on to build the content of
+the GitLab Docs site site. To resolve this error, run:
 
-See [Nanoc data sources](#nanoc-data-sources) to learn where the four projects
-should be placed and what names they should have.
+```shell
+make clone-all-docs-projects
+```
