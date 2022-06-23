@@ -1605,19 +1605,21 @@ sections:
                 doc_url: 'ee/ci/testing/'
                 docs:
                   - doc_title: Accessibility testing
-                    doc_url: 'ee/user/project/merge_requests/accessibility_testing.html'
+                    doc_url: 'ee/ci/testing/accessibility_testing.html'
                   - doc_title: Browser performance testing
-                    doc_url: 'ee/user/project/merge_requests/browser_performance_testing.html'
+                    doc_url: 'ee/ci/testing/browser_performance_testing.html'
                   - doc_title: Code quality
-                    doc_url: 'ee/user/project/merge_requests/code_quality.html'
+                    doc_url: 'ee/ci/testing/code_quality.html'
+                  - doc_title: Fail fast testing
+                    doc_url: 'ee/ci/testing/fail_fast_testing.html'
                   - doc_title: Load performance testing
-                    doc_url: 'ee/user/project/merge_requests/load_performance_testing.html'
+                    doc_url: 'ee/ci/testing/load_performance_testing.html'
                   - doc_title: Metrics reports
-                    doc_url: 'ee/ci/metrics_reports.html'
+                    doc_url: 'ee/ci/testing/metrics_reports.html'
                   - doc_title: Test cases
                     doc_url: 'ee/ci/test_cases/'
                   - doc_title: Test coverage visualization
-                    doc_url: 'ee/user/project/merge_requests/test_coverage_visualization.html'
+                    doc_url: 'ee/ci/testing/test_coverage_visualization.html'
                   - doc_title: Unit test reports
                     doc_url: 'ee/ci/testing/unit_test_reports.html'
                   - doc_title: Unit test report examples
