@@ -2,7 +2,6 @@
 
 $LOAD_PATH << 'lib/'
 
-require 'rspec-parameterized'
 require 'gitlab/docs'
 
 RSpec.configure do |config|
